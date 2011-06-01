@@ -1,0 +1,15 @@
+
+# Standard VS.NET and ReSharper 
+obj
+bin
+Bin
+*.csproj.user
+_ReSharper*
+*.ReSharper
+*.user
+*.suo
+*.cache
+* Thumbs.db
+*.csproj.ReSharper
+
+*.ReSharper.user
