@@ -1,8 +1,7 @@
 ﻿using System.Linq;
-using Caliburn.Micro;
 using Telerik.Windows.Controls;
 
-namespace CaliburnMicro.Telerik
+namespace Caliburn.Micro.Telerik
 {
 	public static class TelerikConventions
 	{
