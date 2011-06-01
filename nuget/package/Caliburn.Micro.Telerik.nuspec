@@ -5,7 +5,7 @@
     <version>1.0</version>
     <authors>Valeriu Caraulean</authors>
     <owners>Valeriu Caraulean</owners>
-    <projectUrl>https://github.com/vcaraulean/CaliburnMicro.Telerik</projectUrl>
+    <projectUrl>https://github.com/vcaraulean/Caliburn.Micro.Telerik</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>A set of Caliburn.Micro conventions for Telerik's Silverlight controls</description>
     <tags>Caliburn.Micro Silverlight Telerik SL40</tags>
