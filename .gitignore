@@ -13,3 +13,6 @@ _ReSharper*
 *.csproj.ReSharper
 
 *.ReSharper.user
+
+nuget/package/lib/*
+nuget/package/*.nupkg
