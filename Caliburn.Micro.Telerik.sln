@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Caliburn.Micro.Telerik", "CaliburnMicro.Telerik\Caliburn.Micro.Telerik.csproj", "{8D3D9933-BD77-424D-BD81-843B7AAC3C56}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Caliburn.Micro.Telerik", "Caliburn.Micro.Telerik\Caliburn.Micro.Telerik.csproj", "{8D3D9933-BD77-424D-BD81-843B7AAC3C56}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
