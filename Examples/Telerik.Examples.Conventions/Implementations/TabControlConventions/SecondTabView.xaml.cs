@@ -10,11 +10,11 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 
-namespace Telerik.Examples.Conventions
+namespace Telerik.Examples.Conventions.Implementations.TabControlConventions
 {
-	public partial class MainPage : UserControl
+	public partial class SecondTabView : UserControl
 	{
-		public MainPage()
+		public SecondTabView()
 		{
 			InitializeComponent();
 		}

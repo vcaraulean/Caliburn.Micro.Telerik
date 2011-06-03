@@ -1,8 +1,7 @@
 ﻿<Application xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
-             x:Class="Telerik.Examples.Conventions.App"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:local="clr-namespace:Telerik.Examples.Conventions" x:Class="Telerik.Examples.Conventions.App"
              >
     <Application.Resources>
-        
-    </Application.Resources>
+		<local:AppBootstrapper x:Name="bootstrapper" />
+	</Application.Resources>
 </Application>

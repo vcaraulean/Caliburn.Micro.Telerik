@@ -60,35 +60,92 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Caliburn.Micro">
+      <HintPath>..\..\packages\Caliburn.Micro.1.1.0\lib\SL40\Caliburn.Micro.dll</HintPath>
+    </Reference>
     <Reference Include="mscorlib" />
+    <Reference Include="System.ComponentModel.Composition, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.ComponentModel.Composition.Initialization, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Windows" />
     <Reference Include="system" />
     <Reference Include="System.Core" />
     <Reference Include="System.Net" />
+    <Reference Include="System.Windows.Controls, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Caliburn.Micro.1.1.0\lib\SL40\System.Windows.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Interactivity, Version=4.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Caliburn.Micro.1.1.0\lib\SL40\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml" />
     <Reference Include="System.Windows.Browser" />
+    <Reference Include="Telerik.Windows.Controls, Version=2011.1.419.1040, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.Windows.Controls.Data, Version=2011.1.419.1040, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.Windows.Controls.DataVisualization, Version=2011.1.419.1040, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.Windows.Controls.GridView, Version=2011.1.419.1040, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.Windows.Controls.Input, Version=2011.1.419.1040, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.Windows.Controls.Navigation, Version=2011.1.419.1040, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.Windows.Data, Version=2011.1.419.1040, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MainPage.xaml.cs">
-      <DependentUpon>MainPage.xaml</DependentUpon>
+    <Compile Include="AppBootstrapper.cs" />
+    <Compile Include="Implementations\RadBusyIndicatorView.xaml.cs">
+      <DependentUpon>RadBusyIndicatorView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Implementations\RadBusyIndicatorViewModel.cs" />
+    <Compile Include="Implementations\TabControlConventions\FirstTabView.xaml.cs">
+      <DependentUpon>FirstTabView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Implementations\TabControlConventions\FirstTabViewModel.cs" />
+    <Compile Include="Implementations\TabControlConventions\SecondTabView.xaml.cs">
+      <DependentUpon>SecondTabView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Implementations\TabControlConventions\SecondTabViewModel.cs" />
+    <Compile Include="Implementations\TabControlConventions\TabControlOnView.xaml.cs">
+      <DependentUpon>TabControlOnView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Implementations\TabControlConventions\TabControlOnViewModel.cs" />
+    <Compile Include="IShell.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ShellViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </ApplicationDefinition>
-    <Page Include="MainPage.xaml">
+    <Page Include="Implementations\RadBusyIndicatorView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Implementations\TabControlConventions\FirstTabView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Implementations\TabControlConventions\SecondTabView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Implementations\TabControlConventions\TabControlOnView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ShellView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
   </ItemGroup>
   <ItemGroup>
+    <None Include="packages.config" />
     <None Include="Properties\AppManifest.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Caliburn.Micro.Telerik\Caliburn.Micro.Telerik.csproj">
+      <Project>{8D3D9933-BD77-424D-BD81-843B7AAC3C56}</Project>
+      <Name>Caliburn.Micro.Telerik</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
