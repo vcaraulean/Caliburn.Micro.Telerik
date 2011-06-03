@@ -95,6 +95,10 @@
       <DependentUpon>RadBusyIndicatorView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Implementations\RadBusyIndicatorViewModel.cs" />
+    <Compile Include="Implementations\RadDateTimePickerView.xaml.cs">
+      <DependentUpon>RadDateTimePickerView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Implementations\RadDateTimePickerViewModel.cs" />
     <Compile Include="Implementations\TabControlConventions\FirstTabView.xaml.cs">
       <DependentUpon>FirstTabView.xaml</DependentUpon>
     </Compile>
@@ -117,6 +121,10 @@
       <Generator>MSBuild:Compile</Generator>
     </ApplicationDefinition>
     <Page Include="Implementations\RadBusyIndicatorView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Implementations\RadDateTimePickerView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
