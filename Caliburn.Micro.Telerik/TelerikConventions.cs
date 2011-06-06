@@ -38,6 +38,7 @@ namespace Caliburn.Micro.Telerik
 
 			ConventionManager.AddElementConvention<RadMenuItem>(RadMenuItem.ItemsSourceProperty, "DataContext", "Click");
 			ConventionManager.AddElementConvention<RadBusyIndicator>(RadBusyIndicator.IsBusyProperty, "IsBusy", "Loaded");
+			ConventionManager.AddElementConvention<RadMaskedTextBox>(RadMaskedTextBox.MaskedTextProperty, "MaskedText", "ValueChanged");
 			
 			// Works also for RadTimePicker, RadDatePicker
 			ConventionManager.AddElementConvention<RadDateTimePicker>(RadDateTimePicker.SelectedValueProperty, "SelectedValue", "SelectionChanged");
