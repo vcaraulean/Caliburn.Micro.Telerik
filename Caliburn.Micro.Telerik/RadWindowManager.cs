@@ -1,7 +1,10 @@
 using System;
 using System.Collections.Generic;
+using System.Dynamic;
+using System.Windows;
 using System.Windows.Data;
 using Telerik.Windows.Controls;
+using WindowStartupLocation = Telerik.Windows.Controls.WindowStartupLocation;
 
 namespace Caliburn.Micro.Telerik
 {
@@ -18,7 +21,22 @@ namespace Caliburn.Micro.Telerik
 		/// <param name="context">The context.</param>
 		public virtual void ShowDialog(object rootModel, object context = null)
 		{
+			dynamic settings = new ExpandoObject();
+			settings.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+
+			ShowDialog(rootModel, context, settings);
+		}
+
+		/// <summary>
+		/// Shows a modal dialog for the specified model.
+		/// </summary>
+		/// <param name="rootModel">The root model.</param>
+		/// <param name="context">The context.</param>
+		/// <param name="settings">The optional RadWindow settings.</param>
+		public virtual void ShowDialog(object rootModel, object context, IDictionary<string, object> settings = null)
+		{
 			var view = EnsureWindow(rootModel, ViewLocator.LocateForModel(rootModel, null, context));
+			ApplySettings(view, settings);
 			ViewModelBinder.Bind(rootModel, view, context);
 
 			var haveDisplayName = rootModel as IHaveDisplayName;
@@ -28,21 +46,55 @@ namespace Caliburn.Micro.Telerik
 				view.SetBinding(RadWindow.HeaderProperty, binding);
 			}
 
-			view.WindowStartupLocation = WindowStartupLocation.CenterScreen;
-
 			new RadWindowConductor(rootModel, view);
 
 			view.ShowDialog();
 		}
 
+		/// <summary>
+		/// Shows a toast notification for the specified model.
+		/// </summary>
+		/// <param name="rootModel">The root model.</param>
+		/// <param name="durationInMilliseconds">How long the notification should appear for.</param>
+		/// <param name="context">The context.</param>
 		public void ShowNotification(object rootModel, int durationInMilliseconds, object context)
 		{
-			throw new NotImplementedException();
+			var window = new NotificationWindow();
+			var view = ViewLocator.LocateForModel(rootModel, window, context);
+
+			ViewModelBinder.Bind(rootModel, view, null);
+			window.Content = (FrameworkElement)view;
+
+			var activator = rootModel as IActivate;
+			if (activator != null)
+				activator.Activate();
+
+			var deactivator = rootModel as IDeactivate;
+			if (deactivator != null)
+				window.Closed += delegate { deactivator.Deactivate(true); };
+
+			window.Show(durationInMilliseconds);
 		}
 
 		public void ShowPopup(object rootModel, object context, IDictionary<string, object> settings)
 		{
 			throw new NotImplementedException();
+		}
+		
+		private static void ApplySettings(RadWindow radWindow, IDictionary<string, object> settings)
+		{
+			if (settings == null)
+				return;
+
+			var type = radWindow.GetType();
+
+			foreach (var pair in settings)
+			{
+				var propertyInfo = type.GetProperty(pair.Key);
+
+				if (propertyInfo != null)
+					propertyInfo.SetValue(radWindow, pair.Value, null);
+			}
 		}
 
 		private static RadWindow EnsureWindow(object model, object view)
@@ -58,103 +110,49 @@ namespace Caliburn.Micro.Telerik
 			return window;
 		}
 
-		class RadWindowConductor
+		public static void Alert(string title, string message)
 		{
-			bool deactivatingFromView;
-			bool deactivateFromViewModel;
-			bool actuallyClosing;
-			readonly RadWindow view;
-			readonly object model;
+			Alert(new DialogParameters { Header = title, Content = message });
+		}
 
-			public RadWindowConductor(object model, RadWindow view)
+		public static void Alert(DialogParameters dialogParameters)
+		{
+			RadWindow.Alert(dialogParameters);
+		}
+
+		public static void Confirm(string title, string message, Action<bool> dialogResult)
+		{
+			var dialogParameters = new DialogParameters
 			{
-				this.model = model;
-				this.view = view;
+				Header = title,
+				Content = message,
+			};
+			dialogParameters.Closed += (o, eventArgs) => dialogResult(eventArgs.DialogResult.Value);
 
-				var activatable = model as IActivate;
-				if (activatable != null)
-					activatable.Activate();
+			Confirm(dialogParameters);
+		}
 
-				var deactivatable = model as IDeactivate;
-				if (deactivatable != null)
-				{
-					view.Closed += Closed;
-					deactivatable.Deactivated += Deactivated;
-				}
+		public static void Confirm(DialogParameters dialogParameters)
+		{
+			RadWindow.Confirm(dialogParameters);
+		}
 
-				var guard = model as IGuardClose;
-				if (guard != null)
-					view.PreviewClosed += PreviewClosed;
-			}
-
-			void Closed(object sender, EventArgs e)
+		public static void Prompt(string title, string message, string defaultPromptResultValue, Action<bool, string> result)
+		{
+			var dialogParameters = new DialogParameters
 			{
-				view.Closed -= Closed;
-				view.PreviewClosed -= PreviewClosed;
+				Header = title,
+				Content = message,
+				DefaultPromptResultValue = defaultPromptResultValue,
+			};
+			dialogParameters.Closed += (o, eventArgs) => result(eventArgs.DialogResult.Value, eventArgs.PromptResult);
+			
+			Prompt(dialogParameters);
+		}
 
-				if (deactivateFromViewModel)
-					return;
-
-				var deactivatable = (IDeactivate)model;
-
-				deactivatingFromView = true;
-				deactivatable.Deactivate(true);
-				deactivatingFromView = false;
-			}
-
-			void Deactivated(object sender, DeactivationEventArgs e)
-			{
-				if (!e.WasClosed)
-					return;
-
-				((IDeactivate)model).Deactivated -= Deactivated;
-
-				if (deactivatingFromView)
-					return;
-
-				deactivateFromViewModel = true;
-				actuallyClosing = true;
-				view.Close();
-				actuallyClosing = false;
-				deactivateFromViewModel = false;
-			}
-
-			void PreviewClosed(object sender, WindowPreviewClosedEventArgs e)
-			{
-				if (e.Cancel.HasValue && e.Cancel.Value)
-					return;
-
-				var guard = (IGuardClose)model;
-
-				if (actuallyClosing)
-				{
-					actuallyClosing = false;
-					return;
-				}
-
-				bool runningAsync = false, shouldEnd = false;
-
-				guard.CanClose(canClose =>
-				{
-					Execute.OnUIThread(() =>
-					{
-						if (runningAsync && canClose)
-						{
-							actuallyClosing = true;
-							view.Close();
-						}
-						else e.Cancel = !canClose;
-
-						shouldEnd = true;
-					});
-				});
-
-				if (shouldEnd)
-					return;
-				
-				e.Cancel = true;
-				runningAsync = true;
-			}
+		public static void Prompt(DialogParameters dialogParameters)
+		{
+			RadWindow.Prompt(dialogParameters);
 		}
 	}
 }

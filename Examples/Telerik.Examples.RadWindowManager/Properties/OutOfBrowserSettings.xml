@@ -1,0 +1,7 @@
+<OutOfBrowserSettings ShortName="Telerik.Examples.RadWindowManager Application" EnableGPUAcceleration="False" ShowInstallMenuItem="True">
+  <OutOfBrowserSettings.Blurb>Telerik.Examples.RadWindowManager Application on your desktop; at home, at work or on the go.</OutOfBrowserSettings.Blurb>
+  <OutOfBrowserSettings.WindowSettings>
+    <WindowSettings Title="Telerik.Examples.RadWindowManager Application" />
+  </OutOfBrowserSettings.WindowSettings>
+  <OutOfBrowserSettings.Icons />
+</OutOfBrowserSettings>
