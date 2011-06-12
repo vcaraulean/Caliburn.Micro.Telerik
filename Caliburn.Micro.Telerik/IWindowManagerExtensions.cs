@@ -26,7 +26,7 @@ namespace Caliburn.Micro
 			RadWindowManager.Alert(dialogParameters);
 		}
 
-		public static void Confirm(this IWindowManager windowManager, string title, string message, Action<bool> dialogResult)
+		public static void Confirm(this IWindowManager windowManager, string title, string message, Action<bool?> dialogResult)
 		{
 			RadWindowManager.Confirm(title, message, dialogResult);
 		}
@@ -36,7 +36,7 @@ namespace Caliburn.Micro
 			RadWindowManager.Confirm(dialogParameters);
 		}
 
-		public static void Prompt(this IWindowManager windowManager, string title, string message, string defaultPromptResultValue, Action<bool, string> result)
+		public static void Prompt(this IWindowManager windowManager, string title, string message, string defaultPromptResultValue, Action<bool?, string> result)
 		{
 			RadWindowManager.Prompt(title, message, defaultPromptResultValue, result);
 		}

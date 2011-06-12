@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Dynamic;
 using System.Windows;
 using System.Windows.Data;
 using Telerik.Windows.Controls;
@@ -21,8 +20,8 @@ namespace Caliburn.Micro.Telerik
 		/// <param name="context">The context.</param>
 		public virtual void ShowDialog(object rootModel, object context = null)
 		{
-			dynamic settings = new ExpandoObject();
-			settings.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+			var settings = new Dictionary<string, object>();
+			settings["WindowStartupLocation"] = WindowStartupLocation.CenterScreen;
 
 			ShowDialog(rootModel, context, settings);
 		}
@@ -120,14 +119,14 @@ namespace Caliburn.Micro.Telerik
 			RadWindow.Alert(dialogParameters);
 		}
 
-		public static void Confirm(string title, string message, Action<bool> dialogResult)
+		public static void Confirm(string title, string message, Action<bool?> dialogResult)
 		{
 			var dialogParameters = new DialogParameters
 			{
 				Header = title,
 				Content = message,
 			};
-			dialogParameters.Closed += (o, eventArgs) => dialogResult(eventArgs.DialogResult.Value);
+			dialogParameters.Closed += (o, eventArgs) => dialogResult(eventArgs.DialogResult);
 
 			Confirm(dialogParameters);
 		}
@@ -137,7 +136,7 @@ namespace Caliburn.Micro.Telerik
 			RadWindow.Confirm(dialogParameters);
 		}
 
-		public static void Prompt(string title, string message, string defaultPromptResultValue, Action<bool, string> result)
+		public static void Prompt(string title, string message, string defaultPromptResultValue, Action<bool?, string> result)
 		{
 			var dialogParameters = new DialogParameters
 			{
@@ -145,7 +144,7 @@ namespace Caliburn.Micro.Telerik
 				Content = message,
 				DefaultPromptResultValue = defaultPromptResultValue,
 			};
-			dialogParameters.Closed += (o, eventArgs) => result(eventArgs.DialogResult.Value, eventArgs.PromptResult);
+			dialogParameters.Closed += (o, eventArgs) => result(eventArgs.DialogResult, eventArgs.PromptResult);
 			
 			Prompt(dialogParameters);
 		}
