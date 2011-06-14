@@ -2,16 +2,17 @@ using System;
 using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Data;
+using Caliburn.Micro.Telerik;
 using Telerik.Windows.Controls;
 using WindowStartupLocation = Telerik.Windows.Controls.WindowStartupLocation;
 
-namespace Caliburn.Micro.Telerik
+namespace Caliburn.Micro
 {
 	/// <summary>
 	/// A service that manages windows.
 	/// Implementation for <see cref="RadWindow"/>
 	/// </summary>
-	public class RadWindowManager : IWindowManager
+	public class TelerikWindowManager : IWindowManager
 	{
 		/// <summary>
 		/// Shows a modal dialog for the specified model.
@@ -119,15 +120,25 @@ namespace Caliburn.Micro.Telerik
 			RadWindow.Alert(dialogParameters);
 		}
 
-		public static void Confirm(string title, string message, Action<bool?> dialogResult)
+		public static void Confirm(string title, string message, System.Action onOK, System.Action onCancel = null)
 		{
 			var dialogParameters = new DialogParameters
 			{
 				Header = title,
-				Content = message,
+				Content = message
 			};
-			dialogParameters.Closed += (o, eventArgs) => dialogResult(eventArgs.DialogResult);
-
+			dialogParameters.Closed += (sender, args) =>
+			{
+				var result = args.DialogResult;
+				if (result.HasValue && result.Value)
+				{
+					onOK();
+					return;
+				}
+				
+				if(onCancel != null)
+					onCancel();
+			};
 			Confirm(dialogParameters);
 		}
 
@@ -136,7 +147,7 @@ namespace Caliburn.Micro.Telerik
 			RadWindow.Confirm(dialogParameters);
 		}
 
-		public static void Prompt(string title, string message, string defaultPromptResultValue, Action<bool?, string> result)
+		public static void Prompt(string title, string message, string defaultPromptResultValue, Action<string> onOK)
 		{
 			var dialogParameters = new DialogParameters
 			{
@@ -144,7 +155,11 @@ namespace Caliburn.Micro.Telerik
 				Content = message,
 				DefaultPromptResultValue = defaultPromptResultValue,
 			};
-			dialogParameters.Closed += (o, eventArgs) => result(eventArgs.DialogResult, eventArgs.PromptResult);
+			dialogParameters.Closed += (o, args) =>
+			{
+				if (args.DialogResult.HasValue && args.DialogResult.Value)
+					onOK(args.PromptResult);
+			};
 			
 			Prompt(dialogParameters);
 		}
