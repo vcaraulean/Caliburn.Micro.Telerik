@@ -65,21 +65,27 @@
     <Reference Include="System.Xml" />
     <Reference Include="System.Net" />
     <Reference Include="System.Windows.Browser" />
-	  <Reference Include="Telerik.Windows.Controls">
-		  <HintPath>..\lib\Telerik.Windows.Controls.dll</HintPath>
-	  </Reference>
-	  <Reference Include="Telerik.Windows.Controls.Data">
-		  <HintPath>..\lib\Telerik.Windows.Controls.Data.dll</HintPath>
-	  </Reference>
-	  <Reference Include="Telerik.Windows.Controls.DataVisualization">
-		  <HintPath>..\lib\Telerik.Windows.Controls.DataVisualization.dll</HintPath>
-	  </Reference>
-	  <Reference Include="Telerik.Windows.Controls.Input">
-		  <HintPath>..\lib\Telerik.Windows.Controls.Input.dll</HintPath>
-	  </Reference>
-	  <Reference Include="Telerik.Windows.Controls.Navigation">
-		  <HintPath>..\lib\Telerik.Windows.Controls.Navigation.dll</HintPath>
-	  </Reference>
+    <Reference Include="Telerik.Windows.Controls">
+      <HintPath>..\lib\Telerik.Windows.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Data">
+      <HintPath>..\lib\Telerik.Windows.Controls.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.DataVisualization">
+      <HintPath>..\lib\Telerik.Windows.Controls.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.GridView">
+		<HintPath>..\lib\Telerik.Windows.Controls.GridView.dll</HintPath>
+	</Reference>
+  	<Reference Include="Telerik.Windows.Controls.Input">
+      <HintPath>..\lib\Telerik.Windows.Controls.Input.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Navigation">
+      <HintPath>..\lib\Telerik.Windows.Controls.Navigation.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Data">
+		<HintPath>..\lib\Telerik.Windows.Data.dll</HintPath>
+	</Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IWindowManagerExtensions.cs" />
