@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Windows;
+using System.Windows.Controls.Primitives;
 using System.Windows.Data;
 using Caliburn.Micro.Telerik;
 using Telerik.Windows.Controls;
@@ -76,10 +77,64 @@ namespace Caliburn.Micro
 			window.Show(durationInMilliseconds);
 		}
 
-		public void ShowPopup(object rootModel, object context, IDictionary<string, object> settings)
+		/// <summary>
+		/// Shows a popup at the current mouse position.
+		/// </summary>
+		/// <param name="rootModel">The root model.</param>
+		/// <param name="context">The view context.</param>
+		/// <param name="settings">The optional popup settings.</param>
+		public virtual void ShowPopup(object rootModel, object context = null, IDictionary<string, object> settings = null)
 		{
-			throw new NotImplementedException();
+			var popup = CreatePopup(rootModel, settings);
+			var view = ViewLocator.LocateForModel(rootModel, popup, context);
+
+			popup.Child = view;
+			popup.SetValue(View.IsGeneratedProperty, true);
+
+			ViewModelBinder.Bind(rootModel, popup, null);
+
+			var activatable = rootModel as IActivate;
+			if (activatable != null)
+				activatable.Activate();
+
+			var deactivator = rootModel as IDeactivate;
+			if (deactivator != null)
+				popup.Closed += delegate { deactivator.Deactivate(true); };
+
+			popup.IsOpen = true;
+			popup.CaptureMouse();
 		}
+
+		/// <summary>
+		/// Creates a popup for hosting a popup window.
+		/// </summary>
+		/// <param name="rootModel">The model.</param>
+		/// <param name="settings">The optional popup settings.</param>
+		/// <returns>The popup.</returns>
+		protected virtual Popup CreatePopup(object rootModel, IDictionary<string, object> settings)
+		{
+			var popup = new Popup
+			{
+				HorizontalOffset = Mouse.Position.X,
+				VerticalOffset = Mouse.Position.Y
+			};
+
+			if (settings != null)
+			{
+				var type = popup.GetType();
+
+				foreach (var pair in settings)
+				{
+					var propertyInfo = type.GetProperty(pair.Key);
+
+					if (propertyInfo != null)
+						propertyInfo.SetValue(popup, pair.Value, null);
+				}
+			}
+
+			return popup;
+		}
+
 		
 		private static void ApplySettings(RadWindow radWindow, IDictionary<string, object> settings)
 		{
