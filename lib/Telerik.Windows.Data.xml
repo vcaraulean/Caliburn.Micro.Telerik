@@ -233,6 +233,14 @@
             Represents a collection of <see cref="T:Telerik.Windows.Data.AggregateResult"/> items.
             </summary>
         </member>
+        <member name="M:Telerik.Windows.Data.AggregateResultCollection.ToString">
+            <summary>
+            Returns a <see cref="T:System.String"/> that represents this instance.
+            </summary>
+            <returns>
+            A <see cref="T:System.String"/> that represents this instance.
+            </returns>
+        </member>
         <member name="P:Telerik.Windows.Data.AggregateResultCollection.Item(System.String)">
             <summary>
             Gets the first <see cref="T:Telerik.Windows.Data.AggregateResult"/> which
@@ -241,6 +249,39 @@
             <value>
             The <see cref="T:Telerik.Windows.Data.AggregateResult"/> for the specified function if any, otherwise null.
             </value>
+        </member>
+        <member name="P:Telerik.Windows.Data.KeyedCollection.NullValue">
+            <summary>
+            Specifies a static value that is used by KeyedCollection to handle scenarios
+            when QueryableCollectionViewGroup.Key is null.
+            </summary>
+            <value>A fake null value.</value>
+        </member>
+        <member name="T:Telerik.Windows.Data.KeyedCollection.KeyedCollectionNullValue">
+            <summary>
+            Thread-safe singleton implementation for specifying a 
+            static value that is used by KeyedCollection rather 
+            than null to indicate that key is null.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Data.KeyedCollection.KeyedCollectionNullValue.#cctor">
+            <summary>
+            Initializes the <see cref="T:Telerik.Windows.Data.KeyedCollection.KeyedCollectionNullValue"/> class.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Data.KeyedCollection.KeyedCollectionNullValue.ToString">
+            <summary>
+            Returns a <see cref="T:System.String"/> that represents this instance.
+            </summary>
+            <returns>
+            A <see cref="T:System.String"/> that represents this instance.
+            </returns>
+        </member>
+        <member name="P:Telerik.Windows.Data.KeyedCollection.KeyedCollectionNullValue.Instance">
+            <summary>
+            Gets or sets the instance.
+            </summary>
+            <value>The instance.</value>
         </member>
         <member name="M:Telerik.Windows.Data.ObservableCollectionManager.Equals(System.Object)">
             <summary>
@@ -522,6 +563,11 @@
         <member name="M:Telerik.Windows.Data.QueryableCollectionView.CreateView">
             <summary>
             Returns <see cref="T:System.Linq.IQueryable"/> with applied filtering, sorting, grouping and paging.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Data.QueryableCollectionView.OnInternalListCreated">
+            <summary>
+            Called when internal list is created.
             </summary>
         </member>
         <member name="M:Telerik.Windows.Data.QueryableCollectionView.OnPropertyChanged(System.ComponentModel.PropertyChangedEventArgs)">
@@ -3226,6 +3272,16 @@
             <param name="enumerableExpression">The grouping expression.</param>
             <returns></returns>
         </member>
+        <member name="M:Telerik.Windows.Data.AggregateFunction.Merge(System.Object,Telerik.Windows.Data.AggregateResultMergeAction,Telerik.Windows.Data.AggregateResult,Telerik.Windows.Data.QueryableCollectionViewGroup)">
+            <summary>
+            Merges the specified item into the aggregate result according to the specified action
+            </summary>
+            <param name="item">The item.</param>
+            <param name="mergeAction">The action.</param>
+            <param name="originalAggregateResult">The original aggregate result.</param>
+            <param name="group">The group which the item is being added to or removed from.</param>
+            <returns>The new value of the aggregate result.</returns>
+        </member>
         <member name="M:Telerik.Windows.Data.AggregateFunction.GenerateFunctionName">
             <summary>
             Generates default name for this function using this type's name.
@@ -3277,6 +3333,21 @@
             Gets or sets the aggregation expression.
             </summary>
             <value>The aggregation expression.</value>
+        </member>
+        <member name="T:Telerik.Windows.Data.AggregateResultMergeAction">
+            <summary>
+            Represents an aggregate result merge action.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Data.AggregateResultMergeAction.Add">
+            <summary>
+            Add
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Data.AggregateResultMergeAction.Remove">
+            <summary>
+            Remove
+            </summary>
         </member>
         <member name="T:Telerik.Windows.Data.EnumerableAggregateFunction">
             <summary>
@@ -3344,6 +3415,13 @@
             Creates the aggregate expression using <see cref="T:Telerik.Windows.Data.Expressions.EnumerableSelectorAggregateFunctionExpressionBuilder"/>.
             </summary>
             <param name="enumerableExpression">The grouping expression.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.Windows.Data.EnumerableSelectorAggregateFunction.GetAggregationValue(System.Object)">
+            <summary>
+            Gets the aggregation value.
+            </summary>
+            <param name="item">The item.</param>
             <returns></returns>
         </member>
         <member name="P:Telerik.Windows.Data.EnumerableSelectorAggregateFunction.SourceField">
@@ -3418,6 +3496,26 @@
         <member name="T:Telerik.Windows.Data.GroupDescriptorCollection">
             <summary>
             Represents a collection of <see cref="T:Telerik.Windows.Data.GroupDescriptor"/> objects.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Data.ItemAction">
+            <summary>
+            Represent an item action.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Data.ItemAction.Add">
+            <summary>
+            Add
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Data.ItemAction.Remove">
+            <summary>
+            Remove
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Data.ItemAction.Edit">
+            <summary>
+            Edit
             </summary>
         </member>
         <member name="T:Telerik.Windows.Data.QueryableExtensions">
@@ -3779,6 +3877,14 @@
             <param name="fieldDescriptor">The IDataFieldDescriptor.</param>
             <returns>A function that converts and formats a value according to a column settings.</returns>
         </member>
+        <member name="M:Telerik.Windows.Data.DataFieldDescriptorExtensions.CreateConvertedAndFormattedValueFunc(Telerik.Windows.Data.IDataFieldDescriptor,System.Func{System.Object,System.Object})">
+            <summary>
+            Returns a function that converts and formats a value according to a column settings.
+            </summary>
+            <param name="fieldDescriptor">The IDataFieldDescriptor.</param>
+            <param name="func">The func.</param>
+            <returns>A function that converts and formats a value according to a column settings.</returns>
+        </member>
         <member name="T:Telerik.Windows.Data.FilterOperator">
             <summary>
             Operator used in <see cref="T:Telerik.Windows.Data.FilterDescriptor"/>
@@ -3900,10 +4006,48 @@
             </summary>
             <value>The type of the member used for grouping.</value>
         </member>
+        <member name="P:Telerik.Windows.Data.GroupInfo.GroupKeyFunction">
+            <summary>
+            Returns a function that accept a data item and returns its group key,
+            for example if you supply a Player it will return his Country.
+            </summary>
+            <value>The group key function.</value>
+        </member>
+        <member name="T:Telerik.Windows.Data.GroupingImpl`2">
+            <summary>
+            Helper class used as IGrouping implementation.
+            </summary>
+            <typeparam name="TGroupKey">The type of the group key.</typeparam>
+            <typeparam name="TItem">The type of the item.</typeparam>
+        </member>
         <member name="T:Telerik.Windows.Data.QueryableCollectionViewGroup">
             <summary>
             Represents a wrapper over an AggregateFunctionsGroup that allows
             adding and removing of child items/groups.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Data.QueryableCollectionViewGroup.EnsureItems">
+            <summary>
+            Method used to lazy-load the original items. The original items will be
+            enumeratod only after someone requests them, for example when the user expands
+            a group. Once they've been enumerated, we will never need them again.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Data.QueryableCollectionViewGroup.#ctor(System.Object,System.Int32,System.Collections.IEnumerable,System.Int32,System.Boolean,Telerik.Windows.Data.AggregateResultCollection,Telerik.Windows.Data.QueryableCollectionViewGroup)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.Windows.Data.QueryableCollectionViewGroup"/> class.
+            </summary>
+            <param name="key">The group key.</param>
+            <param name="groupHashCode">The hash code of the group.</param>
+            <param name="originalItems">The original items.</param>
+            <param name="originalItemCount">The original item count.</param>
+            <param name="hasSubgroups">if set to <c>true</c> This group has child groups.</param>
+            <param name="aggregateResults">The aggregate results.</param>
+            <param name="parentGroup">The parent group.</param>
+        </member>
+        <member name="M:Telerik.Windows.Data.QueryableCollectionViewGroup.Load">
+            <summary>
+            Loads all items for the group.
             </summary>
         </member>
         <member name="M:Telerik.Windows.Data.QueryableCollectionViewGroup.GetHashCode">
@@ -3922,7 +4066,6 @@
             <returns>
             	<c>true</c> if the specified <see cref="T:System.Object"/> is equal to this instance; otherwise, <c>false</c>.
             </returns>
-            <exception cref="T:System.NullReferenceException">The <paramref name="obj"/> parameter is null.</exception>
         </member>
         <member name="M:Telerik.Windows.Data.QueryableCollectionViewGroup.ToString">
             <summary>
@@ -3931,19 +4074,6 @@
             <returns>
             A <see cref="T:System.String"/> that represents this instance.
             </returns>
-        </member>
-        <member name="P:Telerik.Windows.Data.QueryableCollectionViewGroup.AggregateResults">
-            <summary>
-            Gets the aggregate results.
-            </summary>
-            <value>The aggregate results.</value>
-        </member>
-        <member name="P:Telerik.Windows.Data.QueryableCollectionViewGroup.IsBottomLevel">
-            <summary>
-            Gets a value that indicates whether this group has any subgroups.
-            </summary>
-            <value></value>
-            <returns>true if this group is at the bottom level and does not have any subgroups; otherwise, false.</returns>
         </member>
         <member name="P:Telerik.Windows.Data.QueryableCollectionViewGroup.Key">
             <summary>
@@ -3962,6 +4092,19 @@
             if this group does not have any subgroups.
             </returns>
         </member>
+        <member name="P:Telerik.Windows.Data.QueryableCollectionViewGroup.Subgroups">
+            <summary>
+            Gets the subgroups, if <see cref="P:Telerik.Windows.Data.QueryableCollectionViewGroup.HasSubgroups"/> is true, otherwise empty collection.
+            </summary>
+            <value>The subgroups.</value>
+        </member>
+        <member name="P:Telerik.Windows.Data.QueryableCollectionViewGroup.IsBottomLevel">
+            <summary>
+            Gets a value that indicates whether this group has any subgroups.
+            </summary>
+            <value></value>
+            <returns>true if this group is at the bottom level and does not have any subgroups; otherwise, false.</returns>
+        </member>
         <member name="P:Telerik.Windows.Data.QueryableCollectionViewGroup.HasSubgroups">
             <summary>
             Gets a value indicating whether this instance has sub groups.
@@ -3970,11 +4113,12 @@
             	<c>true</c> if this instance has sub groups; otherwise, <c>false</c>.
             </value>
         </member>
-        <member name="P:Telerik.Windows.Data.QueryableCollectionViewGroup.Subgroups">
+        <member name="P:Telerik.Windows.Data.QueryableCollectionViewGroup.ParentGroupInternal">
             <summary>
-            Gets the subgroups, if <see cref="P:Telerik.Windows.Data.QueryableCollectionViewGroup.HasSubgroups"/> is true, otherwise empty collection.
+            Gets the parent group object. 
+            This property should be used for navigation purposes like walk through the group tree.
             </summary>
-            <value>The subgroups.</value>
+            <value>The parent group object.</value>
         </member>
         <member name="P:Telerik.Windows.Data.QueryableCollectionViewGroup.ParentGroup">
             <summary>
@@ -3982,10 +4126,55 @@
             </summary>
             <value>The parent group.</value>
         </member>
+        <member name="P:Telerik.Windows.Data.QueryableCollectionViewGroup.AggregateResults">
+            <summary>
+            Gets the aggregate results.
+            </summary>
+            <value>The aggregate results.</value>
+        </member>
+        <member name="P:Telerik.Windows.Data.QueryableCollectionViewGroup.RootGroup">
+            <summary>
+            Gets the root group.
+            </summary>
+            <value>The root group.</value>
+        </member>
+        <member name="M:Telerik.Windows.Data.GroupingImpl`2.GetEnumerator">
+            <summary>
+            Returns an enumerator that iterates through a collection.
+            </summary>
+            <returns>
+            An <see cref="T:System.Collections.IEnumerator"/> object that can be used to iterate through the collection.
+            </returns>
+        </member>
+        <member name="M:Telerik.Windows.Data.GroupingImpl`2.#ctor(System.Object,System.Int32,System.Collections.IEnumerable,System.Int32,System.Boolean,Telerik.Windows.Data.AggregateResultCollection,Telerik.Windows.Data.QueryableCollectionViewGroup)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.Windows.Data.GroupingImpl`2"/> class.
+            </summary>
+            <param name="key">The group key.</param>
+            <param name="groupHashCode">The hash code of the group.</param>
+            <param name="originalItems">The original items.</param>
+            <param name="originalItemCount">The original item count.</param>
+            <param name="hasSubgroups">if set to <c>true</c> This group has child groups.</param>
+            <param name="aggregateResults">The aggregate results.</param>
+            <param name="parentGroup">The parent group.</param>
+        </member>
         <member name="T:Telerik.Windows.Data.QueryableCollectionViewGroupRoot">
             <summary>
-            QueryableCollectionViewGroupRoot
+            This class is used as an entry point for all actions related to grouping (like add, remove, edit).
             </summary>
+        </member>
+        <member name="P:Telerik.Windows.Data.QueryableCollectionViewGroupRoot.IsBottomLevel">
+            <summary>
+            Gets a value that indicates whether this group has any subgroups.
+            </summary>
+            <value></value>
+            <returns>true if this group is at the bottom level and does not have any subgroups; otherwise, false.</returns>
+        </member>
+        <member name="P:Telerik.Windows.Data.QueryableCollectionViewGroupRoot.RootGroup">
+            <summary>
+            Gets the root group.
+            </summary>
+            <value>The root group.</value>
         </member>
         <member name="T:Telerik.Windows.Data.HierarchyDescriptor">
             <summary>
@@ -4444,6 +4633,32 @@
             <typeparam name="TResult">The type of the return value of the function.</typeparam>
             <param name="func">The function that will be converted.</param>
             <returns>Untyped function for the given <paramref name="func"/></returns>
+        </member>
+        <member name="M:Telerik.Windows.Data.FuncExtensions.ToUntypedTwoParameterFunc``3(System.Func{``0,``1,``2})">
+            <summary>
+            Converts the given function to untyped one.
+            </summary>
+            <typeparam name="T1">The type of the first parameter of the function.</typeparam>
+            <typeparam name="T2">The type of the second parameter of the function.</typeparam>
+            <typeparam name="TResult">The type of the return value of the function.</typeparam>
+            <param name="func">The function that will be converted.</param>
+            <returns>Untyped function for the given <paramref name="func"/></returns>
+        </member>
+        <member name="M:Telerik.Windows.Data.FuncExtensions.ToUntypedBooleanFunc``1(System.Func{``0,System.Boolean})">
+            <summary>
+            Converts the given function to untyped one.
+            </summary>
+            <param name="func">The func.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.Windows.Data.FuncExtensions.ToTypedResultFunc``2(System.Func{``0,``1})">
+            <summary>
+            Converts the given function to an untyped one that has a strongly-typed return value.
+            </summary>
+            <typeparam name="T">The type of the parameter of the function.</typeparam>
+            <typeparam name="TResult">The type of the return value of the function.</typeparam>
+            <param name="func">The function that will be converted.</param>
+            <returns>Untyped function with a strongly-typed return value for the given <paramref name="func"/></returns>
         </member>
         <member name="T:Telerik.Windows.Data.FilterCompositionLogicalOperatorConverter">
             <summary>
@@ -4909,9 +5124,9 @@
             Initializes a new instance of the <see cref="T:Telerik.Windows.Data.AggregateResult"/> class.
             </summary>
             <param name="value">The value of the result.</param>
-            <param name="count">The number of arguments used for the calculation of the result.</param>
-            <param name="function">Function that generated the result.</param>
-            <exception cref="T:System.ArgumentNullException"><c>function</c> is null.</exception>
+            <param name="itemCount">The number of arguments used for the calculation of the result.</param>
+            <param name="aggregateFunction">Function that generated the result.</param>
+            <exception cref="T:System.ArgumentNullException"><c>aggregateFunction</c> is null.</exception>
         </member>
         <member name="M:Telerik.Windows.Data.AggregateResult.#ctor(Telerik.Windows.Data.AggregateFunction)">
             <summary>
@@ -4986,6 +5201,16 @@
             Initializes a new instance of the <see cref="T:Telerik.Windows.Data.AverageFunction"/> class.
             </summary>
         </member>
+        <member name="M:Telerik.Windows.Data.AverageFunction.Merge(System.Object,Telerik.Windows.Data.AggregateResultMergeAction,Telerik.Windows.Data.AggregateResult,Telerik.Windows.Data.QueryableCollectionViewGroup)">
+            <summary>
+            Merges the specified item into the aggregate result according to the specified action
+            </summary>
+            <param name="item">The item.</param>
+            <param name="mergeAction">The action.</param>
+            <param name="originalAggregateResult">The original aggregate result.</param>
+            <param name="group">The group which the item is being added to or removed from.</param>
+            <returns>The new value of the aggregate result.</returns>
+        </member>
         <member name="P:Telerik.Windows.Data.AverageFunction.AggregateMethodName">
             <summary>
             Gets the the Average method name.
@@ -5001,6 +5226,16 @@
             <summary>
             Initializes a new instance of the <see cref="T:Telerik.Windows.Data.CountFunction"/> class.
             </summary>
+        </member>
+        <member name="M:Telerik.Windows.Data.CountFunction.Merge(System.Object,Telerik.Windows.Data.AggregateResultMergeAction,Telerik.Windows.Data.AggregateResult,Telerik.Windows.Data.QueryableCollectionViewGroup)">
+            <summary>
+            Merges the specified item into the aggregate result according to the specified action
+            </summary>
+            <param name="item">The item.</param>
+            <param name="mergeAction">The action.</param>
+            <param name="originalAggregateResult">The original aggregate result.</param>
+            <param name="group">The group which the item is being added to or removed from.</param>
+            <returns>The new value of the aggregate result.</returns>
         </member>
         <member name="P:Telerik.Windows.Data.CountFunction.AggregateMethodName">
             <summary>
@@ -5018,6 +5253,16 @@
             Initializes a new instance of the <see cref="T:Telerik.Windows.Data.FirstFunction"/> class.
             </summary>
         </member>
+        <member name="M:Telerik.Windows.Data.FirstFunction.Merge(System.Object,Telerik.Windows.Data.AggregateResultMergeAction,Telerik.Windows.Data.AggregateResult,Telerik.Windows.Data.QueryableCollectionViewGroup)">
+            <summary>
+            Merges the specified item into the aggregate result according to the specified action
+            </summary>
+            <param name="item">The item.</param>
+            <param name="mergeAction">The action.</param>
+            <param name="originalAggregateResult">The original aggregate result.</param>
+            <param name="group">The group which the item is being added to or removed from.</param>
+            <returns>The new value of the aggregate result.</returns>
+        </member>
         <member name="P:Telerik.Windows.Data.FirstFunction.AggregateMethodName">
             <summary>
             Gets the the First method name.
@@ -5033,6 +5278,16 @@
             <summary>
             Initializes a new instance of the <see cref="T:Telerik.Windows.Data.LastFunction"/> class.
             </summary>
+        </member>
+        <member name="M:Telerik.Windows.Data.LastFunction.Merge(System.Object,Telerik.Windows.Data.AggregateResultMergeAction,Telerik.Windows.Data.AggregateResult,Telerik.Windows.Data.QueryableCollectionViewGroup)">
+            <summary>
+            Merges the specified item into the aggregate result according to the specified action
+            </summary>
+            <param name="item">The item.</param>
+            <param name="mergeAction">The action.</param>
+            <param name="originalAggregateResult">The original aggregate result.</param>
+            <param name="group">The group which the item is being added to or removed from.</param>
+            <returns>The new value of the aggregate result.</returns>
         </member>
         <member name="P:Telerik.Windows.Data.LastFunction.AggregateMethodName">
             <summary>
@@ -5050,6 +5305,16 @@
             Initializes a new instance of the <see cref="T:Telerik.Windows.Data.MaxFunction"/> class.
             </summary>
         </member>
+        <member name="M:Telerik.Windows.Data.MaxFunction.Merge(System.Object,Telerik.Windows.Data.AggregateResultMergeAction,Telerik.Windows.Data.AggregateResult,Telerik.Windows.Data.QueryableCollectionViewGroup)">
+            <summary>
+            Merges the specified item into the aggregate result according to the specified action
+            </summary>
+            <param name="item">The item.</param>
+            <param name="mergeAction">The action.</param>
+            <param name="originalAggregateResult">The original aggregate result.</param>
+            <param name="group">The group which the item is being added to or removed from.</param>
+            <returns>The new value of the aggregate result.</returns>
+        </member>
         <member name="P:Telerik.Windows.Data.MaxFunction.AggregateMethodName">
             <summary>
             Gets the the Max method name.
@@ -5065,6 +5330,16 @@
             <summary>
             Initializes a new instance of the <see cref="T:Telerik.Windows.Data.MinFunction"/> class.
             </summary>
+        </member>
+        <member name="M:Telerik.Windows.Data.MinFunction.Merge(System.Object,Telerik.Windows.Data.AggregateResultMergeAction,Telerik.Windows.Data.AggregateResult,Telerik.Windows.Data.QueryableCollectionViewGroup)">
+            <summary>
+            Merges the specified item into the aggregate result according to the specified action
+            </summary>
+            <param name="item">The item.</param>
+            <param name="mergeAction">The action.</param>
+            <param name="originalAggregateResult">The original aggregate result.</param>
+            <param name="group">The group which the item is being added to or removed from.</param>
+            <returns>The new value of the aggregate result.</returns>
         </member>
         <member name="P:Telerik.Windows.Data.MinFunction.AggregateMethodName">
             <summary>
@@ -5112,6 +5387,16 @@
             <summary>
             Initializes a new instance of the <see cref="T:Telerik.Windows.Data.SumFunction"/> class.
             </summary>
+        </member>
+        <member name="M:Telerik.Windows.Data.SumFunction.Merge(System.Object,Telerik.Windows.Data.AggregateResultMergeAction,Telerik.Windows.Data.AggregateResult,Telerik.Windows.Data.QueryableCollectionViewGroup)">
+            <summary>
+            Merges the specified item into the aggregate result according to the specified action
+            </summary>
+            <param name="item">The item.</param>
+            <param name="mergeAction">The action.</param>
+            <param name="originalAggregateResult">The original aggregate result.</param>
+            <param name="group">The group which the item is being added to or removed from.</param>
+            <returns>The new value of the aggregate result.</returns>
         </member>
         <member name="P:Telerik.Windows.Data.SumFunction.AggregateMethodName">
             <summary>

@@ -323,7 +323,7 @@
             </summary>
             <returns></returns>
         </member>
-        <member name="M:Telerik.Windows.Controls.GridView.GridViewCell.NotifyPropertyChanged(System.Windows.DependencyObject,System.String,System.Windows.DependencyPropertyChangedEventArgs,Telerik.Windows.Controls.GridView.NotificationTarget)">
+        <member name="M:Telerik.Windows.Controls.GridView.GridViewCell.NotifyPropertyChanged(System.Windows.DependencyObject,System.String,System.Windows.DependencyPropertyChangedEventArgs,Telerik.Windows.Controls.GridView.UpdateTarget)">
             <summary>
                 General notification for DependencyProperty changes from the grid or from columns.
             </summary>
@@ -1332,7 +1332,7 @@
             </summary>
             <param name="e">The <see cref="T:System.Windows.Input.KeyEventArgs"/> that contains the event data.</param>
         </member>
-        <member name="M:Telerik.Windows.Controls.GridView.GridViewDataControl.OnArrowKeyDown(Telerik.Windows.Controls.GridViewCellInfo,Telerik.Windows.Controls.GridView.FocusNavigationDirection)">
+        <member name="M:Telerik.Windows.Controls.GridView.GridViewDataControl.OnArrowKeyDown(Telerik.Windows.Controls.GridViewCellInfo,Telerik.Windows.Controls.GridView.FocusNavigationDirection,System.Windows.Input.KeyEventArgs)">
             <summary>
                 Helper method which handles the arrow key down
             </summary>
@@ -1743,7 +1743,7 @@
                 Notifies the Row and Row Headers about property changes.
             </summary>
         </member>
-        <member name="M:Telerik.Windows.Controls.GridView.GridViewDataControl.NotifyPropertyChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs,Telerik.Windows.Controls.GridView.NotificationTarget)">
+        <member name="M:Telerik.Windows.Controls.GridView.GridViewDataControl.NotifyPropertyChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs,Telerik.Windows.Controls.GridView.UpdateTarget)">
             <summary>
                 General notification for DependencyProperty changes from the grid or from columns.
             </summary>
@@ -1754,7 +1754,7 @@
                 can check the source of the change using the "d" parameter.
             </remarks>
         </member>
-        <member name="M:Telerik.Windows.Controls.GridView.GridViewDataControl.NotifyPropertyChanged(System.Windows.DependencyObject,System.String,System.Windows.DependencyPropertyChangedEventArgs,Telerik.Windows.Controls.GridView.NotificationTarget)">
+        <member name="M:Telerik.Windows.Controls.GridView.GridViewDataControl.NotifyPropertyChanged(System.Windows.DependencyObject,System.String,System.Windows.DependencyPropertyChangedEventArgs,Telerik.Windows.Controls.GridView.UpdateTarget)">
             <summary>
                 General notification for DependencyProperty changes from the grid or from columns.
             </summary>
@@ -3225,6 +3225,32 @@
             This is a dependency object used to store column's specific data.
             </summary>
         </member>
+        <member name="M:Telerik.Windows.Controls.GridViewColumn.OnPropertyChanged(System.ComponentModel.PropertyChangedEventArgs)">
+            <summary>
+            Raises the <see cref="E:Telerik.Windows.Controls.GridViewColumn.PropertyChanged"/> event.
+            </summary>
+            <param name="args">The <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.GridViewColumn.OnPropertyChanged(System.String)">
+            <summary>
+            Raises the <see cref="E:Telerik.Windows.Controls.GridViewColumn.PropertyChanged"/> event.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.GridViewColumn.WidthProperty">
+            <summary>
+                The DependencyProperty that represents the Width property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.GridViewColumn.MinWidthProperty">
+            <summary>
+                The DependencyProperty that represents the MinWidth property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.GridViewColumn.MaxWidthProperty">
+            <summary>
+                The DependencyProperty that represents the MaxWidth property.
+            </summary>
+        </member>
         <member name="F:Telerik.Windows.Controls.GridViewColumn.FooterCellStyleProperty">
             <summary>
             Identifies the <see cref="P:Telerik.Windows.Controls.GridViewColumn.FooterCellStyle"/> dependency property.
@@ -3255,7 +3281,7 @@
         <member name="M:Telerik.Windows.Controls.GridViewColumn.OnCoerceIsFrozen(System.Windows.DependencyObject,System.Object)">
             <summary>
             Coercion call back for IsFrozenProperty. Ensures that IsFrozen is set as per the 
-            DataGrid's FrozenColumnCount property.
+            Grid's FrozenColumnCount property.
             </summary>
             <param name="d"></param>
             <param name="baseValue"></param>
@@ -3523,154 +3549,9 @@
             	<c>true</c> if the data represented by the column can be filtered automatically; otherwise, <c>false</c>.
             </returns>
         </member>
-        <member name="M:Telerik.Windows.Controls.GridViewColumn.OnPropertyChanged(System.ComponentModel.PropertyChangedEventArgs)">
-            <summary>
-            Raises the <see cref="E:Telerik.Windows.Controls.GridViewColumn.PropertyChanged"/> event.
-            </summary>
-            <param name="args">The <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance containing the event data.</param>
-        </member>
-        <member name="M:Telerik.Windows.Controls.GridViewColumn.OnPropertyChanged(System.String)">
-            <summary>
-            Raises the <see cref="E:Telerik.Windows.Controls.GridViewColumn.PropertyChanged"/> event.
-            </summary>
-        </member>
-        <member name="F:Telerik.Windows.Controls.GridViewColumn.WidthProperty">
-            <summary>
-                The DependencyProperty that represents the Width property.
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.GridViewColumn.SetWidthInternal(Telerik.Windows.Controls.GridViewLength)">
-            <summary>
-            Internal method which sets the column's width
-            without actual redistribution of widths among other
-            columns
-            </summary>
-            <param name="width"></param>
-        </member>
-        <member name="M:Telerik.Windows.Controls.GridViewColumn.OnWidthPropertyChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
-            <summary>
-            Property changed call back for Width property which notification propagation
-            and does the redistribution of widths among other columns if needed
-            </summary>
-            <param name="d"></param>
-            <param name="e"></param>
-        </member>
-        <member name="F:Telerik.Windows.Controls.GridViewColumn.MinWidthProperty">
-            <summary>
-                The DependencyProperty that represents the MinWidth property.
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.GridViewColumn.OnMinWidthPropertyChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
-            <summary>
-            Property changed call back for MinWidth property which notification propagation
-            and does the redistribution of widths among other columns if needed
-            </summary>
-            <param name="d"></param>
-            <param name="e"></param>
-        </member>
-        <member name="F:Telerik.Windows.Controls.GridViewColumn.MaxWidthProperty">
-            <summary>
-                The DependencyProperty that represents the MaxWidth property.
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.GridViewColumn.OnMaxWidthPropertyChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
-            <summary>
-            Property changed call back for MaxWidth property which notification propagation
-            and does the redistribution of widths among other columns if needed
-            </summary>
-            <param name="d"></param>
-            <param name="e"></param>
-        </member>
-        <member name="M:Telerik.Windows.Controls.GridViewColumn.CoerceDesiredOrDisplayWidthValue(System.Double,System.Double,Telerik.Windows.Controls.GridViewLengthUnitType)">
-            <summary>
-                Helper method which coerces the DesiredValue or DisplayValue
-                of the width.
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.GridViewColumn.OnCoerceWidth(System.Windows.DependencyObject,System.Object)">
-            <summary>
-                Coerces the WidthProperty based on the DataGrid transferred property rules
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.GridViewColumn.OnCoerceMinWidth(System.Windows.DependencyObject,System.Object)">
-            <summary>
-                Coerces the MinWidthProperty based on the GridViewDataControl transferred property rules
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.GridViewColumn.OnCoerceMaxWidth(System.Windows.DependencyObject,System.Object)">
-            <summary>
-                Coerces the MaxWidthProperty based on the GridViewDataControl transferred property rules
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.GridViewColumn.ValidateMinWidth(System.Object)">
-            <summary>
-                Validates that the minimum width is an acceptable value
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.GridViewColumn.ValidateMaxWidth(System.Object)">
-            <summary>
-                Validates that the maximum width is an acceptable value
-            </summary>
-        </member>
-        <member name="F:Telerik.Windows.Controls.GridViewColumn.ActualWidthPropertyKey">
-            <summary>
-            Identifies the ActualWidth read only dependency property.
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.GridViewColumn.GetConstraintWidth(System.Boolean)">
-            <summary>
-                Retrieve the proper measure constraint for cells.
-            </summary>
-            <param name="isHeader">Whether a header constraint or a normal cell constraint is requested.</param>
-            <returns>The value to use as the width when creating a measure constraint.</returns>
-        </member>
-        <member name="M:Telerik.Windows.Controls.GridViewColumn.UpdateDesiredWidthForAutoColumn(System.Boolean,System.Double)">
-            <summary>
-                Notifies the column of a cell's desired width.
-                Updates the actual width if necessary
-            </summary>
-            <param name="isHeader">Whether the cell is a header or not.</param>
-            <param name="pixelWidth">The desired size of the cell.</param>
-        </member>
-        <member name="M:Telerik.Windows.Controls.GridViewColumn.UpdateWidthForStarColumn(System.Double,System.Double,System.Double)">
-            <summary>
-                Notifies the column that Width="*" columns have a new actual width.
-            </summary>
-        </member>
         <member name="F:Telerik.Windows.Controls.GridViewColumn.DisplayIndexProperty">
             <summary>
             Identifies the <see cref="P:Telerik.Windows.Controls.GridViewColumn.DisplayIndex"/> dependency property.
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.GridViewColumn.OnCoerceDisplayIndex(System.Windows.DependencyObject,System.Object)">
-            <summary>
-                We use the coersion callback to validate that the DisplayIndex of a column is between 0 and GridViewDataControl.Columns.Count
-                The default value is -1; this value is only legal as the default or when the Column is not attached to a GridViewDataControl.
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.GridViewColumn.DisplayIndexChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
-            <summary>
-                Notifies the GridViewDataControl that the display index for this column changed.
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.GridViewColumn.SyncProperties">
-            <summary>
-                Ensures that any properties that may be influenced by a change to the GridViewDataControl are syncronized.
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.GridViewColumn.OnNotifyCellPropertyChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
-            <summary>
-                Notifies the DataGrid and the Cells about property changes.
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.GridViewColumn.OnNotifyColumnHeaderPropertyChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
-            <summary>
-                Notifies the DataGrid and the Column Headers about property changes.
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.GridViewColumn.NotifyPropertyChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs,Telerik.Windows.Controls.GridView.NotificationTarget)">
-            <summary>
-              General notification for DependencyProperty changes from the grid and/or column.  
             </summary>
         </member>
         <member name="M:Telerik.Windows.Controls.GridViewColumn.OnCopyingCellClipboardContent(System.Object)">
@@ -3686,6 +3567,31 @@
             </summary>
             <param name="item">The data context for the selected element.</param>
             <param name="value">The clipboard data for the selected cell.</param>
+        </member>
+        <member name="E:Telerik.Windows.Controls.GridViewColumn.PropertyChanged">
+            <summary>
+            Occurs when a property value changes.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.GridViewColumn.Width">
+            <summary>
+                Specifies the width of the header and cells within this column.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.GridViewColumn.MinWidth">
+            <summary>
+                Specifies the minimum width of the header and cells within this column.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.GridViewColumn.MaxWidth">
+            <summary>
+                Specifies the maximum width of the header and cells within this column.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.GridViewColumn.ActualWidth">
+            <summary>
+                 This is the width that cells and headers should use in Arrange.
+            </summary>
         </member>
         <member name="P:Telerik.Windows.Controls.GridViewColumn.IsAutoGenerated">
             <summary>
@@ -3986,41 +3892,10 @@
             Gets the owning grid.
             </summary>
         </member>
-        <member name="E:Telerik.Windows.Controls.GridViewColumn.PropertyChanged">
-            <summary>
-            Occurs when a property value changes.
-            </summary>
-        </member>
-        <member name="P:Telerik.Windows.Controls.GridViewColumn.Width">
-            <summary>
-                Specifies the width of the header and cells within this column.
-            </summary>
-        </member>
-        <member name="P:Telerik.Windows.Controls.GridViewColumn.MinWidth">
-            <summary>
-                Specifies the minimum width of the header and cells within this column.
-            </summary>
-        </member>
-        <member name="P:Telerik.Windows.Controls.GridViewColumn.MaxWidth">
-            <summary>
-                Specifies the maximum width of the header and cells within this column.
-            </summary>
-        </member>
-        <member name="P:Telerik.Windows.Controls.GridViewColumn.ActualWidth">
-            <summary>
-                 This is the width that cells and headers should use in Arrange.
-            </summary>
-        </member>
         <member name="P:Telerik.Windows.Controls.GridViewColumn.DisplayIndex">
             <summary>
                 Specifies the display index of this column.
             </summary>
-            <remarks>
-                A lower display index means a column will appear first (to the left) of columns with a higher display index. 
-                Allowable values are from 0 to num columns - 1. (-1 is legal only as the default value and is modified to something else
-                when the column is added to a GridViewDataControl's column collection). DataGrid enforces that no two columns have the same display index;
-                changing the display index of a column will cause the index of other columns to adjust as well.
-            </remarks>
         </member>
         <member name="P:Telerik.Windows.Controls.GridViewColumn.GroupHeaderFormatString">
             <summary>
@@ -4118,6 +3993,11 @@
             <returns>
             	<c>true</c> if the data represented by the column can be grouped; otherwise, <c>false</c>.
             </returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.GridViewBoundColumnBase.PrepareValue(System.Object)">
+            <summary>
+            Additional value prepare.
+            </summary>
         </member>
         <member name="M:Telerik.Windows.Controls.GridViewBoundColumnBase.GetCellContent(System.Object)">
             <summary>
@@ -4255,7 +4135,7 @@
             Dependency Property for IsThreeState Property
             </summary>
         </member>
-        <member name="F:Telerik.Windows.Controls.GridViewCheckBoxColumn.AutoSelectProperty">
+        <member name="F:Telerik.Windows.Controls.GridViewCheckBoxColumn.AutoSelectOnEditProperty">
             <summary>
             Identifies the <see cref="P:Telerik.Windows.Controls.GridViewCheckBoxColumn.AutoSelectOnEdit"/> dependency property.
             </summary>
@@ -6314,423 +6194,40 @@
                 Clear's all the columns from this collection and resets DisplayIndex to its default value.
             </summary>
         </member>
-        <member name="M:Telerik.Windows.Controls.GridViewColumnCollectionInternal.ColumnFromDisplayIndex(System.Int32)">
-            <summary>
-                Returns the GridViewColumn with the given DisplayIndex
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.GridViewColumnCollectionInternal.CoerceDefaultDisplayIndex(Telerik.Windows.Controls.GridViewColumn,System.Int32)">
-            <summary>
-                This takes a column and checks that if its DisplayIndex is the default value.  If so, it coerces
-                the DisplayIndex to be its location in the columns collection.
-                We can't do this in CoerceValue because the callback isn't called for default values.  Instead we call this
-                whenever a column is added or replaced in the collection or when the DisplayIndex of an existing column has changed.
-            </summary>
-            <param name="column">The column</param>
-            <param name="newDisplayIndex">The DisplayIndex the column should have</param>
-            <returns>The DisplayIndex of the column</returns>
-        </member>
-        <member name="M:Telerik.Windows.Controls.GridViewColumnCollectionInternal.OnColumnDisplayIndexChanged(Telerik.Windows.Controls.GridViewColumn,System.Int32,System.Int32)">
-            <summary>
-                Called when a column's display index has changed.  
-            <param name="oldDisplayIndex">the old display index of the column</param>
-            <param name="newDisplayIndex">the new display index of the column</param>
-            <param name="column">the column which display index changed</param>
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.GridViewColumnCollectionInternal.UpdateDisplayIndexForChangedColumn(System.Int32,System.Int32)">
-            <summary>
-                Called when the DisplayIndex for a single column has changed.  The other columns may have conflicting display indices, so
-                we walk through them and adjust.  This method does nothing if we're already updating display index as part of a larger
-                operation (such as add or remove).  This is both for re-entrancy and to avoid modifying the display index map as we walk over
-                the columns.
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.GridViewColumnCollectionInternal.UpdateDisplayIndexForNewColumns(System.Collections.IList,System.Int32)">
-            <summary>
-                Sets the DisplayIndex on all newly inserted or added columns and updates the existing columns as necessary.  
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.GridViewColumnCollectionInternal.UpdateDisplayIndexForRemovedColumns(System.Collections.IList,System.Int32)">
-            <summary>
-                Updates the display index for all columns affected by the removal of a set of columns.  
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.GridViewColumnCollectionInternal.UpdateDisplayIndexForReplacedColumn(System.Collections.IList,System.Collections.IList)">
-            <summary>
-                Updates the display index for the column that was just replaced and adjusts the other columns if necessary
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.GridViewColumnCollectionInternal.ClearDisplayIndex(System.Collections.IList,System.Collections.IList)">
-            <summary>
-                Clears the DisplayIndexProperty on each of the columns.
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.GridViewColumnCollectionInternal.IsDisplayIndexValid(Telerik.Windows.Controls.GridViewColumn,System.Int32,System.Boolean)">
-            <summary>
-                Returns true if the display index is valid for the given column
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.GridViewColumnCollectionInternal.InsertInDisplayIndexMap(System.Int32,System.Int32)">
-            <summary>
-                Inserts the given columnIndex in the DisplayIndexMap at the given display index.
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.GridViewColumnCollectionInternal.RemoveFromDisplayIndexMap(System.Int32)">
-            <summary>
-                Removes the given column index from the DisplayIndexMap
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.GridViewColumnCollectionInternal.ValidateDisplayIndex(Telerik.Windows.Controls.GridViewColumn,System.Int32)">
-            <summary>
-                Throws an ArgumentOutOfRangeException if the given displayIndex is invalid for the given column.
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.GridViewColumnCollectionInternal.ValidateDisplayIndex(Telerik.Windows.Controls.GridViewColumn,System.Int32,System.Boolean)">
-            <summary>
-                Throws an ArgumentOutOfRangeException if the given displayIndex is invalid for the given column.
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.GridViewColumnCollectionInternal.OnGridViewDataControlFrozenColumnCountChanged(System.Int32,System.Int32)">
-            <summary>
-                Method which sets / resets the IsFrozen property of columns based on GridViewDataControl's FrozenColumnCount.
-                It is possible that the FrozenColumnCount change could be a result of column count itself, in
-                which case only the columns which are in the collection at the moment are to be considered.
-            </summary>
-            <param name="oldFrozenCount"></param>
-            <param name="newFrozenCount"></param>
-        </member>
-        <member name="M:Telerik.Windows.Controls.GridViewColumnCollectionInternal.HasVisibleStarColumnsInternal(Telerik.Windows.Controls.GridViewColumn,System.Double@)">
-            <summary>
-                Method which determines if there are any
-                star columns in GridViewDataControl except the given column and also returns perStarWidth
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.GridViewColumnCollectionInternal.HasVisibleStarColumnsInternal(System.Double@)">
-            <summary>
-                Method which determines if there are any
-                star columns in GridViewDataControl and also returns perStarWidth
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.GridViewColumnCollectionInternal.HasVisibleStarColumnsInternal(Telerik.Windows.Controls.GridViewColumn)">
-            <summary>
-                Method which determines if there are any
-                star columns in GridViewDataControl except the given column
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.GridViewColumnCollectionInternal.RecomputeStarColumnWidths">
-            <summary>
-                Method which redistributes the width of star columns among them selves
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.GridViewColumnCollectionInternal.ComputeStarColumnWidths(System.Double)">
-            <summary>
-                Helper method which computes the widths of all the star columns
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.GridViewColumnCollectionInternal.OnCellsPanelHorizontalOffsetChanged(System.Windows.DependencyPropertyChangedEventArgs)">
-            <summary>
-                Method which handles the column widths computation for CellsPanelHorizontalOffset change
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.GridViewColumnCollectionInternal.InvalidateAverageColumnWidth">
-            <summary>
-                Helper method to invalidate the average width computation
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.GridViewColumnCollectionInternal.ComputeAverageColumnWidth">
-            <summary>
-                Helper method which determines the average with of all the columns
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.GridViewColumnCollectionInternal.InvalidateColumnWidthsComputation">
-            <summary>
-                Helper method to invalidate the column width computation
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.GridViewColumnCollectionInternal.ComputeColumnWidths(System.Object)">
-            <summary>
-                Helper method which computes the widths of the columns. Used as a callback
-                to dispatcher operation
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.GridViewColumnCollectionInternal.ComputeColumnWidths">
-            <summary>
-                Method which computes the widths of the columns
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.GridViewColumnCollectionInternal.InitializeColumnDisplayValues">
-            <summary>
-                Method which initializes the column width's diplay value to its desired value
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.GridViewColumnCollectionInternal.RedistributeColumnWidthsOnMinWidthChangeOfColumn(Telerik.Windows.Controls.GridViewColumn,System.Double)">
-            <summary>
-                Method which redistributes the column widths based on change in MinWidth of a column
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.GridViewColumnCollectionInternal.RedistributeColumnWidthsOnMaxWidthChangeOfColumn(Telerik.Windows.Controls.GridViewColumn,System.Double)">
-            <summary>
-                Method which redistributes the column widths based on change in MaxWidth of a column
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.GridViewColumnCollectionInternal.RedistributeColumnWidthsOnWidthChangeOfColumn(Telerik.Windows.Controls.GridViewColumn,Telerik.Windows.Controls.GridViewLength)">
-            <summary>
-                Method which redistributes the column widths based on change in Width of a column
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.GridViewColumnCollectionInternal.RedistributeColumnWidthsOnAvailableSpaceChange(System.Double,System.Double)">
-            <summary>
-                Method which redistributes the column widths based on change in available space of a column
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.GridViewColumnCollectionInternal.ExpandAllColumnWidthsToDesiredValue">
-            <summary>
-                Method which expands the display values of widths of all columns to
-                their desired values. Usually used when the last star column's width
-                is changed to non-star
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.GridViewColumnCollectionInternal.RedistributeColumnWidthsOnNonStarWidthChange(Telerik.Windows.Controls.GridViewColumn,Telerik.Windows.Controls.GridViewLength)">
-            <summary>
-                Method which redistributes widths of columns on change of a column's width
-                when GridViewDataControl itself has star columns, but neither the oldwidth or the newwidth
-                of changed column is star.
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.GridViewColumnCollectionInternal.DistributeSpaceAmongColumns(System.Double)">
-            <summary>
-                Method which distributes a given amount of width among all the columns
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.GridViewColumnCollectionInternal.DistributeSpaceAmongNonStarColumns(System.Double)">
-            <summary>
-                Helper method which distributes a given amount of width among all non star columns
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.GridViewColumnCollectionInternal.OnColumnResizeStarted">
-            <summary>
-                Method which is called when user resize of column starts
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.GridViewColumnCollectionInternal.OnColumnResizeCompleted(System.Boolean)">
-            <summary>
-                Method which is called when user resize of column ends
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.GridViewColumnCollectionInternal.RecomputeColumnWidthsOnColumnResize(Telerik.Windows.Controls.GridViewColumn,System.Double,System.Boolean)">
-            <summary>
-                Method which recomputes the widths of columns on resize of column
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.GridViewColumnCollectionInternal.RecomputeColumnWidthsOnColumnPositiveResize(System.Double,System.Int32,System.Boolean)">
-            <summary>
-                Method which computes widths of columns on positive resize of a column
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.GridViewColumnCollectionInternal.RecomputeStarColumnWidthsOnColumnPositiveResize(System.Double,System.Int32,System.Double,System.Boolean)">
-            <summary>
-                Method which resizes the widths of star columns on positive resize of a column
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.GridViewColumnCollectionInternal.GetStarFactorsForPositiveResize(System.Int32,System.Double@)">
-            <summary>
-                Method which returns the total of star factors of the columns which could be resized on positive resize of a column
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.GridViewColumnCollectionInternal.ReallocateStarValuesForPositiveResize(System.Int32,System.Double,System.Double,System.Double,System.Double,System.Boolean)">
-            <summary>
-                Method which reallocated the star factors of star columns on 
-                positive resize of a column
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.GridViewColumnCollectionInternal.RecomputeNonStarColumnWidthsOnColumnPositiveResize(System.Double,System.Int32,System.Boolean)">
-            <summary>
-                Method which recomputes widths of non star columns on positive resize of a column
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.GridViewColumnCollectionInternal.RecomputeColumnWidthsOnColumnNegativeResize(System.Double,System.Int32,System.Boolean)">
-            <summary>
-                Method which recomputes the widths of columns on negative resize of a column
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.GridViewColumnCollectionInternal.RecomputeNonStarColumnWidthsOnColumnNegativeResize(System.Double,System.Int32,System.Boolean)">
-            <summary>
-                Method which recomputes widths of non star columns on negative resize of a column
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.GridViewColumnCollectionInternal.RecomputeStarColumnWidthsOnColumnNegativeResize(System.Double,System.Int32,System.Double,System.Boolean)">
-            <summary>
-                Method which recomputes widths on star columns on negative resize of a column
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.GridViewColumnCollectionInternal.GetStarFactorsForNegativeResize(System.Int32,System.Double@)">
-            <summary>
-                Method which returns the total star factors of columns which resize of negative resize of a column
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.GridViewColumnCollectionInternal.ReallocateStarValuesForNegativeResize(System.Int32,System.Double,System.Double,System.Double,System.Double,System.Boolean)">
-            <summary>
-                Method which reallocates star factors of columns on negative resize of a column
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.GridViewColumnCollectionInternal.SetResizedColumnWidth(Telerik.Windows.Controls.GridViewColumn,System.Double,System.Boolean)">
-            <summary>
-                Helper method which sets the width of the column which is currently getting resized
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.GridViewColumnCollectionInternal.GiveAwayWidthToColumns(Telerik.Windows.Controls.GridViewColumn,System.Double)">
-            <summary>
-                Method which tries to give away the given amount of width 
-                among all the columns except the ignored column
-            </summary>
-            <param name="ignoredColumn">The column which is giving away the width</param>
-            <param name="giveAwayWidth">The amount of giveaway width</param>
-        </member>
-        <member name="M:Telerik.Windows.Controls.GridViewColumnCollectionInternal.GiveAwayWidthToColumns(Telerik.Windows.Controls.GridViewColumn,System.Double,System.Boolean)">
-            <summary>
-                Method which tries to give away the given amount of width 
-                among all the columns except the ignored column
-            </summary>
-            <param name="ignoredColumn">The column which is giving away the width</param>
-            <param name="giveAwayWidth">The amount of giveaway width</param>
-            <param name="recomputeStars">Should recompute the star widths</param>
-        </member>
-        <member name="M:Telerik.Windows.Controls.GridViewColumnCollectionInternal.GiveAwayWidthToNonStarColumns(Telerik.Windows.Controls.GridViewColumn,System.Double)">
-            <summary>
-                Method which tries to give away the given amount of width
-                among all non star columns except the ignored column
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.GridViewColumnCollectionInternal.FindAverageLaggingWidthOfNonStarColumns(Telerik.Windows.Controls.GridViewColumn,System.Int32@)">
-            <summary>
-                Helper method which finds the minimum non-zero difference between displayvalue and desiredvalue
-                among all non star columns
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.GridViewColumnCollectionInternal.GiveAwayWidthToEveryNonStarColumn(Telerik.Windows.Controls.GridViewColumn,System.Double)">
-            <summary>
-                Helper method which gives away the given amount of width to
-                every non star column whose display value is less than its desired value
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.GridViewColumnCollectionInternal.GiveAwayWidthToScrollViewerExcess(System.Double,System.Boolean)">
-            <summary>
-                Helper method which gives away width to scroll viewer
-                if its extent width is greater than viewport width
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.GridViewColumnCollectionInternal.TakeAwayUnusedSpaceOnColumnPositiveResize(System.Double,System.Int32,System.Boolean)">
-            <summary>
-                Method which tries to get the unused column space when another column tries to positive resize
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.GridViewColumnCollectionInternal.TakeAwayWidthFromUnusedSpace(System.Boolean,System.Double,System.Double)">
-            <summary>
-                Helper method which tries to take away width from unused space
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.GridViewColumnCollectionInternal.TakeAwayWidthFromUnusedSpace(System.Boolean,System.Double)">
-            <summary>
-                Helper method which tries to take away width from unused space
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.GridViewColumnCollectionInternal.TakeAwayWidthFromColumns(Telerik.Windows.Controls.GridViewColumn,System.Double,System.Boolean)">
-            <summary>
-                Method which tries to take away the given amount of width from columns
-                except the ignored column
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.GridViewColumnCollectionInternal.TakeAwayWidthFromColumns(Telerik.Windows.Controls.GridViewColumn,System.Double,System.Boolean,System.Double)">
-            <summary>
-                Method which tries to take away the given amount of width from columns
-                except the ignored column
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.GridViewColumnCollectionInternal.TakeAwayWidthFromStarColumns(Telerik.Windows.Controls.GridViewColumn,System.Double)">
-            <summary>
-                Method which tries to take away the given amount of width form
-                the star columns
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.GridViewColumnCollectionInternal.TakeAwayWidthFromNonStarColumns(Telerik.Windows.Controls.GridViewColumn,System.Double)">
-            <summary>
-                Method which tries to take away the given amount of width
-                among all non star columns except the ignored column
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.GridViewColumnCollectionInternal.FindMinimumExcessWidthOfNonStarColumns(Telerik.Windows.Controls.GridViewColumn,System.Int32@)">
-            <summary>
-                Helper method which finds the minimum non-zero difference between displayvalue and minwidth
-                among all non star columns
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.GridViewColumnCollectionInternal.TakeAwayWidthFromEveryNonStarColumn(Telerik.Windows.Controls.GridViewColumn,System.Double)">
-            <summary>
-                Helper method which takes away the given amount of width from
-                every non star column whose display value is greater than its minwidth
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.GridViewColumnCollectionInternal.InvalidateColumnRealization(System.Boolean)">
+        <member name="M:Telerik.Windows.Controls.GridViewColumnCollectionInternal.InvalidateColumn(System.Boolean)">
             <summary>
                 Called when properties which affect the realized columns namely
                 Column Width, FrozenColumnCount, DisplayIndex etc. are changed.
             </summary>
         </member>
-        <member name="P:Telerik.Windows.Controls.GridViewColumnCollectionInternal.DisplayIndexMap">
-            <summary>
-                A map of display index (key) to index in the column collection (value).  Used to quickly find a column from its display index.
-            </summary>
-        </member>
-        <member name="P:Telerik.Windows.Controls.GridViewColumnCollectionInternal.IsUpdatingDisplayIndex">
-            <summary>
-                Used to guard against re-entrancy when changing the DisplayIndex of a column.
-            </summary>
-        </member>
-        <member name="P:Telerik.Windows.Controls.GridViewColumnCollectionInternal.HasVisibleStarColumns">
-            <summary>
-                Property which determines if there are any star columns
-                in the GridViewDataControl.
-            </summary>
-        </member>
-        <member name="P:Telerik.Windows.Controls.GridViewColumnCollectionInternal.AverageColumnWidth">
-            <summary>
-                Property holding the average widht of columns
-            </summary>
-        </member>
-        <member name="P:Telerik.Windows.Controls.GridViewColumnCollectionInternal.ColumnWidthsComputationPending">
-            <summary>
-                Property indicating whether the column width computation opertaion is pending
-            </summary>
-        </member>
-        <member name="P:Telerik.Windows.Controls.GridViewColumnCollectionInternal.RebuildRealizedColumnsBlockListForNonVirtualizedRows">
+        <member name="P:Telerik.Windows.Controls.GridViewColumnCollectionInternal.RecreateColumnsBlockListForNonVirtualizedRows">
             <summary>
                 Property which indicates that the RealizedColumnsBlockList
                 is dirty and needs to be rebuilt for non-column virtualized rows
             </summary>
         </member>
-        <member name="P:Telerik.Windows.Controls.GridViewColumnCollectionInternal.RealizedColumnsBlockListForNonVirtualizedRows">
+        <member name="P:Telerik.Windows.Controls.GridViewColumnCollectionInternal.CreatedColumnsBlockListForNonVirtualizedRows">
             <summary>
                 List of realized column index blocks for non-column virtualized rows
             </summary>
         </member>
-        <member name="P:Telerik.Windows.Controls.GridViewColumnCollectionInternal.RealizedColumnsDisplayIndexBlockListForNonVirtualizedRows">
+        <member name="P:Telerik.Windows.Controls.GridViewColumnCollectionInternal.CreatedColumnsDisplayIndexBlockListForNonVirtualizedRows">
             <summary>
                 List of realized column display index blocks for non-column virtualized rows
             </summary>
         </member>
-        <member name="P:Telerik.Windows.Controls.GridViewColumnCollectionInternal.RebuildRealizedColumnsBlockListForVirtualizedRows">
+        <member name="P:Telerik.Windows.Controls.GridViewColumnCollectionInternal.RecreateColumnsBlockListForVirtualizedRows">
             <summary>
                 Property which indicates that the RealizedColumnsBlockList
                 is dirty and needs to be rebuilt for column virtualized rows
             </summary>
         </member>
-        <member name="P:Telerik.Windows.Controls.GridViewColumnCollectionInternal.RealizedColumnsBlockListForVirtualizedRows">
+        <member name="P:Telerik.Windows.Controls.GridViewColumnCollectionInternal.CreatedColumnsBlockListForVirtualizedRows">
             <summary>
                 List of realized column index blocks for column virtualized rows
             </summary>
         </member>
-        <member name="P:Telerik.Windows.Controls.GridViewColumnCollectionInternal.RealizedColumnsDisplayIndexBlockListForVirtualizedRows">
+        <member name="P:Telerik.Windows.Controls.GridViewColumnCollectionInternal.CreatedColumnsDisplayIndexBlockListForVirtualizedRows">
             <summary>
                 List of realized column display index blocks for column virtualized rows
             </summary>
@@ -6987,99 +6484,48 @@
         </member>
         <member name="T:Telerik.Windows.Controls.GridViewLength">
             <summary>
-                GridViewLength is the type used for various length properties in GridViewDataControl
-                that support a variety of descriptive sizing modes in addition to numerical
-                values.
+                GridViewLength is the type used for various length properties in GridViewDataControl.
             </summary>
         </member>
         <member name="M:Telerik.Windows.Controls.GridViewLength.#ctor(System.Double)">
             <summary>
                 Initializes as an absolute value in pixels.
             </summary>
-            <param name="pixels">
-                Specifies the number of 'device-independent pixels' (96 pixels-per-inch).
-            </param>
-            <exception cref="T:System.ArgumentException">
-                If <c>pixels</c> parameter is <c>double.NaN</c>
-                or <c>pixels</c> parameter is <c>double.NegativeInfinity</c>
-                or <c>pixels</c> parameter is <c>double.PositiveInfinity</c>.
-            </exception>
         </member>
         <member name="M:Telerik.Windows.Controls.GridViewLength.#ctor(System.Double,Telerik.Windows.Controls.GridViewLengthUnitType)">
             <summary>
                 Initializes to a specified value and unit.
             </summary>
-            <param name="value">The value to hold.</param>
-            <param name="type">The unit of <c>value</c>.</param>
-            <remarks> 
-                <c>value</c> is ignored unless <c>type</c> is
-                <c>DataGridLengthUnitType.Pixel</c> or
-                <c>DataGridLengthUnitType.Star</c>
-            </remarks>
-            <exception cref="T:System.ArgumentException">
-                If <c>value</c> parameter is <c>double.NaN</c>
-                or <c>value</c> parameter is <c>double.NegativeInfinity</c>
-                or <c>value</c> parameter is <c>double.PositiveInfinity</c>.
-            </exception>
         </member>
         <member name="M:Telerik.Windows.Controls.GridViewLength.#ctor(System.Double,Telerik.Windows.Controls.GridViewLengthUnitType,System.Double,System.Double)">
             <summary>
                 Initializes to a specified value and unit.
             </summary>
-            <param name="value">The value to hold.</param>
-            <param name="type">The unit of <c>value</c>.</param>
-            <param name="desiredValue"></param>
-            <param name="displayValue"></param>
-            <remarks> 
-                <c>value</c> is ignored unless <c>type</c> is
-                <c>DataGridLengthUnitType.Pixel</c> or
-                <c>DataGridLengthUnitType.Star</c>
-            </remarks>
-            <exception cref="T:System.ArgumentException">
-                If <c>value</c> parameter is <c>double.NaN</c>
-                or <c>value</c> parameter is <c>double.NegativeInfinity</c>
-                or <c>value</c> parameter is <c>double.PositiveInfinity</c>.
-            </exception>
         </member>
         <member name="M:Telerik.Windows.Controls.GridViewLength.op_Equality(Telerik.Windows.Controls.GridViewLength,Telerik.Windows.Controls.GridViewLength)">
             <summary>
-            Overloaded operator, compares 2 DataGridLength's.
+            Overloaded operator, compares 2 GridViewLength's.
             </summary>
-            <param name="gl1">first DataGridLength to compare.</param>
-            <param name="gl2">second DataGridLength to compare.</param>
-            <returns>true if specified DataGridLengths have same value 
-            and unit type.</returns>
         </member>
         <member name="M:Telerik.Windows.Controls.GridViewLength.op_Inequality(Telerik.Windows.Controls.GridViewLength,Telerik.Windows.Controls.GridViewLength)">
             <summary>
-            Overloaded operator, compares 2 DataGridLength's.
+            Overloaded operator, compares 2 GridViewLength's.
             </summary>
-            <param name="gl1">first DataGridLength to compare.</param>
-            <param name="gl2">second DataGridLength to compare.</param>
-            <returns>true if specified DataGridLengths have either different value or 
-            unit type.</returns>
         </member>
         <member name="M:Telerik.Windows.Controls.GridViewLength.Equals(System.Object)">
             <summary>
-            Compares this instance of DataGridLength with another object.
+            Compares this instance of GridViewLength with another object.
             </summary>
-            <param name="obj">Reference to an object for comparison.</param>
-            <returns><c>true</c>if this DataGridLength instance has the same value 
-            and unit type as oCompare.</returns>
         </member>
         <member name="M:Telerik.Windows.Controls.GridViewLength.Equals(Telerik.Windows.Controls.GridViewLength)">
             <summary>
-            Compares this instance of DataGridLength with another instance.
+            Compares this instance of GridViewLength with another instance.
             </summary>
-            <param name="other">Grid length instance to compare.</param>
-            <returns><c>true</c>if this DataGridLength instance has the same value 
-            and unit type as gridLength.</returns>
         </member>
         <member name="M:Telerik.Windows.Controls.GridViewLength.GetHashCode">
             <summary>
             <see cref="M:System.Object.GetHashCode"/>
             </summary>
-            <returns><see cref="M:System.Object.GetHashCode"/></returns>
         </member>
         <member name="M:Telerik.Windows.Controls.GridViewLength.ToString">
             <summary>
@@ -7090,31 +6536,29 @@
             <summary>
              Returns the string representation of this object.
             </summary>
-            <param name="provider">Provider that supplies culture-specific formatting information.</param>
         </member>
         <member name="M:Telerik.Windows.Controls.GridViewLength.op_Implicit(System.Double)~Telerik.Windows.Controls.GridViewLength">
             <summary>
                 Allows for values of type double to be implicitly converted
-                to DataGridLength.
+                to GridViewLength.
             </summary>
             <param name="value">The number of pixels to represent.</param>
-            <returns>The DataGridLength representing the requested number of pixels.</returns>
         </member>
         <member name="P:Telerik.Windows.Controls.GridViewLength.IsAbsolute">
             <summary>
-                Returns <c>true</c> if this DataGridLength instance holds 
+                Returns <c>true</c> if this GridViewLength instance holds 
                 an absolute (pixel) value.
             </summary>
         </member>
         <member name="P:Telerik.Windows.Controls.GridViewLength.IsAuto">
             <summary>
-                Returns <c>true</c> if this DataGridLength instance is 
+                Returns <c>true</c> if this GridViewLength instance is 
                 automatic (not specified).
             </summary>
         </member>
         <member name="P:Telerik.Windows.Controls.GridViewLength.IsStar">
             <summary>
-                Returns <c>true</c> if this DataGridLength instance holds a weighted proportion
+                Returns <c>true</c> if this GridViewLength instance holds a weighted proportion
                 of available space.
             </summary>
         </member>
@@ -7135,7 +6579,7 @@
         </member>
         <member name="P:Telerik.Windows.Controls.GridViewLength.UnitType">
             <summary>
-                Returns unit type of this DataGridLength instance.
+                Returns unit type of this GridViewLength instance.
             </summary>
         </member>
         <member name="P:Telerik.Windows.Controls.GridViewLength.DesiredValue">
@@ -7182,67 +6626,21 @@
             <summary>
                 Attempts to convert to a GridViewLength from the given object.
             </summary>
-            <param name="context">The ITypeDescriptorContext for this call.</param>
-            <param name="culture">The CultureInfo which is respected when converting.</param>
-            <param name="value">The object to convert to a GridViewLength.</param>
-            <returns>The GridViewLength instance which was constructed.</returns>
-            <exception cref="T:System.ArgumentNullException">
-                An ArgumentNullException is thrown if the source is null.
-            </exception>
-            <exception cref="T:System.ArgumentException">
-                An ArgumentException is thrown if the source is not null 
-                and is not a valid type which can be converted to a GridViewLength.
-            </exception>
         </member>
         <member name="M:Telerik.Windows.Controls.GridView.GridViewLengthConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object,System.Type)">
             <summary>
                 Attempts to convert a GridViewLength instance to the given type.
             </summary>
-            <param name="context">The ITypeDescriptorContext for this call.</param>
-            <param name="culture">The CultureInfo which is respected when converting.</param>
-            <param name="value">The GridViewLength to convert.</param>
-            <param name="destinationType">The type to which to convert the GridViewLength instance.</param>
-            <returns>
-                The object which was constructed.
-            </returns>
-            <exception cref="T:System.ArgumentNullException">
-                An ArgumentNullException is thrown if the value is null.
-            </exception>
-            <exception cref="T:System.ArgumentException">
-                An ArgumentException is thrown if the value is not null and is not a GridViewLength,
-                or if the destinationType isn't one of the valid destination types.
-            </exception>
-            <SecurityNote>
-                Critical: calls InstanceDescriptor ctor which LinkDemands
-                PublicOK: can only make an InstanceDescriptor for GridViewLength, not an arbitrary class
-            </SecurityNote> 
         </member>
         <member name="M:Telerik.Windows.Controls.GridView.GridViewLengthConverter.ConvertToString(Telerik.Windows.Controls.GridViewLength,System.IFormatProvider)">
             <summary>
                 Converts a GridViewLength instance to a String given the CultureInfo.
             </summary>
-            <param name="length">GridViewLength instance to convert.</param>
-            <param name="cultureInfo">The culture to use.</param>
-            <returns>String representation of the object.</returns>
         </member>
-        <member name="M:Telerik.Windows.Controls.GridView.GridViewLengthConverter.ConvertFromString(System.String,System.Globalization.CultureInfo)">
+        <member name="M:Telerik.Windows.Controls.GridView.GridViewLengthConverter.FromString(System.String,System.Globalization.CultureInfo)">
             <summary>
                 Parses a GridViewLength from a string given the CultureInfo.
             </summary>
-            <param name="s">String to parse from.</param>
-            <param name="cultureInfo">Culture Info.</param>
-            <returns>Newly created GridViewLength instance.</returns>
-            <remarks>
-            Formats: 
-            "[value][unit]"
-                [value] is a double
-                [unit] is a string in GridViewLength._unitTypes connected to a GridViewLengthUnitType
-            "[value]"
-                As above, but the GridViewLengthUnitType is assumed to be GridViewLengthUnitType.Pixel
-            "[unit]"
-                As above, but the value is assumed to be 1.0
-                This is only acceptable for a subset of GridViewLengthUnitType: Auto
-            </remarks>
         </member>
         <member name="T:Telerik.Windows.Controls.GridViewLengthUnitType">
             <summary>
@@ -7640,7 +7038,7 @@
                 Update all properties that get a value from the GridViewDataControl.
             </summary>
             <remarks>
-                See comment on GridViewRow.SyncProperties
+                See comment on GridViewRow.UpdateProperties
             </remarks>
         </member>
         <member name="M:Telerik.Windows.Controls.GridView.DataCellsPresenter.InvalidateGridViewDataControlCellsPanelMeasureAndArrange">
@@ -7662,12 +7060,12 @@
             Notification of Height and MinHeight changes.
             </summary>
         </member>
-        <member name="M:Telerik.Windows.Controls.GridView.DataCellsPresenter.NotifyPropertyChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs,Telerik.Windows.Controls.GridView.NotificationTarget)">
+        <member name="M:Telerik.Windows.Controls.GridView.DataCellsPresenter.NotifyPropertyChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs,Telerik.Windows.Controls.GridView.UpdateTarget)">
             <summary>
                 General notification for DependencyProperty changes from the grid or from columns.
             </summary>
         </member>
-        <member name="M:Telerik.Windows.Controls.GridView.DataCellsPresenter.NotifyPropertyChanged(System.Windows.DependencyObject,System.String,System.Windows.DependencyPropertyChangedEventArgs,Telerik.Windows.Controls.GridView.NotificationTarget)">
+        <member name="M:Telerik.Windows.Controls.GridView.DataCellsPresenter.NotifyPropertyChanged(System.Windows.DependencyObject,System.String,System.Windows.DependencyPropertyChangedEventArgs,Telerik.Windows.Controls.GridView.UpdateTarget)">
             <summary>
                 General notification for DependencyProperty changes from the grid or from columns.
             </summary>
@@ -8290,6 +7688,11 @@
             </summary>
             <param name="column">The column.</param>
             <exception cref="T:System.ArgumentNullException"><c>column</c> is null.</exception>
+        </member>
+        <member name="M:Telerik.Windows.Controls.GridView.ColumnFilterDescriptor.Finalize">
+            <summary>
+            Finalizes this instance.
+            </summary>
         </member>
         <member name="P:Telerik.Windows.Controls.GridView.ColumnFilterDescriptor.DistinctFilter">
             <summary>
@@ -9324,53 +8727,6 @@
             Gets or sets the group panel cell that requested the sort direction change.
             </summary>
         </member>
-        <member name="T:Telerik.Windows.Controls.GridView.ContainerTracking`1">
-            <summary>
-                Represents a node in a linked list used to track active containers.
-                Containers should instantiate and references these.
-                Parents hold onto the linked list.
-                
-                The list is iterated in order to call a variety of methods on containers
-                in response to changes on the parent.
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.GridView.ContainerTracking`1.StartTracking(Telerik.Windows.Controls.GridView.ContainerTracking{`0}@)">
-            <summary>
-                Adds this tracker to the list of active containers.
-            </summary>
-            <param name="root">The root of the list.</param>
-        </member>
-        <member name="M:Telerik.Windows.Controls.GridView.ContainerTracking`1.StopTracking(Telerik.Windows.Controls.GridView.ContainerTracking{`0}@)">
-            <summary>
-                Removes this tracker from the list of active containers.
-            </summary>
-            <param name="root">The root of the list.</param>
-        </member>
-        <member name="M:Telerik.Windows.Controls.GridView.ContainerTracking`1.Debug_AssertIsInList(Telerik.Windows.Controls.GridView.ContainerTracking{`0})">
-            <summary>
-                Asserts that the container represented by this tracker is in the list represented by the given root.
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.GridView.ContainerTracking`1.Debug_AssertNotInList(Telerik.Windows.Controls.GridView.ContainerTracking{`0})">
-            <summary>
-                Asserts that the container represented by this tracker is not in the list represented by the given root.
-            </summary>
-        </member>
-        <member name="P:Telerik.Windows.Controls.GridView.ContainerTracking`1.Container">
-            <summary>
-                The row container that this object represents.
-            </summary>
-        </member>
-        <member name="P:Telerik.Windows.Controls.GridView.ContainerTracking`1.Next">
-            <summary>
-                The next node in the list.
-            </summary>
-        </member>
-        <member name="P:Telerik.Windows.Controls.GridView.ContainerTracking`1.Previous">
-            <summary>
-                The previous node in the list.
-            </summary>
-        </member>
         <member name="M:Telerik.Windows.Controls.GridView.Extensions.BringIntoView(System.Windows.FrameworkElement,System.Windows.Rect)">
             <summary>Attempts to bring the provided region size of this element into view, within any scrollable regions it is contained within. </summary>
             <param name="targetRectangle">Specified size of the element that should also be brought into view. </param>
@@ -9380,21 +8736,21 @@
             <summary>Represents a delegate to use for dispatcher operations.</summary>
             <returns>The object returned by the callback.</returns>
         </member>
-        <member name="M:Telerik.Windows.Controls.GridView.GridViewHelper.OnColumnWidthChanged(Telerik.Windows.Controls.GridView.IProvideGridViewColumn,System.Windows.DependencyPropertyChangedEventArgs)">
+        <member name="M:Telerik.Windows.Controls.GridView.GridViewPropertyUpdateHelper.OnColumnWidthChanged(Telerik.Windows.Controls.GridView.IProvideGridViewColumn,System.Windows.DependencyPropertyChangedEventArgs)">
             <summary>
                 Invalidates a cell's panel if its column's width changes sufficiently. 
             </summary>
             <param name="cell">The cell or header.</param>
             <param name="e"></param>
         </member>
-        <member name="M:Telerik.Windows.Controls.GridView.GridViewHelper.GetParentPanelForCell(Telerik.Windows.Controls.GridView.IProvideGridViewColumn)">
+        <member name="M:Telerik.Windows.Controls.GridView.GridViewPropertyUpdateHelper.GetParentPanelForCell(Telerik.Windows.Controls.GridView.IProvideGridViewColumn)">
             <summary>
                 Helper method which returns the parent GridViewCellsPanel for a cell
             </summary>
             <param name="cell">The cell or header.</param>
             <returns>Parent panel of the given cell or header</returns>
         </member>
-        <member name="M:Telerik.Windows.Controls.GridView.GridViewHelper.GetParentCellsPanelHorizontalOffset(Telerik.Windows.Controls.GridView.IProvideGridViewColumn)">
+        <member name="M:Telerik.Windows.Controls.GridView.GridViewPropertyUpdateHelper.GetParentCellsPanelHorizontalOffset(Telerik.Windows.Controls.GridView.IProvideGridViewColumn)">
             <summary>
                 Helper method which returns the parent GridViewCellPanel's offset from the scroll viewer
                 for a cell or Header
@@ -9402,28 +8758,28 @@
             <param name="cell">The cell or header.</param>
             <returns>Parent Panel's offset with respect to scroll viewer</returns>
         </member>
-        <member name="M:Telerik.Windows.Controls.GridView.GridViewHelper.GetCoercedTransferPropertyValue(System.Windows.DependencyObject,System.Object,System.Windows.DependencyProperty,System.Windows.DependencyObject,System.Windows.DependencyProperty,System.Windows.DependencyObject,System.Windows.DependencyProperty)">
+        <member name="M:Telerik.Windows.Controls.GridView.GridViewPropertyUpdateHelper.GetCoercedUpdatePropertyValue(System.Windows.DependencyObject,System.Object,System.Windows.DependencyProperty,System.Windows.DependencyObject,System.Windows.DependencyProperty,System.Windows.DependencyObject,System.Windows.DependencyProperty)">
             <summary>
                 Computes the value of a given property based on the GridViewDataControl property transfer rules.
             </summary>
             <remarks>
                 This is intended to be called from within the coercion of the baseProperty.
             </remarks>
-            <param name="baseObject">The target object which recieves the transferred property</param>
-            <param name="baseValue">The baseValue that was passed into the coercion delegate</param>
-            <param name="baseProperty">The property that is being coerced</param>
-            <param name="parentObject">The object that contains the parentProperty</param>
+            <param name="obj">The target object which recieves the transferred property</param>
+            <param name="value">The baseValue that was passed into the coercion delegate</param>
+            <param name="property">The property that is being coerced</param>
+            <param name="parentObj">The object that contains the parentProperty</param>
             <param name="parentProperty">A property who's value should be transfered (via coercion) to the baseObject if it has a higher precedence.</param>
-            <param name="grandParentObject">Same as parentObject but evaluated at a lower presedece for a given BaseValueSource</param>
+            <param name="grandParentObj">Same as parentObject but evaluated at a lower presedece for a given BaseValueSource</param>
             <param name="grandParentProperty">Same as parentProperty but evaluated at a lower presedece for a given BaseValueSource</param>
             <returns></returns>
         </member>
-        <member name="M:Telerik.Windows.Controls.GridView.GridViewHelper.CoerceToMinMax(System.Double,System.Double,System.Double)">
+        <member name="M:Telerik.Windows.Controls.GridView.GridViewPropertyUpdateHelper.CoerceToMinMax(System.Double,System.Double,System.Double)">
             <summary>
                 Helper method which coerces a value such that it satisfies min and max restrictions
             </summary>
         </member>
-        <member name="M:Telerik.Windows.Controls.GridView.GridViewHelper.TransferProperty(System.Windows.DependencyObject,System.Windows.DependencyProperty)">
+        <member name="M:Telerik.Windows.Controls.GridView.GridViewPropertyUpdateHelper.UpdateProperty(System.Windows.DependencyObject,System.Windows.DependencyProperty)">
             <summary>
                 Causes the given DependencyProperty to be coerced in transfer mode.
             </summary>
@@ -9434,18 +8790,18 @@
             <param name="d">The DependencyObject which contains the property that needs to be transfered.</param>
             <param name="p">The DependencyProperty that is the target of the property transfer.</param>
         </member>
-        <member name="F:Telerik.Windows.Controls.GridView.GridViewHelper._propertyTransferEnabledMap">
+        <member name="F:Telerik.Windows.Controls.GridView.GridViewPropertyUpdateHelper.propertyUpdateMap">
             <summary>
                 Tracks which properties are currently being transfered.  This information is needed when GetPropertyTransferEnabledMapForObject
                 is called inside of Coersion.
             </summary>
         </member>
-        <member name="M:Telerik.Windows.Controls.GridView.GridViewHelper.ClearPropertyTransferMap">
+        <member name="M:Telerik.Windows.Controls.GridView.GridViewPropertyUpdateHelper.ClearPropertyUpdateMap">
             <summary>
             Called when GridViewDataControl ItemsSource is changed.
             </summary>
         </member>
-        <member name="M:Telerik.Windows.Controls.GridView.GridViewHelper.TransferValue(System.Windows.DependencyObject,System.Windows.DependencyObject,System.Windows.DependencyProperty,System.Windows.DependencyProperty)">
+        <member name="M:Telerik.Windows.Controls.GridView.GridViewPropertyUpdateHelper.UpdateValue(System.Windows.DependencyObject,System.Windows.DependencyObject,System.Windows.DependencyProperty,System.Windows.DependencyProperty)">
             <summary>
             Check if the values are equal before setting value since the operation is several times slower than getting a value.
             </summary>
@@ -9453,7 +8809,7 @@
             This method should be used only if the property will be set intensively and in the scenario the values are likely to be the same.
             </remarks>
         </member>
-        <member name="M:Telerik.Windows.Controls.GridView.GridViewHelper.TransferValue(System.Windows.DependencyObject,System.Windows.DependencyProperty,System.Object)">
+        <member name="M:Telerik.Windows.Controls.GridView.GridViewPropertyUpdateHelper.UpdateValue(System.Windows.DependencyObject,System.Windows.DependencyProperty,System.Object)">
             <summary>
             Check if the values are equal before setting value since the operation is several times slower than getting a value.
             </summary>
@@ -9461,37 +8817,15 @@
             This method should be used only if the property will be set intensively and in the scenario the values are likely to be the same.
             </remarks>
         </member>
-        <member name="M:Telerik.Windows.Controls.GridView.WeakHashtable.SetWeak(System.Object,System.Object)">
-            <devdoc>
-                Override of Item that wraps a weak reference around the
-                key and performs a scavenge.
-            </devdoc>
+        <member name="M:Telerik.Windows.Controls.GridView.GridViewPropertyUpdateHelper.UpdateValue(System.Windows.DependencyObject,System.Windows.DependencyProperty,Telerik.Windows.DependencyPropertyKey,System.Object)">
+            <summary>
+            Check if the values are equal before setting value since the operation is several times slower than getting a value.
+            </summary>
+            <remarks>
+            This method should be used only if the property will be set intensively and in the scenario the values are likely to be the same.
+            </remarks>
         </member>
-        <member name="M:Telerik.Windows.Controls.GridView.WeakHashtable.ScavengeKeys">
-            <devdoc>
-                This method checks to see if it is necessary to
-                scavenge keys, and if it is it performs a scan
-                of all keys to see which ones are no longer valid.
-                To determine if we need to scavenge keys we need to
-                try to track the current GC memory.  Our rule of
-                thumb is that if GC memory is decreasing and our
-                key count is constant we need to scavenge.  We
-                will need to see if this is too often for extreme
-                use cases like the CompactFramework (they add
-                custom type data for every object at design time).
-            </devdoc>
-        </member>
-        <member name="T:Telerik.Windows.Controls.GridView.WeakHashtable.EqualityWeakReference">
-            <devdoc>
-                A wrapper of WeakReference that overrides GetHashCode and
-                Equals so that the weak reference returns the same equality
-                semantics as the object it wraps.  This will always return
-                the object's hash code and will return True for a Equals
-                comparison of the object it is wrapping.  If the object
-                it is wrapping has finalized, Equals always returns false.
-            </devdoc>
-        </member>
-        <member name="T:Telerik.Windows.Controls.GridView.NotificationTarget">
+        <member name="T:Telerik.Windows.Controls.GridView.UpdateTarget">
             <summary>
             Enum used to specify where we want an internal property change notification to be routed.
             </summary>
@@ -9606,15 +8940,11 @@
             <summary>
             Getter for the GetSelectiveScrollingClip attached property
             </summary>
-            <param name="obj"></param>
-            <returns></returns>
         </member>
         <member name="M:Telerik.Windows.Controls.GridView.SelectiveScrollingGrid.SetSelectiveScrollingClip(System.Windows.DependencyObject,System.Boolean)">
             <summary>
             Setter for the SetSelectiveScrollingClip attached property
             </summary>
-            <param name="obj"></param>
-            <param name="value"></param>
         </member>
         <member name="F:Telerik.Windows.Controls.GridView.SelectiveScrollingGrid.SelectiveScrollingClipProperty">
             <summary>
@@ -9630,22 +8960,16 @@
             <summary>
             Getter for the SelectiveScrollingOrientation attached property
             </summary>
-            <param name="obj"></param>
-            <returns></returns>
         </member>
         <member name="M:Telerik.Windows.Controls.GridView.SelectiveScrollingGrid.SetSelectiveScrollingOrientation(System.Windows.DependencyObject,Telerik.Windows.Controls.GridView.SelectiveScrollingOrientation)">
             <summary>
             Setter for the SelectiveScrollingOrientation attached property
             </summary>
-            <param name="obj"></param>
-            <param name="value"></param>
         </member>
-        <member name="M:Telerik.Windows.Controls.GridView.SelectiveScrollingGrid.OnSelectiveScrollingOrientationChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+        <member name="M:Telerik.Windows.Controls.GridView.SelectiveScrollingGrid.OnOrientationChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
             <summary>
             Property changed call back for SelectiveScrollingOrientation property
             </summary>
-            <param name="d"></param>
-            <param name="e"></param>
         </member>
         <member name="T:Telerik.Windows.Controls.GridView.SelectiveScrollingOrientation">
             <summary>
@@ -10947,62 +10271,6 @@
             Gets the position in the collection where the change occurred.
             </summary>
         </member>
-        <member name="T:Telerik.Windows.Controls.GridView.MultipleCopiesCollection">
-            <summary>
-                A collection that simulates holding multiple copies of the same item.  Used as the ItemsSource for the DataCellsPresenter.
-                For our purposes this mirrors the GridViewDataControl.Columns collection in that it has the same number of items and changes whenever 
-                the columns collection changes (though the items in it are obviously different; each item is the data object for a given row).  
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.GridView.MultipleCopiesCollection.MirrorCollectionChange(System.Collections.Specialized.NotifyCollectionChangedEventArgs)">
-            <summary>
-                Takes a collection change notifcation and causes the MultipleCopies collection to sync to the changes.  For example,
-                if an item was removed at a given index, the MultipleCopiesCollection also removes an item at the same index and fires
-                its own collection changed event.
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.GridView.MultipleCopiesCollection.SyncToCount(System.Int32)">
-            <summary>
-                Syncs up the count with the given one.  This is used when we know we've missed a CollectionChanged event (say this 
-                MultipleCopiesCollection is inside a GridViewRow that was virtualized and recycled).  It attempts to resync
-                by adjusting the count and firing the proper property change notifications.
-            </summary>
-            <remarks>
-                This method works in concert with the DataCellsPresenter.  We don't know where items were removed / added, so containers
-                (GridViewCells) based off this collection could be stale (wrong column).  The cells presenter updates them.  We could have also 
-                just fired a Reset event here and not bothered with work in the cells presenter, but that would cause all cells to be regenerated. 
-                
-                Note that this method is designed to sync up to ALL collection changes that may have happened.  
-                The job of this method is made significantly easier by the fact that the MultipleCopiesCollection really only cares about
-                the count of items in the given collection (since we keep it in sync with the GridViewDataControl Columns collection but host
-                a GridViewRow as the item).  This means we don't care about Move, Replace, etc.
-            </remarks>
-        </member>
-        <member name="M:Telerik.Windows.Controls.GridView.MultipleCopiesCollection.OnCollectionChanged(System.Collections.Specialized.NotifyCollectionChangedAction,System.Object,System.Int32)">
-            <summary>
-                Helper to raise a CollectionChanged event when an item is added or removed.
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.GridView.MultipleCopiesCollection.OnCollectionReset">
-            <summary>
-                Helper to raise a CollectionChanged event when the collection is cleared.
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.GridView.MultipleCopiesCollection.OnPropertyChanged(System.String)">
-            <summary>
-                Helper to raise a PropertyChanged event.
-            </summary>
-        </member>
-        <member name="P:Telerik.Windows.Controls.GridView.MultipleCopiesCollection.CopiedItem">
-            <summary>
-                This is the item that is returned multiple times.
-            </summary>
-        </member>
-        <member name="P:Telerik.Windows.Controls.GridView.MultipleCopiesCollection.RepeatCount">
-            <summary>
-                This is the number of times the item is to be repeated.
-            </summary>
-        </member>
         <member name="T:Telerik.Windows.Controls.GridView.DefaultKeyboardCommandProvider">
             <summary>
             Provides key commands.
@@ -11737,12 +11005,12 @@
                 Clears the row of references.
             </summary>
         </member>
-        <member name="M:Telerik.Windows.Controls.GridView.GridViewRowItem.NotifyPropertyChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs,Telerik.Windows.Controls.GridView.NotificationTarget)">
+        <member name="M:Telerik.Windows.Controls.GridView.GridViewRowItem.NotifyPropertyChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs,Telerik.Windows.Controls.GridView.UpdateTarget)">
             <summary>
                 General notification for DependencyProperty changes from the grid or from columns.
             </summary>
         </member>
-        <member name="M:Telerik.Windows.Controls.GridView.GridViewRowItem.NotifyPropertyChanged(System.Windows.DependencyObject,System.String,System.Windows.DependencyPropertyChangedEventArgs,Telerik.Windows.Controls.GridView.NotificationTarget)">
+        <member name="M:Telerik.Windows.Controls.GridView.GridViewRowItem.NotifyPropertyChanged(System.Windows.DependencyObject,System.String,System.Windows.DependencyPropertyChangedEventArgs,Telerik.Windows.Controls.GridView.UpdateTarget)">
             <summary>
                 General notification for DependencyProperty changes from the grid or from columns.
             </summary>
@@ -11854,11 +11122,6 @@
             Gets the horizontal offset.
             </summary>
             <value>The horizontal offset.</value>
-        </member>
-        <member name="P:Telerik.Windows.Controls.GridView.GridViewRowItem.Tracker">
-            <summary>
-                Used by the GridViewDataControl owner to send notifications to the row container.
-            </summary>
         </member>
         <member name="P:Telerik.Windows.Controls.GridView.GridViewRowItem.HorizontalGridLinesBrush">
             <summary>
@@ -12135,6 +11398,11 @@
             Identifies the <see cref="E:Telerik.Windows.Controls.GridView.GridViewRow.IsExpandedChanged"/> routed event.
             </summary>
         </member>
+        <member name="F:Telerik.Windows.Controls.GridView.GridViewRow.ErrorsProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.GridView.GridViewRow.Errors"/> dependency property.
+            </summary>
+        </member>
         <member name="F:Telerik.Windows.Controls.GridView.GridViewRow.IsValidProperty">
             <summary>
             Identifies the <see cref="P:Telerik.Windows.Controls.GridView.GridViewRow.IsValid"/> dependency property.
@@ -12386,6 +11654,12 @@
             <remarks>Note that this collection contains only realized controls. 
             Virtualized rows and rows that have not been expanded will contain an empty collection.</remarks>
             </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.GridView.GridViewRow.Errors">
+            <summary>
+            Gets the errors via IDataErrorInfo and INotifyDataErrorInfo.
+            </summary>
+            <value>The errors.</value>
         </member>
         <member name="P:Telerik.Windows.Controls.GridView.GridViewRow.IsValid">
             <summary>
@@ -13307,6 +12581,116 @@
             Gets the horizontal size of the viewport for this content.
             </summary>
         </member>
+        <member name="T:Telerik.Windows.Controls.ConditionalDataTemplateSelector">
+            <summary>
+            Provides a way to choose a <see cref="T:System.Windows.DataTemplate"/> for a data-bound element
+            by testing the data object against a set of predefined rules.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.ConditionalDataTemplateSelector.RulesProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.ConditionalDataTemplateSelector.Rules"/> dependency property.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ConditionalDataTemplateSelector.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.Windows.Controls.ConditionalDataTemplateSelector"/> class.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ConditionalDataTemplateSelector.SelectTemplate(System.Object,System.Windows.DependencyObject)">
+            <summary>
+            Selects a <see cref="T:System.Windows.DataTemplate"/> from a set of rules.
+            </summary>
+            <param name="item">The data object for which to select the template.</param>
+            <param name="container">The data-bound object.</param>
+            <returns>Returns a <see cref="T:System.Windows.DataTemplate"/> or null.</returns>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ConditionalDataTemplateSelector.Rules">
+            <summary>
+            Gets the rules which will determine what <see cref="T:System.Windows.DataTemplate"/> to select for a given data object.
+            </summary>
+            <value>The rules which will determine what <see cref="T:System.Windows.DataTemplate"/> to select for a given data object.</value>
+        </member>
+        <member name="T:Telerik.Windows.Controls.ConditionalStyleSelector">
+            <summary>
+            Provides a way to choose a <see cref="T:System.Windows.Style"/> for a data-bound element
+            by testing the data object against a set of predefined rules.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.ConditionalStyleSelector.RulesProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.ConditionalStyleSelector.Rules"/> dependency property.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ConditionalStyleSelector.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.Windows.Controls.ConditionalStyleSelector"/> class.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ConditionalStyleSelector.SelectStyle(System.Object,System.Windows.DependencyObject)">
+            <summary>
+            Selects a <see cref="T:System.Windows.DataTemplate"/> from a set of rules.
+            </summary>
+            <param name="item">The data object for which to select the template.</param>
+            <param name="container">The data-bound object.</param>
+            <returns>Returns a <see cref="T:System.Windows.DataTemplate"/> or null.</returns>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ConditionalStyleSelector.Rules">
+            <summary>
+            Gets the rules which will determine what <see cref="T:System.Windows.Style"/> to select for a given data object.
+            </summary>
+            <value>The rules which will determine what <see cref="T:System.Windows.Style"/> to select for a given data object.</value>
+        </member>
+        <member name="T:Telerik.Windows.Controls.DataTemplateRule">
+            <summary>
+            A rule that returns a <see cref="T:System.Windows.DataTemplate"/> when satisfied.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.RuleBase">
+            <summary>
+            A base class defining a rule.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RuleBase.ConditionProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.RuleBase.Condition"/> dependency property.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RuleBase.Condition">
+            <summary>
+            Gets or sets the condition for this rule.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.DataTemplateRule.TemplateProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.DataTemplateRule.Template"/> dependency property.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.DataTemplateRule.Template">
+            <summary>
+            Gets or sets the <see cref="T:System.Windows.DataTemplate"/> for this rule.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.RuleCollection`1">
+            <summary>
+            A collection of rules deriving from the <see cref="T:Telerik.Windows.Controls.RuleBase"/> type.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.StyleRule">
+            <summary>
+            A rule that returns a <see cref="T:System.Windows.Style"/> when satisfied.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.StyleRule.StyleProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.StyleRule.Style"/> dependency property.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.StyleRule.Style">
+            <summary>
+            Gets or sets the <see cref="T:System.Windows.Style"/> for this rule.
+            </summary>
+        </member>
         <member name="T:Telerik.Windows.Controls.GridView.ColumnSortDescriptor">
             <summary>
             Represents a sort descriptor, which sorts by the value of its <see cref="P:Telerik.Windows.Controls.GridView.ColumnSortDescriptor.Column"/>.
@@ -13542,7 +12926,7 @@
         </member>
         <member name="T:Telerik.Windows.Controls.GridView.IndexTree">
             <summary>
-            An intex tree structure, used to store non-negative double values and query for a cumulative value up
+            An intex tree structure, used to store non-negative int values and query for a cumulative value up
             to an index or index that reaches a given value. Add and remove operations are expensive.
             </summary>
         </member>
@@ -13557,7 +12941,7 @@
             Initializes a new instance of the <see cref="T:Telerik.Windows.Controls.GridView.IndexTree"/> class. Has complexity of N.
             </summary>
             <param name="capacity">The capacity of the tree.</param>
-            <param name="defaultValue">The default value.</param>
+            <param name="defaultVal">The default value.</param>
         </member>
         <member name="M:Telerik.Windows.Controls.GridView.IndexTree.CopyTo(System.Array,System.Int32)">
             <summary>
@@ -13577,17 +12961,17 @@
             Adds a value in the end of the index tree. Constant or N coplexity, depending on whether capacity
             expansion will be needed.
             </summary>
-            <param name="value">The value that will be added.</param>
+            <param name="val">The value that will be added.</param>
         </member>
         <member name="M:Telerik.Windows.Controls.GridView.IndexTree.Insert(System.Int32,System.Double)">
             <summary>
             Inserts a value at the given index. Will cheaply enqueue an item if possibe. Worst complexity is
             (N-InsertIndex) + Log(N)*NonDefaultsIn(N-InsertIndex).
             </summary>
-            <param name="value">The value that will be inserted.</param>
+            <param name="val">The value that will be inserted.</param>
             <param name="index">The index at which it will be inserted.</param>
         </member>
-        <member name="M:Telerik.Windows.Controls.GridView.IndexTree.System#Collections#Generic#IEnumerable{System#Double}#GetEnumerator">
+        <member name="M:Telerik.Windows.Controls.GridView.IndexTree.System#Collections#Generic#IEnumerable{System#Int32}#GetEnumerator">
             <summary>
             Returns an enumerator that iterates through the collection.
             </summary>
@@ -13609,7 +12993,7 @@
             <summary>
             Returns the index of the element that reaches the given value. Has complexity of log(N).
             </summary>
-            <param name="value">The value that needs to be reached.</param>
+            <param name="val">The value that needs to be reached.</param>
             <returns>The index of the item that reached the given value.</returns>
         </member>
         <member name="M:Telerik.Windows.Controls.GridView.IndexTree.CumulativeValue(System.Int32)">

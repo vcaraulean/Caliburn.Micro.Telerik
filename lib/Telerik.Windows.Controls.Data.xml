@@ -992,6 +992,11 @@
             Gets or sets the data field.
             </summary>
         </member>
+        <member name="P:Telerik.Windows.Controls.Data.DataForm.AutoGeneratingFieldEventArgs.Order">
+            <summary>
+            Gets or sets the display order of the field.
+            </summary>
+        </member>
         <member name="T:Telerik.Windows.Controls.Data.DataForm.RadDataFormAutomationPeer">
             <summary>
             Represents an automation peer for the <see cref="T:Telerik.Windows.Controls.RadDataForm"/>.
@@ -1345,6 +1350,49 @@
             <summary>
             All buttons will be visible.
             </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.Data.DataForm.CommandButtonsVisibilityTypeConverter">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Data.DataForm.CommandButtonsVisibilityTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Type)">
+            <summary>
+            Returns whether the type converter can convert an object from the specified type to the type of this converter.
+            </summary>
+            <param name="context">An object that provides a format context.</param>
+            <param name="sourceType">The type you want to convert from.</param>
+            <returns>
+            True if this converter can perform the conversion; otherwise, false.
+            </returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Data.DataForm.CommandButtonsVisibilityTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object)">
+            <summary>
+            Converts from the specified value to the type of this converter.
+            </summary>
+            <param name="context">An object that provides a format context.</param>
+            <param name="culture">The <see cref="T:System.Globalization.CultureInfo"/> to use as the current culture.</param>
+            <param name="value">The value to convert to the type of this converter.</param>
+            <returns>The converted value.</returns>
+            <exception cref="T:System.NotSupportedException">
+            The conversion cannot be performed.
+            </exception>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Data.DataForm.CommandButtonsVisibilityTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object,System.Type)">
+            <summary>
+            Converts the specified value object to the specified type.
+            </summary>
+            <param name="context">An object that provides a format context.</param>
+            <param name="culture">The <see cref="T:System.Globalization.CultureInfo"/> to use as the current culture.</param>
+            <param name="value">The object to convert.</param>
+            <param name="destinationType">The type to convert the object to.</param>
+            <returns>The converted object.</returns>
+            <exception cref="T:System.NotSupportedException">
+            The conversion cannot be performed.
+            </exception>
+            <exception cref="T:System.ArgumentNullException">
+            	<paramref name="destinationType"/> is null.
+            </exception>
         </member>
         <member name="T:Telerik.Windows.Controls.Data.DataForm.DescriptionPresenter">
             <summary>
@@ -2287,9 +2335,512 @@
             The mode when the current item is readonly.
             </summary>
         </member>
+        <member name="T:Telerik.Windows.Controls.Data.DataPager.DataPagerAutomationPeer">
+            <summary>
+            Provides an automation peer for the RadDataPager.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Data.DataPager.DataPagerAutomationPeer.#ctor(Telerik.Windows.Controls.RadDataPager)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.Windows.Controls.Data.DataPager.DataPagerAutomationPeer"/> class.
+            </summary>
+            <param name="owner">The owner.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Data.DataPager.DataPagerAutomationPeer.GetAutomationControlTypeCore">
+            <summary>
+            Returns the control type for the <see cref="T:System.Windows.UIElement"/> that is associated with this <see cref="T:System.Windows.Automation.Peers.FrameworkElementAutomationPeer"/>. This method is called by <see cref="M:System.Windows.Automation.Peers.AutomationPeer.GetAutomationControlType"/>.
+            </summary>
+            <returns>
+            A value of the enumeration.
+            </returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Data.DataPager.DataPagerAutomationPeer.GetChildrenCore">
+            <summary>
+            Returns the collection of child elements of the <see cref="T:System.Windows.UIElement"/> that is associated with this <see cref="T:System.Windows.Automation.Peers.FrameworkElementAutomationPeer"/>. This method is called by <see cref="M:System.Windows.Automation.Peers.AutomationPeer.GetChildren"/>.
+            </summary>
+            <returns>
+            A list of child <see cref="T:System.Windows.Automation.Peers.AutomationPeer"/> elements.
+            </returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Data.DataPager.DataPagerAutomationPeer.GetClassNameCore">
+            <summary>
+            Returns the name of the <see cref="T:System.Windows.UIElement"/> that is associated with this <see cref="T:System.Windows.Automation.Peers.FrameworkElementAutomationPeer"/>. This method is called by <see cref="M:System.Windows.Automation.Peers.AutomationPeer.GetClassName"/>.
+            </summary>
+            <returns>
+            The name of the owner type that is associated with this <see cref="T:System.Windows.Automation.Peers.FrameworkElementAutomationPeer"/>. See Remarks.
+            </returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Data.DataPager.DataPagerAutomationPeer.GetNameCore">
+            <summary>
+            Returns the text label of the <see cref="T:System.Windows.FrameworkElement"/> that is associated with this <see cref="T:System.Windows.Automation.Peers.FrameworkElementAutomationPeer"/>. This method is called by <see cref="M:System.Windows.Automation.Peers.AutomationPeer.GetName"/>.
+            </summary>
+            <returns>
+            The text label of the element that is associated with this automation peer.
+            </returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Data.DataPager.DataPagerAutomationPeer.GetPattern(System.Windows.Automation.Peers.PatternInterface)">
+            <summary>
+            Returns the control pattern for the <see cref="T:System.Windows.UIElement"/> that is associated with this <see cref="T:System.Windows.Automation.Peers.FrameworkElementAutomationPeer"/>.
+            </summary>
+            <param name="patternInterface">One of the enumeration values.</param>
+            <returns>
+            See Remarks.
+            </returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Data.DataPager.DataPagerAutomationPeer.SetValue(System.Double)">
+            <summary>
+            Sets the value of the control.
+            </summary>
+            <param name="value">The value to set.</param>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Data.DataPager.DataPagerAutomationPeer.OwningDataPager">
+            <summary>
+            Gets the owning data pager.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Data.DataPager.DataPagerAutomationPeer.IsReadOnly">
+            <summary>
+            Gets a value that indicates whether the value of a control is read-only.
+            </summary>
+            <returns>true if the value is read-only; false if it can be modified. </returns>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Data.DataPager.DataPagerAutomationPeer.LargeChange">
+            <summary>
+            Gets the value that is added to or subtracted from the <see cref="P:System.Windows.Automation.Provider.IRangeValueProvider.Value"/> property when a large change is made, such as with the PAGE DOWN key.
+            </summary>
+            <returns>The large-change value that is supported by the control, or null if the control does not support <see cref="P:System.Windows.Automation.Provider.IRangeValueProvider.LargeChange"/>. </returns>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Data.DataPager.DataPagerAutomationPeer.Maximum">
+            <summary>
+            Gets the maximum range value that is supported by the control.
+            </summary>
+            <returns>The maximum value that is supported by the control, or null if the control does not support <see cref="P:System.Windows.Automation.Provider.IRangeValueProvider.Maximum"/>. </returns>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Data.DataPager.DataPagerAutomationPeer.Minimum">
+            <summary>
+            Gets the minimum range value that is supported by the control.
+            </summary>
+            <returns>The minimum value that is supported by the control, or null if the control does not support <see cref="P:System.Windows.Automation.Provider.IRangeValueProvider.Minimum"/>. </returns>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Data.DataPager.DataPagerAutomationPeer.SmallChange">
+            <summary>
+            Gets the value that is added to or subtracted from the <see cref="P:System.Windows.Automation.Provider.IRangeValueProvider.Value"/> property when a small change is made, such as with an arrow key.
+            </summary>
+            <returns>The small-change value supported by the control, or null if the control does not support <see cref="P:System.Windows.Automation.Provider.IRangeValueProvider.SmallChange"/>. </returns>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Data.DataPager.DataPagerAutomationPeer.Value">
+            <summary>
+            Gets the value of the control.
+            </summary>
+            <returns>The value of the control, or null if the control does not support <see cref="P:System.Windows.Automation.Provider.IRangeValueProvider.Value"/>.</returns>
+        </member>
         <member name="T:Telerik.Windows.Controls.Data.DataPager.UnboundPagerSource">
             <summary>
             This class is used as a source for RadDataPager, when in unbound mode.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.Data.PropertyGrid.AutoGeneratingPropertyDefinitionEventArgs">
+            <summary>
+            Porvides data for the AutoGeneratingPropertyDefinition event.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Data.PropertyGrid.AutoGeneratingPropertyDefinitionEventArgs.PropertyDefinition">
+            <summary>
+            Gets or sets the property definition.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.Data.PropertyGrid.GroupingItemsSourceConverter">
+            <summary>
+            Provides groping for properties in RadPropertyGrid.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Data.PropertyGrid.GroupingItemsSourceConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Converts flat collection of properties to a grouped one. 
+            </summary>
+            <param name="value"></param>
+            <param name="targetType"></param>
+            <param name="parameter"></param>
+            <param name="culture"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Data.PropertyGrid.GroupingItemsSourceConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Not implemented.
+            </summary>
+            <param name="value"></param>
+            <param name="targetType"></param>
+            <param name="parameter"></param>
+            <param name="culture"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Telerik.Windows.Controls.Data.PropertyGrid.ItemTemplateConverter">
+            <summary>
+            Provides logic for switching the view between flat and grouped (categorized) property fields. 
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Data.PropertyGrid.ItemTemplateConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Converts a boolean value to grouped or flat template.
+            </summary>
+            <param name="value"></param>
+            <param name="targetType"></param>
+            <param name="parameter"></param>
+            <param name="culture"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Data.PropertyGrid.ItemTemplateConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Not used.
+            </summary>
+            <param name="value"></param>
+            <param name="targetType"></param>
+            <param name="parameter"></param>
+            <param name="culture"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Data.PropertyGrid.ItemTemplateConverter.FlatTemplate">
+            <summary>
+            A data template for flat view.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Data.PropertyGrid.ItemTemplateConverter.GroupTemplate">
+            <summary>
+            A data template for grouped (categorized) view. 
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.Data.PropertyGrid.SelectedItemConverter">
+            <summary>
+            Used to convert the selected property definition when setting the IsSelected property of a field. 
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Data.PropertyGrid.SelectedItemConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Converts the selected property to a boolean indicating that a particular field is selected.
+            </summary>
+            <param name="value"></param>
+            <param name="targetType"></param>
+            <param name="parameter">The property definition related to the field.</param>
+            <param name="culture"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Data.PropertyGrid.SelectedItemConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Not used.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.Data.PropertyGrid.LookupPropertyDefinition">
+            <summary>
+            Contains information about a lookup property.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.Data.PropertyGrid.PropertyDefinition">
+            <summary>
+            Contains information about a property. Used for declarative definition
+            of item properties displayed by RadPropertyGrid.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Data.PropertyGrid.PropertyDefinition.#ctor">
+            <summary>
+            Initializes a new instance of the PropertyDefinition class.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Data.PropertyGrid.PropertyDefinition.#ctor(Telerik.Windows.Data.ItemPropertyInfo)">
+            <summary>
+            Initializes a new instance of the PropertyDefinition class.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.Data.PropertyGrid.PropertyDefinition.GroupNameProperty">
+            <summary>
+            Represents the GroupName dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.Data.PropertyGrid.PropertyDefinition.DescriptionProperty">
+            <summary>
+            Represents the Description dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.Data.PropertyGrid.PropertyDefinition.EditorTemplateProperty">
+            <summary>
+            Represents the EditorTemplate dependency property.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Data.PropertyGrid.PropertyDefinition.GroupName">
+            <summary>
+            Gets or sets the group name used to organize properties in categories.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Data.PropertyGrid.PropertyDefinition.DisplayName">
+            <summary>
+            Gets the DisplayName.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Data.PropertyGrid.PropertyDefinition.Description">
+            <summary>
+            Gets or sets the description of a property.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Data.PropertyGrid.PropertyDefinition.IsAutogenerated">
+            <summary>
+            Gets or sets a value indicating whether the instance was generated (not defined by user).
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Data.PropertyGrid.PropertyDefinition.Binding">
+            <summary>
+            Gets or sets the binding which points to the data member to display/edit  in the field.
+            </summary>
+            <value>The data member binding.</value>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Data.PropertyGrid.PropertyDefinition.EditorTemplate">
+            <summary>
+            Gets or sets a dataTemplate for the editor of the property. If left unset, a default editor will be generated. 
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.Data.PropertyGrid.LookupPropertyDefinition.ItemsSourceProperty">
+            <summary>
+            Represents the ItemsSource dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.Data.PropertyGrid.LookupPropertyDefinition.SelectedValuePathProperty">
+            <summary>
+            Represents the SelectedValuePath dependeny property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.Data.PropertyGrid.LookupPropertyDefinition.DisplayMemberPathProperty">
+            <summary>
+            Represents the DisplayMemberPath dependency property.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Data.PropertyGrid.LookupPropertyDefinition.ItemsSource">
+            <summary>
+            Gets or sets the ItemsSource.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Data.PropertyGrid.LookupPropertyDefinition.SelectedValuePath">
+            <summary>
+            Gets or sets the selected value path.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Data.PropertyGrid.LookupPropertyDefinition.DisplayMemberPath">
+            <summary>
+            Gets or sets the display member path.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.Data.PropertyGrid.PropertyGridField">
+            <summary>
+            Provides UI for displaying and editing of a property in RadPropertyGrid.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Data.PropertyGrid.PropertyGridField.#ctor">
+            <summary>
+            Initializes a new instance of the PropertyGridField class.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Data.PropertyGrid.PropertyGridField.OnApplyTemplate">
+            <summary>
+            When overridden in a derived class, is invoked whenever 
+            application code or internal processes call 
+            <see cref="M:System.Windows.FrameworkElement.ApplyTemplate"/>.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.Data.PropertyGrid.PropertyGridField.IsSelectedProperty">
+            <summary>
+            Represents the IsSelected dependency property.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Data.PropertyGrid.PropertyGridField.OnMouseEnter(System.Windows.Input.MouseEventArgs)">
+            <summary>
+            Called on mouse enter.
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Data.PropertyGrid.PropertyGridField.OnMouseLeave(System.Windows.Input.MouseEventArgs)">
+            <summary>
+            Called on mouse leave.
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="F:Telerik.Windows.Controls.Data.PropertyGrid.PropertyGridField.IsMouseOverProperty">
+            <summary>
+            Represents the IsMouseOver dependency property.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Data.PropertyGrid.PropertyGridField.ResetTheme">
+            <summary>
+            Resets the theme.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Data.PropertyGrid.PropertyGridField.IsSelected">
+            <summary>
+            Gets or sets a value indicating whether the field is selected.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Data.PropertyGrid.PropertyGridField.IsMouseOver">
+            <summary>
+            Gets a value indicating that mouse is over the control.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.Data.PropertyGrid.PropertyDefinitionCollection">
+            <summary>
+            A collection of properties to be displayed and edited.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Data.PropertyGrid.PropertyDefinitionCollection.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.Windows.Controls.Data.PropertyGrid.PropertyDefinitionCollection"/> class.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.Data.PropertyGrid.PropertyGridPresenter">
+            <summary>
+            Presents sortorted or grouped fields in PropertyGrid. 
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Data.PropertyGrid.PropertyGridPresenter.#ctor">
+            <summary>
+            Initializes a new instance of the PropertyGridPresenter class.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.Data.PropertyGrid.PropertyGridPresenter.SelectedPropertyDefinitionProperty">
+            <summary>
+            Represents the SelectedPropertyDefinition.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.Data.PropertyGrid.PropertyGridPresenter.LabelColumnWidthProperty">
+            <summary>
+            Represents the LabelColumnWidth dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.Data.PropertyGrid.PropertyGridPresenter.FilterTextProperty">
+            <summary>
+            Represents the FilterText dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.Data.PropertyGrid.PropertyGridPresenter.PropertyDefinitionsProperty">
+            <summary>
+            Represents a the PropertyDefinitions dependency property.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Data.PropertyGrid.PropertyGridPresenter.SelectedPropertyDefinition">
+            <summary>
+            Gets or sets the selected property definition.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Data.PropertyGrid.PropertyGridPresenter.LabelColumnWidth">
+            <summary>
+            Gets or Sets the width of the first column.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Data.PropertyGrid.PropertyGridPresenter.FilterText">
+            <summary>
+            A string used to filter porperties with the search-as-you-type box.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Data.PropertyGrid.PropertyGridPresenter.PropertyDefinitions">
+            <summary>
+            A collection of property definitions to be displayed.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.Data.PropertyGrid.PropertyGridColumnResizer">
+            <summary>
+            Provides column resizing for RadPropertyGrid.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Data.PropertyGrid.PropertyGridColumnResizer.#ctor">
+            <summary>
+            Initializes a new instance of the PropertyGridColumnResizer class.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Data.PropertyGrid.PropertyGridColumnResizer.OnApplyTemplate">
+            <summary>
+            Invoked whenever application code or internal processes
+            (such as a rebuilding layout pass) call.
+            <see cref="M:System.Windows.Controls.Control.ApplyTemplate"/>.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.RadPropertyGrid">
+            <summary>
+            Provides tabular UI for editing properties of an objects. 
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadPropertyGrid.#ctor">
+            <summary>
+            Initializes a new instance of the RadPropertyGrid class.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadPropertyGrid.ResetTheme">
+            <summary>
+            Resets the theme.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadPropertyGrid.SearchBoxVisibilityProperty">
+            <summary>
+            Represents the SearchboxVisibility dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadPropertyGrid.SortAndGroupButtonsVisibilityProperty">
+            <summary>
+            Represents the SortAndGroupButtonsVisibility dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadPropertyGrid.DescriptionPanelVisibilityProperty">
+            <summary>
+            Represents the DescriptionPanelVisibility dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadPropertyGrid.LabelColumnWidthProperty">
+            <summary>
+            Represents the LabelColumnWidth dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadPropertyGrid.ItemProperty">
+            <summary>
+            Represents the Item dependency property. 
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadPropertyGrid.AutoGeneratePropertyDefinitionsProperty">
+            <summary>
+            Represents the AutoGeneratePropertyDefinitions dependency property.
+            </summary>
+        </member>
+        <member name="E:Telerik.Windows.Controls.RadPropertyGrid.AutoGeneratingPropertyDefinition">
+            <summary>
+            Occurs when a property definition is being generated.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadPropertyGrid.Item">
+            <summary>
+            Gets or sets the item to edit.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadPropertyGrid.SearchBoxVisibility">
+            <summary>
+            Gets or sets the visibility of the seach box.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadPropertyGrid.SortAndGroupButtonsVisibility">
+            <summary>
+            Gets or sets the visibility of the sort and group buttons.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadPropertyGrid.DescriptionPanelVisibility">
+            <summary>
+            Gets or sets the description panel visibility.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadPropertyGrid.LabelColumnWidth">
+            <summary>
+            Gets or Sets the width of the first column.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadPropertyGrid.PropertyDefinitions">
+            <summary>
+            Gets a collection of PropertyDefinitions describing the properties displayed or edited by RadPropertyGrid.
+            </summary>
+            <value>The collection of PropertyDefinitions.</value>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadPropertyGrid.AutoGeneratePropertyDefinitions">
+            <summary>
+            Gets or sets a value indicating whether property definitions will be autogenerated. 
             </summary>
         </member>
         <member name="T:Telerik.Windows.Controls.Data.TypeExtensions">
@@ -3028,6 +3579,14 @@
             <summary>
             Identifies the <see cref="P:Telerik.Windows.Controls.RadDataPager.PageIndex"/> dependency property.
             </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadDataPager.OnCreateAutomationPeer">
+            <summary>
+            When implemented in a derived class, returns class-specific <see cref="T:System.Windows.Automation.Peers.AutomationPeer"/> implementations for the Silverlight automation infrastructure.
+            </summary>
+            <returns>
+            The class-specific <see cref="T:System.Windows.Automation.Peers.AutomationPeer"/> subclass to return.
+            </returns>
         </member>
         <member name="F:Telerik.Windows.Controls.RadDataPager.PageSizeProperty">
             <summary>

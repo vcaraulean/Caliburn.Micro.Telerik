@@ -4487,6 +4487,14 @@
             When overridden in a derived class, is invoked whenever application code or internal processes (such as a rebuilding layout pass) call <see cref="M:System.Windows.Controls.Control.ApplyTemplate"/>.
             </summary>
         </member>
+        <member name="M:Telerik.Windows.Controls.RadComboBox.HandleKeyDown(System.Windows.Input.Key,System.Int32)">
+            <summary>
+            Contains the keyboard navigation logic of RadComboBox.
+            </summary>
+            <param name="systemKey">The key that has been pressed.</param>
+            <param name="platformKeyCode">The platform key code of the pressed key.</param>
+            <returns>True if the KeyDown event should be handled, otherwise false.</returns>
+        </member>
         <member name="M:Telerik.Windows.Controls.RadComboBox.ChangeVisualState(System.Boolean)">
             <summary>
             Updates the visual state of the control.
@@ -5517,6 +5525,21 @@
             Initializes a new instance of the RadDatePicker class.
             </summary>
         </member>
+        <member name="T:Telerik.Windows.Controls.RadDateTimePickerCommands">
+            <summary>
+            Registers in the CommandManager all the commands that RadDateTimePicker exposes.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadDateTimePickerCommands.SetToday">
+            <summary>
+            Gets the set today.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadDateTimePickerCommands.CommandId.SetToday">
+            <summary>
+            Sets the date to Today.
+            </summary>
+        </member>
         <member name="T:Telerik.Windows.Controls.DateTimePickerClock">
             <summary>
             Represents a selection control that allows you to select time from grid.
@@ -5952,6 +5975,21 @@
             AM/PM section.
             </summary>
         </member>
+        <member name="T:Telerik.Windows.Controls.MaskedInput.Extensions.SelectionStartOnSignChanged">
+            <summary>
+            Specifies the caret's position when the value sign changes.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.MaskedInput.Extensions.SelectionStartOnSignChanged.Beginning">
+            <summary>
+            Caret at the beginning.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.MaskedInput.Extensions.SelectionStartOnSignChanged.Unchanged">
+            <summary>
+            Caret position stays unchanged.
+            </summary>
+        </member>
         <member name="T:Telerik.Windows.Controls.MaskedInput.HorizontalContentAlignmentToTextAlignmentConverter">
             <summary>
             A ValueConverter for converting HorizontalAlignment to TextAlignment.
@@ -6042,6 +6080,11 @@
             Identifies the UseCultureDigits dependency property.
             </summary>
         </member>
+        <member name="F:Telerik.Windows.Controls.MaskedInput.MaskedInputExtensions.SelectionStartOnSignChangedProperty">
+            <summary>
+            Identifies the SelectionStartOnSignChanged dependency property.
+            </summary>
+        </member>
         <member name="M:Telerik.Windows.Controls.MaskedInput.MaskedInputExtensions.GetMaximum(System.Windows.DependencyObject)">
             <summary>
             
@@ -6120,6 +6163,20 @@
             <returns></returns>
         </member>
         <member name="M:Telerik.Windows.Controls.MaskedInput.MaskedInputExtensions.SetUseCultureDigits(System.Windows.DependencyObject,System.Boolean)">
+            <summary>
+            
+            </summary>
+            <param name="obj"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.MaskedInput.MaskedInputExtensions.GetSelectionStartOnSignChanged(System.Windows.DependencyObject)">
+            <summary>
+            
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.MaskedInput.MaskedInputExtensions.SetSelectionStartOnSignChanged(System.Windows.DependencyObject,Telerik.Windows.Controls.MaskedInput.Extensions.SelectionStartOnSignChanged)">
             <summary>
             
             </summary>
@@ -12984,6 +13041,11 @@
             </summary>
         </member>
         <member name="P:Telerik.Windows.Controls.RadUploadSelectedFile.File">
+            <summary>
+            Pointer to the selected file from the runtime.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadUploadSelectedFile.Stream">
             <summary>
             Pointer to the selected file from the runtime.
             </summary>
