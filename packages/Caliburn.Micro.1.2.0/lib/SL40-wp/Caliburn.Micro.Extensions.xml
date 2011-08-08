@@ -91,82 +91,125 @@
             The results of the task.
             </summary>
         </member>
+        <member name="T:Caliburn.Micro.IVibrateController">
+            <summary>
+            Allows applications to start and stop vibration on the device.
+            </summary>
+        </member>
+        <member name="M:Caliburn.Micro.IVibrateController.Start(System.TimeSpan)">
+            <summary>
+            Starts vibration on the device.
+            </summary>
+            <param name="duration">A TimeSpan object specifying the amount of time for which the phone vibrates.</param>
+        </member>
+        <member name="M:Caliburn.Micro.IVibrateController.Stop">
+            <summary>
+            Stops vibration on the device.
+            </summary>
+        </member>
+        <member name="T:Caliburn.Micro.SystemVibrateController">
+            <summary>
+            The default implementation of <see cref="T:Caliburn.Micro.IVibrateController"/>, using the system controller.
+            </summary>
+        </member>
+        <member name="M:Caliburn.Micro.SystemVibrateController.Start(System.TimeSpan)">
+            <summary>
+            Starts vibration on the device.
+            </summary>
+            <param name="duration">A TimeSpan object specifying the amount of time for which the phone vibrates.</param>
+        </member>
+        <member name="M:Caliburn.Micro.SystemVibrateController.Stop">
+            <summary>
+            Stops vibration on the device.
+            </summary>
+        </member>
         <member name="T:Caliburn.Micro.SimpleContainer">
             <summary>
-            A simple IoC container.
+              A simple IoC container.
+            </summary>
+        </member>
+        <member name="M:Caliburn.Micro.SimpleContainer.#ctor">
+            <summary>
+              Initializes a new instance of the <see cref="T:Caliburn.Micro.SimpleContainer"/> class.
             </summary>
         </member>
         <member name="M:Caliburn.Micro.SimpleContainer.RegisterInstance(System.Type,System.String,System.Object)">
             <summary>
-            Registers the instance.
+              Registers the instance.
             </summary>
-            <param name="service">The service.</param>
-            <param name="key">The key.</param>
-            <param name="implementation">The implementation.</param>
+            <param name = "service">The service.</param>
+            <param name = "key">The key.</param>
+            <param name = "implementation">The implementation.</param>
         </member>
         <member name="M:Caliburn.Micro.SimpleContainer.RegisterPerRequest(System.Type,System.String,System.Type)">
             <summary>
-            Registers the class so that a new instance is created on every request.
+              Registers the class so that a new instance is created on every request.
             </summary>
-            <param name="service">The service.</param>
-            <param name="key">The key.</param>
-            <param name="implementation">The implementation.</param>
+            <param name = "service">The service.</param>
+            <param name = "key">The key.</param>
+            <param name = "implementation">The implementation.</param>
         </member>
         <member name="M:Caliburn.Micro.SimpleContainer.RegisterSingleton(System.Type,System.String,System.Type)">
             <summary>
-            Registers the class so that it is created once, on first request, and the same instance is returned to all requestors thereafter.
+              Registers the class so that it is created once, on first request, and the same instance is returned to all requestors thereafter.
             </summary>
-            <param name="service">The service.</param>
-            <param name="key">The key.</param>
-            <param name="implementation">The implementation.</param>
+            <param name = "service">The service.</param>
+            <param name = "key">The key.</param>
+            <param name = "implementation">The implementation.</param>
         </member>
-        <member name="M:Caliburn.Micro.SimpleContainer.RegisterHandler(System.Type,System.String,System.Func{System.Object})">
+        <member name="M:Caliburn.Micro.SimpleContainer.RegisterHandler(System.Type,System.String,System.Func{Caliburn.Micro.SimpleContainer,System.Object})">
             <summary>
-            Registers a custom handler for serving requests from the container.
+              Registers a custom handler for serving requests from the container.
             </summary>
-            <param name="service">The service.</param>
-            <param name="key">The key.</param>
-            <param name="handler">The handler.</param>
+            <param name = "service">The service.</param>
+            <param name = "key">The key.</param>
+            <param name = "handler">The handler.</param>
         </member>
         <member name="M:Caliburn.Micro.SimpleContainer.GetInstance(System.Type,System.String)">
             <summary>
-            Requests an instance.
+              Requests an instance.
             </summary>
-            <param name="service">The service.</param>
-            <param name="key">The key.</param>
+            <param name = "service">The service.</param>
+            <param name = "key">The key.</param>
             <returns>The instance, or null if a handler is not found.</returns>
         </member>
         <member name="M:Caliburn.Micro.SimpleContainer.GetAllInstances(System.Type)">
             <summary>
-            Requests all instances of a given type.
+              Requests all instances of a given type.
             </summary>
-            <param name="service">The service.</param>
+            <param name = "service">The service.</param>
             <returns>All the instances or an empty enumerable if none are found.</returns>
         </member>
         <member name="M:Caliburn.Micro.SimpleContainer.BuildUp(System.Object)">
             <summary>
-            Pushes dependencies into an existing instance based on interface properties with setters.
+              Pushes dependencies into an existing instance based on interface properties with setters.
             </summary>
-            <param name="instance">The instance.</param>
+            <param name = "instance">The instance.</param>
+        </member>
+        <member name="M:Caliburn.Micro.SimpleContainer.CreateChildContainer">
+            <summary>
+            Creates a child container.
+            </summary>
+            <returns>A new container.</returns>
         </member>
         <member name="M:Caliburn.Micro.SimpleContainer.BuildInstance(System.Type)">
             <summary>
-            Actually does the work of creating the instance and satisfying it's constructor dependencies.
+              Actually does the work of creating the instance and satisfying it's constructor dependencies.
             </summary>
-            <param name="type">The type.</param>
+            <param name = "type">The type.</param>
             <returns></returns>
         </member>
         <member name="M:Caliburn.Micro.SimpleContainer.ActivateInstance(System.Type,System.Object[])">
             <summary>
-            Creates an instance of the type with the specified constructor arguments.
+              Creates an instance of the type with the specified constructor arguments.
             </summary>
-            <param name="type">The type.</param>
-            <param name="args">The constructor args.</param>
+            <param name = "type">The type.</param>
+            <param name = "args">The constructor args.</param>
             <returns>The created instance.</returns>
         </member>
         <member name="E:Caliburn.Micro.SimpleContainer.Activated">
             <summary>
-            Occurs when a new instance is created.
+              Occurs when a new instance is created.
             </summary>
         </member>
         <member name="T:Caliburn.Micro.StorageHandler`1">
@@ -466,6 +509,21 @@
             <param name="navigationService">The navigation service.</param>
             <returns>The builder.</returns>
         </member>
+        <member name="T:Caliburn.Micro.WindowManagerExtensions">
+            <summary>
+            WindowManager extensions
+            </summary>
+        </member>
+        <member name="M:Caliburn.Micro.WindowManagerExtensions.ShowDialogWithFeedback(Caliburn.Micro.IWindowManager,System.Object,System.Object,System.Uri,System.Boolean)">
+            <summary>
+              Shows a modal dialog for the specified model, using vibrate and audio feedback
+            </summary>
+            <param name = "windowManager">The WindowManager instance.</param>
+            <param name = "rootModel">The root model.</param>
+            <param name = "context">The context.</param>
+            <param name="wavOpeningSound">If not null, use the specified .wav as opening sound</param>
+            <param name="vibrate">If true, use a vibration feedback on dialog opening</param>
+        </member>
         <member name="T:Caliburn.Micro.StorageCoordinator">
             <summary>
             Coordinates the saving and loading of objects based on application lifecycle events.
@@ -690,7 +748,7 @@
             <param name="instance">The instance.</param>
             <returns>The container.</returns>
         </member>
-        <member name="M:Caliburn.Micro.ContainerExtensions.Handler``1(Caliburn.Micro.SimpleContainer,System.Func{System.Object})">
+        <member name="M:Caliburn.Micro.ContainerExtensions.Handler``1(Caliburn.Micro.SimpleContainer,System.Func{Caliburn.Micro.SimpleContainer,System.Object})">
             <summary>
             Registers a custom service handler with the container.
             </summary>
@@ -812,6 +870,31 @@
             <param name="service">The service.</param>
             <param name="key">The key.</param>
             <param name="implementation">The implementation.</param>
+        </member>
+        <member name="T:Caliburn.Micro.ISoundEffectPlayer">
+            <summary>
+            Service allowing to play a .wav sound effect
+            </summary>
+        </member>
+        <member name="M:Caliburn.Micro.ISoundEffectPlayer.Play(System.Uri)">
+            <summary>
+            Plays a sound effect
+            </summary>
+            <param name="wavResource">The uri of the resource containing the .wav file</param>
+        </member>
+        <member name="T:Caliburn.Micro.XnaSoundEffectPlayer">
+            <summary>
+            Default <see cref="T:Caliburn.Micro.ISoundEffectPlayer"/> implementation, using Xna Framework.
+            The sound effect is played without interrupting the music playback on the phone (which is required for the app certification
+            in the WP7 Marketplace.
+            Also note that using the Xna Framework in a WP7 Silverlight app is explicitly allowed for this very purpose.
+            </summary>
+        </member>
+        <member name="M:Caliburn.Micro.XnaSoundEffectPlayer.Play(System.Uri)">
+            <summary>
+            Plays a sound effect
+            </summary>
+            <param name="wavResource">The uri of the resource containing the .wav file</param>
         </member>
     </members>
 </doc>

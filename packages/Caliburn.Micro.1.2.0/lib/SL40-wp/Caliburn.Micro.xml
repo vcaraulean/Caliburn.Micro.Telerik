@@ -4,6 +4,305 @@
         <name>Caliburn.Micro</name>
     </assembly>
     <members>
+        <member name="T:Caliburn.Micro.PhoneBootstrapper">
+            <summary>
+            A custom bootstrapper designed to setup phone applications.
+            </summary>
+        </member>
+        <member name="T:Caliburn.Micro.Bootstrapper">
+            <summary>
+            Instantiate this class in order to configure the framework.
+            </summary>
+        </member>
+        <member name="M:Caliburn.Micro.Bootstrapper.#ctor(System.Boolean)">
+            <summary>
+            Creates an instance of the bootstrapper.
+            </summary>
+        </member>
+        <member name="M:Caliburn.Micro.Bootstrapper.StartDesignTime">
+            <summary>
+            Called by the bootstrapper's constructor at design time to start the framework.
+            </summary>
+        </member>
+        <member name="M:Caliburn.Micro.Bootstrapper.StartRuntime">
+            <summary>
+            Called by the bootstrapper's constructor at runtime to start the framework.
+            </summary>
+        </member>
+        <member name="M:Caliburn.Micro.Bootstrapper.Configure">
+            <summary>
+            Override to configure the framework and setup your IoC container.
+            </summary>
+        </member>
+        <member name="M:Caliburn.Micro.Bootstrapper.PrepareApplication">
+            <summary>
+            Provides an opportunity to hook into the application object.
+            </summary>
+        </member>
+        <member name="M:Caliburn.Micro.Bootstrapper.SelectAssemblies">
+            <summary>
+            Override to tell the framework where to find assemblies to inspect for views, etc.
+            </summary>
+            <returns>A list of assemblies to inspect.</returns>
+        </member>
+        <member name="M:Caliburn.Micro.Bootstrapper.GetInstance(System.Type,System.String)">
+            <summary>
+            Override this to provide an IoC specific implementation.
+            </summary>
+            <param name="service">The service to locate.</param>
+            <param name="key">The key to locate.</param>
+            <returns>The located service.</returns>
+        </member>
+        <member name="M:Caliburn.Micro.Bootstrapper.GetAllInstances(System.Type)">
+            <summary>
+            Override this to provide an IoC specific implementation
+            </summary>
+            <param name="service">The service to locate.</param>
+            <returns>The located services.</returns>
+        </member>
+        <member name="M:Caliburn.Micro.Bootstrapper.BuildUp(System.Object)">
+            <summary>
+            Override this to provide an IoC specific implementation.
+            </summary>
+            <param name="instance">The instance to perform injection on.</param>
+        </member>
+        <member name="M:Caliburn.Micro.Bootstrapper.OnStartup(System.Object,System.Windows.StartupEventArgs)">
+            <summary>
+            Override this to add custom behavior to execute after the application starts.
+            </summary>
+            <param name="sender">The sender.</param>
+            <param name="e">The args.</param>
+        </member>
+        <member name="M:Caliburn.Micro.Bootstrapper.OnExit(System.Object,System.EventArgs)">
+            <summary>
+            Override this to add custom behavior on exit.
+            </summary>
+            <param name="sender">The sender.</param>
+            <param name="e">The event args.</param>
+        </member>
+        <member name="M:Caliburn.Micro.Bootstrapper.OnUnhandledException(System.Object,System.Windows.ApplicationUnhandledExceptionEventArgs)">
+            <summary>
+            Override this to add custom behavior for unhandled exceptions.
+            </summary>
+            <param name="sender">The sender.</param>
+            <param name="e">The event args.</param>
+        </member>
+        <member name="P:Caliburn.Micro.Bootstrapper.Application">
+            <summary>
+            The application.
+            </summary>
+        </member>
+        <member name="M:Caliburn.Micro.PhoneBootstrapper.PrepareApplication">
+            <summary>
+            Provides an opportunity to hook into the application object.
+            </summary>
+        </member>
+        <member name="M:Caliburn.Micro.PhoneBootstrapper.CreatePhoneApplicationFrame">
+            <summary>
+            Creates the root frame used by the application.
+            </summary>
+            <returns>The frame.</returns>
+        </member>
+        <member name="M:Caliburn.Micro.PhoneBootstrapper.OnLaunch(System.Object,Microsoft.Phone.Shell.LaunchingEventArgs)">
+            <summary>
+            Occurs when a fresh instance of the application is launching.
+            </summary>
+        </member>
+        <member name="M:Caliburn.Micro.PhoneBootstrapper.OnActivate(System.Object,Microsoft.Phone.Shell.ActivatedEventArgs)">
+            <summary>
+            Occurs when a previously tombstoned or paused application is resurrected/resumed.
+            </summary>
+        </member>
+        <member name="M:Caliburn.Micro.PhoneBootstrapper.OnDeactivate(System.Object,Microsoft.Phone.Shell.DeactivatedEventArgs)">
+            <summary>
+            Occurs when the application is being tombstoned or paused.
+            </summary>
+        </member>
+        <member name="M:Caliburn.Micro.PhoneBootstrapper.OnClose(System.Object,Microsoft.Phone.Shell.ClosingEventArgs)">
+            <summary>
+            Occurs when the application is closing.
+            </summary>
+        </member>
+        <member name="P:Caliburn.Micro.PhoneBootstrapper.RootFrame">
+            <summary>
+            The root frame used for navigation.
+            </summary>
+        </member>
+        <member name="T:Caliburn.Micro.INavigationService">
+            <summary>
+            Implemented by services that provide <see cref="T:System.Uri"/> based navigation.
+            </summary>
+        </member>
+        <member name="M:Caliburn.Micro.INavigationService.StopLoading">
+            <summary>
+            Stops the loading process.
+            </summary>
+        </member>
+        <member name="M:Caliburn.Micro.INavigationService.GoBack">
+            <summary>
+            Navigates back.
+            </summary>
+        </member>
+        <member name="M:Caliburn.Micro.INavigationService.GoForward">
+            <summary>
+            Navigates forward.
+            </summary>
+        </member>
+        <member name="P:Caliburn.Micro.INavigationService.Source">
+            <summary>
+            The <see cref="T:System.Uri"/> source.
+            </summary>
+        </member>
+        <member name="P:Caliburn.Micro.INavigationService.CanGoBack">
+            <summary>
+            Indicates whether the navigator can navigate back.
+            </summary>
+        </member>
+        <member name="P:Caliburn.Micro.INavigationService.CanGoForward">
+            <summary>
+            Indicates whether the navigator can navigate forward.
+            </summary>
+        </member>
+        <member name="P:Caliburn.Micro.INavigationService.CurrentSource">
+            <summary>
+            The current <see cref="T:System.Uri"/> source.
+            </summary>
+        </member>
+        <member name="P:Caliburn.Micro.INavigationService.CurrentContent">
+            <summary>
+            The current content.
+            </summary>
+        </member>
+        <member name="E:Caliburn.Micro.INavigationService.Navigated">
+            <summary>
+            Raised after navigation.
+            </summary>
+        </member>
+        <member name="E:Caliburn.Micro.INavigationService.Navigating">
+            <summary>
+            Raised prior to navigation.
+            </summary>
+        </member>
+        <member name="E:Caliburn.Micro.INavigationService.NavigationFailed">
+            <summary>
+            Raised when navigation fails.
+            </summary>
+        </member>
+        <member name="E:Caliburn.Micro.INavigationService.NavigationStopped">
+            <summary>
+            Raised when navigation is stopped.
+            </summary>
+        </member>
+        <member name="E:Caliburn.Micro.INavigationService.FragmentNavigation">
+            <summary>
+            Raised when a fragment navigation occurs.
+            </summary>
+        </member>
+        <member name="T:Caliburn.Micro.FrameAdapter">
+            <summary>
+            A basic implementation of <see cref="T:Caliburn.Micro.INavigationService"/> designed to adapt the <see cref="T:System.Windows.Controls.Frame"/> control.
+            </summary>
+        </member>
+        <member name="M:Caliburn.Micro.FrameAdapter.#ctor(System.Windows.Controls.Frame,System.Boolean)">
+            <summary>
+            Creates an instance of <see cref="T:Caliburn.Micro.FrameAdapter"/>
+            </summary>
+            <param name="frame">The frame to represent as a <see cref="T:Caliburn.Micro.INavigationService"/>.</param>
+            <param name="treatViewAsLoaded">Tells the frame adapter to assume that the view has already been loaded by the time OnNavigated is called. This is necessary when using the TransitionFrame.</param>
+        </member>
+        <member name="M:Caliburn.Micro.FrameAdapter.OnNavigating(System.Object,System.Windows.Navigation.NavigatingCancelEventArgs)">
+            <summary>
+            Occurs before navigation
+            </summary>
+            <param name="sender">The event sender.</param>
+            <param name="e">The event args.</param>
+        </member>
+        <member name="M:Caliburn.Micro.FrameAdapter.OnNavigated(System.Object,System.Windows.Navigation.NavigationEventArgs)">
+            <summary>
+            Occurs after navigation
+            </summary>
+            <param name="sender">The event sender.</param>
+            <param name="e">The event args.</param>
+        </member>
+        <member name="M:Caliburn.Micro.FrameAdapter.TryInjectQueryString(System.Object,System.Windows.Controls.Page)">
+            <summary>
+            Attempts to inject query string parameters from the view into the view model.
+            </summary>
+            <param name="viewModel">The view model.</param>
+            <param name="page">The page.</param>
+        </member>
+        <member name="M:Caliburn.Micro.FrameAdapter.StopLoading">
+            <summary>
+            Stops the loading process.
+            </summary>
+        </member>
+        <member name="M:Caliburn.Micro.FrameAdapter.GoBack">
+            <summary>
+            Navigates back.
+            </summary>
+        </member>
+        <member name="M:Caliburn.Micro.FrameAdapter.GoForward">
+            <summary>
+            Navigates forward.
+            </summary>
+        </member>
+        <member name="M:Caliburn.Micro.FrameAdapter.Navigate(System.Uri)">
+            <summary>
+            Navigates to the specified <see cref="T:System.Uri"/>.
+            </summary>
+            <param name="source">The <see cref="T:System.Uri"/> to navigate to.</param>
+            <returns>Whether or not navigation succeeded.</returns>
+        </member>
+        <member name="P:Caliburn.Micro.FrameAdapter.Source">
+            <summary>
+            The <see cref="T:System.Uri"/> source.
+            </summary>
+        </member>
+        <member name="P:Caliburn.Micro.FrameAdapter.CanGoBack">
+            <summary>
+            Indicates whether the navigator can navigate back.
+            </summary>
+        </member>
+        <member name="P:Caliburn.Micro.FrameAdapter.CanGoForward">
+            <summary>
+            Indicates whether the navigator can navigate forward.
+            </summary>
+        </member>
+        <member name="P:Caliburn.Micro.FrameAdapter.CurrentSource">
+            <summary>
+            The current <see cref="T:System.Uri"/> source.
+            </summary>
+        </member>
+        <member name="P:Caliburn.Micro.FrameAdapter.CurrentContent">
+            <summary>
+            The current content.
+            </summary>
+        </member>
+        <member name="E:Caliburn.Micro.FrameAdapter.Navigated">
+            <summary>
+            Raised after navigation.
+            </summary>
+        </member>
+        <member name="E:Caliburn.Micro.FrameAdapter.Navigating">
+            <summary>
+            Raised prior to navigation.
+            </summary>
+        </member>
+        <member name="E:Caliburn.Micro.FrameAdapter.NavigationFailed">
+            <summary>
+            Raised when navigation fails.
+            </summary>
+        </member>
+        <member name="E:Caliburn.Micro.FrameAdapter.NavigationStopped">
+            <summary>
+            Raised when navigation is stopped.
+            </summary>
+        </member>
+        <member name="E:Caliburn.Micro.FrameAdapter.FragmentNavigation">
+            <summary>
+            Raised when a fragment navigation occurs.
+            </summary>
+        </member>
         <member name="T:Caliburn.Micro.View">
             <summary>
             Hosts attached properties related to view models.
@@ -175,6 +474,237 @@
             </summary>
             <value>The value.</value>
         </member>
+        <member name="T:Caliburn.Micro.Execute">
+            <summary>
+              Enables easy marshalling of code to the UI thread.
+            </summary>
+        </member>
+        <member name="M:Caliburn.Micro.Execute.InitializeWithDispatcher">
+            <summary>
+              Initializes the framework using the current dispatcher.
+            </summary>
+        </member>
+        <member name="M:Caliburn.Micro.Execute.ResetWithoutDispatcher">
+            <summary>
+              Resets the executor to use a non-dispatcher-based action executor.
+            </summary>
+        </member>
+        <member name="M:Caliburn.Micro.Execute.OnUIThread(System.Action)">
+            <summary>
+              Executes the action on the UI thread.
+            </summary>
+            <param name = "action">The action to execute.</param>
+        </member>
+        <member name="P:Caliburn.Micro.Execute.InDesignMode">
+            <summary>
+              Indicates whether or not the framework is in design-time mode.
+            </summary>
+        </member>
+        <member name="T:Caliburn.Micro.INotifyPropertyChangedEx">
+            <summary>
+              Extends <see cref="T:System.ComponentModel.INotifyPropertyChanged"/> such that the change event can be raised by external parties.
+            </summary>
+        </member>
+        <member name="M:Caliburn.Micro.INotifyPropertyChangedEx.NotifyOfPropertyChange(System.String)">
+            <summary>
+              Notifies subscribers of the property change.
+            </summary>
+            <param name = "propertyName">Name of the property.</param>
+        </member>
+        <member name="M:Caliburn.Micro.INotifyPropertyChangedEx.Refresh">
+            <summary>
+              Raises a change notification indicating that all bindings should be refreshed.
+            </summary>
+        </member>
+        <member name="P:Caliburn.Micro.INotifyPropertyChangedEx.IsNotifying">
+            <summary>
+              Enables/Disables property change notification.
+            </summary>
+        </member>
+        <member name="T:Caliburn.Micro.PropertyChangedBase">
+            <summary>
+              A base class that implements the infrastructure for property change notification and automatically performs UI thread marshalling.
+            </summary>
+        </member>
+        <member name="M:Caliburn.Micro.PropertyChangedBase.#ctor">
+            <summary>
+              Creates an instance of <see cref="T:Caliburn.Micro.PropertyChangedBase"/>.
+            </summary>
+        </member>
+        <member name="M:Caliburn.Micro.PropertyChangedBase.Refresh">
+            <summary>
+              Raises a change notification indicating that all bindings should be refreshed.
+            </summary>
+        </member>
+        <member name="M:Caliburn.Micro.PropertyChangedBase.NotifyOfPropertyChange(System.String)">
+            <summary>
+              Notifies subscribers of the property change.
+            </summary>
+            <param name = "propertyName">Name of the property.</param>
+        </member>
+        <member name="M:Caliburn.Micro.PropertyChangedBase.NotifyOfPropertyChange``1(System.Linq.Expressions.Expression{System.Func{``0}})">
+            <summary>
+              Notifies subscribers of the property change.
+            </summary>
+            <typeparam name = "TProperty">The type of the property.</typeparam>
+            <param name = "property">The property expression.</param>
+        </member>
+        <member name="M:Caliburn.Micro.PropertyChangedBase.RaisePropertyChangedEventImmediately(System.String)">
+            <summary>
+              Raises the property changed event immediately.
+            </summary>
+            <param name = "propertyName">Name of the property.</param>
+        </member>
+        <member name="E:Caliburn.Micro.PropertyChangedBase.PropertyChanged">
+            <summary>
+              Occurs when a property value changes.
+            </summary>
+        </member>
+        <member name="P:Caliburn.Micro.PropertyChangedBase.IsNotifying">
+            <summary>
+              Enables/Disables property change notification.
+            </summary>
+        </member>
+        <member name="T:Caliburn.Micro.IObservableCollection`1">
+            <summary>
+              Represents a collection that is observable.
+            </summary>
+            <typeparam name = "T">The type of elements contained in the collection.</typeparam>
+        </member>
+        <member name="M:Caliburn.Micro.IObservableCollection`1.AddRange(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+              Adds the range.
+            </summary>
+            <param name = "items">The items.</param>
+        </member>
+        <member name="M:Caliburn.Micro.IObservableCollection`1.RemoveRange(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+              Removes the range.
+            </summary>
+            <param name = "items">The items.</param>
+        </member>
+        <member name="T:Caliburn.Micro.BindableCollection`1">
+            <summary>
+            A base collection class that supports automatic UI thread marshalling.
+            </summary>
+            <typeparam name="T">The type of elements contained in the collection.</typeparam>
+        </member>
+        <member name="M:Caliburn.Micro.BindableCollection`1.#ctor">
+            <summary>
+              Initializes a new instance of the <see cref="T:Caliburn.Micro.BindableCollection`1"/> class.
+            </summary>
+        </member>
+        <member name="M:Caliburn.Micro.BindableCollection`1.#ctor(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+              Initializes a new instance of the <see cref="T:Caliburn.Micro.BindableCollection`1"/> class.
+            </summary>
+            <param name="collection">The collection from which the elements are copied.</param>
+            <exception cref="T:System.ArgumentNullException">
+              The <paramref name="collection"/> parameter cannot be null.
+            </exception>
+        </member>
+        <member name="M:Caliburn.Micro.BindableCollection`1.NotifyOfPropertyChange(System.String)">
+            <summary>
+              Notifies subscribers of the property change.
+            </summary>
+            <param name = "propertyName">Name of the property.</param>
+        </member>
+        <member name="M:Caliburn.Micro.BindableCollection`1.Refresh">
+            <summary>
+              Raises a change notification indicating that all bindings should be refreshed.
+            </summary>
+        </member>
+        <member name="M:Caliburn.Micro.BindableCollection`1.InsertItem(System.Int32,`0)">
+            <summary>
+              Inserts the item to the specified position.
+            </summary>
+            <param name = "index">The index to insert at.</param>
+            <param name = "item">The item to be inserted.</param>
+        </member>
+        <member name="M:Caliburn.Micro.BindableCollection`1.InsertItemBase(System.Int32,`0)">
+            <summary>
+              Exposes the base implementation of the <see cref="M:Caliburn.Micro.BindableCollection`1.InsertItem(System.Int32,`0)"/> function.
+            </summary>
+            <param name="index">The index.</param>
+            <param name="item">The item.</param>
+            <remarks>
+              Used to avoid compiler warning regarding unverifiable code.
+            </remarks>
+        </member>
+        <member name="M:Caliburn.Micro.BindableCollection`1.SetItem(System.Int32,`0)">
+            <summary>
+              Sets the item at the specified position.
+            </summary>
+            <param name = "index">The index to set the item at.</param>
+            <param name = "item">The item to set.</param>
+        </member>
+        <member name="M:Caliburn.Micro.BindableCollection`1.SetItemBase(System.Int32,`0)">
+            <summary>
+              Exposes the base implementation of the <see cref="M:Caliburn.Micro.BindableCollection`1.SetItem(System.Int32,`0)"/> function.
+            </summary>
+            <param name="index">The index.</param>
+            <param name="item">The item.</param>
+            <remarks>
+              Used to avoid compiler warning regarding unverifiable code.
+            </remarks>
+        </member>
+        <member name="M:Caliburn.Micro.BindableCollection`1.RemoveItem(System.Int32)">
+            <summary>
+              Removes the item at the specified position.
+            </summary>
+            <param name = "index">The position used to identify the item to remove.</param>
+        </member>
+        <member name="M:Caliburn.Micro.BindableCollection`1.RemoveItemBase(System.Int32)">
+            <summary>
+              Exposes the base implementation of the <see cref="M:Caliburn.Micro.BindableCollection`1.RemoveItem(System.Int32)"/> function.
+            </summary>
+            <param name="index">The index.</param>
+            <remarks>
+              Used to avoid compiler warning regarding unverifiable code.
+            </remarks>
+        </member>
+        <member name="M:Caliburn.Micro.BindableCollection`1.ClearItems">
+            <summary>
+              Clears the items contained by the collection.
+            </summary>
+        </member>
+        <member name="M:Caliburn.Micro.BindableCollection`1.ClearItemsBase">
+            <summary>
+              Exposes the base implementation of the <see cref="M:Caliburn.Micro.BindableCollection`1.ClearItems"/> function.
+            </summary>
+            <remarks>
+              Used to avoid compiler warning regarding unverifiable code.
+            </remarks>
+        </member>
+        <member name="M:Caliburn.Micro.BindableCollection`1.OnCollectionChanged(System.Collections.Specialized.NotifyCollectionChangedEventArgs)">
+            <summary>
+              Raises the <see cref = "E:System.Collections.ObjectModel.ObservableCollection`1.CollectionChanged" /> event with the provided arguments.
+            </summary>
+            <param name = "e">Arguments of the event being raised.</param>
+        </member>
+        <member name="M:Caliburn.Micro.BindableCollection`1.OnPropertyChanged(System.ComponentModel.PropertyChangedEventArgs)">
+            <summary>
+              Raises the PropertyChanged event with the provided arguments.
+            </summary>
+            <param name = "e">The event data to report in the event.</param>
+        </member>
+        <member name="M:Caliburn.Micro.BindableCollection`1.AddRange(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+              Adds the range.
+            </summary>
+            <param name = "items">The items.</param>
+        </member>
+        <member name="M:Caliburn.Micro.BindableCollection`1.RemoveRange(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+              Removes the range.
+            </summary>
+            <param name = "items">The items.</param>
+        </member>
+        <member name="P:Caliburn.Micro.BindableCollection`1.IsNotifying">
+            <summary>
+              Enables/Disables property change notification.
+            </summary>
+        </member>
         <member name="T:Caliburn.Micro.ILog">
             <summary>
             A logger.
@@ -210,108 +740,90 @@
             Creates an <see cref="T:Caliburn.Micro.ILog"/> for the provided type.
             </summary>
         </member>
-        <member name="T:Caliburn.Micro.IHandle">
+        <member name="T:Caliburn.Micro.Tuple`3">
             <summary>
-            A marker interface for classes that subscribe to messages.
+            Represents a tuple with three items.
+            </summary>
+            <typeparam name="TItem1"></typeparam>
+            <typeparam name="TItem2"></typeparam>
+            <typeparam name="TItem3"></typeparam>
+        </member>
+        <member name="M:Caliburn.Micro.Tuple`3.#ctor(`0,`1,`2)">
+            <summary>
+            Creates an instance of the tuple.
+            </summary>
+            <param name="item1">The first item.</param>
+            <param name="item2">The second item.</param>
+            <param name="item3">The third item.</param>
+        </member>
+        <member name="P:Caliburn.Micro.Tuple`3.Item1">
+            <summary>
+            Gets or Sets the first item.
             </summary>
         </member>
-        <member name="T:Caliburn.Micro.IHandle`1">
+        <member name="P:Caliburn.Micro.Tuple`3.Item2">
             <summary>
-            Denotes a class which can handle a particular type of message.
-            </summary>
-            <typeparam name="TMessage">The type of message to handle.</typeparam>
-        </member>
-        <member name="M:Caliburn.Micro.IHandle`1.Handle(`0)">
-            <summary>
-            Handles the message.
-            </summary>
-            <param name="message">The message.</param>
-        </member>
-        <member name="T:Caliburn.Micro.Execute">
-            <summary>
-            Enables easy marshalling of code to the UI thread.
+            Gets or Sets the second item.
             </summary>
         </member>
-        <member name="M:Caliburn.Micro.Execute.InitializeWithDispatcher">
+        <member name="P:Caliburn.Micro.Tuple`3.Item3">
             <summary>
-            Initializes the framework using the current dispatcher.
+            Gets or Sets the third item.
             </summary>
         </member>
-        <member name="M:Caliburn.Micro.Execute.ResetWithoutDispatcher">
+        <member name="T:Caliburn.Micro.AppBarButton">
             <summary>
-            Resets the executor to use a non-dispatcher-based action executor.
+            An <see cref="T:Microsoft.Phone.Shell.ApplicationBarIconButton"/> capable of triggering action messages.
             </summary>
         </member>
-        <member name="M:Caliburn.Micro.Execute.OnUIThread(System.Action)">
+        <member name="P:Caliburn.Micro.AppBarButton.Message">
             <summary>
-            Executes the action on the UI thread.
-            </summary>
-            <param name="action">The action to execute.</param>
-        </member>
-        <member name="T:Caliburn.Micro.INotifyPropertyChangedEx">
-            <summary>
-            Extends <see cref="T:System.ComponentModel.INotifyPropertyChanged"/> such that the change event can be raised by external parties.
+            The action message.
             </summary>
         </member>
-        <member name="M:Caliburn.Micro.INotifyPropertyChangedEx.NotifyOfPropertyChange(System.String)">
+        <member name="T:Caliburn.Micro.AppBarMenuItem">
             <summary>
-            Notifies subscribers of the property change.
-            </summary>
-            <param name="propertyName">Name of the property.</param>
-        </member>
-        <member name="M:Caliburn.Micro.INotifyPropertyChangedEx.Refresh">
-            <summary>
-            Raises a change notification indicating that all bindings should be refreshed.
+            An <see cref="T:Microsoft.Phone.Shell.ApplicationBarMenuItem"/> capable of triggering action messages.
             </summary>
         </member>
-        <member name="P:Caliburn.Micro.INotifyPropertyChangedEx.IsNotifying">
+        <member name="P:Caliburn.Micro.AppBarMenuItem.Message">
             <summary>
-            Enables/Disables property change notification.
+            The action message.
             </summary>
         </member>
-        <member name="T:Caliburn.Micro.PropertyChangedBase">
+        <member name="T:Caliburn.Micro.AttachedCollection`1">
             <summary>
-            A base class that implements the infrastructure for property change notification and automatically performs UI thread marshalling.
+            A collection that can exist as part of a behavior.
+            </summary>
+            <typeparam name="T">The type of item in the attached collection.</typeparam>
+        </member>
+        <member name="M:Caliburn.Micro.AttachedCollection`1.#ctor">
+            <summary>
+            Creates an instance of <see cref="T:Caliburn.Micro.AttachedCollection`1"/>
             </summary>
         </member>
-        <member name="M:Caliburn.Micro.PropertyChangedBase.#ctor">
+        <member name="M:Caliburn.Micro.AttachedCollection`1.Attach(System.Windows.DependencyObject)">
             <summary>
-            Creates an instance of <see cref="T:Caliburn.Micro.PropertyChangedBase"/>.
+            Attached the collection.
+            </summary>
+            <param name="dependencyObject">The dependency object to attach the collection to.</param>
+        </member>
+        <member name="M:Caliburn.Micro.AttachedCollection`1.Detach">
+            <summary>
+            Detaches the collection.
             </summary>
         </member>
-        <member name="M:Caliburn.Micro.PropertyChangedBase.Refresh">
+        <member name="M:Caliburn.Micro.AttachedCollection`1.OnItemAdded(`0)">
             <summary>
-            Raises a change notification indicating that all bindings should be refreshed.
+            Called when an item is added from the collection.
             </summary>
+            <param name="item">The item that was added.</param>
         </member>
-        <member name="M:Caliburn.Micro.PropertyChangedBase.NotifyOfPropertyChange(System.String)">
+        <member name="M:Caliburn.Micro.AttachedCollection`1.OnItemRemoved(`0)">
             <summary>
-            Notifies subscribers of the property change.
+            Called when an item is removed from the collection.
             </summary>
-            <param name="propertyName">Name of the property.</param>
-        </member>
-        <member name="M:Caliburn.Micro.PropertyChangedBase.NotifyOfPropertyChange``1(System.Linq.Expressions.Expression{System.Func{``0}})">
-            <summary>
-            Notifies subscribers of the property change.
-            </summary>
-            <typeparam name="TProperty">The type of the property.</typeparam>
-            <param name="property">The property expression.</param>
-        </member>
-        <member name="M:Caliburn.Micro.PropertyChangedBase.RaisePropertyChangedEventImmediately(System.String)">
-            <summary>
-            Raises the property changed event immediately.
-            </summary>
-            <param name="propertyName">Name of the property.</param>
-        </member>
-        <member name="E:Caliburn.Micro.PropertyChangedBase.PropertyChanged">
-            <summary>
-            Occurs when a property value changes.
-            </summary>
-        </member>
-        <member name="P:Caliburn.Micro.PropertyChangedBase.IsNotifying">
-            <summary>
-            Enables/Disables property change notification.
-            </summary>
+            <param name="item">The itme that was removed.</param>
         </member>
         <member name="T:Caliburn.Micro.Screen">
             <summary>
@@ -378,6 +890,12 @@
         <member name="M:Caliburn.Micro.ViewAware.OnViewLoaded(System.Object)">
             <summary>
               Called when an attached view's Loaded event fires.
+            </summary>
+            <param name = "view"></param>
+        </member>
+        <member name="M:Caliburn.Micro.ViewAware.OnViewReady(System.Object)">
+            <summary>
+              Called the first time the page's LayoutUpdated event fires after it is navigated to.
             </summary>
             <param name = "view"></param>
         </member>
@@ -877,6 +1395,141 @@
             Gets the items that are currently being conducted.
             </summary>
         </member>
+        <member name="T:Caliburn.Micro.IPhoneService">
+            <summary>
+              Implemented by services that provide access to the basic phone capabilities.
+            </summary>
+        </member>
+        <member name="P:Caliburn.Micro.IPhoneService.State">
+            <summary>
+              The state that is persisted during the tombstoning process.
+            </summary>
+        </member>
+        <member name="P:Caliburn.Micro.IPhoneService.StartupMode">
+            <summary>
+              Gets the mode in which the application was started.
+            </summary>
+        </member>
+        <member name="E:Caliburn.Micro.IPhoneService.Launching">
+            <summary>
+              Occurs when a fresh instance of the application is launching.
+            </summary>
+        </member>
+        <member name="E:Caliburn.Micro.IPhoneService.Activated">
+            <summary>
+              Occurs when a previously paused/tombstoned app is resumed/resurrected.
+            </summary>
+        </member>
+        <member name="E:Caliburn.Micro.IPhoneService.Deactivated">
+            <summary>
+              Occurs when the application is being paused or tombstoned.
+            </summary>
+        </member>
+        <member name="E:Caliburn.Micro.IPhoneService.Closing">
+            <summary>
+              Occurs when the application is closing.
+            </summary>
+        </member>
+        <member name="E:Caliburn.Micro.IPhoneService.Continuing">
+            <summary>
+              Occurs when the app is continuing from a temporarily paused state.
+            </summary>
+        </member>
+        <member name="E:Caliburn.Micro.IPhoneService.Continued">
+            <summary>
+              Occurs after the app has continued from a temporarily paused state.
+            </summary>
+        </member>
+        <member name="E:Caliburn.Micro.IPhoneService.Resurrecting">
+            <summary>
+              Occurs when the app is "resurrecting" from a tombstoned state.
+            </summary>
+        </member>
+        <member name="E:Caliburn.Micro.IPhoneService.Resurrected">
+            <summary>
+              Occurs after the app has "resurrected" from a tombstoned state.
+            </summary>
+        </member>
+        <member name="P:Caliburn.Micro.IPhoneService.UserIdleDetectionMode">
+            <summary>
+              Gets or sets whether user idle detection is enabled.
+            </summary>
+        </member>
+        <member name="P:Caliburn.Micro.IPhoneService.ApplicationIdleDetectionMode">
+            <summary>
+              Gets or sets whether application idle detection is enabled.
+            </summary>
+        </member>
+        <member name="T:Caliburn.Micro.PhoneApplicationServiceAdapter">
+            <summary>
+              An implementation of <see cref="T:Caliburn.Micro.IPhoneService"/> that adapts <see cref="T:Microsoft.Phone.Shell.PhoneApplicationService"/>.
+            </summary>
+        </member>
+        <member name="M:Caliburn.Micro.PhoneApplicationServiceAdapter.#ctor(System.Windows.Controls.Frame)">
+            <summary>
+              Creates an instance of <see cref="T:Caliburn.Micro.PhoneApplicationServiceAdapter"/>.
+            </summary>
+        </member>
+        <member name="P:Caliburn.Micro.PhoneApplicationServiceAdapter.State">
+            <summary>
+              The state that is persisted during the tombstoning process.
+            </summary>
+        </member>
+        <member name="P:Caliburn.Micro.PhoneApplicationServiceAdapter.StartupMode">
+            <summary>
+              Gets the mode in which the application was started.
+            </summary>
+        </member>
+        <member name="E:Caliburn.Micro.PhoneApplicationServiceAdapter.Launching">
+            <summary>
+              Occurs when a fresh instance of the application is launching.
+            </summary>
+        </member>
+        <member name="E:Caliburn.Micro.PhoneApplicationServiceAdapter.Activated">
+            <summary>
+              Occurs when a previously paused/tombstoned application instance is resumed/resurrected.
+            </summary>
+        </member>
+        <member name="E:Caliburn.Micro.PhoneApplicationServiceAdapter.Deactivated">
+            <summary>
+              Occurs when the application is being paused or tombstoned.
+            </summary>
+        </member>
+        <member name="E:Caliburn.Micro.PhoneApplicationServiceAdapter.Closing">
+            <summary>
+              Occurs when the application is closing.
+            </summary>
+        </member>
+        <member name="E:Caliburn.Micro.PhoneApplicationServiceAdapter.Continuing">
+            <summary>
+              Occurs when the app is continuing from a temporarily paused state.
+            </summary>
+        </member>
+        <member name="E:Caliburn.Micro.PhoneApplicationServiceAdapter.Continued">
+            <summary>
+              Occurs after the app has continued from a temporarily paused state.
+            </summary>
+        </member>
+        <member name="E:Caliburn.Micro.PhoneApplicationServiceAdapter.Resurrecting">
+            <summary>
+              Occurs when the app is "resurrecting" from a tombstoned state.
+            </summary>
+        </member>
+        <member name="E:Caliburn.Micro.PhoneApplicationServiceAdapter.Resurrected">
+            <summary>
+              Occurs after the app has "resurrected" from a tombstoned state.
+            </summary>
+        </member>
+        <member name="P:Caliburn.Micro.PhoneApplicationServiceAdapter.UserIdleDetectionMode">
+            <summary>
+              Gets or sets whether user idle detection is enabled.
+            </summary>
+        </member>
+        <member name="P:Caliburn.Micro.PhoneApplicationServiceAdapter.ApplicationIdleDetectionMode">
+            <summary>
+              Gets or sets whether application idle detection is enabled.
+            </summary>
+        </member>
         <member name="T:Caliburn.Micro.ViewModelLocator">
             <summary>
               A strategy for determining which view model to use for a given view.
@@ -1020,6 +1673,64 @@
             <param name="eventArgs">The event args.</param>
             <param name="parameters">The method parameters.</param>
         </member>
+        <member name="T:Caliburn.Micro.IWindowManager">
+            <summary>
+              A service that manages windows.
+            </summary>
+        </member>
+        <member name="M:Caliburn.Micro.IWindowManager.ShowDialog(System.Object,System.Object)">
+            <summary>
+              Shows a modal dialog for the specified model.
+            </summary>
+            <param name = "rootModel">The root model.</param>
+            <param name = "context">The context.</param>
+        </member>
+        <member name="M:Caliburn.Micro.IWindowManager.ShowPopup(System.Object,System.Object,System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+              Shows a popup at the current mouse position.
+            </summary>
+            <param name = "rootModel">The root model.</param>
+            <param name = "context">The view context.</param>
+            <param name = "settings">The optional popup settings.</param>
+        </member>
+        <member name="T:Caliburn.Micro.WindowManager">
+            <summary>
+              A service that manages windows.
+            </summary>
+        </member>
+        <member name="F:Caliburn.Micro.WindowManager.IsSystemDialogNavigation">
+            <summary>
+            Predicate used to determine whether a page being navigated is actually a system dialog, which should 
+            cause a temporary dialog disappearance.
+            </summary>
+            <remarks>
+            The default implementation just take into account DatePicker and TimePicker pages from WP7 toolkit.
+            </remarks>
+            /// <param name = "uri">The destination page to check</param>
+        </member>
+        <member name="M:Caliburn.Micro.WindowManager.ShowDialog(System.Object,System.Object)">
+            <summary>
+              Shows a modal dialog for the specified model.
+            </summary>
+            <param name = "rootModel">The root model.</param>
+            <param name = "context">The context.</param>
+        </member>
+        <member name="M:Caliburn.Micro.WindowManager.ShowPopup(System.Object,System.Object,System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+              Shows a popup at the current mouse position.
+            </summary>
+            <param name = "rootModel">The root model.</param>
+            <param name = "context">The view context.</param>
+            <param name = "settings">The optional popup settings.</param>
+        </member>
+        <member name="M:Caliburn.Micro.WindowManager.CreatePopup(System.Object,System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+              Creates a popup for hosting a popup window.
+            </summary>
+            <param name = "rootModel">The model.</param>
+            <param name = "settings">The optional popup settings.</param>
+            <returns>The popup.</returns>
+        </member>
         <member name="T:Caliburn.Micro.ScreenExtensions">
             <summary>
             Hosts extension methods for <see cref="T:Caliburn.Micro.IScreen"/> classes.
@@ -1087,14 +1798,6 @@
             <param name="inherit">Whether or not to search for inherited attributes.</param>
             <returns>The list of attributes found.</returns>
         </member>
-        <member name="M:Caliburn.Micro.ExtensionMethods.GetPropertyCaseInsensitive(System.Type,System.String)">
-            <summary>
-            Gets a property by name, ignoring case and searching all interfaces.
-            </summary>
-            <param name="type">The type to inspect.</param>
-            <param name="propertyName">The property to search for.</param>
-            <returns>The property or null if not found.</returns>
-        </member>
         <member name="M:Caliburn.Micro.ExtensionMethods.Apply``1(System.Collections.Generic.IEnumerable{``0},System.Action{``0})">
             <summary>
             Applies the action to each element in the list.
@@ -1109,6 +1812,18 @@
             </summary>
             <param name="expression">The expression to convert.</param>
             <returns>The member info.</returns>
+        </member>
+        <member name="M:Caliburn.Micro.ExtensionMethods.Zip``3(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEnumerable{``1},System.Func{``0,``1,``2})">
+            <summary>
+            Merges two sequences by using the specified predicate function.
+            </summary>
+            <typeparam name="TFirst">The type of the elements of the first input sequence.</typeparam>
+            <typeparam name="TSecond">The type of the elements of the second input sequence.</typeparam>
+            <typeparam name="TResult">The type of the elements of the result sequence.</typeparam>
+            <param name="first">The first sequence to merge.</param>
+            <param name="second">The second sequence to merge.</param>
+            <param name="resultSelector"> A function that specifies how to merge the elements from the two sequences.</param>
+            <returns>An System.Collections.Generic.IEnumerable&lt;T&gt; that contains merged elements of two input sequences.</returns>
         </member>
         <member name="T:Caliburn.Micro.ConventionManager">
             <summary>
@@ -1233,6 +1948,14 @@
             <param name="element"></param>
             <param name="headerTemplateProperty"></param>
             <param name="viewModelType"></param>
+        </member>
+        <member name="M:Caliburn.Micro.ConventionManager.GetPropertyCaseInsensitive(System.Type,System.String)">
+            <summary>
+            Gets a property by name, ignoring case and searching all interfaces.
+            </summary>
+            <param name="type">The type to inspect.</param>
+            <param name="propertyName">The property to search for.</param>
+            <returns>The property or null if not found.</returns>
         </member>
         <member name="M:Caliburn.Micro.ConventionManager.ApplySilverlightTriggers(System.Windows.DependencyObject,System.Windows.DependencyProperty,System.Func{System.Windows.FrameworkElement,System.Windows.Data.BindingExpression},System.Reflection.PropertyInfo,System.Windows.Data.Binding)">
             <summary>
@@ -1520,21 +2243,22 @@
             A converted value. If the method returns null, the valid null value is used.
             </returns>
         </member>
-        <member name="T:Caliburn.Micro.Mouse">
+        <member name="T:Caliburn.Micro.IHandle">
             <summary>
-            A mouse helper utility.
+              A marker interface for classes that subscribe to messages.
             </summary>
         </member>
-        <member name="M:Caliburn.Micro.Mouse.Initialize(System.Windows.UIElement)">
+        <member name="T:Caliburn.Micro.IHandle`1">
             <summary>
-            Initializes the mouse helper with the UIElement to use in mouse tracking.
+              Denotes a class which can handle a particular type of message.
             </summary>
-            <param name="element">The UIElement to use for mouse tracking.</param>
+            <typeparam name = "TMessage">The type of message to handle.</typeparam>
         </member>
-        <member name="P:Caliburn.Micro.Mouse.Position">
+        <member name="M:Caliburn.Micro.IHandle`1.Handle(`0)">
             <summary>
-            The current position of the mouse.
+              Handles the message.
             </summary>
+            <param name = "message">The message.</param>
         </member>
         <member name="T:Caliburn.Micro.IEventAggregator">
             <summary>
@@ -1553,16 +2277,43 @@
             </summary>
             <param name = "instance">The instance to unsubscribe.</param>
         </member>
+        <member name="M:Caliburn.Micro.IEventAggregator.Publish(System.Object)">
+            <summary>
+              Publishes a message.
+            </summary>
+            <param name = "message">The message instance.</param>
+            <remarks>
+              Uses the default thread marshaller during publication.
+            </remarks>
+        </member>
         <member name="M:Caliburn.Micro.IEventAggregator.Publish(System.Object,System.Action{System.Action})">
             <summary>
               Publishes a message.
             </summary>
             <param name = "message">The message instance.</param>
-            <param name="marshal">Allows the publisher to provide a custom thread marshaller for the message publication. The default uses the UI thread marshaller.</param>
+            <param name = "marshal">Allows the publisher to provide a custom thread marshaller for the message publication.</param>
+        </member>
+        <member name="P:Caliburn.Micro.IEventAggregator.PublicationThreadMarshaller">
+            <summary>
+              Gets or sets the default publication thread marshaller.
+            </summary>
+            <value>
+              The default publication thread marshaller.
+            </value>
         </member>
         <member name="T:Caliburn.Micro.EventAggregator">
             <summary>
-            Enables loosely-coupled publication of and subscription to events.
+              Enables loosely-coupled publication of and subscription to events.
+            </summary>
+        </member>
+        <member name="F:Caliburn.Micro.EventAggregator.DefaultPublicationThreadMarshaller">
+            <summary>
+              The default thread marshaller used for publication;
+            </summary>
+        </member>
+        <member name="M:Caliburn.Micro.EventAggregator.#ctor">
+            <summary>
+              Initializes a new instance of the <see cref="T:Caliburn.Micro.EventAggregator"/> class.
             </summary>
         </member>
         <member name="M:Caliburn.Micro.EventAggregator.Subscribe(System.Object)">
@@ -1573,16 +2324,54 @@
         </member>
         <member name="M:Caliburn.Micro.EventAggregator.Unsubscribe(System.Object)">
             <summary>
-             Unsubscribes the instance from all events.
+              Unsubscribes the instance from all events.
             </summary>
             <param name = "instance">The instance to unsubscribe.</param>
+        </member>
+        <member name="M:Caliburn.Micro.EventAggregator.Publish(System.Object)">
+            <summary>
+              Publishes a message.
+            </summary>
+            <param name = "message">The message instance.</param>
+            <remarks>
+              Does not marshall the the publication to any special thread by default.
+            </remarks>
         </member>
         <member name="M:Caliburn.Micro.EventAggregator.Publish(System.Object,System.Action{System.Action})">
             <summary>
               Publishes a message.
             </summary>
             <param name = "message">The message instance.</param>
-            <param name="marshal">Allows the publisher to provide a custom thread marshaller for the message publication. The default uses the UI thread marshaller.</param>
+            <param name = "marshal">Allows the publisher to provide a custom thread marshaller for the message publication.</param>
+        </member>
+        <member name="P:Caliburn.Micro.EventAggregator.PublicationThreadMarshaller">
+            <summary>
+              Gets or sets the default publication thread marshaller.
+            </summary>
+            <value>
+              The default publication thread marshaller.
+            </value>
+        </member>
+        <member name="T:System.Action`5">
+            <summary>
+            Encapsulates a method that has five type parameters and does not return a value.
+            </summary>
+            <typeparam name="T1">The first type parameter.</typeparam>
+            <typeparam name="T2">The second type parameter.</typeparam>
+            <typeparam name="T3">The thrid type parameter.</typeparam>
+            <typeparam name="T4">The fourth type parameter.</typeparam>
+            <typeparam name="T5">The fifth type parameter.</typeparam>
+        </member>
+        <member name="T:System.Func`6">
+            <summary>
+            Encapsulates a method that has five type parameters and returns a value.
+            </summary>
+            <typeparam name="T1">The first type parameter.</typeparam>
+            <typeparam name="T2">The second type parameter.</typeparam>
+            <typeparam name="T3">The thrid type parameter.</typeparam>
+            <typeparam name="T4">The fourth type parameter.</typeparam>
+            <typeparam name="T5">The fifth type parameter.</typeparam>
+            <typeparam name="TResult">The return type.</typeparam>
         </member>
         <member name="T:Caliburn.Micro.ViewAttachedEventArgs">
             <summary>
@@ -1728,177 +2517,9 @@
             Occurs before the message detaches from the associated object.
             </summary>
         </member>
-        <member name="T:Caliburn.Micro.ActivationEventArgs">
-            <summary>
-            EventArgs sent during activation.
-            </summary>
-        </member>
-        <member name="F:Caliburn.Micro.ActivationEventArgs.WasInitialized">
-            <summary>
-            Indicates whether the sender was initialized in addition to being activated.
-            </summary>
-        </member>
-        <member name="T:Caliburn.Micro.ActivationProcessedEventArgs">
-            <summary>
-            Contains details about the success or failure of an item's activation through an <see cref="T:Caliburn.Micro.IConductor"/>.
-            </summary>
-        </member>
-        <member name="F:Caliburn.Micro.ActivationProcessedEventArgs.Item">
-            <summary>
-            The item whose activation was processed.
-            </summary>
-        </member>
-        <member name="F:Caliburn.Micro.ActivationProcessedEventArgs.Success">
-            <summary>
-            Gets or sets a value indicating whether the activation was a success.
-            </summary>
-            <value><c>true</c> if success; otherwise, <c>false</c>.</value>
-        </member>
-        <member name="T:Caliburn.Micro.DeactivationEventArgs">
-            <summary>
-            EventArgs sent during deactivation.
-            </summary>
-        </member>
-        <member name="F:Caliburn.Micro.DeactivationEventArgs.WasClosed">
-            <summary>
-            Indicates whether the sender was closed in addition to being deactivated.
-            </summary>
-        </member>
         <member name="T:Caliburn.Micro.NameTransformer">
             <summary>
              Class for managing the list of rules for doing name transformation.
-            </summary>
-        </member>
-        <member name="T:Caliburn.Micro.BindableCollection`1">
-            <summary>
-            A base collection class that supports automatic UI thread marshalling.
-            </summary>
-            <typeparam name="T">The type of elements contained in the collection.</typeparam>
-        </member>
-        <member name="T:Caliburn.Micro.IObservableCollection`1">
-            <summary>
-            Represents a collection that is observable.
-            </summary>
-            <typeparam name="T">The type of elements contained in the collection.</typeparam>
-        </member>
-        <member name="M:Caliburn.Micro.IObservableCollection`1.AddRange(System.Collections.Generic.IEnumerable{`0})">
-            <summary>
-            Adds the range.
-            </summary>
-            <param name="items">The items.</param>
-        </member>
-        <member name="M:Caliburn.Micro.IObservableCollection`1.RemoveRange(System.Collections.Generic.IEnumerable{`0})">
-            <summary>
-            Removes the range.
-            </summary>
-            <param name="items">The items.</param>
-        </member>
-        <member name="M:Caliburn.Micro.BindableCollection`1.#ctor">
-            <summary>
-            Initializes a new instance of the <see cref="T:Caliburn.Micro.BindableCollection`1"/> class.
-            </summary>
-        </member>
-        <member name="M:Caliburn.Micro.BindableCollection`1.#ctor(System.Collections.Generic.IEnumerable{`0})">
-            <summary>
-            Initializes a new instance of the <see cref="T:Caliburn.Micro.BindableCollection`1"/> class.
-            </summary>
-            <param name="collection">The collection from which the elements are copied.</param>
-            <exception cref="T:System.ArgumentNullException">
-            The <paramref name="collection"/> parameter cannot be null.
-            </exception>
-        </member>
-        <member name="M:Caliburn.Micro.BindableCollection`1.NotifyOfPropertyChange(System.String)">
-            <summary>
-            Notifies subscribers of the property change.
-            </summary>
-            <param name="propertyName">Name of the property.</param>
-        </member>
-        <member name="M:Caliburn.Micro.BindableCollection`1.Refresh">
-            <summary>
-            Raises a change notification indicating that all bindings should be refreshed.
-            </summary>
-        </member>
-        <member name="M:Caliburn.Micro.BindableCollection`1.InsertItem(System.Int32,`0)">
-            <summary>
-            Inserts the item to the specified position.
-            </summary>
-            <param name="index">The index to insert at.</param>
-            <param name="item">The item to be inserted.</param>
-        </member>
-        <member name="M:Caliburn.Micro.BindableCollection`1.InsertItemBase(System.Int32,`0)">
-            <summary>
-            Exposes the base implementation of the <see cref="M:Caliburn.Micro.BindableCollection`1.InsertItem(System.Int32,`0)"/> function.
-            </summary>
-            <param name="index">The index.</param>
-            <param name="item">The item.</param>
-            <remarks>Used to avoid compiler warning regarding unverifiable code.</remarks>
-        </member>
-        <member name="M:Caliburn.Micro.BindableCollection`1.SetItem(System.Int32,`0)">
-            <summary>
-            Sets the item at the specified position.
-            </summary>
-            <param name="index">The index to set the item at.</param>
-            <param name="item">The item to set.</param>
-        </member>
-        <member name="M:Caliburn.Micro.BindableCollection`1.SetItemBase(System.Int32,`0)">
-            <summary>
-            Exposes the base implementation of the <see cref="M:Caliburn.Micro.BindableCollection`1.SetItem(System.Int32,`0)"/> function.
-            </summary>
-            <param name="index">The index.</param>
-            <param name="item">The item.</param>
-            <remarks>Used to avoid compiler warning regarding unverifiable code.</remarks>
-        </member>
-        <member name="M:Caliburn.Micro.BindableCollection`1.RemoveItem(System.Int32)">
-            <summary>
-            Removes the item at the specified position.
-            </summary>
-            <param name="index">The position used to identify the item to remove.</param>
-        </member>
-        <member name="M:Caliburn.Micro.BindableCollection`1.RemoveItemBase(System.Int32)">
-            <summary>
-            Exposes the base implementation of the <see cref="M:Caliburn.Micro.BindableCollection`1.RemoveItem(System.Int32)"/> function.
-            </summary>
-            <param name="index">The index.</param>
-            <remarks>Used to avoid compiler warning regarding unverifiable code.</remarks>
-        </member>
-        <member name="M:Caliburn.Micro.BindableCollection`1.ClearItems">
-            <summary>
-            Clears the items contained by the collection.
-            </summary>
-        </member>
-        <member name="M:Caliburn.Micro.BindableCollection`1.ClearItemsBase">
-            <summary>
-            Exposes the base implementation of the <see cref="M:Caliburn.Micro.BindableCollection`1.ClearItems"/> function.
-            </summary>
-            <remarks>Used to avoid compiler warning regarding unverifiable code.</remarks>
-        </member>
-        <member name="M:Caliburn.Micro.BindableCollection`1.OnCollectionChanged(System.Collections.Specialized.NotifyCollectionChangedEventArgs)">
-            <summary>
-            Raises the <see cref="E:System.Collections.ObjectModel.ObservableCollection`1.CollectionChanged"/> event with the provided arguments.
-            </summary>
-            <param name="e">Arguments of the event being raised.</param>
-        </member>
-        <member name="M:Caliburn.Micro.BindableCollection`1.OnPropertyChanged(System.ComponentModel.PropertyChangedEventArgs)">
-            <summary>
-            Raises the PropertyChanged event with the provided arguments.
-            </summary>
-            <param name="e">The event data to report in the event.</param>
-        </member>
-        <member name="M:Caliburn.Micro.BindableCollection`1.AddRange(System.Collections.Generic.IEnumerable{`0})">
-            <summary>
-            Adds the range.
-            </summary>
-            <param name="items">The items.</param>
-        </member>
-        <member name="M:Caliburn.Micro.BindableCollection`1.RemoveRange(System.Collections.Generic.IEnumerable{`0})">
-            <summary>
-            Removes the range.
-            </summary>
-            <param name="items">The items.</param>
-        </member>
-        <member name="P:Caliburn.Micro.BindableCollection`1.IsNotifying">
-            <summary>
-            Enables/Disables property change notification.
             </summary>
         </member>
         <member name="M:Caliburn.Micro.NameTransformer.AddRule(System.String,System.String,System.String)">
@@ -1950,6 +2571,42 @@
         <member name="F:Caliburn.Micro.NameTransformer.Rule.ReplacementValues">
             <summary>
             The list of replacement values
+            </summary>
+        </member>
+        <member name="T:Caliburn.Micro.ActivationEventArgs">
+            <summary>
+            EventArgs sent during activation.
+            </summary>
+        </member>
+        <member name="F:Caliburn.Micro.ActivationEventArgs.WasInitialized">
+            <summary>
+            Indicates whether the sender was initialized in addition to being activated.
+            </summary>
+        </member>
+        <member name="T:Caliburn.Micro.ActivationProcessedEventArgs">
+            <summary>
+            Contains details about the success or failure of an item's activation through an <see cref="T:Caliburn.Micro.IConductor"/>.
+            </summary>
+        </member>
+        <member name="F:Caliburn.Micro.ActivationProcessedEventArgs.Item">
+            <summary>
+            The item whose activation was processed.
+            </summary>
+        </member>
+        <member name="F:Caliburn.Micro.ActivationProcessedEventArgs.Success">
+            <summary>
+            Gets or sets a value indicating whether the activation was a success.
+            </summary>
+            <value><c>true</c> if success; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="T:Caliburn.Micro.DeactivationEventArgs">
+            <summary>
+            EventArgs sent during deactivation.
+            </summary>
+        </member>
+        <member name="F:Caliburn.Micro.DeactivationEventArgs.WasClosed">
+            <summary>
+            Indicates whether the sender was closed in addition to being deactivated.
             </summary>
         </member>
         <member name="T:Caliburn.Micro.ActionExecutionContext">
@@ -2097,186 +2754,6 @@
               Occurs when execution has completed.
             </summary>
         </member>
-        <member name="T:Caliburn.Micro.Bootstrapper">
-            <summary>
-            Instantiate this class in order to configure the framework.
-            </summary>
-        </member>
-        <member name="M:Caliburn.Micro.Bootstrapper.#ctor(System.Boolean)">
-            <summary>
-            Creates an instance of the bootstrapper.
-            </summary>
-        </member>
-        <member name="M:Caliburn.Micro.Bootstrapper.StartDesignTime">
-            <summary>
-            Called by the bootstrapper's constructor at design time to start the framework.
-            </summary>
-        </member>
-        <member name="M:Caliburn.Micro.Bootstrapper.StartRuntime">
-            <summary>
-            Called by the bootstrapper's constructor at runtime to start the framework.
-            </summary>
-        </member>
-        <member name="M:Caliburn.Micro.Bootstrapper.Configure">
-            <summary>
-            Override to configure the framework and setup your IoC container.
-            </summary>
-        </member>
-        <member name="M:Caliburn.Micro.Bootstrapper.PrepareApplication">
-            <summary>
-            Provides an opportunity to hook into the application object.
-            </summary>
-        </member>
-        <member name="M:Caliburn.Micro.Bootstrapper.SelectAssemblies">
-            <summary>
-            Override to tell the framework where to find assemblies to inspect for views, etc.
-            </summary>
-            <returns>A list of assemblies to inspect.</returns>
-        </member>
-        <member name="M:Caliburn.Micro.Bootstrapper.GetInstance(System.Type,System.String)">
-            <summary>
-            Override this to provide an IoC specific implementation.
-            </summary>
-            <param name="service">The service to locate.</param>
-            <param name="key">The key to locate.</param>
-            <returns>The located service.</returns>
-        </member>
-        <member name="M:Caliburn.Micro.Bootstrapper.GetAllInstances(System.Type)">
-            <summary>
-            Override this to provide an IoC specific implementation
-            </summary>
-            <param name="service">The service to locate.</param>
-            <returns>The located services.</returns>
-        </member>
-        <member name="M:Caliburn.Micro.Bootstrapper.BuildUp(System.Object)">
-            <summary>
-            Override this to provide an IoC specific implementation.
-            </summary>
-            <param name="instance">The instance to perform injection on.</param>
-        </member>
-        <member name="M:Caliburn.Micro.Bootstrapper.OnStartup(System.Object,System.Windows.StartupEventArgs)">
-            <summary>
-            Override this to add custom behavior to execute after the application starts.
-            </summary>
-            <param name="sender">The sender.</param>
-            <param name="e">The args.</param>
-        </member>
-        <member name="M:Caliburn.Micro.Bootstrapper.OnExit(System.Object,System.EventArgs)">
-            <summary>
-            Override this to add custom behavior on exit.
-            </summary>
-            <param name="sender">The sender.</param>
-            <param name="e">The event args.</param>
-        </member>
-        <member name="M:Caliburn.Micro.Bootstrapper.OnUnhandledException(System.Object,System.Windows.ApplicationUnhandledExceptionEventArgs)">
-            <summary>
-            Override this to add custom behavior for unhandled exceptions.
-            </summary>
-            <param name="sender">The sender.</param>
-            <param name="e">The event args.</param>
-        </member>
-        <member name="M:Caliburn.Micro.Bootstrapper.DisplayRootViewFor(System.Windows.Application,System.Type)">
-            <summary>
-            Locates the view model, locates the associate view, binds them and shows it as the root view.
-            </summary>
-            <param name="application">The application.</param>
-            <param name="viewModelType">The view model type.</param>
-        </member>
-        <member name="P:Caliburn.Micro.Bootstrapper.Application">
-            <summary>
-            The application.
-            </summary>
-        </member>
-        <member name="P:Caliburn.Micro.Bootstrapper.IsInDesignMode">
-            <summary>
-            Indicates whether or not the framework is in design-time mode.
-            </summary>
-        </member>
-        <member name="T:Caliburn.Micro.Bootstrapper`1">
-            <summary>
-            A strongly-typed version of <see cref="T:Caliburn.Micro.Bootstrapper"/> that specifies the type of root model to create for the application.
-            </summary>
-            <typeparam name="TRootModel">The type of root model for the application.</typeparam>
-        </member>
-        <member name="M:Caliburn.Micro.Bootstrapper`1.OnStartup(System.Object,System.Windows.StartupEventArgs)">
-            <summary>
-            Override this to add custom behavior to execute after the application starts.
-            </summary>
-            <param name="sender">The sender.</param>
-            <param name="e">The args.</param>
-        </member>
-        <member name="T:Caliburn.Micro.IWindowManager">
-            <summary>
-            A service that manages windows.
-            </summary>
-        </member>
-        <member name="M:Caliburn.Micro.IWindowManager.ShowDialog(System.Object,System.Object)">
-            <summary>
-            Shows a modal dialog for the specified model.
-            </summary>
-            <param name="rootModel">The root model.</param>
-            <param name="context">The context.</param>
-        </member>
-        <member name="M:Caliburn.Micro.IWindowManager.ShowNotification(System.Object,System.Int32,System.Object)">
-            <summary>
-            Shows a toast notification for the specified model.
-            </summary>
-            <param name="rootModel">The root model.</param>
-            <param name="durationInMilliseconds">How long the notification should appear for.</param>
-            <param name="context">The context.</param>
-        </member>
-        <member name="M:Caliburn.Micro.IWindowManager.ShowPopup(System.Object,System.Object,System.Collections.Generic.IDictionary{System.String,System.Object})">
-            <summary>
-            Shows a popup at the current mouse position.
-            </summary>
-            <param name="rootModel">The root model.</param>
-            <param name="context">The view context.</param>
-            <param name="settings">The optional popup settings.</param>
-        </member>
-        <member name="T:Caliburn.Micro.WindowManager">
-            <summary>
-            A service that manages windows.
-            </summary>
-        </member>
-        <member name="M:Caliburn.Micro.WindowManager.ShowDialog(System.Object,System.Object)">
-            <summary>
-            Shows a modal dialog for the specified model.
-            </summary>
-            <param name="rootModel">The root model.</param>
-            <param name="context">The context.</param>
-        </member>
-        <member name="M:Caliburn.Micro.WindowManager.ShowNotification(System.Object,System.Int32,System.Object)">
-            <summary>
-            Shows a toast notification for the specified model.
-            </summary>
-            <param name="rootModel">The root model.</param>
-            <param name="durationInMilliseconds">How long the notification should appear for.</param>
-            <param name="context">The context.</param>
-        </member>
-        <member name="M:Caliburn.Micro.WindowManager.ShowPopup(System.Object,System.Object,System.Collections.Generic.IDictionary{System.String,System.Object})">
-            <summary>
-            Shows a popup at the current mouse position.
-            </summary>
-            <param name="rootModel">The root model.</param>
-            <param name="context">The view context.</param>
-            <param name="settings">The optional popup settings.</param>
-        </member>
-        <member name="M:Caliburn.Micro.WindowManager.CreatePopup(System.Object,System.Collections.Generic.IDictionary{System.String,System.Object})">
-            <summary>
-            Creates a popup for hosting a popup window.
-            </summary>
-            <param name="rootModel">The model.</param>
-            <param name="settings">The optional popup settings.</param>
-            <returns>The popup.</returns>
-        </member>
-        <member name="M:Caliburn.Micro.WindowManager.EnsureWindow(System.Object,System.Object)">
-            <summary>
-            Ensures that the view is a <see cref="T:System.Windows.Controls.ChildWindow"/> or is wrapped by one.
-            </summary>
-            <param name="model">The view model.</param>
-            <param name="view">The view.</param>
-            <returns>The window.</returns>
-        </member>
         <member name="T:Caliburn.Micro.Bind">
             <summary>
             Hosts dependency properties for binding.
@@ -2300,40 +2777,6 @@
             </summary>
             <param name="dependencyObject">The dependency object to bind to.</param>
             <param name="value">The model.</param>
-        </member>
-        <member name="T:Caliburn.Micro.AttachedCollection`1">
-            <summary>
-            A collection that can exist as part of a behavior.
-            </summary>
-            <typeparam name="T">The type of item in the attached collection.</typeparam>
-        </member>
-        <member name="M:Caliburn.Micro.AttachedCollection`1.#ctor">
-            <summary>
-            Creates an instance of <see cref="T:Caliburn.Micro.AttachedCollection`1"/>
-            </summary>
-        </member>
-        <member name="M:Caliburn.Micro.AttachedCollection`1.Attach(System.Windows.DependencyObject)">
-            <summary>
-            Attached the collection.
-            </summary>
-            <param name="dependencyObject">The dependency object to attach the collection to.</param>
-        </member>
-        <member name="M:Caliburn.Micro.AttachedCollection`1.Detach">
-            <summary>
-            Detaches the collection.
-            </summary>
-        </member>
-        <member name="M:Caliburn.Micro.AttachedCollection`1.OnItemAdded(`0)">
-            <summary>
-            Called when an item is added from the collection.
-            </summary>
-            <param name="item">The item that was added.</param>
-        </member>
-        <member name="M:Caliburn.Micro.AttachedCollection`1.OnItemRemoved(`0)">
-            <summary>
-            Called when an item is removed from the collection.
-            </summary>
-            <param name="item">The item that was removed.</param>
         </member>
         <member name="T:Caliburn.Micro.ViewModelBinder">
             <summary>
