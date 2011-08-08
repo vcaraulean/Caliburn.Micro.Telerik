@@ -111,10 +111,10 @@
       <DependentUpon>RadDateTimePickerView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Implementations\RadDateTimePickerViewModel.cs" />
-    <Compile Include="Implementations\RadMaskedTextBoxView.xaml.cs">
-      <DependentUpon>RadMaskedTextBoxView.xaml</DependentUpon>
+    <Compile Include="Implementations\RadMaskedControlsView.xaml.cs">
+      <DependentUpon>RadMaskedControlsView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Implementations\RadMaskedTextBoxViewModel.cs" />
+    <Compile Include="Implementations\RadMaskedControlsViewModel.cs" />
     <Compile Include="Implementations\TabControlConventions\FirstTabView.xaml.cs">
       <DependentUpon>FirstTabView.xaml</DependentUpon>
     </Compile>
@@ -144,7 +144,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Implementations\RadMaskedTextBoxView.xaml">
+    <Page Include="Implementations\RadMaskedControlsView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -12,9 +12,9 @@ using System.Windows.Shapes;
 
 namespace Telerik.Examples.Conventions.Implementations
 {
-	public partial class RadMaskedTextBoxView : UserControl
+	public partial class RadMaskedControlsView : UserControl
 	{
-		public RadMaskedTextBoxView()
+		public RadMaskedControlsView()
 		{
 			InitializeComponent();
 		}
