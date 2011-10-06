@@ -12941,6 +12941,237 @@
             Indicates state of the map zooming.
             </summary>
         </member>
+        <member name="T:Telerik.Windows.Controls.TimeBar.MillisecondInterval">
+            <summary>
+            Defines an interval of 1 millisecond.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.TimeBar.IntervalBase">
+            <summary>
+            Base class for all intervals. Provides all the logic that an interval
+            should have in order to work in <seealso cref="T:Telerik.Windows.Controls.RadTimeBar"/>.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.TimeBar.IntervalBase.CurrentIntervalSpanProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.TimeBar.IntervalBase.CurrentIntervalSpan"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.TimeBar.IntervalBase.IntervalSpansProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.TimeBar.IntervalBase.IntervalSpans"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.TimeBar.IntervalBase.CurrentIntervalSpanPropertyKey">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.TimeBar.IntervalBase.CurrentIntervalSpan"/> dependency property.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.TimeBar.IntervalBase.#cctor">
+            <summary>
+            Initializes static members of the <see cref="T:Telerik.Windows.Controls.TimeBar.IntervalBase"/> class.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.TimeBar.IntervalBase.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.Windows.Controls.TimeBar.IntervalBase"/> class.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.TimeBar.IntervalBase.CreateStringMeasurementTable(System.Func{System.DateTime,System.String}[])">
+            <summary>
+            Creates the string measurement table.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.TimeBar.IntervalBase.ExtractIntervalStart(System.DateTime)">
+            <summary>
+            Extracts the interval start from the specified DateTime object.
+            </summary>
+            <param name="date">The date.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.TimeBar.IntervalBase.IncrementByInterval(System.DateTime)">
+            <summary>
+            Increments the specified date.
+            </summary>
+            <param name="date">The date.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.TimeBar.IntervalBase.IncrementByCurrentInterval(System.DateTime)">
+            <summary>
+            Increments the specified date by the current interval.
+            </summary>
+            <param name="date">The date.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.TimeBar.IntervalBase.IncrementByInterval(System.DateTime,System.Int32)">
+            <summary>
+            Increments the specified date by interval span.
+            </summary>
+            <param name="date">The date.</param>
+            <param name="intervalSpan">The interval span.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.TimeBar.IntervalBase.CreateStringMeasurementTable(System.Func{System.DateTime,System.String}[],System.Int32,System.DateTime)">
+            <summary>
+            Creates the string measurement table.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Telerik.Windows.Controls.TimeBar.IntervalBase.IntervalSpans">
+            <summary>
+            Gets the interval spans.
+            </summary>
+            <value>The interval spans.</value>
+        </member>
+        <member name="P:Telerik.Windows.Controls.TimeBar.IntervalBase.CurrentIntervalSpan">
+            <summary>
+            Gets the current interval span.
+            </summary>
+            <value>The current interval span.</value>
+        </member>
+        <member name="P:Telerik.Windows.Controls.TimeBar.IntervalBase.Code">
+            <summary>
+            Gets the code that identifies this interval uniquely.
+            </summary>
+            <value>The code.</value>
+        </member>
+        <member name="P:Telerik.Windows.Controls.TimeBar.IntervalBase.Formatters">
+            <summary>
+            Gets a collection of formatters used to convert DateTime objects
+            to specific strings.
+            </summary>
+            <value>The formatters.</value>
+        </member>
+        <member name="P:Telerik.Windows.Controls.TimeBar.IntervalBase.IntervalSpanFormatters">
+            <summary>
+            Gets a collection of formatters used to convert DateTime objects
+            to specific strings, when an interval span is applied.
+            </summary>
+            <value>The formatters.</value>
+        </member>
+        <member name="P:Telerik.Windows.Controls.TimeBar.IntervalBase.SmallestPeriod">
+            <summary>
+            Gets the smallest period.
+            </summary>
+            <value>The smallest period.</value>
+        </member>
+        <member name="M:Telerik.Windows.Controls.TimeBar.MillisecondInterval.CreateStringMeasurementTable(System.Func{System.DateTime,System.String}[])">
+            <summary>
+            Creates the string measurement table.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.TimeBar.MillisecondInterval.ExtractIntervalStart(System.DateTime)">
+            <summary>
+            Extracts the interval start from the specified DateTime object.
+            </summary>
+            <param name="date">The date.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.TimeBar.MillisecondInterval.IncrementByInterval(System.DateTime,System.Int32)">
+            <summary>
+            Increments the specified date by interval span.
+            </summary>
+            <param name="date">The date.</param>
+            <param name="intervalSpan">The interval span.</param>
+            <returns></returns>
+        </member>
+        <member name="P:Telerik.Windows.Controls.TimeBar.MillisecondInterval.Code">
+            <summary>
+            Gets the code that identifies this interval uniquely.
+            </summary>
+            <value>The code.</value>
+        </member>
+        <member name="P:Telerik.Windows.Controls.TimeBar.MillisecondInterval.Formatters">
+            <summary>
+            Gets a collection of formatters used to convert DateTime objects
+            to specific strings.
+            </summary>
+            <value>The formatters.</value>
+        </member>
+        <member name="P:Telerik.Windows.Controls.TimeBar.MillisecondInterval.SmallestPeriod">
+            <summary>
+            Gets the smallest period.
+            </summary>
+            <value>The smallest period.</value>
+        </member>
+        <member name="T:Telerik.Windows.Controls.TreeMap.DefinitionBase">
+            <summary>
+            This class is base class for <see cref="T:Telerik.Windows.Controls.RadTreeMap"/> and <see cref="T:Telerik.Windows.Controls.RadPivotMap"/> hierarchy definitions.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.TreeMap.DefinitionBase.MappingsProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.TreeMap.DefinitionBase.Mappings"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.TreeMap.DefinitionBase.ItemStyleProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.TreeMap.DefinitionBase.ItemStyle"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.TreeMap.DefinitionBase.LayoutStrategyProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.TreeMap.DefinitionBase.LayoutStrategy"/> dependency property.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.TreeMap.DefinitionBase.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.Windows.Controls.TreeMap.DefinitionBase"/> class.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.TreeMap.DefinitionBase.ConfigureMappings">
+            <summary>
+            Configures the mappings.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.TreeMap.DefinitionBase.ConfigureStyleMapping">
+            <summary>
+            Configures the style mapping.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.TreeMap.DefinitionBase.ConfigureLayoutStrategy">
+            <summary>
+            Configures the layout strategy.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.TreeMap.DefinitionBase.OnPropertyChanged(System.ComponentModel.PropertyChangedEventArgs)">
+            <summary>
+            Raises the <see cref="E:PropertyChanged"/> event.
+            </summary>
+            <param name="e">The <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.TreeMap.DefinitionBase.OnMappingsCollectionChanged(System.Object,System.Collections.Specialized.NotifyCollectionChangedEventArgs)">
+            <summary>
+            Called when <seealso cref="P:Telerik.Windows.Controls.TreeMap.DefinitionBase.Mappings"/> collection changed.
+            </summary>
+            <param name="sender">The sender.</param>
+            <param name="e">The <see cref="T:System.Collections.Specialized.NotifyCollectionChangedEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="E:Telerik.Windows.Controls.TreeMap.DefinitionBase.PropertyChanged">
+            <summary>
+            Occurs when a property value changes.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.TreeMap.DefinitionBase.ItemStyle">
+            <summary>
+            Gets or sets the item style.
+            </summary>
+            <value>The item style.</value>
+        </member>
+        <member name="P:Telerik.Windows.Controls.TreeMap.DefinitionBase.Mappings">
+            <summary>
+            Gets or sets the value mappings.
+            </summary>
+            <value>The value mappings.</value>
+        </member>
+        <member name="P:Telerik.Windows.Controls.TreeMap.DefinitionBase.LayoutStrategy">
+            <summary>
+            Gets the layout strategy.
+            </summary>
+            <value>The layout strategies.</value>
+        </member>
         <member name="T:Telerik.Windows.Controls.TreeMap.BrushColorizerBase">
             <summary>
             Base class for all <see cref="T:Telerik.Windows.Controls.TreeMap.ColorMapping"/> objects in <see cref="T:Telerik.Windows.Controls.RadTreeMap"/> and <see cref="T:Telerik.Windows.Controls.RadPivotMap"/> which define a set of brushes. Each <see cref="T:Telerik.Windows.Controls.TreeMap.RangeBrush"/> is applied according its <see cref="P:Telerik.Windows.Controls.TreeMap.RangeBrush.From"/> and <see cref="P:Telerik.Windows.Controls.TreeMap.RangeBrush.To"/> properties.
@@ -13182,6 +13413,98 @@
             <param name="ratio">The ratio.</param>
             <returns></returns>
         </member>
+        <member name="T:Telerik.Windows.Controls.TreeMap.ConstantSelectDescriptor">
+            <summary>
+            This SelectDescriptor set a constant value to the projected instance.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.TreeMap.TypedSelectDescriptor">
+            <summary>
+            Represents a SelectDescriptor, which is applied only for the type specified by the <see cref="P:Telerik.Windows.Controls.TreeMap.TypedSelectDescriptor.TypeName"/> property.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.TreeMap.ITypedSelectDescriptor">
+            <summary>
+            Represents a SelectDescriptor, which is applied only for the type specified by the <see cref="P:Telerik.Windows.Controls.TreeMap.ITypedSelectDescriptor.TypeName"/> property.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.TreeMap.ITypedSelectDescriptor.TypeName">
+            <summary>
+            Gets or sets the name of the type, for wich the current SelectDescriptor is applicable.
+            </summary>
+            <value>The name of the type.</value>
+        </member>
+        <member name="P:Telerik.Windows.Controls.TreeMap.TypedSelectDescriptor.TypeName">
+            <summary>
+            Gets or sets the name of the type.
+            </summary>
+            <value>The name of the type.</value>
+        </member>
+        <member name="M:Telerik.Windows.Controls.TreeMap.ConstantSelectDescriptor.CreateSelectExpression(System.Linq.Expressions.Expression)">
+            <summary>
+            Creates a predicate selection expression used for collection selection.
+            </summary>
+            <param name="instance">The instance expression, which will be used for selection.</param>
+            <returns>A predicate selection expression.</returns>
+        </member>
+        <member name="P:Telerik.Windows.Controls.TreeMap.ConstantSelectDescriptor.ConstantValue">
+            <summary>
+            Gets or sets the constant value.
+            </summary>
+            <value>The constant value.</value>
+        </member>
+        <member name="T:Telerik.Windows.Controls.TreeMap.HierarchicalDataCollectionView">
+            <summary>
+            Represents a collection, which projects a given hierarchical data to a new collection using the provided <see cref="T:Telerik.Windows.Data.SelectDescriptor"/>s.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.TreeMap.HierarchicalDataCollectionView.CreateView">
+            <summary>
+            Returns <see cref="T:System.Linq.IQueryable"/> with applied filtering, sorting, grouping and paging.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.TreeMap.HierarchicalDataCollectionView.ApplySelectDescriptors(System.Linq.IQueryable)">
+            <summary>
+            Applies <seealso cref="T:Telerik.Windows.Data.SelectDescriptor" />s over the specified
+            queryable.
+            </summary>
+            <param name="queryable">The queryable.</param>
+            <returns></returns>
+        </member>
+        <member name="P:Telerik.Windows.Controls.TreeMap.HierarchicalDataCollectionView.IsGrouped">
+            <summary>
+            Returns false. Grouping is not supported.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.TreeMap.HierarchySelectDescriptor">
+            <summary>
+            Represents a SelectDescriptor used by the <see cref="T:Telerik.Windows.Controls.TreeMap.HierarchicalDataCollectionView"/> to project a hierarchical structure.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.TreeMap.HierarchySelectDescriptor.#cctor">
+            <summary>
+            Initializes static members of the <see cref="T:Telerik.Windows.Controls.TreeMap.HierarchySelectDescriptor"/> class.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.TreeMap.HierarchySelectDescriptor.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.Windows.Controls.TreeMap.HierarchySelectDescriptor"/> class.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.TreeMap.HierarchySelectDescriptor.CreateSelectExpression(System.Linq.Expressions.Expression)">
+            <summary>
+            Creates a predicate selection expression used for collection selection.
+            </summary>
+            <param name="instance">The instance expression, which will be used for selection.</param>
+            <returns>A predicate selection expression.</returns>
+        </member>
+        <member name="P:Telerik.Windows.Controls.TreeMap.HierarchySelectDescriptor.SelectDescriptors">
+            <summary>
+            Gets or sets the select descriptors.
+            </summary>
+            <value>The select descriptors.</value>
+        </member>
         <member name="T:Telerik.Windows.Controls.TreeMap.HierarchicalData">
             <summary>
             Represents a data item, which holds the information for a single <see cref="T:Telerik.Windows.Controls.TreeMap.RadTreeMapItem"/>
@@ -13200,6 +13523,27 @@
             <returns>
             A <see cref="T:System.String"/> that represents this instance.
             </returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.TreeMap.TreeMapData.OnChildrenChanged(System.Collections.IEnumerable,System.Collections.IEnumerable)">
+            <summary>
+            Called when <seealso cref="P:Telerik.Windows.Controls.TreeMap.TreeMapData.Children"/> changes.
+            </summary>
+            <param name="oldCollection">The old collection.</param>
+            <param name="newCollection">The new collection.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.TreeMap.TreeMapData.OnDataItemChanged(System.Object,System.Object)">
+            <summary>
+            Called when <seealso cref="P:Telerik.Windows.Controls.TreeMap.TreeMapData.DataItem"/> changed.
+            </summary>
+            <param name="oldDataItem">The old data item.</param>
+            <param name="newDataItem">The new data item.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.TreeMap.TreeMapData.OnDataItemPropertyChanged(System.Object,System.ComponentModel.PropertyChangedEventArgs)">
+            <summary>
+            Called when a property on <seealso cref="P:Telerik.Windows.Controls.TreeMap.TreeMapData.DataItem"/> has changed.
+            </summary>
+            <param name="sender">The sender.</param>
+            <param name="e">The <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance containing the event data.</param>
         </member>
         <member name="M:Telerik.Windows.Controls.TreeMap.TreeMapData.OnPropertyChanged(System.String)">
             <summary>
@@ -13280,6 +13624,18 @@
             </summary>
             <value>The label path.</value>
         </member>
+        <member name="P:Telerik.Windows.Controls.TreeMap.TreeMapData.ValuePath">
+            <summary>
+            Gets or sets the value path.
+            </summary>
+            <value>The value path.</value>
+        </member>
+        <member name="P:Telerik.Windows.Controls.TreeMap.HierarchicalData.Value">
+            <summary>
+            Gets or sets the value.
+            </summary>
+            <value>The value.</value>
+        </member>
         <member name="T:Telerik.Windows.Controls.TreeMap.TypeDefinition">
             <summary>
             This class configures the <see cref="T:Telerik.Windows.Controls.RadTreeMap"/> hierarchy by providing <see cref="P:Telerik.Windows.Controls.TreeMap.TypeDefinition.TargetTypeName"/>, <see cref="P:Telerik.Windows.Controls.TreeMap.TypeDefinition.ValuePath"/> and <see cref="P:Telerik.Windows.Controls.TreeMap.TypeDefinition.ChildrenPath"/>.
@@ -13298,11 +13654,6 @@
         <member name="F:Telerik.Windows.Controls.TreeMap.TypeDefinition.ChildrenPathProperty">
             <summary>
             Identifies the <see cref="P:Telerik.Windows.Controls.TreeMap.TypeDefinition.ChildrenPath"/> dependency property.
-            </summary>
-        </member>
-        <member name="F:Telerik.Windows.Controls.TreeMap.TypeDefinition.LayoutStrategyProperty">
-            <summary>
-            Identifies the <see cref="P:Telerik.Windows.Controls.TreeMap.TypeDefinition.LayoutStrategy"/> dependency property.
             </summary>
         </member>
         <member name="F:Telerik.Windows.Controls.TreeMap.TypeDefinition.LabelPathProperty">
@@ -13325,9 +13676,9 @@
             Identifies the <see cref="P:Telerik.Windows.Controls.TreeMap.TypeDefinition.ToolTipFormat"/> dependency property.
             </summary>
         </member>
-        <member name="F:Telerik.Windows.Controls.TreeMap.TypeDefinition.MappingsProperty">
+        <member name="F:Telerik.Windows.Controls.TreeMap.TypeDefinition.ItemTemplateProperty">
             <summary>
-            Identifies the <see cref="P:Telerik.Windows.Controls.TreeMap.TypeDefinition.Mappings"/> dependency property.
+            Identifies the <see cref="P:Telerik.Windows.Controls.TreeMap.TypeDefinition.ItemTemplate"/> dependency property.
             </summary>
         </member>
         <member name="M:Telerik.Windows.Controls.TreeMap.TypeDefinition.#ctor">
@@ -13343,9 +13694,19 @@
             A <see cref="T:System.String"/> that represents this instance.
             </returns>
         </member>
-        <member name="E:Telerik.Windows.Controls.TreeMap.TypeDefinition.PropertyChanged">
+        <member name="M:Telerik.Windows.Controls.TreeMap.TypeDefinition.ConfigureMappings">
             <summary>
-            Occurs when a property value changes.
+            Configures the mappings.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.TreeMap.TypeDefinition.ConfigureStyleMapping">
+            <summary>
+            Configures the style mapping.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.TreeMap.TypeDefinition.ConfigureLayoutStrategy">
+            <summary>
+            Configures the layout strategy.
             </summary>
         </member>
         <member name="P:Telerik.Windows.Controls.TreeMap.TypeDefinition.TargetTypeName">
@@ -13365,12 +13726,6 @@
             Gets or sets the children path.
             </summary>
             <value>The children path.</value>
-        </member>
-        <member name="P:Telerik.Windows.Controls.TreeMap.TypeDefinition.LayoutStrategy">
-            <summary>
-            Gets the layout strategy.
-            </summary>
-            <value>The layout strategies.</value>
         </member>
         <member name="P:Telerik.Windows.Controls.TreeMap.TypeDefinition.LabelPath">
             <summary>
@@ -13396,11 +13751,11 @@
             </summary>
             <value>The tool tip format.</value>
         </member>
-        <member name="P:Telerik.Windows.Controls.TreeMap.TypeDefinition.Mappings">
+        <member name="P:Telerik.Windows.Controls.TreeMap.TypeDefinition.ItemTemplate">
             <summary>
-            Gets or sets the value mappings.
+            Gets or sets the item template.
             </summary>
-            <value>The value mappings.</value>
+            <value>The item template.</value>
         </member>
         <member name="T:Telerik.Windows.Controls.TreeMap.TypeDefinitionCollection">
             <summary>
@@ -14112,6 +14467,11 @@
             Identifies the <see cref="P:Telerik.Windows.Controls.Sparklines.RadSparklineBase.AxisOriginValue"/> dependency property.
             </summary>
         </member>
+        <member name="F:Telerik.Windows.Controls.Sparklines.RadSparklineBase.AxisWidthProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.Sparklines.RadSparklineBase.AxisWidth"/> dependency property.
+            </summary>
+        </member>
         <member name="M:Telerik.Windows.Controls.Sparklines.RadSparklineBase.#ctor">
             <summary>
             Initializes a new instance of the <see cref="T:Telerik.Windows.Controls.Sparklines.RadSparklineBase"/> class.
@@ -14171,6 +14531,11 @@
         <member name="P:Telerik.Windows.Controls.Sparklines.RadSparklineBase.AxisOriginValue">
             <summary>
             Gets or sets the AxisOriginValue.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Sparklines.RadSparklineBase.AxisWidth">
+            <summary>
+            Gets or sets the AxisWidth.
             </summary>
         </member>
         <member name="P:Telerik.Windows.Controls.Sparklines.RadSparklineBase.AxisStroke">
@@ -15362,116 +15727,6 @@
             <value>
             If this instance is initialized <c>true</c>; otherwise, <c>false</c>.
             </value>
-        </member>
-        <member name="T:Telerik.Windows.Controls.TimeBar.IntervalBase">
-            <summary>
-            Base class for all intervals. Provides all the logic that an interval
-            should have in order to work in <seealso cref="T:Telerik.Windows.Controls.RadTimeBar"/>.
-            </summary>
-        </member>
-        <member name="F:Telerik.Windows.Controls.TimeBar.IntervalBase.CurrentIntervalSpanProperty">
-            <summary>
-            Identifies the <see cref="P:Telerik.Windows.Controls.TimeBar.IntervalBase.CurrentIntervalSpan"/> dependency property.
-            </summary>
-        </member>
-        <member name="F:Telerik.Windows.Controls.TimeBar.IntervalBase.IntervalSpansProperty">
-            <summary>
-            Identifies the <see cref="P:Telerik.Windows.Controls.TimeBar.IntervalBase.IntervalSpans"/> dependency property.
-            </summary>
-        </member>
-        <member name="F:Telerik.Windows.Controls.TimeBar.IntervalBase.CurrentIntervalSpanPropertyKey">
-            <summary>
-            Identifies the <see cref="P:Telerik.Windows.Controls.TimeBar.IntervalBase.CurrentIntervalSpan"/> dependency property.
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.TimeBar.IntervalBase.#cctor">
-            <summary>
-            Initializes static members of the <see cref="T:Telerik.Windows.Controls.TimeBar.IntervalBase"/> class.
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.TimeBar.IntervalBase.#ctor">
-            <summary>
-            Initializes a new instance of the <see cref="T:Telerik.Windows.Controls.TimeBar.IntervalBase"/> class.
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.TimeBar.IntervalBase.CreateStringMeasurementTable(System.Func{System.DateTime,System.String}[])">
-            <summary>
-            Creates the string measurement table.
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:Telerik.Windows.Controls.TimeBar.IntervalBase.ExtractIntervalStart(System.DateTime)">
-            <summary>
-            Extracts the interval start from the specified DateTime object.
-            </summary>
-            <param name="date">The date.</param>
-            <returns></returns>
-        </member>
-        <member name="M:Telerik.Windows.Controls.TimeBar.IntervalBase.IncrementByInterval(System.DateTime)">
-            <summary>
-            Increments the specified date.
-            </summary>
-            <param name="date">The date.</param>
-            <returns></returns>
-        </member>
-        <member name="M:Telerik.Windows.Controls.TimeBar.IntervalBase.IncrementByCurrentInterval(System.DateTime)">
-            <summary>
-            Increments the specified date by the current interval.
-            </summary>
-            <param name="date">The date.</param>
-            <returns></returns>
-        </member>
-        <member name="M:Telerik.Windows.Controls.TimeBar.IntervalBase.IncrementByInterval(System.DateTime,System.Int32)">
-            <summary>
-            Increments the specified date by interval span.
-            </summary>
-            <param name="date">The date.</param>
-            <param name="intervalSpan">The interval span.</param>
-            <returns></returns>
-        </member>
-        <member name="M:Telerik.Windows.Controls.TimeBar.IntervalBase.CreateStringMeasurementTable(System.Func{System.DateTime,System.String}[],System.Int32,System.DateTime)">
-            <summary>
-            Creates the string measurement table.
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="P:Telerik.Windows.Controls.TimeBar.IntervalBase.IntervalSpans">
-            <summary>
-            Gets the interval spans.
-            </summary>
-            <value>The interval spans.</value>
-        </member>
-        <member name="P:Telerik.Windows.Controls.TimeBar.IntervalBase.CurrentIntervalSpan">
-            <summary>
-            Gets the current interval span.
-            </summary>
-            <value>The current interval span.</value>
-        </member>
-        <member name="P:Telerik.Windows.Controls.TimeBar.IntervalBase.Code">
-            <summary>
-            Gets the code that identifies this interval uniquely.
-            </summary>
-            <value>The code.</value>
-        </member>
-        <member name="P:Telerik.Windows.Controls.TimeBar.IntervalBase.Formatters">
-            <summary>
-            Gets a collection of formatters used to convert DateTime objects
-            to specific strings.
-            </summary>
-            <value>The formatters.</value>
-        </member>
-        <member name="P:Telerik.Windows.Controls.TimeBar.IntervalBase.IntervalSpanFormatters">
-            <summary>
-            Gets a collection of formatters used to convert DateTime objects
-            to specific strings, when an interval span is applied.
-            </summary>
-            <value>The formatters.</value>
-        </member>
-        <member name="P:Telerik.Windows.Controls.TimeBar.IntervalBase.SmallestPeriod">
-            <summary>
-            Gets the smallest period.
-            </summary>
-            <value>The smallest period.</value>
         </member>
         <member name="T:Telerik.Windows.Controls.TimeBar.IntervalContainerBase">
             <summary>
@@ -17895,7 +18150,22 @@
             Initializes a new instance of the <see cref="T:Telerik.Windows.Controls.TreeMap.RadTreeMapBase"/> class.
             </summary>
         </member>
-        <member name="M:Telerik.Windows.Controls.TreeMap.RadTreeMapBase.SetDataView(System.Collections.Generic.IEnumerable{Telerik.Windows.Controls.TreeMap.TreeMapData})">
+        <member name="M:Telerik.Windows.Controls.TreeMap.RadTreeMapBase.BeginInit">
+            <summary>
+            Starts the initialization process for this element.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.TreeMap.RadTreeMapBase.EndInit">
+            <summary>
+            Indicates that the initialization process for the element is complete.
+            </summary>
+            <exception cref="T:System.InvalidOperationException">
+            	<see cref="M:System.Windows.FrameworkElement.EndInit"/> 
+            	was called without <see cref="M:System.Windows.FrameworkElement.BeginInit"/>
+            	having previously been called on the element.
+            </exception>
+        </member>
+        <member name="M:Telerik.Windows.Controls.TreeMap.RadTreeMapBase.SetDataView(System.Collections.IEnumerable)">
             <summary>
             Sets the data view.
             </summary>
@@ -17907,13 +18177,6 @@
             </summary>
             <param name="oldValue">The old value.</param>
             <param name="newValue">The new value.</param>
-        </member>
-        <member name="M:Telerik.Windows.Controls.TreeMap.RadTreeMapBase.OnItemTemplateSelectorChanged(Telerik.Windows.Controls.DataTemplateSelector,Telerik.Windows.Controls.DataTemplateSelector)">
-            <summary>
-            Called when <see cref="P:Telerik.Windows.Controls.TreeMap.RadTreeMapBase.ItemTemplateSelector"/> property changes.
-            </summary>
-            <param name="oldValue">The old DataTemplateSelector.</param>
-            <param name="newValue">The new DataTemplateSelector.</param>
         </member>
         <member name="M:Telerik.Windows.Controls.TreeMap.RadTreeMapBase.OnLayoutStrategyChanged(System.Object,Telerik.Windows.Controls.TreeMap.LayoutStrategyBase)">
             <summary>
@@ -17968,6 +18231,16 @@
             This property supports the <see cref="T:Telerik.Windows.Controls.TreeMap.RadTreeMapBase"/> infrastructure and
             is not intended to be used directly from your code.
             </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.TreeMap.RadTreeMapBase.IsInitialized">
+            <summary>
+            Gets a value that indicates whether this element has been initialized,
+            either during processing by a XAML processor, or by explicitly having
+            its EndInit method called.
+            </summary>
+            <value>
+            If this instance is initialized <c>true</c>; otherwise, <c>false</c>.
+            </value>
         </member>
         <member name="T:Telerik.Windows.Controls.TreeMap.AbsoluteValueBrushColorizer">
             <summary>
@@ -18243,16 +18516,6 @@
             Each GroupDefinition defines an additional level in the hierarchy. If there are no such objects, the <see cref="T:Telerik.Windows.Controls.RadPivotMap"/> control will display all its items in a single level.
             </summary>
         </member>
-        <member name="F:Telerik.Windows.Controls.TreeMap.GroupDefinition.MappingsProperty">
-            <summary>
-            Identifies the <see cref="P:Telerik.Windows.Controls.TreeMap.GroupDefinition.Mappings"/> dependency property.
-            </summary>
-        </member>
-        <member name="F:Telerik.Windows.Controls.TreeMap.GroupDefinition.LayoutStrategyProperty">
-            <summary>
-            Identifies the <see cref="P:Telerik.Windows.Controls.TreeMap.GroupDefinition.LayoutStrategy"/> dependency property.
-            </summary>
-        </member>
         <member name="F:Telerik.Windows.Controls.TreeMap.GroupDefinition.MemberProperty">
             <summary>
             Identifies the <see cref="P:Telerik.Windows.Controls.TreeMap.GroupDefinition.Member"/> dependency property.
@@ -18271,9 +18534,19 @@
             A <see cref="T:System.String"/> that represents this instance.
             </returns>
         </member>
-        <member name="E:Telerik.Windows.Controls.TreeMap.GroupDefinition.PropertyChanged">
+        <member name="M:Telerik.Windows.Controls.TreeMap.GroupDefinition.ConfigureMappings">
             <summary>
-            Occurs when a property value changes.
+            Configures the mappings.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.TreeMap.GroupDefinition.ConfigureStyleMapping">
+            <summary>
+            Configures the style mapping.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.TreeMap.GroupDefinition.ConfigureLayoutStrategy">
+            <summary>
+            Configures the layout strategy.
             </summary>
         </member>
         <member name="P:Telerik.Windows.Controls.TreeMap.GroupDefinition.Member">
@@ -18281,18 +18554,6 @@
             Gets or sets the member name which will be used for grouping.
             </summary>
             <returns>The member name that will be used for grouping.</returns>
-        </member>
-        <member name="P:Telerik.Windows.Controls.TreeMap.GroupDefinition.Mappings">
-            <summary>
-            Gets or sets the value mappings.
-            </summary>
-            <value>The value mappings.</value>
-        </member>
-        <member name="P:Telerik.Windows.Controls.TreeMap.GroupDefinition.LayoutStrategy">
-            <summary>
-            Gets the layout strategy.
-            </summary>
-            <value>The layout strategies.</value>
         </member>
         <member name="T:Telerik.Windows.Controls.TreeMap.GroupDefinitionCollection">
             <summary>
@@ -18305,22 +18566,20 @@
             under the context of <seealso cref="T:Telerik.Windows.Controls.RadPivotMap"/>.
             </summary>
         </member>
-        <member name="M:Telerik.Windows.Controls.TreeMap.GroupData.#ctor(System.Object,System.Type,System.String,System.Int32)">
+        <member name="M:Telerik.Windows.Controls.TreeMap.GroupData.#ctor(System.Object,System.String,System.Int32)">
             <summary>
             Initializes a new instance of the <see cref="T:Telerik.Windows.Controls.TreeMap.GroupData"/> class.
             </summary>
             <param name="dataItem">The data item.</param>
-            <param name="itemType">Type of the item.</param>
             <param name="valuePath">The value path.</param>
             <param name="depth">The depth.</param>
         </member>
-        <member name="M:Telerik.Windows.Controls.TreeMap.GroupData.#ctor(System.Collections.IEnumerable,System.Type,System.String)">
+        <member name="M:Telerik.Windows.Controls.TreeMap.GroupData.#ctor(System.Collections.IEnumerable,System.String)">
             <summary>
             Initializes a new instance of the <see cref="T:Telerik.Windows.Controls.TreeMap.GroupData"/> class that
             represents a root for the provided <paramref name="subgroups"/>.
             </summary>
             <param name="subgroups">The subgroups.</param>
-            <param name="itemType">Type of the item.</param>
             <param name="valuePath">The value path.</param>
         </member>
         <member name="P:Telerik.Windows.Controls.TreeMap.GroupData.GroupLevel">
@@ -18334,6 +18593,12 @@
             Gets the group key.
             </summary>
             <value>The group key.</value>
+        </member>
+        <member name="P:Telerik.Windows.Controls.TreeMap.GroupData.Value">
+            <summary>
+            Gets or sets the value.
+            </summary>
+            <value>The value.</value>
         </member>
         <member name="T:Telerik.Windows.Controls.TreeMap.RadTreeMapItem">
             <summary>
@@ -18716,6 +18981,11 @@
             Identifies the <see cref="P:Telerik.Windows.Controls.RadPivotMap.ToolTipFormat"/> dependency property.
             </summary>
         </member>
+        <member name="F:Telerik.Windows.Controls.RadPivotMap.LeafItemStyleProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.RadPivotMap.LeafItemStyle"/> dependency property.
+            </summary>
+        </member>
         <member name="M:Telerik.Windows.Controls.RadPivotMap.#cctor">
             <summary>
             Initializes static members of the <see cref="T:Telerik.Windows.Controls.RadPivotMap"/> class.
@@ -18725,6 +18995,15 @@
             <summary>
             Initializes a new instance of the <see cref="T:Telerik.Windows.Controls.RadPivotMap"/> class.
             </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadPivotMap.EndInit">
+            <summary>
+            Indicates that the initialization process for the element is complete.
+            </summary>
+            <exception cref="T:System.InvalidOperationException">
+            	<see cref="M:System.Windows.FrameworkElement.EndInit"/> was called without
+            	<see cref="M:System.Windows.FrameworkElement.BeginInit"/> having previously been called on the element.
+            </exception>
         </member>
         <member name="M:Telerik.Windows.Controls.RadPivotMap.OnItemsSourceChanged(System.Collections.IEnumerable,System.Collections.IEnumerable)">
             <summary>
@@ -18794,6 +19073,12 @@
             </summary>
             <value>The tool tip format.</value>
         </member>
+        <member name="P:Telerik.Windows.Controls.RadPivotMap.LeafItemStyle">
+            <summary>
+            Gets or sets the style for the leaf items.
+            </summary>
+            <value>The item style.</value>
+        </member>
         <member name="T:Telerik.Windows.Controls.RadTreeMap">
             <summary>
             RadTreeMap displays a hierarchical collection of items. Each item is represented by a rectangle where rectangle's area represents 
@@ -18805,20 +19090,25 @@
             Identifies the <see cref="P:Telerik.Windows.Controls.RadTreeMap.TypeDefinitions"/> dependency property.
             </summary>
         </member>
+        <member name="F:Telerik.Windows.Controls.RadTreeMap.DefaultItemTemplateProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.RadTreeMap.DefaultItemTemplate"/> dependency property.
+            </summary>
+        </member>
         <member name="M:Telerik.Windows.Controls.RadTreeMap.#ctor">
             <summary>
             Initializes a new instance of the <see cref="T:Telerik.Windows.Controls.RadTreeMap"/> class.
             </summary>
         </member>
-        <member name="M:Telerik.Windows.Controls.RadTreeMap.Rebind">
+        <member name="M:Telerik.Windows.Controls.RadTreeMap.EndInit">
             <summary>
-            Rebinds the <see cref="T:Telerik.Windows.Controls.RadTreeMap"/> control.
+            Indicates that the initialization process for the element is complete.
             </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.RadTreeMap.OnApplyTemplate">
-            <summary>
-            Called when the control template is applied.
-            </summary>
+            <exception cref="T:System.InvalidOperationException">
+            	<see cref="M:System.Windows.FrameworkElement.EndInit"/>
+            was called without <see cref="M:System.Windows.FrameworkElement.BeginInit"/>
+            having previously been called on the element.
+            </exception>
         </member>
         <member name="M:Telerik.Windows.Controls.RadTreeMap.OnItemsSourceChanged(System.Collections.IEnumerable,System.Collections.IEnumerable)">
             <summary>
@@ -18826,13 +19116,6 @@
             </summary>
             <param name="oldData">The old data.</param>
             <param name="newData">The new data.</param>
-        </member>
-        <member name="M:Telerik.Windows.Controls.RadTreeMap.OnItemTemplateSelectorChanged(Telerik.Windows.Controls.DataTemplateSelector,Telerik.Windows.Controls.DataTemplateSelector)">
-            <summary>
-            Called when ItemTemplateSelector property changes.
-            </summary>
-            <param name="oldValue">The old value.</param>
-            <param name="newValue">The new value.</param>
         </member>
         <member name="M:Telerik.Windows.Controls.RadTreeMap.OnLayoutStrategyChanged(System.Object,Telerik.Windows.Controls.TreeMap.LayoutStrategyBase)">
             <summary>
@@ -18846,6 +19129,12 @@
             Gets or sets the type definitions.
             </summary>
             <value>The type definitions.</value>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadTreeMap.DefaultItemTemplate">
+            <summary>
+            Gets or sets the default item template.
+            </summary>
+            <value>The default template.</value>
         </member>
         <member name="T:Telerik.Windows.Controls.TreeMap.DefaultGroupTemplateSelector">
             <summary>
@@ -18871,6 +19160,37 @@
             Gets or sets the leaf template.
             </summary>
             <value>The leaf template.</value>
+        </member>
+        <member name="T:Telerik.Windows.Controls.TreeMap.DefaultTypeTemplateSelector">
+            <summary>
+            Selects a <seealso cref="T:System.Windows.DataTemplate"/> for a type using its
+            <seealso cref="P:Telerik.Windows.Controls.TreeMap.DefaultTypeTemplateSelector.TemplateTable"/>.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.TreeMap.DefaultTypeTemplateSelector.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.Windows.Controls.TreeMap.DefaultTypeTemplateSelector"/> class.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.TreeMap.DefaultTypeTemplateSelector.SelectTemplate(System.Object,System.Windows.DependencyObject)">
+            <summary>
+            When overridden in a derived class, returns a DataTemplate based on custom logic.
+            </summary>
+            <param name="item">The data object for which to select the template.</param>
+            <param name="container">The data-bound object.</param>
+            <returns></returns>
+        </member>
+        <member name="P:Telerik.Windows.Controls.TreeMap.DefaultTypeTemplateSelector.TemplateTable">
+            <summary>
+            Gets the template table.
+            </summary>
+            <value>The template table.</value>
+        </member>
+        <member name="P:Telerik.Windows.Controls.TreeMap.DefaultTypeTemplateSelector.DefaultTemplate">
+            <summary>
+            Gets or sets the default template.
+            </summary>
+            <value>The default template.</value>
         </member>
         <member name="T:Telerik.Windows.Controls.TreeMap.GroupDataMappingSelector">
             <summary>

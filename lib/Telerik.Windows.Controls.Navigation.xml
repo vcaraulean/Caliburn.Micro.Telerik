@@ -874,6 +874,11 @@
             Gets or sets the IsHardPaper property. 
             </summary>
         </member>
+        <member name="T:Telerik.Windows.Controls.Breadcrumb.BreadcrubmItemCollection">
+            <summary>
+             BreadcrubmItemCollection is the type of the RadBreadcrumbItem items property.
+            </summary>
+        </member>
         <member name="T:Telerik.Windows.Controls.RadBreadcrumb">
             <summary>
              RadBreadCrumb is a navigation control that allows users to keep track of their locations within programs or documents.
@@ -1235,6 +1240,11 @@
             Initializes a new instance of the RadBreadcrumbBar class.
             </summary>
         </member>
+        <member name="M:Telerik.Windows.Controls.Breadcrumb.RadBreadcrumbBar.OnApplyTemplate">
+            <summary>
+            Applies the template for the RadBreadcrumbBar.
+            </summary>
+        </member>
         <member name="M:Telerik.Windows.Controls.Breadcrumb.RadBreadcrumbBar.GetContainerForItemOverride">
             <summary>
             Returns a RadBreadcrumbBarItem.
@@ -1278,6 +1288,16 @@
         <member name="F:Telerik.Windows.Controls.Breadcrumb.RadBreadcrumbBarItem.TextModePathProperty">
             <summary>
             Identifies the TextModePath dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.Breadcrumb.RadBreadcrumbBarItem.DropDownHeaderProperty">
+            <summary>
+            Identifies the DropDownHeader dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.Breadcrumb.RadBreadcrumbBarItem.DropDownHeaderTemplateProperty">
+            <summary>
+            Identifies the DropDownHeaderTemplate dependency property.
             </summary>
         </member>
         <member name="F:Telerik.Windows.Controls.Breadcrumb.RadBreadcrumbBarItem.ImageProperty">
@@ -1375,11 +1395,6 @@
             Clean up RadBreadcrumbBarItem item.
             </summary>
         </member>
-        <member name="M:Telerik.Windows.Controls.Breadcrumb.RadBreadcrumbBarItem.OnHeaderChanged(System.Object,System.Object)">
-            <summary>
-            Invoked when the Header property changes.
-            </summary>
-        </member>
         <member name="M:Telerik.Windows.Controls.Breadcrumb.RadBreadcrumbBarItem.OnItemsChanged(System.Collections.Specialized.NotifyCollectionChangedEventArgs)">
             <summary>
             Invoked when the Items property changes.
@@ -1465,6 +1480,16 @@
             Gets or sets the style of RadBreadcrumbBarItem split button.
             </summary>
         </member>
+        <member name="P:Telerik.Windows.Controls.Breadcrumb.RadBreadcrumbBarItem.DropDownHeader">
+            <summary>
+            Gets or sets the DropDownHeader property.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Breadcrumb.RadBreadcrumbBarItem.DropDownHeaderTemplate">
+            <summary>
+            Gets or sets the DropDownHeaderTemplate property.
+            </summary>
+        </member>
         <member name="P:Telerik.Windows.Controls.Breadcrumb.RadBreadcrumbBarItem.Image">
             <summary>
             Gets or sets the Image property.
@@ -1522,9 +1547,9 @@
             Identifies the TextModePath dependency property.
             </summary>
         </member>
-        <member name="F:Telerik.Windows.Controls.RadBreadcrumbItem.ItemsProperty">
+        <member name="F:Telerik.Windows.Controls.RadBreadcrumbItem.ItemsSourceProperty">
             <summary>
-            Identifies the Items dependency property.
+            Identifies the ItemsSource dependency property.
             </summary>
         </member>
         <member name="F:Telerik.Windows.Controls.RadBreadcrumbItem.ImageProperty">
@@ -1532,9 +1557,14 @@
             Identifies the Image dependency property.
             </summary>
         </member>
+        <member name="F:Telerik.Windows.Controls.RadBreadcrumbItem.ItemsProperty">
+            <summary>
+            Identifies the Items dependency property.
+            </summary>
+        </member>
         <member name="M:Telerik.Windows.Controls.RadBreadcrumbItem.#ctor">
             <summary>
-            Initalize a new instance of the RadBreadcrumbItem class.
+            Initializes a new instance of the RadBreadcrumbItem class.
             </summary>
         </member>
         <member name="M:Telerik.Windows.Controls.RadBreadcrumbItem.ToString">
@@ -1562,15 +1592,25 @@
             Invoked when the TextMode property changes.
             </summary>
         </member>
+        <member name="M:Telerik.Windows.Controls.RadBreadcrumbItem.OnDropDownHeaderChanged(System.Object,System.Object)">
+            <summary>
+            Invoked when the DropDownHeader property changes.
+            </summary>
+        </member>
         <member name="P:Telerik.Windows.Controls.RadBreadcrumbItem.Image">
             <summary>
             Gets or sets the Image property.
             </summary>
         </member>
+        <member name="P:Telerik.Windows.Controls.RadBreadcrumbItem.ItemsSource">
+            <summary>
+            Gets or sets the ItemsSource property.
+            </summary>
+        </member>
         <member name="P:Telerik.Windows.Controls.RadBreadcrumbItem.Items">
             <summary>
-            Gets or sets the Items property.
-            </summary>
+            Gets a collection containing the current items.
+            </summary>			
         </member>
         <member name="P:Telerik.Windows.Controls.RadBreadcrumbItem.TextModePath">
             <summary>
@@ -1600,6 +1640,95 @@
         <member name="F:Telerik.Windows.Controls.Breadcrumb.RadBreadcrumbItemType.DropDownItem">
             <summary>
             The dropdown type for a item.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.ActivationChangedEventArgs">
+            <summary>
+            Provides data for the Telerik.Windows.Controls.ActivationManager.ActiveChanged event.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ActivationChangedEventArgs.#ctor(System.Collections.IList,System.Collections.IList)">
+            <summary>
+            Initializes a new instance of the ActivationChangedEventArgs class.
+            </summary>
+            <param name="removedItems"></param>
+            <param name="addedItems"></param>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ActivationChangedEventArgs.AddedItems">
+            <summary>
+            Gets a list that contains the items that were selected.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ActivationChangedEventArgs.RemovedItems">
+            <summary>
+            Gets a list that contains the items that were unselected.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.ActivationManager`1">
+            <summary>
+            An ActivationManager class. 
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ActivationManager`1.#ctor">
+            <summary>
+            The ActivationManager constructor.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ActivationManager`1.Activate(`0,System.Boolean)">
+            <summary>
+            Add the item to the active items collection and sets it as an active one.
+            </summary>
+            <param name="item"></param>
+            <param name="addToCollection"></param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ActivationManager`1.Activate(`0)">
+            <summary>
+            Add the item to the active items collection and sets it as an active one.
+            </summary>
+            <param name="item"></param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ActivationManager`1.Add(`0,System.Boolean)">
+            <summary>
+            Add item to the active items collection. If the isActive is true, it activates the item.
+            </summary>
+            <param name="item"></param>
+            <param name="isActive"></param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ActivationManager`1.Remove(`0)">
+            <summary>
+            Remove item from the active items collection.
+            </summary>
+            <param name="item"></param>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ActivationManager`1.Active">
+            <summary>
+            Gets the current Active item.
+            </summary>
+        </member>
+        <member name="E:Telerik.Windows.Controls.ActivationManager`1.ActiveChanged">
+            <summary>
+            Occurs when the Active item is changed.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.IActiveAware">
+            <summary>
+            Supports activation, which indicates whether an instance is active or not.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.IActiveAware.IsActive">
+            <summary>
+            Gets or sets whether an instance is active or not.
+            </summary>
+        </member>
+        <member name="E:Telerik.Windows.Controls.IActiveAware.Activated">
+            <summary>
+            Occurs when an instance is activated.
+            </summary>
+        </member>
+        <member name="E:Telerik.Windows.Controls.IActiveAware.Deactivated">
+            <summary>
+            Occurs when an instance is deactivated.
             </summary>
         </member>
         <member name="T:Telerik.Windows.Controls.CameraViewpoint">
@@ -2456,11 +2585,6 @@
             A base class providing functionality to controls used to create tabbed interfaces.
             </summary>
         </member>
-        <member name="M:Telerik.Windows.Controls.TabControl.RadTabControlBase.#cctor">
-            <summary>
-            Initializes static members of the <see cref="T:Telerik.Windows.Controls.TabControl.RadTabControlBase"/> class.
-            </summary>
-        </member>
         <member name="M:Telerik.Windows.Controls.TabControl.RadTabControlBase.#ctor">
             <summary>
             Initializes a new instance of the <see cref="T:Telerik.Windows.Controls.TabControl.RadTabControlBase"/> class.
@@ -2485,18 +2609,6 @@
             then the first element in the selected tab contents will be focused.
             If the <see cref="P:Telerik.Windows.Controls.TabControl.RadTabControlBase.TabStrip"/> is focused calling this method will focus the newly selected tab header.
             </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.TabControl.RadTabControlBase.OnTabItemDragQuery(Telerik.Windows.Controls.DragDrop.DragDropQueryEventArgs)">
-            <summary>
-            Called when the <see cref="F:Telerik.Windows.Controls.DragDrop.RadDragAndDropManager.DragQueryEvent"/> event passes through the element.
-            </summary>
-            <param name="e">The drag query event args.</param>
-        </member>
-        <member name="M:Telerik.Windows.Controls.TabControl.RadTabControlBase.OnTabItemDropQuery(Telerik.Windows.Controls.DragDrop.DragDropQueryEventArgs)">
-            <summary>
-            Called when the <see cref="F:Telerik.Windows.Controls.DragDrop.RadDragAndDropManager.DropQueryEvent"/> event passes through the element.
-            </summary>
-            <param name="e">The drop query event args.</param>
         </member>
         <member name="M:Telerik.Windows.Controls.TabControl.RadTabControlBase.ChangeVisualState(System.Boolean)">
             <summary>
@@ -2715,16 +2827,6 @@
             <summary>
             Clears the ContentPresenter elements used to display the content of already removed items.
             </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.TabControl.RadTabControlBase.IsDropPointUnsafe(System.Windows.FrameworkElement,System.Windows.FrameworkElement,System.Windows.Point)">
-            <summary>
-            This method checks whether the destination object is going to to appear under the mouse 
-            if drag-drop is completed (when destination item is wider/higher than the source item).
-            This method must be called before completing the drop operation in order to prevent initiating a cycle
-            of switching the places of the adjacent tab items participating in the drag drop operation.
-            </summary>
-            <returns>Returns true if the current mouse position will cause a switching items cycle;
-            False is the point is safe and will not cause flickering.</returns>
         </member>
         <member name="F:Telerik.Windows.Controls.TabControl.RadTabControlBase.PreviewSelectionChangedEvent">
             <summary>
@@ -3409,6 +3511,126 @@
             Contains info about tab swapping operation.
             </summary>
         </member>
+        <member name="T:Telerik.Windows.Controls.RadTabControl">
+            <summary>
+            A navigation control used to create tabbed interface.
+            </summary>
+            <remarks>
+            	<para>
+            		The <strong>RadTabControl</strong>  is used to create a list of tabs. It is 
+                    <see cref="T:Telerik.Windows.Controls.ItemsControl"/> and its default items are of type <see cref="T:Telerik.Windows.Controls.RadTabItem"/>.
+                </para>
+                <list type="bullet">
+                    <listheader>
+            			The TabControl supports the following <strong>features</strong>:
+            		</listheader>
+                    <item>
+            			Customizable look through the <see cref="T:Telerik.Windows.Controls.Theme">theming mechanism</see>.
+            		</item>
+                    <item>
+                        Control over the <see cref="P:Telerik.Windows.Controls.TabControl.RadTabControlBase.TabStripPlacement">position</see> of the TabStrip relative to its content.
+                    </item>
+                    <item>
+                        Ability to set the <see cref="P:Telerik.Windows.Controls.TabControl.RadTabControlBase.TabOrientation">orientation</see> of the items.
+                    </item>
+                    <item>
+                        Multirow TabStrips can be created by setting the <see cref="P:Telerik.Windows.Controls.RadTabItem.IsBreak">IsBreak</see> property 
+                        of an item.
+                    </item>
+                    <item>
+                        <see cref="P:Telerik.Windows.Controls.TabControl.RadTabControlBase.Align">The align</see> of the tab rows can be changed.
+                    </item>
+                    <item>
+                        Any content can be placed in the <see cref="P:Telerik.Windows.Controls.HeaderedContentControl.Header">TabItem headers</see> such as icons, 
+                        buttons and multiline text.
+                    </item>
+                </list>
+            </remarks>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadTabControl.IsDropPointUnsafe(System.Windows.FrameworkElement,System.Windows.FrameworkElement,System.Windows.Point)">
+            <summary>
+            This method checks whether the destination object is going to appear under the mouse 
+            if drag-drop is completed (when destination item is wider/higher than the source item).
+            This method must be called before completing the drop operation in order to prevent initiating a cycle
+            of switching the places of the adjacent tab items participating in the drag drop operation.
+            </summary>
+            <returns>Returns true if the current mouse position will cause a switching items cycle;
+            False is the point is safe and will not cause flickering.</returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadTabControl.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.Windows.Controls.RadTabControl"/> class.
+            </summary>
+            <remarks>
+                <para>
+                    Use this constructor to create an instance of the <strong>RadTabControl</strong>. In order for the 
+                    TabControl to be displayed, you need to add it to the visual tree.
+                </para>
+                <example>
+                    <para>
+                        The Following examples show how you can create an instance of the RadTabControl control.
+                    </para>
+                    <code lang="XAML"><![CDATA[
+                                        <telerik:RadTabControl>
+                                            <telerik:RadTabItem Header="Tab 1"/>
+                                        </telerik:RadTabControl>
+                                        ]]>
+                    </code>
+                    <code lang="CS"><![CDATA[
+                            RadTabControl tabControl = new RadTabControl();
+                            tabControl.Items.Add(new RadTabItem(){Header="Tab 1", Content="Tab Content"});
+                            ]]>
+                    </code>
+                </example>
+            </remarks>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadTabControl.OnApplyTemplate">
+            <summary>
+            When overridden in a derived class, is invoked whenever application code or internal processes
+            (such as a rebuilding layout pass) call <see cref="M:System.Windows.Controls.Control.ApplyTemplate"/>.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadTabControl.GetDropDownItem(System.Object)">
+            <summary>
+            Gets corresponding drop down item for a particuar item.
+            </summary>
+            <param name="item">The item to get drop down item for.</param>
+            <returns>Returns:
+            1. The item itself if it is non-dependency object.
+            2. Null if the item has no container. 
+            3. Its DropDownContent if set.
+            4. The Header if it is non-null and non-visual
+            5. The TextSearch.PrimaryTextFromItem
+            6. ToString.
+            </returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadTabControl.PrepareContainerForItemOverride(System.Windows.DependencyObject,System.Object)">
+            <summary>
+            Prepares the specified element to display the specified item.
+            </summary>
+            <param name="element">Element used to display the specified item.</param>
+            <param name="item">Specified item.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadTabControl.UpdateSelectedContentProperties">
+            <summary>
+            Updates the selected content properties <see cref="P:Telerik.Windows.Controls.TabControl.RadTabControlBase.SelectedContent"/>,
+            <see cref="P:Telerik.Windows.Controls.TabControl.RadTabControlBase.SelectedContentTemplate"/> and
+            <see cref="P:Telerik.Windows.Controls.TabControl.RadTabControlBase.SelectedContentTemplateSelector"/>.
+            Selected content properties are used when representing the content of selected tab item.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadTabControl.OnCreateAutomationPeer">
+            <summary>
+            Creates a <see cref="T:Telerik.Windows.Controls.RadTabControlAutomationPeer"/> peer associated with this object.
+            </summary>
+            <returns> An instance of the <see cref="T:Telerik.Windows.Controls.RadTabControlAutomationPeer"/>.</returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadTabControl.GetContainer">
+            <summary>
+            Returns a new instance of the control that implements the <see cref="T:Telerik.Windows.Controls.TabControl.IRadTabItem"/> interface.
+            </summary>
+            <returns></returns>
+        </member>
         <member name="T:Telerik.Windows.Controls.RadTabItem">
             <summary>
                 Represents a tab item, the default item of the RadTabControl.
@@ -3927,6 +4149,21 @@
             Item order may need to be reversed for rotations which switch "Left" and "Right".
             </summary>
         </member>
+        <member name="T:Telerik.Windows.Controls.TileView.TileViewDragMode">
+            <summary>
+            Enum for drag modes.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.TileView.TileViewDragMode.Slide">
+            <summary>
+            The tiles are dynamically swapped on mouse over.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.TileView.TileViewDragMode.Swap">
+            <summary>
+            The items are swapped on drop.
+            </summary>
+        </member>
         <member name="T:Telerik.Windows.Controls.TileViewBringIntoViewArgs">
             <summary>
             Event arguments for TileView drag-related events.
@@ -3966,6 +4203,41 @@
             <param name="parameter"></param>
             <param name="culture"></param>
             <returns></returns>
+        </member>
+        <member name="T:Telerik.Windows.Controls.TileView.TileViewItemHeader">
+            <summary>
+            Represents the header part of the RadTileViewItem.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.TileView.TileViewItemHeader.HeaderTemplateProperty">
+            <summary>
+            Identifies the HeaderTemplate dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.TileView.TileViewItemHeader.TileStateProperty">
+            <summary>
+            Identifies the TileState dependency property.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.TileView.TileViewItemHeader.#ctor">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.TileView.TileViewItemHeader.OnApplyTemplate">
+            <summary>
+            Applies the template for the TileViewItemHeader.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.TileView.TileViewItemHeader.HeaderTemplate">
+            <summary>
+            Gets or sets the HeaderTemplate property. 
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.TileView.TileViewItemHeader.TileState">
+            <summary>
+            Gets or sets the TileState property. 
+            </summary>
         </member>
         <member name="T:Telerik.Windows.Controls.TileViewPanel">
             <summary>
@@ -4445,12 +4717,6 @@
             </summary>
             <param name="e">The <see cref="T:System.Collections.Specialized.NotifyCollectionChangedEventArgs"/> that contains the event data.</param>
         </member>
-        <member name="M:Telerik.Windows.Controls.RadTileView.OnMouseLeftButtonUp(System.Windows.Input.MouseButtonEventArgs)">
-            <summary>
-            Invoked when the mouse left button goes up.
-            </summary>
-            <param name="e">The <see cref="T:System.Windows.Input.MouseButtonEventArgs"/> that contains the event data.</param>
-        </member>
         <member name="M:Telerik.Windows.Controls.RadTileView.ClearContainerForItemOverride(System.Windows.DependencyObject,System.Object)">
             <summary>
             Clean up RadTileView item.
@@ -4470,6 +4736,11 @@
             </summary>
             <param name="item">The item to check.</param>
             <returns>True if item is a RadTileView.</returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadTileView.OnMouseLeftButtonUp(System.Windows.Input.MouseButtonEventArgs)">
+            <summary>
+            Invoked on mouse left button up.
+            </summary>
         </member>
         <member name="M:Telerik.Windows.Controls.RadTileView.PrepareContainerForItemOverride(System.Windows.DependencyObject,System.Object)">
             <summary>
@@ -4715,6 +4986,16 @@
             Identifies the IsSelectionEnabled dependency property.
             </summary>
         </member>
+        <member name="F:Telerik.Windows.Controls.RadTileView.DragModeProperty">
+            <summary>
+            Identifies the DragMode dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadTileView.HeaderStyleProperty">
+            <summary>
+            Identifies the HeaderStyle dependency property.
+            </summary>
+        </member>
         <member name="F:Telerik.Windows.Controls.RadTileView.SelectionModeProperty">
             <summary>
             Identifies the SelectionMode dependency property.
@@ -4728,6 +5009,11 @@
         <member name="F:Telerik.Windows.Controls.RadTileView.IsItemsSizeInPercentagesProperty">
             <summary>
             Identifies the IsItemsSizeInPercentages dependency property.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadTileView.OnHeaderStyleChanged(System.Windows.Style,System.Windows.Style)">
+            <summary>
+            Invoked when the HeaderStyle property changes.
             </summary>
         </member>
         <member name="E:Telerik.Windows.Controls.RadTileView.PreviewTilesSelectionChanged">
@@ -4848,6 +5134,11 @@
             Gets or sets the IsSelectionEnabled property.
             </summary>
         </member>
+        <member name="P:Telerik.Windows.Controls.RadTileView.DragMode">
+            <summary>
+            Gets or sets the DragMode property.
+            </summary>
+        </member>
         <member name="P:Telerik.Windows.Controls.RadTileView.SelectionMode">
             <summary>
             Gets or sets the SelectionMode property.
@@ -4876,6 +5167,11 @@
         <member name="P:Telerik.Windows.Controls.RadTileView.ColumnsCount">
             <summary>
             Gets or sets the ColumnsCount property.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadTileView.HeaderStyle">
+            <summary>
+            Gets or sets the HeaderStyle property. 
             </summary>
         </member>
         <member name="P:Telerik.Windows.Controls.RadTileView.PreservePositionWhenMaximized">
@@ -4933,7 +5229,7 @@
         </member>
         <member name="P:Telerik.Windows.Controls.RadTileView.MinimizedColumnWidth">
             <summary>
-            Gets or sets the width for the minimzed column on the right or left side.
+            Gets or sets the width for the minimzed column.
             </summary>
         </member>
         <member name="P:Telerik.Windows.Controls.RadTileView.MaximizedItem">
@@ -4948,7 +5244,7 @@
         </member>
         <member name="P:Telerik.Windows.Controls.RadTileView.MinimizedRowHeight">
             <summary>
-            Gets or sets the height for the minimized row on the top or bottom side.
+            Gets or sets the height for the minimized row.
             </summary>
         </member>
         <member name="P:Telerik.Windows.Controls.RadTileView.IsDragging">
@@ -5038,9 +5334,19 @@
             Identifies the RestoredWidth dependency property.
             </summary>
         </member>
+        <member name="F:Telerik.Windows.Controls.RadTileViewItem.HeaderStyleProperty">
+            <summary>
+            Identifies the HeaderStyle dependency property.
+            </summary>
+        </member>
         <member name="F:Telerik.Windows.Controls.RadTileViewItem.RestoredHeightProperty">
             <summary>
             Identifies the RestoredHeight dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadTileViewItem.IsMouseOverDraggingProperty">
+            <summary>
+            Identifies the IsMouseOverDragging dependency property.
             </summary>
         </member>
         <member name="F:Telerik.Windows.Controls.RadTileViewItem.IsSelectedProperty">
@@ -5201,6 +5507,16 @@
         <member name="P:Telerik.Windows.Controls.RadTileViewItem.TileState">
             <summary>
             Gets or sets the TileState property. 
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadTileViewItem.HeaderStyle">
+            <summary>
+            Gets or sets the HeaderStyle property. 
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadTileViewItem.IsMouseOverDragging">
+            <summary>
+            Gets or sets the IsMouseOverDragging property. 
             </summary>
         </member>
         <member name="P:Telerik.Windows.Controls.RadTileViewItem.RestoredHeight">
@@ -5912,6 +6228,11 @@
             Represents a selectable item inside a RadMenu or RadContextMenu.
             </summary>
         </member>
+        <member name="F:Telerik.Windows.Controls.RadMenuItem.IsCurrentProperty">
+            <summary>
+            Identifies the IsCurrent dependency property.
+            </summary>
+        </member>
         <member name="F:Telerik.Windows.Controls.RadMenuItem.IconTemplateProperty">
             <summary>
             Identifies the IconTemplate dependency property.
@@ -6209,6 +6530,11 @@
         <member name="E:Telerik.Windows.Controls.RadMenuItem.Unchecked">
             <summary>
             Occurs when a RadMenuItem is unchecked.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadMenuItem.IsCurrent">
+            <summary>
+            Gets or sets whether the item is current item.
             </summary>
         </member>
         <member name="P:Telerik.Windows.Controls.RadMenuItem.Icon">
@@ -6564,109 +6890,6 @@
             RadOutlookBar is a Silverlight control providing the well-known functionality of Microsoft's® Outlook navigation bar.
             </summary>
         </member>
-        <member name="T:Telerik.Windows.Controls.RadTabControl">
-            <summary>
-            A navigation control used to create tabbed interface.
-            </summary>
-            <remarks>
-            	<para>
-            		The <strong>RadTabControl</strong>  is used to create a list of tabs. It is 
-                    <see cref="T:Telerik.Windows.Controls.ItemsControl"/> and its default items are of type <see cref="T:Telerik.Windows.Controls.RadTabItem"/>.
-                </para>
-                <list type="bullet">
-                    <listheader>
-            			The TabControl supports the following <strong>features</strong>:
-            		</listheader>
-                    <item>
-            			Customizable look through the <see cref="T:Telerik.Windows.Controls.Theme">theming mechanism</see>.
-            		</item>
-                    <item>
-                        Control over the <see cref="P:Telerik.Windows.Controls.TabControl.RadTabControlBase.TabStripPlacement">position</see> of the TabStrip relative to its content.
-                    </item>
-                    <item>
-                        Ability to set the <see cref="P:Telerik.Windows.Controls.TabControl.RadTabControlBase.TabOrientation">orientation</see> of the items.
-                    </item>
-                    <item>
-                        Multirow TabStrips can be created by setting the <see cref="P:Telerik.Windows.Controls.RadTabItem.IsBreak">IsBreak</see> property 
-                        of an item.
-                    </item>
-                    <item>
-                        <see cref="P:Telerik.Windows.Controls.TabControl.RadTabControlBase.Align">The align</see> of the tab rows can be changed.
-                    </item>
-                    <item>
-                        Any content can be placed in the <see cref="P:Telerik.Windows.Controls.HeaderedContentControl.Header">TabItem headers</see> such as icons, 
-                        buttons and multiline text.
-                    </item>
-                </list>
-            </remarks>
-        </member>
-        <member name="M:Telerik.Windows.Controls.RadTabControl.#ctor">
-            <summary>
-            Initializes a new instance of the <see cref="T:Telerik.Windows.Controls.RadTabControl"/> class.
-            </summary>
-            <remarks>
-                <para>
-                    Use this constructor to create an instance of the <strong>RadTabControl</strong>. In order for the 
-                    TabControl to be displayed, you need to add it to the visual tree.
-                </para>
-                <example>
-                    <para>
-                        The Following examples show how you can create an instance of the RadTabControl control.
-                    </para>
-                    <code lang="XAML"><![CDATA[
-                                        <telerik:RadTabControl>
-                                            <telerik:RadTabItem Header="Tab 1"/>
-                                        </telerik:RadTabControl>
-                                        ]]>
-                    </code>
-                    <code lang="CS"><![CDATA[
-                            RadTabControl tabControl = new RadTabControl();
-                            tabControl.Items.Add(new RadTabItem(){Header="Tab 1", Content="Tab Content"});
-                            ]]>
-                    </code>
-                </example>
-            </remarks>
-        </member>
-        <member name="M:Telerik.Windows.Controls.RadTabControl.OnApplyTemplate">
-            <summary>
-            When overridden in a derived class, is invoked whenever application code or internal processes
-            (such as a rebuilding layout pass) call <see cref="M:System.Windows.Controls.Control.ApplyTemplate"/>.
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.RadTabControl.GetDropDownItem(System.Object)">
-            <summary>
-            Gets corresponding drop down item for a particuar item.
-            </summary>
-            <param name="item">The item to get drop down item for.</param>
-            <returns>Returns:
-            1. The item itself if it is non-dependency object.
-            2. Null if the item has no container. 
-            3. Its DropDownContent if set.
-            4. The Header if it is non-null and non-visual
-            5. The TextSearch.PrimaryTextFromItem
-            6. ToString.
-            </returns>
-        </member>
-        <member name="M:Telerik.Windows.Controls.RadTabControl.UpdateSelectedContentProperties">
-            <summary>
-            Updates the selected content properties <see cref="P:Telerik.Windows.Controls.TabControl.RadTabControlBase.SelectedContent"/>,
-            <see cref="P:Telerik.Windows.Controls.TabControl.RadTabControlBase.SelectedContentTemplate"/> and
-            <see cref="P:Telerik.Windows.Controls.TabControl.RadTabControlBase.SelectedContentTemplateSelector"/>.
-            Selected content properties are used when representing the content of selected tab item.
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.RadTabControl.OnCreateAutomationPeer">
-            <summary>
-            Creates a <see cref="T:Telerik.Windows.Controls.RadTabControlAutomationPeer"/> peer associated with this object.
-            </summary>
-            <returns> An instance of the <see cref="T:Telerik.Windows.Controls.RadTabControlAutomationPeer"/>.</returns>
-        </member>
-        <member name="M:Telerik.Windows.Controls.RadTabControl.GetContainer">
-            <summary>
-            Returns a new instance of the control that implements the <see cref="T:Telerik.Windows.Controls.TabControl.IRadTabItem"/> interface.
-            </summary>
-            <returns></returns>
-        </member>
         <member name="F:Telerik.Windows.Controls.RadOutlookBar.ActiveItemsMaxCountProperty">
             <summary>
             Identifies the <see cref="P:Telerik.Windows.Controls.RadOutlookBar.ActiveItemsMaxCount"/> dependency property.
@@ -6767,6 +6990,16 @@
             Identifies the <see cref="P:Telerik.Windows.Controls.RadOutlookBar.VerticalResizerAlignment"/> dependency property.
             </summary>
         </member>
+        <member name="F:Telerik.Windows.Controls.RadOutlookBar.MinimizedEvent">
+            <summary>
+            This event gets fired every time a <see cref="T:Telerik.Windows.Controls.RadOutlookBar"/> IsMiminized property is set to true.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadOutlookBar.RestoredEvent">
+            <summary>
+            This event gets fired every time a <see cref="T:Telerik.Windows.Controls.RadOutlookBar"/> IsMiminized property is set to false.
+            </summary>
+        </member>
         <member name="M:Telerik.Windows.Controls.RadOutlookBar.#ctor">
             <summary>
             Initializes a new instance of the <see cref="T:Telerik.Windows.Controls.RadOutlookBar"/> class.
@@ -6848,6 +7081,16 @@
             </summary>
             <param name="element">Element used to display the specified item.</param>
             <param name="item">Specified item.</param>
+        </member>
+        <member name="E:Telerik.Windows.Controls.RadOutlookBar.Minimized">
+            <summary>
+            Occurs when the IsMinimized property is set to true.
+            </summary>
+        </member>
+        <member name="E:Telerik.Windows.Controls.RadOutlookBar.Restored">
+            <summary>
+            Occurs when the IsMinimized property is set to false.
+            </summary>
         </member>
         <member name="E:Telerik.Windows.Controls.RadOutlookBar.ItemPositionChanged">
             <summary>
@@ -10191,6 +10434,14 @@
             </summary>
             <returns>The text of the item.</returns>
         </member>
+        <member name="M:Telerik.Windows.Controls.RadTreeViewItem.CalculateDropPosition(System.Windows.Point)">
+            <summary>
+            Calculates the drop position from relative mouse position. 
+            </summary>
+            <param name="relativeMousePosition">The mouse position according
+            to the hovered TreeViewItem.</param>
+            <returns>Before, Inside or After, depending on the mouse position.</returns>
+        </member>
         <member name="M:Telerik.Windows.Controls.RadTreeViewItem.GetDropPositionFromPoint(System.Windows.Point)">
             <summary>
             Calculates the drop position from the absolute mouse position. 
@@ -11871,6 +12122,11 @@
             Identifies the <c cref="P:Telerik.Windows.Controls.RadToolBar.Orientation"/> property.
             </summary>
         </member>
+        <member name="F:Telerik.Windows.Controls.RadToolBar.OverflowItemsProperty">
+            <summary>
+            DependencyProperty for the OverflowItems property.
+            </summary>
+        </member>
         <member name="M:Telerik.Windows.Controls.RadToolBar.#cctor">
             <summary>
             Initializes static members of the RadToolBar class.
@@ -11986,6 +12242,11 @@
         <member name="P:Telerik.Windows.Controls.RadToolBar.OverflowButtonVisibility">
             <summary>
             Gets or sets the visibility of the overflow visual.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadToolBar.OverflowItems">
+            <summary>
+            Gets a collection of items that are in the overflow area.
             </summary>
         </member>
         <member name="T:Telerik.Windows.Controls.OverflowMode">
@@ -13280,6 +13541,12 @@
             <param name="availableSize"></param>
             <returns></returns>
         </member>
+        <member name="M:Telerik.Windows.Controls.InternalWindow.WindowPresenterBase.GetMaximumSize">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
         <member name="M:Telerik.Windows.Controls.InternalWindow.WindowPresenterBase.OnWindowStateChanged(System.Windows.WindowState)">
             <summary>
             
@@ -13444,6 +13711,65 @@
             <param name="e"></param>
             <returns></returns>
         </member>
+        <member name="T:Telerik.Windows.Controls.Navigation.Positioning.PositionHelper">
+            <summary>
+            This class represents a helper for the window positioning.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Navigation.Positioning.PositionHelper.#ctor(Telerik.Windows.Controls.WindowBase)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.Windows.Controls.Navigation.Positioning.PositionHelper"/> 
+            </summary>
+            <param name="window"></param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Navigation.Positioning.PositionHelper.UpdatePropertiesDependantOnWindow(System.Windows.Point,System.Windows.Size,System.Boolean,System.Windows.Thickness)">
+            <summary>
+            
+            </summary>
+            <param name="appLocation"></param>
+            <param name="appSize"></param>
+            <param name="isRestricted"></param>
+            <param name="restrictedAreaMargin"></param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Navigation.Positioning.PositionHelper.CoerceBoundingBox(System.Windows.Rect,System.Windows.Rect,System.Boolean)">
+            <summary>
+            
+            </summary>
+            <param name="initialRect"></param>
+            <param name="destinationRect"></param>
+            <param name="isResize"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Navigation.Positioning.PositionHelper.MinWidth">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Navigation.Positioning.PositionHelper.MaxWidth">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Navigation.Positioning.PositionHelper.MinHeight">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Navigation.Positioning.PositionHelper.MaxHeight">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Navigation.Positioning.PositionHelper.RestrictedArea">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Navigation.Positioning.PositionHelper.IsRestricted">
+            <summary>
+            
+            </summary>
+        </member>
         <member name="T:Telerik.Windows.Controls.RadWindow">
             <summary>
             This class represents an interactive window and provides static methods
@@ -13473,6 +13799,11 @@
         <member name="F:Telerik.Windows.Controls.WindowBase.IsDraggingProperty">
             <summary>
             Identifies the <see>IsDragging</see> Property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.WindowBase.IsActiveWindowProperty">
+            <summary>
+            Identifies the <see>IsActiveWindow</see> Property.
             </summary>
         </member>
         <member name="F:Telerik.Windows.Controls.WindowBase.IsTopmostProperty">
@@ -13530,6 +13861,12 @@
             Initializes a new instance of the WindowBase class.
             </summary>
         </member>
+        <member name="M:Telerik.Windows.Controls.WindowBase.OnApplyTemplate">
+            <summary>
+            When overridden in a derived class, is invoked whenever application code
+            or internal processes (such as a rebuilding layout pass) call System.Windows.Controls.Control.ApplyTemplate().
+            </summary>
+        </member>
         <member name="M:Telerik.Windows.Controls.WindowBase.Close">
             <summary>
             Manually closes <strong>RadWindow</strong>.
@@ -13579,6 +13916,12 @@
             </summary>
             <param name="helper">The helper to be updated.</param>
         </member>
+        <member name="M:Telerik.Windows.Controls.WindowBase.ShouldFocusOnActivate">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
         <member name="M:Telerik.Windows.Controls.WindowBase.ShowWindow(System.Boolean)">
             <summary>
             Shows the window either modally or not. This method should be used in the subclasses to open the window.
@@ -13621,6 +13964,12 @@
             Raises the <see cref="E:WindowStateChanged"/> event.
             </summary>
             <param name="args">The <see cref="T:System.Windows.RoutedEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.WindowBase.OnGotFocus(System.Windows.RoutedEventArgs)">
+            <summary>
+            Called before the System.Windows.UIElement.GotFocus event occurs.
+            </summary>
+            <param name="e">The data for the event.</param>
         </member>
         <member name="M:Telerik.Windows.Controls.WindowBase.OnLayoutChangeEnded">
             <summary>
@@ -13669,6 +14018,16 @@
             <param name="e">DependencyPropertyChangedEventArgs.</param>
         </member>
         <member name="M:Telerik.Windows.Controls.WindowBase.OnClosed">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.WindowBase.OnCloseAnimationFinished">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.WindowBase.OnShowAnimationFnished">
             <summary>
             
             </summary>
@@ -13743,9 +14102,20 @@
             </summary>
             <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
         </member>
+        <member name="M:Telerik.Windows.Controls.WindowBase.OnDeactivated(System.EventArgs)">
+            <summary>
+            Raises the <see cref="E:Deactivated"/> event. This method is called when the window is deactivated.
+            </summary>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+        </member>
         <member name="E:Telerik.Windows.Controls.WindowBase.Activated">
             <summary>
             Occurs when the Window is activated.
+            </summary>
+        </member>
+        <member name="E:Telerik.Windows.Controls.WindowBase.Deactivated">
+            <summary>
+            Occurs when the Window is deactivated.
             </summary>
         </member>
         <member name="E:Telerik.Windows.Controls.WindowBase.LayoutChangeEnded">
@@ -13858,6 +14228,14 @@
             can be dragged; otherwise it is is fixed.</remarks>
             <value><c>True</c> if this instance can be dragged; otherwise, <c>false</c>.</value>
         </member>
+        <member name="P:Telerik.Windows.Controls.WindowBase.IsActiveWindow">
+            <summary>
+            Gets a value indicating whether this instance is active. This is a dependency property.
+            </summary>
+            <value>
+            <c>True</c> if this instance is active; otherwise, <c>false</c>.
+            </value>
+        </member>
         <member name="P:Telerik.Windows.Controls.WindowBase.SizeToContent">
             <summary>
             
@@ -13959,6 +14337,11 @@
             <param name="content"></param>
             <param name="dialogParams"></param>
         </member>
+        <member name="F:Telerik.Windows.Controls.RadWindow.IsHeaderHitTestVisibleProperty">
+            <summary>
+            Identifies the <see>IsHeaderHitTestVisible</see> Property.
+            </summary>
+        </member>
         <member name="M:Telerik.Windows.Controls.RadWindow.OnOpened(System.Windows.RoutedEventArgs)">
             <summary>
             Raises the <see cref="E:Opened"/> event.
@@ -14010,11 +14393,6 @@
             Identifies the <see>RestoreMinimizedLocation</see> Property.
             </summary>
         </member>
-        <member name="F:Telerik.Windows.Controls.RadWindow.IsHeaderHitTestVisibleProperty">
-            <summary>
-            Identifies the <see>IsHeaderHitTestVisible</see> Property.
-            </summary>
-        </member>
         <member name="F:Telerik.Windows.Controls.RadWindow.IsRestrictedProperty">
             <summary>
             Identifies the <see>IsRestricted</see> Property.
@@ -14023,11 +14401,6 @@
         <member name="F:Telerik.Windows.Controls.RadWindow.RestrictedAreaMarginProperty">
             <summary>
             Identifies the <see>RestrictedAreaMargin</see> Property.
-            </summary>
-        </member>
-        <member name="F:Telerik.Windows.Controls.RadWindow.IsActiveWindowProperty">
-            <summary>
-            Identifies the <see>IsActiveWindow</see> Property.
             </summary>
         </member>
         <member name="M:Telerik.Windows.Controls.RadWindow.#ctor">
@@ -14125,6 +14498,12 @@
             window should be restricted or not.
             </summary>
             <param name="helper">The helper to be updated.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadWindow.ShouldFocusOnActivate">
+            <summary>
+            
+            </summary>
+            <returns></returns>
         </member>
         <member name="M:Telerik.Windows.Controls.RadWindow.ChangeVisualState(System.Boolean)">
             <summary>
@@ -14224,6 +14603,14 @@
             The event is raised whenever <strong>RadWindow</strong> is opened.
             </remarks>
         </member>
+        <member name="P:Telerik.Windows.Controls.RadWindow.IsHeaderHitTestVisible">
+            <summary>
+            Gets or sets a value indicating whether the header of this instance is hit test visible.
+            </summary>
+            <value>
+            	<c>True</c> if the header of this instance is hit test visible; otherwise, <c>false</c>.
+            </value>
+        </member>
         <member name="E:Telerik.Windows.Controls.RadWindow.Closed">
             <summary>
             Occurs when the RadWindow is closed.
@@ -14284,14 +14671,6 @@
             its size and location when WindowState property is changed. This is a dependency property.
             </summary>
         </member>
-        <member name="P:Telerik.Windows.Controls.RadWindow.IsHeaderHitTestVisible">
-            <summary>
-            Gets or sets a value indicating whether the header of this instance is hit test visible.
-            </summary>
-            <value>
-            	<c>True</c> if the header of this instance is hit test visible; otherwise, <c>false</c>.
-            </value>
-        </member>
         <member name="P:Telerik.Windows.Controls.RadWindow.IsRestricted">
             <summary>
             Gets or sets a value indicating whether this instance is restricted.
@@ -14310,14 +14689,6 @@
             <summary>
             Gets or sets the Owner of the RadWindow.This is a dependency property.
             </summary>
-        </member>
-        <member name="P:Telerik.Windows.Controls.RadWindow.IsActiveWindow">
-            <summary>
-            Gets a value indicating whether this instance is active. This is a dependency property.
-            </summary>
-            <value>
-            	<c>True</c> if this instance is active; otherwise, <c>false</c>.
-            </value>
         </member>
         <member name="P:Telerik.Windows.Controls.RadWindow.DefaultSizeRatio">
             <summary>
@@ -14493,35 +14864,6 @@
             Initializes a new instance of the DialogParameters class.
             </summary>
         </member>
-        <member name="M:Telerik.Windows.Controls.DialogParameters.op_Equality(Telerik.Windows.Controls.DialogParameters,Telerik.Windows.Controls.DialogParameters)">
-            <summary>
-            Implements the binary operator for equality.
-            </summary>
-            <param name="one">The left parameter.</param>
-            <param name="two">The right parameter.</param>
-            <returns>Returns true if the equality is satisfied.</returns>
-        </member>
-        <member name="M:Telerik.Windows.Controls.DialogParameters.op_Inequality(Telerik.Windows.Controls.DialogParameters,Telerik.Windows.Controls.DialogParameters)">
-            <summary>
-            Implements the binary operator for inequality.
-            </summary>
-            <param name="one">The left parameter.</param>
-            <param name="two">The right parameter.</param>
-            <returns>Returns true if the inequality is satisfied.</returns>
-        </member>
-        <member name="M:Telerik.Windows.Controls.DialogParameters.Equals(System.Object)">
-            <summary>
-            Checks whether an instance of DialogParameters is equal to another one.
-            </summary>
-            <param name="obj">The checked DialogParameters instance.</param>
-            <returns>Equality.</returns>
-        </member>
-        <member name="M:Telerik.Windows.Controls.DialogParameters.GetHashCode">
-            <summary>
-            Returns the sum of HashCodes of its members.
-            </summary>
-            <returns></returns>
-        </member>
         <member name="P:Telerik.Windows.Controls.DialogParameters.Content">
             <summary>
             Gets or sets the content to be displayed.
@@ -14530,9 +14872,9 @@
         </member>
         <member name="P:Telerik.Windows.Controls.DialogParameters.Header">
             <summary>
-            Gets or sets the object to appear in the titlebar.
+            Gets or sets the object to appear in the title bar.
             </summary>
-            <value>The object to appear in the titlebar.</value>
+            <value>The object to appear in the title bar.</value>
         </member>
         <member name="P:Telerik.Windows.Controls.DialogParameters.DialogStartupLocation">
             <summary>
@@ -14643,6 +14985,11 @@
             When overridden in a derived class, is invoked whenever application code or internal processes (such as a rebuilding layout pass) call <see cref="M:System.Windows.Controls.Control.ApplyTemplate"/>.
             </summary>
         </member>
+        <member name="M:Telerik.Windows.Controls.RadAlert.SetupBindingsAndCommands">
+            <summary>
+            This method is called just after the template is applied and is meant to setup the Ok and Cancel buttons. It should be removed for Q3 2011.
+            </summary>
+        </member>
         <member name="M:Telerik.Windows.Controls.RadAlert.Configure(Telerik.Windows.Controls.RadWindow,Telerik.Windows.Controls.DialogParameters)">
             <summary>
             Configures RadAlert according to the RadWindow.
@@ -14661,9 +15008,14 @@
             Occurs when the user presses the accept button.
             </summary>
         </member>
+        <member name="P:Telerik.Windows.Controls.RadAlert.DialogParams">
+            <summary>
+            Gets or sets the dialog parameters, used for initializing the alert.
+            </summary>
+        </member>
         <member name="P:Telerik.Windows.Controls.RadAlert.ParentWindow">
             <summary>
-            Gets or sets the parent window.
+            Gets or sets the window that hosts the alert.
             </summary>
             <value>The parent window.</value>
         </member>
@@ -14677,18 +15029,17 @@
             Initializes a new instance of the RadConfirm class.
             </summary>
         </member>
-        <member name="M:Telerik.Windows.Controls.RadConfirm.OnApplyTemplate">
-            <summary>
-                When overridden in a derived class, is invoked whenever application code or internal processes (such as a rebuilding layout pass) 
-                call <see cref="M:System.Windows.Controls.Control.ApplyTemplate"/>.
-            </summary>
-        </member>
         <member name="M:Telerik.Windows.Controls.RadConfirm.Configure(Telerik.Windows.Controls.RadWindow,Telerik.Windows.Controls.DialogParameters)">
             <summary>
             Configures RadConfirm according to the RadWindow specified.
             </summary>
             <param name="window">RadWindow in which the RadConfirm will appear.</param>
             <param name="pars">Structure that holds all possible parameters for customizing dialog window.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadConfirm.SetupBindingsAndCommands">
+            <summary>
+            This method is called just after the template is applied and is meant to setup the Ok and Cancel buttons. It should be removed for Q3 2011.
+            </summary>
         </member>
         <member name="M:Telerik.Windows.Controls.RadConfirm.OnCancel(System.EventArgs)">
             <summary>
@@ -14706,15 +15057,19 @@
             RadPrompt exposes a textbox in which the user can put any value.
             </summary>
         </member>
+        <member name="F:Telerik.Windows.Controls.RadPrompt.PromptResultProperty">
+            <summary>
+            Indentifies the PromptResult dependency property.
+            </summary>
+        </member>
         <member name="M:Telerik.Windows.Controls.RadPrompt.#ctor">
             <summary>
             Initializes a new instance of the RadPrompt class.
             </summary>
         </member>
-        <member name="M:Telerik.Windows.Controls.RadPrompt.OnApplyTemplate">
+        <member name="M:Telerik.Windows.Controls.RadPrompt.SetupBindingsAndCommands">
             <summary>
-            When overridden in a derived class, is invoked whenever application code or internal processes (such as a rebuilding layout pass)
-            call <see cref="M:System.Windows.Controls.Control.ApplyTemplate"/>.
+            This method is called just after the template is applied and is meant to setup the Ok and Cancel buttons. It should be removed for Q3 2011.
             </summary>
         </member>
         <member name="M:Telerik.Windows.Controls.RadPrompt.Configure(Telerik.Windows.Controls.RadWindow,Telerik.Windows.Controls.DialogParameters)">
@@ -14729,6 +15084,11 @@
             Raises the <see cref="E:Ok"/> event.
             </summary>
             <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadPrompt.PromptResult">
+            <summary>
+            Holds the result of the Prompt dialog. This is a dependency property.
+            </summary>
         </member>
         <member name="T:Telerik.Windows.Controls.RadWindowManager">
             <summary>

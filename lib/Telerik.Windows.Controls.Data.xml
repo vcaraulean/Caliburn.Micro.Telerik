@@ -175,7 +175,7 @@
             Identifies the <see cref="P:Telerik.Windows.Controls.Data.DataFilter.FilterEditor.ItemPropertyDefinition"/> dependency property.
             </summary>
         </member>
-        <member name="M:Telerik.Windows.Controls.Data.DataFilter.FilterEditor.OnPropertyChanged">
+        <member name="M:Telerik.Windows.Controls.Data.DataFilter.FilterEditor.RefreshFilterEditor">
             <summary>
             Called when either the ItemPropertyDefinition or the FilterOperator changes.
             </summary>
@@ -957,6 +957,16 @@
         <member name="T:Telerik.Windows.Controls.Data.DataFilter.UnboundQueryableCollectionView">
             <summary>
             Default implementation used for unbound mode.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.Data.DataForm.AddedNewItemEventArgs">
+            <summary>
+            Provides access to the newly added item to allow additional initialization. 
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Data.DataForm.AddedNewItemEventArgs.NewItem">
+            <summary>
+            The newly added item.
             </summary>
         </member>
         <member name="T:Telerik.Windows.Controls.Data.DataForm.AddingNewItemEventArgs">
@@ -1874,6 +1884,12 @@
             </summary>
             <param name="e"></param>
         </member>
+        <member name="M:Telerik.Windows.Controls.RadDataForm.OnAddedNewItem(Telerik.Windows.Controls.Data.DataForm.AddedNewItemEventArgs)">
+            <summary>
+            Raises the AddedNewItem event.
+            </summary>
+            <param name="args"></param>
+        </member>
         <member name="M:Telerik.Windows.Controls.RadDataForm.ValidateItem">
             <summary>
             Checks if data current item is valid .
@@ -1974,6 +1990,11 @@
         <member name="E:Telerik.Windows.Controls.RadDataForm.AddingNewItem">
             <summary>
             Occurs when a new item is being added.
+            </summary>
+        </member>
+        <member name="E:Telerik.Windows.Controls.RadDataForm.AddedNewItem">
+            <summary>
+            Occurs when a new item was just added.
             </summary>
         </member>
         <member name="E:Telerik.Windows.Controls.RadDataForm.BeginningEdit">
@@ -2451,7 +2472,7 @@
         </member>
         <member name="T:Telerik.Windows.Controls.Data.PropertyGrid.GroupingItemsSourceConverter">
             <summary>
-            Provides groping for properties in RadPropertyGrid.
+            Provides grouping for properties in RadPropertyGrid.
             </summary>
         </member>
         <member name="M:Telerik.Windows.Controls.Data.PropertyGrid.GroupingItemsSourceConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
@@ -2509,6 +2530,36 @@
             A data template for grouped (categorized) view. 
             </summary>
         </member>
+        <member name="T:Telerik.Windows.Controls.Data.PropertyGrid.FlatModeConverter">
+            <summary>
+            Determines PropertyGrid's mode.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Data.PropertyGrid.FlatModeConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Determines PropertyGrid's mode.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Data.PropertyGrid.FlatModeConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Not used.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.Data.PropertyGrid.NestedModeConverter">
+            <summary>
+            Determines PropertyGrid's mode.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Data.PropertyGrid.NestedModeConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Determines PropertyGrid's mode.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Data.PropertyGrid.NestedModeConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Not used.
+            </summary>
+        </member>
         <member name="T:Telerik.Windows.Controls.Data.PropertyGrid.SelectedItemConverter">
             <summary>
             Used to convert the selected property definition when setting the IsSelected property of a field. 
@@ -2528,6 +2579,43 @@
             <summary>
             Not used.
             </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.Data.PropertyGrid.FlatItemSourceConverter">
+            <summary>
+            Provides logic for sifting out the root properties.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Data.PropertyGrid.FlatItemSourceConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Sifts out the root properties.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Data.PropertyGrid.FlatItemSourceConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Not used.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.Data.PropertyGrid.PropertyGridIndentPresenter">
+            <summary>
+            IndentPresenter is a presenter for Indent cells in nested property definitions of
+            <see cref="T:Telerik.Windows.Controls.RadPropertyGrid"/>.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Data.PropertyGrid.PropertyGridIndentPresenter.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.Windows.Controls.Data.PropertyGrid.PropertyGridIndentPresenter"/> class.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.Data.PropertyGrid.PropertyGridIndentPresenter.IndentLevelProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.Data.PropertyGrid.PropertyGridIndentPresenter.IndentLevel"/> dependency property.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Data.PropertyGrid.PropertyGridIndentPresenter.IndentLevel">
+            <summary>
+            Gets or sets the indent level.
+            </summary>
+            <value>The indent level.</value>
         </member>
         <member name="T:Telerik.Windows.Controls.Data.PropertyGrid.LookupPropertyDefinition">
             <summary>
@@ -2570,6 +2658,11 @@
             Gets or sets the group name used to organize properties in categories.
             </summary>
         </member>
+        <member name="P:Telerik.Windows.Controls.Data.PropertyGrid.PropertyDefinition.ParentProperty">
+            <summary>
+            Gets or sets the parent property of this property definition.
+            </summary>
+        </member>
         <member name="P:Telerik.Windows.Controls.Data.PropertyGrid.PropertyDefinition.DisplayName">
             <summary>
             Gets the DisplayName.
@@ -2591,9 +2684,19 @@
             </summary>
             <value>The data member binding.</value>
         </member>
+        <member name="P:Telerik.Windows.Controls.Data.PropertyGrid.PropertyDefinition.HasNestedProperties">
+            <summary>
+            Gets or sets a value indicating whether this property definition has nested property definitions.
+            </summary>
+        </member>
         <member name="P:Telerik.Windows.Controls.Data.PropertyGrid.PropertyDefinition.EditorTemplate">
             <summary>
             Gets or sets a dataTemplate for the editor of the property. If left unset, a default editor will be generated. 
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Data.PropertyGrid.PropertyDefinition.NestedProperties">
+            <summary>
+            Gets or sets the collection of nested properties.
             </summary>
         </member>
         <member name="F:Telerik.Windows.Controls.Data.PropertyGrid.LookupPropertyDefinition.ItemsSourceProperty">
@@ -2643,9 +2746,19 @@
             <see cref="M:System.Windows.FrameworkElement.ApplyTemplate"/>.
             </summary>
         </member>
+        <member name="M:Telerik.Windows.Controls.Data.PropertyGrid.PropertyGridField.CalculateIndentation">
+            <summary>
+            Determines the indentation level of this PropertyGridField.
+            </summary>
+        </member>
         <member name="F:Telerik.Windows.Controls.Data.PropertyGrid.PropertyGridField.IsSelectedProperty">
             <summary>
             Represents the IsSelected dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.Data.PropertyGrid.PropertyGridField.IsExpandedProperty">
+            <summary>
+            Represents the IsExpandedProperty dependency property.
             </summary>
         </member>
         <member name="M:Telerik.Windows.Controls.Data.PropertyGrid.PropertyGridField.OnMouseEnter(System.Windows.Input.MouseEventArgs)">
@@ -2670,9 +2783,19 @@
             Resets the theme.
             </summary>
         </member>
+        <member name="P:Telerik.Windows.Controls.Data.PropertyGrid.PropertyGridField.IndentLevel">
+            <summary>
+            Gets field's indentation level.
+            </summary>
+        </member>
         <member name="P:Telerik.Windows.Controls.Data.PropertyGrid.PropertyGridField.IsSelected">
             <summary>
             Gets or sets a value indicating whether the field is selected.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Data.PropertyGrid.PropertyGridField.IsExpanded">
+            <summary>
+            Gets or sets a value indicating whether the field is expanded.
             </summary>
         </member>
         <member name="P:Telerik.Windows.Controls.Data.PropertyGrid.PropertyGridField.IsMouseOver">
@@ -2688,6 +2811,31 @@
         <member name="M:Telerik.Windows.Controls.Data.PropertyGrid.PropertyDefinitionCollection.#ctor">
             <summary>
             Initializes a new instance of the <see cref="T:Telerik.Windows.Controls.Data.PropertyGrid.PropertyDefinitionCollection"/> class.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.Data.PropertyGrid.PropertyGridIndentCell">
+            <summary>
+            Indicates UI indentation for nested properties visualization. 
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Data.PropertyGrid.PropertyGridIndentCell.#ctor">
+            <summary>
+            Initializes a new instance of the PropertyGridIndentCell class.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.Data.PropertyGrid.PropertyGridMode">
+            <summary>
+            Specifies RadPopertyGrid's mode states.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.Data.PropertyGrid.PropertyGridMode.FlatMode">
+            <summary>
+            RadPropertyGrid is in flat mode.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.Data.PropertyGrid.PropertyGridMode.NestedPropertiesMode">
+            <summary>
+            RadPropertyGrid is in nested properties mode.
             </summary>
         </member>
         <member name="T:Telerik.Windows.Controls.Data.PropertyGrid.PropertyGridPresenter">
@@ -2777,6 +2925,11 @@
             Represents the SearchboxVisibility dependency property.
             </summary>
         </member>
+        <member name="F:Telerik.Windows.Controls.RadPropertyGrid.NestedPropertiesVisibilityProperty">
+            <summary>
+            Represents the ModeProperty dependency property.
+            </summary>
+        </member>
         <member name="F:Telerik.Windows.Controls.RadPropertyGrid.SortAndGroupButtonsVisibilityProperty">
             <summary>
             Represents the SortAndGroupButtonsVisibility dependency property.
@@ -2817,6 +2970,11 @@
             Gets or sets the visibility of the seach box.
             </summary>
         </member>
+        <member name="P:Telerik.Windows.Controls.RadPropertyGrid.NestedPropertiesVisibility">
+            <summary>
+            Gets or sets the nested properties' Visibility. 
+            </summary>
+        </member>
         <member name="P:Telerik.Windows.Controls.RadPropertyGrid.SortAndGroupButtonsVisibility">
             <summary>
             Gets or sets the visibility of the sort and group buttons.
@@ -2830,6 +2988,11 @@
         <member name="P:Telerik.Windows.Controls.RadPropertyGrid.LabelColumnWidth">
             <summary>
             Gets or Sets the width of the first column.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadPropertyGrid.ExpandedFields">
+            <summary>
+            Gets or Sets the collection of the currently expanded fields.
             </summary>
         </member>
         <member name="P:Telerik.Windows.Controls.RadPropertyGrid.PropertyDefinitions">

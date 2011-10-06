@@ -126,6 +126,11 @@
             Identifies the CornerRadius property.
             </summary>
         </member>
+        <member name="F:Telerik.Windows.Controls.RadSplitButton.InnerCornerRadiusProperty">
+            <summary>
+            Identifies the InnerCornerRadius property.
+            </summary>
+        </member>
         <member name="F:Telerik.Windows.Controls.RadSplitButton.ToggleCornerRadiusProperty">
             <summary>
             Identifies the ToggleCornerRadius property.
@@ -552,6 +557,11 @@
             Gets or sets a value that represents the degree to which the corners of the control are rounded. This is a dependency property.
             </summary>
         </member>
+        <member name="P:Telerik.Windows.Controls.RadSplitButton.InnerCornerRadius">
+            <summary>
+            Gets or sets a value that represents the degree to which the inner corners of the control are rounded. This is a dependency property.
+            </summary>
+        </member>
         <member name="P:Telerik.Windows.Controls.RadSplitButton.ToggleCornerRadius">
             <summary>
             Gets or sets the ToggleCornerRadius dependency property.
@@ -636,6 +646,11 @@
             <returns>
             A converted value. If the method returns null, the valid null value is used.
             </returns>
+        </member>
+        <member name="T:Telerik.Windows.ValidateValueCallback">
+            <summary>
+            Callback that validates the new value for the dependency property.
+            </summary>
         </member>
         <member name="T:Telerik.Windows.Controls.DateTimeTypeConverter">
             <summary>
@@ -757,6 +772,628 @@
             <returns>
             The value to be passed to the source object.
             </returns>
+        </member>
+        <member name="T:Telerik.Windows.Controls.InvertedBooleanConverter">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.InvertedBooleanConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            
+            </summary>
+            <param name="value"></param>
+            <param name="targetType"></param>
+            <param name="parameter"></param>
+            <param name="culture"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.InvertedBooleanConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            
+            </summary>
+            <param name="value"></param>
+            <param name="targetType"></param>
+            <param name="parameter"></param>
+            <param name="culture"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Telerik.Windows.DragDrop.Behaviors.DataConverter">
+            <summary>
+            Provides the basic methods for converting the data in a IDataObject.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.DragDrop.Behaviors.DataConverter.ConvertTo(System.Object,System.String)">
+            <summary>
+            Retrieves a data object in a specified format; the data format is specified by a string.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.DragDrop.Behaviors.DataConverter.ConvertTo(System.Object,System.Type)">
+            <summary>
+            Retrieves a data object in a specified format; the data format is specified by a <see cref="T:System.Type"/> object.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.DragDrop.Behaviors.DataConverter.CanConvertTo(System.Type)">
+            <summary>
+            Checks to see whether the data can be converted to a specified format. The data format is specified by a <see cref="T:System.Type"/> object.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.DragDrop.Behaviors.DataConverter.CanConvertTo(System.String)">
+            <summary>
+            Checks to see whether the data can be converted to a specified format.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.DragDrop.Behaviors.DataConverter.GetConvertToFormats">
+            <summary>
+            Returns a list of all formats that the data in this data object can be converted to.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.DragDrop.Behaviors.DragDrop`3">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.DragDrop.Behaviors.DragDrop`3.BehaviorProperty">
+            <summary>
+            Identifies the Behavior attached dependency property. 
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.DragDrop.Behaviors.DragDrop`3.DataConverterProperty">
+            <summary>
+            Identifies the DataConverter attached dependency property. 
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.DragDrop.Behaviors.DragDrop`3.DragVisualProviderProperty">
+            <summary>
+            Identifies the DragVisualProvider dependency property.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.DragDrop.Behaviors.DragDrop`3.GetDataConverter(System.Windows.DependencyObject)">
+            <summary>
+            Gets the value of the DataConverter attached property.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.DragDrop.Behaviors.DragDrop`3.SetDataConverter(System.Windows.DependencyObject,Telerik.Windows.DragDrop.Behaviors.DataConverter)">
+            <summary>
+            Sets the value of the DataConverter attached property.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.DragDrop.Behaviors.DragDrop`3.GetDragVisualProvider(System.Windows.DependencyObject)">
+            <summary>
+            Gets the value of the DataConverter attached property.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.DragDrop.Behaviors.DragDrop`3.SetDragVisualProvider(System.Windows.DependencyObject,Telerik.Windows.DragDrop.Behaviors.IDragVisualProvider)">
+            <summary>
+            Sets the value of the DataConverter attached property.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.DragDrop.Behaviors.DragDrop`3.GetBehavior(System.Windows.DependencyObject)">
+            <summary>
+            Gets the value of the Behavior attached property.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.DragDrop.Behaviors.DragDrop`3.SetBehavior(System.Windows.DependencyObject,`1)">
+            <summary>
+            Sets the value of the Behavior attached property.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.DragDrop.Behaviors.DragDropBehavior`1">
+            <summary>
+            Defines the basic methods of a generic DragDropBehavior.
+            </summary>
+            <typeparam name="TState"></typeparam>
+        </member>
+        <member name="T:Telerik.Windows.DragDrop.Behaviors.IDragDropBehavior`1">
+            <summary>
+            The base class for drag-drop operation behaviors.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.DragDrop.Behaviors.IDragDropBehavior`1.CanStartDrag(`0)">
+            <summary>
+            Completes a cancelled drag operation.
+            </summary>
+            <param name="state">DragDropState that provides context for the current operation.</param>
+            <remarks>
+            This method is called only when the drag operation is cancelled by the user. If this method is called, DragDropCompleted is not called.
+            </remarks>
+        </member>
+        <member name="M:Telerik.Windows.DragDrop.Behaviors.IDragDropBehavior`1.CanDrop(`0)">
+            <summary>
+            Gets the value specifying whether the drag operation can be completed, or not.
+            </summary>
+            <param name="state">DragDropState identifying the current drag operation.</param>
+            <returns>True when the drag operation can be finished, otherwise false.</returns>
+            <remarks>
+            This method is called on every mouse move. All properties in the DragDropState are valid.
+            </remarks>
+        </member>
+        <member name="M:Telerik.Windows.DragDrop.Behaviors.IDragDropBehavior`1.Drop(`0)">
+            <summary>
+            When overridden in a derived class completes the drop operation. This method is called only in the context of the drop target control.
+            </summary>
+            <param name="state">DragDropState that provides context for the current operation.</param>
+            <remarks>
+            When the drag source and the drop target are the same control, this method is called before DragCompleted.
+            </remarks>
+        </member>
+        <member name="M:Telerik.Windows.DragDrop.Behaviors.IDragDropBehavior`1.DragDropCanceled(`0)">
+            <summary>
+            When overridden in a derived class cleans up a cancelled drag operation. This method is called only in the context of the drag source control.
+            </summary>
+            <param name="state">DragDropState that provides context for the current operation.</param>
+            <remarks>
+            This method is called only when the drag operation is cancelled by the user. If this method is called, the source's DragDropCompleted and 
+            target's Drop methods are not called.
+            </remarks>
+        </member>
+        <member name="M:Telerik.Windows.DragDrop.Behaviors.IDragDropBehavior`1.DragDropCompleted(`0)">
+            <summary>
+            When overridden in a derived class completes the drag operation. This method is called only in the context of the drag source control.
+            </summary>
+            <param name="state">DragDropState that provides context for the current operation.</param>
+            <remarks>
+            When the drag source and the drop target are the same control, this method is called after Drop. 
+            This method is called only when the drag operation completed successfuly. If this method is called, DragDropCanceled is not called.
+            </remarks>
+        </member>
+        <member name="M:Telerik.Windows.DragDrop.Behaviors.IDragDropBehavior`1.CoerceDraggedItems(`0)">
+            <summary>
+            When overridden in a derived class, filters the dragged items collection if necessary.
+            </summary>
+            <param name="state">DragDropState that provides context for the current operation.</param>
+            <returns>The filtered dragged items.</returns>
+            <remarks>
+            This method is called immediately before the drag operation starts.
+            Only the Items property of the DragDropState is valid.
+            </remarks>
+        </member>
+        <member name="F:Telerik.Windows.DragDrop.Behaviors.DragDropBehavior`1.ItemTypeProperty">
+            <summary>
+            Identifies the ItemType dependency property. 
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.DragDrop.Behaviors.DragDropBehavior`1.GetDragDropEffects(`0)">
+            <summary>
+            Returns the DragDropEffects for the current drag drop operation. The return value affects the mouse cursor.
+            </summary>
+            <param name="state">DragDropState that provides context for the current operation.</param>
+            <remarks>
+            This method is called only in the context of the drop target control.
+            </remarks>
+        </member>
+        <member name="M:Telerik.Windows.DragDrop.Behaviors.DragDropBehavior`1.CanStartDrag(`0)">
+            <summary>
+            Returns a value specifying whether the drag operation can be started.
+            </summary>
+            <param name="state">DragDropState that provides context for the current operation.</param>
+            <returns>True if the drag operation can be completed, otherwise false.</returns>
+            <remarks>
+            This method is called only in the context of the drag source control.
+            </remarks>
+        </member>
+        <member name="M:Telerik.Windows.DragDrop.Behaviors.DragDropBehavior`1.CanDrop(`0)">
+            <summary>
+            Returns a value specifying whether the current drag operation can be completed.
+            </summary>
+            <param name="state">DragDropState that provides context for the current operation.</param>
+            <returns>True if the drag operation can be completed, otherwise false.</returns>
+            <remarks>
+            This method is called only in the context of the drop target control.
+            </remarks>
+        </member>
+        <member name="M:Telerik.Windows.DragDrop.Behaviors.DragDropBehavior`1.Drop(`0)">
+            <summary>
+            Completes the drop operation. This method is called only in the context of the drop target control.
+            </summary>
+            <param name="state">DragDropState that provides context for the current operation.</param>
+            <remarks>
+            When the drag source and the drop target are the same control, this method is called before DragCompleted.
+            </remarks>
+        </member>
+        <member name="M:Telerik.Windows.DragDrop.Behaviors.DragDropBehavior`1.DragDropCanceled(`0)">
+            <summary>
+            When overridden in a derived class cleans up a cancelled drag operation. This method is called only in the context of the drag source control.
+            </summary>
+            <param name="state">DragDropState that provides context for the current operation.</param>
+            <remarks>
+            This method is called only when the drag operation is cancelled by the user. If this method is called, the source's DragDropCompleted and 
+            target's Drop methods are not called.
+            </remarks>
+        </member>
+        <member name="M:Telerik.Windows.DragDrop.Behaviors.DragDropBehavior`1.DragDropCompleted(`0)">
+            <summary>
+            When overridden in a derived class completes the drag operation. This method is called only in the context of the drag source control.
+            </summary>
+            <param name="state">DragDropState that provides context for the current operation.</param>
+            <remarks>
+            When the drag source and the drop target are the same control, this method is called after Drop. 
+            This method is called only when the drag operation completed successfuly. If this method is called, DragDropCanceled is not called.
+            </remarks>
+        </member>
+        <member name="M:Telerik.Windows.DragDrop.Behaviors.DragDropBehavior`1.CoerceDraggedItems(`0)">
+            <summary>
+            When overriden in a derived class, filters the dragged items collection if necessary.
+            </summary>
+            <param name="state">DragDropState that provides context for the current operation.</param>
+            <returns>The filtered dragged items.</returns>
+            <remarks>
+            This method is called immediately before the drag operation starts.
+            Only the Items property of the DragDropState is valid.
+            </remarks>
+        </member>
+        <member name="M:Telerik.Windows.DragDrop.Behaviors.DragDropBehavior`1.RemoveItems(System.Collections.IList,System.Collections.IEnumerable)">
+            <summary>
+            Helper method that removes the specified items from the source list.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.DragDrop.Behaviors.DragDropBehavior`1.InsertItems(System.Collections.IList,System.Int32,System.Collections.IEnumerable)">
+            <summary>
+            Helper method that inserts the specified items in the source list, at the specified index. If index==-1, adds the items at the end of the list.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.DragDrop.Behaviors.DragDropBehavior`1.IsMovingItems(`0)">
+            <summary>
+            Returns true if the dragged items should be removed from the source list, otherwise false.
+            </summary>
+            <param name="state">DragDropState that provides context for the current operation.</param>
+        </member>
+        <member name="P:Telerik.Windows.DragDrop.Behaviors.DragDropBehavior`1.ItemType">
+            <summary>
+            Gets or sets the Type of the items that can be accepted by the host control. This is a dependency property.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.DragDrop.Behaviors.DragDropHelper`2">
+            <summary>
+            Binds the DragDropManager events with a DragDropBehavior.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.DragDrop.Behaviors.DragDropHelper`2.HookEvents(System.Windows.Controls.Control)">
+            <summary>
+            Adds the event handlers for the DragDropManager events.
+            </summary>
+            <param name="control">The Control to add the event handlers to.</param>
+        </member>
+        <member name="M:Telerik.Windows.DragDrop.Behaviors.DragDropHelper`2.UnhookEvents(System.Windows.Controls.Control)">
+            <summary>
+            Removes the event handlers for the DragDropManager events.
+            </summary>
+            <param name="control">The Control to remove the event handlers from.</param>
+        </member>
+        <member name="M:Telerik.Windows.DragDrop.Behaviors.DragDropHelper`2.GetItemsSource(System.Windows.Controls.Control)">
+            <summary>
+            Returns a list containing the items of the specified control.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.DragDrop.Behaviors.DragDropHelper`2.GetDraggedItems(System.Object)">
+            <summary>
+            When overriden in a derived class this method returns the items that should be dragged.
+            </summary>
+            <param name="dragSource">The source control of the drag operation.</param>
+            <returns>The items that should be dragged.</returns>
+        </member>
+        <member name="M:Telerik.Windows.DragDrop.Behaviors.DragDropHelper`2.DragInitialize(System.Object,Telerik.Windows.DragDrop.DragInitializeEventArgs)">
+            <summary>
+            Initializes a DragPayload and associates it with the current drag-drop operation.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.DragDrop.Behaviors.DragDropHelper`2.DataConverter">
+            <summary>
+            Gets or sets the IDataObjectProvider instance that will be used in the drag-drop operations.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.DragDrop.Behaviors.DragDropHelper`2.DragDropBehavior">
+            <summary>
+            Gets or sets the DragDropBehavior that will be used in the drag-drop operations.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.DragDrop.Behaviors.DragDropHelper`2.DragVisualProvider">
+            <summary>
+            Gets or sets the DragVisualProvider that will be used in the drag-drop operations.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.DragDrop.Behaviors.DragDropState">
+            <summary>
+            Provides a context for a drag-drop operation.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.DragDrop.Behaviors.DragDropState.DraggedItems">
+            <summary>
+            Gets or sets the items that are being dragged.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.DragDrop.Behaviors.DragDropState.DestinationItemsSource">
+            <summary>
+            Gets or sets the drop target control ItemsSource. This property is null when the state represents the context of the drag source control.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.DragDrop.Behaviors.DragDropState.SourceItemsSource">
+            <summary>
+            Gets or sets the drag source control ItemsSource. This property is null when the state represents the context of the drop target control.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.DragDrop.Behaviors.DragDropState.IsControlDown">
+            <summary>
+            Gets or sets the state of the Control key in the moment when the DragDropState was created.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.DragDrop.Behaviors.DragDropState.IsShiftDown">
+            <summary>
+            Gets or sets the state of the Shift key in the moment when the DragDropState was created.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.DragDrop.Behaviors.DragDropState.IsSameControl">
+            <summary>
+            Gets a value that specifies whether the drag source and the drop target are the same control.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.DragDrop.Behaviors.DragVisualProviderState">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.DragDrop.Behaviors.DragVisualProviderState.#ctor(System.Windows.Point,System.Collections.IEnumerable,System.Collections.Generic.IEnumerable{System.Windows.DependencyObject},System.Windows.Controls.Control)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.Windows.DragDrop.Behaviors.DragVisualProviderState"/> class.
+            </summary>
+            <param name="relativeStartPoint">The cursor offset relative to the drag source.</param>
+            <param name="draggedItems">The dragged items.</param>
+            <param name="draggedItemContainers">The dragged item containers.</param>
+            <param name="host">The items host control.</param>
+        </member>
+        <member name="P:Telerik.Windows.DragDrop.Behaviors.DragVisualProviderState.RelativeStartPoint">
+            <summary>
+             Gets the cursor offset relative to the drag source.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.DragDrop.Behaviors.DragVisualProviderState.DraggedItems">
+            <summary>
+            Gets the dragged items.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.DragDrop.Behaviors.DragVisualProviderState.DraggedItemContainers">
+            <summary>
+            Gets the containers for the dragged items.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.DragDrop.Behaviors.DragVisualProviderState.Host">
+            <summary>
+            Gets the items host control.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.DragDrop.Behaviors.EmptyDragVisualProvider">
+            <summary>
+            IDragVisualProvider that does not create visuals, but returns null.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.DragDrop.Behaviors.IDragVisualProvider">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.DragDrop.Behaviors.IDragVisualProvider.CreateDragVisual(Telerik.Windows.DragDrop.Behaviors.DragVisualProviderState)">
+            <summary>
+            When overriden in a derived class allows customization of the drag visual. If the returned element 
+            implements IEffectsPresenter, its Effects property will be automatically set during the drag-drop operation.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.DragDrop.Behaviors.IDragVisualProvider.GetDragVisualOffset(Telerik.Windows.DragDrop.Behaviors.DragVisualProviderState)">
+            <summary>
+            When overriden in a derived class allows customization of the drag visual offset relatively to the mouse pointer.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.DragDrop.Behaviors.EmptyDragVisualProvider.CreateDragVisual(Telerik.Windows.DragDrop.Behaviors.DragVisualProviderState)">
+            <summary>
+            When overriden in a derived class allows customization of the drag visual. If the returned element
+            implements IEffectsPresenter, its Effects property will be automatically set during the drag-drop operation.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.DragDrop.Behaviors.EmptyDragVisualProvider.GetDragVisualOffset(Telerik.Windows.DragDrop.Behaviors.DragVisualProviderState)">
+            <summary>
+            When overriden in a derived class allows customization of the drag visual offset relatively to the mouse pointer.
+            </summary>
+            <param name="state"></param>
+        </member>
+        <member name="T:Telerik.Windows.DragDrop.Behaviors.ScreenshotDragVisualProvider">
+            <summary>
+            IDragVisualProvider that creates drag visuals containing screenshots of the dragged item containers.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.DragDrop.Behaviors.ScreenshotDragVisualProvider.CreateDragVisual(Telerik.Windows.DragDrop.Behaviors.DragVisualProviderState)">
+            <summary>
+            When overriden in a derived class allows customization of the drag visual. If the returned element
+            implements IEffectsPresenter, its Effects property will be automatically set during the drag-drop operation.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.DragDrop.Behaviors.ScreenshotDragVisualProvider.GetDragVisualOffset(Telerik.Windows.DragDrop.Behaviors.DragVisualProviderState)">
+            <summary>
+            When overriden in a derived class allows customization of the drag visual offset relatively to the mouse pointer.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.DragDrop.Behaviors.DataObjectHelper">
+            <summary>
+            Porivdes a trust settings independent way to retreive drag data.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.DragDrop.Behaviors.DataObjectHelper.GetData(System.Object,System.String,System.Boolean)">
+            <summary>
+            Retrieves a data object in a specified format, and optionally, converts the data to the specified format.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.DragDrop.Behaviors.DataObjectHelper.GetData(System.Object,System.Type,System.Boolean)">
+            <summary>
+            Retrieves a data object in a specified format, and optionally, converts the data to the specified format.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.DragDrop.Behaviors.DataObjectHelper.GetDataPresent(System.Object,System.String,System.Boolean)">
+            <summary>
+            Retrieves a data object in a specified format, and optionally, converts the data to the specified format.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.DragDrop.Behaviors.DataObjectHelper.GetDataPresent(System.Object,System.Type,System.Boolean)">
+            <summary>
+            Retrieves a data object in a specified format, and optionally, converts the data to the specified format.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.DragDrop.Behaviors.IDragPayload">
+            <summary>
+            Provides a format independent mechanism for transferring data.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.DragDrop.Behaviors.IDragPayload.GetData(System.String,System.Boolean)">
+            <summary>
+            Retrieves a data object in a specified format, and optionally, converts the data to the specified format.
+            </summary>
+            <param name="format">A string that specifies the format in which to retrieve the data. See the <see cref="T:System.Windows.DataFormats"/> class for a set of predefined data formats.</param>
+            <param name="autoConvert">true to attempt to automatically convert the data to the specified format; false to perform no data format conversion.If this parameter is false, the method returns data in the specified format if it is available; or returns null if the data is not available in the specified format.</param>
+            <returns>
+            A data object that has the data in the specified format; or null, if the data is not available in the specified format.
+            </returns>
+        </member>
+        <member name="M:Telerik.Windows.DragDrop.Behaviors.IDragPayload.GetData(System.Type)">
+            <summary>
+            Retrieves a data object in a specified format; the data format is specified by a <see cref="T:System.Type"/> object.
+            </summary>
+            <param name="format">A <see cref="T:System.Type"/> object that specifies the format in which to retrieve the data. See the <see cref="T:System.Windows.DataFormats"/> class for a set of predefined data formats.</param>
+            <returns>
+            A data object that has the data in the specified format; or null, if the data is not available in the specified format.
+            </returns>
+        </member>
+        <member name="M:Telerik.Windows.DragDrop.Behaviors.IDragPayload.GetData(System.String)">
+            <summary>
+            Retrieves a data object in a specified format; the data format is specified by a string.
+            </summary>
+            <param name="format">A string that specifies the format in which to retrieve the data. See the <see cref="T:System.Windows.DataFormats"/> class for a set of predefined data formats.</param>
+            <returns>
+            A data object that has the data in the specified format; or null, if the data is not available in the specified format.
+            </returns>
+        </member>
+        <member name="M:Telerik.Windows.DragDrop.Behaviors.IDragPayload.GetDataPresent(System.String,System.Boolean)">
+            <summary>
+            Checks whether the data is available in, or can be converted to, a specified format. If the data is not already available in the specified format, a Boolean flag indicates whether to check if the data can be converted to the specified format.
+            </summary>
+            <param name="format">A string that specifies the format to check for. See the <see cref="T:System.Windows.DataFormats"/> class for a set of predefined data formats.</param>
+            <param name="autoConvert">false to only check for the specified format; true to also check whether the data that is stored in this data object can be converted to the specified format.</param>
+            <returns>
+            true if the data is in, or can be converted to, the specified format; otherwise, false.
+            </returns>
+        </member>
+        <member name="M:Telerik.Windows.DragDrop.Behaviors.IDragPayload.GetDataPresent(System.Type)">
+            <summary>
+            Checks to see whether the data is available in, or can be converted to, a specified format. The data format is specified by a <see cref="T:System.Type"/> object.
+            </summary>
+            <param name="format">A <see cref="T:System.Type"/> that specifies the format to check for.</param>
+            <returns>
+            true if the data is in, or can be converted to, the specified format; otherwise, false.
+            </returns>
+        </member>
+        <member name="M:Telerik.Windows.DragDrop.Behaviors.IDragPayload.GetDataPresent(System.String)">
+            <summary>
+            Checks whether the data is available in, or can be converted to, a specified format; the data format is specified by a string.
+            </summary>
+            <param name="format">A string that specifies the format to check for. See the <see cref="T:System.Windows.DataFormats"/> class for a set of predefined data formats.</param>
+            <returns>
+            true if the data is in, or can be converted to, the specified format; otherwise, false.
+            </returns>
+        </member>
+        <member name="M:Telerik.Windows.DragDrop.Behaviors.IDragPayload.GetFormats(System.Boolean)">
+            <summary>
+            Returns a list of all formats that the data in this data object is stored in. A Boolean flag indicates whether to also include formats that the data can be automatically converted to.
+            </summary>
+            <param name="autoConvert">true to retrieve all formats that the data in this data object is stored in, or can be converted to; false to retrieve only the formats in which the data in this data object is stored (excludes formats that the data is not stored in, but can be automatically converted to).</param>
+            <returns>
+            An array of strings, with each string specifying the name of a format that is supported by this data object.
+            </returns>
+        </member>
+        <member name="M:Telerik.Windows.DragDrop.Behaviors.IDragPayload.GetFormats">
+            <summary>
+            Returns a list of all formats that the data in this data object is stored in, or can be converted to.
+            </summary>
+            <returns>
+            An array of strings, with each string specifying the name of a format that is supported by this data object.
+            </returns>
+        </member>
+        <member name="M:Telerik.Windows.DragDrop.Behaviors.IDragPayload.SetData(System.String,System.Object,System.Boolean)">
+            <summary>
+            Stores the specified data in this data object, using one or more specified data formats. This overload includes a Boolean flag to indicate whether the data may be converted to another format on retrieval.
+            </summary>
+            <param name="format">A string that specifies the format in which to store the data. See the <see cref="T:System.Windows.DataFormats"/> class for a set of predefined data formats.</param>
+            <param name="data">The data to store in this data object.</param>
+            <param name="autoConvert">true to allow the data to be converted to another format on retrieval; false to prohibit the data from being converted to another format on retrieval.</param>
+        </member>
+        <member name="M:Telerik.Windows.DragDrop.Behaviors.IDragPayload.SetData(System.Type,System.Object)">
+            <summary>
+            Stores the specified data in this data object, using one or more specified data formats. The data format is specified by a <see cref="T:System.Type"/> class.
+            </summary>
+            <param name="format">A <see cref="T:System.Type"/> that specifies the format in which to store the data.</param>
+            <param name="data">The data to store in this data object.</param>
+        </member>
+        <member name="M:Telerik.Windows.DragDrop.Behaviors.IDragPayload.SetData(System.String,System.Object)">
+            <summary>
+            Stores the specified data in this data object, using one or more specified data formats. The data format is specified by a string.
+            </summary>
+            <param name="format">A string that specifies the format in which to store the data. See the <see cref="T:System.Windows.DataFormats"/> class for a set of predefined data formats.</param>
+            <param name="data">The data to store in this data object.</param>
+        </member>
+        <member name="M:Telerik.Windows.DragDrop.Behaviors.IDragPayload.SetData(System.Object)">
+            <summary>
+            Stores the specified data in this data object, and automatically converts the data format from the source object type.
+            </summary>
+            <param name="data">The data to store in this data object.</param>
+        </member>
+        <member name="P:Telerik.Windows.DragDrop.Behaviors.IDragPayload.DataConverter">
+            <summary>
+            Gets a IDataConverter for providing additional formats the data to be converted to.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.DragDrop.Behaviors.ListBoxDragDrop">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.DragDrop.Behaviors.ListBoxDragDropBehavior">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.DragDrop.Behaviors.ListBoxDragDropBehavior.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.Windows.DragDrop.Behaviors.ListBoxDragDropBehavior"/> class.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.DragDrop.Behaviors.ListBoxDragDropBehavior.Drop(Telerik.Windows.DragDrop.Behaviors.ListBoxDragDropState)">
+            <summary>
+            Completes the drop operation. This method is called only in the context of the drop target control.
+            </summary>
+            <param name="state">DragDropState that provides context for the current operation.</param>
+            <remarks>
+            When the drag source and the drop target are the same control, this method is called before DragCompleted.
+            </remarks>
+        </member>
+        <member name="M:Telerik.Windows.DragDrop.Behaviors.ListBoxDragDropBehavior.CopyDraggedItems(Telerik.Windows.DragDrop.Behaviors.ListBoxDragDropState)">
+            <summary>
+            Copies the items that are dragged in the operation specified by the provided ListBoxDragDropState.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.DragDrop.Behaviors.ListBoxDragDropBehavior.AllowReorder">
+            <summary>
+            Gets or sets the value specifying whether the ListBoxDragDropBehavior can reorder itms or not.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.DragDrop.Behaviors.ListBoxDragDropHelper">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.DragDrop.Behaviors.ListBoxDragDropState">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.DragDrop.Behaviors.ListBoxDragDropState.InsertIndex">
+            <summary>
+            Gets or sets the index at which the dragged items will be inserted. Returns -1 if the items should be added at the end of the items source.
+            </summary>
         </member>
         <member name="T:Telerik.Windows.RadRoutedEventArgs">
             <summary>
@@ -1046,6 +1683,12 @@
         <member name="T:Telerik.Windows.DragDrop.DragDropManager">
             <summary>
             Provides helper methods and fields for initiating drag-and-drop operations, including a method to begin a drag-and-drop operation, and facilities for adding and removing drag-and-drop related event handlers.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.DragDrop.DragDropManager.AllowCapturedDragProperty">
+            <summary>
+            Identifies the AllowCapturedDrag attached dependency property.
+            This property affects only WPF.
             </summary>
         </member>
         <member name="F:Telerik.Windows.DragDrop.DragDropManager.AllowDragProperty">
@@ -1586,6 +2229,21 @@
             </summary>
             <param name="obj">The object on which to set the value.</param>
             <param name="value">Boolean value specifing if this element can automatically raise DragInitialize event and be used as the source of a drag-and-drop operation.</param>
+        </member>
+        <member name="M:Telerik.Windows.DragDrop.DragDropManager.GetAllowCapturedDrag(System.Windows.DependencyObject)">
+            <summary>
+            Gets a value indicating whether this element can raise DragInitialize event and be used as the source of a drag-and-drop operation.
+            </summary>
+            <param name="obj">The object from which the property value is read.</param>
+            <returns>True if element can start automatic drag-and-drop operation, otherwise False. The default value is False.</returns>
+        </member>
+        <member name="M:Telerik.Windows.DragDrop.DragDropManager.SetAllowCapturedDrag(System.Windows.DependencyObject,System.Boolean)">
+            <summary>
+            Sets a value indicating whether this element can raise DragInitialize event and be used as the source of a drag-and-drop operation.
+            When set the dragged element will steal mouse capture (WPF only).
+            </summary>
+            <param name="obj">The object on which to set the value.</param>
+            <param name="value">Boolean value specifing if this element can automatically raise DragInitialize event and be used as the source of a drag-and-drop operation and steal mouse capture.</param>
         </member>
         <member name="M:Telerik.Windows.DragDrop.DragDropManager.DoDragDrop(System.Windows.DependencyObject,System.Object,System.Windows.DragDropEffects,System.Windows.DragDropKeyStates)">
             <summary>
@@ -2488,6 +3146,80 @@
             Gets the width in pixels of this RadBitmap.
             </summary>
         </member>
+        <member name="T:Telerik.Windows.Controls.ChildrenOfTypeExtensions">
+            <summary>
+            Contains extension methods for enumerating the children of an element.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ChildrenOfTypeExtensions.ChildrenOfType``1(System.Windows.DependencyObject)">
+            <summary>
+            Gets all child elements recursively from the visual tree by given type.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ChildrenOfTypeExtensions.FindChildByType``1(System.Windows.DependencyObject)">
+            <summary>
+            Finds child element of the specified type. Uses breadth-first search.
+            </summary>
+            <typeparam name="T">
+            The type of the child that will be searched in the object hierarchy. The type should be <see cref="T:System.Windows.DependencyObject"/>.
+            </typeparam>
+            <param name="element">The target <see cref="T:System.Windows.DependencyObject"/> which children will be traversed.</param>
+            <returns>The first child element that is of the specified type.</returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ChildrenOfTypeExtensions.GetFirstDescendantOfType``1(System.Windows.DependencyObject)">
+            <summary>
+            Does a deep search of the element tree, trying to find a descendant of the given type 
+            (including the element itself).
+            </summary>
+            <returns>True if the target is one of the elements.</returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ChildrenOfTypeExtensions.GetChildrenRecursive(System.Windows.DependencyObject)">
+            <summary>
+            Enumerates through element's children in the visual tree.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.ParentOfTypeExtensions">
+            <summary>
+            Contains extension methods for enumerating the parents of an element.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ParentOfTypeExtensions.ParentOfType``1(System.Windows.DependencyObject)">
+            <summary>
+            Gets the parent element from the visual tree by given type.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ParentOfTypeExtensions.IsAncestorOf(System.Windows.DependencyObject,System.Windows.DependencyObject)">
+            <summary>
+             Determines whether the element is an ancestor of the descendant.
+            </summary>
+            <returns>true if the visual object is an ancestor of descendant; otherwise, false.</returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ParentOfTypeExtensions.GetVisualParent``1(System.Windows.DependencyObject)">
+            <summary>
+            Searches up in the visual tree for parent element of the specified type.
+            </summary>
+            <typeparam name="T">
+            The type of the parent that will be searched up in the visual object hierarchy. 
+            The type should be <see cref="T:System.Windows.DependencyObject"/>.
+            </typeparam>
+            <param name="element">The target <see cref="T:System.Windows.DependencyObject"/> which visual parents will be traversed.</param>
+            <returns>Visual parent of the specified type if there is any, otherwise null.</returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ParentOfTypeExtensions.GetAncestors``1(System.Windows.DependencyObject)">
+            <summary>  
+            This recurses the visual tree for ancestors of a specific type.
+            </summary>  
+        </member>
+        <member name="M:Telerik.Windows.Controls.ParentOfTypeExtensions.GetParent``1(System.Windows.DependencyObject)">
+            <summary>  
+            This recurses the visual tree for a parent of a specific type.
+            </summary>  
+        </member>
+        <member name="M:Telerik.Windows.Controls.ParentOfTypeExtensions.GetParents(System.Windows.DependencyObject)">
+            <summary>
+            Enumerates through element's parents in the visual tree.
+            </summary>
+        </member>
         <member name="T:Telerik.Windows.Controls.GroupBox">
             <summary>
             Represents a control that creates a container that has a border and a header for user interface (UI) content.
@@ -2968,6 +3700,13 @@
             <typeparam name="T">The persistence provider.</typeparam>
             <returns></returns>
         </member>
+        <member name="M:Telerik.Windows.Persistence.Services.IPersistenceServiceProvider.UnregisterPersistenceProvider(System.Type)">
+            <summary>
+            Unregisters a specific persistence provider type.
+            </summary>
+            <param name="persistenceProviderType">The type of the persistence provider.</param>
+            <returns>Returns true if the persistence provider is unregistered.</returns>
+        </member>
         <member name="M:Telerik.Windows.Persistence.Services.DefaultServiceProvider.ResolveProvider``1">
             <summary>
             Resolves the provider.
@@ -2981,6 +3720,13 @@
             </summary>
             <typeparam name="T">The persistence provider.</typeparam>
             <param name="provider">The provider.</param>
+        </member>
+        <member name="M:Telerik.Windows.Persistence.Services.DefaultServiceProvider.UnregisterPersistenceProvider(System.Type)">
+            <summary>
+            Unregisters a specific persistence provider type.
+            </summary>
+            <param name="persistenceProviderType">The type of the persistence provider.</param>
+            <returns>Returns true if the persistence provider is unregistered.</returns>
         </member>
         <member name="P:Telerik.Windows.Persistence.Services.DefaultServiceProvider.ForbiddenPropertyProvider">
             <summary>
@@ -3120,6 +3866,21 @@
             </summary>
             <typeparam name="T">The persistence provider type.</typeparam>
             <param name="ownerType">The registed type against the persistence provider.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.Windows.Persistence.Services.ServiceProvider.UnregisterPersistenceProvider(System.Type)">
+            <summary>
+            Unregisters persistence providers for a specific type.
+            </summary>
+            <param name="ownerType">The type owner of the persistence providers.</param>
+            <returns>Returns true if the providers associated with the type are unregistered.</returns>
+        </member>
+        <member name="M:Telerik.Windows.Persistence.Services.ServiceProvider.UnregisterPersistenceProvider``1(System.Type)">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="ownerType"></param>
             <returns></returns>
         </member>
         <member name="T:Telerik.Windows.Controls.DelegateCommand">
@@ -3376,151 +4137,6 @@
             <returns>
             The maximum <see cref="T:System.Windows.Size"/> for the <see cref="T:System.Windows.Shapes.Shape"/>.
             </returns>
-        </member>
-        <member name="T:Telerik.Windows.Controls.Simple3D.Camera">
-            <summary>
-            This class represents a 3D camera object that can project one 3D points into 2D points.
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.Simple3D.Camera.#ctor(System.Windows.Media.Media3D.Matrix3D,System.Double)">
-            <summary>
-            Initializes a new instance of the <see cref="T:Telerik.Windows.Controls.Simple3D.Camera"/> class.
-            </summary>
-            <param name="transformation">The transformation that transforms a point from the world coordinates to the camera coordinates.</param>
-            <param name="fov">The field of view of the camera. This is the distance between the camera and the projection surface.</param>
-        </member>
-        <member name="M:Telerik.Windows.Controls.Simple3D.Camera.Project(Telerik.Windows.Controls.Simple3D.Point3D)">
-            <summary>
-            Projects the specified point on the view surface using the camera object.
-            </summary>
-            <param name="point">The point to be projected.</param>
-            <returns>The 2D point that is the result of the projection.</returns>
-        </member>
-        <member name="M:Telerik.Windows.Controls.Simple3D.Camera.Project(Telerik.Windows.Controls.Simple3D.Point3D[])">
-            <summary>
-            Projects the specified points on the view surface using the camera object.
-            </summary>
-            <param name="points">The points to be projected.</param>
-            <returns>The 2D points that are the result of the projection.</returns>
-        </member>
-        <member name="P:Telerik.Windows.Controls.Simple3D.Camera.Transformation">
-            <summary>
-            Gets or sets the transformation that transforms a point from the world coordinates to the camera coordinates.
-            </summary>
-            <value>The transformation matrix.</value>
-        </member>
-        <member name="P:Telerik.Windows.Controls.Simple3D.Camera.Fov">
-            <summary>
-            The field of view of the camera. This is the distance between the camera and the projection surface.
-            </summary>
-            <value>The fov value.</value>
-        </member>
-        <member name="P:Telerik.Windows.Controls.Simple3D.Camera.Scale">
-            <summary>
-            Gets or sets the scale, that is applied after projection.
-            </summary>
-            <value>The scale value (default is 1.0).</value>
-        </member>
-        <member name="T:Telerik.Windows.Controls.Simple3D.PerspectiveCamera">
-            <summary>
-            Represents a Camera that projects with perspective.
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.Simple3D.PerspectiveCamera.#ctor(Telerik.Windows.Controls.Simple3D.Point3D,Telerik.Windows.Controls.Simple3D.Point3D,Telerik.Windows.Controls.Simple3D.Point3D,System.Double)">
-            <summary>
-            Initializes a new instance of the <see cref="T:Telerik.Windows.Controls.Simple3D.PerspectiveCamera"/> class.
-            </summary>
-            <param name="pointOfView">The point where the camera is located.</param>
-            <param name="lookAtPoint">The point where the cameara looks at.</param>
-            <param name="worldUpVector">The vector that is pointing the UP direction.</param>
-            <param name="fov">The field of view of the camera. This is the distance between the camera and the projection surface.</param>
-        </member>
-        <member name="M:Telerik.Windows.Controls.Simple3D.PerspectiveCamera.CreateLookAtCenterPerspectiveCamera(System.Double,System.Double)">
-            <summary>
-            Creates a new perspective camera that is located on the Z axis and is looking at the origin.
-            The Up vector is collinear with the Oy axis.
-            </summary>
-            <param name="distance">The distance between the camera location and the origin.</param>
-            <param name="fov">The field of view of the camera. This is the distance between the camera and the projection surface.</param>
-            <returns></returns>
-        </member>
-        <member name="T:Telerik.Windows.Controls.Simple3D.ThreeDTools">
-            <summary>
-            This is a utility class that contains static methods to make work with 3D easier.
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.Simple3D.ThreeDTools.CreateTranslateMatrix(System.Double,System.Double,System.Double)">
-            <summary>
-            Creates a 3D translation transformation matrix.
-            </summary>
-            <param name="translateX">The translation on X.</param>
-            <param name="translateY">The translation on Y.</param>
-            <param name="translateZ">The translation on Z.</param>
-            <returns>The transformation matrix, that represents a translate transformation.</returns>
-        </member>
-        <member name="M:Telerik.Windows.Controls.Simple3D.ThreeDTools.CreateRotationMatrix(System.Double,System.Double,System.Double)">
-            <summary>
-            Creates a 3D rotation transformation matrix.
-            </summary>
-            <param name="alph">The angle around the X axis.</param>
-            <param name="bet">The angle around the Y axis.</param>
-            <param name="gam">The angle around the Z axis.</param>
-            <returns>The transformation matrix, that represents a rotation transformation.</returns>
-        </member>
-        <member name="M:Telerik.Windows.Controls.Simple3D.ThreeDTools.CreateXRotationMatrix(System.Double)">
-            <summary>
-            Creates a 3D rotation transformation matrix, that represents a rotation arount the X axis.
-            </summary>
-            <param name="alph">The angle of rotation.</param>
-            <returns>The transformation matrix, that represents a rotation transformation.</returns>
-        </member>
-        <member name="M:Telerik.Windows.Controls.Simple3D.ThreeDTools.CreateYRotationMatrix(System.Double)">
-            <summary>
-            Creates a 3D rotation transformation matrix, that represents a rotation arount the Y axis.
-            </summary>
-            <param name="alph">The angle of rotation.</param>
-            <returns>The transformation matrix, that represents a rotation transformation.</returns>
-        </member>
-        <member name="M:Telerik.Windows.Controls.Simple3D.ThreeDTools.CreateZRotationMatrix(System.Double)">
-            <summary>
-            Creates a 3D rotation transformation matrix, that represents a rotation arount the Z axis.
-            </summary>
-            <param name="alph">The angle of rotation.</param>
-            <returns>The transformation matrix, that represents a rotation transformation.</returns>
-        </member>
-        <member name="M:Telerik.Windows.Controls.Simple3D.ThreeDTools.Project(Telerik.Windows.Controls.Simple3D.Point3D,System.Double,System.Double)">
-            <summary>
-            Projects the specified 3D point in the XY plane.
-            </summary>
-            <param name="point">The point to be projected.</param>
-            <param name="scale">The scale to be applied after projection.</param>
-            <param name="fov">The field of view of the camera. This is the distance between the camera and the projection surface.</param>
-            <returns>The 2D point that is the result of the projection.</returns>
-        </member>
-        <member name="M:Telerik.Windows.Controls.Simple3D.ThreeDTools.Project(Telerik.Windows.Controls.Simple3D.Point3D[],System.Double,System.Double)">
-            <summary>
-            Projects the specified 3D points in the XY plane.
-            </summary>
-            <param name="points">The points to be projected.</param>
-            <param name="scale">The scale to be applied after projection.</param>
-            <param name="fov">The field of view of the camera. This is the distance between the camera and the projection surface.</param>
-            <returns>The 2D points that are the result of the projection.</returns>
-        </member>
-        <member name="M:Telerik.Windows.Controls.Simple3D.ThreeDTools.Transform(Telerik.Windows.Controls.Simple3D.Point3D,System.Windows.Media.Media3D.Matrix3D)">
-            <summary>
-            Transforms the specified 3D point using a 3D transformation.
-            </summary>
-            <param name="point">The 3D point to be transformed.</param>
-            <param name="matrix">The transformation matrix to be used.</param>
-            <returns>The transformed 3D point.</returns>
-        </member>
-        <member name="M:Telerik.Windows.Controls.Simple3D.ThreeDTools.Transform(Telerik.Windows.Controls.Simple3D.Point3D[],System.Windows.Media.Media3D.Matrix3D)">
-            <summary>
-            Transforms the specified 3D points using a 3D transformation.
-            </summary>
-            <param name="points">The 3D points to be transformed.</param>
-            <param name="matrix">The transformation matrix to be used.</param>
-            <returns>The transformed 3D points.</returns>
         </member>
         <member name="T:Telerik.Windows.Controls.ActionOnLostFocus">
             <summary>
@@ -4802,27 +5418,6 @@
             Holds extension methods for <see cref="T:System.Windows.DependencyObject"/> class.
             </summary>
         </member>
-        <member name="M:Telerik.Windows.Controls.DependencyObjectExtensions.GetVisualParent``1(System.Windows.DependencyObject)">
-            <summary>
-            Searches up in the visual tree for parent element of the specified type.
-            </summary>
-            <typeparam name="T">
-            The type of the parent that will be searched up in the visual object hierarchy. 
-            The type should be <see cref="T:System.Windows.DependencyObject"/>.
-            </typeparam>
-            <param name="dependencyObject">The target <see cref="T:System.Windows.DependencyObject"/> which visual parents will be traversed.</param>
-            <returns>Visual parent of the specified type if there is any, otherwise null.</returns>
-        </member>
-        <member name="M:Telerik.Windows.Controls.DependencyObjectExtensions.FindChildByType``1(System.Windows.DependencyObject)">
-            <summary>
-            Finds child element of the specified type. Uses breadth-first search.
-            </summary>
-            <typeparam name="T">
-            The type of the child that will be searched in the object hierarchy. The type should be <see cref="T:System.Windows.DependencyObject"/>.
-            </typeparam>
-            <param name="source">The target <see cref="T:System.Windows.DependencyObject"/> which children will be traversed.</param>
-            <returns>The first child element that is of the specified type.</returns>
-        </member>
         <member name="M:Telerik.Windows.Controls.DependencyObjectExtensions.IsLocalValueSet(System.Windows.DependencyObject,System.Windows.DependencyProperty)">
             <summary>
             Determines whether the specified dependency property local value is set.
@@ -4987,6 +5582,11 @@
             Identifies the CornerRadius property.
             </summary>
         </member>
+        <member name="F:Telerik.Windows.Controls.RadButton.InnerCornerRadiusProperty">
+            <summary>
+            Identifies the InnerCornerRadius property.
+            </summary>
+        </member>
         <member name="F:Telerik.Windows.Controls.RadButton.IsBackgroundVisibleProperty">
             <summary>
             Identifies the IsBackgroundVisible property.
@@ -5106,6 +5706,11 @@
         <member name="P:Telerik.Windows.Controls.RadButton.CornerRadius">
             <summary>
             Gets or sets a value that represents the degree to which the corners of the control are rounded. This is a dependency property.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadButton.InnerCornerRadius">
+            <summary>
+            Gets or sets a value that represents the degree to which the inner corners of the control are rounded. This is a dependency property.
             </summary>
         </member>
         <member name="P:Telerik.Windows.Controls.RadButton.IsBackgroundVisible">
@@ -5414,6 +6019,11 @@
             Identifies the CornerRadius property.
             </summary>
         </member>
+        <member name="F:Telerik.Windows.Controls.RadRadioButton.InnerCornerRadiusProperty">
+            <summary>
+            Identifies the InnerCornerRadius property.
+            </summary>
+        </member>
         <member name="F:Telerik.Windows.Controls.RadRadioButton.IsBackgroundVisibleProperty">
             <summary>
             Identifies the IsBackgroundVisible property.
@@ -5491,6 +6101,11 @@
             Gets or sets a value that represents the degree to which the corners of the control are rounded. This is a dependency property.
             </summary>
         </member>
+        <member name="P:Telerik.Windows.Controls.RadRadioButton.InnerCornerRadius">
+            <summary>
+            Gets or sets a value that represents the degree to which the inner corners of the control are rounded. This is a dependency property.
+            </summary>
+        </member>
         <member name="P:Telerik.Windows.Controls.RadRadioButton.IsBackgroundVisible">
             <summary>
             Sets the visual appearance of the chrome not to render in Normal mode.
@@ -5521,6 +6136,11 @@
         <member name="F:Telerik.Windows.Controls.RadToggleButton.CornerRadiusProperty">
             <summary>
             Identifies the CornerRadius property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadToggleButton.InnerCornerRadiusProperty">
+            <summary>
+            Identifies the InnerCornerRadius property.
             </summary>
         </member>
         <member name="F:Telerik.Windows.Controls.RadToggleButton.IsBackgroundVisibleProperty">
@@ -5598,6 +6218,11 @@
         <member name="P:Telerik.Windows.Controls.RadToggleButton.CornerRadius">
             <summary>
             Gets or sets a value that represents the degree to which the corners of the control are rounded. This is a dependency property.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadToggleButton.InnerCornerRadius">
+            <summary>
+            Gets or sets a value that represents the degree to which the inner corners of the control are rounded. This is a dependency property.
             </summary>
         </member>
         <member name="P:Telerik.Windows.Controls.RadToggleButton.IsBackgroundVisible">
@@ -5912,9 +6537,9 @@
             <exception cref="T:System.ArgumentException">Given <c>enumType</c> is not <see cref="T:System.Enum"/>.</exception>
             <exception cref="T:System.ArgumentNullException"><c>enumType</c> is null.</exception>
         </member>
-        <member name="T:Telerik.Windows.ValidateValueCallback">
+        <member name="T:Telerik.Windows.FrameworkPropertyMetadata">
             <summary>
-            Callback that validates the new value for the dependency property.
+            Reports or applies metadata for a dependency property, specifically adding framework-specific property system characteristics.
             </summary>
         </member>
         <member name="T:Telerik.Windows.PropertyMetadata">
@@ -5923,122 +6548,180 @@
             to a specific type, including conditions it was registered with. 
             </summary>
         </member>
-        <member name="M:Telerik.Windows.PropertyMetadata.#ctor(System.Object,System.Windows.PropertyChangedCallback,Telerik.Windows.CoerceValueCallback)">
+        <member name="M:Telerik.Windows.PropertyMetadata.#ctor">
             <summary>
-            Initializes a new instance of the PropertyMetadata class with the specified default value and callbacks. 
+            Initializes a new instance of the PropertyMetadata class.
             </summary>
-            <param name="defaultValue">
-            The default value of the dependency property, usually 
-            provided as a value of some specific type.
-            </param>
-            <param name="propertyChangedCallback">
-            Reference to a handler implementation that is to be called by the 
-            property system whenever the effective value of the property changes.
-            </param>
-            <param name="coerceValueCallback">
-            Reference to a handler implementation that is to be called whenever the 
-            property system calls CoerceValue against this property.
-            </param>
-        </member>
-        <member name="M:Telerik.Windows.PropertyMetadata.#ctor(System.Object,System.Windows.PropertyChangedCallback)">
-            <summary>
-            Initializes a new instance of the PropertyMetadata class with the specified 
-            PropertyChangedCallback implementation reference. 
-            </summary>
-            <param name="defaultValue">
-            The default value of the dependency property, usually 
-            provided as a value of some specific type.
-            </param>
-            <param name="propertyChangedCallback">
-            Reference to a handler implementation that is to be called by the 
-            property system whenever the effective value of the property changes.
-            </param>
-        </member>
-        <member name="M:Telerik.Windows.PropertyMetadata.#ctor(System.Windows.PropertyChangedCallback)">
-            <summary>
-            Initializes a new instance of the PropertyMetadata class with the specified 
-            PropertyChangedCallback implementation reference. 
-            </summary>
-            <param name="propertyChangedCallback">
-            Reference to a handler implementation that is to be called by the 
-            property system whenever the effective value of the property changes.
-            </param>
         </member>
         <member name="M:Telerik.Windows.PropertyMetadata.#ctor(System.Object)">
             <summary>
-            Initializes a new instance of the PropertyMetadata class with the specified 
-            default value. 
+            Initializes a new instance of the PropertyMetadata class with a specified default value for the dependency property that this metadata will be applied to.
             </summary>
-            <param name="defaultValue">
-            The default value of the dependency property, usually 
-            provided as a value of some specific type.
+            <param name="defaultValue">The default value to specify for a dependency property, usually provided as a value of some specific type.</param>
+        </member>
+        <member name="M:Telerik.Windows.PropertyMetadata.#ctor(System.Windows.PropertyChangedCallback)">
+            <summary>
+            Initializes a new instance of the PropertyMetadata class with the specified PropertyChangedCallback implementation reference.
+            </summary>
+            <param name="propertyChangedCallback">Reference to a handler implementation that is to be called by the property system whenever the effective value of the property changes.</param>
+        </member>
+        <member name="M:Telerik.Windows.PropertyMetadata.#ctor(System.Object,System.Windows.PropertyChangedCallback)">
+            <summary>
+            Initializes a new instance of the PropertyMetadata class with the specified default value and PropertyChangedCallback implementation reference.
+            </summary>
+            <param name="defaultValue">The default value to specify for a dependency property, usually provided as a value of some specific type.</param>
+            <param name="propertyChangedCallback">Reference to a handler implementation that is to be called by the property system whenever the effective value of the property changes.</param>
+        </member>
+        <member name="M:Telerik.Windows.PropertyMetadata.#ctor(System.Object,System.Windows.PropertyChangedCallback,Telerik.Windows.CoerceValueCallback)">
+            <summary>
+            Initializes a new instance of the PropertyMetadata class with the specified default value and callbacks.
+            </summary>
+            <param name="defaultValue">The default value to specify for a dependency property, usually provided as a value of some specific type.</param>
+            <param name="propertyChangedCallback">Reference to a handler implementation that is to be called by the property system whenever the effective value of the property changes.</param>
+            <param name="coerceValueCallback">Reference to a handler implementation that is to be called whenever the property system calls CoerceValue against this property.</param>
+        </member>
+        <member name="F:Telerik.Windows.PropertyMetadata.CoercionDataProperty">
+            <summary>
+            CoercionData Attached Dependency Property
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.PropertyMetadata.GetCoercionData(System.Windows.DependencyObject)">
+            <summary>
+            Gets the CoercionData property. This dependency property 
+            is attached to any dependency object that contains coerced property values.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.PropertyMetadata.SetCoercionData(System.Windows.DependencyObject,Telerik.Windows.PropertyMetadata.CoercionData)">
+            <summary>
+            Sets the CoercionData property. This dependency property 
+            is attached to any dependency object that contains coerced property values.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.FrameworkPropertyMetadata.#ctor">
+            <summary>
+            Initializes a new instance of the FrameworkPropertyMetadata class.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.FrameworkPropertyMetadata.#ctor(System.Object)">
+            <summary>
+            Initializes a new instance of the FrameworkPropertyMetadata class with the specified default value.
+            </summary>
+            <param name="defaultValue">The default value of the dependency property, usually provided as a value of a specific type.</param>
+        </member>
+        <member name="M:Telerik.Windows.FrameworkPropertyMetadata.#ctor(System.Windows.PropertyChangedCallback)">
+            <summary>
+            Initializes a new instance of the FrameworkPropertyMetadata class with the specified PropertyChangedCallback callback.
+            </summary>
+            <param name="propertyChangedCallback">A reference to a handler implementation that the property system will call whenever the effective value of the property changes.</param>
+        </member>
+        <member name="M:Telerik.Windows.FrameworkPropertyMetadata.#ctor(System.Object,System.Windows.PropertyChangedCallback)">
+            <summary>
+            Initializes a new instance of the FrameworkPropertyMetadata class with the provided default value and specified PropertyChangedCallback callback.
+            </summary>
+            <param name="defaultValue">The default value of the dependency property, usually provided as a value of a specific type.</param>
+            <param name="propertyChangedCallback">A reference to a handler implementation that the property system will call whenever the effective value of the property changes.</param>
+        </member>
+        <member name="M:Telerik.Windows.FrameworkPropertyMetadata.#ctor(System.Object,System.Windows.PropertyChangedCallback,Telerik.Windows.CoerceValueCallback)">
+            <summary>
+            Initializes a new instance of the FrameworkPropertyMetadata class with the provided default value and specified callbacks.
+            </summary>
+            <param name="defaultValue">The default value of the dependency property, usually provided as a value of a specific type.</param>
+            <param name="propertyChangedCallback">A reference to a handler implementation that the property system will call whenever the effective value of the property changes.</param>
+            <param name="coerceValueCallback">A reference to a handler implementation will be called whenever the property system calls CoerceValue for this dependency property.</param>
+        </member>
+        <member name="M:Telerik.Windows.FrameworkPropertyMetadata.#ctor(System.Object,Telerik.Windows.FrameworkPropertyMetadataOptions)">
+            <summary>
+            Initializes a new instance of the FrameworkPropertyMetadata class with the provided default value and framework-level metadata options. 
+            </summary>
+            <param name="defaultValue">The default value of the dependency property, usually provided as a value of a specific type.</param>
+            <param name="metadataOptions">The metadata option flags (a combination of FrameworkPropertyMetadataOptions values).
+            These options specify characteristics of the dependency property that interact with systems such as layout.
             </param>
         </member>
-        <member name="M:Telerik.Windows.PropertyMetadata.#ctor(System.Object,System.Windows.PropertyChangedCallback,Telerik.Windows.CoerceValueCallback,Telerik.Windows.ValidateValueCallback)">
+        <member name="M:Telerik.Windows.FrameworkPropertyMetadata.#ctor(System.Object,Telerik.Windows.FrameworkPropertyMetadataOptions,System.Windows.PropertyChangedCallback)">
             <summary>
-            Initializes a new instance of the PropertyMetadata class with the specified default value and callbacks. 
+            Initializes a new instance of the FrameworkPropertyMetadata class with the provided default value and framework metadata options, and specified PropertyChangedCallback callback.
             </summary>
-            <param name="defaultValue">
-            The default value of the dependency property, usually 
-            provided as a value of some specific type.
+            <param name="defaultValue">The default value of the dependency property, usually provided as a value of a specific type.</param>
+            <param name="metadataOptions">The metadata option flags (a combination of FrameworkPropertyMetadataOptions values).
+            These options specify characteristics of the dependency property that interact with systems such as layout.
             </param>
-            <param name="propertyChangedCallback">
-            Reference to a handler implementation that is to be called by the 
-            property system whenever the effective value of the property changes.
+            <param name="propertyChangedCallback">A reference to a handler implementation that the property system will call whenever the effective value of the property changes.</param>
+        </member>
+        <member name="M:Telerik.Windows.FrameworkPropertyMetadata.#ctor(System.Object,Telerik.Windows.FrameworkPropertyMetadataOptions,System.Windows.PropertyChangedCallback,Telerik.Windows.CoerceValueCallback)">
+            <summary>
+            Initializes a new instance of the FrameworkPropertyMetadata class with the provided default value and framework metadata options, and specified callbacks. 
+            </summary>
+            <param name="defaultValue">The default value of the dependency property, usually provided as a value of a specific type.</param>
+            <param name="metadataOptions">The metadata option flags (a combination of FrameworkPropertyMetadataOptions values).
+            These options specify characteristics of the dependency property that interact with systems such as layout.
             </param>
-            <param name="coerceValueCallback">
-            Reference to a handler implementation that is to be called whenever the 
-            property system calls CoerceValue against this property.
-            </param>
-            <param name="validateValueCallback">
-            Reference to a handler implementation that is to be called whenever the 
-            property system calls ValidateValue against this property.
-            </param>
+            <param name="propertyChangedCallback">A reference to a handler implementation that the property system will call whenever the effective value of the property changes.</param>
+            <param name="coerceValueCallback">A reference to a handler implementation will be called whenever the property system calls CoerceValue for this dependency property.</param>
         </member>
-        <member name="M:Telerik.Windows.PropertyMetadata.#ctor">
+        <member name="T:Telerik.Windows.FrameworkPropertyMetadataOptions">
             <summary>
-            Initializes a new instance of the PropertyMetadata class with the specified 
-            default value. 
-            </summary>
-        </member>
-        <member name="F:Telerik.Windows.FrameworkPropertyMetadataOptions.AffectsArrange">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="F:Telerik.Windows.FrameworkPropertyMetadataOptions.AffectsMeasure">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="F:Telerik.Windows.FrameworkPropertyMetadataOptions.AffectsParentArrange">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="F:Telerik.Windows.FrameworkPropertyMetadataOptions.AffectsParentMeasure">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="F:Telerik.Windows.FrameworkPropertyMetadataOptions.AffectsRender">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="F:Telerik.Windows.FrameworkPropertyMetadataOptions.BindsTwoWayByDefault">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="F:Telerik.Windows.FrameworkPropertyMetadataOptions.Inherits">
-            <summary>
-            
+            Specifies the types of framework-level property behavior that pertain to a particular dependency property in the Silverlight property system.
             </summary>
         </member>
         <member name="F:Telerik.Windows.FrameworkPropertyMetadataOptions.None">
             <summary>
-            
+            No options are specified.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.FrameworkPropertyMetadataOptions.AffectsMeasure">
+            <summary>
+            The measure pass of layout compositions is affected by value changes to this dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.FrameworkPropertyMetadataOptions.AffectsArrange">
+            <summary>
+            The arrange pass of layout composition is affected by value changes to this dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.FrameworkPropertyMetadataOptions.AffectsParentMeasure">
+            <summary>
+            The measure pass on the parent element is affected by value changes to this dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.FrameworkPropertyMetadataOptions.AffectsParentArrange">
+            <summary>
+            The arrange pass on the parent element is affected by value changes to this dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.FrameworkPropertyMetadataOptions.AffectsRender">
+            <summary>
+            Not used in Silverlight. Left for compatibility.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.FrameworkPropertyMetadataOptions.Inherits">
+            <summary>
+            Not used in Silverlight. Left for compatibility.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.FrameworkPropertyMetadataOptions.OverridesInheritanceBehavior">
+            <summary>
+            Not used in Silverlight. Left for compatibility.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.FrameworkPropertyMetadataOptions.NotDataBindable">
+            <summary>
+            Not used in Silverlight. Left for compatibility.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.FrameworkPropertyMetadataOptions.BindsTwoWayByDefault">
+            <summary>
+            Not used in Silverlight. Left for compatibility.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.FrameworkPropertyMetadataOptions.Journal">
+            <summary>
+            Not used in Silverlight. Left for compatibility.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.FrameworkPropertyMetadataOptions.SubPropertiesDoNotAffectRender">
+            <summary>
+            Not used in Silverlight. Left for compatibility.
             </summary>
         </member>
         <member name="T:Telerik.Windows.Controls.ImageConverter">
@@ -6378,13 +7061,13 @@
             Cancels the currently active SelectionChanger.
             </summary>
         </member>
-        <member name="M:Telerik.Windows.Controls.Selector.SelectionChanger`1.Select(`0)">
+        <member name="M:Telerik.Windows.Controls.Selector.SelectionChanger`1.Select(System.Int32,`0)">
             <summary>
             Queue something to be added to the selection.
             Does nothing if the item is already selected.
             </summary>
         </member>
-        <member name="M:Telerik.Windows.Controls.Selector.SelectionChanger`1.Unselect(`0)">
+        <member name="M:Telerik.Windows.Controls.Selector.SelectionChanger`1.Unselect(System.Int32,`0)">
             <summary>
             Queue something to be removed from the selection.
             Does nothing if the item is not already selected.
@@ -6777,6 +7460,166 @@
             The value of the control or null (Nothing in Microsoft Visual Basic .NET) if the control does not support <see cref="P:System.Windows.Automation.Provider.IRangeValueProvider.Value"/>.
             </returns>
         </member>
+        <member name="T:Telerik.Windows.Controls.Simple3D.Camera">
+            <summary>
+            This class represents a 3D camera object that can project one 3D points into 2D points.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Simple3D.Camera.#ctor(System.Windows.Media.Media3D.Matrix3D,System.Double)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.Windows.Controls.Simple3D.Camera"/> class.
+            </summary>
+            <param name="transformation">The transformation that transforms a point from the world coordinates to the camera coordinates.</param>
+            <param name="fov">The field of view of the camera. This is the distance between the camera and the projection surface.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Simple3D.Camera.Project(Telerik.Windows.Controls.Simple3D.Point3D)">
+            <summary>
+            Projects the specified point on the view surface using the camera object.
+            </summary>
+            <param name="point">The point to be projected.</param>
+            <returns>The 2D point that is the result of the projection.</returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Simple3D.Camera.Project(Telerik.Windows.Controls.Simple3D.Point3D[])">
+            <summary>
+            Projects the specified points on the view surface using the camera object.
+            </summary>
+            <param name="points">The points to be projected.</param>
+            <returns>The 2D points that are the result of the projection.</returns>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Simple3D.Camera.Transformation">
+            <summary>
+            Gets or sets the transformation that transforms a point from the world coordinates to the camera coordinates.
+            </summary>
+            <value>The transformation matrix.</value>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Simple3D.Camera.Fov">
+            <summary>
+            The field of view of the camera. This is the distance between the camera and the projection surface.
+            </summary>
+            <value>The fov value.</value>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Simple3D.Camera.Scale">
+            <summary>
+            Gets or sets the scale, that is applied after projection.
+            </summary>
+            <value>The scale value (default is 1.0).</value>
+        </member>
+        <member name="T:Telerik.Windows.Controls.Simple3D.PerspectiveCamera">
+            <summary>
+            Represents a Camera that projects with perspective.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Simple3D.PerspectiveCamera.#ctor(Telerik.Windows.Controls.Simple3D.Point3D,Telerik.Windows.Controls.Simple3D.Point3D,Telerik.Windows.Controls.Simple3D.Point3D,System.Double)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.Windows.Controls.Simple3D.PerspectiveCamera"/> class.
+            </summary>
+            <param name="pointOfView">The point where the camera is located.</param>
+            <param name="lookAtPoint">The point where the cameara looks at.</param>
+            <param name="worldUpVector">The vector that is pointing the UP direction.</param>
+            <param name="fov">The field of view of the camera. This is the distance between the camera and the projection surface.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Simple3D.PerspectiveCamera.CreateLookAtCenterPerspectiveCamera(System.Double,System.Double)">
+            <summary>
+            Creates a new perspective camera that is located on the Z axis and is looking at the origin.
+            The Up vector is collinear with the Oy axis.
+            </summary>
+            <param name="distance">The distance between the camera location and the origin.</param>
+            <param name="fov">The field of view of the camera. This is the distance between the camera and the projection surface.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Telerik.Windows.Controls.Simple3D.ThreeDTools">
+            <summary>
+            This is a utility class that contains static methods to make work with 3D easier.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Simple3D.ThreeDTools.CreateTranslateMatrix(System.Double,System.Double,System.Double)">
+            <summary>
+            Creates a 3D translation transformation matrix.
+            </summary>
+            <param name="translateX">The translation on X.</param>
+            <param name="translateY">The translation on Y.</param>
+            <param name="translateZ">The translation on Z.</param>
+            <returns>The transformation matrix, that represents a translate transformation.</returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Simple3D.ThreeDTools.CreateRotationMatrix(System.Double,System.Double,System.Double)">
+            <summary>
+            Creates a 3D rotation transformation matrix.
+            </summary>
+            <param name="alph">The angle around the X axis.</param>
+            <param name="bet">The angle around the Y axis.</param>
+            <param name="gam">The angle around the Z axis.</param>
+            <returns>The transformation matrix, that represents a rotation transformation.</returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Simple3D.ThreeDTools.CreateXRotationMatrix(System.Double)">
+            <summary>
+            Creates a 3D rotation transformation matrix, that represents a rotation arount the X axis.
+            </summary>
+            <param name="alph">The angle of rotation.</param>
+            <returns>The transformation matrix, that represents a rotation transformation.</returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Simple3D.ThreeDTools.CreateYRotationMatrix(System.Double)">
+            <summary>
+            Creates a 3D rotation transformation matrix, that represents a rotation arount the Y axis.
+            </summary>
+            <param name="alph">The angle of rotation.</param>
+            <returns>The transformation matrix, that represents a rotation transformation.</returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Simple3D.ThreeDTools.CreateZRotationMatrix(System.Double)">
+            <summary>
+            Creates a 3D rotation transformation matrix, that represents a rotation arount the Z axis.
+            </summary>
+            <param name="alph">The angle of rotation.</param>
+            <returns>The transformation matrix, that represents a rotation transformation.</returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Simple3D.ThreeDTools.Project(Telerik.Windows.Controls.Simple3D.Point3D,System.Double,System.Double)">
+            <summary>
+            Projects the specified 3D point in the XY plane.
+            </summary>
+            <param name="point">The point to be projected.</param>
+            <param name="scale">The scale to be applied after projection.</param>
+            <param name="fov">The field of view of the camera. This is the distance between the camera and the projection surface.</param>
+            <returns>The 2D point that is the result of the projection.</returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Simple3D.ThreeDTools.Project(Telerik.Windows.Controls.Simple3D.Point3D[],System.Double,System.Double)">
+            <summary>
+            Projects the specified 3D points in the XY plane.
+            </summary>
+            <param name="points">The points to be projected.</param>
+            <param name="scale">The scale to be applied after projection.</param>
+            <param name="fov">The field of view of the camera. This is the distance between the camera and the projection surface.</param>
+            <returns>The 2D points that are the result of the projection.</returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Simple3D.ThreeDTools.Transform(Telerik.Windows.Controls.Simple3D.Point3D,System.Windows.Media.Media3D.Matrix3D)">
+            <summary>
+            Transforms the specified 3D point using a 3D transformation.
+            </summary>
+            <param name="point">The 3D point to be transformed.</param>
+            <param name="matrix">The transformation matrix to be used.</param>
+            <returns>The transformed 3D point.</returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Simple3D.ThreeDTools.Transform(Telerik.Windows.Controls.Simple3D.Point3D[],System.Windows.Media.Media3D.Matrix3D)">
+            <summary>
+            Transforms the specified 3D points using a 3D transformation.
+            </summary>
+            <param name="points">The 3D points to be transformed.</param>
+            <param name="matrix">The transformation matrix to be used.</param>
+            <returns>The transformed 3D points.</returns>
+        </member>
+        <member name="T:Telerik.Windows.Controls.Slider.MiddleThumbClickMode">
+            <summary>
+            Enumeration describing the click mode of the middle thumb.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.Slider.MiddleThumbClickMode.None">
+            <summary>
+            No action.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.Slider.MiddleThumbClickMode.DecreaseNearestThumb">
+            <summary>
+            Decreases the value of the nearest thumb.
+            </summary>
+        </member>
         <member name="T:Telerik.Windows.Controls.RadSlider">
             <summary>
             Slider control lets the user select from a range of values by moving a slider. 
@@ -6974,9 +7817,11 @@
         </member>
         <member name="P:Telerik.Windows.Controls.DoubleRangeBase.Selection">
             <summary>
-            Gets or sets a value indicating whether side ticks are enabled.
+            Gets or sets the selection - SelectionStart and SelectionEnd.
             </summary>
-            <value><c>True</c> if side ticks are enabled; otherwise, <c>false</c>.</value>
+            <value>
+            The selection.
+            </value>
         </member>
         <member name="P:Telerik.Windows.Controls.DoubleRangeBase.SelectionEnd">
             <summary>
@@ -7238,6 +8083,11 @@
         <member name="F:Telerik.Windows.Controls.RadSlider.DecreaseHandleStyleProperty">
             <summary>
             Identifies the HandleStyle dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadSlider.MiddleThumbClickModeProperty">
+            <summary>
+            Identifies the MiddleThumbClickMode dependency property.
             </summary>
         </member>
         <member name="M:Telerik.Windows.Controls.RadSlider.OnMinimumChanged(System.Double,System.Double)">
@@ -7505,6 +8355,15 @@
             <summary>
             Gets or sets a value that indicates whether the content is stationary when the user drags the Thumb  of RadSlider. This is dependency property.
             </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadSlider.MiddleThumbClickMode">
+            <summary>
+            Gets or sets a value that determines the click action of the Middle Thumb  of RadSlider. This is dependency property.
+            </summary>
+            <remarks>
+            The MiddleThumbClickMode actions will take effect only in there is no drag action of the middle thumb. 
+            If the middle thumb is dragged, then no click mode action will be performed.s
+            </remarks>
         </member>
         <member name="P:Telerik.Windows.Controls.RadSlider.IsFocused">
             <summary>
@@ -9720,14 +10579,78 @@
             Keeps the colors used to colorize the MetroTheme.
             </summary>
         </member>
+        <member name="M:Telerik.Windows.Controls.MetroColors.GetColor(System.Windows.DependencyObject)">
+            <summary>
+            Gets the Color AttachedProperty.
+            </summary>
+            <param name="obj">The object this property is attached to.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.MetroColors.SetColor(System.Windows.DependencyObject,Telerik.Windows.Controls.MetroColorType)">
+            <summary>
+            Sets the Color AttachedProperty.
+            </summary>
+            <param name="obj">The object this property is attached to.</param>
+            <param name="value">The value.</param>
+        </member>
+        <member name="F:Telerik.Windows.Controls.MetroColors.ColorProperty">
+            <summary>
+            Identifies the Color attached DependencyProperty.
+            </summary>
+        </member>
         <member name="P:Telerik.Windows.Controls.MetroColors.PaletteInstance">
             <summary>
-            Holds a reference to the only one existing MetroCollorPalette instance.
+            Holds a reference to the only one existing MetroColorPalette instance.
             </summary>
         </member>
         <member name="P:Telerik.Windows.Controls.MetroColors.Palette">
             <summary>
-            Get the only one existing MetroCollorPalette instance.
+            Get the only one existing MetroColorPalette instance.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.MetroColorType">
+            <summary>
+            Enumerates all colors available in the MetroColorPalette.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.MetroColorType.NonMetro">
+            <summary>
+            Indicates a non Metro color.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.MetroColorType.BoundColor">
+            <summary>
+            This indicates a Color is composed or depends on a set of Metro color resources.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.MetroColorType.Accent">
+            <summary>
+            Accent color.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.MetroColorType.Basic">
+            <summary>
+            Basic color.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.MetroColorType.Strong">
+            <summary>
+            Strong color.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.MetroColorType.Main">
+            <summary>
+            Main color.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.MetroColorType.Marker">
+            <summary>
+            Marker color.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.MetroColorType.Validation">
+            <summary>
+            Validation color.
             </summary>
         </member>
         <member name="T:Telerik.Windows.Controls.MetroTheme">
@@ -10859,13 +11782,6 @@
             The generator has finished generating containers, but encountered one or more errors.
             </summary>
         </member>
-        <member name="M:Telerik.Windows.Controls.FrameworkElementExtensions.GetFirstDescendantOfType``1(System.Windows.DependencyObject)">
-            <summary>
-                Does a deep search of the element tree, trying to find a descendant of the given type 
-                (including the element itself).
-            </summary>
-            <returns>True if the target is one of the elements.</returns>
-        </member>
         <member name="T:Telerik.Windows.Controls.ListBoxItem">
             <summary>
             Represents a selectable item in a ListBox.
@@ -11672,29 +12588,37 @@
             and also identifies the event to raise.
             </param>
         </member>
-        <member name="M:Telerik.Windows.DependencyObjectExtensions.SetValue(System.Windows.DependencyObject,Telerik.Windows.DependencyPropertyKey,System.Object)">
-            <summary>
-            Set value to the read only property.
-            </summary>
-            <param name="element">The element to set the value to.</param>
-            <param name="key">The read-only property key.</param>
-            <param name="value">The value to set to the property.</param>
-        </member>
-        <member name="M:Telerik.Windows.DependencyObjectExtensions.ClearValue(System.Windows.DependencyObject,Telerik.Windows.DependencyPropertyKey)">
-            <summary>
-            Clears the value to the read only property.
-            </summary>
-            <param name="element">The element to clear the value to.</param>
-            <param name="key">The read-only property key.</param>
-        </member>
         <member name="T:Telerik.Windows.DependencyPropertyExtensions">
             <summary>
             Contains utility methods for registering dependency properties with extended metadata.
             </summary>
         </member>
-        <member name="M:Telerik.Windows.DependencyPropertyExtensions.Register(System.String,System.Type,System.Type,Telerik.Windows.PropertyMetadata,Telerik.Windows.ValidateValueCallback)">
+        <member name="M:Telerik.Windows.DependencyPropertyExtensions.SetValue(System.Windows.DependencyObject,Telerik.Windows.DependencyPropertyKey,System.Object)">
             <summary>
-            Registers a dependency property with the specified property name, property type, owner type, property metadata and validate value callback.
+            Sets the local value of a read-only dependency property, specified by the DependencyPropertyKey identifier of the dependency property.
+            </summary>
+            <param name="element">The element to set the value to.</param>
+            <param name="key">The DependencyPropertyKey identifier of the property to set.</param>
+            <param name="value">The new local value.</param>
+        </member>
+        <member name="M:Telerik.Windows.DependencyPropertyExtensions.ClearValue(System.Windows.DependencyObject,Telerik.Windows.DependencyPropertyKey)">
+            <summary>
+            Clears the local value of the read only property.
+            </summary>
+            <param name="element">The element to clear the value to.</param>
+            <param name="key">The key for the dependency property to be cleared.</param>
+        </member>
+        <member name="M:Telerik.Windows.DependencyPropertyExtensions.CoerceValue(System.Windows.DependencyObject,System.Windows.DependencyProperty)">
+            <summary>
+            Coerces the value of the specified dependency property. This is accomplished by invoking any CoerceValueCallback function 
+            specified in property metadata for the dependency property as it exists on the calling DependencyObject.
+            </summary>
+            <param name="element">The element to set the value to.</param>
+            <param name="dp">The identifier for the dependency property to coerce.</param>
+        </member>
+        <member name="M:Telerik.Windows.DependencyPropertyExtensions.Register(System.String,System.Type,System.Type)">
+            <summary>
+            Registers a dependency property with the specified property name, property type, owner type, and property metadata.
             </summary>
             <param name="name">
             The name of the dependency property to register.
@@ -11704,12 +12628,6 @@
             </param>
             <param name="ownerType">
             The owner type that is registering the dependency property.
-            </param>
-            <param name="typeMetadata">
-            Property metadata for the dependency property.
-            </param>
-            <param name="validateValueCallback">
-            Callback that validates the new value for the dependency property.
             </param>
             <returns>
             A dependency property identifier that should be used to set the value of a public static readonly field in your class. That identifier is then used to reference the dependency property later, for operations such as setting its value programmatically or obtaining metadata.
@@ -11735,9 +12653,9 @@
             A dependency property identifier that should be used to set the value of a public static readonly field in your class. That identifier is then used to reference the dependency property later, for operations such as setting its value programmatically or obtaining metadata.
             </returns>
         </member>
-        <member name="M:Telerik.Windows.DependencyPropertyExtensions.RegisterReadOnly(System.String,System.Type,System.Type,Telerik.Windows.PropertyMetadata)">
+        <member name="M:Telerik.Windows.DependencyPropertyExtensions.Register(System.String,System.Type,System.Type,Telerik.Windows.PropertyMetadata,Telerik.Windows.ValidateValueCallback)">
             <summary>
-            Registers a read-only dependency property with the specified property name, property type, owner type, and property metadata.
+            Registers a dependency property with the specified property name, property type, owner type, property metadata and validate value callback.
             </summary>
             <param name="name">
             The name of the dependency property to register.
@@ -11750,6 +12668,26 @@
             </param>
             <param name="typeMetadata">
             Property metadata for the dependency property.
+            </param>
+            <param name="validateValueCallback">
+            Callback that validates the new value for the dependency property.
+            </param>
+            <returns>
+            A dependency property identifier that should be used to set the value of a public static readonly field in your class. That identifier is then used to reference the dependency property later, for operations such as setting its value programmatically or obtaining metadata.
+            </returns>
+        </member>
+        <member name="M:Telerik.Windows.DependencyPropertyExtensions.RegisterAttached(System.String,System.Type,System.Type)">
+            <summary>
+            Registers an attached property with the specified property name, property type, owner type, and property metadata.
+            </summary>
+            <param name="name">
+            The name of the dependency property to register.
+            </param>
+            <param name="propertyType">
+            The type of the property.
+            </param>
+            <param name="ownerType">
+            The owner type that is registering the dependency property.
             </param>
             <returns>
             A dependency property identifier that should be used to set the value of a public static readonly field in your class. That identifier is then used to reference the dependency property later, for operations such as setting its value programmatically or obtaining metadata.
@@ -11775,6 +12713,29 @@
             A dependency property identifier that should be used to set the value of a public static readonly field in your class. That identifier is then used to reference the dependency property later, for operations such as setting its value programmatically or obtaining metadata.
             </returns>
         </member>
+        <member name="M:Telerik.Windows.DependencyPropertyExtensions.RegisterAttached(System.String,System.Type,System.Type,Telerik.Windows.PropertyMetadata,Telerik.Windows.ValidateValueCallback)">
+            <summary>
+            Registers an attached property with the specified property name, property type, owner type, and property metadata.
+            </summary>
+            <param name="name">
+            The name of the dependency property to register.
+            </param>
+            <param name="propertyType">
+            The type of the property.
+            </param>
+            <param name="ownerType">
+            The owner type that is registering the dependency property.
+            </param>
+            <param name="typeMetadata">
+            Property metadata for the dependency property.
+            </param>
+            <param name="validateValueCallback">
+            Callback that validates the new value for the dependency property.
+            </param>
+            <returns>
+            A dependency property identifier that should be used to set the value of a public static readonly field in your class. That identifier is then used to reference the dependency property later, for operations such as setting its value programmatically or obtaining metadata.
+            </returns>
+        </member>
         <member name="M:Telerik.Windows.DependencyPropertyExtensions.RegisterAttachedReadOnly(System.String,System.Type,System.Type,Telerik.Windows.PropertyMetadata)">
             <summary>
             Registers a read-only attached property with the specified property name, property type, owner type, and property metadata.
@@ -11790,6 +12751,72 @@
             </param>
             <param name="typeMetadata">
             Property metadata for the dependency property.
+            </param>
+            <returns>
+            A dependency property identifier that should be used to set the value of a public static readonly field in your class. That identifier is then used to reference the dependency property later, for operations such as setting its value programmatically or obtaining metadata.
+            </returns>
+        </member>
+        <member name="M:Telerik.Windows.DependencyPropertyExtensions.RegisterAttachedReadOnly(System.String,System.Type,System.Type,Telerik.Windows.PropertyMetadata,Telerik.Windows.ValidateValueCallback)">
+            <summary>
+            Registers a read-only attached property with the specified property name, property type, owner type, and property metadata.
+            </summary>
+            <param name="name">
+            The name of the dependency property to register.
+            </param>
+            <param name="propertyType">
+            The type of the property.
+            </param>
+            <param name="ownerType">
+            The owner type that is registering the dependency property.
+            </param>
+            <param name="typeMetadata">
+            Property metadata for the dependency property.
+            </param>
+            <param name="validateValueCallback">
+            Callback that validates the new value for the dependency property.
+            </param>
+            <returns>
+            A dependency property identifier that should be used to set the value of a public static readonly field in your class. That identifier is then used to reference the dependency property later, for operations such as setting its value programmatically or obtaining metadata.
+            </returns>
+        </member>
+        <member name="M:Telerik.Windows.DependencyPropertyExtensions.RegisterReadOnly(System.String,System.Type,System.Type,Telerik.Windows.PropertyMetadata)">
+            <summary>
+            Registers a read-only dependency property with the specified property name, property type, owner type, and property metadata.
+            </summary>
+            <param name="name">
+            The name of the dependency property to register.
+            </param>
+            <param name="propertyType">
+            The type of the property.
+            </param>
+            <param name="ownerType">
+            The owner type that is registering the dependency property.
+            </param>
+            <param name="typeMetadata">
+            Property metadata for the dependency property.
+            </param>
+            <returns>
+            A dependency property identifier that should be used to set the value of a public static readonly field in your class. That identifier is then used to reference the dependency property later, for operations such as setting its value programmatically or obtaining metadata.
+            </returns>
+        </member>
+        <member name="M:Telerik.Windows.DependencyPropertyExtensions.RegisterReadOnly(System.String,System.Type,System.Type,Telerik.Windows.PropertyMetadata,Telerik.Windows.ValidateValueCallback)">
+            <summary>
+            Registers a read-only dependency property with the specified property name, property type, owner type, and property metadata.
+            </summary>
+            <param name="name">
+            The name of the dependency property to register.
+            </param>
+            <param name="propertyType">
+            The type of the property.
+            </param>
+            <param name="ownerType">
+            The owner type that is registering the dependency property.
+            </param>
+            <param name="typeMetadata">
+            Property metadata for the dependency property.
+            </param>
+            <param name="validateValueCallback">
+            Callback that validates the new value for the dependency property.
             </param>
             <returns>
             A dependency property identifier that should be used to set the value of a public static readonly field in your class. That identifier is then used to reference the dependency property later, for operations such as setting its value programmatically or obtaining metadata.
@@ -12118,34 +13145,6 @@
             <summary>
             Contains helper extension methods for the UIElement class.
             </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.UIElementExtensions.ParentOfType``1(System.Windows.UIElement)">
-            <summary>
-            Gets the parent element from the visual tree by given type.
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.UIElementExtensions.ChildrenOfType``1(System.Windows.UIElement)">
-            <summary>
-            Gets all child elements recursively from the visual tree by given type.
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.UIElementExtensions.IsAncestorOf(System.Windows.UIElement,System.Windows.DependencyObject)">
-            <summary>
-             Determines whether the visual object is an ancestor of the descendant visual object.
-            </summary>
-            <returns>true if the visual object is an ancestor of descendant; otherwise, false.</returns>
-        </member>
-        <member name="M:Telerik.Windows.Controls.VisualTreeHelperExtensions.GetParent``1(System.Windows.DependencyObject)">
-            <summary>  
-            This recurses the visual tree for a parent of a specific type.
-            </summary>  
-            <param name="child"></param>  
-        </member>
-        <member name="M:Telerik.Windows.Controls.VisualTreeHelperExtensions.GetAncestors``1(System.Windows.DependencyObject)">
-            <summary>  
-            This recurses the visual tree for ancestors of a specific type.
-            </summary>  
-            <param name="target">The element to get ancestor of.</param>
         </member>
         <member name="T:Telerik.Windows.WeakEventListener`3">
             <summary>
@@ -13090,11 +14089,6 @@
             <returns>
             The size that this object determines it needs during layout, based on its calculations of child object allotted sizes.
             </returns>
-        </member>
-        <member name="M:Telerik.Windows.Controls.RadHtmlPlaceholder.TransformToVisualHacked(System.Windows.FrameworkElement,System.Windows.UIElement)">
-            <summary>
-            Microsoft implementation of TransformToVisual is not working if the controls is in a Popup.
-            </summary>
         </member>
         <member name="E:Telerik.Windows.Controls.RadHtmlPlaceholder.UrlLoaded">
             <summary>
@@ -14468,6 +15462,11 @@
             Identifies the Maximum dependency property.
             </summary>
         </member>
+        <member name="F:Telerik.Windows.Controls.RadTickBar.IsDirectionReversedProperty">
+            <summary>
+            Identifies the IsDirectionReversed dependency property.
+            </summary>
+        </member>
         <member name="M:Telerik.Windows.Controls.RadTickBar.#ctor">
             <summary>
             Initializes a new instance of the <see cref="T:Telerik.Windows.Controls.RadTickBar"/> class.
@@ -14488,6 +15487,11 @@
         <member name="P:Telerik.Windows.Controls.RadTickBar.Minimum">
             <summary>
             Bound to <see cref="P:System.Windows.Controls.Primitives.RangeBase.Minimum"/>.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadTickBar.IsDirectionReversed">
+            <summary>
+            Bound to <see cref="P:Telerik.Windows.Controls.RadSlider.IsDirectionReversed"/>.
             </summary>
         </member>
         <member name="T:Telerik.Windows.Controls.SelectionRangeChangedEventArgs">
@@ -15053,6 +16057,446 @@
         <member name="P:Telerik.Windows.Controls.Strings.Documents_ColumnProperties_Size">
             <summary>
               Looks up a localized string similar to Size.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_Commands_BaselineAlignmentCommand_Name">
+            <summary>
+              Looks up a localized string similar to Baseline Alignment.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_Commands_BoldCommand_Name">
+            <summary>
+              Looks up a localized string similar to Bold.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_Commands_ChangeAllFieldsDisplayModeCommand_Name">
+            <summary>
+              Looks up a localized string similar to Toggle Fields Code.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_Commands_ChangeFieldDisplayModeCommand_Name">
+            <summary>
+              Looks up a localized string similar to Toggle Field Code.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_Commands_ChangeFieldFragmentsStyleCommand_Name">
+            <summary>
+              Looks up a localized string similar to Toggle Field Style.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_Commands_ChangeFooterCommand_Name">
+            <summary>
+              Looks up a localized string similar to Footer Changed.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_Commands_ChangeHeaderCommand_Name">
+            <summary>
+              Looks up a localized string similar to Header Changed.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_Commands_ChangeParagraphFlowDirectionCommand_Name">
+            <summary>
+              Looks up a localized string similar to Flow Direction.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_Commands_ChangeSpanStyleCommand_Name">
+            <summary>
+              Looks up a localized string similar to Font Formatting.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_Commands_ChangeTableBordersCommand_Name">
+            <summary>
+              Looks up a localized string similar to Table Borders.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_Commands_ChangeTableColumnsLayoutModeCommand_Name">
+            <summary>
+              Looks up a localized string similar to Auto Fit.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_Commands_ChangeTableFlowDirectionCommand_Name">
+            <summary>
+              Looks up a localized string similar to Table Flow Direction.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_Commands_ChangeTableGridColumnWidthCommand_Name">
+            <summary>
+              Looks up a localized string similar to Column Width.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_Commands_ChangeTableIndentCommand_Name">
+            <summary>
+              Looks up a localized string similar to Table Indent.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_Commands_ChangeTablePreferredWidthCommand_Name">
+            <summary>
+              Looks up a localized string similar to Table Preferred Width.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_Commands_ChangeTableRowHeightCommand_Name">
+            <summary>
+              Looks up a localized string similar to Row Height.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_Commands_ClearAllCellBordersInTableCommand_Name">
+            <summary>
+              Looks up a localized string similar to Table Clear Cell Borders.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_Commands_ClearFormattingCommand_Name">
+            <summary>
+              Looks up a localized string similar to Clear All Formatting.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_Commands_ClearSelectedCellBordersCommand_Name">
+            <summary>
+              Looks up a localized string similar to Table Clear Selected Cell Borders.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_Commands_CompositeCommand_Name">
+            <summary>
+              Looks up a localized string similar to Formatting.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_Commands_DecrementFontSizeCommand_Name">
+            <summary>
+              Looks up a localized string similar to Shrink Font.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_Commands_DecrementParagraphLeftIndentCommand_Name">
+            <summary>
+              Looks up a localized string similar to Decrease Left Indent.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_Commands_DeleteAllCommentsCommand_Name">
+            <summary>
+              Looks up a localized string similar to Delete All Comments.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_Commands_DeleteBookmarkCommand_Name">
+            <summary>
+              Looks up a localized string similar to Delete Bookmark.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_Commands_DeleteCommand_Name">
+            <summary>
+              Looks up a localized string similar to Delete.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_Commands_DeleteCommentCommand_Name">
+            <summary>
+              Looks up a localized string similar to Delete Comment.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_Commands_DeleteReadOnlyRangeCommand_Name">
+            <summary>
+              Looks up a localized string similar to Delete Read Only Range.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_Commands_DeleteTableCellCommand_Name">
+            <summary>
+              Looks up a localized string similar to Delete Table Cell.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_Commands_DeleteTableColumnCommand_Name">
+            <summary>
+              Looks up a localized string similar to Delete Table Column.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_Commands_DeleteTableCommand_Name">
+            <summary>
+              Looks up a localized string similar to Delete Table.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_Commands_DocumentLayoutModeCommand_Name">
+            <summary>
+              Looks up a localized string similar to Layout Changed.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_Commands_DocumentPageSizeCommand_Name">
+            <summary>
+              Looks up a localized string similar to Page Setup.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_Commands_FloatingBlockStyle_Name">
+            <summary>
+              Looks up a localized string similar to Floating Block Style.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_Commands_FontFamilyCommand_Name">
+            <summary>
+              Looks up a localized string similar to Font Formatting.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_Commands_FontSizeCommand_Name">
+            <summary>
+              Looks up a localized string similar to Font Formatting.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_Commands_ImageRotateCommand_Name">
+            <summary>
+              Looks up a localized string similar to Rotate Image.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_Commands_IncrementFontSizeCommand_Name">
+            <summary>
+              Looks up a localized string similar to Grow Font.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_Commands_IncrementParagraphLeftIndentCommand_Name">
+            <summary>
+              Looks up a localized string similar to Increase Left Indent.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_Commands_InsertBookmarkCommand_Name">
+            <summary>
+              Looks up a localized string similar to Insert Bookmark.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_Commands_InsertCommentCommand_Name">
+            <summary>
+              Looks up a localized string similar to Insert Comment.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_Commands_InsertFieldCommand_Name">
+            <summary>
+              Looks up a localized string similar to Insert Field.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_Commands_InsertHyperlinkCommand_Name">
+            <summary>
+              Looks up a localized string similar to Insert Hyperlink.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_Commands_InsertParagraphBeforeTableCommand_Name">
+            <summary>
+              Looks up a localized string similar to Insert Paragraph Before Table.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_Commands_InsertReadOnlyRangeCommand_Name">
+            <summary>
+              Looks up a localized string similar to Insert Read Only Range.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_Commands_InsertSubDocumentCommand_Name">
+            <summary>
+              Looks up a localized string similar to Insert File.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_Commands_InsertTableColumnCommand_Name">
+            <summary>
+              Looks up a localized string similar to Table Column.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_Commands_InsertTableColumnToTheLeftCommand_Name">
+            <summary>
+              Looks up a localized string similar to Insert Table Column to Left.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_Commands_InsertTableColumnToTheRightCommand_Name">
+            <summary>
+              Looks up a localized string similar to Insert Table Column to Right.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_Commands_InsertTableCommand_Name">
+            <summary>
+              Looks up a localized string similar to Insert Table.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_Commands_InsertTableRowAboveCommand_Name">
+            <summary>
+              Looks up a localized string similar to Insert Table Row Above.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_Commands_InsertTableRowBelowCommand_Name">
+            <summary>
+              Looks up a localized string similar to Insert Table Row Below.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_Commands_InsertTableRowCommand_Name">
+            <summary>
+              Looks up a localized string similar to Insert Table Row.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_Commands_InsertTextCommand_Name">
+            <summary>
+              Looks up a localized string similar to Typing.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_Commands_ItalicCommand_Name">
+            <summary>
+              Looks up a localized string similar to Italic.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_Commands_ListCommand_Name">
+            <summary>
+              Looks up a localized string similar to Bullets and Numbering.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_Commands_MergeTableCellsCommand_Name">
+            <summary>
+              Looks up a localized string similar to Merge Cells.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_Commands_MoveFloatingBlockCommand_Name">
+            <summary>
+              Looks up a localized string similar to Move Floating Block.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_Commands_MoveSelectionCommand_Name">
+            <summary>
+              Looks up a localized string similar to Move.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_Commands_ParagraphBackgroundCommand_Name">
+            <summary>
+              Looks up a localized string similar to Paragraph Background.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_Commands_ParagraphFormattingCompositeCommand_Name">
+            <summary>
+              Looks up a localized string similar to Paragraph Formatting.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_Commands_ParagraphLeftIndentCommand_Name">
+            <summary>
+              Looks up a localized string similar to Paragraph Left Indent.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_Commands_ParagraphLineSpacingCommand_Name">
+            <summary>
+              Looks up a localized string similar to Line Spacing.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_Commands_ParagraphLineSpacingTypeCommand_Name">
+            <summary>
+              Looks up a localized string similar to Paragraph Line Spacing Type.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_Commands_ParagraphRightIndentCommand_Name">
+            <summary>
+              Looks up a localized string similar to ParagraphRightIndentCommand.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_Commands_ParagraphSpacingAfterCommand_Name">
+            <summary>
+              Looks up a localized string similar to Paragraph Spacing After.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_Commands_ParagraphSpacingBeforeCommand_Name">
+            <summary>
+              Looks up a localized string similar to Paragraph Spacing Before.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_Commands_RemoveHyperlinkCommand_Name">
+            <summary>
+              Looks up a localized string similar to Remove Hyperlink.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_Commands_SectionChangeDifferentEvenAndOddPagesHeaderFooterCommand_Name">
+            <summary>
+              Looks up a localized string similar to Page Setup.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_Commands_SectionChangeDifferentFirstPageHeaderFooterCommand_Name">
+            <summary>
+              Looks up a localized string similar to Page Setup.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_Commands_SectionChangeFooterBottomMarginCommand_Name">
+            <summary>
+              Looks up a localized string similar to Page Setup.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_Commands_SectionChangeHeaderTopMarginCommand_Name">
+            <summary>
+              Looks up a localized string similar to Page Setup.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_Commands_SectionChangeMarginCommand_Name">
+            <summary>
+              Looks up a localized string similar to Page Setup.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_Commands_SectionChangePageOrientationCommand_Name">
+            <summary>
+              Looks up a localized string similar to Page Setup.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_Commands_StrikethroughCommand_Name">
+            <summary>
+              Looks up a localized string similar to Strikethrough.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_Commands_TableCellBackgroundCommand_Name">
+            <summary>
+              Looks up a localized string similar to Table Cell Background.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_Commands_TableCellBordersCommand_Name">
+            <summary>
+              Looks up a localized string similar to Table Cell Borders.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_Commands_TableCellContentAlignmentCommand_Name">
+            <summary>
+              Looks up a localized string similar to Content Alignment.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_Commands_TableCellPaddingCommand_Name">
+            <summary>
+              Looks up a localized string similar to Table Cell Padding.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_Commands_TableCellSpacingCommand_Name">
+            <summary>
+              Looks up a localized string similar to Table Cell Spacing.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_Commands_TableDefaultCellPaddingCommand_Name">
+            <summary>
+              Looks up a localized string similar to Table Cell Padding.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_Commands_TablePropertiesCompositeCommand_Name">
+            <summary>
+              Looks up a localized string similar to Table Properties.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_Commands_TextAlignmentCommand_Name">
+            <summary>
+              Looks up a localized string similar to Text Alignment.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_Commands_TextBackColorCommand_Name">
+            <summary>
+              Looks up a localized string similar to Highlight.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_Commands_TextForeColorCommand_Name">
+            <summary>
+              Looks up a localized string similar to Text Fill Effect.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_Commands_UnderlineColorCommand_Name">
+            <summary>
+              Looks up a localized string similar to Underline Color.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_Commands_UnderlineCommand_Name">
+            <summary>
+              Looks up a localized string similar to Underline.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_Commands_UpdateAllFieldsCommand_Name">
+            <summary>
+              Looks up a localized string similar to Update All Fields.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_Commands_UpdateFieldCommand_Name">
+            <summary>
+              Looks up a localized string similar to Update Field.
             </summary>
         </member>
         <member name="P:Telerik.Windows.Controls.Strings.Documents_ContextMenu_Clipboard_Copy">
@@ -16102,6 +17546,16 @@
               Looks up a localized string similar to Name.
             </summary>
         </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_MultipleUndoControl_Action">
+            <summary>
+              Looks up a localized string similar to Action.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_MultipleUndoControl_Actions">
+            <summary>
+              Looks up a localized string similar to Actions.
+            </summary>
+        </member>
         <member name="P:Telerik.Windows.Controls.Strings.Documents_OpenDocumentCommand_TheFileCannotBeOpened">
             <summary>
               Looks up a localized string similar to The file cannot be opened..
@@ -16513,6 +17967,11 @@
               Looks up a localized string similar to Top.
             </summary>
         </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_TableProperties_Alignment">
+            <summary>
+              Looks up a localized string similar to Alignment.
+            </summary>
+        </member>
         <member name="P:Telerik.Windows.Controls.Strings.Documents_TableProperties_DefaultCellPaddings">
             <summary>
               Looks up a localized string similar to Default cell paddings.
@@ -16546,6 +18005,11 @@
         <member name="P:Telerik.Windows.Controls.Strings.Documents_TableProperties_TableDirection_RightToLeft">
             <summary>
               Looks up a localized string similar to Right-to-left.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_TableProperties_TableIndent">
+            <summary>
+              Looks up a localized string similar to Indent.
             </summary>
         </member>
         <member name="P:Telerik.Windows.Controls.Strings.Documents_TablePropertiesDialog_Cell">
@@ -17098,6 +18562,11 @@
               Looks up a localized string similar to Crop.
             </summary>
         </member>
+        <member name="P:Telerik.Windows.Controls.Strings.ImageEditor_DrawText">
+            <summary>
+              Looks up a localized string similar to Draw Text.
+            </summary>
+        </member>
         <member name="P:Telerik.Windows.Controls.Strings.ImageEditor_Effect_Blur">
             <summary>
               Looks up a localized string similar to Blur.
@@ -17148,9 +18617,19 @@
               Looks up a localized string similar to Flip Vertical.
             </summary>
         </member>
+        <member name="P:Telerik.Windows.Controls.Strings.ImageEditor_FontSize">
+            <summary>
+              Looks up a localized string similar to Font Size.
+            </summary>
+        </member>
         <member name="P:Telerik.Windows.Controls.Strings.ImageEditor_Height">
             <summary>
               Looks up a localized string similar to Height:.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.ImageEditor_HorizontalPosition">
+            <summary>
+              Looks up a localized string similar to Horizontal Position.
             </summary>
         </member>
         <member name="P:Telerik.Windows.Controls.Strings.ImageEditor_ImageAlignment">
@@ -17208,9 +18687,24 @@
               Looks up a localized string similar to Rotate 90°.
             </summary>
         </member>
+        <member name="P:Telerik.Windows.Controls.Strings.ImageEditor_Rotation">
+            <summary>
+              Looks up a localized string similar to Rotation.
+            </summary>
+        </member>
         <member name="P:Telerik.Windows.Controls.Strings.ImageEditor_RoundCorners">
             <summary>
               Looks up a localized string similar to Round Corners.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.ImageEditor_Text">
+            <summary>
+              Looks up a localized string similar to Text.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.ImageEditor_TextColor">
+            <summary>
+              Looks up a localized string similar to Text Color.
             </summary>
         </member>
         <member name="P:Telerik.Windows.Controls.Strings.ImageEditor_TheFileCannotBeOpened">
@@ -17236,6 +18730,11 @@
         <member name="P:Telerik.Windows.Controls.Strings.ImageEditor_UnsupportedFileFormat">
             <summary>
               Looks up a localized string similar to Unsupported file format..
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.ImageEditor_VerticalPosition">
+            <summary>
+              Looks up a localized string similar to Vertical Position.
             </summary>
         </member>
         <member name="P:Telerik.Windows.Controls.Strings.ImageEditor_Width">
@@ -17441,6 +18940,11 @@
         <member name="P:Telerik.Windows.Controls.Strings.MediaPlayerTooltipVolume">
             <summary>
               Looks up a localized string similar to Volume.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.MillisecondShort">
+            <summary>
+              Looks up a localized string similar to ms.
             </summary>
         </member>
         <member name="P:Telerik.Windows.Controls.Strings.Minimize">
@@ -17778,6 +19282,41 @@
               Looks up a localized string similar to  - .
             </summary>
         </member>
+        <member name="P:Telerik.Windows.Controls.Strings.RibbonViewGalleryButtonMore">
+            <summary>
+              Looks up a localized string similar to More.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.RibbonViewGalleryButtonUpDown">
+            <summary>
+              Looks up a localized string similar to Row .
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.RibbonViewQATCustomize">
+            <summary>
+              Looks up a localized string similar to Customize Quick Access Tool bar.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.RibbonViewQATMinimize">
+            <summary>
+              Looks up a localized string similar to Minimize the Ribbon.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.RibbonViewQATShowAbove">
+            <summary>
+              Looks up a localized string similar to Show above the Ribbon.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.RibbonViewQATShowBelow">
+            <summary>
+              Looks up a localized string similar to Show below the Ribbon.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.RibbonViewWindowTitleDivider">
+            <summary>
+              Looks up a localized string similar to  - .
+            </summary>
+        </member>
         <member name="P:Telerik.Windows.Controls.Strings.SaveAndClose">
             <summary>
               Looks up a localized string similar to Save and Close.
@@ -17881,11 +19420,6 @@
         <member name="P:Telerik.Windows.Controls.Strings.String1">
             <summary>
               Looks up a localized string similar to Invalid value for WindowClose enum..
-            </summary>
-        </member>
-        <member name="P:Telerik.Windows.Controls.Strings.String3">
-            <summary>
-              Looks up a localized string similar to .
             </summary>
         </member>
         <member name="P:Telerik.Windows.Controls.Strings.Subject">
@@ -18071,6 +19605,11 @@
         <member name="P:Telerik.Windows.Controls.Strings.TreeViewDropRoot">
             <summary>
               Looks up a localized string similar to Drop as root.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Undo">
+            <summary>
+              Looks up a localized string similar to Undo.
             </summary>
         </member>
         <member name="P:Telerik.Windows.Controls.Strings.Untitled">

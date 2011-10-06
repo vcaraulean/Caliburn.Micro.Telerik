@@ -460,6 +460,22 @@
             A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table. 
             </returns>
         </member>
+        <member name="M:Telerik.Windows.Controls.GridViewCellInfo.op_Equality(Telerik.Windows.Controls.GridViewCellInfo,Telerik.Windows.Controls.GridViewCellInfo)">
+            <summary>
+            Implements the operator ==.
+            </summary>
+            <param name="a">Left cellinfo</param>
+            <param name="b">Right cellinfo</param>
+            <returns>The result of the operator.</returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.GridViewCellInfo.op_Inequality(Telerik.Windows.Controls.GridViewCellInfo,Telerik.Windows.Controls.GridViewCellInfo)">
+            <summary>
+            Implements the operator !=.
+            </summary>
+            <param name="a">Left cellinfo</param>
+            <param name="b">Right cellinfo</param>
+            <returns>The result of the operator.</returns>
+        </member>
         <member name="P:Telerik.Windows.Controls.GridViewCellInfo.Column">
             <summary>
             Gets the column.
@@ -1337,6 +1353,12 @@
                 Helper method which handles the arrow key down
             </summary>
         </member>
+        <member name="M:Telerik.Windows.Controls.GridView.GridViewDataControl.OnMouseWheel(System.Windows.Input.MouseWheelEventArgs)">
+            <summary>
+            Invoked when an unhandled <see cref="E:System.Windows.Input.Mouse.MouseWheel"/> attached event reaches an element in its route that is derived from this class. Implement this method to add class handling for this event.
+            </summary>
+            <param name="e">The <see cref="T:System.Windows.Input.MouseWheelEventArgs"/> that contains the event data.</param>
+        </member>
         <member name="M:Telerik.Windows.Controls.GridView.GridViewDataControl.PreserveFocus">
             <summary>
             Preserves the focus. This method should be used in cases when focused element will become invisible
@@ -1410,6 +1432,11 @@
         <member name="M:Telerik.Windows.Controls.GridView.GridViewDataControl.OnUnloadingRowDetails(Telerik.Windows.Controls.GridView.GridViewRowDetailsEventArgs)">
             <summary>
             Raises the UnloadingRowDetails event.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.GridView.GridViewDataControl.OnRowDetailsVisibilityChanging(Telerik.Windows.Controls.GridView.RowDetailsVisibilityChangingEventArgs)">
+            <summary>
+            Raises the RowDetailsVisibilityChanging event.
             </summary>
         </member>
         <member name="M:Telerik.Windows.Controls.GridView.GridViewDataControl.OnRowDetailsVisibilityChanged(Telerik.Windows.Controls.GridView.GridViewRowDetailsEventArgs)">
@@ -2856,6 +2883,11 @@
             Occurs when the details for a row are loaded from the details template.
             </summary>
         </member>
+        <member name="E:Telerik.Windows.Controls.GridView.GridViewDataControl.RowDetailsVisibilityChanging">
+            <summary>
+            Occurs when the details for a row are about to change their visibility.
+            </summary>
+        </member>
         <member name="E:Telerik.Windows.Controls.GridView.GridViewDataControl.RowDetailsVisibilityChanged">
             <summary>
             Occurs when the details for a row change their Visibility.
@@ -3917,6 +3949,12 @@
             	<c>true</c> if the data represented by the column can be filtered automatically; otherwise, <c>false</c>.
             </returns>
         </member>
+        <member name="M:Telerik.Windows.Controls.GridViewBoundColumnBase.CreateFieldFilterEditor">
+            <summary>
+            Creates the field filter editor.
+            </summary>
+            <returns></returns>
+        </member>
         <member name="M:Telerik.Windows.Controls.GridViewBoundColumnBase.CopyPropertiesFrom(Telerik.Windows.Controls.GridViewColumn)">
              <summary>
             Copy properties from source column.
@@ -4386,14 +4424,24 @@
             Base class for RadGridView footer cells.
             </summary>
         </member>
+        <member name="M:Telerik.Windows.Controls.GridView.GridViewFooterCellBase.OnApplyTemplate">
+            <summary>
+            When overridden in a derived class, is invoked whenever application code or internal processes call <see cref="M:System.Windows.FrameworkElement.ApplyTemplate"/>.
+            </summary>
+        </member>
         <member name="M:Telerik.Windows.Controls.GridView.GridViewFooterCellBase.OnLoaded">
             <summary>
             Raised when loaded
             </summary>
         </member>
-        <member name="M:Telerik.Windows.Controls.GridView.GridViewFooterCellBase.SetContentAndDataContext">
+        <member name="M:Telerik.Windows.Controls.GridView.GridViewFooterCellBase.SetContent">
             <summary>
             Sets datacontext and default aggregateresults list
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.GridView.GridViewFooterCellBase.SetDataContext">
+            <summary>
+            Sets datacontext to the corresponding column AggregateResults.
             </summary>
         </member>
         <member name="M:Telerik.Windows.Controls.GridView.GridViewFooterCellBase.OnColumnChanged(Telerik.Windows.Controls.GridViewColumn,Telerik.Windows.Controls.GridViewColumn)">
@@ -4408,15 +4456,39 @@
             Prepares the default AggregateResuiltsList to be inserted in the footer cell , when no custom footer is defined
             </summary>
         </member>
-        <member name="P:Telerik.Windows.Controls.GridView.GridViewFooterCellBase.AggregateFunctionsCollectionViewSource">
-            <summary>
-            Aggregate functions CollectionViewSource.
-            </summary>
-        </member>
         <member name="P:Telerik.Windows.Controls.GridView.GridViewFooterCellBase.AggregateResults">
             <summary>
             Gets the AggregateResultsCollection
             </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.GridView.AggregatesToGroupFooterAggregatesConverter">
+            <summary>
+            Filters aggregates per column.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.GridView.AggregatesToGroupFooterAggregatesConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Modifies the source data before passing it to the target for display in the UI.
+            </summary>
+            <param name="value">The source data being passed to the target.</param>
+            <param name="targetType">The <see cref="T:System.Type"/> of data expected by the target dependency property.</param>
+            <param name="parameter">An optional parameter to be used in the converter logic.</param>
+            <param name="culture">The culture of the conversion.</param>
+            <returns>
+            The value to be passed to the target dependency property.
+            </returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.GridView.AggregatesToGroupFooterAggregatesConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Modifies the target data before passing it to the source object.  This method is called only in <see cref="F:System.Windows.Data.BindingMode.TwoWay"/> bindings.
+            </summary>
+            <param name="value">The target data being passed to the source.</param>
+            <param name="targetType">The <see cref="T:System.Type"/> of data expected by the source object.</param>
+            <param name="parameter">An optional parameter to be used in the converter logic.</param>
+            <param name="culture">The culture of the conversion.</param>
+            <returns>
+            The value to be passed to the source object.
+            </returns>
         </member>
         <member name="T:Telerik.Windows.Controls.GridViewPreparingCellForEditEventArgs">
             <summary>
@@ -7916,9 +7988,54 @@
             </summary>
             <value><c>true</c> if the filter can be applied; otherwise, <c>false</c>.</value>
         </member>
+        <member name="T:Telerik.Windows.Controls.GridView.FilterEditorFactory">
+            <summary>
+            Factory used to create editors for the filtering UI.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.GridView.FilterEditorFactory.CreateEditor(System.Type)">
+            <summary>
+            Creates the editor.
+            </summary>
+            <param name="type">The type.</param>
+            <returns></returns>
+        </member>
         <member name="M:Telerik.Windows.Controls.GridView.FilterEditorFactory.CreateStringEditor">
             <summary>
             Creates the string editor.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.GridView.FilterEditorFactory.CreateDateTimeEditor">
+            <summary>
+            Creates the date time editor.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.GridView.FilterEditorFactory.CreateBooleanEditor(System.Type)">
+            <summary>
+            Creates the boolean editor.
+            </summary>
+            <param name="type">The type.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.GridView.FilterEditorFactory.CreateNumericEditor(System.Type)">
+            <summary>
+            Creates the numeric editor.
+            </summary>
+            <param name="type">The type.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.GridView.FilterEditorFactory.CreateEnumEditor(System.Type)">
+            <summary>
+            Creates the enum editor.
+            </summary>
+            <param name="type">The type.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.GridView.FilterEditorFactory.CreateDefaultEditor">
+            <summary>
+            Creates the default editor.
             </summary>
             <returns></returns>
         </member>
@@ -10703,6 +10820,12 @@
             </summary>
             <value>The action to perform when the content is unloaded.</value>
         </member>
+        <member name="P:Telerik.Windows.Controls.GridView.IDetailsProvider.VisibilityChangingCallback">
+            <summary>
+            Gets the function to perform when the Visibility of the details is about to change.
+            </summary>
+            <value>action to perform when the Visibility of the details is about to change.</value>
+        </member>
         <member name="P:Telerik.Windows.Controls.GridView.IDetailsProvider.VisibilityChangedCallback">
             <summary>
             Gets the action to perform when the Visibility of the details is changed.
@@ -10759,6 +10882,29 @@
             <summary>
             Details are shown for the selected row only.
             </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.GridView.RowDetailsVisibilityChangingEventArgs">
+            <summary>
+            Provides data for the <see cref="E:Telerik.Windows.Controls.GridView.GridViewDataControl.RowDetailsVisibilityChanging"/> event.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.GridView.RowDetailsVisibilityChangingEventArgs.#ctor(Telerik.Windows.Controls.GridView.GridViewRow,System.Nullable{System.Windows.Visibility})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.Windows.Controls.GridView.RowDetailsVisibilityChangingEventArgs"/> class.
+            </summary>
+            <param name="row">The row.</param>
+            <param name="newVisibility">The new visibility.</param>
+        </member>
+        <member name="P:Telerik.Windows.Controls.GridView.RowDetailsVisibilityChangingEventArgs.Row">
+            <summary>
+            Gets the <see cref="T:Telerik.Windows.Controls.GridView.GridViewRow"/> that details belong to.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.GridView.RowDetailsVisibilityChangingEventArgs.NewVisibility">
+            <summary>
+            Gets the new visibility.
+            </summary>
+            <value>The new visibility.</value>
         </member>
         <member name="T:Telerik.Windows.Controls.GridView.RowLoadedEventArgs">
             <summary>
@@ -12617,11 +12763,6 @@
             by testing the data object against a set of predefined rules.
             </summary>
         </member>
-        <member name="F:Telerik.Windows.Controls.ConditionalStyleSelector.RulesProperty">
-            <summary>
-            Identifies the <see cref="P:Telerik.Windows.Controls.ConditionalStyleSelector.Rules"/> dependency property.
-            </summary>
-        </member>
         <member name="M:Telerik.Windows.Controls.ConditionalStyleSelector.#ctor">
             <summary>
             Initializes a new instance of the <see cref="T:Telerik.Windows.Controls.ConditionalStyleSelector"/> class.
@@ -12640,6 +12781,11 @@
             Gets the rules which will determine what <see cref="T:System.Windows.Style"/> to select for a given data object.
             </summary>
             <value>The rules which will determine what <see cref="T:System.Windows.Style"/> to select for a given data object.</value>
+        </member>
+        <member name="F:Telerik.Windows.Controls.ConditionalStyleSelector.DependencyObjectHelper.RulesProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.ConditionalStyleSelector.Rules"/> dependency property.
+            </summary>
         </member>
         <member name="T:Telerik.Windows.Controls.DataTemplateRule">
             <summary>
@@ -13032,6 +13178,120 @@
             cref="T:System.Collections.ICollection"/>.</returns>
         </member>
         <member name="P:Telerik.Windows.Controls.GridView.IndexTree.Item(System.Int32)">
+            <summary>
+            Returns the value for a given index. Has complexity of 0.
+            </summary>
+            <param name="index">The index to get the value for.</param>
+            <returns>The value for the given index.</returns>
+        </member>
+        <member name="T:Telerik.Windows.Controls.GridView.PreciseIndexTree">
+            <summary>
+            An intex tree structure, used to store non-negative int values and query for a cumulative value up
+            to an index or index that reaches a given value. Add and remove operations are expensive. It uses double precision in the calculations used.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.GridView.PreciseIndexTree.#ctor(System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.Windows.Controls.GridView.IndexTree"/> class.
+            </summary>
+            <param name="capacity">The capacity of the tree.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.GridView.PreciseIndexTree.#ctor(System.Int32,System.Double)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.Windows.Controls.GridView.IndexTree"/> class. Has complexity of N.
+            </summary>
+            <param name="capacity">The capacity of the tree.</param>
+            <param name="defaultVal">The default value.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.GridView.PreciseIndexTree.CopyTo(System.Array,System.Int32)">
+            <summary>
+            Copies the elements of the <see cref="T:System.Collections.ICollection"/> to an <see
+            cref="T:System.Array"/>, starting at a particular <see cref="T:System.Array"/> index.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.GridView.PreciseIndexTree.RemoveAt(System.Int32)">
+            <summary>
+            Removes the element at the given index. Worst complexity is
+            (N-InsertIndex) + Log(N)*NonDefaultsInRange(N-InsertIndex).
+            </summary>
+            <param name="index">The index at which to remove the item.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.GridView.PreciseIndexTree.Add(System.Double)">
+            <summary>
+            Adds a value in the end of the index tree. Constant or N coplexity, depending on whether capacity
+            expansion will be needed.
+            </summary>
+            <param name="val">The value that will be added.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.GridView.PreciseIndexTree.Insert(System.Int32,System.Double)">
+            <summary>
+            Inserts a value at the given index. Will cheaply enqueue an item if possibe. Worst complexity is
+            (N-InsertIndex) + Log(N)*NonDefaultsIn(N-InsertIndex).
+            </summary>
+            <param name="val">The value that will be inserted.</param>
+            <param name="index">The index at which it will be inserted.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.GridView.PreciseIndexTree.System#Collections#Generic#IEnumerable{System#Double}#GetEnumerator">
+            <summary>
+            Returns an enumerator that iterates through the collection.
+            </summary>
+            <returns>
+            A <see cref="T:System.Collections.Generic.IEnumerator`1"/> that can be used to iterate through
+            the collection.
+            </returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.GridView.PreciseIndexTree.System#Collections#IEnumerable#GetEnumerator">
+            <summary>
+            Returns an enumerator that iterates through a collection.
+            </summary>
+            <returns>
+            An <see cref="T:System.Collections.IEnumerator"/> object that can be used to iterate through the
+            collection.
+            </returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.GridView.PreciseIndexTree.CumulativeIndex(System.Double)">
+            <summary>
+            Returns the index of the element that reaches the given value. Has complexity of log(N).
+            </summary>
+            <param name="val">The value that needs to be reached.</param>
+            <returns>The index of the item that reached the given value.</returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.GridView.PreciseIndexTree.CumulativeValue(System.Int32)">
+            <summary>
+            Gets or sets the value that has built up for the items up to a given end index. Has complexity of log(N).
+            </summary>
+            <param name="endIndex">The index of the item for which to return the cumulative value.</param>
+            <returns>The cumulative value for all items up to and including a given index.</returns>
+        </member>
+        <member name="P:Telerik.Windows.Controls.GridView.PreciseIndexTree.Count">
+            <summary>
+            Gets the number of items in the index tree. Has complexity of 0.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.GridView.PreciseIndexTree.Capacity">
+            <summary>
+            Gets the numer of items that the index tree can accomodate before resizing is needed.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.GridView.PreciseIndexTree.IsSynchronized">
+            <summary>
+            Gets a value indicating whether access to the <see cref="T:System.Collections.ICollection"/> is
+            synchronized (thread safe).
+            </summary>
+            <value></value>
+            <returns>true if access to the <see cref="T:System.Collections.ICollection"/> is synchronized
+            (thread safe); otherwise, false.</returns>
+        </member>
+        <member name="P:Telerik.Windows.Controls.GridView.PreciseIndexTree.SyncRoot">
+            <summary>
+            Gets an object that can be used to synchronize access to the <see
+            cref="T:System.Collections.ICollection"/>.
+            </summary>
+            <value></value>
+            <returns>An object that can be used to synchronize access to the <see
+            cref="T:System.Collections.ICollection"/>.</returns>
+        </member>
+        <member name="P:Telerik.Windows.Controls.GridView.PreciseIndexTree.Item(System.Int32)">
             <summary>
             Returns the value for a given index. Has complexity of 0.
             </summary>
@@ -13480,6 +13740,11 @@
             <param name="element">The container element.</param>
             <param name="item">The item.</param>
         </member>
+        <member name="F:Telerik.Windows.Controls.RadTreeListView.AutoLoadHierarchyProperty">
+            <summary>
+            Identifies the AutoLoadHierarchy property. 
+            </summary>
+        </member>
         <member name="F:Telerik.Windows.Controls.RadTreeListView.HierarchyColumnIndexProperty">
             <summary>
             Identifies the HierarchyColumnIndex property.
@@ -13591,9 +13856,14 @@
             <param name="e">The <see cref="T:Telerik.Windows.Controls.RadTreeListViewDragEventArgs"/> instance containing the event data.</param>
             <returns></returns>
         </member>
+        <member name="P:Telerik.Windows.Controls.RadTreeListView.AutoLoadHierarchy">
+            <summary>
+            Gets or sets value indicating if the hierarchy should be loaded initially or not.
+            </summary>
+        </member>
         <member name="P:Telerik.Windows.Controls.RadTreeListView.HierarchyColumnIndex">
             <summary>
-            Gets or sets the display index of the column that will contain the hierarchy.
+            Gets or sets the display index of the column that will contain the hierarchy. This property takes effect only if assigned before ItemsSource!
             </summary>
         </member>
         <member name="P:Telerik.Windows.Controls.RadTreeListView.HierarchyColumn">

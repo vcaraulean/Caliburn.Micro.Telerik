@@ -565,6 +565,20 @@
             Returns <see cref="T:System.Linq.IQueryable"/> with applied filtering, sorting, grouping and paging.
             </summary>
         </member>
+        <member name="M:Telerik.Windows.Data.QueryableCollectionView.ApplySelectDescriptors(System.Linq.IQueryable)">
+            <summary>
+            Applies <seealso cref="T:Telerik.Windows.Data.SelectDescriptor"/>s over the specified queryable.
+            </summary>
+            <param name="queryable">The queryable.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.Windows.Data.QueryableCollectionView.Sort(System.Linq.IQueryable)">
+            <summary>
+            Sorts the specified queryable.
+            </summary>
+            <param name="queryable"></param>
+            <returns></returns>
+        </member>
         <member name="M:Telerik.Windows.Data.QueryableCollectionView.OnInternalListCreated">
             <summary>
             Called when internal list is created.
@@ -945,6 +959,14 @@
             </summary>
             <value>
             	<c>true</c> if this instance is grouped; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Telerik.Windows.Data.QueryableCollectionView.ShouldInitializeGroupProxy">
+            <summary>
+            Gets a value indicating whether should initialize group proxy.
+            </summary>
+            <value>
+            	<c>true</c> if should initialize group proxy; otherwise, <c>false</c>.
             </value>
         </member>
         <member name="M:Telerik.Windows.Data.VirtualQueryableCollectionView.#ctor">
@@ -1445,12 +1467,12 @@
             Binds our own *Descriptor collections to our *Description collections.
             </summary>
         </member>
-        <member name="M:Telerik.Windows.Data.DataItemCollection.BindCollections(System.Collections.Specialized.INotifyCollectionChanged,System.Collections.Specialized.INotifyCollectionChanged)">
+        <member name="M:Telerik.Windows.Data.DataItemCollection.BindCollections(System.Collections.Specialized.INotifyCollectionChanged,System.Collections.Specialized.INotifyCollectionChanged,System.Collections.IEqualityComparer,System.Boolean)">
             <summary>
-            Binds two collections together using the ObservableCollectionManager.
+            Binds two collections together using the ObservableCollectionManager and an equality comparer.
             </summary>
         </member>
-        <member name="M:Telerik.Windows.Data.DataItemCollection.BindCollections(System.Collections.Specialized.INotifyCollectionChanged,System.Collections.Specialized.INotifyCollectionChanged,System.Collections.IEqualityComparer)">
+        <member name="M:Telerik.Windows.Data.DataItemCollection.BindCollections(System.Collections.Specialized.INotifyCollectionChanged,System.Collections.Specialized.INotifyCollectionChanged,System.Collections.IEqualityComparer,System.Func{System.Collections.Specialized.NotifyCollectionChangedEventArgs,System.Boolean},System.Func{System.Collections.Specialized.NotifyCollectionChangedEventArgs,System.Boolean},System.Boolean)">
             <summary>
             Binds two collections together using the ObservableCollectionManager and an equality comparer.
             </summary>
@@ -1976,6 +1998,19 @@
             specific to the hierarchy collection view.
             </summary>
             <returns></returns>
+        </member>
+        <member name="M:Telerik.Windows.Data.HierarchicalCollectionViewBase.RefreshOverride">
+            <summary>
+            Re-create the view over the associated IList 
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Data.HierarchicalCollectionViewBase.ShouldInitializeGroupProxy">
+            <summary>
+            Gets a value indicating whether should initialize group proxy.
+            </summary>
+            <value>
+            	<c>true</c> if should initialize group proxy; otherwise, <c>false</c>.
+            </value>
         </member>
         <member name="P:Telerik.Windows.Data.HierarchicalCollectionViewBase.HierarchyDescriptors">
             <summary>

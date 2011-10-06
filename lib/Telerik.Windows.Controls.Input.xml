@@ -6611,6 +6611,11 @@
             </summary>
             <param name="e">Event args.</param>
         </member>
+        <member name="F:Telerik.Windows.Controls.RadMaskedInputBase.AllowInvalidValuesProperty">
+            <summary>
+            Identifies the AllowInvalidValues dependency property.
+            </summary>
+        </member>
         <member name="F:Telerik.Windows.Controls.RadMaskedInputBase.AcceptsReturnProperty">
             <summary>
             Identifies the AcceptsReturn dependency property.
@@ -6899,6 +6904,11 @@
         <member name="E:Telerik.Windows.Controls.RadMaskedInputBase.MaskChanged">
             <summary>
             Occurs when the Mask property changes. We need this for mask extensions.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadMaskedInputBase.AllowInvalidValues">
+            <summary>
+            Gets or sets whether invalid values should be accepted as valid and set to the Value property.
             </summary>
         </member>
         <member name="P:Telerik.Windows.Controls.RadMaskedInputBase.AcceptsReturn">
