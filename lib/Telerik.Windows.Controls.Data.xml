@@ -1404,6 +1404,47 @@
             	<paramref name="destinationType"/> is null.
             </exception>
         </member>
+        <member name="T:Telerik.Windows.Controls.Data.DataForm.DataFormValidationSummary">
+            <summary>
+            Represents a validation summary for RadDataForm.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.Data.DataForm.DataFormValidationSummary.HasErrorsProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.Data.DataForm.DataFormValidationSummary.HasErrors"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.Data.DataForm.DataFormValidationSummary.ErrorsProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.Data.DataForm.DataFormValidationSummary.Errors"/> dependency property.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Data.DataForm.DataFormValidationSummary.ResetTheme">
+            <summary>
+            Resets the theme.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Data.DataForm.DataFormValidationSummary.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.Windows.Controls.Data.DataForm.DataFormValidationSummary"/> class.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Data.DataForm.DataFormValidationSummary.HasErrors">
+            <summary>
+            Gets or sets a value indicating whether this instance has errors.
+            </summary>
+            <value>
+            	<c>true</c> if this instance has errors; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Data.DataForm.DataFormValidationSummary.Errors">
+            <summary>
+            Gets or sets the errors.
+            </summary>
+            <value>
+            The errors.
+            </value>
+        </member>
         <member name="T:Telerik.Windows.Controls.Data.DataForm.DescriptionPresenter">
             <summary>
             Used to display the description of a property.
@@ -1491,7 +1532,7 @@
             The display name of the erroneous  field.
             </summary>
         </member>
-        <member name="P:Telerik.Windows.Controls.Data.DataForm.ErrorInfo.Error">
+        <member name="P:Telerik.Windows.Controls.Data.DataForm.ErrorInfo.ErrorContent">
             <summary>
             The validation error.
             </summary>
@@ -1611,6 +1652,11 @@
         <member name="M:Telerik.Windows.Controls.RadDataForm.MoveCurrentToPrevious">
             <summary>
             
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadDataForm.ValidationSummaryProperty">
+            <summary>
+            Represents the ValidationSummary property.
             </summary>
         </member>
         <member name="F:Telerik.Windows.Controls.RadDataForm.ValidationSummaryStyleProperty">
@@ -1965,6 +2011,11 @@
         <member name="M:Telerik.Windows.Controls.RadDataForm.ResetTheme">
             <summary>
             Resets the theme.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadDataForm.ValidationSummary">
+            <summary>
+            Gets the validation summary associated with this instance of RadDataForm.
             </summary>
         </member>
         <member name="P:Telerik.Windows.Controls.RadDataForm.ValidationSummaryStyle">
@@ -2653,6 +2704,20 @@
             Represents the EditorTemplate dependency property.
             </summary>
         </member>
+        <member name="M:Telerik.Windows.Controls.Data.PropertyGrid.PropertyDefinition.OnPropertyChanged(System.String)">
+            <summary>
+            Called when [property changed].
+            </summary>
+            <param name="propertyName">Name of the property.</param>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Data.PropertyGrid.PropertyDefinition.OrderIndex">
+            <summary>
+            Gets or sets the index of the order.
+            </summary>
+            <value>
+            The index of the order.
+            </value>
+        </member>
         <member name="P:Telerik.Windows.Controls.Data.PropertyGrid.PropertyDefinition.GroupName">
             <summary>
             Gets or sets the group name used to organize properties in categories.
@@ -2697,6 +2762,11 @@
         <member name="P:Telerik.Windows.Controls.Data.PropertyGrid.PropertyDefinition.NestedProperties">
             <summary>
             Gets or sets the collection of nested properties.
+            </summary>
+        </member>
+        <member name="E:Telerik.Windows.Controls.Data.PropertyGrid.PropertyDefinition.PropertyChanged">
+            <summary>
+            Occurs when a property value changes.
             </summary>
         </member>
         <member name="F:Telerik.Windows.Controls.Data.PropertyGrid.LookupPropertyDefinition.ItemsSourceProperty">
@@ -2812,6 +2882,19 @@
             <summary>
             Initializes a new instance of the <see cref="T:Telerik.Windows.Controls.Data.PropertyGrid.PropertyDefinitionCollection"/> class.
             </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Data.PropertyGrid.PropertyDefinitionCollection.InsertItem(System.Int32,Telerik.Windows.Controls.Data.PropertyGrid.PropertyDefinition)">
+            <summary>
+            Inserts the item.
+            </summary>
+            <param name="index">The index.</param>
+            <param name="item">The item.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Data.PropertyGrid.PropertyDefinitionCollection.RemoveItem(System.Int32)">
+            <summary>
+            Removes the item.
+            </summary>
+            <param name="index">The index.</param>
         </member>
         <member name="T:Telerik.Windows.Controls.Data.PropertyGrid.PropertyGridIndentCell">
             <summary>
@@ -2930,6 +3013,11 @@
             Represents the ModeProperty dependency property.
             </summary>
         </member>
+        <member name="F:Telerik.Windows.Controls.RadPropertyGrid.IsGroupedProperty">
+            <summary>
+            Represents the IsGrouped dependency property.
+            </summary>
+        </member>
         <member name="F:Telerik.Windows.Controls.RadPropertyGrid.SortAndGroupButtonsVisibilityProperty">
             <summary>
             Represents the SortAndGroupButtonsVisibility dependency property.
@@ -2973,6 +3061,11 @@
         <member name="P:Telerik.Windows.Controls.RadPropertyGrid.NestedPropertiesVisibility">
             <summary>
             Gets or sets the nested properties' Visibility. 
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadPropertyGrid.IsGrouped">
+            <summary>
+            Gets or sets a value indicating whether this instance is grouped.
             </summary>
         </member>
         <member name="P:Telerik.Windows.Controls.RadPropertyGrid.SortAndGroupButtonsVisibility">

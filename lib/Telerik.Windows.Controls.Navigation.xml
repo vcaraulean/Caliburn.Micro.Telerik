@@ -1207,7 +1207,7 @@
         </member>
         <member name="P:Telerik.Windows.Controls.RadBreadcrumb.CurrentItem">
             <summary>
-            Gets or sets the HasItems property.
+            Gets or sets the CurrentItem property.
             </summary>
         </member>
         <member name="P:Telerik.Windows.Controls.RadBreadcrumb.PathSeparator">
@@ -2616,6 +2616,12 @@
             </summary>
             <param name="useTransitions">Identifies whether the transitions should be used.</param>
         </member>
+        <member name="M:Telerik.Windows.Controls.TabControl.RadTabControlBase.UpdateDragDropSettings">
+            <summary>
+            Updates TabControl and TabItems drag and drop properties. This method affects and depends on
+            <see cref="P:Telerik.Windows.Controls.TabControl.RadTabControlBase.AllowDragReorder"/> and <see cref="P:Telerik.Windows.Controls.TabControl.RadTabControlBase.AllowDragOverTab"/> properties.
+            </summary>
+        </member>
         <member name="M:Telerik.Windows.Controls.TabControl.RadTabControlBase.Selector_SelectionChanged(System.Object,Telerik.Windows.Controls.SelectionChangedEventArgs)">
             <summary>
             Handles the <see cref="E:Telerik.Windows.Controls.Selector.SelectionChanged"/> event of the Selector control.
@@ -2853,6 +2859,11 @@
             Identifies the <see cref="P:Telerik.Windows.Controls.TabControl.RadTabControlBase.Align"/> property.
             </summary>
         </member>
+        <member name="F:Telerik.Windows.Controls.TabControl.RadTabControlBase.HeaderBackgroundProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.TabControl.RadTabControlBase.HeaderBackground"/> property.
+            </summary>
+        </member>
         <member name="F:Telerik.Windows.Controls.TabControl.RadTabControlBase.BackgroundVisibilityProperty">
             <summary>
             Identifies the <see cref="P:Telerik.Windows.Controls.TabControl.RadTabControlBase.BackgroundVisibility"/> property.
@@ -3067,6 +3078,17 @@
                 </para>
             </remarks>
             <seealso cref="P:Telerik.Windows.Controls.TabControl.RadTabControlBase.TabStripPlacement"/>
+        </member>
+        <member name="P:Telerik.Windows.Controls.TabControl.RadTabControlBase.HeaderBackground">
+            <summary>
+            Gets or sets the background of the tab strip. This is a dependency property.
+            </summary>
+            <remarks>
+                <para>
+                    This property gives you a quick way to change the tab strip background without having to 
+                    modify the ControlTemplate of the TabControl.
+                </para>
+            </remarks>
         </member>
         <member name="P:Telerik.Windows.Controls.TabControl.RadTabControlBase.BackgroundVisibility">
             <summary>
@@ -3603,6 +3625,12 @@
             5. The TextSearch.PrimaryTextFromItem
             6. ToString.
             </returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadTabControl.UpdateDragDropSettings">
+            <summary>
+            Updates TabControl and TabItems drag and drop properties. This method affects and depends on
+            <see cref="P:Telerik.Windows.Controls.TabControl.RadTabControlBase.AllowDragReorder"/> and <see cref="P:Telerik.Windows.Controls.TabControl.RadTabControlBase.AllowDragOverTab"/> properties.
+            </summary>
         </member>
         <member name="M:Telerik.Windows.Controls.RadTabControl.PrepareContainerForItemOverride(System.Windows.DependencyObject,System.Object)">
             <summary>
@@ -4259,6 +4287,11 @@
             Identifies the InfiniteWidth dependency property.
             </summary>
         </member>
+        <member name="F:Telerik.Windows.Controls.TileViewPanel.IsShrinkEnabledProperty">
+            <summary>
+            Identifies the IsShrinkEnabled dependency property.
+            </summary>
+        </member>
         <member name="F:Telerik.Windows.Controls.TileViewPanel.IsRowsShrinkEnabledProperty">
             <summary>
             Identifies the IsRowsShrinkEnabled dependency property.
@@ -4307,6 +4340,16 @@
         <member name="M:Telerik.Windows.Controls.TileViewPanel.SetInfiniteWidth(System.Windows.DependencyObject,System.Double)">
             <summary>
             Sets the InfiniteWidth property.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.TileViewPanel.GetIsShrinkEnabled(System.Windows.DependencyObject)">
+            <summary>
+            Gets the IsShrinkEnabled property.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.TileViewPanel.SetIsShrinkEnabled(System.Windows.DependencyObject,System.Boolean)">
+            <summary>
+            Sets the IsShrinkEnabled property.
             </summary>
         </member>
         <member name="M:Telerik.Windows.Controls.TileViewPanel.GetIsRowsShrinkEnabled(System.Windows.DependencyObject)">
@@ -7728,6 +7771,11 @@
         <member name="M:Telerik.Windows.Controls.RadTreeView.CreateDragCue">
             <summary>Returns the DragCue or null if both its elements are disabled.</summary>
         </member>
+        <member name="M:Telerik.Windows.Controls.RadTreeView.HandleKeyDown(System.Windows.Input.KeyEventArgs)">
+            <summary>
+            Handle key down.
+            </summary>
+        </member>
         <member name="M:Telerik.Windows.Controls.RadTreeView.BringIndexIntoView(System.Int32)">
             <summary>
             Brings the item with the given index into view. The method will not work before the item containers have been generated.
@@ -7856,11 +7904,6 @@
             <param name="path">The path to the item.</param>
             <param name="separator">The path separator.</param>
             <returns>The item if found.</returns>
-        </member>
-        <member name="M:Telerik.Windows.Controls.RadTreeView.HandleKeyDown(System.Windows.Input.KeyEventArgs)">
-            <summary>
-            Handle key down.
-            </summary>
         </member>
         <member name="M:Telerik.Windows.Controls.RadTreeView.ScrollBy(System.Double,System.Double)">
             <summary>
@@ -11289,6 +11332,13 @@
             The <see cref="F:System.Windows.Automation.Peers.AutomationControlType.Custom"/> enumeration value.
             </returns>
         </member>
+        <member name="M:Telerik.Windows.Controls.RadTreeViewItemAutomationPeer.GetNameCore">
+            <summary>
+            Returns the text label associated with this AutomationPeer.
+            Called by AutomationPeer.GetName.
+            </summary>
+            <returns>A text label of the element associated with this Automation Peer.</returns>
+        </member>
         <member name="M:Telerik.Windows.Controls.RadTreeViewItemAutomationPeer.GetClassNameCore">
             <summary>
             Gets the name of the <see cref="T:System.Windows.UIElement"/> that is associated with this <see cref="T:System.Windows.Automation.Peers.FrameworkElementAutomationPeer"/>. This method is called by <see cref="M:System.Windows.Automation.Peers.AutomationPeer.GetClassName"/>.
@@ -12163,6 +12213,13 @@
             </summary>
             <param name="useTransitions">Indicates whether transitions should be used.</param>
         </member>
+        <member name="M:Telerik.Windows.Controls.RadToolBar.OnIsOverflowOpened(System.Boolean,System.Boolean)">
+            <summary>
+            Called when IsOverflowOpen property changes.
+            </summary>
+            <param name="oldValue">The old value of the property.</param>
+            <param name="newValue">The new value of the property.</param>
+        </member>
         <member name="M:Telerik.Windows.Controls.RadToolBar.PrepareContainerForItemOverride(System.Windows.DependencyObject,System.Object)">
             <summary>
             Prepares the specified element to display the specified item.
@@ -12640,6 +12697,21 @@
         <member name="P:Telerik.Windows.Controls.RadTreeViewCheckEventArgs.IsUserInitiated">
             <summary>
             Gets a value indicating whether the event represents a toggle action by the user or the TreeView control.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.RadTreeViewCommands">
+            <summary>
+            Holds command used by <see cref="T:Telerik.Windows.Controls.RadTreeViewItem"/>.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadTreeViewCommands.#cctor">
+            <summary>
+            Initialized static members.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadTreeViewCommands.ToggleExpandCollapse">
+            <summary>
+            Gets the ToggleExpandCollapse command.
             </summary>
         </member>
         <member name="T:Telerik.Windows.Controls.RadTreeViewItemEditedEventHandler">
@@ -14027,7 +14099,7 @@
             
             </summary>
         </member>
-        <member name="M:Telerik.Windows.Controls.WindowBase.OnShowAnimationFnished">
+        <member name="M:Telerik.Windows.Controls.WindowBase.OnShowAnimationFinished">
             <summary>
             
             </summary>
@@ -14088,6 +14160,12 @@
         <member name="M:Telerik.Windows.Controls.WindowBase.GetWindowOwner">
             <summary>
             
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.WindowBase.OnCreateAutomationPeer">
+            <summary>
+            Create the automation peer for this class.
             </summary>
             <returns></returns>
         </member>
@@ -14238,7 +14316,7 @@
         </member>
         <member name="P:Telerik.Windows.Controls.WindowBase.SizeToContent">
             <summary>
-            
+            The value of this property is ignored if the Width and Height properties are set.
             </summary>
         </member>
         <member name="P:Telerik.Windows.Controls.WindowBase.Telerik#Windows#Controls#DragDrop#IWindow#IsOpen">
@@ -14336,11 +14414,6 @@
             </summary>
             <param name="content"></param>
             <param name="dialogParams"></param>
-        </member>
-        <member name="F:Telerik.Windows.Controls.RadWindow.IsHeaderHitTestVisibleProperty">
-            <summary>
-            Identifies the <see>IsHeaderHitTestVisible</see> Property.
-            </summary>
         </member>
         <member name="M:Telerik.Windows.Controls.RadWindow.OnOpened(System.Windows.RoutedEventArgs)">
             <summary>
@@ -14541,12 +14614,6 @@
             </summary>
             <param name="e">The data for the event.</param>
         </member>
-        <member name="M:Telerik.Windows.Controls.RadWindow.OnCreateAutomationPeer">
-            <summary>
-            Create the automation peer for this class.
-            </summary>
-            <returns></returns>
-        </member>
         <member name="M:Telerik.Windows.Controls.RadWindow.OnKeyDown(System.Windows.Input.KeyEventArgs)">
             <summary>
             Called before the <see cref="E:System.Windows.UIElement.KeyDown"/> event occurs.
@@ -14602,14 +14669,6 @@
             <remarks>
             The event is raised whenever <strong>RadWindow</strong> is opened.
             </remarks>
-        </member>
-        <member name="P:Telerik.Windows.Controls.RadWindow.IsHeaderHitTestVisible">
-            <summary>
-            Gets or sets a value indicating whether the header of this instance is hit test visible.
-            </summary>
-            <value>
-            	<c>True</c> if the header of this instance is hit test visible; otherwise, <c>false</c>.
-            </value>
         </member>
         <member name="E:Telerik.Windows.Controls.RadWindow.Closed">
             <summary>
@@ -14693,165 +14752,6 @@
         <member name="P:Telerik.Windows.Controls.RadWindow.DefaultSizeRatio">
             <summary>
             Gets a size ratio when the window has infinity size and it is not restricted. The window size depends on root size and the default ratio.
-            </summary>
-        </member>
-        <member name="T:Telerik.Windows.Controls.RadWindowAutomationPeer">
-            <summary>
-            Automation Peer for the RadWindow class.
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.RadWindowAutomationPeer.#ctor(Telerik.Windows.Controls.RadWindow)">
-            <summary>
-            Initializes a new instance of the RadWindowAutomationPeer class.
-            </summary>
-            <param name="owner">The owner <see cref="T:Telerik.Windows.Controls.RadWindow"/> instance.</param>
-        </member>
-        <member name="M:Telerik.Windows.Controls.RadWindowAutomationPeer.Close">
-            <summary>
-            IWindowProvider implementation.
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.RadWindowAutomationPeer.SetVisualState(System.Windows.Automation.WindowVisualState)">
-            <summary>
-            IWindowProvider implementation.
-            </summary>
-            <param name="state">The visual state of the window to change to.</param>
-        </member>
-        <member name="M:Telerik.Windows.Controls.RadWindowAutomationPeer.WaitForInputIdle(System.Int32)">
-            <summary>
-            IWindowProvider implementation.
-            Blocks the calling code for the specified time or until the associated process
-            enters an idle state, whichever completes first.
-            </summary>
-            <param name="milliseconds">The amount of time, in milliseconds,
-            to wait for the associated process to become idle.
-            The maximum is System.Int32.MaxValue.</param>
-            <returns>True if the window has entered the idle state; false if the timeout occurred.</returns>
-        </member>
-        <member name="M:Telerik.Windows.Controls.RadWindowAutomationPeer.Rotate(System.Double)">
-            <summary>
-            ITransformProvider implementation.
-            Rotates the control.
-            Still not supported.
-            </summary>
-            <param name="degrees">The number of degrees to rotate the control.
-            A positive number rotates the control clockwise.
-            A negative number rotates the control counterclockwise.</param>
-        </member>
-        <member name="M:Telerik.Windows.Controls.RadWindowAutomationPeer.Resize(System.Double,System.Double)">
-            <summary>
-            ITransformProvider implementation.
-            Resizes the control.
-            </summary>
-            <param name="width">The new width of the window, in pixels.</param>
-            <param name="height">The new height of the window, in pixels.</param>
-        </member>
-        <member name="M:Telerik.Windows.Controls.RadWindowAutomationPeer.Move(System.Double,System.Double)">
-            <summary>
-            ITransformProvider implementation.
-            Moves the control.
-            </summary>
-            <param name="x">The absolute screen coordinates of the left side of the control.</param>
-            <param name="y">The absolute screen coordinates of the top of the control.</param>
-        </member>
-        <member name="M:Telerik.Windows.Controls.RadWindowAutomationPeer.GetPattern(System.Windows.Automation.Peers.PatternInterface)">
-            <summary>
-            Gets a control pattern that is associated with this AutomationPeer.
-            </summary>
-            <param name="patternInterface">One of the enumeration values that indicates the control pattern.</param>
-            <returns>The object that implements the pattern interface, or null.</returns>
-        </member>
-        <member name="M:Telerik.Windows.Controls.RadWindowAutomationPeer.RaiseAutomationWindowStateChanged(System.Object,System.Object)">
-            <summary>
-            
-            </summary>
-            <param name="oldState"></param>
-            <param name="newState"></param>
-        </member>
-        <member name="M:Telerik.Windows.Controls.RadWindowAutomationPeer.RaiseAutomationBoundingRectangleChanged(System.Object,System.Object)">
-            <summary>
-            
-            </summary>
-            <param name="oldParam"></param>
-            <param name="newParam"></param>
-        </member>
-        <member name="M:Telerik.Windows.Controls.RadWindowAutomationPeer.RaiseAutomationHasKeyboardFocusChanged(System.Boolean)">
-            <summary>
-            
-            </summary>
-            <param name="newState"></param>
-        </member>
-        <member name="M:Telerik.Windows.Controls.RadWindowAutomationPeer.GetAutomationControlTypeCore">
-            <summary>
-            
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:Telerik.Windows.Controls.RadWindowAutomationPeer.GetClassNameCore">
-            <summary>
-            
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:Telerik.Windows.Controls.RadWindowAutomationPeer.GetNameCore">
-            <summary>
-            Returns the text label of the FrameworkElement associated with this AutomationPeers.
-            Called by AutomationPeer.GetName.
-            </summary>
-            <returns>A text label of the Element associated with this Automation Peer.</returns>
-        </member>
-        <member name="P:Telerik.Windows.Controls.RadWindowAutomationPeer.InteractionState">
-            <summary>
-            IWindowProvider implementation.
-            Gets the interaction state of the window.
-            </summary>
-        </member>
-        <member name="P:Telerik.Windows.Controls.RadWindowAutomationPeer.IsModal">
-            <summary>
-            IWindowProvider implementation.
-            Gets a value that specifies whether the window is modal.
-            </summary>
-        </member>
-        <member name="P:Telerik.Windows.Controls.RadWindowAutomationPeer.IsTopmost">
-            <summary>
-            IWindowProvider implementation.
-            Gets a value that specifies whether the window is the topmost element in the z-order.
-            </summary>
-        </member>
-        <member name="P:Telerik.Windows.Controls.RadWindowAutomationPeer.Maximizable">
-            <summary>
-            IWindowProvider implementation.
-            Gets a value that specifies whether the window can be maximized.
-            </summary>
-        </member>
-        <member name="P:Telerik.Windows.Controls.RadWindowAutomationPeer.Minimizable">
-            <summary>
-            IWindowProvider implementation.
-            Gets a value that specifies whether the window can be minimized.
-            </summary>
-        </member>
-        <member name="P:Telerik.Windows.Controls.RadWindowAutomationPeer.VisualState">
-            <summary>
-            IWindowProvider implementation.
-            Gets the visual state of the window.
-            </summary>
-        </member>
-        <member name="P:Telerik.Windows.Controls.RadWindowAutomationPeer.CanRotate">
-            <summary>
-            ITransformProvider implementation.
-            Gets a value that indicates whether the control can be rotated.
-            </summary>
-        </member>
-        <member name="P:Telerik.Windows.Controls.RadWindowAutomationPeer.CanResize">
-            <summary>
-            ITransformProvider implementation.
-            Gets a value that indicates whether the UI Automation element can be resized.
-            </summary>
-        </member>
-        <member name="P:Telerik.Windows.Controls.RadWindowAutomationPeer.CanMove">
-            <summary>
-            ITransformProvider implementation.
-            Gets a value that indicates whether the control can be moved.
             </summary>
         </member>
         <member name="T:Telerik.Windows.Controls.DialogParameters">
@@ -15160,10 +15060,14 @@
             buttons upon keyboard strokes. Used by ResponseButton attached property.
             </summary>
         </member>
+        <member name="F:Telerik.Windows.Controls.ResponseButton.None">
+            <summary>
+            None will not invoke the button's click method automatically.
+            </summary>
+        </member>
         <member name="F:Telerik.Windows.Controls.ResponseButton.Accept">
             <summary>
-            Accept will invoke the button's click method when the user
-            hits Enter.
+            Accept will invoke the button's click method when the user hits Enter.
             </summary>
         </member>
         <member name="F:Telerik.Windows.Controls.ResponseButton.Cancel">
@@ -15224,6 +15128,165 @@
         <member name="F:Telerik.Windows.Controls.ThumbType.Title">
             <summary>
             Title thumb.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.WindowBaseAutomationPeer">
+            <summary>
+            Automation Peer for the WindowBase class.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.WindowBaseAutomationPeer.#ctor(Telerik.Windows.Controls.WindowBase)">
+            <summary>
+            Initializes a new instance of the WindowBaseAutomationPeer class.
+            </summary>
+            <param name="owner">The owner <see cref="T:Telerik.Windows.Controls.WindowBase"/> instance.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.WindowBaseAutomationPeer.Close">
+            <summary>
+            IWindowProvider implementation.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.WindowBaseAutomationPeer.SetVisualState(System.Windows.Automation.WindowVisualState)">
+            <summary>
+            IWindowProvider implementation.
+            </summary>
+            <param name="state">The visual state of the window to change to.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.WindowBaseAutomationPeer.WaitForInputIdle(System.Int32)">
+            <summary>
+            IWindowProvider implementation.
+            Blocks the calling code for the specified time or until the associated process
+            enters an idle state, whichever completes first.
+            </summary>
+            <param name="milliseconds">The amount of time, in milliseconds,
+            to wait for the associated process to become idle.
+            The maximum is System.Int32.MaxValue.</param>
+            <returns>True if the window has entered the idle state; false if the timeout occurred.</returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.WindowBaseAutomationPeer.Rotate(System.Double)">
+            <summary>
+            ITransformProvider implementation.
+            Rotates the control.
+            Still not supported.
+            </summary>
+            <param name="degrees">The number of degrees to rotate the control.
+            A positive number rotates the control clockwise.
+            A negative number rotates the control counterclockwise.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.WindowBaseAutomationPeer.Resize(System.Double,System.Double)">
+            <summary>
+            ITransformProvider implementation.
+            Resizes the control.
+            </summary>
+            <param name="width">The new width of the window, in pixels.</param>
+            <param name="height">The new height of the window, in pixels.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.WindowBaseAutomationPeer.Move(System.Double,System.Double)">
+            <summary>
+            ITransformProvider implementation.
+            Moves the control.
+            </summary>
+            <param name="x">The absolute screen coordinates of the left side of the control.</param>
+            <param name="y">The absolute screen coordinates of the top of the control.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.WindowBaseAutomationPeer.GetPattern(System.Windows.Automation.Peers.PatternInterface)">
+            <summary>
+            Gets a control pattern that is associated with this AutomationPeer.
+            </summary>
+            <param name="patternInterface">One of the enumeration values that indicates the control pattern.</param>
+            <returns>The object that implements the pattern interface, or null.</returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.WindowBaseAutomationPeer.RaiseAutomationWindowStateChanged(System.Object,System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="oldState"></param>
+            <param name="newState"></param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.WindowBaseAutomationPeer.RaiseAutomationBoundingRectangleChanged(System.Object,System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="oldParam"></param>
+            <param name="newParam"></param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.WindowBaseAutomationPeer.RaiseAutomationHasKeyboardFocusChanged(System.Boolean)">
+            <summary>
+            
+            </summary>
+            <param name="newState"></param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.WindowBaseAutomationPeer.GetAutomationControlTypeCore">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.WindowBaseAutomationPeer.GetClassNameCore">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.WindowBaseAutomationPeer.GetNameCore">
+            <summary>
+            Returns the text label of the FrameworkElement associated with this AutomationPeers.
+            Called by AutomationPeer.GetName.
+            </summary>
+            <returns>A text label of the Element associated with this Automation Peer.</returns>
+        </member>
+        <member name="P:Telerik.Windows.Controls.WindowBaseAutomationPeer.InteractionState">
+            <summary>
+            IWindowProvider implementation.
+            Gets the interaction state of the window.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.WindowBaseAutomationPeer.IsModal">
+            <summary>
+            IWindowProvider implementation.
+            Gets a value that specifies whether the window is modal.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.WindowBaseAutomationPeer.IsTopmost">
+            <summary>
+            IWindowProvider implementation.
+            Gets a value that specifies whether the window is the topmost element in the z-order.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.WindowBaseAutomationPeer.Maximizable">
+            <summary>
+            IWindowProvider implementation.
+            Gets a value that specifies whether the window can be maximized.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.WindowBaseAutomationPeer.Minimizable">
+            <summary>
+            IWindowProvider implementation.
+            Gets a value that specifies whether the window can be minimized.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.WindowBaseAutomationPeer.VisualState">
+            <summary>
+            IWindowProvider implementation.
+            Gets the visual state of the window.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.WindowBaseAutomationPeer.CanRotate">
+            <summary>
+            ITransformProvider implementation.
+            Gets a value that indicates whether the control can be rotated.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.WindowBaseAutomationPeer.CanResize">
+            <summary>
+            ITransformProvider implementation.
+            Gets a value that indicates whether the UI Automation element can be resized.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.WindowBaseAutomationPeer.CanMove">
+            <summary>
+            ITransformProvider implementation.
+            Gets a value that indicates whether the control can be moved.
             </summary>
         </member>
         <member name="T:Telerik.Windows.Controls.WindowClosedEventArgs">

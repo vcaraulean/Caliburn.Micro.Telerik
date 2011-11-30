@@ -4,6 +4,522 @@
         <name>Telerik.Windows.Controls.Input</name>
     </assembly>
     <members>
+        <member name="T:Telerik.Windows.Controls.Calculator.CalculatorBase">
+            <summary>
+            Represents a base class for calcluator controls.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Calculator.CalculatorBase.ExecuteCommandsOnKeyPressed(System.Windows.Input.KeyEventArgs)">
+            <summary>
+            Executed once a key from the keyboard is pressed.
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Calculator.CalculatorBase.ExecuteCommandsOnShiftKeyPressed(System.Windows.Input.KeyEventArgs)">
+            <summary>
+            Executed once Shift modifier key and a key from the keyboard are pressed.
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Calculator.CalculatorBase.ExecuteCommandsOnCtrKeyPressed(System.Windows.Input.KeyEventArgs)">
+            <summary>
+            Executed once Ctrl modifier key and a key from the keyboard are pressed.
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="F:Telerik.Windows.Controls.Calculator.CalculatorBase.ValueProperty">
+            <summary>
+            Identifies the Value dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.Calculator.CalculatorBase.MemoryValueProperty">
+            <summary>
+            Identifies the MemoryValue dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.Calculator.CalculatorBase.PendingOperationProperty">
+            <summary>
+            Identifies the PendingOperation dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.Calculator.CalculatorBase.OperationsProperty">
+            <summary>
+            Identifies the Operations dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.Calculator.CalculatorBase.MemoryButtonsVisibilityProperty">
+            <summary>
+            Identifies the MemoryButtonsVisibility dependency property.
+            </summary>		
+        </member>
+        <member name="F:Telerik.Windows.Controls.Calculator.CalculatorBase.ErrorMessageProperty">
+            <summary>
+            Identifies the ErrorMessage dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.Calculator.CalculatorBase.DisplayedValueProperty">
+            <summary>
+            Identifies the DisplayedValue dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.Calculator.CalculatorBase.InputValueProperty">
+            <summary>
+            Identifies the InputValue dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.Calculator.CalculatorBase.IsMemoryUpdatedProperty">
+            <summary>
+            Identifies the IsMemoryUpdated dependency property.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Calculator.CalculatorBase.OnValueChanged(System.Decimal,System.Decimal)">
+            <summary>
+            Raises the <see cref="E:ValueChanged"/> event.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Calculator.CalculatorBase.OnMouseLeftButtonDown(System.Windows.Input.MouseButtonEventArgs)">
+            <summary>
+            Invoked when an unhandled <see cref="E:System.Windows.UIElement.MouseLeftButtonDown"/> routed event is raised on this element. Implement this method to add class handling for this event.
+            </summary>
+            <param name="e">The <see cref="T:System.Windows.Input.MouseButtonEventArgs"/> that contains the event data. The event data reports that the left mouse button was pressed.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Calculator.CalculatorBase.OnMemoryValuePropertyChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Raises the <see cref="E:ValueChanged"/> event.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Calculator.CalculatorBase.RegisterCommands">
+            <summary>
+            Registers the used CalculatorBaseCommands.
+            </summary>
+        </member>
+        <member name="E:Telerik.Windows.Controls.Calculator.CalculatorBase.ValueChanged">
+            <summary>
+            Occurs when the calculator's value is changed.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Calculator.CalculatorBase.Value">
+            <summary>
+            Gets CalculatorBase's current calculated value.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Calculator.CalculatorBase.MemoryValue">
+            <summary>
+            Gets CalculatorBase's current memory value.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Calculator.CalculatorBase.Operations">
+            <summary>
+            Gets or sets calculator's operations source.
+            </summary>
+            <value>
+            The operations.
+            </value>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Calculator.CalculatorBase.MemoryButtonsVisibility">
+            <summary>
+            Gets or sets calculator's memory buttons visibility.
+            </summary>
+            <value>
+            The MemoryButtonsVisibility.
+            </value>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Calculator.CalculatorBase.ErrorMessage">
+            <summary>
+            Gets or sets the error message.
+            </summary>
+            <value>
+            The error message.
+            </value>
+        </member>
+        <member name="T:Telerik.Windows.Controls.Calculator.DecimalDisplayValueConverter">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Calculator.DecimalDisplayValueConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Modifies the source data before passing it to the target for display in the UI.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Calculator.DecimalDisplayValueConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Modifies the target data before passing it to the source object.  This method is called only in <see cref="F:System.Windows.Data.BindingMode.TwoWay"/> bindings.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.Calculator.Operation">
+            <summary>
+            Represents an arithmetic operation.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Calculator.Operation.DisplayTrace">
+            <summary>
+            Gets or sets the display trace that is generated when an operation is executed.
+            </summary>
+            <value>
+            The display trace.
+            </value>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Calculator.Operation.OperationBody">
+            <summary>
+            Gets or sets the delegate that describes operation's logic.
+            </summary>
+            <value>
+            The operation delegate.
+            </value>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Calculator.Operation.Type">
+            <summary>
+            Gets or sets the type of the operation - binary, unary, percent.
+            </summary>
+            <value>
+            The operation type.
+            </value>
+        </member>
+        <member name="T:Telerik.Windows.Controls.Calculator.OperationsSource">
+            <summary>
+            Represents an opearions source for a calculator control.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Calculator.OperationsSource.Add">
+            <summary>
+            Gets an Operation instance that represents addition.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Calculator.OperationsSource.Substract">
+            <summary>
+            Gets an Operation instance that represents substraction.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Calculator.OperationsSource.Multiply">
+            <summary>
+            Gets an Operation instance that represents multiplication.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Calculator.OperationsSource.Divide">
+            <summary>
+            Gets an Operation instance that represents division.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Calculator.OperationsSource.Reciprocal">
+            <summary>
+            Gets an Operation instance that represents reciprocal.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Calculator.OperationsSource.SquareRoot">
+            <summary>
+            Gets an Operation instance that represents square root.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Calculator.OperationsSource.Negate">
+            <summary>
+            Gets an Operation instance that represents negation.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Calculator.OperationsSource.Percent">
+            <summary>
+            Gets an Operation instance that represents percent.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.Calculator.OperationType">
+            <summary>
+            Represents all the available operation types.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.Calculator.OperationType.Binary">
+            <summary>
+            The binary operation type.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.Calculator.OperationType.Unary">
+            <summary>
+            The unary operation type.
+            </summary>
+            
+        </member>
+        <member name="F:Telerik.Windows.Controls.Calculator.OperationType.Percent">
+            <summary>
+            The percent operation type.
+            </summary>
+            
+        </member>
+        <member name="F:Telerik.Windows.Controls.Calculator.OperationType.Equals">
+            <summary>
+            The equals operation type.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.RadCalculator">
+            <summary>
+            Represent a control that enables you executing arithmetic operations.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadCalculator.#ctor">
+            <summary>
+            Initializes a new instance of the RadCalculator class.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadCalculator.ResetTheme">
+            <summary>
+            Resets the theme.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadCalculator.OnApplyTemplate">
+            <summary>
+            When overridden in a derived class, is invoked whenever application code or internal processes (such as a rebuilding layout pass) call <see cref="M:System.Windows.Controls.Control.ApplyTemplate"/>. In simplest terms, this means the method is called just before a UI element displays in an application. For more information, see Remarks.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadCalculator.OnCreateAutomationPeer">
+            <summary>
+            When implemented in a derived class, returns class-specific <see cref="T:System.Windows.Automation.Peers.AutomationPeer"/> implementations for the Silverlight automation infrastructure.
+            </summary>
+            <returns>
+            The class-specific <see cref="T:System.Windows.Automation.Peers.AutomationPeer"/> subclass to return.
+            </returns>
+        </member>
+        <member name="T:Telerik.Windows.Controls.Calculator.CalculatorAutomationPeer">
+            <summary>
+            Represents an AutomatioPeer type for the RadCalculator control.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Calculator.CalculatorAutomationPeer.#ctor(Telerik.Windows.Controls.RadCalculator)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.Windows.Controls.Calculator.CalculatorAutomationPeer"/> class.
+            </summary>
+            <param name="owner">The owner.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Calculator.CalculatorAutomationPeer.GetClassNameCore">
+            <summary>
+            Returns the name of the <see cref="T:System.Windows.UIElement"/> that is associated with this <see cref="T:System.Windows.Automation.Peers.FrameworkElementAutomationPeer"/>. This method is called by <see cref="M:System.Windows.Automation.Peers.AutomationPeer.GetClassName"/>.
+            </summary>
+            <returns>
+            The name of the owner type that is associated with this <see cref="T:System.Windows.Automation.Peers.FrameworkElementAutomationPeer"/>. See Remarks.
+            </returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Calculator.CalculatorAutomationPeer.GetAutomationControlTypeCore">
+            <summary>
+            Returns the control type for the <see cref="T:System.Windows.UIElement"/> that is associated with this <see cref="T:System.Windows.Automation.Peers.FrameworkElementAutomationPeer"/>. This method is called by <see cref="M:System.Windows.Automation.Peers.AutomationPeer.GetAutomationControlType"/>.
+            </summary>
+            <returns>
+            A value of the enumeration.
+            </returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Calculator.CalculatorAutomationPeer.GetChildrenCore">
+            <summary>
+            Returns the collection of child elements of the <see cref="T:System.Windows.UIElement"/> that is associated with this <see cref="T:System.Windows.Automation.Peers.FrameworkElementAutomationPeer"/>. This method is called by <see cref="M:System.Windows.Automation.Peers.AutomationPeer.GetChildren"/>.
+            </summary>
+            <returns>
+            A list of child <see cref="T:System.Windows.Automation.Peers.AutomationPeer"/> elements.
+            </returns>
+        </member>
+        <member name="T:Telerik.Windows.Controls.RadCalculatorCommands">
+            <summary>
+            Provides commands for RadCalculator.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadCalculatorCommands.ExecuteUnaryOperation">
+            <summary>
+            Gets a value that represents the execute unary operation command.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadCalculatorCommands.ExecutePercentOperation">
+            <summary>
+            Gets a value that represents the execute percent operation command.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadCalculatorCommands.ExecuteBinaryOperation">
+            <summary>
+            Gets a value that represents the execute binary operation command.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadCalculatorCommands.AddPendingBinaryOperation">
+            <summary>
+            Gets a value that represents the add pending binary operation command.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadCalculatorCommands.UpdateInput">
+            <summary>
+            Gets a value that represents the update input command.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadCalculatorCommands.ClearEverything">
+            <summary>
+            Gets a value that represents the clear everything command.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadCalculatorCommands.ClearInput">
+            <summary>
+            Gets a value that represents the clear input command.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadCalculatorCommands.Delete">
+            <summary>
+            Gets a value that represents the delete command.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadCalculatorCommands.MemoryPlus">
+            <summary>
+            Gets a value that represents the memory plus command.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadCalculatorCommands.MemoryMinus">
+            <summary>
+            Gets a value that represents the memory minus command.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadCalculatorCommands.MemoryStore">
+            <summary>
+            Gets a value that represents the memory store command.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadCalculatorCommands.MemoryRecall">
+            <summary>
+            Gets a value that represents the memory recall command.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadCalculatorCommands.MemoryClear">
+            <summary>
+            Gets a value that represents the memory clear command.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadCalculatorCommands.Redo">
+            <summary>
+            Gets a value that represents the redo command.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadCalculatorCommands.Undo">
+            <summary>
+            Gets a value that represents the undo command.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadCalculatorCommands.Expand">
+            <summary>
+            Gets a value that represents the expand command.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadCalculatorCommands.Collapse">
+            <summary>
+            Gets a value that represents the collapse command.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.RadCalculatorPicker">
+            <summary>
+            Represents a RadCalculator as an editor control that is placed in a PopUp.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadCalculatorPicker.IsDropDownOpenProperty">
+            <summary>
+            Gets the identifier for the Telerik.Windows.Controls.RadCalculatorPicker.IsDropDownOpen dependency property.
+            </summary>
+            <returns>
+            The identifier for the Telerik.Windows.Controls.RadCalculatorPicker.IsDropDownOpen dependency dependency property.
+            </returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadCalculatorPicker.#ctor">
+            <summary>
+            Initializes a new instance of the RadCalculatorPicker class.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadCalculatorPicker.ResetTheme">
+            <summary>
+            Resets the theme.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadCalculatorPicker.OnApplyTemplate">
+            <summary>
+            When overridden in a derived class, is invoked whenever application code or internal processes (such as a rebuilding layout pass) call <see cref="M:System.Windows.Controls.Control.ApplyTemplate"/>. In simplest terms, this means the method is called just before a UI element displays in an application. For more information, see Remarks.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadCalculatorPicker.OnCreateAutomationPeer">
+            <summary>
+            When implemented in a derived class, returns class-specific <see cref="T:System.Windows.Automation.Peers.AutomationPeer"/> implementations for the Silverlight automation infrastructure.
+            </summary>
+            <returns>
+            The class-specific <see cref="T:System.Windows.Automation.Peers.AutomationPeer"/> subclass to return.
+            </returns>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadCalculatorPicker.IsDropDownOpen">
+            <summary>
+            Gets or sets a value that indicates whether the DropDown button is open or closed. This is a dependency property.
+            </summary>
+            <value>
+            	<c>True</c> if this DropDown button is open; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="T:Telerik.Windows.Controls.Calculator.CalculatorPickerAutomationPeer">
+            <summary>
+            Represents an AutomatioPeer type for the RadCalculatorPicker control.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Calculator.CalculatorPickerAutomationPeer.#ctor(Telerik.Windows.Controls.RadCalculatorPicker)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.Windows.Controls.Calculator.CalculatorPickerAutomationPeer"/> class.
+            </summary>
+            <param name="owner">The owner.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Calculator.CalculatorPickerAutomationPeer.Collapse">
+            <summary>
+            Hides all nodes, controls, or content that are descendants of the control.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Calculator.CalculatorPickerAutomationPeer.Expand">
+            <summary>
+            Displays all child nodes, controls, or content of the control.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Calculator.CalculatorPickerAutomationPeer.GetClassNameCore">
+            <summary>
+            Returns the name of the <see cref="T:System.Windows.UIElement"/> that is associated with this <see cref="T:System.Windows.Automation.Peers.FrameworkElementAutomationPeer"/>. This method is called by <see cref="M:System.Windows.Automation.Peers.AutomationPeer.GetClassName"/>.
+            </summary>
+            <returns>
+            The name of the owner type that is associated with this <see cref="T:System.Windows.Automation.Peers.FrameworkElementAutomationPeer"/>. See Remarks.
+            </returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Calculator.CalculatorPickerAutomationPeer.GetAutomationControlTypeCore">
+            <summary>
+            Returns the control type for the <see cref="T:System.Windows.UIElement"/> that is associated with this <see cref="T:System.Windows.Automation.Peers.FrameworkElementAutomationPeer"/>. This method is called by <see cref="M:System.Windows.Automation.Peers.AutomationPeer.GetAutomationControlType"/>.
+            </summary>
+            <returns>
+            A value of the enumeration.
+            </returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Calculator.CalculatorPickerAutomationPeer.GetChildrenCore">
+            <summary>
+            Returns the collection of child elements of the <see cref="T:System.Windows.UIElement"/> that is associated with this <see cref="T:System.Windows.Automation.Peers.FrameworkElementAutomationPeer"/>. This method is called by <see cref="M:System.Windows.Automation.Peers.AutomationPeer.GetChildren"/>.
+            </summary>
+            <returns>
+            A list of child <see cref="T:System.Windows.Automation.Peers.AutomationPeer"/> elements.
+            </returns>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Calculator.CalculatorPickerAutomationPeer.ExpandCollapseState">
+            <summary>
+            Gets the state (expanded or collapsed) of the control.
+            </summary>
+            <returns>The state (expanded or collapsed) of the control.</returns>
+        </member>
+        <member name="T:Telerik.Windows.Controls.Calculator.ValueChangedEventArgs">
+            <summary>
+            Contains information about the ValueChanged event.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Calculator.ValueChangedEventArgs.#ctor(System.Decimal,System.Decimal)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.Windows.Controls.Calculator.ValueChangedEventArgs"/> class.
+            </summary>
+            <param name="oldValue">The old value.</param>
+            <param name="newValue">The new value.</param>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Calculator.ValueChangedEventArgs.OldValue">
+            <summary>
+            Gets the old value.
+            </summary>
+            <value>The old value.</value>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Calculator.ValueChangedEventArgs.NewValue">
+            <summary>
+            Gets the new value.
+            </summary>
+            <value>The new value.</value>
+        </member>
         <member name="T:Telerik.Windows.Controls.Calendar.CalendarAnimation">
             <summary>
             Class that governs the transition animations in the calendar.
@@ -1983,6 +2499,2399 @@
             <summary>
             Gets or sets whether the a clip masks with the size of the control would be applied.
             </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.ColorEditor.ColorChangeEventArgs">
+            <summary>
+            Provides data for the <see cref="E:Telerik.Windows.Controls.RadColorEditor.SelectedColorChanged"/>, <see cref="E:Telerik.Windows.Controls.RadColorEditor.SelectedColorChanging"/> and <see cref="E:Telerik.Windows.Controls.RadColorEditor.PreviousColorChanged"/> events.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ColorEditor.ColorChangeEventArgs.#ctor(System.Object,Telerik.Windows.RoutedEvent,System.Windows.Media.Color)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorChangeEventArgs"/> class.
+            </summary>
+            <param name="source">The source.</param>
+            <param name="routedEvent">The routed event.</param>
+            <param name="color">The color.</param>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.ColorChangeEventArgs.Color">
+            <summary>
+            Gets the new value of the color.
+            </summary>
+            <value>The color.</value>
+        </member>
+        <member name="T:Telerik.Windows.Controls.ColorEditor.ColorMode">
+            <summary>
+            Specifies the displayed color scheme within the <see cref="T:Telerik.Windows.Controls.RadColorEditor"/> control.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.ColorEditor.ColorMode.CMYK">
+            <summary>
+            Cyan, magenta, yellow, key (black) and alpha channels are displayed.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.ColorEditor.ColorMode.HLS">
+            <summary>
+            Hue, luminance, saturation and alpha channels are displayed.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.ColorEditor.ColorMode.HSV">
+            <summary>
+            Hue, saturation, value and alpha channels are displayed.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.ColorEditor.ColorMode.RGB">
+            <summary>
+            Red, green, blue and alpha channels are displayed.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.ColorEditor.KnownColors">
+            <summary>
+            A helper class containing named colors.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ColorEditor.KnownColors.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.Windows.Controls.ColorEditor.KnownColors"/> class.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.KnownColors.AliceBlue">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.KnownColors.AntiqueWhite">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.KnownColors.Aqua">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.KnownColors.Aquamarine">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.KnownColors.Azure">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.KnownColors.Beige">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.KnownColors.Bisque">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.KnownColors.Black">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.KnownColors.BlanchedAlmond">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.KnownColors.Blue">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.KnownColors.BlueViolet">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.KnownColors.Brown">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.KnownColors.BurlyWood">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.KnownColors.CadetBlue">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.KnownColors.Chartreuse">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.KnownColors.Chocolate">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.KnownColors.Coral">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.KnownColors.CornflowerBlue">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.KnownColors.Cornsilk">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.KnownColors.Crimson">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.KnownColors.Cyan">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.KnownColors.DarkBlue">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.KnownColors.DarkCyan">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.KnownColors.DarkGoldenrod">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.KnownColors.DarkGray">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.KnownColors.DarkGreen">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.KnownColors.DarkKhaki">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.KnownColors.DarkMagenta">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.KnownColors.DarkOliveGreen">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.KnownColors.DarkOrange">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.KnownColors.DarkOrchid">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.KnownColors.DarkRed">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.KnownColors.DarkSalmon">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.KnownColors.DarkSeaGreen">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.KnownColors.DarkSlateBlue">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.KnownColors.DarkSlateGray">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.KnownColors.DarkTurquoise">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.KnownColors.DarkViolet">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.KnownColors.DeepPink">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.KnownColors.DeepSkyBlue">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.KnownColors.DimGray">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.KnownColors.DodgerBlue">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.KnownColors.Firebrick">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.KnownColors.FloralWhite">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.KnownColors.ForestGreen">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.KnownColors.Fuchsia">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.KnownColors.Gainsboro">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.KnownColors.GhostWhite">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.KnownColors.Gold">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.KnownColors.Goldenrod">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.KnownColors.Gray">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.KnownColors.Green">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.KnownColors.GreenYellow">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.KnownColors.Honeydew">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.KnownColors.HotPink">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.KnownColors.IndianRed">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.KnownColors.Indigo">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.KnownColors.Ivory">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.KnownColors.Khaki">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.KnownColors.Lavender">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.KnownColors.LavenderBlush">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.KnownColors.LawnGreen">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.KnownColors.LemonChiffon">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.KnownColors.LightBlue">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.KnownColors.LightCoral">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.KnownColors.LightCyan">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.KnownColors.LightGoldenrodYellow">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.KnownColors.LightGray">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.KnownColors.LightGreen">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.KnownColors.LightPink">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.KnownColors.LightSalmon">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.KnownColors.LightSeaGreen">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.KnownColors.LightSkyBlue">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.KnownColors.LightSlateGray">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.KnownColors.LightSteelBlue">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.KnownColors.LightYellow">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.KnownColors.Lime">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.KnownColors.LimeGreen">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.KnownColors.Linen">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.KnownColors.Magenta">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.KnownColors.Maroon">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.KnownColors.MediumAquamarine">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.KnownColors.MediumBlue">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.KnownColors.MediumOrchid">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.KnownColors.MediumPurple">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.KnownColors.MediumSeaGreen">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.KnownColors.MediumSlateBlue">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.KnownColors.MediumSpringGreen">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.KnownColors.MediumTurquoise">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.KnownColors.MediumVioletRed">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.KnownColors.MidnightBlue">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.KnownColors.MintCream">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.KnownColors.MistyRose">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.KnownColors.Moccasin">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.KnownColors.NavajoWhite">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.KnownColors.Navy">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.KnownColors.OldLace">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.KnownColors.Olive">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.KnownColors.OliveDrab">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.KnownColors.Orange">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.KnownColors.OrangeRed">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.KnownColors.Orchid">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.KnownColors.PaleGoldenrod">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.KnownColors.PaleGreen">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.KnownColors.PaleTurquoise">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.KnownColors.PaleVioletRed">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.KnownColors.PapayaWhip">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.KnownColors.PeachPuff">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.KnownColors.Peru">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.KnownColors.Pink">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.KnownColors.Plum">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.KnownColors.PowderBlue">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.KnownColors.Purple">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.KnownColors.Red">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.KnownColors.RosyBrown">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.KnownColors.RoyalBlue">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.KnownColors.SaddleBrown">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.KnownColors.Salmon">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.KnownColors.SandyBrown">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.KnownColors.SeaGreen">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.KnownColors.SeaShell">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.KnownColors.Sienna">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.KnownColors.Silver">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.KnownColors.SkyBlue">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.KnownColors.SlateBlue">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.KnownColors.SlateGray">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.KnownColors.Snow">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.KnownColors.SpringGreen">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.KnownColors.SteelBlue">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.KnownColors.Tan">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.KnownColors.Teal">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.KnownColors.Thistle">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.KnownColors.Tomato">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.KnownColors.Transparent">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.KnownColors.Turquoise">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.KnownColors.Violet">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.KnownColors.Wheat">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.KnownColors.White">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.KnownColors.WhiteSmoke">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.KnownColors.Yellow">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.KnownColors.YellowGreen">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.ColorEditor.HistoryChangedEventArgs">
+            <summary>
+            Initializes a new instance of the SelectionChangeEventArgs class.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ColorEditor.HistoryChangedEventArgs.#ctor(System.Collections.Generic.IList{System.Windows.Media.Color},System.Collections.Generic.IList{System.Windows.Media.Color},Telerik.Windows.RoutedEvent,System.Object)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.Windows.Controls.ColorEditor.HistoryChangedEventArgs"/> class.
+            </summary>
+            <param name="removedItems">The removed items.</param>
+            <param name="addedItems">The added items.</param>
+            <param name="routedEvent">The routed event.</param>
+            <param name="source">The source.</param>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.HistoryChangedEventArgs.AddedItems">
+            <summary>
+            Gets a list that contains the colors that were added to <see cref="T:Telerik.Windows.Controls.RadColorEditor"/>'s history.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.HistoryChangedEventArgs.RemovedItems">
+            <summary>
+            Gets a list that contains the colors that were removed from <see cref="T:Telerik.Windows.Controls.RadColorEditor"/>'s history.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.ColorEditor.Pad.PointerPositionChangeEventArgs">
+            <summary>
+            Provides data for the <see cref="E:Telerik.Windows.Controls.ColorEditor.Pad.Pad.PointerPositionChanging"/> and <see cref="E:Telerik.Windows.Controls.ColorEditor.Pad.Pad.PointerPositionChanged"/> events.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ColorEditor.Pad.PointerPositionChangeEventArgs.#ctor(System.Windows.Point)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.Windows.Controls.ColorEditor.Pad.PointerPositionChangeEventArgs"/> class.
+            </summary>
+            <param name="relativePosition">The relative position.</param>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.Pad.PointerPositionChangeEventArgs.RelativePosition">
+            <summary>
+            Gets the relative (between 0 and 1) position of the pointer.
+            </summary>
+            <value>The relative position.</value>
+        </member>
+        <member name="T:Telerik.Windows.Controls.ColorEditor.Helpers.TextBoxHelper">
+            <summary>
+            Helper class that updates the TextBox.TextProperty binding on Enter key press.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.ColorEditor.Helpers.TextBoxHelper.UpdateTextBindingOnKeyPressProperty">
+            <summary> 
+            Identifies the UpdateTextBindingOnKeyPress attached property.
+            </summary> 
+        </member>
+        <member name="M:Telerik.Windows.Controls.ColorEditor.Helpers.TextBoxHelper.GetUpdateTextBindingOnKeyPress(System.Windows.DependencyObject)">
+            <summary> 
+            Gets the UpdateTextBindingOnKeyPress possible Value of the bool object from attached dependency object.
+            </summary> 
+        </member>
+        <member name="M:Telerik.Windows.Controls.ColorEditor.Helpers.TextBoxHelper.SetUpdateTextBindingOnKeyPress(System.Windows.DependencyObject,System.Boolean)">
+            <summary> 
+            Sets the UpdateTextBindingOnKeyPress possible Value of the bool object to attached dependency object.
+            </summary> 
+        </member>
+        <member name="M:Telerik.Windows.Controls.ColorEditor.Helpers.TextBoxHelper.OnUpdateTextBindingOnKeyPressPropertyChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            UpdateTextBindingOnKeyPressProperty property changed handler.
+            </summary>
+            <param name="d">TextBoxHelper that changed its UpdateTextBindingOnKeyPress.</param>
+            <param name="e">Event arguments.</param>
+        </member>
+        <member name="T:Telerik.Windows.Controls.ColorEditor.ColorModeEventArgs">
+            <summary>
+            Provides data for the <see cref="E:Telerik.Windows.Controls.RadColorEditor.ColorModeChanged"/> event.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ColorEditor.ColorModeEventArgs.#ctor(Telerik.Windows.Controls.ColorEditor.ColorMode,Telerik.Windows.Controls.ColorEditor.ColorMode,System.Object,Telerik.Windows.RoutedEvent)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorModeEventArgs"/> class.
+            </summary>
+            <param name="oldValue">The old value.</param>
+            <param name="newValue">The new value.</param>
+            <param name="source">The source.</param>
+            <param name="routedEvent">The routed event.</param>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.ColorModeEventArgs.OldValue">
+            <summary>
+            Gets the old <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorMode"/> value.
+            </summary>
+            <value>The old value.</value>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.ColorModeEventArgs.NewValue">
+            <summary>
+            Gets the new <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorMode"/> value.
+            </summary>
+            <value>The new value.</value>
+        </member>
+        <member name="T:Telerik.Windows.Controls.ColorEditor.Mode.ColorModeCollection">
+            <summary>
+            Represents a collection of enum wrappers.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ColorEditor.Mode.ColorModeCollection.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.Windows.Controls.ColorEditor.Mode.ColorModeCollection"/> class.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.ColorEditor.Mode.ColorModeWrapper">
+            <summary>
+            Represents a wrapper around the <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorMode"/> enumeration.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ColorEditor.Mode.ColorModeWrapper.Equals(System.Object)">
+            <summary>
+            Determines whether the specified <see cref="T:System.Object"/> is equal to this instance.
+            </summary>
+            <param name="obj">The <see cref="T:System.Object"/> to compare with this instance.</param>
+            <returns>
+              <c>true</c> if the specified <see cref="T:System.Object"/> is equal to this instance; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ColorEditor.Mode.ColorModeWrapper.GetHashCode">
+            <summary>
+            Returns a hash code for this instance.
+            </summary>
+            <returns>
+            A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table. 
+            </returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ColorEditor.Mode.ColorModeWrapper.ToString">
+            <summary>
+            Returns a <see cref="T:System.String"/> that represents this instance.
+            </summary>
+            <returns>
+            A <see cref="T:System.String"/> that represents this instance.
+            </returns>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.Mode.ColorModeWrapper.EnumValue">
+            <summary>
+            Gets or sets the enum int value.
+            </summary>
+            <value>The enum value.</value>
+        </member>
+        <member name="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.CmykaColor">
+            <summary>
+            A struct representing a color comprised of Cyan, Magenta, Yellow, Key (Black) and Alpha channels.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ColorEditor.ColorSchemas.CmykaColor.#ctor(System.Double,System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.CmykaColor"/> struct.
+            </summary>
+            <param name="cyan">The cyan channel.</param>
+            <param name="magenta">The magenta channel.</param>
+            <param name="yellow">The yellow channel.</param>
+            <param name="key">The key (black) channel.</param>
+            <param name="alpha">The alpha channel.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ColorEditor.ColorSchemas.CmykaColor.Equals(System.Object)">
+            <summary>
+            Determines whether the specified <see cref="T:System.Object" /> is equal
+            to the current <see cref="T:System.Object" />.
+            </summary>
+            <param name="obj">The <see cref="T:System.Object" /> to compare with the current
+            <see cref="T:System.Object" />.</param>
+            <returns>
+            True if the specified <see cref="T:System.Object" /> is equal to the
+            current <see cref="T:System.Object" />; otherwise, false.
+            </returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ColorEditor.ColorSchemas.CmykaColor.Equals(Telerik.Windows.Controls.ColorEditor.ColorSchemas.CmykaColor)">
+            <summary>
+            Compares this <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.CmykaColor"/> instance to another <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.CmykaColor"/> instance.
+            </summary>
+            <param name="otherCmyka">The other <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.CmykaColor"/> instance.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ColorEditor.ColorSchemas.CmykaColor.GetHashCode">
+            <summary>
+            Serves as a hash function for a particular type.
+            </summary>
+            <returns>A hash code for the current <see cref="T:System.Object" />.</returns>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.ColorSchemas.CmykaColor.Alpha">
+            <summary>
+            Gets the alpha (opacity) channel of the <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.CmykaColor"/> instance.
+            </summary>
+            <value>The alpha channel.</value>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.ColorSchemas.CmykaColor.Cyan">
+            <summary>
+            Gets the cyan channel of the <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.CmykaColor"/> instance.
+            </summary>
+            <value>The cyan channel.</value>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.ColorSchemas.CmykaColor.Key">
+            <summary>
+            Gets the key (black) channel of the <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.CmykaColor"/> instance.
+            </summary>
+            <value>The key channel.</value>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.ColorSchemas.CmykaColor.Magenta">
+            <summary>
+            Gets the magenta channel of the <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.CmykaColor"/> instance.
+            </summary>
+            <value>The magenta channel.</value>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.ColorSchemas.CmykaColor.Yellow">
+            <summary>
+            Gets the yellow channel of the <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.CmykaColor"/> instance.
+            </summary>
+            <value>The yellow channel.</value>
+        </member>
+        <member name="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.ColorScheme">
+            <summary>
+            Specifies the the color scheme.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.ColorEditor.ColorSchemas.ColorScheme.Rgba">
+            <summary>
+            Color scheme comprised of red, green, blue and alpha channels.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.ColorEditor.ColorSchemas.ColorScheme.Hsva">
+            <summary>
+            Color scheme comprised of hue, saturation, value and alpha channels.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.ColorEditor.ColorSchemas.ColorScheme.Hlsa">
+            <summary>
+            Color scheme comprised of hue, luminance, saturation and alpha channels.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.ColorEditor.ColorSchemas.ColorScheme.Cmyka">
+            <summary>
+            Color scheme comprised of cyan, magenta, yellow, key (black) and alpha channels.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.ColorEditor.ColorSchemas.ColorScheme.Hex">
+            <summary>
+            Color scheme comprised of a hexadecimal representaion of a color.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.HexColor">
+            <summary>
+            A struct representing a Hex color representation of a color.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ColorEditor.ColorSchemas.HexColor.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.HexColor"/> struct.
+            </summary>
+            <param name="value">The hex value.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ColorEditor.ColorSchemas.HexColor.Equals(System.Object)">
+            <summary>
+            Determines whether the specified <see cref="T:System.Object" /> is equal
+            to the current <see cref="T:System.Object" />.
+            </summary>
+            <param name="obj">The <see cref="T:System.Object" /> to compare with the current
+            <see cref="T:System.Object" />.</param>
+            <returns>
+            True if the specified <see cref="T:System.Object" /> is equal to the
+            current <see cref="T:System.Object" />; otherwise, false.
+            </returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ColorEditor.ColorSchemas.HexColor.Equals(Telerik.Windows.Controls.ColorEditor.ColorSchemas.HexColor)">
+            <summary>
+            Compares this <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.HexColor"/> instance to another <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.HexColor"/> instance.
+            </summary>
+            <param name="otherHex">The other <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.HexColor"/> instance.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ColorEditor.ColorSchemas.HexColor.GetHashCode">
+            <summary>
+            Serves as a hash function for a particular type.
+            </summary>
+            <returns>A hash code for the current <see cref="T:System.Object" />.</returns>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.ColorSchemas.HexColor.Value">
+            <summary>
+            Gets the hex value of the <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.HexColor"/> class.
+            </summary>
+            <value>The value.</value>
+        </member>
+        <member name="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.HlsaColor">
+            <summary>
+            A struct representing a color comprised of Hue, Luminance, Saturation and Alpha channels.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ColorEditor.ColorSchemas.HlsaColor.#ctor(System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.HlsaColor"/> struct.
+            </summary>
+            <param name="hue">The hue channel.</param>
+            <param name="luminance">The luminance channel.</param>
+            <param name="saturation">The saturation channel.</param>
+            <param name="alpha">The alpha channel.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ColorEditor.ColorSchemas.HlsaColor.Equals(System.Object)">
+            <summary>
+            Determines whether the specified <see cref="T:System.Object" /> is equal
+            to the current <see cref="T:System.Object" />.
+            </summary>
+            <param name="obj">The <see cref="T:System.Object" /> to compare with the current
+            <see cref="T:System.Object" />.</param>
+            <returns>
+            True if the specified <see cref="T:System.Object" /> is equal to the
+            current <see cref="T:System.Object" />; otherwise, false.
+            </returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ColorEditor.ColorSchemas.HlsaColor.Equals(Telerik.Windows.Controls.ColorEditor.ColorSchemas.HlsaColor)">
+            <summary>
+            Compares this <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.HlsaColor"/> instance to another <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.HlsaColor"/> instance.
+            </summary>
+            <param name="otherHlsa">The other <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.HlsaColor"/> instance.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ColorEditor.ColorSchemas.HlsaColor.GetHashCode">
+            <summary>
+            Serves as a hash function for a particular type.
+            </summary>
+            <returns>A hash code for the current <see cref="T:System.Object" />.</returns>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.ColorSchemas.HlsaColor.Alpha">
+            <summary>
+            Gets the alpha (opacity) channel of the <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.HlsaColor"/> instance.
+            </summary>
+            <value>The alpha channel.</value>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.ColorSchemas.HlsaColor.Hue">
+            <summary>
+            Gets the hue channel of the <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.HlsaColor"/> instance.
+            </summary>
+            <value>The hue channel.</value>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.ColorSchemas.HlsaColor.Luminance">
+            <summary>
+            Gets the luminance channel of the <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.HlsaColor"/> instance.
+            </summary>
+            <value>The luminance channel.</value>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.ColorSchemas.HlsaColor.Saturation">
+            <summary>
+            Gets the saturation channel of the <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.HlsaColor"/> instance.
+            </summary>
+            <value>The saturation channel.</value>
+        </member>
+        <member name="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.HsvaColor">
+            <summary>
+            A struct representing a color comprised of Hue, Saturation, Value and Alpha channels.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ColorEditor.ColorSchemas.HsvaColor.#ctor(System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.HsvaColor"/> struct.
+            </summary>
+            <param name="hue">The hue channel.</param>
+            <param name="saturation">The saturation channel.</param>
+            <param name="value">The value channel.</param>
+            <param name="alpha">The alpha channel.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ColorEditor.ColorSchemas.HsvaColor.Equals(System.Object)">
+            <summary>
+            Determines whether the specified <see cref="T:System.Object" /> is equal
+            to the current <see cref="T:System.Object" />.
+            </summary>
+            <param name="obj">The <see cref="T:System.Object" /> to compare with the current
+            <see cref="T:System.Object" />.</param>
+            <returns>
+            True if the specified <see cref="T:System.Object" /> is equal to the
+            current <see cref="T:System.Object" />; otherwise, false.
+            </returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ColorEditor.ColorSchemas.HsvaColor.Equals(Telerik.Windows.Controls.ColorEditor.ColorSchemas.HsvaColor)">
+            <summary>
+            Compares this <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.HsvaColor"/> instance to another <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.HsvaColor"/> instance.
+            </summary>
+            <param name="otherHsva">The other <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.HsvaColor"/> instance.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ColorEditor.ColorSchemas.HsvaColor.GetHashCode">
+            <summary>
+            Serves as a hash function for a particular type.
+            </summary>
+            <returns>A hash code for the current <see cref="T:System.Object" />.</returns>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.ColorSchemas.HsvaColor.Alpha">
+            <summary>
+            Gets the alpha (opacity) channel of the <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.HsvaColor"/> instance.
+            </summary>
+            <value>The alpha channel.</value>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.ColorSchemas.HsvaColor.Hue">
+            <summary>
+            Gets the hue channel of the <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.HsvaColor"/> instance.
+            </summary>
+            <value>The hue channel.</value>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.ColorSchemas.HsvaColor.Saturation">
+            <summary>
+            Gets the saturation channel of the <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.HsvaColor"/> instance.
+            </summary>
+            <value>The saturation channel.</value>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.ColorSchemas.HsvaColor.Value">
+            <summary>
+            Gets the value channel of the <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.HsvaColor"/> instance.
+            </summary>
+            <value>The value channel.</value>
+        </member>
+        <member name="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.RgbaColor">
+            <summary>
+            A struct representing a color comprised of Red, Green, Blue and Alpha channels.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ColorEditor.ColorSchemas.RgbaColor.#ctor(System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.RgbaColor"/> struct.
+            </summary>
+            <param name="red">The red channel.</param>
+            <param name="green">The green channel.</param>
+            <param name="blue">The blue channel.</param>
+            <param name="alpha">The alpha channel.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ColorEditor.ColorSchemas.RgbaColor.#ctor(System.Windows.Media.Color)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.RgbaColor"/> struct.
+            </summary>
+            <param name="color">The color.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ColorEditor.ColorSchemas.RgbaColor.Equals(System.Object)">
+            <summary>
+            Determines whether the specified <see cref="T:System.Object" /> is equal
+            to the current <see cref="T:System.Object" />.
+            </summary>
+            <param name="obj">The <see cref="T:System.Object" /> to compare with the current
+            <see cref="T:System.Object" />.</param>
+            <returns>
+            True if the specified <see cref="T:System.Object" /> is equal to the
+            current <see cref="T:System.Object" />; otherwise, false.
+            </returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ColorEditor.ColorSchemas.RgbaColor.Equals(Telerik.Windows.Controls.ColorEditor.ColorSchemas.RgbaColor)">
+            <summary>
+            Compares this <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.RgbaColor"/> instance to another <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.RgbaColor"/> instance.
+            </summary>
+            <param name="otherRgba">The other <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.RgbaColor"/> instance.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ColorEditor.ColorSchemas.RgbaColor.GetHashCode">
+            <summary>
+            Serves as a hash function for a particular type.
+            </summary>
+            <returns>A hash code for the current <see cref="T:System.Object" />.</returns>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.ColorSchemas.RgbaColor.Alpha">
+            <summary>
+            Gets the alpha (opacity) channel of the <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.RgbaColor"/> instance.
+            </summary>
+            <value>The alpha channel.</value>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.ColorSchemas.RgbaColor.Blue">
+            <summary>
+            Gets the blue channel of the <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.RgbaColor"/> instance.
+            </summary>
+            <value>The blue channel.</value>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.ColorSchemas.RgbaColor.Green">
+            <summary>
+            Gets the green channel of the <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.RgbaColor"/> instance.
+            </summary>
+            <value>The green channel.</value>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.ColorSchemas.RgbaColor.Red">
+            <summary>
+            Gets the red channel of the <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.RgbaColor"/> instance.
+            </summary>
+            <value>The red channel.</value>
+        </member>
+        <member name="T:Telerik.Windows.Controls.ColorEditor.UnifiedColor">
+            <summary>
+            Represents a unified view of all the available color schemas (RGB, HLS, HSV, HEX and CMYK).
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ColorEditor.UnifiedColor.FromCmyka(Telerik.Windows.Controls.ColorEditor.ColorSchemas.CmykaColor)">
+            <summary>
+            Creates a new <see cref="T:Telerik.Windows.Controls.ColorEditor.UnifiedColor"/> instance from a <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.CmykaColor"/> instance.
+            </summary>
+            <param name="cmyka">An instance of the <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.CmykaColor"/> class.</param>
+            <returns>A new instance of the <see cref="T:Telerik.Windows.Controls.ColorEditor.UnifiedColor"/> class.</returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ColorEditor.UnifiedColor.FromHex(Telerik.Windows.Controls.ColorEditor.ColorSchemas.HexColor)">
+            <summary>
+            Creates a new <see cref="T:Telerik.Windows.Controls.ColorEditor.UnifiedColor"/> instance from a <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.HexColor"/> instance.
+            </summary>
+            <param name="hex">An instance of the <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.HexColor"/> class.</param>
+            <returns>A new instance of the <see cref="T:Telerik.Windows.Controls.ColorEditor.UnifiedColor"/> class.</returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ColorEditor.UnifiedColor.FromHlsa(Telerik.Windows.Controls.ColorEditor.ColorSchemas.HlsaColor)">
+            <summary>
+            Creates a new <see cref="T:Telerik.Windows.Controls.ColorEditor.UnifiedColor"/> instance from a <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.HlsaColor"/> instance.
+            </summary>
+            <param name="hlsa">An instance of the <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.HlsaColor"/> class.</param>
+            <returns>A new instance of the <see cref="T:Telerik.Windows.Controls.ColorEditor.UnifiedColor"/> class.</returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ColorEditor.UnifiedColor.FromHsva(Telerik.Windows.Controls.ColorEditor.ColorSchemas.HsvaColor)">
+            <summary>
+            Creates a new <see cref="T:Telerik.Windows.Controls.ColorEditor.UnifiedColor"/> instance from a <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.HsvaColor"/> instance.
+            </summary>
+            <param name="hsva">An instance of the <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.HsvaColor"/> class.</param>
+            <returns>A new instance of the <see cref="T:Telerik.Windows.Controls.ColorEditor.UnifiedColor"/> class.</returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ColorEditor.UnifiedColor.FromRgba(Telerik.Windows.Controls.ColorEditor.ColorSchemas.RgbaColor)">
+            <summary>
+            Creates a new <see cref="T:Telerik.Windows.Controls.ColorEditor.UnifiedColor"/> instance from a <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.RgbaColor"/> instance.
+            </summary>
+            <param name="rgba">An instance of the <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.RgbaColor"/> class.</param>
+            <returns>A new instance of the <see cref="T:Telerik.Windows.Controls.ColorEditor.UnifiedColor"/> class.</returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ColorEditor.UnifiedColor.Equals(System.Object)">
+            <summary>
+            Determines whether the specified <see cref="T:System.Object" /> is equal
+            to the current <see cref="T:System.Object" />.
+            </summary>
+            <param name="obj">The <see cref="T:System.Object" /> to compare with the current
+            <see cref="T:System.Object" />.</param>
+            <returns>
+            True if the specified <see cref="T:System.Object" /> is equal to the
+            current <see cref="T:System.Object" />; otherwise, false.
+            </returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ColorEditor.UnifiedColor.Equals(Telerik.Windows.Controls.ColorEditor.UnifiedColor)">
+            <summary>
+            Compares to another unified color.
+            </summary>
+            <param name="otherUnifiedColor">The other unified color.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ColorEditor.UnifiedColor.GetHashCode">
+            <summary>
+            Serves as a hash function for a particular type.
+            </summary>
+            <returns>A hash code for the current <see cref="T:System.Object" />.</returns>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.UnifiedColor.Cmyka">
+            <summary>
+            Gets the <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.CmykaColor"/>.
+            </summary>
+            <value>The cmyka.</value>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.UnifiedColor.Hex">
+            <summary>
+            Gets the <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.HexColor"/>.
+            </summary>
+            <value>The rgba.</value>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.UnifiedColor.Hlsa">
+            <summary>
+            Gets the <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.HlsaColor"/>.
+            </summary>
+            <value>The rgba.</value>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.UnifiedColor.Hsva">
+            <summary>
+            Gets the <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.HsvaColor"/>.
+            </summary>
+            <value>The rgba.</value>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.UnifiedColor.Rgba">
+            <summary>
+            Gets the <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.RgbaColor"/>.
+            </summary>
+            <value>The rgba.</value>
+        </member>
+        <member name="T:Telerik.Windows.Controls.ColorEditor.ColorConverter">
+            <summary>
+            A class that converts all the available color schemas (RGB, HLS, HSV, HEX and CMYK) between each other.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ColorEditor.ColorConverter.#cctor">
+            <summary>
+            Initializes static members of the <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorConverter"/> class.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ColorEditor.ColorConverter.CmykaToHex(Telerik.Windows.Controls.ColorEditor.ColorSchemas.CmykaColor)">
+            <summary>
+            Converts a <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.CmykaColor"/> to a <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.HexColor"/>.
+            </summary>
+            <param name="cmyka">The <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.CmykaColor"/> color.</param>
+            <returns><see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.HexColor"/></returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ColorEditor.ColorConverter.CmykaToHlsa(Telerik.Windows.Controls.ColorEditor.ColorSchemas.CmykaColor)">
+            <summary>
+            Converts a <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.CmykaColor"/> to a <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.HlsaColor"/>.
+            </summary>
+            <param name="cmyka">The <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.CmykaColor"/> color.</param>
+            <returns><see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.HlsaColor"/></returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ColorEditor.ColorConverter.CmykaToHsva(Telerik.Windows.Controls.ColorEditor.ColorSchemas.CmykaColor)">
+            <summary>
+            Converts a <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.CmykaColor"/> to a <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.HsvaColor"/>.
+            </summary>
+            <param name="cmyka">The <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.CmykaColor"/> color.</param>
+            <returns><see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.HsvaColor"/></returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ColorEditor.ColorConverter.CmykaToRgba(Telerik.Windows.Controls.ColorEditor.ColorSchemas.CmykaColor)">
+            <summary>
+            Converts a <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.CmykaColor"/> to a <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.RgbaColor"/>.
+            </summary>
+            <param name="cmyka">The <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.CmykaColor"/> color.</param>
+            <returns><see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.RgbaColor"/></returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ColorEditor.ColorConverter.HexToCmyka(Telerik.Windows.Controls.ColorEditor.ColorSchemas.HexColor)">
+            <summary>
+            Converts a <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.HexColor"/> to a <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.CmykaColor"/>.
+            </summary>
+            <param name="hex">The <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.HexColor"/> color.</param>
+            <returns><see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.CmykaColor"/></returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ColorEditor.ColorConverter.HexToHlsa(Telerik.Windows.Controls.ColorEditor.ColorSchemas.HexColor)">
+            <summary>
+            Converts a <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.HexColor"/> to a <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.HlsaColor"/>.
+            </summary>
+            <param name="hex">The <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.HexColor"/> color.</param>
+            <returns><see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.HlsaColor"/></returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ColorEditor.ColorConverter.HexToHsva(Telerik.Windows.Controls.ColorEditor.ColorSchemas.HexColor)">
+            <summary>
+            Converts a <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.HexColor"/> to a <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.HsvaColor"/>.
+            </summary>
+            <param name="hex">The <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.HexColor"/> color.</param>
+            <returns><see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.HsvaColor"/></returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ColorEditor.ColorConverter.HexToRgba(Telerik.Windows.Controls.ColorEditor.ColorSchemas.HexColor)">
+            <summary>
+            Converts a <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.HexColor"/> to a <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.RgbaColor"/>.
+            </summary>
+            <param name="hex">The <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.HexColor"/> color.</param>
+            <returns><see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.RgbaColor"/></returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ColorEditor.ColorConverter.HlsaToCmyka(Telerik.Windows.Controls.ColorEditor.ColorSchemas.HlsaColor)">
+            <summary>
+            Converts a <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.HlsaColor"/> to a <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.CmykaColor"/>.
+            </summary>
+            <param name="hlsa">The <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.HlsaColor"/> color.</param>
+            <returns><see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.CmykaColor"/></returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ColorEditor.ColorConverter.HlsaToHex(Telerik.Windows.Controls.ColorEditor.ColorSchemas.HlsaColor)">
+            <summary>
+            Converts a <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.HlsaColor"/> to a <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.HexColor"/>.
+            </summary>
+            <param name="hlsa">The <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.HlsaColor"/> color.</param>
+            <returns><see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.HexColor"/></returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ColorEditor.ColorConverter.HlsaToHsva(Telerik.Windows.Controls.ColorEditor.ColorSchemas.HlsaColor)">
+            <summary>
+            Converts a <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.HlsaColor"/> to a <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.HsvaColor"/>.
+            </summary>
+            <param name="hlsa">The <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.HlsaColor"/> color.</param>
+            <returns><see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.HsvaColor"/></returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ColorEditor.ColorConverter.HlsaToRgba(Telerik.Windows.Controls.ColorEditor.ColorSchemas.HlsaColor)">
+            <summary>
+            Converts a <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.HlsaColor"/> to a <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.RgbaColor"/>.
+            </summary>
+            <param name="hlsa">The <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.HlsaColor"/> color.</param>
+            <returns><see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.RgbaColor"/></returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ColorEditor.ColorConverter.HsvaToCmyka(Telerik.Windows.Controls.ColorEditor.ColorSchemas.HsvaColor)">
+            <summary>
+            Converts a <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.HsvaColor"/> to a <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.CmykaColor"/>.
+            </summary>
+            <param name="hsva">The <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.HsvaColor"/> color.</param>
+            <returns><see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.CmykaColor"/></returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ColorEditor.ColorConverter.HsvaToHex(Telerik.Windows.Controls.ColorEditor.ColorSchemas.HsvaColor)">
+            <summary>
+            Converts a <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.HsvaColor"/> to a <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.HexColor"/>.
+            </summary>
+            <param name="hsva">The <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.HsvaColor"/> color.</param>
+            <returns><see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.HexColor"/></returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ColorEditor.ColorConverter.HsvaToHlsa(Telerik.Windows.Controls.ColorEditor.ColorSchemas.HsvaColor)">
+            <summary>
+            Converts a <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.HsvaColor"/> to a <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.HlsaColor"/>.
+            </summary>
+            <param name="hsva">The <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.HsvaColor"/> color.</param>
+            <returns><see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.HlsaColor"/></returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ColorEditor.ColorConverter.HsvaToRgba(Telerik.Windows.Controls.ColorEditor.ColorSchemas.HsvaColor)">
+            <summary>
+            Converts a <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.HsvaColor"/> to a <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.RgbaColor"/>.
+            </summary>
+            <param name="hsva">The <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.HsvaColor"/> color.</param>
+            <returns><see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.RgbaColor"/></returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ColorEditor.ColorConverter.RgbaToCmyka(Telerik.Windows.Controls.ColorEditor.ColorSchemas.RgbaColor)">
+            <summary>
+            Converts a <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.RgbaColor"/> to a <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.CmykaColor"/>.
+            </summary>
+            <param name="rgba">The <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.RgbaColor"/> color.</param>
+            <returns><see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.CmykaColor"/></returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ColorEditor.ColorConverter.RgbaToHex(Telerik.Windows.Controls.ColorEditor.ColorSchemas.RgbaColor)">
+            <summary>
+            Converts a <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.RgbaColor"/> to a <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.HexColor"/>.
+            </summary>
+            <param name="rgba">The <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.RgbaColor"/> color.</param>
+            <returns><see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.HexColor"/></returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ColorEditor.ColorConverter.RgbaToHlsa(Telerik.Windows.Controls.ColorEditor.ColorSchemas.RgbaColor)">
+            <summary>
+            Converts a <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.RgbaColor"/> to a <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.HlsaColor"/>.
+            </summary>
+            <param name="rgba">The <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.RgbaColor"/> color.</param>
+            <returns><see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.HlsaColor"/></returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ColorEditor.ColorConverter.RgbaToHsva(Telerik.Windows.Controls.ColorEditor.ColorSchemas.RgbaColor)">
+            <summary>
+            Converts a <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.RgbaColor"/> to a <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.HsvaColor"/>.
+            </summary>
+            <param name="rgba">The <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.RgbaColor"/> color.</param>
+            <returns><see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.HsvaColor"/></returns>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.ColorConverter.KnownColors">
+            <summary>
+            Provides a dictionary with known colors and their hex representation.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.ColorEditor.Converters.EnumConverter">
+            <summary>
+            Converts ColorMode enum values to int.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ColorEditor.Converters.EnumConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Modifies the source data before passing it to the target for display
+            in the UI.
+            </summary>
+            <param name="value">The source data being passed to the target.</param>
+            <param name="targetType">The <see cref="T:System.Type" /> of data expected by
+            the target dependency property.</param>
+            <param name="parameter">An optional parameter to be used in the converter logic.</param>
+            <param name="culture">The culture of the conversion.</param>
+            <returns>The value to be passed to the target dependency property.</returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ColorEditor.Converters.EnumConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Modifies the target data before passing it to the source object.  This
+            method is called only in <see cref="F:System.Windows.Data.BindingMode.TwoWay" />
+            bindings.
+            </summary>
+            <param name="value">The target data being passed to the source.</param>
+            <param name="targetType">The <see cref="T:System.Type" /> of data expected by
+            the source object.</param>
+            <param name="parameter">An optional parameter to be used in the converter logic.</param>
+            <param name="culture">The culture of the conversion.</param>
+            <returns>The value to be passed to the source object.</returns>
+        </member>
+        <member name="T:Telerik.Windows.Controls.ColorEditor.Converters.HueConverter">
+            <summary>
+            Creates a SolidColorBrush from a HSV color.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ColorEditor.Converters.HueConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Modifies the source data before passing it to the target for display
+            in the UI.
+            </summary>
+            <param name="value">The source data being passed to the target.</param>
+            <param name="targetType">The <see cref="T:System.Type" /> of data expected by
+            the target dependency property.</param>
+            <param name="parameter">An optional parameter to be used in the converter logic.</param>
+            <param name="culture">The culture of the conversion.</param>
+            <returns>The value to be passed to the target dependency property.</returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ColorEditor.Converters.HueConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Modifies the target data before passing it to the source object.  This
+            method is called only in <see cref="F:System.Windows.Data.BindingMode.TwoWay" />
+            bindings.
+            </summary>
+            <param name="value">The target data being passed to the source.</param>
+            <param name="targetType">The <see cref="T:System.Type" /> of data expected by
+            the source object.</param>
+            <param name="parameter">An optional parameter to be used in the converter logic.</param>
+            <param name="culture">The culture of the conversion.</param>
+            <returns>The value to be passed to the source object.</returns>
+        </member>
+        <member name="T:Telerik.Windows.Controls.ColorEditor.Effects.ChessboardEffect">
+            <summary>
+            A pixel shader effect that simulates a chess board.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.ColorEditor.Effects.ChessboardEffect.InputProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.ColorEditor.Effects.ChessboardEffect.Input"/> property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.ColorEditor.Effects.ChessboardEffect.SqaureSizeXProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.ColorEditor.Effects.ChessboardEffect.SqaureSizeX"/> property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.ColorEditor.Effects.ChessboardEffect.SqaureSizeYProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.ColorEditor.Effects.ChessboardEffect.SqaureSizeY"/> property.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ColorEditor.Effects.ChessboardEffect.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.Windows.Controls.ColorEditor.Effects.ChessboardEffect"/> class.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.Effects.ChessboardEffect.Input">
+            <summary>
+            Gets or sets the brush on which the chessboard effect will be applied.
+            </summary>
+            <value>The input.</value>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.Effects.ChessboardEffect.SqaureSizeX">
+            <summary>
+            The number of verical bands to add to the output. The higher the value the more bands.
+            </summary>
+            <value>The sqaure size X.</value>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.Effects.ChessboardEffect.SqaureSizeY">
+            <summary>
+            The number of verical bands to add to the output. The higher the value the more bands.
+            </summary>
+            <value>The sqaure size Y.</value>
+        </member>
+        <member name="T:Telerik.Windows.Controls.ColorEditor.ColorExtensions">
+            <summary>
+            A class comprised of various color extension methods.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ColorEditor.ColorExtensions.ToSystemColor(Telerik.Windows.Controls.ColorEditor.UnifiedColor)">
+            <summary>
+            Converts a <see cref="T:Telerik.Windows.Controls.ColorEditor.UnifiedColor"/> instance to a <see cref="T:System.Windows.Media.Color"/> instance.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ColorEditor.ColorExtensions.ToSystemColor(Telerik.Windows.Controls.ColorEditor.ColorSchemas.RgbaColor)">
+            <summary>
+            Converts a <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.RgbaColor"/> instance to a <see cref="T:System.Windows.Media.Color"/> instance.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ColorEditor.ColorExtensions.ToSystemColor(Telerik.Windows.Controls.ColorEditor.ColorSchemas.HsvaColor)">
+            <summary>
+            Converts a <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.HsvaColor"/> instance to a <see cref="T:System.Windows.Media.Color"/> instance.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ColorEditor.ColorExtensions.ToUnifiedColor(Telerik.Windows.Controls.ColorEditor.ViewModel.ColorViewModel)">
+            <summary>
+            Converts a <see cref="T:Telerik.Windows.Controls.ColorEditor.ViewModel.ColorViewModel"/> instance to a <see cref="T:Telerik.Windows.Controls.ColorEditor.UnifiedColor"/> instance.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ColorEditor.ColorExtensions.ToRgbaColor(System.Windows.Media.Color)">
+            <summary>
+            Converts a <see cref="T:System.Windows.Media.Color"/> instance to a <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.RgbaColor"/> instance.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ColorEditor.ColorExtensions.ToUnifiedColor(System.Windows.Media.Color)">
+            <summary>
+            Converts a <see cref="T:System.Windows.Media.Color"/> instance to a <see cref="T:Telerik.Windows.Controls.ColorEditor.UnifiedColor"/> instance.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ColorEditor.ColorExtensions.ToRgbaColor(Telerik.Windows.Controls.ColorEditor.ColorSchemas.HsvaColor)">
+            <summary>
+            Converts a <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.HsvaColor"/> instance to a <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.RgbaColor"/> instance.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ColorEditor.ColorExtensions.ToRgbaColor(Telerik.Windows.Controls.ColorEditor.ColorSchemas.HlsaColor)">
+            <summary>
+            Converts a <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.HlsaColor"/> instance to a <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.RgbaColor"/> instance.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ColorEditor.ColorExtensions.ToRgbaColor(Telerik.Windows.Controls.ColorEditor.ColorSchemas.CmykaColor)">
+            <summary>
+            Converts a <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.CmykaColor"/> instance to a <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.RgbaColor"/> instance.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ColorEditor.ColorExtensions.ToRgbaColor(Telerik.Windows.Controls.ColorEditor.ColorSchemas.HexColor)">
+            <summary>
+            Converts a <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.HexColor"/> instance to a <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.RgbaColor"/> instance.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ColorEditor.ColorExtensions.ToHsvaColor(Telerik.Windows.Controls.ColorEditor.ColorSchemas.RgbaColor)">
+            <summary>
+            Converts a <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.RgbaColor"/> instance to a <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.HsvaColor"/> instance.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ColorEditor.ColorExtensions.ToHsvaColor(Telerik.Windows.Controls.ColorEditor.ColorSchemas.HlsaColor)">
+            <summary>
+            Converts a <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.HlsaColor"/> instance to a <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.HsvaColor"/> instance.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ColorEditor.ColorExtensions.ToHsvaColor(Telerik.Windows.Controls.ColorEditor.ColorSchemas.CmykaColor)">
+            <summary>
+            Converts a <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.CmykaColor"/> instance to a <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.HsvaColor"/> instance.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ColorEditor.ColorExtensions.ToHsvaColor(Telerik.Windows.Controls.ColorEditor.ColorSchemas.HexColor)">
+            <summary>
+            Converts a <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.HexColor"/> instance to a <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.HsvaColor"/> instance.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ColorEditor.ColorExtensions.ToHlsaColor(Telerik.Windows.Controls.ColorEditor.ColorSchemas.RgbaColor)">
+            <summary>
+            Converts a <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.RgbaColor"/> instance to a <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.HlsaColor"/> instance.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ColorEditor.ColorExtensions.ToHlsaColor(Telerik.Windows.Controls.ColorEditor.ColorSchemas.HsvaColor)">
+            <summary>
+            Converts a <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.HsvaColor"/> instance to a <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.HlsaColor"/> instance.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ColorEditor.ColorExtensions.ToHlsaColor(Telerik.Windows.Controls.ColorEditor.ColorSchemas.CmykaColor)">
+            <summary>
+            Converts a <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.CmykaColor"/> instance to a <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.HlsaColor"/> instance.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ColorEditor.ColorExtensions.ToHlsaColor(Telerik.Windows.Controls.ColorEditor.ColorSchemas.HexColor)">
+            <summary>
+            Converts a <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.HexColor"/> instance to a <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.HlsaColor"/> instance.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ColorEditor.ColorExtensions.ToCmykaColor(Telerik.Windows.Controls.ColorEditor.ColorSchemas.RgbaColor)">
+            <summary>
+            Converts a <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.RgbaColor"/> instance to a <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.CmykaColor"/> instance.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ColorEditor.ColorExtensions.ToCmykaColor(Telerik.Windows.Controls.ColorEditor.ColorSchemas.HsvaColor)">
+            <summary>
+            Converts a <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.HsvaColor"/> instance to a <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.CmykaColor"/> instance.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ColorEditor.ColorExtensions.ToCmykaColor(Telerik.Windows.Controls.ColorEditor.ColorSchemas.HlsaColor)">
+            <summary>
+            Converts a <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.HlsaColor"/> instance to a <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.CmykaColor"/> instance.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ColorEditor.ColorExtensions.ToCmykaColor(Telerik.Windows.Controls.ColorEditor.ColorSchemas.HexColor)">
+            <summary>
+            Converts a <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.HexColor"/> instance to a <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.CmykaColor"/> instance.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ColorEditor.ColorExtensions.ToHexColor(Telerik.Windows.Controls.ColorEditor.ColorSchemas.RgbaColor)">
+            <summary>
+            Converts a <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.RgbaColor"/> instance to a <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.HexColor"/> instance.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ColorEditor.ColorExtensions.ToHexColor(Telerik.Windows.Controls.ColorEditor.ColorSchemas.HsvaColor)">
+            <summary>
+            Converts a <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.HsvaColor"/> instance to a <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.HexColor"/> instance.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ColorEditor.ColorExtensions.ToHexColor(Telerik.Windows.Controls.ColorEditor.ColorSchemas.HlsaColor)">
+            <summary>
+            Converts a <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.HlsaColor"/> instance to a <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.HexColor"/> instance.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ColorEditor.ColorExtensions.ToHexColor(Telerik.Windows.Controls.ColorEditor.ColorSchemas.CmykaColor)">
+            <summary>
+            Converts a <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.CmykaColor"/> instance to a <see cref="T:Telerik.Windows.Controls.ColorEditor.ColorSchemas.HexColor"/> instance.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.ColorEditor.Helpers.MathHelper">
+            <summary>
+            A math helper class that coerces a value between a minimum and a maximum.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ColorEditor.Helpers.MathHelper.Coerce(System.Double,System.Double,System.Double,System.Int32)">
+            <summary>
+            Coerces the specified value.
+            </summary>
+            <param name="value">The value.</param>
+            <param name="minimum">The minimum.</param>
+            <param name="maximum">The maximum.</param>
+            <param name="precision">The precision.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ColorEditor.Helpers.MathHelper.Coerce(System.Double,System.Double,System.Double)">
+            <summary>
+            Coerces the specified value.
+            </summary>
+            <param name="value">The value.</param>
+            <param name="minimum">The minimum.</param>
+            <param name="maximum">The maximum.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Telerik.Windows.Controls.ColorEditor.Pad.MovementDirection">
+            <summary>
+            An enum that defines in which direction the content of the <see cref="N:Telerik.Windows.Controls.ColorEditor.Pad"/> moves.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.ColorEditor.Pad.MovementDirection.X">
+            <summary>
+            Only along the X coordinate.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.ColorEditor.Pad.MovementDirection.Y">
+            <summary>
+            Only along the Y coordinate.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.ColorEditor.Pad.MovementDirection.Both">
+            <summary>
+            Along the X and Y coordinates.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.ColorEditor.Pad.Pad">
+            <summary>
+            Represents a helper control which allows its content to be moved freely with the mouse.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.ColorEditor.Pad.Pad.MovementDirectionProperty">
+            <summary>
+            Identifies the MovementDirection dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.ColorEditor.Pad.Pad.PointerRelativePositionProperty">
+            <summary>
+            Identifies the PointerRelativePosition dependency property.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ColorEditor.Pad.Pad.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.Windows.Controls.ColorEditor.Pad.Pad"/> class.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ColorEditor.Pad.Pad.OnApplyTemplate">
+            <summary>
+            When overridden in a derived class, is invoked whenever application
+            code or internal processes (such as a rebuilding layout pass) call <see cref="M:System.Windows.Controls.Control.ApplyTemplate" />.
+            In simplest terms, this means the method is called just before a UI element displays
+            in an application. For more information, see Remarks.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ColorEditor.Pad.Pad.RaisePointerPositionChanged">
+            <summary>
+            Raises the <see cref="E:Telerik.Windows.Controls.ColorEditor.Pad.Pad.PointerPositionChanged"/> event.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ColorEditor.Pad.Pad.RaisePointerPositionChanging">
+            <summary>
+            Raises the <see cref="E:Telerik.Windows.Controls.ColorEditor.Pad.Pad.PointerPositionChanging"/> event.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ColorEditor.Pad.Pad.OnMovementDirectionChanged(Telerik.Windows.Controls.ColorEditor.Pad.MovementDirection,Telerik.Windows.Controls.ColorEditor.Pad.MovementDirection)">
+            <summary>
+            Called when the <see cref="P:Telerik.Windows.Controls.ColorEditor.Pad.Pad.MovementDirection"/> property changes.
+            </summary>
+            <param name="oldValue">The old value.</param>
+            <param name="newValue">The new value.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ColorEditor.Pad.Pad.OnPointerRelativePositionChanged(System.Windows.Point,System.Windows.Point)">
+            <summary>
+            Called when <see cref="P:Telerik.Windows.Controls.ColorEditor.Pad.Pad.PointerRelativePosition"/> property changes.
+            </summary>
+            <param name="oldValue">The old value.</param>
+            <param name="newValue">The new value.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ColorEditor.Pad.Pad.OnMovementDirectionPropertyChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            MovementDirectionProperty property changed handler.
+            </summary>
+            <param name="d">Pad that changed its MovementDirection.</param>
+            <param name="e">Event arguments.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ColorEditor.Pad.Pad.OnPointerRelativePositionPropertyChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            PointerRelativePositionProperty property changed handler.
+            </summary>
+            <param name="d">Pad that changed its PointerRelativePosition.</param>
+            <param name="e">Event arguments.</param>
+        </member>
+        <member name="E:Telerik.Windows.Controls.ColorEditor.Pad.Pad.PointerPositionChanged">
+            <summary>
+            Occurs when the pointer has changed its position.
+            </summary>
+        </member>
+        <member name="E:Telerik.Windows.Controls.ColorEditor.Pad.Pad.PointerPositionChanging">
+            <summary>
+            Occurs when the pointer is changing its position.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.Pad.Pad.MovementDirection">
+            <summary>
+            Gets or sets the MovementDirection property. 
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.Pad.Pad.PointerRelativePosition">
+            <summary>
+            Gets or sets the PointerRelativePosition property. 
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.ColorEditor.Pad.PointerHelper">
+            <summary>
+            A pointer helper class.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ColorEditor.Pad.PointerHelper.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.Windows.Controls.ColorEditor.Pad.PointerHelper"/> class.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ColorEditor.Pad.PointerHelper.CaptureMouse">
+            <summary>
+            Captures the mouse.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ColorEditor.Pad.PointerHelper.Coerce(System.Windows.Point)">
+            <summary>
+            Coerces the specified point.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ColorEditor.Pad.PointerHelper.ReleaseMouseCapture">
+            <summary>
+            Releases the mouse capture.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ColorEditor.Pad.PointerHelper.SetPosition(System.Double,System.Double,System.Boolean)">
+            <summary>
+            Sets position (x, y) of the <see cref="P:Telerik.Windows.Controls.ColorEditor.Pad.PointerHelper.Visual"/>.
+            </summary>
+            <param name="left">The left.</param>
+            <param name="top">The top.</param>
+            <param name="coercePosition">Whether or not to coerce the position of the <see cref="P:Telerik.Windows.Controls.ColorEditor.Pad.PointerHelper.Visual"/>.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ColorEditor.Pad.PointerHelper.SetPosition(System.Windows.Point,System.Boolean)">
+            <summary>
+            Sets the position (x, y) of the <see cref="P:Telerik.Windows.Controls.ColorEditor.Pad.PointerHelper.Visual"/>.
+            </summary>
+            <param name="position">The position.</param>
+            <param name="coercePosition">Whether or not to coerce the position of the <see cref="P:Telerik.Windows.Controls.ColorEditor.Pad.PointerHelper.Visual"/>.</param>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.Pad.PointerHelper.Bounds">
+            <summary>
+            Gets or sets the bounds of the <see cref="P:Telerik.Windows.Controls.ColorEditor.Pad.PointerHelper.Visual"/>.
+            </summary>
+            <value>The bounds.</value>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.Pad.PointerHelper.CenterX">
+            <summary>
+            Gets the center point (X.
+            </summary>
+            <value>The center X.</value>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.Pad.PointerHelper.CenterY">
+            <summary>
+            Gets the center point (the Y coordinate) of the <see cref="P:Telerik.Windows.Controls.ColorEditor.Pad.PointerHelper.Visual"/>.
+            </summary>
+            <value>The center Y.</value>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.Pad.PointerHelper.Height">
+            <summary>
+            Gets the height of the <see cref="P:Telerik.Windows.Controls.ColorEditor.Pad.PointerHelper.Visual"/>.
+            </summary>
+            <value>The height.</value>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.Pad.PointerHelper.Left">
+            <summary>
+            Gets or sets the left position of the <see cref="P:Telerik.Windows.Controls.ColorEditor.Pad.PointerHelper.Visual"/>.
+            </summary>
+            <value>The left.</value>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.Pad.PointerHelper.MovementDirection">
+            <summary>
+            Gets or sets the allowed movement direction of the <see cref="P:Telerik.Windows.Controls.ColorEditor.Pad.PointerHelper.Visual"/>.
+            </summary>
+            <value>The movement direction.</value>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.Pad.PointerHelper.Top">
+            <summary>
+            Gets or sets the top position of the <see cref="P:Telerik.Windows.Controls.ColorEditor.Pad.PointerHelper.Visual"/>.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.Pad.PointerHelper.Visual">
+            <summary>
+            Gets or sets the pointer visual.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.Pad.PointerHelper.Width">
+            <summary>
+            Returns the actual width of the <see cref="P:Telerik.Windows.Controls.ColorEditor.Pad.PointerHelper.Visual"/>.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.RadColorEditor">
+            <summary>
+            The <see cref="T:Telerik.Windows.Controls.RadColorEditor"/> control is an editor that allows you to select a custom color. It supports several color schemas: RGB, HLS, HSV, CMYK and HEX.
+            </summary>
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadColorEditor.ColorModeProperty">
+            <summary>
+            Identifies the ColorMode dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadColorEditor.PreviousColorProperty">
+            <summary>
+            Identifies the PreviousColor dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadColorEditor.SelectedColorProperty">
+            <summary>
+            Identifies the SelectedColor dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadColorEditor.UnifiedColorProperty">
+            <summary>
+            Identifies the UnifiedColor dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadColorEditor.HistoryCapacityProperty">
+            <summary>
+            Identifies the HistoryCapacity dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadColorEditor.ViewModelProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.RadColorEditor.ViewModel"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadColorEditor.SelectedColorChangedEvent">
+            <summary>
+            Identifies the <see cref="E:Telerik.Windows.Controls.RadColorEditor.SelectedColorChanged"/> routed event.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadColorEditor.SelectedColorChangingEvent">
+            <summary>
+            Identifies the <see cref="E:Telerik.Windows.Controls.RadColorEditor.SelectedColorChanging"/> routed event.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadColorEditor.PreviousColorChangedEvent">
+            <summary>
+            Identifies the <see cref="E:Telerik.Windows.Controls.RadColorEditor.PreviousColorChanged"/> routed event.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadColorEditor.ColorModeChangedEvent">
+            <summary>
+            Identifies the <see cref="E:Telerik.Windows.Controls.RadColorEditor.ColorModeChanged"/> routed event.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadColorEditor.HistoryChangedEvent">
+            <summary>
+            Identifies the <see cref="E:Telerik.Windows.Controls.RadColorEditor.HistoryChanged"/> routed event.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadColorEditor.ViewModelPropertyKey">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.RadColorEditor.ViewModel"/> dependency property.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadColorEditor.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.Windows.Controls.RadColorEditor"/> class.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadColorEditor.ChangeVisualState">
+            <summary>
+            Changes the visual state of the control using transitions.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadColorEditor.ChangeVisualState(System.Boolean)">
+            <summary>
+            Updates the visual state of the control.
+            </summary>
+            <param name="useTransitions">Indicates whether transitions should be used.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadColorEditor.OnColorModeChanged(Telerik.Windows.Controls.ColorEditor.ColorMode,Telerik.Windows.Controls.ColorEditor.ColorMode)">
+            <summary>
+            Called when the ColorMode property changes.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadColorEditor.OnSelectedColorChanged(System.Windows.Media.Color,System.Windows.Media.Color)">
+            <summary>
+            Called when the SelectedColor property changes.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadColorEditor.OnPreviousColorChanged(System.Windows.Media.Color,System.Windows.Media.Color)">
+            <summary>
+            Called when the PreviousColor property changes.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadColorEditor.OnUnifiedColorChanged(Telerik.Windows.Controls.ColorEditor.UnifiedColor,Telerik.Windows.Controls.ColorEditor.UnifiedColor)">
+            <summary>
+            Called when the UnifiedColor property changes.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadColorEditor.OnHistoryCapacityChanged(System.Int32,System.Int32)">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadColorEditor.RaiseSelectedColorChanged(System.Windows.Media.Color)">
+            <summary>
+            Raises the <see cref="E:Telerik.Windows.Controls.RadColorEditor.SelectedColorChanged"/> event.
+            </summary>
+            <param name="color">The selected color.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadColorEditor.RaiseSelectedColorChanging(System.Windows.Media.Color)">
+            <summary>
+            Raises the <see cref="E:Telerik.Windows.Controls.RadColorEditor.SelectedColorChanging"/> event.
+            </summary>
+            <param name="color">The selected color.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadColorEditor.RaisePreviousColorChanged(System.Windows.Media.Color)">
+            <summary>
+            Raises the <see cref="E:Telerik.Windows.Controls.RadColorEditor.SelectedColorChanging"/> event.
+            </summary>
+            <param name="color">The selected color.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadColorEditor.RaiseColorModeChanged(Telerik.Windows.Controls.ColorEditor.ColorMode,Telerik.Windows.Controls.ColorEditor.ColorMode)">
+            <summary>
+            Raises the <see cref="E:Telerik.Windows.Controls.RadColorEditor.ColorModeChanged"/> event.
+            </summary>
+            <param name="newValue">The new <see cref="P:Telerik.Windows.Controls.RadColorEditor.ColorMode"/> value.</param>
+            <param name="oldValue">The old <see cref="P:Telerik.Windows.Controls.RadColorEditor.ColorMode"/> value.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadColorEditor.RaiseHistoryChanged(System.Collections.Generic.IList{System.Windows.Media.Color},System.Collections.Generic.IList{System.Windows.Media.Color})">
+            <summary>
+            Raises the <see cref="E:Telerik.Windows.Controls.RadColorEditor.HistoryChanged"/> event.
+            </summary>
+            <param name="removedItems">The removed items.</param>
+            <param name="addedItems">The added items.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadColorEditor.AddToHistory(System.Windows.Media.Color)">
+            <summary>
+            Adds a <see cref="T:System.Windows.Media.Color"/> to <see cref="T:Telerik.Windows.Controls.RadColorEditor"/>'s color history.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadColorEditor.OnColorModePropertyChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            ColorModeProperty property changed handler.
+            </summary>
+            <param name="d">RadColorEditor that changed its ColorMode.</param>
+            <param name="e">Event arguments.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadColorEditor.OnSelectedColorPropertyChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            SelectedColorProperty property changed handler.
+            </summary>
+            <param name="d">RadColorEditor that changed its SelectedColor.</param>
+            <param name="e">Event arguments.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadColorEditor.OnPreviousColorPropertyChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            PreviousColorProperty property changed handler.
+            </summary>
+            <param name="d">RadColorEditor that changed its PreviousColor.</param>
+            <param name="e">Event arguments.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadColorEditor.OnUnifiedColorPropertyChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            UnifiedColorProperty property changed handler.
+            </summary>
+            <param name="d">RadColorEditor that changed its UnifiedColor.</param>
+            <param name="e">Event arguments.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadColorEditor.OnHistoryCapacityPropertyChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            HistoryCapacityProperty property changed handler.
+            </summary>
+            <param name="d">RadColorEditor that changed its HistoryCapacity.</param>
+            <param name="e">Event arguments.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadColorEditor.OnApplyTemplate">
+            <summary>
+            When overridden in a derived class, is invoked whenever application
+            code or internal processes (such as a rebuilding layout pass) call <see cref="M:System.Windows.Controls.Control.ApplyTemplate" />.
+            In simplest terms, this means the method is called just before a UI element displays
+            in an application. For more information, see Remarks.
+            </summary>
+        </member>
+        <member name="E:Telerik.Windows.Controls.RadColorEditor.SelectedColorChanged">
+            <summary>
+            Occurs when the <see cref="P:Telerik.Windows.Controls.RadColorEditor.SelectedColor"/> property has changed its value.
+            </summary>
+        </member>
+        <member name="E:Telerik.Windows.Controls.RadColorEditor.SelectedColorChanging">
+            <summary>
+            Occurs when the <see cref="P:Telerik.Windows.Controls.RadColorEditor.SelectedColor"/> property is changing its value.
+            </summary>
+        </member>
+        <member name="E:Telerik.Windows.Controls.RadColorEditor.PreviousColorChanged">
+            <summary>
+            Occurs when the <see cref="P:Telerik.Windows.Controls.RadColorEditor.PreviousColor"/> property has changed its value.
+            </summary>
+        </member>
+        <member name="E:Telerik.Windows.Controls.RadColorEditor.ColorModeChanged">
+            <summary>
+            Occurs when the <see cref="P:Telerik.Windows.Controls.RadColorEditor.ColorMode"/> property changes.
+            </summary>
+        </member>
+        <member name="E:Telerik.Windows.Controls.RadColorEditor.HistoryChanged">
+            <summary>
+            Occurs when <see cref="P:Telerik.Windows.Controls.RadColorEditor.ColorHistory"/> property changes.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadColorEditor.ColorConverter">
+            <summary>
+            Gets or sets the color converter used by <see cref="T:Telerik.Windows.Controls.RadColorEditor"/>.
+            </summary>
+            <value>
+            The color converter.
+            </value>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadColorEditor.ColorMode">
+            <summary>
+            Gets or sets the ColorMode property. The ColorMode property determins which will be the current color scheme - RGB, HLS, HSV or CMYK.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadColorEditor.PreviousColor">
+            <summary>
+            Gets or sets the previously used color.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadColorEditor.SelectedColor">
+            <summary>
+            Gets or sets the currently selected color.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadColorEditor.UnifiedColor">
+            <summary>
+            Gets or sets the UnifiedColor property. 
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadColorEditor.ViewModel">
+            <summary>
+            Gets or sets the view model.
+            </summary>
+            <value>The view model.</value>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadColorEditor.ColorHistory">
+            <summary>
+            Provides a collection of previously selected colors.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadColorEditor.HistoryCapacity">
+            <summary>
+            Gets or sets the HistoryCapacity property. 
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.ColorEditor.ViewModel.CmykaColorViewModel">
+            <summary>
+            Represents a ViewModel of the CMYK (Cyan, Magenta, Yellow and Key/Black) representation of a color.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.ColorEditor.ViewModel.ColorViewModel">
+            <summary>
+            Represents a color abstraction over the ViewModelBase class.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ColorEditor.ViewModel.ColorViewModel.UpdateFromUnifiedColor(Telerik.Windows.Controls.ColorEditor.UnifiedColor)">
+            <summary>
+            Updates the color of from a unified color.
+            </summary>
+            <param name="colorScheme">The color scheme.</param>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.ViewModel.ColorViewModel.Alpha">
+            <summary>
+            Gets or sets the alpha channel of the color.
+            </summary>
+            <value>The alpha.</value>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ColorEditor.ViewModel.CmykaColorViewModel.UpdateFromUnifiedColor(Telerik.Windows.Controls.ColorEditor.UnifiedColor)">
+            <summary>
+            Updates the color of from a unified color.
+            </summary>
+            <param name="unifiedColor"></param>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.ViewModel.CmykaColorViewModel.Cyan">
+            <summary>
+            Gets or sets the Cyan channel of the CMYK color view model.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.ViewModel.CmykaColorViewModel.Key">
+            <summary>
+            Gets or sets the Key(Black) channel of the CMYK color view model.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.ViewModel.CmykaColorViewModel.Magenta">
+            <summary>
+            Gets or sets the Magenta channel of the CMYK color view model.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.ViewModel.CmykaColorViewModel.Yellow">
+            <summary>
+            Gets or sets the Yellow channel of the CMYK color view model.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.ColorEditor.ViewModel.HexColorViewModel">
+            <summary>
+            Represents a ViewModel of the HEX representation of a color.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ColorEditor.ViewModel.HexColorViewModel.UpdateFromUnifiedColor(Telerik.Windows.Controls.ColorEditor.UnifiedColor)">
+            <summary>
+            Updates the color of from a unified color.
+            </summary>
+            <param name="unifiedColor"></param>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.ViewModel.HexColorViewModel.Value">
+            <summary>
+            Gets or sets the string value of the HEX color view model.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.ColorEditor.ViewModel.HlsaColorViewModel">
+            <summary>
+            Represents a ViewModel of the HLS (Hue, Luminance, Saturation) representation of a color.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ColorEditor.ViewModel.HlsaColorViewModel.UpdateFromUnifiedColor(Telerik.Windows.Controls.ColorEditor.UnifiedColor)">
+            <summary>
+            Updates the color of from a unified color.
+            </summary>
+            <param name="unifiedColor"></param>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.ViewModel.HlsaColorViewModel.Hue">
+            <summary>
+            Gets or sets the Hue channel of the HLS color view model.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.ViewModel.HlsaColorViewModel.Luminance">
+            <summary>
+            Gets or sets the Luminance channel of the HLS color view model.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.ViewModel.HlsaColorViewModel.Saturation">
+            <summary>
+            Gets or sets the Saturation channel of the HLS color view model.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.ColorEditor.ViewModel.HsvaColorViewModel">
+            <summary>
+            Represents a ViewModel of the HSV (Hue, Saturation, Value) representation of a color.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ColorEditor.ViewModel.HsvaColorViewModel.UpdateFromUnifiedColor(Telerik.Windows.Controls.ColorEditor.UnifiedColor)">
+            <summary>
+            Updates the color of from a unified color.
+            </summary>
+            <param name="unifiedColor"></param>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.ViewModel.HsvaColorViewModel.Hue">
+            <summary>
+            Gets or sets the Hue channel of the HSV color view model.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.ViewModel.HsvaColorViewModel.Saturation">
+            <summary>
+            Gets or sets the Saturation channel of the HSV color view model.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.ViewModel.HsvaColorViewModel.Value">
+            <summary>
+            Gets or sets the Value channel of the HSV color view model.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.ColorEditor.ViewModel.RgbaColorViewModel">
+            <summary>
+            Represents a ViewModel of the RGB (Red, Green, Blue) representation of a color.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ColorEditor.ViewModel.RgbaColorViewModel.UpdateFromUnifiedColor(Telerik.Windows.Controls.ColorEditor.UnifiedColor)">
+            <summary>
+            Updates the color of from a unified color.
+            </summary>
+            <param name="unifiedColor"></param>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.ViewModel.RgbaColorViewModel.Blue">
+            <summary>
+            Gets or sets the Blue channel of the RGB color view model.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.ViewModel.RgbaColorViewModel.Green">
+            <summary>
+            Gets or sets the Green channel of the RGB color view model.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.ViewModel.RgbaColorViewModel.Red">
+            <summary>
+            Gets or sets the Red channel of the RGB color view model.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.ColorEditor.UnifiedColorViewModel">
+            <summary>
+            Representes a unified view of all color schemas (RGB, HLS, HSV, CMYK and HEX).
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ColorEditor.UnifiedColorViewModel.#ctor(Telerik.Windows.Controls.RadColorEditor)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.Windows.Controls.ColorEditor.UnifiedColorViewModel"/> class.
+            </summary>
+            <param name="colorEditor">The color editor.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ColorEditor.UnifiedColorViewModel.Dispose(System.Boolean)">
+            <summary>
+            Releases unmanaged and - optionally - managed resources.
+            </summary>
+            <param name="disposing"><c>True</c> to release both managed and unmanaged resources;
+            <c>False</c> to release only unmanaged resources.</param>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.UnifiedColorViewModel.Cmyka">
+            <summary>
+            Gets or sets the Cyan, Magenta, Yellow, Key/Black (CMYK) color view model.
+            </summary>
+            <value>The cmyka.</value>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.UnifiedColorViewModel.Hex">
+            <summary>
+            Gets or sets the HEX color view model.
+            </summary>
+            <value>The hex.</value>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.UnifiedColorViewModel.Hlsa">
+            <summary>
+            Gets or sets the Hue, Luminance, Saturation (HLS) color view model.
+            </summary>
+            <value>The hlsa.</value>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.UnifiedColorViewModel.Hsva">
+            <summary>
+            Gets or sets the Hue, Saturation, Value (HSV) color view model.
+            </summary>
+            <value>The hsva.</value>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.UnifiedColorViewModel.Rgba">
+            <summary>
+            Gets or sets the Red, Green, Blue (RGB) color view model.
+            </summary>
+            <value>The rgba.</value>
+        </member>
+        <member name="P:Telerik.Windows.Controls.ColorEditor.UnifiedColorViewModel.SelectedColorViewModel">
+            <summary>
+            Gets or sets the selected color view model.
+            </summary>
+            <value>The selected color view model.</value>
         </member>
         <member name="T:Telerik.Windows.Controls.ColorPaletteBase">
             <summary>
@@ -4229,9 +7138,71 @@
             </summary>
             <value>The automatic color.</value>
         </member>
+        <member name="T:Telerik.Windows.Controls.RadComboBoxItemAutomationPeer">
+            <summary>
+            The AutomationPeer associated with the RadComboBoxItem class.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadComboBoxItemAutomationPeer.#ctor(System.Object,Telerik.Windows.Controls.RadComboBoxAutomationPeer)">
+            <summary>
+            Initializes a new instance of the RadComboBoxItemAutomationPeer class.
+            </summary>
+            <param name="item"></param>
+            <param name="radComboBoxAutomationPeer"></param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadComboBoxItemAutomationPeer.GetPattern(System.Windows.Automation.Peers.PatternInterface)">
+            <summary>
+            Gets the control pattern for this RadComboBoxItemAutomationPeer.
+            </summary>
+            <param name="patternInterface"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadComboBoxItemAutomationPeer.AddToSelection">
+            <summary>
+            Adds the current element to the collection of selected items.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadComboBoxItemAutomationPeer.RemoveFromSelection">
+            <summary>
+            Removes the current element to the collection of selected items.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadComboBoxItemAutomationPeer.Select">
+            <summary>
+            Deselects any selected items and then selects the current element.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadComboBoxItemAutomationPeer.GetAutomationControlTypeCore">
+            <summary>
+             Gets the control type for this RadComboBoxItemAutomationPeer.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadComboBoxItemAutomationPeer.GetNameCore">
+            <summary>
+            Returns the core name for the RadComboboxItemAutomationPeer.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadComboBoxItemAutomationPeer.GetClassNameCore">
+            <summary>
+            Gets the core class name associated for the RadComboboxItemAutomationPeer.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadComboBoxItemAutomationPeer.SelectionContainer">
+            <summary>
+            Gets the IRawElementProviderSimple for the RadComboBoxItemAutomationPeer.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadComboBoxItemAutomationPeer.IsSelected">
+            <summary>
+            Gets a value that indicates whether associated RadComboBoxItem is selected ot not.
+            </summary>
+        </member>
         <member name="T:Telerik.Windows.Controls.RadComboBoxAutomationPeer">
             <summary>
-            
+            The AutomationPeer associated with the RadComboBox class.
             </summary>
         </member>
         <member name="M:Telerik.Windows.Controls.RadComboBoxAutomationPeer.#ctor(Telerik.Windows.Controls.RadComboBox)">
@@ -5166,6 +8137,11 @@
             The identifier for the Telerik.Windows.Controls.RadDateTimePicker.ParseDateTimeValue routed event.
             </returns>
         </member>
+        <member name="F:Telerik.Windows.Controls.RadDateTimePicker.ParseModeProperty">
+            <summary>
+            Identifies the the Telerik.Windows.Controls.RadDateTimePicker.ParseMode dependency property.
+            </summary>
+        </member>
         <member name="M:Telerik.Windows.Controls.RadDateTimePicker.#ctor">
             <summary>
             Initializes a new instance of the RadDateTimePicker class.
@@ -5513,6 +8489,11 @@
             <value>The <strong>TimeSpan</strong> that represents start time.</value>
             <see cref="P:Telerik.Windows.Controls.RadDateTimePicker.InputMode"/>
         </member>
+        <member name="P:Telerik.Windows.Controls.RadDateTimePicker.ParseMode">
+            <summary>
+            Gets or sets the parsing mode of Telerik.Windows.Controls.RadDateTimePicker control.
+            </summary>
+        </member>
         <member name="T:Telerik.Windows.Controls.RadDateTimePicker.ParseDateTimeEventHandler">
             <summary>
             Represents the method that will handle the Telerik.Windows.Controls.RadDateTimePicker.ParseDateTimeValue routed event.
@@ -5801,6 +8782,21 @@
             The DateTimePicker will input only Time.
             </summary>
         </member>
+        <member name="T:Telerik.Windows.Controls.Input.ParseMode">
+            <summary>
+            Specifies when the ParseDateTime event will be fired.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.Input.ParseMode.Auto">
+            <summary>
+            The parsing will be done if the Tooltip is enabled.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.Input.ParseMode.Always">
+            <summary>
+            The parsing will be done even if the Tooltip is not enabled, but no text will be displayed for suggestions.
+            </summary>
+        </member>
         <member name="T:Telerik.Windows.Controls.CompositeDateTimeParser">
             <summary>
             
@@ -6060,6 +9056,11 @@
             Identifies the Maximum dependency property.
             </summary>
         </member>
+        <member name="F:Telerik.Windows.Controls.MaskedInput.MaskedInputExtensions.CoerceToMaximumProperty">
+            <summary>
+            Identifies the CoerceToMaximum attached property.
+            </summary>
+        </member>
         <member name="F:Telerik.Windows.Controls.MaskedInput.MaskedInputExtensions.MinimumProperty">
             <summary>
             Identifies the Minimum dependency property.
@@ -6093,6 +9094,20 @@
             <returns></returns>
         </member>
         <member name="M:Telerik.Windows.Controls.MaskedInput.MaskedInputExtensions.SetMaximum(System.Windows.DependencyObject,System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="obj"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.MaskedInput.MaskedInputExtensions.GetCoerceToMaximum(System.Windows.DependencyObject)">
+            <summary>
+            
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.MaskedInput.MaskedInputExtensions.SetCoerceToMaximum(System.Windows.DependencyObject,System.Boolean)">
             <summary>
             
             </summary>
@@ -6415,18 +9430,6 @@
             </summary>
             <returns>Returns validation result information.</returns>
         </member>
-        <member name="M:Telerik.Windows.Controls.RadMaskedInputBase.ParseMaskNoneOverride(System.Nullable{System.Boolean})">
-            <summary>
-            Parses the Mask property when there is no mask set.
-            </summary>
-            <param name="insertNewToken">True if a new token has to be inserter, false for removing tokens.</param>
-            <returns>Returns the parsed MaskText.</returns>
-        </member>
-        <member name="M:Telerik.Windows.Controls.RadMaskedInputBase.CoerceTextMaskNoneOverride">
-            <summary>
-            Coerces the Text agains the Value when there is no Mask set.
-            </summary>
-        </member>
         <member name="M:Telerik.Windows.Controls.RadMaskedInputBase.CheckForDataValidationErrors(System.Windows.DependencyProperty,Telerik.Windows.Controls.MaskedInput.Validation.MaskValidationResult@)">
             <summary>
             Checks the value of a DependencyProperty for validation errors.
@@ -6552,6 +9555,11 @@
         <member name="M:Telerik.Windows.Controls.RadMaskedInputBase.HandleLeftKey">
             <summary>
             Handles the left key down.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadMaskedInputBase.HandleClearOverride">
+            <summary>
+            Called, when the Clear command is invoked.
             </summary>
         </member>
         <member name="M:Telerik.Windows.Controls.RadMaskedInputBase.MoveCharactersInInsertBehaviorOverride(System.Int32@,System.Char,System.Boolean)">
@@ -6691,6 +9699,11 @@
             Identifies the IsClearButtonVisible dependency property.
             </summary>
         </member>
+        <member name="F:Telerik.Windows.Controls.RadMaskedInputBase.IsLastPositionEditableProperty">
+            <summary>
+            Identifies the IsLastPositionEditable dependency property.
+            </summary>
+        </member>
         <member name="F:Telerik.Windows.Controls.RadMaskedInputBase.IsReadOnlyProperty">
             <summary>
             Identifies the IsReadOnly dependency property.
@@ -6729,6 +9742,11 @@
         <member name="F:Telerik.Windows.Controls.RadMaskedInputBase.SelectionOnFocusProperty">
             <summary>
             Identifies the SelectionOnFocus dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadMaskedInputBase.SectionsNavigationModeProperty">
+            <summary>
+            Identifies the SectionsNavigationMode dependency property.
             </summary>
         </member>
         <member name="F:Telerik.Windows.Controls.RadMaskedInputBase.SpinModeProperty">
@@ -7002,6 +10020,14 @@
             Gets or sets whether the clear button is visible.
             </summary>
         </member>
+        <member name="P:Telerik.Windows.Controls.RadMaskedInputBase.IsLastPositionEditable">
+            <summary>
+            Gets or sets a value indicating whether this instance is last position editable.
+            </summary>
+            <value>
+            	<c>True</c> if this instance is last position editable; otherwise, <c>false</c>.
+            </value>
+        </member>
         <member name="P:Telerik.Windows.Controls.RadMaskedInputBase.IsReadOnly">
             <summary>
             Gets or sets whether the control is IsReadOnly.
@@ -7049,6 +10075,14 @@
             <summary>
             Gets or sets the Selection start.
             </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadMaskedInputBase.SectionsNavigationMode">
+            <summary>
+            Gets or sets the sections navigation mode.
+            </summary>
+            <value>
+            The sections navigation mode.
+            </value>
         </member>
         <member name="P:Telerik.Windows.Controls.RadMaskedInputBase.SelectionOnFocus">
             <summary>
@@ -7262,6 +10296,11 @@
             </summary>
             <param name="keycode">Key's keycode.</param>
             <returns>Returns true if the key should not be processed.</returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadMaskedCurrencyInput.HandleClearOverride">
+            <summary>
+            Called, when the Clear command is invoked.
+            </summary>
         </member>
         <member name="M:Telerik.Windows.Controls.RadMaskedCurrencyInput.IsSeparator(System.Char)">
             <summary>
@@ -7658,7 +10697,7 @@
         <member name="T:Telerik.Windows.Controls.RadMaskedNumericInput">
             <summary>
             Represents the RadMaskedNumericInput control.
-            </summary>
+            </summary>  
         </member>
         <member name="F:Telerik.Windows.Controls.RadMaskedNumericInput.AllowSkipPlaceholdersProperty">
             <summary>
@@ -7796,6 +10835,11 @@
             <param name="keycode">Key's keycode.</param>
             <returns>Returns true if the key should not be processed.</returns>
         </member>
+        <member name="M:Telerik.Windows.Controls.RadMaskedNumericInput.HandleClearOverride">
+            <summary>
+            Called, when the Clear command is invoked.
+            </summary>
+        </member>
         <member name="M:Telerik.Windows.Controls.RadMaskedNumericInput.InsertSeparatorsOverride(System.String,System.Int32[],System.String)">
             <summary>
             Inserts number group separators in the mask.
@@ -7831,13 +10875,6 @@
             Parses the Mask property and sets the MaskedText.
             </summary>
             <returns>Returns the parsed Mask.</returns>
-        </member>
-        <member name="M:Telerik.Windows.Controls.RadMaskedNumericInput.ParseMaskNoneOverride(System.Nullable{System.Boolean})">
-            <summary>
-            Parses the Mask property when there is no mask set.
-            </summary>
-            <param name="insertNewToken">True if a new token has to be inserter, false for removing tokens.</param>
-            <returns>Returns the parsed MaskText.</returns>
         </member>
         <member name="M:Telerik.Windows.Controls.RadMaskedNumericInput.ToggleNegativeSignKey">
             <summary>
@@ -8150,6 +11187,26 @@
         <member name="P:Telerik.Windows.Controls.MaskedInput.Sections.DateTimeSectionInfo.Value">
             <summary>
             Value of the section.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.MaskedInput.Sections.SectionsNavigationMode">
+            <summary>
+            Represents the behavior for navigation in the sections.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.MaskedInput.Sections.SectionsNavigationMode.None">
+            <summary>
+            No navigation.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.MaskedInput.Sections.SectionsNavigationMode.Once">
+            <summary>
+            Sections are traversed once.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.MaskedInput.Sections.SectionsNavigationMode.Cycle">
+            <summary>
+            Sections are cycled.
             </summary>
         </member>
         <member name="T:Telerik.Windows.Controls.MaskedInput.Separator">
@@ -11653,6 +14710,57 @@
             Gets the item being deleted.
             </summary>
         </member>
+        <member name="T:Telerik.Windows.Controls.Upload.EventArguments.DuplicateFileNameFoundEventHandler">
+            <summary>
+            
+            </summary>
+            <param name="sender">The sender.</param>
+            <param name="e">The <see cref="T:Telerik.Windows.Controls.Upload.EventArguments.DuplicateFileNameEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="T:Telerik.Windows.Controls.Upload.EventArguments.DuplicateFileNameEventArgs">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.FileEventArgs">
+            <summary>
+            Base argument class for RadUpload events.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.FileEventArgs.#ctor(Telerik.Windows.Controls.RadUploadSelectedFile)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.Windows.Controls.FileEventArgs"/> class.
+            </summary>
+            <param name="file">The file.</param>
+        </member>
+        <member name="P:Telerik.Windows.Controls.FileEventArgs.SelectedFile">
+            <summary>
+            Gets the file.
+            </summary>
+            <value>The file.</value>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Upload.EventArguments.DuplicateFileNameEventArgs.#ctor(Telerik.Windows.Controls.RadUploadSelectedFile)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.Windows.Controls.Upload.EventArguments.DuplicateFileNameEventArgs"/> class.
+            </summary>
+            <param name="file">The file.</param>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Upload.EventArguments.DuplicateFileNameEventArgs.FileName">
+            <summary>
+            Gets the name of the file.
+            </summary>
+            <value>
+            The name of the file.
+            </value>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Upload.EventArguments.DuplicateFileNameEventArgs.NewFileName">
+            <summary>
+            Gets or sets the new name of the file.
+            </summary>
+            <value>
+            The new name of the file.
+            </value>
+        </member>
         <member name="T:Telerik.Windows.Controls.Upload.EventArguments.UpdateEventHandler">
             <summary>
             Represents a handler for the RadUploadItem's UpdateEventArgs.
@@ -11750,6 +14858,11 @@
             You can handle the FileSelected event and check the <see cref="P:Telerik.Windows.Controls.RadUpload.CurrentSession"/>'s TooLargeFiles collection instead.
             </remarks>
         </member>
+        <member name="F:Telerik.Windows.Controls.RadUpload.DuplicateFileNameFoundEvent">
+            <summary>
+            
+            </summary>
+        </member>
         <member name="M:Telerik.Windows.Controls.RadUpload.#cctor">
             <summary>
             Initializes static members of the <see cref="T:Telerik.Windows.Controls.RadUpload"/> class.
@@ -11843,6 +14956,12 @@
             Invoked when the Items collection changes.
             </summary>
             <param name="e"></param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadUpload.OnDuplicateFileName(Telerik.Windows.Controls.RadUploadSelectedFile)">
+            <summary>
+            Called when [duplicate file name].
+            </summary>
+            <param name="file">The file.</param>
         </member>
         <member name="M:Telerik.Windows.Controls.RadUpload.OnErrorMessagePropertyChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
             <summary>
@@ -12084,6 +15203,11 @@
             <remarks>
             You can handle the FileSelected event and check the <see cref="P:Telerik.Windows.Controls.RadUpload.CurrentSession"/>'s TooLargeFiles collection instead.
             </remarks>
+        </member>
+        <member name="E:Telerik.Windows.Controls.RadUpload.DuplicateFileName">
+            <summary>
+            Occurs when a duplicate file name is selected.
+            </summary>
         </member>
         <member name="P:Telerik.Windows.Controls.RadUpload.SelectionVisibility">
             <summary>
@@ -12641,23 +15765,6 @@
             </summary>
             <see cref="E:Telerik.Windows.Controls.RadUpload.FileUploaded"/>
         </member>
-        <member name="T:Telerik.Windows.Controls.FileEventArgs">
-            <summary>
-            Base argument class for RadUpload events.
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.FileEventArgs.#ctor(Telerik.Windows.Controls.RadUploadSelectedFile)">
-            <summary>
-            Initializes a new instance of the <see cref="T:Telerik.Windows.Controls.FileEventArgs"/> class.
-            </summary>
-            <param name="file">The file.</param>
-        </member>
-        <member name="P:Telerik.Windows.Controls.FileEventArgs.SelectedFile">
-            <summary>
-            Gets the file.
-            </summary>
-            <value>The file.</value>
-        </member>
         <member name="M:Telerik.Windows.Controls.FileUploadedEventArgs.#ctor(Telerik.Windows.Controls.RadUploadSelectedFile,Telerik.Windows.Controls.RadUploadReturnedData)">
             <summary>
             Initializes a new instance of the <see cref="T:Telerik.Windows.Controls.FileUploadedEventArgs"/> class.
@@ -13039,6 +16146,13 @@
             Initializes a new instance of the <see cref="T:Telerik.Windows.Controls.RadUploadSelectedFile"/> class.
             </summary>
             <param name="file">The file.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadUploadSelectedFile.#ctor(System.IO.Stream,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.Windows.Controls.RadUploadSelectedFile"/> class.
+            </summary>
+            <param name="stream">The stream.</param>
+            <param name="fileName">Name of the file.</param>
         </member>
         <member name="P:Telerik.Windows.Controls.RadUploadSelectedFile.Name">
             <summary>

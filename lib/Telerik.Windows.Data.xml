@@ -250,6 +250,26 @@
             The <see cref="T:Telerik.Windows.Data.AggregateResult"/> for the specified function if any, otherwise null.
             </value>
         </member>
+        <member name="T:Telerik.Windows.Data.IEditableCollectionViewAddNewItem">
+            <summary>
+            Defines methods and properties that a CollectionView implements to enable specifying adding items of a specific type.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Data.IEditableCollectionViewAddNewItem.AddNewItem(System.Object)">
+            <summary>
+            Adds the specified object to the collection.
+            </summary>
+            <param name="newItem">The object to add to the collection.</param>
+            <returns></returns>
+        </member>
+        <member name="P:Telerik.Windows.Data.IEditableCollectionViewAddNewItem.CanAddNewItem">
+            <summary>
+            Gets a value that indicates whether a specified object can be added to the collection.
+            </summary>
+            <value>
+            	<c>true</c> if a specified object can be added to the collection; otherwise <c>false</c>.
+            </value>
+        </member>
         <member name="P:Telerik.Windows.Data.KeyedCollection.NullValue">
             <summary>
             Specifies a static value that is used by KeyedCollection to handle scenarios
@@ -447,6 +467,13 @@
             The new item that is added to the collection.
             </returns>
             <exception cref="T:System.InvalidOperationException"><see cref="P:Telerik.Windows.Data.QueryableCollectionView.CanAddNew"/> is false.</exception>
+        </member>
+        <member name="M:Telerik.Windows.Data.QueryableCollectionView.AddNewItem(System.Object)">
+            <summary>
+            Adds the specified object to the collection.
+            </summary>
+            <param name="newItem">The object to add to the collection.</param>
+            <returns></returns>
         </member>
         <member name="M:Telerik.Windows.Data.QueryableCollectionView.AddNew(System.Object)">
             <summary>
@@ -681,6 +708,14 @@
             true if <see cref="P:Telerik.Windows.Data.QueryableCollectionView.SourceCollection"/> is not <see cref="P:System.Collections.IList.IsFixedSize"/> and 
             collection element has a default constructor; otherwise, false.
             </returns>
+        </member>
+        <member name="P:Telerik.Windows.Data.QueryableCollectionView.CanAddNewItem">
+            <summary>
+            Gets a value that indicates whether a specified object can be added to the collection.
+            </summary>
+            <value>
+            	<c>true</c> if a specified object can be added to the collection; otherwise <c>false</c>.
+            </value>
         </member>
         <member name="P:Telerik.Windows.Data.QueryableCollectionView.CurrentAddItem">
             <summary>
@@ -1477,6 +1512,23 @@
             Binds two collections together using the ObservableCollectionManager and an equality comparer.
             </summary>
         </member>
+        <member name="M:Telerik.Windows.Data.DataItemCollection.GetDistinctValues(Telerik.Windows.Data.IDataFieldDescriptor,Telerik.Windows.Data.IFilterDescriptor,System.Boolean,System.Nullable{System.Int32})">
+            <summary>
+            Gets the distinct values.
+            </summary>
+            <param name="column">The column.</param>
+            <param name="existingColumnFilter">The existing column filter.</param>
+            <param name="filterDistinctValues">The filter distinct values.</param>
+            <param name="maximumValueCount">The maximum value count.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.Windows.Data.DataItemCollection.AddNewItem(System.Object)">
+            <summary>
+            Adds the specified object to the collection.
+            </summary>
+            <param name="newItem">The object to add to the collection.</param>
+            <returns></returns>
+        </member>
         <member name="M:Telerik.Windows.Data.DataItemCollection.AddNew">
             <summary>
             Adds a new item to the collection.
@@ -1724,6 +1776,14 @@
             true if <see cref="P:Telerik.Windows.Data.DataItemCollection.SourceCollection"/> is not <see cref="P:System.Collections.IList.IsFixedSize"/> and 
             collection element has a default constructor; otherwise, false.
             </returns>
+        </member>
+        <member name="P:Telerik.Windows.Data.DataItemCollection.CanAddNewItem">
+            <summary>
+            Gets a value that indicates whether a specified object can be added to the collection.
+            </summary>
+            <value>
+            	<c>true</c> if a specified object can be added to the collection; otherwise <c>false</c>.
+            </value>
         </member>
         <member name="P:Telerik.Windows.Data.DataItemCollection.CanCancelEdit">
             <summary>
@@ -4068,12 +4128,11 @@
             a group. Once they've been enumerated, we will never need them again.
             </summary>
         </member>
-        <member name="M:Telerik.Windows.Data.QueryableCollectionViewGroup.#ctor(System.Object,System.Int32,System.Collections.IEnumerable,System.Int32,System.Boolean,Telerik.Windows.Data.AggregateResultCollection,Telerik.Windows.Data.QueryableCollectionViewGroup)">
+        <member name="M:Telerik.Windows.Data.QueryableCollectionViewGroup.#ctor(System.Object,System.Collections.IEnumerable,System.Int32,System.Boolean,Telerik.Windows.Data.AggregateResultCollection,Telerik.Windows.Data.QueryableCollectionViewGroup)">
             <summary>
             Initializes a new instance of the <see cref="T:Telerik.Windows.Data.QueryableCollectionViewGroup"/> class.
             </summary>
             <param name="key">The group key.</param>
-            <param name="groupHashCode">The hash code of the group.</param>
             <param name="originalItems">The original items.</param>
             <param name="originalItemCount">The original item count.</param>
             <param name="hasSubgroups">if set to <c>true</c> This group has child groups.</param>
@@ -4181,12 +4240,11 @@
             An <see cref="T:System.Collections.IEnumerator"/> object that can be used to iterate through the collection.
             </returns>
         </member>
-        <member name="M:Telerik.Windows.Data.GroupingImpl`2.#ctor(System.Object,System.Int32,System.Collections.IEnumerable,System.Int32,System.Boolean,Telerik.Windows.Data.AggregateResultCollection,Telerik.Windows.Data.QueryableCollectionViewGroup)">
+        <member name="M:Telerik.Windows.Data.GroupingImpl`2.#ctor(System.Object,System.Collections.IEnumerable,System.Int32,System.Boolean,Telerik.Windows.Data.AggregateResultCollection,Telerik.Windows.Data.QueryableCollectionViewGroup)">
             <summary>
             Initializes a new instance of the <see cref="T:Telerik.Windows.Data.GroupingImpl`2"/> class.
             </summary>
             <param name="key">The group key.</param>
-            <param name="groupHashCode">The hash code of the group.</param>
             <param name="originalItems">The original items.</param>
             <param name="originalItemCount">The original item count.</param>
             <param name="hasSubgroups">if set to <c>true</c> This group has child groups.</param>
@@ -4570,6 +4628,12 @@
         </member>
         <member name="M:Telerik.Windows.Data.Expressions.FilterDescriptorExpressionBuilder.CreateBodyExpression">
             <exception cref="T:System.ArgumentException"><c>ArgumentException</c>.</exception>
+        </member>
+        <member name="M:Telerik.Windows.Data.Expressions.StringFilterOperatorExpressionBuilder.ShouldGenerateToLowerCall(System.Linq.Expressions.Expression,System.Linq.Expressions.Expression)">
+            <summary>
+            If we have an equality comparison operator and either of the operands is null/string.Empty
+            we don't need to call ToLower.
+            </summary>
         </member>
         <member name="M:Telerik.Windows.Data.Expressions.StringFilterOperatorExpressionBuilder.LiftStringExpressionToEmpty(System.Linq.Expressions.Expression)">
             <exception cref="T:System.ArgumentException">Provided expression should have string type</exception>
@@ -5822,40 +5886,6 @@
             Gets or sets the right button.
             </summary>
             <value>The right button.</value>
-        </member>
-        <member name="T:Telerik.Windows.Data.Selection.ISelector">
-            <summary>
-            Represents an entity that can select items
-            </summary>
-        </member>
-        <member name="P:Telerik.Windows.Data.Selection.ISelector.SelectedItem">
-            <summary>
-            Gets or sets the selected item.
-            </summary>
-            <value>The selected item.</value>
-        </member>
-        <member name="P:Telerik.Windows.Data.Selection.ISelector.CurrentItem">
-            <summary>
-            Gets or sets the current item.
-            </summary>
-            <value>The current item.</value>
-        </member>
-        <member name="P:Telerik.Windows.Data.Selection.ISelector.SelectedItems">
-            <summary>
-            Gets the selected items.
-            </summary>
-            <value>The selected items.</value>
-        </member>
-        <member name="P:Telerik.Windows.Data.Selection.ISelector.IsSynchronizedWithCurrentItem">
-            <summary>
-            Gets or sets a value that indicates whether <see cref="T:Telerik.Windows.Data.Selection.ISelector"/> should keep the SelectedItem synchronized with its CurrentItem property.
-            </summary>
-            <value>true if the SelectedItem is always synchronized with the current item; false if the SelectedItem is never synchronized; null if the SelectedItem is synchronized with the current item only if a CollectionView is used.</value>
-        </member>
-        <member name="E:Telerik.Windows.Data.Selection.ISelector.SelectionChanged">
-            <summary>
-            Occurs when the selected items have changed.
-            </summary>
         </member>
         <member name="T:Telerik.Windows.Data.Selection.ItemSelectionHandler">
             <summary>

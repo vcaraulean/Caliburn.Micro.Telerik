@@ -96,6 +96,205 @@
             
             </summary>
         </member>
+        <member name="T:Telerik.Windows.Controls.Buttons.RadButtonAutomationPeer">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Buttons.RadButtonAutomationPeer.#ctor(Telerik.Windows.Controls.RadButton)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.Windows.Controls.Buttons.RadButtonAutomationPeer"/> class.
+            </summary>
+            <param name="owner">The owner.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Buttons.RadButtonAutomationPeer.Invoke">
+            <summary>
+            Sends a request to activate a control and initiate its single, unambiguous action.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Buttons.RadButtonAutomationPeer.GetPattern(System.Windows.Automation.Peers.PatternInterface)">
+            <summary>
+            Returns the control pattern for the <see cref="T:System.Windows.UIElement"/> that is associated with this <see cref="T:System.Windows.Automation.Peers.FrameworkElementAutomationPeer"/>.
+            </summary>
+            <param name="patternInterface">One of the enumeration values.</param>
+            <returns>
+            See Remarks.
+            </returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Buttons.RadButtonAutomationPeer.GetClassNameCore">
+            <summary>
+            Returns the name of the <see cref="T:System.Windows.UIElement"/> that is associated with this <see cref="T:System.Windows.Automation.Peers.FrameworkElementAutomationPeer"/>. This method is called by <see cref="M:System.Windows.Automation.Peers.AutomationPeer.GetClassName"/>.
+            </summary>
+            <returns>
+            The name of the owner type that is associated with this <see cref="T:System.Windows.Automation.Peers.FrameworkElementAutomationPeer"/>. See Remarks.
+            </returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Buttons.RadButtonAutomationPeer.GetAutomationControlTypeCore">
+            <summary>
+            Returns the control type for the <see cref="T:System.Windows.UIElement"/> that is associated with this <see cref="T:System.Windows.Automation.Peers.FrameworkElementAutomationPeer"/>. This method is called by <see cref="M:System.Windows.Automation.Peers.AutomationPeer.GetAutomationControlType"/>.
+            </summary>
+            <returns>
+            A value of the enumeration.
+            </returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Buttons.RadButtonAutomationPeer.GetAutomationIdCore">
+            <summary>
+            Returns the string that uniquely identifies the <see cref="T:System.Windows.FrameworkElement"/> that is associated with this <see cref="T:System.Windows.Automation.Peers.FrameworkElementAutomationPeer"/>. This method is called by <see cref="M:System.Windows.Automation.Peers.AutomationPeer.GetAutomationId"/>.
+            </summary>
+            <returns>
+            The automation identifier for the element associated with the <see cref="T:System.Windows.Automation.Peers.FrameworkElementAutomationPeer"/>, or <see cref="F:System.String.Empty"/> if there is no automation identifier.
+            </returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Buttons.RadButtonAutomationPeer.GetNameCore">
+            <summary>
+            Returns the text label of the <see cref="T:System.Windows.FrameworkElement"/> that is associated with this <see cref="T:System.Windows.Automation.Peers.FrameworkElementAutomationPeer"/>. This method is called by <see cref="M:System.Windows.Automation.Peers.AutomationPeer.GetName"/>.
+            </summary>
+            <returns>
+            The text label of the element that is associated with this automation peer.
+            </returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Buttons.RadButtonAutomationPeer.GetHelpTextCore">
+            <summary>
+            Returns the string that describes the functionality of the <see cref="T:System.Windows.FrameworkElement"/> that is associated with this <see cref="T:System.Windows.Automation.Peers.FrameworkElementAutomationPeer"/>. This method is called by <see cref="M:System.Windows.Automation.Peers.AutomationPeer.GetHelpText"/>.
+            </summary>
+            <returns>
+            The help text, or <see cref="F:System.String.Empty"/> if there is no help text.
+            </returns>
+        </member>
+        <member name="T:Telerik.Windows.Controls.Buttons.RadDropDownButtonAutomationPeer">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Buttons.RadDropDownButtonAutomationPeer.#ctor(Telerik.Windows.Controls.RadDropDownButton)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.Windows.Controls.Buttons.RadDropDownButtonAutomationPeer"/> class.
+            </summary>
+            <param name="owner">The owner.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Buttons.RadDropDownButtonAutomationPeer.GetClassNameCore">
+            <summary>
+            Returns the name of the <see cref="T:System.Windows.UIElement"/> that is associated with this <see cref="T:System.Windows.Automation.Peers.FrameworkElementAutomationPeer"/>. This method is called by <see cref="M:System.Windows.Automation.Peers.AutomationPeer.GetClassName"/>.
+            </summary>
+            <returns>
+            The name of the owner type that is associated with this <see cref="T:System.Windows.Automation.Peers.FrameworkElementAutomationPeer"/>. See Remarks.
+            </returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Buttons.RadDropDownButtonAutomationPeer.Invoke">
+            <summary>
+            Sends a request to activate a control and initiate its single, unambiguous action.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Buttons.RadDropDownButtonAutomationPeer.GetChildrenCore">
+            <summary>
+            Returns the collection of child elements of the <see cref="T:System.Windows.UIElement"/> that is associated with this <see cref="T:System.Windows.Automation.Peers.FrameworkElementAutomationPeer"/>. This method is called by <see cref="M:System.Windows.Automation.Peers.AutomationPeer.GetChildren"/>.
+            </summary>
+            <returns>
+            A list of child <see cref="T:System.Windows.Automation.Peers.AutomationPeer"/> elements.
+            </returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Buttons.RadDropDownButtonAutomationPeer.GetAutomationIdCore">
+            <summary>
+            Returns the string that uniquely identifies the <see cref="T:System.Windows.FrameworkElement"/> that is associated with this <see cref="T:System.Windows.Automation.Peers.FrameworkElementAutomationPeer"/>. This method is called by <see cref="M:System.Windows.Automation.Peers.AutomationPeer.GetAutomationId"/>.
+            </summary>
+            <returns>
+            The automation identifier for the element associated with the <see cref="T:System.Windows.Automation.Peers.FrameworkElementAutomationPeer"/>, or <see cref="F:System.String.Empty"/> if there is no automation identifier.
+            </returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Buttons.RadDropDownButtonAutomationPeer.GetNameCore">
+            <summary>
+            Returns the text label of the <see cref="T:System.Windows.FrameworkElement"/> that is associated with this <see cref="T:System.Windows.Automation.Peers.FrameworkElementAutomationPeer"/>. This method is called by <see cref="M:System.Windows.Automation.Peers.AutomationPeer.GetName"/>.
+            </summary>
+            <returns>
+            The text label of the element that is associated with this automation peer.
+            </returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Buttons.RadDropDownButtonAutomationPeer.GetHelpTextCore">
+            <summary>
+            Returns the string that describes the functionality of the <see cref="T:System.Windows.FrameworkElement"/> that is associated with this <see cref="T:System.Windows.Automation.Peers.FrameworkElementAutomationPeer"/>. This method is called by <see cref="M:System.Windows.Automation.Peers.AutomationPeer.GetHelpText"/>.
+            </summary>
+            <returns>
+            The help text, or <see cref="F:System.String.Empty"/> if there is no help text.
+            </returns>
+        </member>
+        <member name="T:Telerik.Windows.Controls.Buttons.RadRadioButtonAutomationPeer">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Buttons.RadRadioButtonAutomationPeer.#ctor(Telerik.Windows.Controls.RadRadioButton)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.Windows.Controls.Buttons.RadRadioButtonAutomationPeer"/> class.
+            </summary>
+            <param name="owner">The owner.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Buttons.RadRadioButtonAutomationPeer.Toggle">
+            <summary>
+            Cycles through the toggle states of a control.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Buttons.RadRadioButtonAutomationPeer.GetPattern(System.Windows.Automation.Peers.PatternInterface)">
+            <summary>
+            Returns the control pattern for the <see cref="T:System.Windows.UIElement"/> that is associated with this <see cref="T:System.Windows.Automation.Peers.FrameworkElementAutomationPeer"/>.
+            </summary>
+            <param name="patternInterface">One of the enumeration values.</param>
+            <returns>
+            See Remarks.
+            </returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Buttons.RadRadioButtonAutomationPeer.GetClassNameCore">
+            <summary>
+            Returns the name of the <see cref="T:System.Windows.UIElement"/> that is associated with this <see cref="T:System.Windows.Automation.Peers.FrameworkElementAutomationPeer"/>. This method is called by <see cref="M:System.Windows.Automation.Peers.AutomationPeer.GetClassName"/>.
+            </summary>
+            <returns>
+            The name of the owner type that is associated with this <see cref="T:System.Windows.Automation.Peers.FrameworkElementAutomationPeer"/>. See Remarks.
+            </returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Buttons.RadRadioButtonAutomationPeer.GetAutomationControlTypeCore">
+            <summary>
+            Returns the control type for the <see cref="T:System.Windows.UIElement"/> that is associated with this <see cref="T:System.Windows.Automation.Peers.FrameworkElementAutomationPeer"/>. This method is called by <see cref="M:System.Windows.Automation.Peers.AutomationPeer.GetAutomationControlType"/>.
+            </summary>
+            <returns>
+            A value of the enumeration.
+            </returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Buttons.RadRadioButtonAutomationPeer.ConvertToToggleState(System.Nullable{System.Boolean})">
+            <summary>
+            Converts the state of to toggle.
+            </summary>
+            <param name="value">The value.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Buttons.RadRadioButtonAutomationPeer.GetAutomationIdCore">
+            <summary>
+            Returns the string that uniquely identifies the <see cref="T:System.Windows.FrameworkElement"/> that is associated with this <see cref="T:System.Windows.Automation.Peers.FrameworkElementAutomationPeer"/>. This method is called by <see cref="M:System.Windows.Automation.Peers.AutomationPeer.GetAutomationId"/>.
+            </summary>
+            <returns>
+            The automation identifier for the element associated with the <see cref="T:System.Windows.Automation.Peers.FrameworkElementAutomationPeer"/>, or <see cref="F:System.String.Empty"/> if there is no automation identifier.
+            </returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Buttons.RadRadioButtonAutomationPeer.GetNameCore">
+            <summary>
+            Returns the text label of the <see cref="T:System.Windows.FrameworkElement"/> that is associated with this <see cref="T:System.Windows.Automation.Peers.FrameworkElementAutomationPeer"/>. This method is called by <see cref="M:System.Windows.Automation.Peers.AutomationPeer.GetName"/>.
+            </summary>
+            <returns>
+            The text label of the element that is associated with this automation peer.
+            </returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Buttons.RadRadioButtonAutomationPeer.GetHelpTextCore">
+            <summary>
+            Returns the string that describes the functionality of the <see cref="T:System.Windows.FrameworkElement"/> that is associated with this <see cref="T:System.Windows.Automation.Peers.FrameworkElementAutomationPeer"/>. This method is called by <see cref="M:System.Windows.Automation.Peers.AutomationPeer.GetHelpText"/>.
+            </summary>
+            <returns>
+            The help text, or <see cref="F:System.String.Empty"/> if there is no help text.
+            </returns>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Buttons.RadRadioButtonAutomationPeer.ToggleState">
+            <summary>
+            Gets the toggle state of the control.
+            </summary>
+            <returns>The toggle state of the control, as a value of the enumeration. </returns>
+        </member>
         <member name="T:Telerik.Windows.Controls.RadSplitButton">
             <summary>
             A SplitButton control.
@@ -391,6 +590,11 @@
             </summary>
             <param name="e"></param>
         </member>
+        <member name="M:Telerik.Windows.Controls.RadSplitButton.OnCreateAutomationPeer">
+            <summary>
+            Creates a RadSplitButtonAutomationPeer.
+            </summary>
+        </member>
         <member name="M:Telerik.Windows.Controls.RadSplitButton.OnDropDownContentChanged(System.Object,System.Object)">
             <summary>
             
@@ -617,6 +821,178 @@
             <summary>
             Get/set te placement for the popup element.
             </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.Buttons.RadSplitButtonAutomationPeer">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Buttons.RadSplitButtonAutomationPeer.#ctor(Telerik.Windows.Controls.RadSplitButton)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.Windows.Controls.Buttons.RadSplitButtonAutomationPeer"/> class.
+            </summary>
+            <param name="owner">The owner.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Buttons.RadSplitButtonAutomationPeer.Invoke">
+            <summary>
+            Sends a request to activate a control and initiate its single, unambiguous action.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Buttons.RadSplitButtonAutomationPeer.Collapse">
+            <summary>
+            Hides all nodes, controls, or content that are descendants of the control.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Buttons.RadSplitButtonAutomationPeer.Expand">
+            <summary>
+            Displays all child nodes, controls, or content of the control.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Buttons.RadSplitButtonAutomationPeer.GetPattern(System.Windows.Automation.Peers.PatternInterface)">
+            <summary>
+            Gets the pattern.
+            </summary>
+            <param name="patternInterface">The pattern.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Buttons.RadSplitButtonAutomationPeer.GetClassNameCore">
+            <summary>
+            Returns the name of the <see cref="T:System.Windows.UIElement"/> that is associated with this <see cref="T:System.Windows.Automation.Peers.FrameworkElementAutomationPeer"/>. This method is called by <see cref="M:System.Windows.Automation.Peers.AutomationPeer.GetClassName"/>.
+            </summary>
+            <returns>
+            The name of the owner type that is associated with this <see cref="T:System.Windows.Automation.Peers.FrameworkElementAutomationPeer"/>. See Remarks.
+            </returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Buttons.RadSplitButtonAutomationPeer.GetAutomationControlTypeCore">
+            <summary>
+            Returns the control type for the <see cref="T:System.Windows.UIElement"/> that is associated with this <see cref="T:System.Windows.Automation.Peers.FrameworkElementAutomationPeer"/>. This method is called by <see cref="M:System.Windows.Automation.Peers.AutomationPeer.GetAutomationControlType"/>.
+            </summary>
+            <returns>
+            A value of the enumeration.
+            </returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Buttons.RadSplitButtonAutomationPeer.GetChildrenCore">
+            <summary>
+            Returns the collection of child elements of the <see cref="T:System.Windows.UIElement"/> that is associated with this <see cref="T:System.Windows.Automation.Peers.FrameworkElementAutomationPeer"/>. This method is called by <see cref="M:System.Windows.Automation.Peers.AutomationPeer.GetChildren"/>.
+            </summary>
+            <returns>
+            A list of child <see cref="T:System.Windows.Automation.Peers.AutomationPeer"/> elements.
+            </returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Buttons.RadSplitButtonAutomationPeer.ConvertToExpandCollapseState(System.Boolean)">
+            <summary>
+            Converts the state of to expand collapse.
+            </summary>
+            <param name="value">If set to <c>true</c> [value].</param>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Buttons.RadSplitButtonAutomationPeer.GetAutomationIdCore">
+            <summary>
+            Returns the string that uniquely identifies the <see cref="T:System.Windows.FrameworkElement"/> that is associated with this <see cref="T:System.Windows.Automation.Peers.FrameworkElementAutomationPeer"/>. This method is called by <see cref="M:System.Windows.Automation.Peers.AutomationPeer.GetAutomationId"/>.
+            </summary>
+            <returns>
+            The automation identifier for the element associated with the <see cref="T:System.Windows.Automation.Peers.FrameworkElementAutomationPeer"/>, or <see cref="F:System.String.Empty"/> if there is no automation identifier.
+            </returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Buttons.RadSplitButtonAutomationPeer.GetNameCore">
+            <summary>
+            Returns the text label of the <see cref="T:System.Windows.FrameworkElement"/> that is associated with this <see cref="T:System.Windows.Automation.Peers.FrameworkElementAutomationPeer"/>. This method is called by <see cref="M:System.Windows.Automation.Peers.AutomationPeer.GetName"/>.
+            </summary>
+            <returns>
+            The text label of the element that is associated with this automation peer.
+            </returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Buttons.RadSplitButtonAutomationPeer.GetHelpTextCore">
+            <summary>
+            Returns the string that describes the functionality of the <see cref="T:System.Windows.FrameworkElement"/> that is associated with this <see cref="T:System.Windows.Automation.Peers.FrameworkElementAutomationPeer"/>. This method is called by <see cref="M:System.Windows.Automation.Peers.AutomationPeer.GetHelpText"/>.
+            </summary>
+            <returns>
+            The help text, or <see cref="F:System.String.Empty"/> if there is no help text.
+            </returns>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Buttons.RadSplitButtonAutomationPeer.ExpandCollapseState">
+            <summary>
+            Gets the state (expanded or collapsed) of the control.
+            </summary>
+            <returns>The state (expanded or collapsed) of the control.</returns>
+        </member>
+        <member name="T:Telerik.Windows.Controls.Buttons.RadToggleButtonAutomationPeer">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Buttons.RadToggleButtonAutomationPeer.#ctor(Telerik.Windows.Controls.RadToggleButton)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.Windows.Controls.Buttons.RadToggleButtonAutomationPeer"/> class.
+            </summary>
+            <param name="owner">The owner.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Buttons.RadToggleButtonAutomationPeer.Toggle">
+            <summary>
+            Cycles through the toggle states of a control.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Buttons.RadToggleButtonAutomationPeer.GetPattern(System.Windows.Automation.Peers.PatternInterface)">
+            <summary>
+            Returns the control pattern for the <see cref="T:System.Windows.UIElement"/> that is associated with this <see cref="T:System.Windows.Automation.Peers.FrameworkElementAutomationPeer"/>.
+            </summary>
+            <param name="patternInterface">One of the enumeration values.</param>
+            <returns>
+            See Remarks.
+            </returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Buttons.RadToggleButtonAutomationPeer.GetClassNameCore">
+            <summary>
+            Returns the name of the <see cref="T:System.Windows.UIElement"/> that is associated with this <see cref="T:System.Windows.Automation.Peers.FrameworkElementAutomationPeer"/>. This method is called by <see cref="M:System.Windows.Automation.Peers.AutomationPeer.GetClassName"/>.
+            </summary>
+            <returns>
+            The name of the owner type that is associated with this <see cref="T:System.Windows.Automation.Peers.FrameworkElementAutomationPeer"/>. See Remarks.
+            </returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Buttons.RadToggleButtonAutomationPeer.GetAutomationControlTypeCore">
+            <summary>
+            Returns the control type for the <see cref="T:System.Windows.UIElement"/> that is associated with this <see cref="T:System.Windows.Automation.Peers.FrameworkElementAutomationPeer"/>. This method is called by <see cref="M:System.Windows.Automation.Peers.AutomationPeer.GetAutomationControlType"/>.
+            </summary>
+            <returns>
+            A value of the enumeration.
+            </returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Buttons.RadToggleButtonAutomationPeer.ConvertToToggleState(System.Nullable{System.Boolean})">
+            <summary>
+            Converts the state of to toggle.
+            </summary>
+            <param name="value">The value.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Buttons.RadToggleButtonAutomationPeer.GetAutomationIdCore">
+            <summary>
+            Returns the string that uniquely identifies the <see cref="T:System.Windows.FrameworkElement"/> that is associated with this <see cref="T:System.Windows.Automation.Peers.FrameworkElementAutomationPeer"/>. This method is called by <see cref="M:System.Windows.Automation.Peers.AutomationPeer.GetAutomationId"/>.
+            </summary>
+            <returns>
+            The automation identifier for the element associated with the <see cref="T:System.Windows.Automation.Peers.FrameworkElementAutomationPeer"/>, or <see cref="F:System.String.Empty"/> if there is no automation identifier.
+            </returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Buttons.RadToggleButtonAutomationPeer.GetNameCore">
+            <summary>
+            Returns the text label of the <see cref="T:System.Windows.FrameworkElement"/> that is associated with this <see cref="T:System.Windows.Automation.Peers.FrameworkElementAutomationPeer"/>. This method is called by <see cref="M:System.Windows.Automation.Peers.AutomationPeer.GetName"/>.
+            </summary>
+            <returns>
+            The text label of the element that is associated with this automation peer.
+            </returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Buttons.RadToggleButtonAutomationPeer.GetHelpTextCore">
+            <summary>
+            Returns the string that describes the functionality of the <see cref="T:System.Windows.FrameworkElement"/> that is associated with this <see cref="T:System.Windows.Automation.Peers.FrameworkElementAutomationPeer"/>. This method is called by <see cref="M:System.Windows.Automation.Peers.AutomationPeer.GetHelpText"/>.
+            </summary>
+            <returns>
+            The help text, or <see cref="F:System.String.Empty"/> if there is no help text.
+            </returns>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Buttons.RadToggleButtonAutomationPeer.ToggleState">
+            <summary>
+            Gets the toggle state of the control.
+            </summary>
+            <returns>The toggle state of the control, as a value of the enumeration. </returns>
         </member>
         <member name="T:Telerik.Windows.Controls.ColorToBrushConverter">
             <summary>
@@ -948,6 +1324,11 @@
             Only the Items property of the DragDropState is valid.
             </remarks>
         </member>
+        <member name="M:Telerik.Windows.DragDrop.Behaviors.DragDropBehavior`1.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.Windows.DragDrop.Behaviors.DragDropBehavior`1"/> class.
+            </summary>
+        </member>
         <member name="F:Telerik.Windows.DragDrop.Behaviors.DragDropBehavior`1.ItemTypeProperty">
             <summary>
             Identifies the ItemType dependency property. 
@@ -990,6 +1371,11 @@
             <remarks>
             When the drag source and the drop target are the same control, this method is called before DragCompleted.
             </remarks>
+        </member>
+        <member name="M:Telerik.Windows.DragDrop.Behaviors.DragDropBehavior`1.CopyDraggedItems(`0)">
+            <summary>
+            Copies the items that are dragged in the operation specified by the provided ListBoxDragDropState.
+            </summary>
         </member>
         <member name="M:Telerik.Windows.DragDrop.Behaviors.DragDropBehavior`1.DragDropCanceled(`0)">
             <summary>
@@ -1043,38 +1429,111 @@
             Gets or sets the Type of the items that can be accepted by the host control. This is a dependency property.
             </summary>
         </member>
+        <member name="P:Telerik.Windows.DragDrop.Behaviors.DragDropBehavior`1.AllowReorder">
+            <summary>
+            Gets or sets the value specifying whether the ListBoxDragDropBehavior can reorder itms or not.
+            </summary>
+        </member>
         <member name="T:Telerik.Windows.DragDrop.Behaviors.DragDropHelper`2">
             <summary>
             Binds the DragDropManager events with a DragDropBehavior.
             </summary>
         </member>
-        <member name="M:Telerik.Windows.DragDrop.Behaviors.DragDropHelper`2.HookEvents(System.Windows.Controls.Control)">
+        <member name="M:Telerik.Windows.DragDrop.Behaviors.DragDropHelper`2.GetItemsOfType(System.Collections.IEnumerable,System.Type)">
             <summary>
-            Adds the event handlers for the DragDropManager events.
+            Returns IEnumerable containing only items from the provided Type.
             </summary>
-            <param name="control">The Control to add the event handlers to.</param>
         </member>
-        <member name="M:Telerik.Windows.DragDrop.Behaviors.DragDropHelper`2.UnhookEvents(System.Windows.Controls.Control)">
+        <member name="M:Telerik.Windows.DragDrop.Behaviors.DragDropHelper`2.GetInferredItemType(System.Collections.IEnumerable)">
             <summary>
-            Removes the event handlers for the DragDropManager events.
+            Returns the type of the items in the provided collection.
             </summary>
-            <param name="control">The Control to remove the event handlers from.</param>
         </member>
-        <member name="M:Telerik.Windows.DragDrop.Behaviors.DragDropHelper`2.GetItemsSource(System.Windows.Controls.Control)">
+        <member name="M:Telerik.Windows.DragDrop.Behaviors.DragDropHelper`2.GetDraggedItems(System.Windows.FrameworkElement)">
+            <summary>
+            When overriden in a derived class this method returns the items that should be dragged.
+            </summary>
+            <param name="draggedItem">The source control of the drag operation.</param>
+            <returns>The items that should be dragged.</returns>
+        </member>
+        <member name="M:Telerik.Windows.DragDrop.Behaviors.DragDropHelper`2.GetItemsSource(System.Windows.FrameworkElement)">
             <summary>
             Returns a list containing the items of the specified control.
             </summary>
         </member>
-        <member name="M:Telerik.Windows.DragDrop.Behaviors.DragDropHelper`2.GetDraggedItems(System.Object)">
+        <member name="M:Telerik.Windows.DragDrop.Behaviors.DragDropHelper`2.GetContainerFromItem(System.Windows.FrameworkElement,System.Object)">
             <summary>
-            When overriden in a derived class this method returns the items that should be dragged.
+            Returns the container for the specified item. When overriden in a derived class allows usage of custom ItemContainerGenerators.
             </summary>
-            <param name="dragSource">The source control of the drag operation.</param>
-            <returns>The items that should be dragged.</returns>
         </member>
-        <member name="M:Telerik.Windows.DragDrop.Behaviors.DragDropHelper`2.DragInitialize(System.Object,Telerik.Windows.DragDrop.DragInitializeEventArgs)">
+        <member name="M:Telerik.Windows.DragDrop.Behaviors.DragDropHelper`2.CreateDragVisualProviderState(System.Windows.Point,System.Windows.FrameworkElement,`1)">
             <summary>
-            Initializes a DragPayload and associates it with the current drag-drop operation.
+            Creates and initializes a DragVisualProviderState object.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.DragDrop.Behaviors.DragDropHelper`2.FindDragSource(System.Windows.FrameworkElement)">
+            <summary>
+            Finds the control that contains the provided element. In case of a ListBox drag-drop implementation, this method should return a ListBox.
+            </summary>
+            <param name="element">The element that raised the DragInitialize event.</param>
+        </member>
+        <member name="M:Telerik.Windows.DragDrop.Behaviors.DragDropHelper`2.FindDraggedItem(System.Windows.FrameworkElement)">
+            <summary>
+            Finds the control that contains the provided element. In case of a ListBox drag-drop implementation, this method should return the ListBoxItem that is going to be dragged.
+            </summary>
+            <param name="element">The element that raised the DragInitialize event.</param>
+        </member>
+        <member name="M:Telerik.Windows.DragDrop.Behaviors.DragDropHelper`2.FindDropItemsControl(System.Windows.FrameworkElement,System.Object)">
+            <summary>
+            Finds the target control that should accept the dragged items. In case of a ListBox drag-drop implementation, this method should return a ListBox.
+            </summary>
+            <param name="element">The element that raised the Drop event.</param>
+            <param name="data">The DataObject for the current drag operation.</param>
+        </member>
+        <member name="M:Telerik.Windows.DragDrop.Behaviors.DragDropHelper`2.FindDropTarget(System.Windows.FrameworkElement)">
+            <summary>
+            Finds an item from the target control that contains the provided element. In case of a ListBox drag-drop implementation, this method should return a ListBoxItem.
+            </summary>
+            <param name="element">The element that raised the Drop event.</param>
+        </member>
+        <member name="M:Telerik.Windows.DragDrop.Behaviors.DragDropHelper`2.GetItemType(System.Windows.FrameworkElement)">
+            <summary>
+            Returns the Type of the items in the provided control.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.DragDrop.Behaviors.DragDropHelper`2.DragDropCompleted(System.Windows.FrameworkElement,System.Object,System.Type,System.Boolean)">
+            <summary>
+            When overriden in a derived class allows calling custom code on the DragDropCompleted event.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.DragDrop.Behaviors.DragDropHelper`2.DragOver(System.Windows.FrameworkElement,System.Windows.FrameworkElement,System.Object,System.Type)">
+            <summary>
+            When overriden in a derived class allows calling custom code on the DragOver event.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.DragDrop.Behaviors.DragDropHelper`2.Drop(System.Windows.FrameworkElement,System.Windows.FrameworkElement,System.Object,System.Type)">
+            <summary>
+            When overriden in a derived class allows custom code in the Drop event.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.DragDrop.Behaviors.DragDropHelper`2.CreateStateForDrop(System.Windows.FrameworkElement,System.Windows.FrameworkElement,System.Object,System.Type)">
+            <summary>
+            Creates and initializes a DragDropState from the provided DragEventArgs.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.DragDrop.Behaviors.DragDropHelper`2.GetItemsFromDataObject(System.Object,System.Type)">
+            <summary>
+            Retrieves items from the specified data object only of the specified type.
+            </summary>
+            <param name="data"></param>
+            <param name="itemType"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Telerik.Windows.DragDrop.Behaviors.DragDropHelper`2.UseDefaultCursors">
+            <summary>
+            Specifies whether the drag-drop effects will change the mouse cursor or not. Return true if the cursor should change 
+            depending the drag-drop effects, otherwise false. This property is set in DragInitialize with the value of the 
+            IDragVisualProvider.UseDefaultCursors property.
             </summary>
         </member>
         <member name="P:Telerik.Windows.DragDrop.Behaviors.DragDropHelper`2.DataConverter">
@@ -1095,6 +1554,11 @@
         <member name="T:Telerik.Windows.DragDrop.Behaviors.DragDropState">
             <summary>
             Provides a context for a drag-drop operation.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.DragDrop.Behaviors.DragDropState.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.Windows.DragDrop.Behaviors.DragDropState"/> class.
             </summary>
         </member>
         <member name="P:Telerik.Windows.DragDrop.Behaviors.DragDropState.DraggedItems">
@@ -1127,12 +1591,17 @@
             Gets a value that specifies whether the drag source and the drop target are the same control.
             </summary>
         </member>
+        <member name="P:Telerik.Windows.DragDrop.Behaviors.DragDropState.InsertIndex">
+            <summary>
+            Gets or sets the index at which the dragged items will be inserted. A value -1 means that the items should be added at the end of the items source.
+            </summary>
+        </member>
         <member name="T:Telerik.Windows.DragDrop.Behaviors.DragVisualProviderState">
             <summary>
             
             </summary>
         </member>
-        <member name="M:Telerik.Windows.DragDrop.Behaviors.DragVisualProviderState.#ctor(System.Windows.Point,System.Collections.IEnumerable,System.Collections.Generic.IEnumerable{System.Windows.DependencyObject},System.Windows.Controls.Control)">
+        <member name="M:Telerik.Windows.DragDrop.Behaviors.DragVisualProviderState.#ctor(System.Windows.Point,System.Collections.IEnumerable,System.Collections.Generic.IEnumerable{System.Windows.DependencyObject},System.Windows.FrameworkElement)">
             <summary>
             Initializes a new instance of the <see cref="T:Telerik.Windows.DragDrop.Behaviors.DragVisualProviderState"/> class.
             </summary>
@@ -1182,6 +1651,11 @@
             When overriden in a derived class allows customization of the drag visual offset relatively to the mouse pointer.
             </summary>
         </member>
+        <member name="P:Telerik.Windows.DragDrop.Behaviors.IDragVisualProvider.UseDefaultCursors">
+            <summary>
+            Specifies whether the drag-drop effects will change the mouse cursor or not. Return true if the cursor should change depending the drag-drop effects, otherwise false. 
+            </summary>
+        </member>
         <member name="M:Telerik.Windows.DragDrop.Behaviors.EmptyDragVisualProvider.CreateDragVisual(Telerik.Windows.DragDrop.Behaviors.DragVisualProviderState)">
             <summary>
             When overriden in a derived class allows customization of the drag visual. If the returned element
@@ -1193,6 +1667,12 @@
             When overriden in a derived class allows customization of the drag visual offset relatively to the mouse pointer.
             </summary>
             <param name="state"></param>
+        </member>
+        <member name="P:Telerik.Windows.DragDrop.Behaviors.EmptyDragVisualProvider.UseDefaultCursors">
+            <summary>
+            Specifies whether the drag-drop effects will change the mouse cursor or not. Return true if the cursor should change depending the drag-drop effects, otherwise false.
+            </summary>
+            <value></value>
         </member>
         <member name="T:Telerik.Windows.DragDrop.Behaviors.ScreenshotDragVisualProvider">
             <summary>
@@ -1210,9 +1690,20 @@
             When overriden in a derived class allows customization of the drag visual offset relatively to the mouse pointer.
             </summary>
         </member>
+        <member name="P:Telerik.Windows.DragDrop.Behaviors.ScreenshotDragVisualProvider.UseDefaultCursors">
+            <summary>
+            Specifies whether the drag-drop effects will change the mouse cursor or not. Return true if the cursor should change depending the drag-drop effects, otherwise false.
+            </summary>
+            <value></value>
+        </member>
         <member name="T:Telerik.Windows.DragDrop.Behaviors.DataObjectHelper">
             <summary>
             Porivdes a trust settings independent way to retreive drag data.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.DragDrop.Behaviors.DataObjectHelper.GetFormats(System.Object,System.Boolean)">
+            <summary>
+            Returns a list of all formats that the data in this data object is stored in. A Boolean flag indicates whether to also include formats that the data can be automatically converted to.
             </summary>
         </member>
         <member name="M:Telerik.Windows.DragDrop.Behaviors.DataObjectHelper.GetData(System.Object,System.String,System.Boolean)">
@@ -1233,6 +1724,27 @@
         <member name="M:Telerik.Windows.DragDrop.Behaviors.DataObjectHelper.GetDataPresent(System.Object,System.Type,System.Boolean)">
             <summary>
             Retrieves a data object in a specified format, and optionally, converts the data to the specified format.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.DragDrop.Behaviors.DefaultDragVisualProvider">
+            <summary>
+            IDragVisualProvider that creates drag visuals containing screenshots of the dragged item containers.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.DragDrop.Behaviors.DefaultDragVisualProvider.CreateDragVisual(Telerik.Windows.DragDrop.Behaviors.DragVisualProviderState)">
+            <summary>
+            When overriden in a derived class allows customization of the drag visual. If the returned element
+            implements IEffectsPresenter, its Effects property will be automatically set during the drag-drop operation.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.DragDrop.Behaviors.DefaultDragVisualProvider.GetDragVisualOffset(Telerik.Windows.DragDrop.Behaviors.DragVisualProviderState)">
+            <summary>
+            When overriden in a derived class allows customization of the drag visual offset relatively to the mouse pointer.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.DragDrop.Behaviors.DefaultDragVisualProvider.UseDefaultCursors">
+            <summary>
+            Specifies whether the drag-drop effects will change the mouse cursor or not. Return true if the cursor should change depending the drag-drop effects, otherwise false.
             </summary>
         </member>
         <member name="T:Telerik.Windows.DragDrop.Behaviors.IDragPayload">
@@ -1361,39 +1873,42 @@
             Initializes a new instance of the <see cref="T:Telerik.Windows.DragDrop.Behaviors.ListBoxDragDropBehavior"/> class.
             </summary>
         </member>
-        <member name="M:Telerik.Windows.DragDrop.Behaviors.ListBoxDragDropBehavior.Drop(Telerik.Windows.DragDrop.Behaviors.ListBoxDragDropState)">
-            <summary>
-            Completes the drop operation. This method is called only in the context of the drop target control.
-            </summary>
-            <param name="state">DragDropState that provides context for the current operation.</param>
-            <remarks>
-            When the drag source and the drop target are the same control, this method is called before DragCompleted.
-            </remarks>
-        </member>
-        <member name="M:Telerik.Windows.DragDrop.Behaviors.ListBoxDragDropBehavior.CopyDraggedItems(Telerik.Windows.DragDrop.Behaviors.ListBoxDragDropState)">
-            <summary>
-            Copies the items that are dragged in the operation specified by the provided ListBoxDragDropState.
-            </summary>
-        </member>
-        <member name="P:Telerik.Windows.DragDrop.Behaviors.ListBoxDragDropBehavior.AllowReorder">
-            <summary>
-            Gets or sets the value specifying whether the ListBoxDragDropBehavior can reorder itms or not.
-            </summary>
-        </member>
         <member name="T:Telerik.Windows.DragDrop.Behaviors.ListBoxDragDropHelper">
             <summary>
             
             </summary>
         </member>
-        <member name="T:Telerik.Windows.DragDrop.Behaviors.ListBoxDragDropState">
+        <member name="M:Telerik.Windows.DragDrop.Behaviors.ListBoxDragDropHelper.FindDragSource(System.Windows.FrameworkElement)">
             <summary>
-            
+            Finds the ListBox that contains the provided element.
             </summary>
+            <param name="element">The element that raised the DragInitialize event.</param>
         </member>
-        <member name="P:Telerik.Windows.DragDrop.Behaviors.ListBoxDragDropState.InsertIndex">
+        <member name="M:Telerik.Windows.DragDrop.Behaviors.ListBoxDragDropHelper.FindDraggedItem(System.Windows.FrameworkElement)">
             <summary>
-            Gets or sets the index at which the dragged items will be inserted. Returns -1 if the items should be added at the end of the items source.
+            Finds the ListBoxItem that contains the provided element.
             </summary>
+            <param name="element">The element that raised the DragInitialize event.</param>
+        </member>
+        <member name="M:Telerik.Windows.DragDrop.Behaviors.ListBoxDragDropHelper.FindDropItemsControl(System.Windows.FrameworkElement,System.Object)">
+            <summary>
+            Finds the ListBox that should accept the dragged items.
+            </summary>
+            <param name="element">The element that raised the Drop event.</param>
+            <param name="data">The DataObject for the current drag operation.</param>
+        </member>
+        <member name="M:Telerik.Windows.DragDrop.Behaviors.ListBoxDragDropHelper.FindDropTarget(System.Windows.FrameworkElement)">
+            <summary>
+            Finds a ListBoxItem from the target control that contains the provided element.
+            </summary>
+            <param name="element">The element that raised the Drop event.</param>
+        </member>
+        <member name="M:Telerik.Windows.DragDrop.Behaviors.ListBoxDragDropHelper.GetDraggedItems(System.Windows.FrameworkElement)">
+            <summary>
+            Returns the SelectedItems list of the ListBox that contains the dragged item and adds the dragged item to the list if it is not already present there.
+            </summary>
+            <param name="draggedItem">The source control of the drag operation.</param>
+            <returns>The items that should be dragged.</returns>
         </member>
         <member name="T:Telerik.Windows.RadRoutedEventArgs">
             <summary>
@@ -2430,6 +2945,56 @@
             operations.
             </summary>
         </member>
+        <member name="T:Telerik.Windows.DragDrop.DragVisual">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.DragDrop.IEffectsPresenter">
+            <summary>
+            Provides mechanism for automatic updating Effects.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.DragDrop.IEffectsPresenter.Effects">
+            <summary>
+            Gets or sets the effects based on drop-and-drop operation.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.DragDrop.DragVisual.EffectsProperty">
+            <summary>
+            Identifies the Effects dependency property. 
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.DragDrop.DragVisual.IsDraggingMultipleItemsProperty">
+            <summary>
+            Identifies the IsDraggingMultipleItems dependency property. 
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.DragDrop.DragVisual.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.Windows.DragDrop.DragVisual"/> class.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.DragDrop.DragVisual.OnApplyTemplate">
+            <summary>
+            When overridden in a derived class, is invoked whenever application code or internal processes (such as a rebuilding layout pass) call <see cref="M:System.Windows.Controls.Control.ApplyTemplate"/>. In simplest terms, this means the method is called just before a UI element displays in an application. For more information, see Remarks.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.DragDrop.DragVisual.UpdateVisualState">
+            <summary>
+            Updates the visual state of the DragVisual.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.DragDrop.DragVisual.Effects">
+            <summary>
+            Gets or sets the Effects. This is a dependency property.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.DragDrop.DragVisual.IsDraggingMultipleItems">
+            <summary>
+            Gets or sets the IsDraggingMultipleItems. This is a dependency property.
+            </summary>
+        </member>
         <member name="T:Telerik.Windows.DragDrop.GiveFeedbackEventHandler">
             <summary>
             Represents a method that will handle the feedback routed event from in-process drag-and-drop operations.
@@ -2468,16 +3033,6 @@
         <member name="P:Telerik.Windows.DragDrop.GiveFeedbackEventArgs.UseDefaultCursors">
             <summary>
             Gets or sets whether drag operation should use the default cursors that are associated with drag-drop effects.
-            </summary>
-        </member>
-        <member name="T:Telerik.Windows.DragDrop.IEffectsPresenter">
-            <summary>
-            Provides mechanism for automatic updating Effects.
-            </summary>
-        </member>
-        <member name="P:Telerik.Windows.DragDrop.IEffectsPresenter.Effects">
-            <summary>
-            Gets or sets the effects based on drop-and-drop operation.
             </summary>
         </member>
         <member name="T:Telerik.Windows.DragDrop.QueryContinueDragEventHandler">
@@ -3414,6 +3969,188 @@
         <member name="P:Telerik.Windows.Controls.Label.Target">
             <summary>
             Reserved for future use.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.VirtualizingWrapPanel">
+            <summary>
+            Positions child elements in sequential position from left to right, breaking content 
+            to the next line at the edge of the containing box. Subsequent ordering happens 
+            sequentially from top to bottom or from right to left, depending on the value of 
+            the Orientation property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.VirtualizingWrapPanel.ItemHeightProperty">
+            <summary>
+            Identifies the ItemHeight dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.VirtualizingWrapPanel.ItemWidthProperty">
+            <summary>
+            Identifies the ItemWidth dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.VirtualizingWrapPanel.OrientationProperty">
+            <summary>
+            Identifies the Orientation dependency property.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.VirtualizingWrapPanel.LineDown">
+            <summary>
+            Scrolls down within content by one logical unit.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.VirtualizingWrapPanel.LineLeft">
+            <summary>
+            Scrolls left within content by one logical unit.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.VirtualizingWrapPanel.LineRight">
+            <summary>
+            Scrolls right within content by one logical unit.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.VirtualizingWrapPanel.LineUp">
+            <summary>
+            Scrolls up within content by one logical unit.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.VirtualizingWrapPanel.MakeVisible(System.Windows.UIElement,System.Windows.Rect)">
+            <summary>
+            Forces content to scroll until the coordinate space of a UIElement object is visible.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.VirtualizingWrapPanel.MouseWheelDown">
+            <summary>
+            Scrolls down within content after a user clicks the wheel button on a mouse.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.VirtualizingWrapPanel.MouseWheelLeft">
+            <summary>
+            Scrolls left within content after a user clicks the wheel button on a mouse.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.VirtualizingWrapPanel.MouseWheelRight">
+            <summary>
+            Scrolls right within content after a user clicks the wheel button on a mouse.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.VirtualizingWrapPanel.MouseWheelUp">
+            <summary>
+            Scrolls up within content after a user clicks the wheel button on a mouse.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.VirtualizingWrapPanel.PageDown">
+            <summary>
+            Scrolls down within content by one page.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.VirtualizingWrapPanel.PageLeft">
+            <summary>
+            Scrolls left within content by one page.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.VirtualizingWrapPanel.PageRight">
+            <summary>
+            Scrolls right within content by one page.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.VirtualizingWrapPanel.PageUp">
+            <summary>
+            Scrolls up within content by one page.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.VirtualizingWrapPanel.SetHorizontalOffset(System.Double)">
+            <summary>
+            Sets the amount of horizontal offset.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.VirtualizingWrapPanel.SetVerticalOffset(System.Double)">
+            <summary>
+            Sets the amount of vertical offset.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.VirtualizingWrapPanel.OnItemsChanged(System.Object,System.Windows.Controls.Primitives.ItemsChangedEventArgs)">
+            <summary>
+            When items are removed, remove the corresponding UI if necessary
+            </summary>
+            <param name="sender"></param>
+            <param name="args"></param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.VirtualizingWrapPanel.MeasureOverride(System.Windows.Size)">
+            <summary>
+            Measure the children
+            </summary>
+            <param name="availableSize">Size available</param>
+            <returns>Size desired</returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.VirtualizingWrapPanel.ArrangeOverride(System.Windows.Size)">
+            <summary>
+            Arrange the children
+            </summary>
+            <param name="finalSize">Size available</param>
+            <returns>Size used</returns>
+        </member>
+        <member name="P:Telerik.Windows.Controls.VirtualizingWrapPanel.ItemHeight">
+            <summary>
+            Gets or sets a value that specifies the height of all items that are 
+            contained within a VirtualizingWrapPanel. This is a dependency property.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.VirtualizingWrapPanel.ItemWidth">
+            <summary>
+            Gets or sets a value that specifies the width of all items that are 
+            contained within a VirtualizingWrapPanel. This is a dependency property.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.VirtualizingWrapPanel.Orientation">
+            <summary>
+            Gets or sets a value that specifies the dimension in which child 
+            content is arranged. This is a dependency property.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.VirtualizingWrapPanel.CanHorizontallyScroll">
+            <summary>
+            Gets or sets a value that indicates whether scrolling on the horizontal axis is possible.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.VirtualizingWrapPanel.CanVerticallyScroll">
+            <summary>
+            Gets or sets a value that indicates whether scrolling on the vertical axis is possible.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.VirtualizingWrapPanel.ExtentHeight">
+            <summary>
+            Gets the vertical size of the extent.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.VirtualizingWrapPanel.ExtentWidth">
+            <summary>
+            Gets the horizontal size of the extent.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.VirtualizingWrapPanel.HorizontalOffset">
+            <summary>
+            Gets the horizontal offset of the scrolled content.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.VirtualizingWrapPanel.ScrollOwner">
+            <summary>
+            Gets or sets a ScrollViewer element that controls scrolling behavior.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.VirtualizingWrapPanel.VerticalOffset">
+            <summary>
+            Gets the vertical offset of the scrolled content.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.VirtualizingWrapPanel.ViewportHeight">
+            <summary>
+            Gets the vertical size of the viewport for this content.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.VirtualizingWrapPanel.ViewportWidth">
+            <summary>
+            Gets the horizontal size of the viewport for this content.
             </summary>
         </member>
         <member name="T:Telerik.Windows.Persistence.Services.AttachedPropertyProviderAttribute">
@@ -4610,38 +5347,6 @@
             Gets or sets a value that specifies how the animation interpolates. 
             </summary>
         </member>
-        <member name="T:Telerik.Windows.Controls.Animation.TransitionEffectAnimation">
-            <summary>
-            Transition effect animation for showing/hiding popups.
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.Animation.TransitionEffectAnimation.CreateAnimationOverride(System.Windows.FrameworkElement,System.Windows.FrameworkElement)">
-            <summary>
-            Creates the slide animation.
-            </summary>
-            <param name="control">The control for which the animation is needed.</param>
-            <param name="target">The targeted element of the animation.</param>
-            <returns>The newly created animation.</returns>
-        </member>
-        <member name="M:Telerik.Windows.Controls.Animation.TransitionEffectAnimation.UpdateAnimationOverride(System.Windows.FrameworkElement,System.Windows.Media.Animation.Storyboard,System.Windows.FrameworkElement,System.Object[])">
-            <summary>
-            Updates the slide animation.
-            </summary>
-            <param name="control">The control for which the animation needs to be updated.</param>
-            <param name="storyboard">Storyvoard that needs to be updated.</param>
-            <param name="target">The targeted element of the animation.</param>
-            <param name="args"></param>
-            <remarks>
-            Currently the method sets the SpeedRatio of the storyboard to
-            the global <strong>AnimationSpeedRatio</strong> if the local SpeedRatio is null.
-            If the local SpeedRatio value is set, it will be used.
-            </remarks>
-        </member>
-        <member name="P:Telerik.Windows.Controls.Animation.TransitionEffectAnimation.Transition">
-            <summary>
-            Gets or sets a value describing the TransitionEffect to be used for the animation.
-            </summary>
-        </member>
         <member name="T:Telerik.Windows.Controls.RadBusyIndicator">
             <summary>
             Identifies the RadBusyIndicator control.
@@ -4975,10 +5680,43 @@
             StringFilterEditor.
             </summary>
         </member>
+        <member name="F:Telerik.Windows.Controls.Filtering.Editors.StringFilterEditor.TextProperty">
+            <summary>
+            Identifies the Text dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.Filtering.Editors.StringFilterEditor.IsCaseSensitiveProperty">
+            <summary>
+            Identifies the IsCaseSensitive dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.Filtering.Editors.StringFilterEditor.MatchCaseVisibilityProperty">
+            <summary>
+            Identifies the MatchCaseVisibility dependency property.
+            </summary>
+        </member>
         <member name="M:Telerik.Windows.Controls.Filtering.Editors.StringFilterEditor.#ctor">
             <summary>
             Initializes a new instance of the <see cref="T:Telerik.Windows.Controls.Filtering.Editors.StringFilterEditor"/> class.
             </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Filtering.Editors.StringFilterEditor.Text">
+            <summary>
+            Gets or sets the text.
+            </summary>
+            <value>The text.</value>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Filtering.Editors.StringFilterEditor.IsCaseSensitive">
+            <summary>
+            Gets or sets the is case sensitive.
+            </summary>
+            <value>The is case sensitive.</value>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Filtering.Editors.StringFilterEditor.MatchCaseVisibility">
+            <summary>
+            Gets or sets the MatchCaseVisibility.
+            </summary>
+            <value>The MatchCaseVisibility.</value>
         </member>
         <member name="T:Telerik.Windows.Controls.TextBoxBehavior">
             <summary>
@@ -5644,6 +6382,11 @@
             Invoked on got focus.
             </summary>
         </member>
+        <member name="M:Telerik.Windows.Controls.RadButton.OnCreateAutomationPeer">
+            <summary>
+            Creates a RadButtonAutomationPeer.
+            </summary>
+        </member>
         <member name="M:Telerik.Windows.Controls.RadButton.OnMouseEnter(System.Windows.Input.MouseEventArgs)">
             <summary>
             Starts the auto open timer.
@@ -5851,6 +6594,11 @@
         <member name="M:Telerik.Windows.Controls.RadDropDownButton.OnClick">
             <summary>
             Invoke the base OnClick and toggle the IsOpen property.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadDropDownButton.OnCreateAutomationPeer">
+            <summary>
+            Creates a RadDropDownButtonAutomationPeer.
             </summary>
         </member>
         <member name="M:Telerik.Windows.Controls.RadDropDownButton.OnKeyDown(System.Windows.Input.KeyEventArgs)">
@@ -6096,6 +6844,11 @@
             Invoked on got focus.
             </summary>
         </member>
+        <member name="M:Telerik.Windows.Controls.RadRadioButton.OnCreateAutomationPeer">
+            <summary>
+            Creates a RadRadioButtonAutomationPeer.
+            </summary>
+        </member>
         <member name="P:Telerik.Windows.Controls.RadRadioButton.CornerRadius">
             <summary>
             Gets or sets a value that represents the degree to which the corners of the control are rounded. This is a dependency property.
@@ -6213,6 +6966,11 @@
         <member name="M:Telerik.Windows.Controls.RadToggleButton.OnGotFocus(System.Windows.RoutedEventArgs)">
             <summary>
             Invoked on got focus.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadToggleButton.OnCreateAutomationPeer">
+            <summary>
+            Creates a RadToggleButtonAutomationPeer.
             </summary>
         </member>
         <member name="P:Telerik.Windows.Controls.RadToggleButton.CornerRadius">
@@ -7543,7 +8301,16 @@
         </member>
         <member name="M:Telerik.Windows.Controls.Simple3D.ThreeDTools.CreateRotationMatrix(System.Double,System.Double,System.Double)">
             <summary>
-            Creates a 3D rotation transformation matrix.
+            Creates a 3D rotation transformation matrix. Uses angle rounding for fast Cos and Sin lookup.
+            </summary>
+            <param name="alph">The angle around the X axis.</param>
+            <param name="bet">The angle around the Y axis.</param>
+            <param name="gam">The angle around the Z axis.</param>
+            <returns>The transformation matrix, that represents a rotation transformation.</returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Simple3D.ThreeDTools.CreatePreciseRotationMatrix(System.Double,System.Double,System.Double)">
+            <summary>
+            Creates a 3D rotation transformation matrix. Uses angle rounding for fast Cos and Sin lookup.
             </summary>
             <param name="alph">The angle around the X axis.</param>
             <param name="bet">The angle around the Y axis.</param>
@@ -7663,6 +8430,11 @@
             Identifies the SelectionProperty dependency property.
             </summary>
         </member>
+        <member name="F:Telerik.Windows.Controls.DoubleRangeBase.IsCoercionSuppressedProperty">
+            <summary>
+            Identifies the IsCoercionSuppressed dependency property.
+            </summary>
+        </member>
         <member name="M:Telerik.Windows.Controls.DoubleRangeBase.#ctor">
             <summary>
             Initializes a new instance of the <see cref="T:Telerik.Windows.Controls.DoubleRangeBase"/> class.
@@ -7684,6 +8456,13 @@
             <summary>
             
             </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.DoubleRangeBase.ArrangeOverride(System.Windows.Size)">
+            <summary>
+            
+            </summary>
+            <param name="finalSize"></param>
+            <returns></returns>
         </member>
         <member name="M:Telerik.Windows.Controls.DoubleRangeBase.OnMaximumChanged(System.Double,System.Double)">
             <summary>
@@ -7737,14 +8516,9 @@
             Called when SelectionRange event occurs.
             </summary>
         </member>
-        <member name="M:Telerik.Windows.Controls.DoubleRangeBase.BeginInit">
+        <member name="M:Telerik.Windows.Controls.DoubleRangeBase.FixSelectionProperties">
             <summary>
-            Called when the control begins Initializing
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.DoubleRangeBase.EndInit">
-            <summary>
-            Called when the control is Initialized
+            
             </summary>
         </member>
         <member name="E:Telerik.Windows.Controls.DoubleRangeBase.SelectionStartChanged">
@@ -7777,9 +8551,9 @@
             Occurs when the Selection property has changed.
             </summary>
         </member>
-        <member name="P:Telerik.Windows.Controls.DoubleRangeBase.IsInitialized">
+        <member name="P:Telerik.Windows.Controls.DoubleRangeBase.IsInitializing">
             <summary>
-            Indicates whether the Control is initialized.
+            Gets or sets whether the control is initializing.
             </summary>
         </member>
         <member name="P:Telerik.Windows.Controls.DoubleRangeBase.IsSelectionRangeEnabled">
@@ -7808,6 +8582,14 @@
             		]]>
             	</code>
             </example>
+        </member>
+        <member name="P:Telerik.Windows.Controls.DoubleRangeBase.IsCoercionSuppressed">
+            <summary>
+            Gets or sets a value that indicates whether the slider should coerce the setting of related properties like Value, SelectionStart, SelectionEnd, Minimum, Maximum, MinimumRangeSpan and MaximumRangeSpan. 
+            </summary>
+            <remarks>
+            If set to True, the coercion is done only when the user manipulates the slider and not if the related properties are set by code or through binding.
+            </remarks>
         </member>
         <member name="P:Telerik.Windows.Controls.DoubleRangeBase.SelectionRange">
             <summary>
@@ -7960,6 +8742,19 @@
             	</code>
             </example>
         </member>
+        <member name="P:Telerik.Windows.Controls.DoubleRangeBase.IsArranged">
+            <summary>
+            Gets or sets whether the control is arraged.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.DoubleRangeBase.IsUserManipulationInProgress">
+            <summary>
+            Gets or sets a value indicating whether this instance is user manipulation in progress.
+            </summary>
+            <value>
+            	<c>True</c> if this instance is user manipulation in progress; otherwise, <c>false</c>.
+            </value>
+        </member>
         <member name="F:Telerik.Windows.Controls.RadSlider.IsFocusedProperty">
             <summary>
                 Identifies the IsFocused dependency property.
@@ -8058,6 +8853,11 @@
         <member name="F:Telerik.Windows.Controls.RadSlider.ThumbStyleProperty">
             <summary>
             Identifies the ThumbStyle dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadSlider.AlternateThumbStyleProperty">
+            <summary>
+            Identifies the AlternateThumbStyle dependency property.
             </summary>
         </member>
         <member name="F:Telerik.Windows.Controls.RadSlider.TrackStyleProperty">
@@ -8181,6 +8981,16 @@
             </summary>
             <param name="e">The <see cref="T:System.Windows.Input.MouseWheelEventArgs"/> that contains the event data.</param>
         </member>
+        <member name="M:Telerik.Windows.Controls.RadSlider.BeginInit">
+            <summary>
+            Called when the control begins Initializing
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadSlider.EndInit">
+            <summary>
+            Called when the control is Initialized
+            </summary>
+        </member>
         <member name="M:Telerik.Windows.Controls.RadSlider.ChangeVisualState(System.Boolean)">
             <summary>
             Changes the visual state of the control.
@@ -8236,6 +9046,11 @@
         <member name="P:Telerik.Windows.Controls.RadSlider.ThumbStyle">
             <summary>
             Gets or sets the style for the Thumbs used internally by the slider.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadSlider.AlternateThumbStyle">
+            <summary>
+            Gets or sets the style for the right Thumb used internally by the slider, in case of RangeSlider.
             </summary>
         </member>
         <member name="P:Telerik.Windows.Controls.RadSlider.TrackStyle">
@@ -9352,63 +10167,56 @@
         </member>
         <member name="M:Telerik.Windows.Controls.RadRangeBase.OnMaximumChanged(System.Double,System.Double)">
             <summary>
-            Called when the NullableRangeBase.Maximum property changes.
+            Called when the RadRangeBase.Maximum property changes.
             </summary>
-            <param name="oldMaximum">Old value of the NullableRangeBase.Maximum property.</param>
-            <param name="newMaximum">New value of the NullableRangeBase.Maximum property.</param>
+            <param name="oldMaximum">Old value of the RadRangeBase.Maximum property.</param>
+            <param name="newMaximum">New value of the RadRangeBase.Maximum property.</param>
         </member>
         <member name="M:Telerik.Windows.Controls.RadRangeBase.OnMinimumChanged(System.Double,System.Double)">
             <summary>
-            Called when the NullableRangeBase.Minimum property changes.
+            Called when the RadRangeBase.Minimum property changes.
             </summary>
-            <param name="oldMinimum">Old value of the NullableRangeBase.Minimum property.</param>
-            <param name="newMinimum">New value of the NullableRangeBase.Minimum property.</param>
-        </member>
-        <member name="M:Telerik.Windows.Controls.RadRangeBase.OnValueChanged(System.Nullable{System.Double},System.Nullable{System.Double})">
-            <summary>
-            Raises the NullableRangeBase.ValueChanged routed event.
-            </summary>
-            <param name="oldValue">Old value of the NullableRangeBase.Value property.</param>
-            <param name="newValue">New value of the NullableRangeBase.Value property.</param>
+            <param name="oldMinimum">Old value of the RadRangeBase.Minimum property.</param>
+            <param name="newMinimum">New value of the RadRangeBase.Minimum property.</param>
         </member>
         <member name="M:Telerik.Windows.Controls.RadRangeBase.OnValueChanged(Telerik.Windows.Controls.RadRangeBaseValueChangedEventArgs)">
             <summary>
-            Raises the NullableRangeBase.ValueChanged routed event.
+            Raises the RadRangeBase.ValueChanged routed event.
             </summary>
         </member>
         <member name="E:Telerik.Windows.Controls.RadRangeBase.ValueChanged">
             <summary>
-             Occurs when the range value changes.
-            </summary>
-        </member>
-        <member name="P:Telerik.Windows.Controls.RadRangeBase.AutoReverse">
-            <summary>
-            Gets or sets the value that specifies whether the control will change its value to its minimum when it reaches its maximum, or vice versa.
+            Occurs when the range value changes.
             </summary>
         </member>
         <member name="P:Telerik.Windows.Controls.RadRangeBase.LargeChange">
             <summary>
-            Gets or sets a value to be added to or subtracted from the Value of a NullableRangeBase control.
+            Gets or sets a value to be added to or subtracted from the Value of a RadRangeBase control.
             </summary>
         </member>
         <member name="P:Telerik.Windows.Controls.RadRangeBase.Maximum">
             <summary>
-             Gets or sets the highest possible NullableRangeBase.Value of the range element.
+             Gets or sets the highest possible RadRangeBase.Value of the range element.
             </summary>
         </member>
         <member name="P:Telerik.Windows.Controls.RadRangeBase.Minimum">
             <summary>
-             Gets or sets the lowest possible NullableRangeBase.Value of the range element.
+             Gets or sets the lowest possible RadRangeBase.Value of the range element.
             </summary>
         </member>
         <member name="P:Telerik.Windows.Controls.RadRangeBase.SmallChange">
             <summary>
-            Gets or sets the value to be added to or subtracted from the NullableRangeBase.Value.
+            Gets or sets the value to be added to or subtracted from the RadRangeBase.Value.
             </summary>
         </member>
         <member name="P:Telerik.Windows.Controls.RadRangeBase.Value">
             <summary>
             Gets or sets the current setting of the range control, which may be coerced.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadRangeBase.AutoReverse">
+            <summary>
+            Gets or sets the value that specifies whether the control will change its value to its minimum when it reaches its maximum, or vice versa.
             </summary>
         </member>
         <member name="T:Telerik.Windows.Controls.RadRangeBaseValueChangedEventArgs">
@@ -9458,6 +10266,11 @@
         <member name="P:Telerik.Windows.Controls.CanExecuteRoutedEventArgs.Parameter">
             <summary>
             Gets the command specific data. 
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.CanExecuteRoutedEventArgs.ContinueRouting">
+            <summary>
+            Determines whether the input routed event that invoked the command should continue to route through the element tree.
             </summary>
         </member>
         <member name="T:Telerik.Windows.Controls.CanExecuteRoutedEventHandler">
@@ -10363,6 +11176,13 @@
             Defines the method to be called when the command is invoked.
             </summary>
             <param name="parameter">Data used by the command. If the command does not require data to be passed, this object can be set to null.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RoutedCommand.RegisterUsingCommandName(Telerik.Windows.Controls.RoutedCommand)">
+            <summary>
+            Register the command using only command Name. This allows CommandConverter to use directly command name instead of 
+            command.TypeQualifiedName which is something like this local:Class.Command1
+            </summary>
+            <param name="command">The command to register.</param>
         </member>
         <member name="E:Telerik.Windows.Controls.RoutedCommand.CanExecuteChanged">
             <summary>
@@ -12232,25 +13052,6 @@
             <summary>
             Static container for the Theme attached property.
             </summary>
-        </member>
-        <member name="F:Telerik.Windows.Controls.RadControl.ThemeProperty">
-            <summary>
-            Identifies the Theme attached property.
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.RadControl.GetTheme(System.Windows.DependencyObject)">
-            <summary>
-            Gets the value of the Theme attached property from a given DependencyObject.
-            </summary>
-            <param name="obj">The DependencyObject from which to read the property value.</param>
-            <returns>The value of the Theme attached property.</returns>
-        </member>
-        <member name="M:Telerik.Windows.Controls.RadControl.SetTheme(System.Windows.DependencyObject,Telerik.Windows.Controls.Theme)">
-            <summary>
-            Sets the value of the Theme attached property to a given DependencyObject.
-            </summary>
-            <param name="obj">The DependencyObject on which to set the property value.</param>
-            <param name="value">The property value to set.</param>
         </member>
         <member name="P:Telerik.Windows.Controls.RadControl.IsInDesignMode">
             <summary>
@@ -15004,14 +15805,23 @@
             repositions itself to align with the obscuring screen edge.
             </summary>
         </member>
-        <member name="F:Telerik.Windows.Controls.PlacementMode.MousePoint">
+        <member name="F:Telerik.Windows.Controls.PlacementMode.Mouse">
             <summary>
             A postion of the Popup control that aligns its upper edge with the lower edge
-            of the bounding box of the mouse and aligns its left edge with the left edge
-            of the bounding box of the mouse. If the lower screen-edge obscures the Popup,
-            it repositions itself to align with the upper edge of the bounding box of the mouse.
-            If the upper screen-edge obscures the Popup, the control repositions itself to 
+            of the bounding box of the mouse and aligns its left edge with the left edge of
+            the bounding box of the mouse. If the lower screen-edge obscures the Popup, it
+            repositions itself to align with the upper edge of the bounding box of the mouse.
+            If the upper screen-edge obscures the Popup, the control repositions itself to
             align with the upper screen-edge.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.PlacementMode.MousePoint">
+            <summary>
+            A position of the Popup control relative to the tip of the mouse cursor and at an
+            offset that is defined by the HorizontalOffset and VerticalOffset property values.
+            If a horizontal or vertical screen edge obscures the Popup, it opens in the opposite
+            direction from the obscuring edge. If the opposite screen edge also obscures the Popup,
+            it then aligns with the obscuring screen edge.
             </summary>
         </member>
         <member name="F:Telerik.Windows.Controls.PlacementMode.Left">
@@ -15472,12 +16282,25 @@
             Initializes a new instance of the <see cref="T:Telerik.Windows.Controls.RadTickBar"/> class.
             </summary>
         </member>
+        <member name="M:Telerik.Windows.Controls.RadTickBar.OnApplyTemplate">
+            <summary>
+            OnApplyTemplate
+            </summary>
+        </member>
         <member name="M:Telerik.Windows.Controls.RadTickBar.PrepareContainerForItemOverride(System.Windows.DependencyObject,System.Object)">
             <summary>
             Prepares the container for every item.
             </summary>
             <param name="element"></param>
             <param name="item"></param>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadTickBar.IsAutoArranged">
+            <summary>
+            Gets a value indicating whether this instance is auto arranged.
+            </summary>
+            <value>
+            	<c>true</c> if this instance is auto arranged; otherwise, <c>false</c>.
+            </value>
         </member>
         <member name="P:Telerik.Windows.Controls.RadTickBar.Maximum">
             <summary>
@@ -15672,6 +16495,11 @@
         <member name="P:Telerik.Windows.Controls.Strings.Busy">
             <summary>
               Looks up a localized string similar to Busy.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.BusyIndicatorLoading">
+            <summary>
+              Looks up a localized string similar to Loading....
             </summary>
         </member>
         <member name="P:Telerik.Windows.Controls.Strings.Cancel">
@@ -15994,6 +16822,21 @@
               Looks up a localized string similar to Dockable.
             </summary>
         </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_ChangeEditingPermissionsDialog_Groups">
+            <summary>
+              Looks up a localized string similar to Groups:.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_ChangeEditingPermissionsDialog_Header">
+            <summary>
+              Looks up a localized string similar to Editing Permissions.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_ChangeEditingPermissionsDialog_Users">
+            <summary>
+              Looks up a localized string similar to Users:.
+            </summary>
+        </member>
         <member name="P:Telerik.Windows.Controls.Strings.Documents_ColorPicker_NoColor">
             <summary>
               Looks up a localized string similar to No color.
@@ -16189,6 +17032,11 @@
               Looks up a localized string similar to Delete Comment.
             </summary>
         </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_Commands_DeletePermissionRangeCommand_Name">
+            <summary>
+              Looks up a localized string similar to Protect.
+            </summary>
+        </member>
         <member name="P:Telerik.Windows.Controls.Strings.Documents_Commands_DeleteReadOnlyRangeCommand_Name">
             <summary>
               Looks up a localized string similar to Delete Read Only Range.
@@ -16274,6 +17122,16 @@
               Looks up a localized string similar to Insert Paragraph Before Table.
             </summary>
         </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_Commands_InsertPermissionRangeCommand_Name">
+            <summary>
+              Looks up a localized string similar to Protect.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_Commands_InsertPermissionRangeCompositeCommand_Name">
+            <summary>
+              Looks up a localized string similar to Protect.
+            </summary>
+        </member>
         <member name="P:Telerik.Windows.Controls.Strings.Documents_Commands_InsertReadOnlyRangeCommand_Name">
             <summary>
               Looks up a localized string similar to Insert Read Only Range.
@@ -16354,9 +17212,24 @@
               Looks up a localized string similar to Paragraph Background.
             </summary>
         </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_Commands_ParagraphChangeStyleCommand_Name">
+            <summary>
+              Looks up a localized string similar to Tabs.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_Commands_ParagraphFirstLineIndentCommand_Name">
+            <summary>
+              Looks up a localized string similar to Paragraph First Line Indent.
+            </summary>
+        </member>
         <member name="P:Telerik.Windows.Controls.Strings.Documents_Commands_ParagraphFormattingCompositeCommand_Name">
             <summary>
               Looks up a localized string similar to Paragraph Formatting.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_Commands_ParagraphHangingIndentCommand_Name">
+            <summary>
+              Looks up a localized string similar to Paragraph Hanging Indent.
             </summary>
         </member>
         <member name="P:Telerik.Windows.Controls.Strings.Documents_Commands_ParagraphLeftIndentCommand_Name">
@@ -16376,7 +17249,7 @@
         </member>
         <member name="P:Telerik.Windows.Controls.Strings.Documents_Commands_ParagraphRightIndentCommand_Name">
             <summary>
-              Looks up a localized string similar to ParagraphRightIndentCommand.
+              Looks up a localized string similar to Paragraph Right Indent.
             </summary>
         </member>
         <member name="P:Telerik.Windows.Controls.Strings.Documents_Commands_ParagraphSpacingAfterCommand_Name">
@@ -17596,6 +18469,31 @@
               Looks up a localized string similar to Right-to-left.
             </summary>
         </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_ParagraphPropertiesDialog_FirstIndentationBy">
+            <summary>
+              Looks up a localized string similar to By:.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_ParagraphPropertiesDialog_FirstIndentationSpecial">
+            <summary>
+              Looks up a localized string similar to Special:.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_ParagraphPropertiesDialog_FirstLineIndentDialogTypes_FirstLine">
+            <summary>
+              Looks up a localized string similar to First line.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_ParagraphPropertiesDialog_FirstLineIndentDialogTypes_Hanging">
+            <summary>
+              Looks up a localized string similar to Hanging.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_ParagraphPropertiesDialog_FirstLineIndentDialogTypes_None">
+            <summary>
+              Looks up a localized string similar to (none).
+            </summary>
+        </member>
         <member name="P:Telerik.Windows.Controls.Strings.Documents_ParagraphPropertiesDialog_General">
             <summary>
               Looks up a localized string similar to General.
@@ -17676,6 +18574,11 @@
               Looks up a localized string similar to Before:.
             </summary>
         </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_ParagraphPropertiesDialog_Tabs">
+            <summary>
+              Looks up a localized string similar to Tabs.
+            </summary>
+        </member>
         <member name="P:Telerik.Windows.Controls.Strings.Documents_ParagraphPropertiesDialog_TextAlignment_Center">
             <summary>
               Looks up a localized string similar to Center.
@@ -17694,6 +18597,31 @@
         <member name="P:Telerik.Windows.Controls.Strings.Documents_ParagraphPropertiesDialog_TextAlignment_Right">
             <summary>
               Looks up a localized string similar to Right.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_PermissionType_Everyone">
+            <summary>
+              Looks up a localized string similar to Everyone.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_ProtectDocumentDialog_EnterPassword">
+            <summary>
+              Looks up a localized string similar to Enter new password (optional):.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_ProtectDocumentDialog_Header">
+            <summary>
+              Looks up a localized string similar to Start Enforcing Protection.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_ProtectDocumentDialog_NoPasswordsMatch">
+            <summary>
+              Looks up a localized string similar to The password confirmation does not match..
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_ProtectDocumentDialog_ReenterPassword">
+            <summary>
+              Looks up a localized string similar to Reenter password to confirm:.
             </summary>
         </member>
         <member name="P:Telerik.Windows.Controls.Strings.Documents_RadRichTextBox_ContinueToNextCommentFromBeginningOfDocument">
@@ -18042,6 +18970,86 @@
               Looks up a localized string similar to {0}x{1} Table.
             </summary>
         </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_TabStopsPropertiesDialog_Center">
+            <summary>
+              Looks up a localized string similar to Center.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_TabStopsPropertiesDialog_Clear">
+            <summary>
+              Looks up a localized string similar to Clear.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_TabStopsPropertiesDialog_ClearAll">
+            <summary>
+              Looks up a localized string similar to Clear All.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_TabStopsPropertiesDialog_Decimal">
+            <summary>
+              Looks up a localized string similar to Decimal.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_TabStopsPropertiesDialog_DefaultTabStop">
+            <summary>
+              Looks up a localized string similar to Default tab stops:.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_TabStopsPropertiesDialog_Header">
+            <summary>
+              Looks up a localized string similar to Tabs.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_TabStopsPropertiesDialog_InValidTabStop">
+            <summary>
+              Looks up a localized string similar to This is not a valid tab stop..
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_TabStopsPropertiesDialog_Left">
+            <summary>
+              Looks up a localized string similar to Left.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_TabStopsPropertiesDialog_ProblemRemovingTabStop">
+            <summary>
+              Looks up a localized string similar to Problem in removing tab stop..
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_TabStopsPropertiesDialog_Right">
+            <summary>
+              Looks up a localized string similar to Right.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_TabStopsPropertiesDialog_Set">
+            <summary>
+              Looks up a localized string similar to Set.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_TabStopsPropertiesDialog_TabsToBeCleared">
+            <summary>
+              Looks up a localized string similar to Tab stops to be cleared:.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_TabStopsPropertiesDialog_TabStopPosition">
+            <summary>
+              Looks up a localized string similar to Tab stop position:.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_UnprotectDocumentDialog_EnterPassword">
+            <summary>
+              Looks up a localized string similar to Password:.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_UnprotectDocumentDialog_Header">
+            <summary>
+              Looks up a localized string similar to Unprotect Document.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_UnprotectDocumentDialog_IncorrectPassword">
+            <summary>
+              Looks up a localized string similar to The password is incorrect..
+            </summary>
+        </member>
         <member name="P:Telerik.Windows.Controls.Strings.Drag_Appointment">
             <summary>
               Looks up a localized string similar to Appointment.
@@ -18175,6 +19183,11 @@
         <member name="P:Telerik.Windows.Controls.Strings.EnterDate">
             <summary>
               Looks up a localized string similar to Enter date.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.EnterTime">
+            <summary>
+              Looks up a localized string similar to Enter time.
             </summary>
         </member>
         <member name="P:Telerik.Windows.Controls.Strings.Error">
@@ -18395,6 +19408,16 @@
         <member name="P:Telerik.Windows.Controls.Strings.GridViewFilterContains">
             <summary>
               Looks up a localized string similar to Contains.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.GridViewFilterDistinctValueNull">
+            <summary>
+              Looks up a localized string similar to [null].
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.GridViewFilterDistinctValueStringEmpty">
+            <summary>
+              Looks up a localized string similar to [empty].
             </summary>
         </member>
         <member name="P:Telerik.Windows.Controls.Strings.GridViewFilterDoesNotContain">
@@ -19767,6 +20790,452 @@
               Looks up a localized string similar to _Yearly.
             </summary>
         </member>
+        <member name="T:Telerik.Windows.Controls.RadToolTip">
+            <summary>
+            Represents a control that creates a pop-up window that displays information for an element in the interface.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadToolTip.HorizontalOffsetProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.RadToolTip.HorizontalOffset"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadToolTip.IsOpenProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.RadToolTip.IsOpen"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadToolTip.PlacementProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.RadToolTip.Placement"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadToolTip.PlacementRectangleProperty">
+            <summary>
+            Identifies the PlacementRectangle dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadToolTip.PlacementTargetProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.RadToolTip.PlacementTarget"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadToolTip.VerticalOffsetProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.RadToolTip.VerticalOffset"/> dependency property.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadToolTip.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.Windows.Controls.RadToolTip"/> class.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadToolTip.HorizontalOffset">
+            <summary>
+            Get or sets the horizontal distance between the target origin and the popup alignment point.
+            </summary>
+            <value>The horizontal offset.</value>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadToolTip.IsOpen">
+            <summary>
+            Gets or sets whether this tooltip is currently visible.
+            </summary>
+            <value>The is open.</value>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadToolTip.Placement">
+            <summary>
+            Gets or sets the orientation of the tooltip when it opens,
+            and specifies how the tooltip behaves when it overlaps screen boundaries.
+            </summary>
+            <value>The placement.</value>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadToolTip.PlacementRectangle">
+            <summary>
+            Gets or sets the rectangular area relative to which the tooltip is positioned.
+            </summary>
+            <value>The placement rectangle.</value>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadToolTip.PlacementTarget">
+            <summary>
+            Gets or sets the object relative to which the tooltip is positioned.
+            </summary>
+            <value>The placement target.</value>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadToolTip.VerticalOffset">
+            <summary>
+            Get or sets the vertical distance between the target origin and the popup alignment point.
+            </summary>
+            <value>The horizontal offset.</value>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadToolTip.ParentPopup">
+            <summary>
+            Gets the parent popup.
+            </summary>
+            <value>The parent popup.</value>
+        </member>
+        <member name="T:Telerik.Windows.Controls.RadToolTipService">
+            <summary>
+            Represents a service that provides properties and events to control the display and behavior of tooltips.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadToolTipService.ToolTipOpeningEvent">
+            <summary>
+            Identifies the ToolTipOpening routed event.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadToolTipService.ToolTipClosingEvent">
+            <summary>
+            Identifies the ToolTipClosing routed event.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadToolTipService.BetweenShowDelayProperty">
+            <summary>
+            Identifies the BetweenShowDelay dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadToolTipService.HorizontalOffsetProperty">
+            <summary>
+            Identifies the HorizontalOffset dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadToolTipService.InitialShowDelayProperty">
+            <summary>
+            Identifies the InitialShowDelay dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadToolTipService.IsEnabledProperty">
+            <summary>
+            Identifies the IsEnabled dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadToolTipService.IsOpenProperty">
+            <summary>
+            Identifies the IsOpen dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadToolTipService.PlacementProperty">
+            <summary>
+            Identifies the Placement dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadToolTipService.PlacementRectangleProperty">
+            <summary>
+            Identifies the PlacementRectangle dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadToolTipService.PlacementTargetProperty">
+            <summary>
+            Identifies the PlacementTarget dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadToolTipService.ShowDurationProperty">
+            <summary>
+            Identifies the ShowDuration dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadToolTipService.ShowOnDisabledProperty">
+            <summary>
+            Identifies the ShowOnDisabled dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadToolTipService.VerticalOffsetProperty">
+            <summary>
+            Identifies the VerticalOffset dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadToolTipService.ToolTipContentProperty">
+            <summary>
+            Identifies the ToolTipContent dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadToolTipService.ToolTipContentTemplateProperty">
+            <summary>
+            Identifies the ToolTipContentTemplate dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadToolTipService.ToolTipObjectProperty">
+            <summary>
+            Identifies the ToolTipObject dependency property.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadToolTipService.#cctor">
+            <summary>
+            Initializes the <see cref="T:Telerik.Windows.Controls.RadToolTipService"/> class.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadToolTipService.AddToolTipOpeningHandler(System.Windows.DependencyObject,System.Windows.RoutedEventHandler)">
+            <summary>
+            Adds handler for the ToolTipOpening event.
+            </summary>
+            <param name="target">The target.</param>
+            <param name="handler">The handler.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadToolTipService.RemoveToolTipOpeningHandler(System.Windows.DependencyObject,System.Windows.RoutedEventHandler)">
+            <summary>
+            Removes handler for the ToolTipOpening event.
+            </summary>
+            <param name="target">The target.</param>
+            <param name="handler">The handler.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadToolTipService.AddToolTipClosingHandler(System.Windows.DependencyObject,System.Windows.RoutedEventHandler)">
+            <summary>
+            Adds handler for the ToolTipClosing event.
+            </summary>
+            <param name="target">The target.</param>
+            <param name="handler">The handler.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadToolTipService.RemoveToolTipClosingHandler(System.Windows.DependencyObject,System.Windows.RoutedEventHandler)">
+            <summary>
+            Removes handler for the ToolTipClosing event.
+            </summary>
+            <param name="target">The target.</param>
+            <param name="handler">The handler.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadToolTipService.GetBetweenShowDelay(System.Windows.DependencyObject)">
+            <summary>
+            Gets the maximum time between the display of two tooltips where the second tooltip appears without a delay.
+            </summary>
+            <param name="element">The element.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadToolTipService.GetHorizontalOffset(System.Windows.DependencyObject)">
+            <summary>
+            Gets the offset from the left of the area that is specified for the tooltip by the
+            PlacementRectangle and PlacementTarget properties.
+            </summary>
+            <param name="element">The element.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadToolTipService.GetInitialShowDelay(System.Windows.DependencyObject)">
+            <summary>
+            Gets the length of time before a tooltip opens.
+            </summary>
+            <param name="element">The element.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadToolTipService.GetIsEnabled(System.Windows.DependencyObject)">
+            <summary>
+            Gets whether a tooltip appears.
+            </summary>
+            <param name="element">The element.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadToolTipService.GetIsOpen(System.Windows.DependencyObject)">
+            <summary>
+            Gets whether a tooltip is currently visible.
+            </summary>
+            <param name="element">The element.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadToolTipService.GetPlacement(System.Windows.DependencyObject)">
+            <summary>
+            Gets the orientation of the tooltip when it opens,
+            and specifies how the tooltip behaves when it overlaps screen boundaries.
+            </summary>
+            <param name="element">The element.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadToolTipService.GetPlacementRectangle(System.Windows.DependencyObject)">
+            <summary>
+            Gets the rectangular area relative to which the tooltip is positioned.
+            </summary>
+            <param name="element">The element.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadToolTipService.GetPlacementTarget(System.Windows.DependencyObject)">
+            <summary>
+            Gets the object relative to which the tooltip is positioned.
+            </summary>
+            <param name="element">The element.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadToolTipService.GetShowDuration(System.Windows.DependencyObject)">
+            <summary>
+            Gets the amount of time that a tooltip remains visible.
+            </summary>
+            <param name="element">The element.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadToolTipService.GetShowOnDisabled(System.Windows.DependencyObject)">
+            <summary>
+            Gets whether a tooltip appears for an object that is not enabled.
+            </summary>
+            <param name="element">The element.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadToolTipService.GetVerticalOffset(System.Windows.DependencyObject)">
+            <summary>
+            Gets the distance from the top of the area that is specified for the tooltip by the
+            PlacementRectangle and PlacementTarget properties.
+            </summary>
+            <param name="element">The element.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadToolTipService.GetToolTipContent(System.Windows.DependencyObject)">
+            <summary>
+            Gets the content of the ToolTip.
+            </summary>
+            <param name="element">The element.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadToolTipService.GetToolTipContentTemplate(System.Windows.DependencyObject)">
+            <summary>
+            Gets the ToolTip content template.
+            </summary>
+            <param name="element">The element.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadToolTipService.SetToolTipContent(System.Windows.DependencyObject,System.Object)">
+            <summary>
+            Sets the content of the ToolTip.
+            </summary>
+            <param name="element">The element.</param>
+            <param name="value">The value.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadToolTipService.SetToolTipContentTemplate(System.Windows.DependencyObject,System.Windows.DataTemplate)">
+            <summary>
+            Sets the ToolTip content template.
+            </summary>
+            <param name="element">The element.</param>
+            <param name="value">The value.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadToolTipService.SetBetweenShowDelay(System.Windows.DependencyObject,System.Int32)">
+            <summary>
+            Sets the maximum time between the display of two tooltips where the second tooltip appears without a delay.
+            </summary>
+            <param name="element">The element.</param>
+            <param name="value">The value.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadToolTipService.SetHorizontalOffset(System.Windows.DependencyObject,System.Double)">
+            <summary>
+            Sets the offset from the left of the area that is specified for the tooltip by the
+            PlacementRectangle and PlacementTarget properties.
+            </summary>
+            <param name="element">The element.</param>
+            <param name="value">The value.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadToolTipService.SetInitialShowDelay(System.Windows.DependencyObject,System.Int32)">
+            <summary>
+            Sets the length of time before a tooltip opens.
+            </summary>
+            <param name="element">The element.</param>
+            <param name="value">The value.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadToolTipService.SetIsEnabled(System.Windows.DependencyObject,System.Boolean)">
+            <summary>
+            Sets whether a tooltip appears.
+            </summary>
+            <param name="element">The element.</param>
+            <param name="value">The value.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadToolTipService.SetPlacement(System.Windows.DependencyObject,Telerik.Windows.Controls.PlacementMode)">
+            <summary>
+            Sets the orientation of the tooltip when it opens,
+            and specifies how the tooltip behaves when it overlaps screen boundaries.
+            </summary>
+            <param name="element">The element.</param>
+            <param name="value">The value.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadToolTipService.SetPlacementRectangle(System.Windows.DependencyObject,System.Windows.Rect)">
+            <summary>
+            Sets the rectangular area relative to which the tooltip is positioned.
+            </summary>
+            <param name="element">The element.</param>
+            <param name="value">The value.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadToolTipService.SetPlacementTarget(System.Windows.DependencyObject,System.Windows.UIElement)">
+            <summary>
+            Sets the object relative to which the tooltip is positioned.
+            </summary>
+            <param name="element">The element.</param>
+            <param name="value">The value.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadToolTipService.SetShowDuration(System.Windows.DependencyObject,System.Int32)">
+            <summary>
+            Sets the amount of time that a tooltip remains visible.
+            </summary>
+            <param name="element">The element.</param>
+            <param name="value">The value.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadToolTipService.SetShowOnDisabled(System.Windows.DependencyObject,System.Boolean)">
+            <summary>
+            Sets whether a tooltip appears for an object that is not enabled.
+            </summary>
+            <param name="element">The element.</param>
+            <param name="value">The value.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadToolTipService.SetVerticalOffset(System.Windows.DependencyObject,System.Double)">
+            <summary>
+            Sets the distance from the top of the area that is specified for the tooltip by the
+            PlacementRectangle and PlacementTarget properties.
+            </summary>
+            <param name="element">The element.</param>
+            <param name="value">The value.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadToolTipService.RemoveToolTip(System.Windows.FrameworkElement)">
+            <summary>
+            Removes the tool0tip from the specified element.
+            </summary>
+            <param name="owner">The owner.</param>
+        </member>
+        <member name="T:Telerik.Windows.Controls.TransitionControl.ClrTransition">
+            <summary>
+            A class that lays infrastructure for CLR run transitions. Animations are created by overriding the OnProgressChanged method.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.TransitionControl.Transition">
+            <summary>
+            Abstract class that represents a transition between two visual.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.TransitionControl.Transition.NotifyAnimationCompleted">
+            <summary>
+            Call on complete to invoke OnStopAnimation and clean up the objects modified in OnPlayAnimation.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.TransitionControl.Transition.StartAnimationOverride">
+            <summary>
+            Prepare the objects and begin a transition animation.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.TransitionControl.Transition.AnimationCompletedOverride">
+            <summary>
+            Stop the animation and clean up the objects modified in OnPlayAnimation.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.TransitionControl.Transition.Context">
+            <summary>
+            Gets the settings for the instance of this Transition.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.TransitionControl.ClrTransition.ProgressProperty">
+            <summary>
+            Identifies the Progress property. When its value is 0.0 the effect shows the initial state of the transition, when 1.0 - the final state.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.TransitionControl.ClrTransition.OnProgressChanged(System.Double,System.Double)">
+            <summary>
+            This method is called when the progress of the transition is changed. When overriden it should take care of moving the transition.
+            </summary>
+            <param name="oldProgress">The old progress of the transition.</param>
+            <param name="newProgress">The new progress of the transition.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.TransitionControl.ClrTransition.StartAnimationOverride">
+            <summary>
+            Prepare the objects and begin a transition animation.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.TransitionControl.ClrTransition.AnimationCompletedOverride">
+            <summary>
+            Stop the animation and clean up the objects modified in OnPlayAnimation.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.TransitionControl.ClrTransition.Progress">
+            <summary>
+            Gets or sets the Progress variable within the shader.
+            When its value is 0.0 the effect shows the initial state of the transition, when 1.0 - the final state.
+            </summary>
+        </member>
         <member name="T:Telerik.Windows.Controls.TransitionControl.FluidResizePresenter">
             <summary>
             Represents a presenter that changes its size smoothly when its content is resized.
@@ -19813,48 +21282,248 @@
             Gets or sets a value describing the easing function to be used for the animation.
             </summary>
         </member>
-        <member name="T:Telerik.Windows.Controls.TransitionControl.Transition">
+        <member name="T:Telerik.Windows.Controls.TransitionControl.LayoutAnimationPanel">
             <summary>
-            Abstract class that represents a transition between two visual.
+            A Panel that expose various properties that can be used to easily animate the layout from Storyboards.
             </summary>
         </member>
-        <member name="F:Telerik.Windows.Controls.TransitionControl.Transition.ProgressProperty">
+        <member name="M:Telerik.Windows.Controls.TransitionControl.LayoutAnimationPanel.GetWidthWeight(System.Windows.DependencyObject)">
             <summary>
-            Identifies the Progress property. When its value is 0.0 the effect shows the initial state of the transition, when 1.0 - the final state.
+            Gets the LayoutAnimationPanel.WidthWeight property.
+            LayoutAnimationPanel's desired width is determined by all child object by a portion proportional to their WidthWeight property.
+            </summary>
+            <param name="obj">The DependencyObject.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.TransitionControl.LayoutAnimationPanel.SetWidthWeight(System.Windows.DependencyObject,System.Double)">
+            <summary>
+            Sets the LayoutAnimationPanel.WidthWeight property.
+            LayoutAnimationPanel's desired width is determined by all child object by a portion proportional to their WidthWeight property.
+            </summary>
+            <param name="obj">The DependencyObject.</param>
+            <param name="value">The Value in range [0 - 1]</param>
+        </member>
+        <member name="F:Telerik.Windows.Controls.TransitionControl.LayoutAnimationPanel.WidthScaleProperty">
+            <summary>
+            Identifies the WidthScale DependencyProperty.
             </summary>
         </member>
-        <member name="M:Telerik.Windows.Controls.TransitionControl.Transition.OnProgressChanged(System.Double,System.Double)">
+        <member name="F:Telerik.Windows.Controls.TransitionControl.LayoutAnimationPanel.HeightScaleProperty">
             <summary>
-            This method is called when the progress of the transition is changed. When overriden it should take care of moving the transition.
-            </summary>
-            <param name="oldProgress">The old progress of the transition.</param>
-            <param name="newProgress">The new progress of the transition.</param>
-        </member>
-        <member name="M:Telerik.Windows.Controls.TransitionControl.Transition.OnInitialized">
-            <summary>
-            This method is called when the Transition is initialized. When overriden it should do some custom initialization task for the transition.
+            Identifies the HeightScale DependencyProperty.
             </summary>
         </member>
-        <member name="M:Telerik.Windows.Controls.TransitionControl.Transition.OnCleanUp">
+        <member name="F:Telerik.Windows.Controls.TransitionControl.LayoutAnimationPanel.MaxHeightWeightProperty">
             <summary>
-            This method is called when the Transition is cleaned-up. When overriden it should do some custom clean-up task for the transition.
+            Identifies the MaxHeightWeight DependencyProperty.
             </summary>
         </member>
-        <member name="P:Telerik.Windows.Controls.TransitionControl.Transition.Progress">
+        <member name="F:Telerik.Windows.Controls.TransitionControl.LayoutAnimationPanel.MaxWidthWeightProperty">
             <summary>
-            Gets or sets the Progress variable within the shader.
-            When its value is 0.0 the effect shows the initial state of the transition, when 1.0 - the final state.
+            Identifies the MaxWidthWeight.
             </summary>
         </member>
-        <member name="P:Telerik.Windows.Controls.TransitionControl.Transition.CurrentContentPresenter">
+        <member name="F:Telerik.Windows.Controls.TransitionControl.LayoutAnimationPanel.WidthWeightProperty">
             <summary>
-            Gets or sets the visual object that represents the current content of the transition.
+            Identifies the WidthWeight.
             </summary>
         </member>
-        <member name="P:Telerik.Windows.Controls.TransitionControl.Transition.OldContentPresenter">
+        <member name="M:Telerik.Windows.Controls.TransitionControl.LayoutAnimationPanel.GetHeightWeight(System.Windows.DependencyObject)">
             <summary>
-            Gets or sets the visual object that represents the old content of the transition.
+            Gets the LayoutAnimationPanel.HeightWeight property.
+            LayoutAnimationPanel's desired height is determined by all child object by a portion proportional to their WidthWeight property.
             </summary>
+            <param name="obj">The DependencyObject.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.TransitionControl.LayoutAnimationPanel.SetHeightWeight(System.Windows.DependencyObject,System.Double)">
+            <summary>
+            Sets the LayoutAnimationPanel.HeightWeight property.
+            LayoutAnimationPanel's desired height is determined by all child object by a portion proportional to their WidthWeight property.
+            </summary>
+            <param name="obj">The DependencyObject.</param>
+            <param name="value">The Value in range [0 - 1]</param>
+        </member>
+        <member name="F:Telerik.Windows.Controls.TransitionControl.LayoutAnimationPanel.HeightWeightProperty">
+            <summary>
+            Identifies the HeightWeightProperty.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.TransitionControl.LayoutAnimationPanel.MeasureOverride(System.Windows.Size)">
+            <summary>
+            When overridden in a derived class, measures the size in layout required for child elements and determines a size for the FrameworkElement-derived class.
+            </summary>
+            <param name="availableSize">The available size that this element can give to child elements. Infinity can be specified as a value to indicate that the element will size to whatever content is available.</param>
+            <returns>The size that this element determines it needs during layout, based on its calculations of child element sizes.</returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.TransitionControl.LayoutAnimationPanel.ArrangeOverride(System.Windows.Size)">
+            <summary>
+            When overridden in a derived class, positions child elements and determines a size for a FrameworkElement derived class.
+            </summary>
+            <param name="finalSize">The final area within the parent that this element should use to arrange itself and its children.</param>
+            <returns>The actual size used.</returns>
+        </member>
+        <member name="P:Telerik.Windows.Controls.TransitionControl.LayoutAnimationPanel.WidthScale">
+            <summary>
+            Gets or Sets the WidthScale property that is used to scale horizontally the layout box desired by the panel but without scaling the rendering image.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.TransitionControl.LayoutAnimationPanel.HeightScale">
+            <summary>
+            Gets or Sets the HeightScale property that is used to scale vertically the layout box desired by the panel but without scaling the rendering image.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.TransitionControl.LayoutAnimationPanel.MaxHeightWeight">
+            <summary>
+            Gets or Sets the MaxHeightWeight.
+            After a desired height is determined by all children's weighted hieghts, they will be multiplied by (1 - MaxHeightWeight) and the largest child's height will be added multiplied by MaxHeightWeight to determine the final panel desired height.
+            Setting this property to 1 will set the desired height of the panel to the desired height of the largest child.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.TransitionControl.LayoutAnimationPanel.MaxWidthWeight">
+            <summary>
+            Gets or Sets the MaxWidthWeight.
+            After a desired width is determined by all children's weighted widths, they will be multiplied by (1 - MaxWidthWeight) and the largest child's width will be added multiplied by MaxWidthWeight to determine the final panel desired width.
+            Setting this property to 1 will set the desired width of the panel to the desired width of the largest child.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.TransitionControl.ShaderLayoutAnimation">
+            <summary>
+            A set of predefined layout animations.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.TransitionControl.ShaderLayoutAnimation.Instant">
+            <summary>
+            Will resize to fit the new content at the beginning.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.TransitionControl.ShaderLayoutAnimation.Fit">
+            <summary>
+            At the beginning will enlarge to accomodate both the current and old contents and on the end will set resize to fit the new content only.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.TransitionControl.ShaderLayoutAnimation.Animated">
+            <summary>
+            Will animate the layout from the size of the old content to the size of the current over the animation time.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.TransitionControl.ShaderTransitionProvider">
+            <summary>
+            A TransitionProvider that serves as base for shader transition provider adding some handy infrastructure.
+            Shader TransitionProviders could also be implemented by extending TransitionProvider.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.TransitionControl.TransitionProvider">
+            <summary>
+            This class represents a factory for TransitionEffects. Its main purpose is to prevent the XBAP from throwing security exceptions.
+            This approach also provides a good way to not use shader instances of the shaders.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.TransitionControl.TransitionProvider.CreateTransition(Telerik.Windows.Controls.TransitionContext)">
+            <summary>
+            Creates a new Transition with the current settings.
+            </summary>
+            <param name="context">The state of the scene to animate.</param>
+            <returns>The Transition</returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.TransitionControl.ShaderTransitionProvider.CreateTransitionEffect">
+            <summary>
+            Creates a new shader Transition with the current settings.
+            </summary>
+            <returns>A new instance of the Transition class.</returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.TransitionControl.ShaderTransitionProvider.CreateFallBackTransition">
+            <summary>
+            Create a CLR Transition instance that will be used instead of shaders in case shaders are not supported
+            </summary>
+            <returns>A new instance of the Transition class.</returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.TransitionControl.ShaderTransitionProvider.CreateTransition(Telerik.Windows.Controls.TransitionContext)">
+            <summary>
+            Creates a new Transition with the current settings.
+            </summary>
+            <param name="context">The state of the scene to animate.</param>
+            <returns>The Transition</returns>
+        </member>
+        <member name="P:Telerik.Windows.Controls.TransitionControl.ShaderTransitionProvider.LayoutAnimation">
+            <summary>
+            Gets or Sets the type of layout animation to use in addition to the shader animation.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.TransitionContext">
+            <summary>
+            Container for the setting of the scene during the start of a new Transition.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.TransitionContext.Host">
+            <summary>
+            Gets the Panel that hosts the old and the current visual contents.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.TransitionContext.OldVisualElement">
+            <summary>
+            Gets the visual element that render the old content.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.TransitionContext.CurrentVisualElement">
+            <summary>
+            Gets the visual element that render the current content.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.TransitionContext.OldVisualBrush">
+            <summary>
+            Gets a visual brush that has a snapshot of the old content.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.TransitionContext.Duration">
+            <summary>
+            Gets the desired duration of the animation.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.TransitionContext.Easing">
+            <summary>
+            Gets the desired global easing function.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.TransitionContext.OldContent">
+            <summary>
+            Gets the old data content.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.TransitionContext.CurrentContent">
+            <summary>
+            Gets the current data content.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.TransitionControl.TransitionConverter">
+            <summary>
+            This class is used by the design-time and XAML infrastructure to convert TransitionProvider objects to strings and vice versa.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.TransitionControl.TransitionConverter.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.Windows.Controls.TransitionControl.TransitionConverter"/> class.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.TransitionControl.TransitionConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Type)">
+            <summary>
+            Returns whether this converter can convert an object of the given type to the type of this converter, using the specified context.
+            </summary>
+            <param name="context">An <see cref="T:System.ComponentModel.ITypeDescriptorContext"/> that provides a format context.</param>
+            <param name="sourceType">A <see cref="T:System.Type"/> that represents the type you want to convert from.</param>
+            <returns>
+            True if this converter can perform the conversion; otherwise, false.
+            </returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.TransitionControl.TransitionConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object)">
+            <summary>
+            Converts the given object to the type of this converter, using the specified context and culture information.
+            </summary>
+            <param name="context">An <see cref="T:System.ComponentModel.ITypeDescriptorContext"/> that provides a format context.</param>
+            <param name="culture">The <see cref="T:System.Globalization.CultureInfo"/> to use as the current culture.</param>
+            <param name="value">The <see cref="T:System.Object"/> to convert.</param>
+            <returns>
+            An <see cref="T:System.Object"/> that represents the converted value.
+            </returns>
+            <exception cref="T:System.NotSupportedException">The conversion cannot be performed. </exception>
         </member>
         <member name="T:Telerik.Windows.Controls.TransitionControl.TransitionEffect">
             <summary>
@@ -19929,6 +21598,16 @@
             This class represents a ContentControl that changes its content with a transition.
             </summary>
         </member>
+        <member name="F:Telerik.Windows.Controls.RadTransitionControl.IsTransitionPlayingProperty">
+            <summary>
+            Identifies the IsTransitionPlaying property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadTransitionControl.IsTransitionIdleProperty">
+            <summary>
+            Identifies the IsTransitionIdle property.
+            </summary>
+        </member>
         <member name="F:Telerik.Windows.Controls.RadTransitionControl.EasingProperty">
             <summary>
             Identifies the AnimationEasing property.
@@ -19942,11 +21621,6 @@
         <member name="F:Telerik.Windows.Controls.RadTransitionControl.DurationProperty">
             <summary>
             Identifies the Duration property.
-            </summary>
-        </member>
-        <member name="F:Telerik.Windows.Controls.RadTransitionControl.IsTransitioningProperty">
-            <summary>
-            Identifies the IsTransitioning property.
             </summary>
         </member>
         <member name="M:Telerik.Windows.Controls.RadTransitionControl.#ctor">
@@ -19963,26 +21637,12 @@
         <member name="M:Telerik.Windows.Controls.RadTransitionControl.PrepareAnimation">
             <summary>
             Prepares to play the transition animation. The animation will be started after the next Measure pass. 
-            This method is called right before the content is changed.
+            This method is called right before the content is changed and creates a snapshot of the old content for use in the animation.
             </summary>
         </member>
         <member name="M:Telerik.Windows.Controls.RadTransitionControl.StartAnimation">
             <summary>
-            Starts the animation asynchronously if an animation is prepared. If no animation is prepared it
-            doesn't start anything.
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.RadTransitionControl.OnContentChanged(System.Object,System.Object)">
-            <summary>
-            Called when the value of the System.Windows.Controls.ContentControl.Content
-            property changes.
-            </summary>
-            <param name="oldContent">The old value of the System.Windows.Controls.ContentControl.Content property.</param>
-            <param name="newContent">The new value of the System.Windows.Controls.ContentControl.Content property.</param>
-        </member>
-        <member name="P:Telerik.Windows.Controls.RadTransitionControl.IsTransitioning">
-            <summary>
-            Gets or sets a value, describing is the transition currently running or not. This is a DependencyProperty.
+            Will start the transition animation if one is prepared.
             </summary>
         </member>
         <member name="P:Telerik.Windows.Controls.RadTransitionControl.Easing">
@@ -20000,20 +21660,20 @@
             Gets or sets the duration of the animation. This is a DependencyProperty.
             </summary>
         </member>
+        <member name="P:Telerik.Windows.Controls.RadTransitionControl.IsTransitionIdle">
+            <summary>
+            Gets an indication if currently there is no Transition animating the TransitionPresenter.
+            </summary>
+        </member>
+        <member name="E:Telerik.Windows.Controls.RadTransitionControl.TransitionStatusChanged">
+            <summary>
+            Invoked when a Transition state changes.
+            </summary>
+        </member>
         <member name="T:Telerik.Windows.Controls.TransitionEffects.BaseTransitionEffect">
             <summary>
-            Abstract class that represents a transition effect. This class defines a ShaderProgress property that is passed to the loaded shader and synchronizes it with the Progress property.
-            </summary>
-        </member>
-        <member name="F:Telerik.Windows.Controls.TransitionEffects.BaseTransitionEffect.ShaderProgressProperty">
-            <summary>
-            Using a DependencyProperty as the backing store for ShaderProgress.  This enables animation, styling, binding, etc...
-            Double used to represent state of Transition from start to finish.
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.TransitionEffects.BaseTransitionEffect.#ctor">
-            <summary>
-            Updates the shader's variables to the default values.
+            This class implements the LoadShader method that will load shaders from the Telerik.Windows.Controls assembly.
+            Consider extending TransitionEffect instead of BaseTransitionEffect.
             </summary>
         </member>
         <member name="M:Telerik.Windows.Controls.TransitionEffects.BaseTransitionEffect.LoadShader">
@@ -20021,19 +21681,6 @@
             When overriden this method should load the shader and return it.
             </summary>
             <returns>The newly loaded shader.</returns>
-        </member>
-        <member name="M:Telerik.Windows.Controls.TransitionEffects.BaseTransitionEffect.OnProgressChanged(System.Double,System.Double)">
-            <summary>
-            This method is called when the progress of the transition is changed. When overriden it should take care of moving the transition forward.
-            In this implementation it updates the ShaderProgress property.
-            </summary>
-            <param name="oldProgress">The old progress of the transition.</param>
-            <param name="newProgress">The new progress of the transition.</param>
-        </member>
-        <member name="P:Telerik.Windows.Controls.TransitionEffects.BaseTransitionEffect.ShaderProgress">
-            <summary>
-            Gets or sets the Progress variable within the shader.
-            </summary>
         </member>
         <member name="T:Telerik.Windows.Controls.TransitionEffects.FadeClrTransition">
             <summary>
@@ -20047,6 +21694,23 @@
             <param name="oldProgress">The old progress of the transition.</param>
             <param name="newProgress">The new progress of the transition.</param>
         </member>
+        <member name="T:Telerik.Windows.Controls.TransitionEffects.LayoutClipTransition">
+            <summary>
+            Animate the layout so it looks like the old content is clipped and than the new content is than revealed.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.TransitionEffects.LayoutClipTransition.CreateTransition(Telerik.Windows.Controls.TransitionContext)">
+            <summary>
+            Creates a new Transition with the current settings.
+            </summary>
+            <param name="context">The state of the scene to animate.</param>
+            <returns>The Transition</returns>
+        </member>
+        <member name="P:Telerik.Windows.Controls.TransitionEffects.LayoutClipTransition.Orientation">
+            <summary>
+            Gets or Sets the orientation of the clipping animation.
+            </summary>
+        </member>
         <member name="T:Telerik.Windows.Controls.TransitionEffects.SlideAndZoomCLRTransition">
             <summary>
             Represents a Slide and zoom transition.
@@ -20058,12 +21722,12 @@
             </summary>
             <param name="provider">The provider that created the instance.</param>
         </member>
-        <member name="M:Telerik.Windows.Controls.TransitionEffects.SlideAndZoomCLRTransition.OnInitialized">
+        <member name="M:Telerik.Windows.Controls.TransitionEffects.SlideAndZoomCLRTransition.StartAnimationOverride">
             <summary>
             This method is called when the Transition is initialized. When overriden it should do some custom initialization task for the transition.
             </summary>
         </member>
-        <member name="M:Telerik.Windows.Controls.TransitionEffects.SlideAndZoomCLRTransition.OnCleanUp">
+        <member name="M:Telerik.Windows.Controls.TransitionEffects.SlideAndZoomCLRTransition.AnimationCompletedOverride">
             <summary>
             This method is called when the Transition is cleaned-up. When overriden it should do some custom clean-up task for the transition.
             </summary>
@@ -20214,12 +21878,6 @@
             Initializes a new instance of the FadeTransitionEffect class.
             </summary>
         </member>
-        <member name="M:Telerik.Windows.Controls.TransitionEffects.SlideAndZoomTransitionEffect.LoadShader">
-            <summary>
-            When overriden this method should load the shader and return it.
-            </summary>
-            <returns>The newly loaded shader.</returns>
-        </member>
         <member name="M:Telerik.Windows.Controls.TransitionEffects.SlideAndZoomTransitionEffect.OnProgressChanged(System.Double,System.Double)">
             <summary>
             This method is called when the progress of the transition is changed. When overriden it should take care of moving the transition.
@@ -20291,12 +21949,6 @@
             <summary>
             Initializes a new instance of the FadeTransitionEffect class.
             </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.TransitionEffects.FlipWarpTransitionEffect.LoadShader">
-            <summary>
-            When overriden this method should load the shader and return it.
-            </summary>
-            <returns>The newly loaded shader.</returns>
         </member>
         <member name="M:Telerik.Windows.Controls.TransitionEffects.FlipWarpTransitionEffect.OnProgressChanged(System.Double,System.Double)">
             <summary>
@@ -20379,30 +22031,6 @@
             <summary>
             Base class pseudo 3D transitions.
             </summary>
-        </member>
-        <member name="T:Telerik.Windows.Controls.TransitionControl.TransitionProvider">
-            <summary>
-            This class represents a factory for TransitionEffects. Its main purpose is to prevent the XBAP from throwing security exceptions.
-            This approach also provides a good way to not use shader instances of the shaders.
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.TransitionControl.TransitionProvider.GetTransitionEffect">
-            <summary>
-            Creates a new TransitionEffect with the current settings.
-            </summary>
-            <returns>A new instance of the TransitionEffect class.</returns>
-        </member>
-        <member name="M:Telerik.Windows.Controls.TransitionControl.TransitionProvider.CreateTransition">
-            <summary>
-            Creates a new Transition with the current settings.
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:Telerik.Windows.Controls.TransitionControl.TransitionProvider.CreateTransitionEffect">
-            <summary>
-            Creates a new TransitionEffect with the current settings.
-            </summary>
-            <returns>A new instance of the TransitionEffect class.</returns>
         </member>
         <member name="M:Telerik.Windows.Controls.TransitionEffects.PerspectiveTransition.CreateTransitionEffect">
             <summary>
@@ -20808,11 +22436,11 @@
             </summary>
             <returns>A new instance of the TransitionEffect class.</returns>
         </member>
-        <member name="M:Telerik.Windows.Controls.TransitionEffects.SlideAndZoomTransition.CreateTransition">
+        <member name="M:Telerik.Windows.Controls.TransitionEffects.SlideAndZoomTransition.CreateFallBackTransition">
             <summary>
-            Creates a new TransitionEffect with the current settings.
+            Creates a new Transition with the current settings.
             </summary>
-            <returns>A new instance of the TransitionEffect class.</returns>
+            <returns>A new instance of the Transition class.</returns>
         </member>
         <member name="P:Telerik.Windows.Controls.TransitionEffects.SlideAndZoomTransition.MinZoom">
             <summary>
@@ -20960,19 +22588,9 @@
             This class represents a ContentPresenter that changes its content with a transition.
             </summary>
         </member>
-        <member name="F:Telerik.Windows.Controls.TransitionControl.TransitionPresenter.TransitionEffectProperty">
+        <member name="F:Telerik.Windows.Controls.TransitionControl.TransitionPresenter.HostProperty">
             <summary>
-            Identifies the TransitionEffect property.
-            </summary>
-        </member>
-        <member name="F:Telerik.Windows.Controls.TransitionControl.TransitionPresenter.AnimationEasingProperty">
-            <summary>
-            Identifies the AnimationEasing property.
-            </summary>
-        </member>
-        <member name="F:Telerik.Windows.Controls.TransitionControl.TransitionPresenter.AnimationDurationProperty">
-            <summary>
-            Identifies the AnimationDuration property.
+            Identifies the Host property.
             </summary>
         </member>
         <member name="F:Telerik.Windows.Controls.TransitionControl.TransitionPresenter.TransitionProperty">
@@ -21025,52 +22643,15 @@
             Identifies the OldVisualHeight property.
             </summary>
         </member>
+        <member name="F:Telerik.Windows.Controls.TransitionControl.TransitionPresenter.IsTransitionPlayingProperty">
+            <summary>
+            Identifies the IsTransitionPlaying property.
+            </summary>
+        </member>
         <member name="M:Telerik.Windows.Controls.TransitionControl.TransitionPresenter.#ctor">
             <summary>
             Initializes a new instance of the TransitionPresenter class.
             </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.TransitionControl.TransitionPresenter.SetTransitionEffect(System.Windows.DependencyObject,Telerik.Windows.Controls.TransitionControl.TransitionProvider)">
-            <summary>
-            Sets the value of the TransitionEffect attached property to a specified element.
-            </summary>
-            <param name="obj">The element which to write the property value to.</param>
-            <param name="value">The value to be set to the attached property.</param>
-        </member>
-        <member name="M:Telerik.Windows.Controls.TransitionControl.TransitionPresenter.GetTransitionEffect(System.Windows.DependencyObject)">
-            <summary>
-            Gets the value of the TransitionEffect attached property for a specified UIElement.
-            </summary>
-            <param name="obj">The element from which the property value is read.</param>
-            <returns>The Dock property value for the element.</returns>
-        </member>
-        <member name="M:Telerik.Windows.Controls.TransitionControl.TransitionPresenter.SetAnimationEasing(System.Windows.DependencyObject,System.Windows.Media.Animation.IEasingFunction)">
-            <summary>
-            Sets the value of the AnimationEasing attached property to a specified element.
-            </summary>
-            <param name="obj">The element which to write the property value to.</param>
-            <param name="value">The value to be set to the attached property.</param>
-        </member>
-        <member name="M:Telerik.Windows.Controls.TransitionControl.TransitionPresenter.GetAnimationEasing(System.Windows.DependencyObject)">
-            <summary>
-            Gets the value of the AnimationEasing attached property for a specified UIElement.
-            </summary>
-            <param name="obj">The element from which the property value is read.</param>
-            <returns>The Dock property value for the element.</returns>
-        </member>
-        <member name="M:Telerik.Windows.Controls.TransitionControl.TransitionPresenter.SetAnimationDuration(System.Windows.DependencyObject,System.TimeSpan)">
-            <summary>
-            Sets the value of the AnimationDuration attached property to a specified element.
-            </summary>
-            <param name="obj">The element which to write the property value to.</param>
-            <param name="value">The value to be set to the attached property.</param>
-        </member>
-        <member name="M:Telerik.Windows.Controls.TransitionControl.TransitionPresenter.GetAnimationDuration(System.Windows.DependencyObject)">
-            <summary>
-            Gets the value of the AnimationDuration attached property for a specified UIElement.
-            </summary>
-            <param name="obj">The element from which the property value is read.</param>
-            <returns>The Dock property value for the element.</returns>
         </member>
         <member name="M:Telerik.Windows.Controls.TransitionControl.TransitionPresenter.MeasureOverride(System.Windows.Size)">
             <summary>
@@ -21090,13 +22671,12 @@
         <member name="M:Telerik.Windows.Controls.TransitionControl.TransitionPresenter.PrepareAnimation">
             <summary>
             Prepares to play the transition animation. The animation will be started after the next Measure pass. 
-            This method is called right before the content is changed.
+            This method is called right before the content is changed and creates a snapshot of the old content for use in the animation.
             </summary>
         </member>
         <member name="M:Telerik.Windows.Controls.TransitionControl.TransitionPresenter.StartAnimation">
             <summary>
-            Starts the animation asynchronously if an animation is prepared. If no animation is prepared it
-            doesn't start anything.
+            Will start the transition animation if one is prepared.
             </summary>
         </member>
         <member name="P:Telerik.Windows.Controls.TransitionControl.TransitionPresenter.Transition">
@@ -21147,10 +22727,85 @@
             the transition animation when not using a shader effect.
             </summary>
         </member>
+        <member name="P:Telerik.Windows.Controls.TransitionControl.TransitionPresenter.Host">
+            <summary>
+            Gets or sets the element used to host both the TransitionPresenter and the OldContent visual.
+            This is most likely to be a Panel for use in the Transitions for layout animation.
+            </summary>
+        </member>
         <member name="P:Telerik.Windows.Controls.TransitionControl.TransitionPresenter.TargetElement">
             <summary>
             Gets or sets a value identifing the element to be used for the transition animation - 
             both for the snapshot and for applying the Effect.
+            </summary>
+        </member>
+        <member name="E:Telerik.Windows.Controls.TransitionControl.TransitionPresenter.TransitionStatusChanged">
+            <summary>
+            Invoked when a Transition state changes.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.TransitionControl.TransitionProviderManager">
+            <summary>
+            This class supports the RadTransitionControl infrastructure and is not intended to be used directly from your code.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.TransitionControl.TransitionProviderManager.StandardNames">
+            <summary>
+            Contains all standard transitions.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.TransitionControl.TransitionStatus">
+            <summary>
+            Represents the state of the TransitionControls's Transition status.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.TransitionControl.TransitionStatus.Started">
+            <summary>
+            A Transition has just begun playing.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.TransitionControl.TransitionStatus.Interrupted">
+            <summary>
+            A Transition has been interrupted by the initialization of a new Transition.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.TransitionControl.TransitionStatus.Completed">
+            <summary>
+            A Transition has completed playing.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.TransitionControl.TransitionStatusChangedEventArgs">
+            <summary>
+            The event args are used for TransitionStatusChanged event.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.TransitionControl.TransitionStatusChangedEventArgs.Started">
+            <summary>
+            Represents a TransitionStatusChanged Event with Completed status.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.TransitionControl.TransitionStatusChangedEventArgs.Interrupted">
+            <summary>
+            Represents a TransitionStatusChanged Event with Completed status.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.TransitionControl.TransitionStatusChangedEventArgs.Completed">
+            <summary>
+            Represents a TransitionStatusChanged Event with Completed status.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.TransitionControl.TransitionStatusChangedEventArgs.#ctor(Telerik.Windows.Controls.TransitionControl.TransitionStatus)">
+            <summary>
+            Initializes a new instance of the TransitionStatusChangedEventArgs class, 
+            using the supplied TransitionStatus.
+            </summary>
+            <param name="status">
+            The status of the Transition.
+            </param>
+        </member>
+        <member name="P:Telerik.Windows.Controls.TransitionControl.TransitionStatusChangedEventArgs.Status">
+            <summary>
+            Gets the Status of the Transition.
             </summary>
         </member>
         <member name="T:Telerik.Windows.Controls.VisibilityToBooleanConverter">
