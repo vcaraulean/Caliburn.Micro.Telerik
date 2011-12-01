@@ -48,27 +48,21 @@ namespace Caliburn.Micro.Telerik
 			ConventionManager.AddElementConvention<RadDateTimePicker>(RadDateTimePicker.SelectedValueProperty, "SelectedValue",
 			                                                          "SelectionChanged");
 
-			ConventionManager.AddElementConvention<RadGridView>(RadGridView.ItemsSourceProperty, "SelectedItem", "SelectionChanged")
+			ConventionManager.AddElementConvention<RadGridView>(DataControl.ItemsSourceProperty, "SelectedItem", "SelectionChanged")
 				.ApplyBinding = (viewModelType, path, property, element, convention) =>
 				{
 					if (!ConventionManager.SetBinding(viewModelType, path, property, element, convention)) return false;
-
-					if (ConventionManager.HasBinding(element, RadGridView.SelectedItemProperty)) return false;
-
+					if (ConventionManager.HasBinding(element, DataControl.SelectedItemProperty)) return true;
 					var index = path.LastIndexOf('.');
 					index = index == -1 ? 0 : index + 1;
 					var baseName = path.Substring(index);
-
-					foreach (var potentialName in ConventionManager.DerivePotentialSelectionNames(baseName))
+					foreach (var selectionPath in
+						from potentialName in ConventionManager.DerivePotentialSelectionNames(baseName)
+						where viewModelType.GetProperty(potentialName, BindingFlags.IgnoreCase | BindingFlags.Public | BindingFlags.Instance) != null
+						select path.Replace(baseName, potentialName))
 					{
-						var propertyInfo = viewModelType.GetProperty(potentialName, BindingFlags.IgnoreCase | BindingFlags.Public | BindingFlags.Instance);
-						if (propertyInfo == null) 
-							continue;
-						
-						var selectionPath = path.Replace(baseName, potentialName);
 						var binding = new Binding(selectionPath) {Mode = BindingMode.TwoWay};
-						BindingOperations.SetBinding(element, RadGridView.SelectedItemProperty, binding);
-						break;
+						BindingOperations.SetBinding(element, DataControl.SelectedItemProperty, binding);
 					}
 					return true;
 				};
