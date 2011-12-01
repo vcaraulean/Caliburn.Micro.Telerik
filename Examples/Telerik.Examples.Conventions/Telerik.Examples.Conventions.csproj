@@ -73,6 +73,7 @@
     <Reference Include="System.Windows.Controls, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Caliburn.Micro.1.2.0\lib\SL40\System.Windows.Controls.dll</HintPath>
     </Reference>
+    <Reference Include="System.Windows.Data, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
     <Reference Include="System.Windows.Interactivity, Version=4.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Caliburn.Micro.1.2.0\lib\SL40\System.Windows.Interactivity.dll</HintPath>
     </Reference>
@@ -97,6 +98,7 @@
     <Reference Include="Telerik.Windows.Controls.Navigation">
       <HintPath>..\..\lib\Telerik.Windows.Controls.Navigation.dll</HintPath>
     </Reference>
+    <Reference Include="Telerik.Windows.Data, Version=2011.3.1116.1040, Culture=neutral, PublicKeyToken=5803cfa389c90ce7" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">
@@ -111,6 +113,10 @@
       <DependentUpon>RadDateTimePickerView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Implementations\RadDateTimePickerViewModel.cs" />
+    <Compile Include="Implementations\RadGridConventionsView.xaml.cs">
+      <DependentUpon>RadGridConventionsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Implementations\RadGridConventionsViewModel.cs" />
     <Compile Include="Implementations\RadMaskedControlsView.xaml.cs">
       <DependentUpon>RadMaskedControlsView.xaml</DependentUpon>
     </Compile>
@@ -141,6 +147,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Implementations\RadDateTimePickerView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Implementations\RadGridConventionsView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
