@@ -34,7 +34,7 @@ namespace Telerik.Examples.Conventions.Implementations
 	{
 		public RadGridConventionsViewModel()
 		{
-			DisplayName = "RadGridView";
+			DisplayName = "RadGridView & RadTreeListView";
 
 			DataItems = new List<DataItem>
 			{

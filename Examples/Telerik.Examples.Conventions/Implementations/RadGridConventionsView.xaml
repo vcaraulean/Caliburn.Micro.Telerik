@@ -15,22 +15,42 @@
 			<ColumnDefinition Width="*"/>
 		</Grid.ColumnDefinitions>
 
-		<telerik:RadGridView x:Name="DataItems"
-							 AutoGenerateColumns="False">
-			<telerik:RadGridView.Columns>
-				<telerik:GridViewDataColumn Header="Name"
-											DataMemberBinding="{Binding Name, Mode=TwoWay}" />
-				<telerik:GridViewCheckBoxColumn Header="Is valid"
-												DataMemberBinding="{Binding IsValid, Mode=TwoWay}" />
-				<telerik:GridViewDataColumn Header="Is Valid (with cell template)">
-					<telerik:GridViewDataColumn.CellTemplate>
-						<DataTemplate>
-							<CheckBox IsChecked="{Binding IsValid, Mode=TwoWay}" />
-						</DataTemplate>
-					</telerik:GridViewDataColumn.CellTemplate>
-				</telerik:GridViewDataColumn>
-			</telerik:RadGridView.Columns>
-		</telerik:RadGridView>
+		<Grid>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="150" />
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="150" />
+			</Grid.RowDefinitions>
+
+			<TextBlock Text="RadGridView" FontSize="14"
+					   Margin="10" />
+			<telerik:RadGridView x:Name="DataItems"
+								 AutoGenerateColumns="False"
+								 Grid.Row="1">
+				<telerik:RadGridView.Columns>
+					<telerik:GridViewDataColumn Header="Name"
+												DataMemberBinding="{Binding Name, Mode=TwoWay}" />
+					<telerik:GridViewCheckBoxColumn Header="Is valid"
+													DataMemberBinding="{Binding IsValid, Mode=TwoWay}" />
+					<telerik:GridViewDataColumn Header="Is Valid (with cell template)">
+						<telerik:GridViewDataColumn.CellTemplate>
+							<DataTemplate>
+								<CheckBox IsChecked="{Binding IsValid, Mode=TwoWay}" />
+							</DataTemplate>
+						</telerik:GridViewDataColumn.CellTemplate>
+					</telerik:GridViewDataColumn>
+				</telerik:RadGridView.Columns>
+			</telerik:RadGridView>
+			<TextBlock Text="RadTreeListView (AutoGenerateColumns=True)"
+					   FontSize="14" 
+					   Margin="10"
+					   Grid.Row="2"/>
+			<telerik:RadTreeListView x:Name="DataItems_"
+									 Grid.Row="3">
+			</telerik:RadTreeListView>
+
+		</Grid>
 		
 		<StackPanel Grid.Column="1" Margin="20 0">
 			<TextBlock Text="Selected Item"

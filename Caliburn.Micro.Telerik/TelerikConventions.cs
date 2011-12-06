@@ -44,11 +44,12 @@ namespace Caliburn.Micro.Telerik
 			                                                         "ValueChanged");
 			ConventionManager.AddElementConvention<RadMaskedTextInput>(RadMaskedTextInput.ValueProperty, "Value", "ValueChanged");
 
-			// Works also for RadTimePicker, RadDatePicker
+			// Affects: RadDateTimePicker, RadTimePicker, RadDatePicker
 			ConventionManager.AddElementConvention<RadDateTimePicker>(RadDateTimePicker.SelectedValueProperty, "SelectedValue",
 			                                                          "SelectionChanged");
 
-			ConventionManager.AddElementConvention<RadGridView>(DataControl.ItemsSourceProperty, "SelectedItem", "SelectionChanged")
+			// Affects: RadGridView, RadTreeListView
+			ConventionManager.AddElementConvention<DataControl>(DataControl.ItemsSourceProperty, "SelectedItem", "SelectionChanged")
 				.ApplyBinding = (viewModelType, path, property, element, convention) =>
 				{
 					if (!ConventionManager.SetBinding(viewModelType, path, property, element, convention)) return false;
