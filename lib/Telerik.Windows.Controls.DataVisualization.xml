@@ -46,7 +46,7 @@
         </member>
         <member name="M:Telerik.Windows.Controls.Barcode.SymbologyBase.#ctor">
             <summary>
-            Initializes a new instance of the <see cref="T:SymbologyBase"/> class.
+            Initializes a new instance of the <see cref="T:Telerik.Windows.Controls.Barcode.SymbologyBase"/> class.
             </summary>
         </member>
         <member name="P:Telerik.Windows.Controls.Barcode.SymbologyBase.CalculateCheckSum">
@@ -2066,10 +2066,9 @@
             <example>
             Range [0; 100] -> Flattened range [0; 100]
             Range [-50; 50] -> Flattened range [0; 100]
-            Range [50; 150] -> Flattened range [0; 100]
+            Range [50; 150] -> Flattened range [0; 100].
             </example>
             <param name="point">The point.</param>
-            <returns></returns>
         </member>
         <member name="M:Telerik.Windows.Controls.BulletGraph.AutoRange.GetHashCode">
             <summary>
@@ -2924,9 +2923,9 @@
             Base class for needle, marker, bar, and state indicators.
             </summary>
         </member>
-        <member name="F:Telerik.Windows.Controls.Gauge.GraphicIndicator.OffPostionProperty">
+        <member name="F:Telerik.Windows.Controls.Gauge.GraphicIndicator.OffPositionProperty">
             <summary>
-            Identifies the OffPostion dependency property. 
+            Identifies the OffPosition dependency property. 
             </summary>
         </member>
         <member name="F:Telerik.Windows.Controls.Gauge.GraphicIndicator.RefreshModeProperty">
@@ -3127,7 +3126,7 @@
             animation is started for this indicator.
             </summary>
         </member>
-        <member name="P:Telerik.Windows.Controls.Gauge.GraphicIndicator.OffPostion">
+        <member name="P:Telerik.Windows.Controls.Gauge.GraphicIndicator.OffPosition">
             <summary>
             Gets or sets “OFF” position of the indicator.
             This is location where indicator will be parked to when its value is double.NaN.
@@ -3376,7 +3375,6 @@
             <summary>
             Gets or sets the brush for the empty part of the bar indicator. 
             </summary>
-            <remarks></remarks>
         </member>
         <member name="P:Telerik.Windows.Controls.Gauge.BarIndicator.EndWidth">
             <summary>
@@ -8160,16 +8158,22 @@
             <param name="source">ColorMeasurescale source.</param>
             <param name="e">DependencyPropertyChangedEventArgs.</param>
         </member>
-        <member name="M:Telerik.Windows.Controls.Map.ColorMeasureScale.CalculateInstantBrush(System.Int32)">
+        <member name="M:Telerik.Windows.Controls.Map.ColorMeasureScale.CalculateInstantBrush(System.Int32,Telerik.Windows.Controls.Map.ColorMeasureScale.GradientColorDef[])">
             <summary>
             Gets brush for current step number.
             </summary>
             <param name="stepNumber">Step Number.</param>
+            <param name="steps">List of the color stops.</param>
             <returns>Brush for current step number.</returns>
         </member>
         <member name="M:Telerik.Windows.Controls.Map.ColorMeasureScale.SetRangeCollection">
             <summary>
             Establishes the collection of ranges and corresponding brushes.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Map.ColorMeasureScale.CalculateColorSteps">
+            <summary>
+            Calculates array of the gradient stops for every color interval.
             </summary>
         </member>
         <member name="M:Telerik.Windows.Controls.Map.ColorMeasureScale.CalculateFillForRanges">
@@ -8187,33 +8191,37 @@
             <param name="stepNumber">Number of current step.</param>
             <returns></returns>
         </member>
-        <member name="M:Telerik.Windows.Controls.Map.ColorMeasureScale.CalculateInstantSolidColorBrush(System.Int32)">
+        <member name="M:Telerik.Windows.Controls.Map.ColorMeasureScale.CalculateInstantSolidColorBrush(System.Int32,Telerik.Windows.Controls.Map.ColorMeasureScale.GradientColorDef[])">
             <summary>
             Gets an instant solid color brush for gradient generated from ShapeFillCollection or HighlightFillCollection property.
             </summary>
             <param name="stepNumber">Step number of the Instance.</param>
+            <param name="steps">List of the color stops.</param>
             <returns>Brush.</returns>
         </member>
-        <member name="M:Telerik.Windows.Controls.Map.ColorMeasureScale.CalculateInstantLinearGradientBrush(System.Int32)">
+        <member name="M:Telerik.Windows.Controls.Map.ColorMeasureScale.CalculateInstantLinearGradientBrush(System.Int32,Telerik.Windows.Controls.Map.ColorMeasureScale.GradientColorDef[])">
             <summary>
             Gets an instant Linear Gradient brush for gradient generated from ShapeFillCollection or HighlightFillCollection property.
             </summary>
             <param name="stepNumber">Step number of the Instance.</param>
+            <param name="steps">List of the color stops.</param>
             <returns>Linear gradient brush.</returns>
         </member>
-        <member name="M:Telerik.Windows.Controls.Map.ColorMeasureScale.CalculateInstantRadialGradientBrush(System.Int32)">
+        <member name="M:Telerik.Windows.Controls.Map.ColorMeasureScale.CalculateInstantRadialGradientBrush(System.Int32,Telerik.Windows.Controls.Map.ColorMeasureScale.GradientColorDef[])">
             <summary>
             Gets an instant Radial Gradient brush for gradient generated from ShapeFillCollection or HighlightFillCollection property.
             </summary>
             <param name="stepNumber">Step number of the Instance.</param>
+            <param name="steps">List of the color stops.</param>
             <returns>RadialGradientBrush.</returns>
         </member>
-        <member name="M:Telerik.Windows.Controls.Map.ColorMeasureScale.CalculateInstantMultipleColorsGradientCount(System.Int32,Telerik.Windows.Controls.Map.ColorCollection)">
+        <member name="M:Telerik.Windows.Controls.Map.ColorMeasureScale.CalculateInstantMultipleColorsGradientCount(System.Int32,Telerik.Windows.Controls.Map.ColorCollection,Telerik.Windows.Controls.Map.ColorMeasureScale.GradientColorDef[])">
             <summary>
             Calculating an instant color from stepNumber for gradient line of multiple colors.
             </summary>
             <param name="stepNumber">Step number of the Instance.</param>
             <param name="colors">Collection of colors to build gradient for.</param>
+            <param name="steps">List of the color stops.</param>
             <returns>Current color for the step number.</returns>
         </member>
         <member name="M:Telerik.Windows.Controls.Map.ColorMeasureScale.CalculateInstantMultipleOffsetCount(System.Int32,System.Collections.ObjectModel.ObservableCollection{System.Double})">
@@ -8331,6 +8339,55 @@
             <param name="element">Framework element.</param>
             <param name="shapeFill">MapShapeFill instance for a shape.</param>
             <param name="highlightFill">MapShapeFill instance for shape highlighting.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Map.ColorMeasureScale.MathExt.Round(System.Decimal,Telerik.Windows.Controls.Map.ColorMeasureScale.MathExt.MidpointRounding)">
+            <summary>
+            Rounds using arithmetic (5 rounds up) symmetrical (up is away from zero) rounding.
+            </summary>
+            <param name="d">A Decimal number to be rounded.</param>
+            <param name="mode">Midpoint rounding mode.</param>
+            <returns>The number nearest d with precision equal to decimals. If d is halfway between two numbers, then the nearest whole number away from zero is returned.</returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Map.ColorMeasureScale.MathExt.Round(System.Decimal,System.Int32,Telerik.Windows.Controls.Map.ColorMeasureScale.MathExt.MidpointRounding)">
+            <summary>
+            Rounds using arithmetic (5 rounds up) symmetrical (up is away from zero) rounding.
+            </summary>
+            <param name="d">A Decimal number to be rounded.</param>
+            <param name="decimals">The number of significant fractional digits (precision) in the return value.</param>
+            <param name="mode">Midpoint rounding mode.</param>
+            <returns>The number nearest d with precision equal to decimals. If d is halfway between two numbers, then the nearest whole number away from zero is returned.</returns>
+        </member>
+        <member name="T:Telerik.Windows.Controls.Map.ColorMeasureScale.MathExt.MidpointRounding">
+            <summary>
+            Specifies how mathematical rounding methods should process a number that is midway between two numbers.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.Map.ColorMeasureScale.MathExt.MidpointRounding.ToEven">
+            <summary>
+            When a number is halfway between two others, it is rounded toward the nearest even number.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.Map.ColorMeasureScale.MathExt.MidpointRounding.AwayFromZero">
+            <summary>
+            When a number is halfway between two others, it is rounded toward the nearest number that is away from zero.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Map.ColorMeasureScale.GradientColorDef.ColorNumber">
+            <summary>
+            Gets or sets number of the color in 
+            the color collection.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Map.ColorMeasureScale.GradientColorDef.Stops">
+            <summary>
+            Gets number of the gradient stops
+            from one major color to another.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Map.ColorMeasureScale.GradientColorDef.StopNumber">
+            <summary>
+            Gets number of the stop.
+            </summary>
         </member>
         <member name="T:ColorScaleMode">
             <summary>
@@ -8785,14 +8842,6 @@
             <summary>
             When overridden in a derived class, is invoked whenever application code or internal processes (such as a rebuilding layout pass) call <see cref="M:System.Windows.Controls.Control.ApplyTemplate"/>.
             </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.Map.MapBaseControl.RetrieveResource``1(System.Object)">
-            <summary>
-            Retrive resource by resource key.
-            </summary>
-            <typeparam name="TResourceType">Resource type.</typeparam>
-            <param name="resourceKey">Resource key.</param>
-            <returns>Resource.</returns>
         </member>
         <member name="M:Telerik.Windows.Controls.Map.MapBaseControl.OnMapInitialize(Telerik.Windows.Controls.RadMap,Telerik.Windows.Controls.RadMap)">
             <summary>
@@ -9474,6 +9523,11 @@
             Identifies the <see cref="P:Telerik.Windows.Controls.Map.MapZoomBar.DropDownHeight"/> DropDownHeight dependency property.
             </summary>
         </member>
+        <member name="F:Telerik.Windows.Controls.Map.MapZoomBar.ZoomLevelButtonTemplateProperty">
+            <summary>
+            Identifies the ZoomLevelButtonTemplate dependency property.
+            </summary>
+        </member>
         <member name="M:Telerik.Windows.Controls.Map.MapZoomBar.#ctor">
             <summary>
             Initializes a new instance of the <see cref="T:Telerik.Windows.Controls.Map.MapZoomBar"/> class.
@@ -9536,6 +9590,11 @@
             <summary>
             Gets default zoom level button's data template
             depends on the theme set for RadMap control.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Map.MapZoomBar.ZoomLevelButtonTemplate">
+            <summary>
+            Gets or sets the ZoomLevel Button data template.
             </summary>
         </member>
         <member name="P:Telerik.Windows.Controls.Map.MapZoomBar.DropDownHeight">
@@ -10227,7 +10286,7 @@
             	
             &lt;telerik:MapShapeReader Source="/Telerik.RadMap.Silverlight;component/africa"
             	ToolTipFormat="{}{CNTRY_NAME} Miles: {SUM_SQMI_A|F2}, KM: {SUM_SQKM_A|F1}"&gt;
-            </code>
+            </code>.
             </example>
         </member>
         <member name="P:Telerik.Windows.Controls.Map.MapShapeReaderBase.ToolTipTemplate">
@@ -10269,7 +10328,7 @@
             		&lt;/DataTemplate&gt;
             	&lt;/telerik:MapShapeReader.ToolTipTemplate&gt;
             &lt;/telerik:MapShapeReader&gt;
-            </code>
+            </code>.
             </example>
         </member>
         <member name="P:Telerik.Windows.Controls.Map.MapShapeReaderBase.PointTemplate">
@@ -12065,6 +12124,16 @@
             Command bar which sends commands to the RadMap control.
             </summary>
         </member>
+        <member name="F:Telerik.Windows.Controls.Map.MapCommandBar.MapSourceButtonTemplateProperty">
+            <summary>
+            Identifies the MapSourceButtonTemplate dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.Map.MapCommandBar.MapSwitchModeButtonTemplateProperty">
+            <summary>
+            Identifies the MapSwitchModeButtonTemplate dependency property.
+            </summary>
+        </member>
         <member name="F:Telerik.Windows.Controls.Map.MapCommandBar.firstTimePopup">
             <summary>
             Indicates whether command bar popup is opened first time.
@@ -12131,6 +12200,16 @@
             <summary>
             Gets default change mode button's data template
             depends on the theme set for RadMap control.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Map.MapCommandBar.MapSourceButtonTemplate">
+            <summary>
+            Gets or sets the Source Button data template.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Map.MapCommandBar.MapSwitchModeButtonTemplate">
+            <summary>
+            Gets or sets the Switch Mode Button data template.
             </summary>
         </member>
         <member name="T:Telerik.Windows.Controls.Map.MapNavigation">
@@ -15065,7 +15144,7 @@
             		&lt;/DataTemplate&gt;
             	&lt;/telerik:MapPolygon.CaptionTemplate&gt;
             &lt;/telerik:MapPolygon&gt;
-            </code>
+            </code>.
             </example>
         </member>
         <member name="P:Telerik.Windows.Controls.Map.MapShape.ExtendedData">
@@ -16854,7 +16933,7 @@
             If you have separate image for every zoom level than URI string
             must contain {zoom} part. This part will be replaced with zoom level
             when image requested. For example:
-            "/MyApplication;component/MapImages/image_{zoom}.png"
+            "/MyApplication;component/MapImages/image_{zoom}.png".
             </remarks>
         </member>
         <member name="P:Telerik.Windows.Controls.Map.UriImageProvider.ZoomNumericFormat">
@@ -19389,6 +19468,49 @@
             Indicates state of the map zooming.
             </summary>
         </member>
+        <member name="T:Telerik.Windows.Controls.TimeBar.ActualSizeProxy">
+            <summary>
+            Exposes the ActualWidth of an element.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.TimeBar.ActualSizeProxy.IsEnabledProperty">
+            <summary>
+            Identifies the IsEnabled dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.TimeBar.ActualSizeProxy.ActualWidthProperty">
+            <summary>
+            Identifies the ActualWidth dependency property.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.TimeBar.ActualSizeProxy.GetIsEnabled(System.Windows.DependencyObject)">
+            <summary>
+            Gets the value of the IsEnabled property.
+            </summary>
+            <param name="obj">The object.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.TimeBar.ActualSizeProxy.SetIsEnabled(System.Windows.DependencyObject,System.Boolean)">
+            <summary>
+            Sets the IsEnabled property.
+            </summary>
+            <param name="obj">The object.</param>
+            <param name="value">The new value.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.TimeBar.ActualSizeProxy.GetActualWidth(System.Windows.DependencyObject)">
+            <summary>
+            Gets the actual width.
+            </summary>
+            <param name="obj">The object.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.TimeBar.ActualSizeProxy.SetActualWidth(System.Windows.DependencyObject,System.Double)">
+            <summary>
+            Sets the actual width.
+            </summary>
+            <param name="obj">The object.</param>
+            <param name="value">The value.</param>
+        </member>
         <member name="T:Telerik.Windows.Controls.TimeBar.RadTimeBarCommands">
             <summary>
             All commands that the <see cref="T:Telerik.Windows.Controls.RadTimeBar"/> exposes.
@@ -19830,6 +19952,11 @@
             Identifies the <see cref="P:Telerik.Windows.Controls.TreeMap.RangeColorizerBase.ValuePath"/> dependency property.
             </summary>
         </member>
+        <member name="F:Telerik.Windows.Controls.TreeMap.RangeColorizerBase.IsAbsoluteProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.TreeMap.RangeColorizerBase.IsAbsolute"/> dependency property.
+            </summary>
+        </member>
         <member name="M:Telerik.Windows.Controls.TreeMap.RangeColorizerBase.#ctor">
             <summary>
             Initializes a new instance of the <see cref="T:Telerik.Windows.Controls.TreeMap.RangeColorizerBase"/> class.
@@ -19837,17 +19964,24 @@
         </member>
         <member name="M:Telerik.Windows.Controls.TreeMap.RangeColorizerBase.SelectBrush(System.Double)">
             <summary>
-            Selects the brush.
+            Selects a brush depending on the provided value and
+            if it is <see cref="P:Telerik.Windows.Controls.TreeMap.RangeColorizerBase.IsAbsolute"/>.
             </summary>
             <param name="value">The value.</param>
             <returns></returns>
         </member>
-        <member name="M:Telerik.Windows.Controls.TreeMap.RangeColorizerBase.SelectBrushInRange(System.Double,System.Double)">
+        <member name="M:Telerik.Windows.Controls.TreeMap.RangeColorizerBase.SelectBrushInRelativeValues(System.Double)">
             <summary>
-            Selects the brush.
+            Selects the brush in relative values.
             </summary>
-            <param name="item">The item.</param>
-            <param name="ratio">The ratio.</param>
+            <param name="value">The value.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.TreeMap.RangeColorizerBase.SelectBrushInAbsoluteValues(System.Double)">
+            <summary>
+            Selects the brush in absolute values.
+            </summary>
+            <param name="value">The value.</param>
             <returns></returns>
         </member>
         <member name="P:Telerik.Windows.Controls.TreeMap.RangeColorizerBase.RangeMinimum">
@@ -19867,6 +20001,12 @@
             Gets or sets the value path.
             </summary>
             <value>The value path.</value>
+        </member>
+        <member name="P:Telerik.Windows.Controls.TreeMap.RangeColorizerBase.IsAbsolute">
+            <summary>
+            Gets or sets the is absolute.
+            </summary>
+            <value>The is absolute.</value>
         </member>
         <member name="F:Telerik.Windows.Controls.TreeMap.BrushColorizerBase.BrushesProperty">
             <summary>
@@ -19918,9 +20058,12 @@
         </member>
         <member name="T:Telerik.Windows.Controls.TreeMap.RangeBrush">
             <summary>
-            Represents an object, which configures <see cref="T:Telerik.Windows.Controls.TreeMap.BrushColorizerBase"/> objects. 
-            When used with <see cref="T:Telerik.Windows.Controls.TreeMap.AbsoluteValueBrushColorizer"/>, <see cref="P:Telerik.Windows.Controls.TreeMap.RangeBrush.From"/> and <see cref="P:Telerik.Windows.Controls.TreeMap.RangeBrush.To"/> values should be absolute - they should correspond to the underlying data.
-            Whne used with <see cref="T:Telerik.Windows.Controls.TreeMap.RelativeValueBrushColorizer"/>, <see cref="P:Telerik.Windows.Controls.TreeMap.RangeBrush.From"/> and <see cref="P:Telerik.Windows.Controls.TreeMap.RangeBrush.To"/> values should be relative - between 0 and 1.
+            Represents an object, which configures <see cref="T:Telerik.Windows.Controls.TreeMap.ValueBrushColorizer"/> objects. 
+            When <see cref="P:Telerik.Windows.Controls.TreeMap.RangeColorizerBase.IsAbsolute"/> is <c>True</c>,
+            <see cref="P:Telerik.Windows.Controls.TreeMap.RangeBrush.From"/> and <see cref="P:Telerik.Windows.Controls.TreeMap.RangeBrush.To"/> values should be absolute -
+            they should correspond to the underlying data.
+            Whne <see cref="P:Telerik.Windows.Controls.TreeMap.RangeColorizerBase.IsAbsolute"/> is <c>False</c>,
+            <see cref="P:Telerik.Windows.Controls.TreeMap.RangeBrush.From"/> and <see cref="P:Telerik.Windows.Controls.TreeMap.RangeBrush.To"/> values should be relative - between 0 and 1.
             </summary>
         </member>
         <member name="F:Telerik.Windows.Controls.TreeMap.RangeBrush.FromProperty">
@@ -19966,12 +20109,12 @@
             This class represents a colorizer, which contains a set of <see cref="T:Telerik.Windows.Controls.TreeMap.RangeBrush"/> objects. It chooses the brush to be applied according to their <see cref="P:Telerik.Windows.Controls.TreeMap.RangeBrush.From"/> and <see cref="P:Telerik.Windows.Controls.TreeMap.RangeBrush.To"/> values. These values are relative - between 0 and 1.
             </summary>
         </member>
-        <member name="M:Telerik.Windows.Controls.TreeMap.RelativeValueBrushColorizer.SelectBrushInRange(System.Double,System.Double)">
+        <member name="M:Telerik.Windows.Controls.TreeMap.RelativeValueBrushColorizer.SelectBrush(System.Double)">
             <summary>
-            Selects the brush.
+            Selects a brush depending on the provided value and
+            if it is <see cref="P:Telerik.Windows.Controls.TreeMap.RangeColorizerBase.IsAbsolute"/>.
             </summary>
-            <param name="item">The item.</param>
-            <param name="ratio">The ratio.</param>
+            <param name="value">The value.</param>
             <returns></returns>
         </member>
         <member name="T:Telerik.Windows.Controls.TreeMap.RelativeValueGradientColorizer">
@@ -19980,13 +20123,96 @@
             The <see cref="T:Telerik.Windows.Controls.TreeMap.RadTreeMapItem"/> brush is calculated according to its value, <see cref="P:Telerik.Windows.Controls.TreeMap.RangeColorizerBase.RangeMinimum"/>, <see cref="P:Telerik.Windows.Controls.TreeMap.RangeColorizerBase.RangeMaximum"/> and colorizer's gradient stops.
             </summary>
         </member>
-        <member name="M:Telerik.Windows.Controls.TreeMap.RelativeValueGradientColorizer.SelectBrushInRange(System.Double,System.Double)">
+        <member name="M:Telerik.Windows.Controls.TreeMap.RelativeValueGradientColorizer.SelectBrush(System.Double)">
             <summary>
-            Selects the brush.
+            Selects a brush depending on the provided value and
+            if it is <see cref="P:Telerik.Windows.Controls.TreeMap.RangeColorizerBase.IsAbsolute"/>.
             </summary>
-            <param name="item">The item.</param>
-            <param name="ratio">The ratio.</param>
+            <param name="value">The value.</param>
             <returns></returns>
+        </member>
+        <member name="T:Telerik.Windows.Controls.TreeMap.ValueBrushColorizer">
+            <summary>
+            Represents a <see cref="T:Telerik.Windows.Controls.TreeMap.ColorMapping"/>, which contains a set of <seealso cref="T:Telerik.Windows.Controls.TreeMap.RangeBrush"/> objects.
+            The <see cref="T:Telerik.Windows.Controls.TreeMap.ValueBrushColorizer"/> chooses the brush to be applied according to their From and To value.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.TreeMap.ValueBrushColorizer.BrushesProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.TreeMap.ValueBrushColorizer.Brushes"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.TreeMap.ValueBrushColorizer.DefaultBrushProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.TreeMap.ValueBrushColorizer.DefaultBrush"/> dependency property.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.TreeMap.ValueBrushColorizer.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.Windows.Controls.TreeMap.ValueBrushColorizer"/> class.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.TreeMap.ValueBrushColorizer.SelectBrushInAbsoluteValues(System.Double)">
+            <summary>
+            Selects the brush in absolute values.
+            </summary>
+            <param name="value">The value.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.TreeMap.ValueBrushColorizer.SelectBrushInRelativeValues(System.Double)">
+            <summary>
+            Selects the brush in relative values.
+            </summary>
+            <param name="value">The value.</param>
+            <returns></returns>
+        </member>
+        <member name="P:Telerik.Windows.Controls.TreeMap.ValueBrushColorizer.Brushes">
+            <summary>
+            Gets or sets the brushes.
+            </summary>
+            <value>The brushes.</value>
+        </member>
+        <member name="P:Telerik.Windows.Controls.TreeMap.ValueBrushColorizer.DefaultBrush">
+            <summary>
+            Gets or sets the default brush.
+            </summary>
+            <value>The default brush.</value>
+        </member>
+        <member name="T:Telerik.Windows.Controls.TreeMap.ValueGradientColorizer">
+            <summary>
+            Represents a <see cref="T:Telerik.Windows.Controls.TreeMap.ColorMapping"/>, which contains a set of GradientStops.
+            The <see cref="T:Telerik.Windows.Controls.TreeMap.ValueGradientColorizer"/> calculated the brush according to its value and gradient stops.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.TreeMap.ValueGradientColorizer.GradientStopsProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.TreeMap.ValueGradientColorizer.GradientStops"/> dependency property.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.TreeMap.ValueGradientColorizer.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.Windows.Controls.TreeMap.ValueGradientColorizer"/> class.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.TreeMap.ValueGradientColorizer.SelectBrushInAbsoluteValues(System.Double)">
+            <summary>
+            Selects the brush in absolute values.
+            </summary>
+            <param name="value">The value.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.TreeMap.ValueGradientColorizer.SelectBrushInRelativeValues(System.Double)">
+            <summary>
+            Selects the brush in relative values.
+            </summary>
+            <param name="value">The value.</param>
+            <returns></returns>
+        </member>
+        <member name="P:Telerik.Windows.Controls.TreeMap.ValueGradientColorizer.GradientStops">
+            <summary>
+            Gets or sets the gradient stops.
+            </summary>
+            <value>The gradient stops.</value>
         </member>
         <member name="T:Telerik.Windows.Controls.TreeMap.ConstantSelectDescriptor">
             <summary>
@@ -22862,6 +23088,13 @@
             Defines an interval of 100 years.
             </summary>
         </member>
+        <member name="M:Telerik.Windows.Controls.TimeBar.CenturyInterval.GetCenturyFormattedNumberText(System.DateTime)">
+            <summary>
+            Gets the century formatted number.
+            </summary>
+            <param name="date">The date.</param>
+            <returns></returns>
+        </member>
         <member name="M:Telerik.Windows.Controls.TimeBar.CenturyInterval.CreateStringMeasurementTable(System.Func{System.DateTime,System.String}[])">
             <summary>
             Creates the string measurement table.
@@ -22903,13 +23136,6 @@
             </summary>
             <param name="date">The date.</param>
             <param name="intervalSpan">The interval span.</param>
-            <returns></returns>
-        </member>
-        <member name="M:Telerik.Windows.Controls.TimeBar.CenturyInterval.GetCenturyFormattedNumberText(System.DateTime)">
-            <summary>
-            Gets the century formatted number.
-            </summary>
-            <param name="date">The date.</param>
             <returns></returns>
         </member>
         <member name="P:Telerik.Windows.Controls.TimeBar.CenturyInterval.Code">
@@ -22981,6 +23207,20 @@
             Defines an interval of 10 years.
             </summary>
         </member>
+        <member name="M:Telerik.Windows.Controls.TimeBar.DecadeInterval.GetDecadeStart(System.DateTime)">
+            <summary>
+            Gets the decade start.
+            </summary>
+            <param name="date">The date.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.TimeBar.DecadeInterval.GetDecadeEnd(System.DateTime)">
+            <summary>
+            Gets the decade end.
+            </summary>
+            <param name="date">The date.</param>
+            <returns></returns>
+        </member>
         <member name="M:Telerik.Windows.Controls.TimeBar.DecadeInterval.CreateStringMeasurementTable(System.Func{System.DateTime,System.String}[])">
             <summary>
             Creates the string measurement table.
@@ -23000,20 +23240,6 @@
             </summary>
             <param name="date">The date.</param>
             <param name="intervalSpan">The interval span.</param>
-            <returns></returns>
-        </member>
-        <member name="M:Telerik.Windows.Controls.TimeBar.DecadeInterval.GetDecadeStart(System.DateTime)">
-            <summary>
-            Gets the decade start.
-            </summary>
-            <param name="date">The date.</param>
-            <returns></returns>
-        </member>
-        <member name="M:Telerik.Windows.Controls.TimeBar.DecadeInterval.GetDecadeEnd(System.DateTime)">
-            <summary>
-            Gets the decade end.
-            </summary>
-            <param name="date">The date.</param>
             <returns></returns>
         </member>
         <member name="M:Telerik.Windows.Controls.TimeBar.DecadeInterval.GetDecadeEnd(System.DateTime,System.Int32)">
@@ -23237,6 +23463,20 @@
             Defines an interval of 1 quarter (3 months).
             </summary>
         </member>
+        <member name="M:Telerik.Windows.Controls.TimeBar.QuarterInterval.GetQuarterOfYear(System.DateTime)">
+            <summary>
+            Gets the quarter of year.
+            </summary>
+            <param name="date">The date.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.TimeBar.QuarterInterval.GetFirstMonthOfQuarter(System.DateTime)">
+            <summary>
+            Gets the first month of quarter.
+            </summary>
+            <param name="date">The date.</param>
+            <returns></returns>
+        </member>
         <member name="M:Telerik.Windows.Controls.TimeBar.QuarterInterval.CreateStringMeasurementTable(System.Func{System.DateTime,System.String}[])">
             <summary>
             Creates the string measurement table.
@@ -23256,20 +23496,6 @@
             </summary>
             <param name="date">The date.</param>
             <param name="intervalSpan">The interval span.</param>
-            <returns></returns>
-        </member>
-        <member name="M:Telerik.Windows.Controls.TimeBar.QuarterInterval.GetQuarterOfYear(System.DateTime)">
-            <summary>
-            Gets the quarter of year.
-            </summary>
-            <param name="date">The date.</param>
-            <returns></returns>
-        </member>
-        <member name="M:Telerik.Windows.Controls.TimeBar.QuarterInterval.GetFirstMonthOfQuarter(System.DateTime)">
-            <summary>
-            Gets the first month of quarter.
-            </summary>
-            <param name="date">The date.</param>
             <returns></returns>
         </member>
         <member name="P:Telerik.Windows.Controls.TimeBar.QuarterInterval.Code">
@@ -23647,7 +23873,6 @@
             <param name="obj">
             An object to compare with this instance. 
             </param>
-            <exception cref="T:System.ArgumentException" />
             <filterpriority>2</filterpriority>
         </member>
         <member name="M:Telerik.Windows.Controls.TimeBar.PeriodSpan.CompareTo(System.DateTime)">
@@ -23659,7 +23884,6 @@
             <param name="other">
             A DateTime object to compare with this instance. 
             </param>
-            <exception cref="T:System.ArgumentException"/>
             <filterpriority>2</filterpriority>
         </member>
         <member name="M:Telerik.Windows.Controls.TimeBar.PeriodSpan.CompareTo(Telerik.Windows.Controls.TimeBar.PeriodSpan)">
@@ -23671,7 +23895,6 @@
             <param name="other">
             A PeriodSpan object to compare with this instance. 
             </param>
-            <exception cref="T:System.ArgumentException" />
             <filterpriority>2</filterpriority>
         </member>
         <member name="P:Telerik.Windows.Controls.TimeBar.PeriodSpan.EndDate">
@@ -25055,9 +25278,10 @@
         </member>
         <member name="M:Telerik.Windows.Controls.TreeMap.AbsoluteValueBrushColorizer.SelectBrush(System.Double)">
             <summary>
-            Selects the brush.
+            Selects a brush depending on the provided value and
+            if it is <see cref="P:Telerik.Windows.Controls.TreeMap.RangeColorizerBase.IsAbsolute"/>.
             </summary>
-            <param name="item">The item.</param>
+            <param name="item"></param>
             <returns></returns>
         </member>
         <member name="T:Telerik.Windows.Controls.TreeMap.AbsoluteValueGradientColorizer">
@@ -25068,9 +25292,10 @@
         </member>
         <member name="M:Telerik.Windows.Controls.TreeMap.AbsoluteValueGradientColorizer.SelectBrush(System.Double)">
             <summary>
-            Selects the brush.
+            Selects a brush depending on the provided value and
+            if it is <see cref="P:Telerik.Windows.Controls.TreeMap.RangeColorizerBase.IsAbsolute"/>.
             </summary>
-            <param name="item">The item.</param>
+            <param name="item"></param>
             <returns></returns>
         </member>
         <member name="T:Telerik.Windows.Controls.TreeMap.ColorHSB">

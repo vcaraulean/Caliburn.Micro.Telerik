@@ -14614,12 +14614,6 @@
             </summary>
             <param name="e">The data for the event.</param>
         </member>
-        <member name="M:Telerik.Windows.Controls.RadWindow.OnKeyDown(System.Windows.Input.KeyEventArgs)">
-            <summary>
-            Called before the <see cref="E:System.Windows.UIElement.KeyDown"/> event occurs.
-            </summary>
-            <param name="e">The data for the event.</param>
-        </member>
         <member name="M:Telerik.Windows.Controls.RadWindow.OnClosing">
             <summary>
             
@@ -14902,6 +14896,12 @@
             Raises the <see cref="E:Ok"/> event.
             </summary>
             <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadAlert.OnKeyDown(System.Windows.Input.KeyEventArgs)">
+            <summary>
+            Overrides the OnKeyDown event of the WindowsBase.
+            </summary>
+            <param name="e"></param>
         </member>
         <member name="E:Telerik.Windows.Controls.RadAlert.Ok">
             <summary>

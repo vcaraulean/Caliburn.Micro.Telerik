@@ -33,7 +33,7 @@
         </member>
         <member name="M:Telerik.Windows.Controls.GridView.CommonColumnHeader.MeasureOverride(System.Windows.Size)">
             <summary>
-            We override this to  enable clipping of text and other content in the header.
+            We override this to enable clipping of text and other content in the header.
             </summary>
             <param name="availableSize"></param>
             <returns></returns>
@@ -468,16 +468,16 @@
             <summary>
             Implements the operator ==.
             </summary>
-            <param name="a">Left cellinfo</param>
-            <param name="b">Right cellinfo</param>
+            <param name="leftCellInfo">Left cellinfo</param>
+            <param name="rightCellInfo">Right cellinfo</param>
             <returns>The result of the operator.</returns>
         </member>
         <member name="M:Telerik.Windows.Controls.GridViewCellInfo.op_Inequality(Telerik.Windows.Controls.GridViewCellInfo,Telerik.Windows.Controls.GridViewCellInfo)">
             <summary>
             Implements the operator !=.
             </summary>
-            <param name="a">Left cellinfo</param>
-            <param name="b">Right cellinfo</param>
+            <param name="leftCellInfo">Left cellinfo</param>
+            <param name="rightCellInfo">Right cellinfo</param>
             <returns>The result of the operator.</returns>
         </member>
         <member name="P:Telerik.Windows.Controls.GridViewCellInfo.Column">
@@ -3408,6 +3408,11 @@
             <param name="element"></param>
             <param name="dp"></param>
         </member>
+        <member name="M:Telerik.Windows.Controls.GridViewColumn.Refresh">
+            <summary>
+            Refresh this column cells
+            </summary>
+        </member>
         <member name="F:Telerik.Windows.Controls.GridViewColumn.CellTemplateSelectorProperty">
             <summary>
             Identifies the <see cref="P:Telerik.Windows.Controls.GridViewColumn.CellTemplateSelector"/> dependency property.
@@ -3686,6 +3691,11 @@
             </summary>
             <param name="item">The data context for the selected element.</param>
             <param name="value">The clipboard data for the selected cell.</param>
+        </member>
+        <member name="F:Telerik.Windows.Controls.GridViewColumn.ShowColumnWhenGroupedProperty">
+            <summary>
+            Identifies the ShowColumnWhenGrouped dependency property.
+            </summary>
         </member>
         <member name="E:Telerik.Windows.Controls.GridViewColumn.PropertyChanged">
             <summary>
@@ -4038,6 +4048,33 @@
             Gets or sets the name of the group this column belongs to.
             </summary>
         </member>
+        <member name="P:Telerik.Windows.Controls.GridViewColumn.ShowColumnWhenGrouped">
+            <summary>
+            Indicates whether the column should be visible when grid is grouped by this column. 
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.IExportableColumn">
+            <summary>
+            Columns which can be exported throught the GridViewExportingWriter
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.IExportableColumn.GetCellContent(System.Object)">
+            <summary>
+            Gets the content of the cell.
+            </summary>
+            <param name="parameter">The data item.</param>
+            <returns>The content.</returns>
+        </member>
+        <member name="P:Telerik.Windows.Controls.IExportableColumn.DataFormatString">
+            <summary>
+            The DataFormatString of the column
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.IExportableColumn.ExportedElementWidth">
+            <summary>
+            Gets the actual width.
+            </summary>
+        </member>
         <member name="F:Telerik.Windows.Controls.GridViewBoundColumnBase.FilteringControlStyleProperty">
             <summary>
             Identifies the <see cref="P:Telerik.Windows.Controls.GridViewBoundColumnBase.FilteringControlStyle"/> dependency property.
@@ -4195,6 +4232,11 @@
             Gets or sets the control used for filtering.
             </summary>
         </member>
+        <member name="P:Telerik.Windows.Controls.GridViewBoundColumnBase.ExportedElementWidth">
+            <summary>
+            Gets the actual width of the column.
+            </summary>
+        </member>
         <member name="P:Telerik.Windows.Controls.GridViewBoundColumnBase.EditorStyle">
             <summary>
             Gets or sets the style which will be applied on the editor.
@@ -4343,6 +4385,16 @@
             Represents the Header dependency property.
             </summary>
         </member>
+        <member name="F:Telerik.Windows.Controls.GridViewColumnGroup.HeaderTemplateProperty">
+            <summary>
+            Identifies the HeaderTemplate property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.GridViewColumnGroup.HeaderStyleProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.GridViewColumn.HeaderCellStyle"/> dependency property.
+            </summary>
+        </member>
         <member name="P:Telerik.Windows.Controls.GridViewColumnGroup.Header">
             <summary>
             Gets or sets the content to be displayed in the column group header.
@@ -4358,10 +4410,28 @@
             Gets or sets the subgroups of a column group.
             </summary>
         </member>
+        <member name="P:Telerik.Windows.Controls.GridViewColumnGroup.HeaderTemplate">
+            <summary>
+            Gets or sets the data template for the common header.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.GridViewColumnGroup.HeaderStyle">
+            <summary>
+            Gets or sets the style to be applied for the common column header in  that group.
+            </summary>
+            <value>The cell style.</value>
+        </member>
         <member name="T:Telerik.Windows.Controls.GridViewExpressionColumn">
             <summary>
             This column can display the results of a calculation on the data item's properties.
             </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.GridViewExpressionColumn.GetCellContent(System.Object)">
+            <summary>
+            Gets the content of the cell.
+            </summary>
+            <param name="parameter">The data item.</param>
+            <returns>The content.</returns>
         </member>
         <member name="M:Telerik.Windows.Controls.GridViewExpressionColumn.CreateCellElement(Telerik.Windows.Controls.GridView.GridViewCell,System.Object)">
             <summary>
@@ -4418,6 +4488,11 @@
             <returns>
             An object that represents the content of the cell.
             </returns>
+        </member>
+        <member name="P:Telerik.Windows.Controls.GridViewExpressionColumn.ExportedElementWidth">
+            <summary>
+            Gets the actual width of the column.
+            </summary>
         </member>
         <member name="P:Telerik.Windows.Controls.GridViewExpressionColumn.Expression">
             <summary>
@@ -4520,6 +4595,99 @@
             Gets or sets the selected value.
             </summary>
             <value>The selected value.</value>
+        </member>
+        <member name="T:Telerik.Windows.DragDrop.Behaviors.GridViewDragDrop">
+            <summary>
+            Holds the instances of the specific Helper,Behavior and State needed to perform drag drop operation in RadGridView.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.DragDrop.Behaviors.GridViewDragDropBehavior">
+            <summary>
+            Provides drag and drop capabilities for RadGridView.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.DragDrop.Behaviors.GridViewDragDropBehavior.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.Windows.DragDrop.Behaviors.GridViewDragDropBehavior"/> class.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.DragDrop.Behaviors.GridViewDragDropBehavior.CanDrop(Telerik.Windows.DragDrop.Behaviors.GridViewDragDropState)">
+            <summary>
+            Determines whether this instance can drop the specified state.
+            </summary>
+            <param name="state">DragDrop state.</param>
+            <returns>
+              <c>true</c> if this instance can drop the specified state; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:Telerik.Windows.DragDrop.Behaviors.GridViewDragDropBehavior.Drop(Telerik.Windows.DragDrop.Behaviors.GridViewDragDropState)">
+            <summary>
+            Completes the drop operation. This method is called only in the context of the drop target control.
+            </summary>
+            <param name="state">DragDropState that provides context for the current operation.</param>
+            <remarks>
+            When the drag source and the drop target are the same control, this method is called before DragCompleted.
+            </remarks>
+        </member>
+        <member name="M:Telerik.Windows.DragDrop.Behaviors.GridViewDragDropBehavior.CopyDraggedItems(Telerik.Windows.DragDrop.Behaviors.GridViewDragDropState)">
+            <summary>
+            Copies the items that are dragged in the operation specified by the provided GridViewDragDropState.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.DragDrop.Behaviors.GridViewDragDropHelper">
+            <summary>
+            Helper class that binds the DragDropManager events with a DragDropBehavior.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.DragDrop.Behaviors.GridViewDragDropHelper.GetItemsSource(System.Windows.FrameworkElement)">
+            <summary>
+            Returns a list containing the items of the specified RadGridView.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.DragDrop.Behaviors.GridViewDragDropHelper.GetContainerFromItem(System.Windows.FrameworkElement,System.Object)">
+            <summary>
+            Gets the container from item.
+            </summary>
+            <param name="control">The control.</param>
+            <param name="item">The item.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.Windows.DragDrop.Behaviors.GridViewDragDropHelper.GetDraggedItems(System.Windows.FrameworkElement)">
+            <summary>
+            Returns the SelectedItems list of the RadGridView that contains the dragged row and adds the dragged row to the list if it is not already present there.
+            </summary>
+            <param name="element">The source control of the drag operation.</param>
+            <returns>The items that should be dragged.</returns>
+        </member>
+        <member name="M:Telerik.Windows.DragDrop.Behaviors.GridViewDragDropHelper.FindDragSource(System.Windows.FrameworkElement)">
+            <summary>
+            Finds the RadGridView that contains the provided element.
+            </summary>
+            <param name="element">The element that raised the DragInitialize event.</param>
+        </member>
+        <member name="M:Telerik.Windows.DragDrop.Behaviors.GridViewDragDropHelper.FindDraggedItem(System.Windows.FrameworkElement)">
+            <summary>
+            Finds the GridViewRow that contains the provided element.
+            </summary>
+            <param name="element">The element that raised the DragInitialize event.</param>
+        </member>
+        <member name="M:Telerik.Windows.DragDrop.Behaviors.GridViewDragDropHelper.FindDropItemsControl(System.Windows.FrameworkElement,System.Object)">
+            <summary>
+            Finds the RadGridView that should accept the dragged items.
+            </summary>
+            <param name="element">The element that raised the Drop event.</param>
+            <param name="data">The DataObject for the current drag operation.</param>
+        </member>
+        <member name="M:Telerik.Windows.DragDrop.Behaviors.GridViewDragDropHelper.FindDropTarget(System.Windows.FrameworkElement)">
+            <summary>
+            Finds a RadGridView from the target control that contains the provided element.
+            </summary>
+            <param name="element">The element that raised the Drop event.</param>
+        </member>
+        <member name="T:Telerik.Windows.DragDrop.Behaviors.GridViewDragDropState">
+            <summary>
+            Stores current drag state when performing drag from RadGridView through GridViewDragDropBehavior.
+            </summary>
         </member>
         <member name="T:Telerik.Windows.Controls.GridView.ColumnReorderOptions">
             <summary>
@@ -7612,6 +7780,14 @@
             <param name="oldValues">The old values.</param>
             <param name="routedEvent">The routed event.</param>
         </member>
+        <member name="M:Telerik.Windows.Controls.GridViewRowValidatingEventArgs.#ctor(Telerik.Windows.Controls.GridView.GridViewRow,System.Collections.Generic.IDictionary{System.String,System.Object},Telerik.Windows.RoutedEvent)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.Windows.Controls.GridViewRowValidatingEventArgs"/> class.
+            </summary>
+            <param name="row">The row.</param>
+            <param name="oldValues">The old values.</param>
+            <param name="routedEvent">The routed event.</param>
+        </member>
         <member name="P:Telerik.Windows.Controls.GridViewRowValidatingEventArgs.Row">
             <summary>
             Gets or sets the row.
@@ -7973,9 +8149,15 @@
         </member>
         <member name="P:Telerik.Windows.Controls.GridView.DistinctValueViewModel.ConvertedValue">
             <summary>
-            Gets the converted value for this .
+            Gets the converted value.
             </summary>
             <value>The converted value.</value>
+        </member>
+        <member name="P:Telerik.Windows.Controls.GridView.DistinctValueViewModel.RawValue">
+            <summary>
+            Gets the raw value.
+            </summary>
+            <value>The raw value.</value>
         </member>
         <member name="T:Telerik.Windows.Controls.GridView.FieldFilterDescriptor">
             <summary>
@@ -13875,6 +14057,11 @@
             Identifies the AutoLoadHierarchy property. 
             </summary>
         </member>
+        <member name="F:Telerik.Windows.Controls.RadTreeListView.AutoExpandItemsProperty">
+            <summary>
+            Identifies the AutoExpandItems property. 
+            </summary>
+        </member>
         <member name="F:Telerik.Windows.Controls.RadTreeListView.HierarchyColumnIndexProperty">
             <summary>
             Identifies the HierarchyColumnIndex property.
@@ -13991,6 +14178,11 @@
             Gets or sets value indicating if the hierarchy should be loaded initially or not.
             </summary>
         </member>
+        <member name="P:Telerik.Windows.Controls.RadTreeListView.AutoExpandItems">
+            <summary>
+            Gets or sets value indicating if the hierarchy items should be expanded initially or not.
+            </summary>
+        </member>
         <member name="P:Telerik.Windows.Controls.RadTreeListView.HierarchyColumnIndex">
             <summary>
             Gets or sets the display index of the column that will contain the hierarchy. This property takes effect only if assigned before ItemsSource!
@@ -14103,6 +14295,11 @@
         <member name="T:Telerik.Windows.Controls.TreeListView.TreeListCellsPanel">
             <summary>
             A panel that arranges the cells of a TreeListView.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.TreeListView.TreeListCellsPanel.EffectiveHierarchyColumnIndex">
+            <summary>
+            Represents current ColumnIndex that should display hierarchy expander.
             </summary>
         </member>
         <member name="T:Telerik.Windows.Controls.TreeListView.TreeListViewKeyboardCommandProvider">

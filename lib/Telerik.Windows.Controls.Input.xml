@@ -52,6 +52,11 @@
             Identifies the MemoryButtonsVisibility dependency property.
             </summary>		
         </member>
+        <member name="F:Telerik.Windows.Controls.Calculator.CalculatorBase.DecimalSeparatorProperty">
+            <summary>
+            Identifies the DecimalSeparator dependency property.
+            </summary>
+        </member>
         <member name="F:Telerik.Windows.Controls.Calculator.CalculatorBase.ErrorMessageProperty">
             <summary>
             Identifies the ErrorMessage dependency property.
@@ -131,6 +136,11 @@
             <value>
             The error message.
             </value>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Calculator.CalculatorBase.DecimalSeparator">
+            <summary>
+            Gets decimal separator depending on the current culture.
+            </summary>
         </member>
         <member name="T:Telerik.Windows.Controls.Calculator.DecimalDisplayValueConverter">
             <summary>
@@ -1103,7 +1113,7 @@
                     more information on the control parts and template structures.
                 </para>
                 <para>
-                    Please note that the <strong>RadCalendar</strong> currently supports <strong>only Gregorian</strong> calendar
+                    Please note that the <strong>RadCalendar</strong> currently supports <strong>only Gregorian</strong> calendar.
                 </para>
             </remarks>
             <seealso cref="P:Telerik.Windows.Controls.RadCalendar.SelectedDate"/>
@@ -2399,7 +2409,7 @@
             </summary>
             <remarks>
                 <para>
-                    By default if no value is set (or is set to null), the CalendarWeek rule will be ta
+                    By default if no value is set (or is set to null), the CalendarWeek rule will be ta.
                 </para>
             </remarks>
         </member>
@@ -4985,7 +4995,7 @@
             This is a base palette.
             </summary>
             <remarks>
-            The number of columns in the Web216Palette are 16 
+            The number of columns in the Web216Palette are 16.
             </remarks>
         </member>
         <member name="F:Telerik.Windows.Controls.ColorPreset.ReallyWebSafe">
@@ -4995,7 +5005,7 @@
              This is a base palette.
             </summary>
             <remarks>
-            The number of columns in the ReallyWebSafe are 18 
+            The number of columns in the ReallyWebSafe are 18.
             </remarks>
         </member>
         <member name="F:Telerik.Windows.Controls.ColorPreset.Office">
@@ -6345,9 +6355,9 @@
             for a source of a palette view object.
             Example:
             RadCplorPaletteViiew paletteView = new RadcolorPaletteView();
-            paletteView.Palette = ColorPreset.Office;
+            paletteView.Palette = ColorPreset.Office;.
             </remarks>
-            <value>The desired ColorPreset value..</value>
+            <value>The desired ColorPreset value.</value>
         </member>
         <member name="P:Telerik.Windows.Controls.RadColorPaletteView.PaletteColumnsCount">
             <summary>
@@ -6653,6 +6663,7 @@
             Occurs when an item from  the RadColorPicker has been selected.
             </summary>
             <example>
+            Sample code:
                 <code lang="XAML">
                     <![CDATA[
                     <telerik:RadColorPicker 
@@ -6668,7 +6679,7 @@
             			Color color = colorPicker.SelectedColor;
                     }
                     ]]>
-            	</code>
+            	</code>.
             </example>
         </member>
         <member name="E:Telerik.Windows.Controls.RadColorPicker.Click">
@@ -6981,6 +6992,7 @@
             Occurs when an item from one of the RadcolorPaletteViews  has been selected.
             </summary>
             <example>
+            Sample code:
                 <code lang="XAML">
                     <![CDATA[
                     <telerik:RadcolorSelector 
@@ -6996,7 +7008,7 @@
             			Color color = selector.SelectedColor;
                     }
                     ]]>
-            	</code>
+            	</code>.
             </example>
         </member>
         <member name="P:Telerik.Windows.Controls.RadColorSelector.MainPaletteColumnsCount">
@@ -7458,6 +7470,13 @@
             When overridden in a derived class, is invoked whenever application code or internal processes (such as a rebuilding layout pass) call <see cref="M:System.Windows.Controls.Control.ApplyTemplate"/>.
             </summary>
         </member>
+        <member name="M:Telerik.Windows.Controls.RadComboBox.HandleTextInput(System.String)">
+            <summary>
+            Contains the text input logic of RadComboBox when the control is not editable. This method is called from a TextInput event handler.
+            </summary>
+            <param name="text">The text from the corresponding TextCompositionEventArgs.</param>
+            <returns>True if the TextInput event should be handled, otherwise false.</returns>
+        </member>
         <member name="M:Telerik.Windows.Controls.RadComboBox.HandleKeyDown(System.Windows.Input.Key,System.Int32)">
             <summary>
             Contains the keyboard navigation logic of RadComboBox.
@@ -7747,6 +7766,11 @@
             Gets whether Style should be applied on container even if Style property is already set.
             </summary>
             <value></value>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadComboBox.TextInputString">
+            <summary>
+            Gets or sets the current text input that the user entered when IsEditable=false or IsReadOnly=true.
+            </summary>
         </member>
         <member name="T:Telerik.Windows.Controls.RadComboBoxItem">
             <summary>
@@ -9086,6 +9110,11 @@
             Identifies the SelectionStartOnSignChanged dependency property.
             </summary>
         </member>
+        <member name="F:Telerik.Windows.Controls.MaskedInput.MaskedInputExtensions.RestrictInvalidTextProperty">
+            <summary>
+            Identifies the RestrictInvalidText dependency property. If set to true, then the dislay text will be restricted and will not be updated with invalid values.
+            </summary>
+        </member>
         <member name="M:Telerik.Windows.Controls.MaskedInput.MaskedInputExtensions.GetMaximum(System.Windows.DependencyObject)">
             <summary>
             
@@ -9183,6 +9212,20 @@
             </summary>
             <param name="obj"></param>
             <param name="value"></param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.MaskedInput.MaskedInputExtensions.GetRestrictInvalidText(System.Windows.DependencyObject)">
+            <summary>
+            Gets the restrict invalid text.
+            </summary>
+            <param name="obj">The obj.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.MaskedInput.MaskedInputExtensions.SetRestrictInvalidText(System.Windows.DependencyObject,System.Boolean)">
+            <summary>
+            Sets the restrict invalid text.
+            </summary>
+            <param name="obj">The obj.</param>
+            <param name="value">If set to <c>true</c> [value].</param>
         </member>
         <member name="M:Telerik.Windows.Controls.MaskedInput.MaskedInputExtensions.GetSelectionStartOnSignChanged(System.Windows.DependencyObject)">
             <summary>
@@ -15237,7 +15280,7 @@
             
             You can add several filter patterns to a filter by separating the file types with semicolons, for example: 
             
-            Image Files(*.BMP;*.JPG;*.GIF)|*.BMP;*.JPG;*.GIF|All files (*.*)|*.* 
+            Image Files(*.BMP;*.JPG;*.GIF)|*.BMP;*.JPG;*.GIF|All files (*.*)|*.*.
             
             </example>
             <seealso cref="P:Telerik.Windows.Controls.RadUpload.FilterIndex"/>
@@ -15251,6 +15294,7 @@
             In order to get the value in the handler use this.Request.Form["myKey1"] syntax.
             </remarks>
             <example>
+            Code sample:
                 <code lang="CS">
                   <![CDATA[
                     Dictionary<string, string> myPostFields = new Dictionary<string, string>();
@@ -15258,7 +15302,7 @@
                     myPostFields.Add("myKey2", "myValue2");
                     RadUpload1.AdditionalPostFields = myPostFields;
                   ]]>
-                </code>
+                </code>.
             </example>
         </member>
         <member name="P:Telerik.Windows.Controls.RadUpload.FilterIndex">
@@ -15344,14 +15388,14 @@
             The size is in Bytes.
             The default maximum size of the HTTP POST Request is 2MB. If you want to use a buffer size larger than this, you would have to configure this from the server's WebConfig.
             Setting a 10MB POST Request limit :
-            &lt;httpRuntime  maxRequestLength="11000000" executionTimeout="3600" />
+            &lt;httpRuntime  maxRequestLength="11000000" executionTimeout="3600"/>.
             </remarks>
         </member>
         <member name="P:Telerik.Windows.Controls.RadUpload.MaxFileSize">
             <summary>
             Gets or sets the maximum allowed size of a single file, in bytes.
             </summary>
-            <remarks>The size is in Bytes</remarks>
+            <remarks>The size is in Bytes.</remarks>
             <seealso cref="P:Telerik.Windows.Controls.RadUpload.MaxUploadSize"/>
         </member>
         <member name="P:Telerik.Windows.Controls.RadUpload.UploadServiceUrl">
@@ -15362,6 +15406,7 @@
             The Upload handler should be on the same server where the silverlight page is hosted.
             </remarks>
             <example>
+            Code sample:
               <code lang="CS">
                 <![CDATA[
                   <telerik:RadUpload
@@ -15369,14 +15414,14 @@
                      UploadServiceUrl="/Ag/RadUploadHandler.ashx"
                   />
                 ]]>
-              </code>
+              </code>.
             </example>
         </member>
         <member name="P:Telerik.Windows.Controls.RadUpload.MaxUploadSize">
             <summary>
             Gets or sets the maximum Total allowed size for the selected files, in bytes.
             </summary>
-            <remarks>The size is in Bytes</remarks>
+            <remarks>The size is in Bytes.</remarks>
             <seealso cref="P:Telerik.Windows.Controls.RadUpload.MaxFileSize"/>
         </member>
         <member name="P:Telerik.Windows.Controls.RadUpload.MaxFileCount">
@@ -15711,7 +15756,7 @@
             Gets or sets the target folder. Change this property only if you want the TargetFolder to be different for this file or user.
             </summary>
             <value>The target folder.</value>
-            <remarks>Default value is the value of TargetFolder property of RadUpload</remarks>
+            <remarks>Default value is the value of TargetFolder property of RadUpload.</remarks>
             <see cref="P:Telerik.Windows.Controls.RadUpload.TargetFolder"/>
         </member>
         <member name="P:Telerik.Windows.Controls.RadUploadPostData.TargetPhysicalFolder">
@@ -15719,7 +15764,7 @@
             Gets or sets the target physical folder. Change this property only if you want the TargetPhysicalFolder to be different for this file or user.
             </summary>
             <value>The target physical folder.</value>
-            <remarks>Default value is the value of TargetPhysicalFolder property of RadUpload</remarks>
+            <remarks>Default value is the value of TargetPhysicalFolder property of RadUpload.</remarks>
             <see cref="P:Telerik.Windows.Controls.RadUpload.TargetPhysicalFolder"/>
         </member>
         <member name="P:Telerik.Windows.Controls.RadUploadPostData.OverwriteExistingFiles">
@@ -15727,7 +15772,7 @@
             Gets or sets wherether the existing files with the same name should be overriden. Change this property only if you want the setting to be different for this file.
             </summary>
             <value>The target physical folder.</value>
-            <remarks>Default value is the value of OverwriteExsitingFiles property of RadUpload</remarks>
+            <remarks>Default value is the value of OverwriteExsitingFiles property of RadUpload.</remarks>
             <see cref="P:Telerik.Windows.Controls.RadUpload.OverwriteExistingFiles"/>
         </member>
         <member name="P:Telerik.Windows.Controls.RadUploadPostData.Guid">

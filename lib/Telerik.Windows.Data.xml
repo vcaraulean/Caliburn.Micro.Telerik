@@ -250,6 +250,47 @@
             The <see cref="T:Telerik.Windows.Data.AggregateResult"/> for the specified function if any, otherwise null.
             </value>
         </member>
+        <member name="T:Telerik.Windows.Data.DataItemCollection">
+            <summary>
+            DataItemCollection
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Data.IQueryableCollectionView">
+            <summary>
+            Represents a view for grouping, sorting and filtering a data collection.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Data.IItemProperties">
+            <summary>
+            Defines a property that provides information about an object's properties.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Data.IItemProperties.ItemProperties">
+            <summary>
+            Gets a collection that contains information about the properties that are available on the items in a collection.
+            </summary>
+            <returns>
+            A collection that contains information about the properties that are available on the items in a collection.
+            </returns>
+        </member>
+        <member name="P:Telerik.Windows.Data.IQueryableCollectionView.FilterDescriptors">
+            <summary>
+            Gets the filter descriptors used for filtering operations.
+            </summary>
+            <value>The filter descriptors.</value>
+        </member>
+        <member name="P:Telerik.Windows.Data.IQueryableCollectionView.GroupDescriptors">
+            <summary>
+            Gets the group descriptors used for grouping operations.
+            </summary>
+            <value>The group descriptors.</value>
+        </member>
+        <member name="P:Telerik.Windows.Data.IQueryableCollectionView.SortDescriptors">
+            <summary>
+            Gets the sort descriptors used for sorting operations.
+            </summary>
+            <value>The sort descriptors.</value>
+        </member>
         <member name="T:Telerik.Windows.Data.IEditableCollectionViewAddNewItem">
             <summary>
             Defines methods and properties that a CollectionView implements to enable specifying adding items of a specific type.
@@ -269,6 +310,664 @@
             <value>
             	<c>true</c> if a specified object can be added to the collection; otherwise <c>false</c>.
             </value>
+        </member>
+        <member name="M:Telerik.Windows.Data.DataItemCollection.RaiseCollectionViewPropertyChanged">
+            <summary>
+            This is thrown in order to handle the incorrect behavior of the DomainDataSourceView
+            The DomainDataSourceView is reporting PageIndex of -1 even when its PageSize is 
+            greater than 0. This breaks all pagers that are listening for PropertyChanged events.
+            A pager cannot move to page -1 when its page size is greater than zero.
+            We have to trick the pagers!
+            
+            In other words, this is a simulation of the Source property of the 
+            pager changing. When the Source property of a pager changes, it knows to 
+            invalidate its PageIndex to -1 and everything is fine afterwards because
+            it is "restarted". Here the underlying source collection is actually 
+            changing, i.e. from InnerCollectionView to DomainDataSourceView,
+            but the pager does not know this beacuse its Source property is bound to us,
+            i.e. "this" and for the pager the Source property has not changed. Therefore 
+            we have to trick the pager to update its PageIndex to -1 as though its Source 
+            has changed.
+            
+            When this event is caught by RadDataPager, it will change its PageIndex to -1
+            without triggering the property changed callback.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Data.DataItemCollection.EqualizeDescriptors">
+            <summary>
+            Copies all local descriptors to the CollectionView and then updates the 
+            local collection with all descriptors from the CollectionView. In fact
+            this syncronizes the two collections.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Data.DataItemCollection.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.Windows.Data.DataItemCollection"/> class.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Data.DataItemCollection.Add(System.Object)">
+            <summary>
+            Adds an item to the <see cref="T:System.Collections.IList"/>.
+            </summary>
+            <param name="value">The <see cref="T:System.Object"/> to add to the <see cref="T:System.Collections.IList"/>.</param>
+            <returns>
+            The position into which the new element was inserted.
+            </returns>
+            <exception cref="T:System.NotSupportedException">
+            The <see cref="T:System.Collections.IList"/> is read-only.
+            -or-
+            The <see cref="T:System.Collections.IList"/> has a fixed size.
+            </exception>
+        </member>
+        <member name="M:Telerik.Windows.Data.DataItemCollection.Clear">
+            <summary>
+            Removes all items from the <see cref="T:System.Collections.IList"/>.
+            </summary>
+            <exception cref="T:System.NotSupportedException">
+            The <see cref="T:System.Collections.IList"/> is read-only.
+            </exception>
+        </member>
+        <member name="M:Telerik.Windows.Data.DataItemCollection.Contains(System.Object)">
+            <summary>
+            Determines whether the <see cref="T:System.Collections.IList"/> contains a specific value.
+            </summary>
+            <param name="value">The <see cref="T:System.Object"/> to locate in the <see cref="T:System.Collections.IList"/>.</param>
+            <returns>
+            true if the <see cref="T:System.Object"/> is found in the <see cref="T:System.Collections.IList"/>; otherwise, false.
+            </returns>
+        </member>
+        <member name="M:Telerik.Windows.Data.DataItemCollection.IndexOf(System.Object)">
+            <summary>
+            Determines the index of a specific item in the <see cref="T:System.Collections.IList"/>.
+            </summary>
+            <param name="value">The <see cref="T:System.Object"/> to locate in the <see cref="T:System.Collections.IList"/>.</param>
+            <returns>
+            The index of <paramref name="value"/> if found in the list; otherwise, -1.
+            </returns>
+        </member>
+        <member name="M:Telerik.Windows.Data.DataItemCollection.Insert(System.Int32,System.Object)">
+            <summary>
+            Inserts an item to the <see cref="T:System.Collections.IList"/> at the specified index.
+            </summary>
+            <param name="index">The zero-based index at which <paramref name="value"/> should be inserted.</param>
+            <param name="value">The <see cref="T:System.Object"/> to insert into the <see cref="T:System.Collections.IList"/>.</param>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+            	<paramref name="index"/> is not a valid index in the <see cref="T:System.Collections.IList"/>.
+            </exception>
+            <exception cref="T:System.NotSupportedException">
+            The <see cref="T:System.Collections.IList"/> is read-only.
+            -or-
+            The <see cref="T:System.Collections.IList"/> has a fixed size.
+            </exception>
+            <exception cref="T:System.NullReferenceException">
+            	<paramref name="value"/> is null reference in the <see cref="T:System.Collections.IList"/>.
+            </exception>
+        </member>
+        <member name="M:Telerik.Windows.Data.DataItemCollection.CopyTo(System.Array,System.Int32)">
+            <summary>
+            Copies the elements of the <see cref="T:System.Collections.ICollection"/> to an <see cref="T:System.Array"/>, starting at a particular <see cref="T:System.Array"/> index.
+            </summary>
+            <param name="array">The one-dimensional <see cref="T:System.Array"/> that is the destination of the elements copied from <see cref="T:System.Collections.ICollection"/>. The <see cref="T:System.Array"/> must have zero-based indexing.</param>
+            <param name="index">The zero-based index in <paramref name="array"/> at which copying begins.</param>
+            <exception cref="T:System.ArgumentNullException">
+            	<paramref name="array"/> is null.
+            </exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+            	<paramref name="index"/> is less than zero.
+            </exception>
+            <exception cref="T:System.ArgumentException">
+            	<paramref name="array"/> is multidimensional.
+            -or-
+            <paramref name="index"/> is equal to or greater than the length of <paramref name="array"/>.
+            -or-
+            The number of elements in the source <see cref="T:System.Collections.ICollection"/> is greater than the available space from <paramref name="index"/> to the end of the destination <paramref name="array"/>.
+            </exception>
+            <exception cref="T:System.ArgumentException">
+            The type of the source <see cref="T:System.Collections.ICollection"/> cannot be cast automatically to the type of the destination <paramref name="array"/>.
+            </exception>
+        </member>
+        <member name="M:Telerik.Windows.Data.DataItemCollection.GetEnumerator">
+            <summary>
+            Returns an enumerator that iterates through a collection.
+            </summary>
+            <returns>
+            An <see cref="T:System.Collections.IEnumerator"/> object that can be used to iterate through the collection.
+            </returns>
+        </member>
+        <member name="M:Telerik.Windows.Data.DataItemCollection.BindToInnerView">
+            <summary>
+            Binds our *Descriptor collections to our internal QCV's *Descriptor collections.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Data.DataItemCollection.BindDescriptorsToDescriptions">
+            <summary>
+            Binds our own *Descriptor collections to our *Description collections.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Data.DataItemCollection.BindCollections(System.Collections.Specialized.INotifyCollectionChanged,System.Collections.Specialized.INotifyCollectionChanged,System.Collections.IEqualityComparer,System.Boolean)">
+            <summary>
+            Binds two collections together using the ObservableCollectionManager and an equality comparer.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Data.DataItemCollection.BindCollections(System.Collections.Specialized.INotifyCollectionChanged,System.Collections.Specialized.INotifyCollectionChanged,System.Collections.IEqualityComparer,System.Func{System.Collections.Specialized.NotifyCollectionChangedEventArgs,System.Boolean},System.Func{System.Collections.Specialized.NotifyCollectionChangedEventArgs,System.Boolean},System.Boolean)">
+            <summary>
+            Binds two collections together using the ObservableCollectionManager and an equality comparer.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Data.DataItemCollection.GetDistinctValues(Telerik.Windows.Data.IDataFieldDescriptor,Telerik.Windows.Data.IFilterDescriptor,System.Boolean,System.Nullable{System.Int32})">
+            <summary>
+            Gets the distinct values.
+            </summary>
+            <param name="column">The column.</param>
+            <param name="existingColumnFilter">The existing column filter.</param>
+            <param name="filterDistinctValues">The filter distinct values.</param>
+            <param name="maximumValueCount">The maximum value count.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.Windows.Data.DataItemCollection.AddNewItem(System.Object)">
+            <summary>
+            Adds the specified object to the collection.
+            </summary>
+            <param name="newItem">The object to add to the collection.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.Windows.Data.DataItemCollection.AddNew">
+            <summary>
+            Adds a new item to the collection.
+            </summary>
+            <returns>
+            The new item that is added to the collection.
+            </returns>
+            <exception cref="T:System.InvalidOperationException"><see cref="P:Telerik.Windows.Data.DataItemCollection.CanAddNew"/> is false.</exception>
+        </member>
+        <member name="M:Telerik.Windows.Data.DataItemCollection.CancelEdit">
+            <summary>
+            Ends the edit transaction and discards any pending changes to the item.
+            </summary>
+            <exception cref="T:System.InvalidOperationException">
+            CancelEdit is not supported for the current edit item. 
+            Only items implementing <see cref="T:System.ComponentModel.IEditableObject"/> are supported.
+            </exception>
+        </member>
+        <member name="M:Telerik.Windows.Data.DataItemCollection.CancelNew">
+            <summary>
+            Ends the add transaction and discards the pending new item.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Data.DataItemCollection.CommitEdit">
+            <summary>
+            Ends the edit transaction and saves the pending changes.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Data.DataItemCollection.CommitNew">
+            <summary>
+            Ends the add transaction and saves the pending new item.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Data.DataItemCollection.EditItem(System.Object)">
+            <summary>
+            Begins an edit transaction of the specified item.
+            </summary>
+            <param name="item">The item to edit.</param>
+        </member>
+        <member name="M:Telerik.Windows.Data.DataItemCollection.Remove(System.Object)">
+            <summary>
+            Removes the specified item from the collection.
+            </summary>
+            <param name="item">The item to remove.</param>
+        </member>
+        <member name="M:Telerik.Windows.Data.DataItemCollection.RemoveAt(System.Int32)">
+            <summary>
+            Removes the item at the specified position from the collection.
+            </summary>
+            <param name="index">The position of the item to remove.</param>
+        </member>
+        <member name="M:Telerik.Windows.Data.DataItemCollection.OnPropertyChanged(System.ComponentModel.PropertyChangedEventArgs)">
+            <summary>
+            Raises the <see cref="E:PropertyChanged"/> event.
+            </summary>
+            <param name="e">The <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:Telerik.Windows.Data.DataItemCollection.DeferRefresh">
+            <summary>
+            Enters a defer cycle that you can use to merge changes to the view and delay automatic refresh.
+            </summary>
+            <returns>
+            An <see cref="T:System.IDisposable"/> object that you can use to dispose of the calling object.
+            </returns>
+        </member>
+        <member name="M:Telerik.Windows.Data.DataItemCollection.EndDefer">
+            <summary>
+            Ends the defer.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Data.DataItemCollection.MoveCurrentTo(System.Object)">
+            <summary>
+            Sets the specified item to be the <see cref="P:System.ComponentModel.ICollectionView.CurrentItem"/> in the view.
+            </summary>
+            <param name="item">The item to set as the <see cref="P:System.ComponentModel.ICollectionView.CurrentItem"/>.</param>
+            <returns>
+            true if the resulting <see cref="P:System.ComponentModel.ICollectionView.CurrentItem"/> is within the view; otherwise, false.
+            </returns>
+        </member>
+        <member name="M:Telerik.Windows.Data.DataItemCollection.MoveCurrentToFirst">
+            <summary>
+            Sets the first item in the view as the <see cref="P:System.ComponentModel.ICollectionView.CurrentItem"/>.
+            </summary>
+            <returns>
+            true if the resulting <see cref="P:System.ComponentModel.ICollectionView.CurrentItem"/> is an item within the view; otherwise, false.
+            </returns>
+        </member>
+        <member name="M:Telerik.Windows.Data.DataItemCollection.MoveCurrentToLast">
+            <summary>
+            Sets the last item in the view as the <see cref="P:System.ComponentModel.ICollectionView.CurrentItem"/>.
+            </summary>
+            <returns>
+            true if the resulting <see cref="P:System.ComponentModel.ICollectionView.CurrentItem"/> is an item within the view; otherwise, false.
+            </returns>
+        </member>
+        <member name="M:Telerik.Windows.Data.DataItemCollection.MoveCurrentToNext">
+            <summary>
+            Sets the item after the <see cref="P:System.ComponentModel.ICollectionView.CurrentItem"/> in the view as the <see cref="P:System.ComponentModel.ICollectionView.CurrentItem"/>.
+            </summary>
+            <returns>
+            true if the resulting <see cref="P:System.ComponentModel.ICollectionView.CurrentItem"/> is an item within the view; otherwise, false.
+            </returns>
+        </member>
+        <member name="M:Telerik.Windows.Data.DataItemCollection.MoveCurrentToPosition(System.Int32)">
+            <summary>
+            Sets the item at the specified index to be the <see cref="P:System.ComponentModel.ICollectionView.CurrentItem"/> in the view.
+            </summary>
+            <param name="position">The index to set the <see cref="P:System.ComponentModel.ICollectionView.CurrentItem"/> to.</param>
+            <returns>
+            true if the resulting <see cref="P:System.ComponentModel.ICollectionView.CurrentItem"/> is an item within the view; otherwise, false.
+            </returns>
+        </member>
+        <member name="M:Telerik.Windows.Data.DataItemCollection.MoveCurrentToPrevious">
+            <summary>
+            Sets the item before the <see cref="P:System.ComponentModel.ICollectionView.CurrentItem"/> in the view as the <see cref="P:System.ComponentModel.ICollectionView.CurrentItem"/>.
+            </summary>
+            <returns>
+            true if the resulting <see cref="P:System.ComponentModel.ICollectionView.CurrentItem"/> is an item within the view; otherwise, false.
+            </returns>
+        </member>
+        <member name="M:Telerik.Windows.Data.DataItemCollection.OnCurrentChanging(System.ComponentModel.CurrentChangingEventArgs)">
+            <summary>
+            Invokes the CurrentChanging event.
+            </summary>
+            <param name="e">Arguments that carry the information of the event.</param>
+        </member>
+        <member name="M:Telerik.Windows.Data.DataItemCollection.OnCurrentChanged(System.EventArgs)">
+            <summary>
+            Invokes CurrentChanged event.
+            </summary>
+            <param name="e">Arguments that carry data for the event.</param>
+        </member>
+        <member name="M:Telerik.Windows.Data.DataItemCollection.Refresh">
+            <summary>
+            Recreates the view.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Data.DataItemCollection.MoveToFirstPage">
+            <summary>Sets the first page as the current page.</summary>
+            <returns>true if the operation was successful; otherwise, false.</returns>
+        </member>
+        <member name="M:Telerik.Windows.Data.DataItemCollection.MoveToLastPage">
+            <summary>Sets the last page as the current page.</summary>
+            <returns>true if the operation was successful; otherwise, false.</returns>
+        </member>
+        <member name="M:Telerik.Windows.Data.DataItemCollection.MoveToNextPage">
+            <summary>Moves to the page after the current page.</summary>
+            <returns>true if the operation was successful; otherwise, false.</returns>
+        </member>
+        <member name="M:Telerik.Windows.Data.DataItemCollection.MoveToPage(System.Int32)">
+            <summary>Requests a page move to the page at the specified index.</summary>
+            <returns>true if the move was successfully initiated; otherwise, false.</returns>
+            <param name="pageIndex">The index of the page to move to.</param>
+        </member>
+        <member name="M:Telerik.Windows.Data.DataItemCollection.MoveToPreviousPage">
+            <summary>Moves to the page before the current page.</summary>
+            <returns>true if the operation was successful; otherwise, false.</returns>
+        </member>
+        <member name="E:Telerik.Windows.Data.DataItemCollection.CollectionChanged">
+            <summary>
+            Occurs when the collection changes.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Data.DataItemCollection.IsGrouped">
+            <summary>
+            Gets a value indicating whether this instance is grouped.
+            </summary>
+            <value>
+            	<c>true</c> if this instance is grouped; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Telerik.Windows.Data.DataItemCollection.System#Collections#IList#IsFixedSize">
+            <summary>
+            Gets a value indicating whether the <see cref="T:System.Collections.IList"/> has a fixed size.
+            </summary>
+            <value></value>
+            <returns>true if the <see cref="T:System.Collections.IList"/> has a fixed size; otherwise, false.
+            </returns>
+        </member>
+        <member name="P:Telerik.Windows.Data.DataItemCollection.System#Collections#IList#IsReadOnly">
+            <summary>
+            Gets a value indicating whether the <see cref="T:System.Collections.IList"/> is read-only.
+            </summary>
+            <value></value>
+            <returns>true if the <see cref="T:System.Collections.IList"/> is read-only; otherwise, false.
+            </returns>
+        </member>
+        <member name="P:Telerik.Windows.Data.DataItemCollection.Item(System.Int32)">
+            <summary>
+            Gets or sets the <see cref="T:System.Object"/> at the specified index.
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Telerik.Windows.Data.DataItemCollection.Count">
+            <summary>
+            Gets the number of elements contained in the <see cref="T:System.Collections.ICollection"/>.
+            </summary>
+            <value></value>
+            <returns>
+            The number of elements contained in the <see cref="T:System.Collections.ICollection"/>.
+            </returns>
+        </member>
+        <member name="P:Telerik.Windows.Data.DataItemCollection.ItemProperties">
+            <summary>
+            Gets a collection of objects that describes the properties of the items in the collection.
+            </summary>
+            <returns>
+            A collection of objects that describes the properties of the items in the collection.
+            </returns>
+        </member>
+        <member name="P:Telerik.Windows.Data.DataItemCollection.DescriptorsSynchronizationMode">
+            <summary>
+            Gets or sets a value that controls how this DataItemCollection synchronizes its FilterDescriptors, GroupDescriptor and SortDescriptors,
+            as well as GroupDescription and SortDescriptions (if appliccable), with its source.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Data.DataItemCollection.SourceCollectionView">
+            <summary>
+            Gets the SourceCollection as ICollectionView
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Data.DataItemCollection.SourcePagedCollectionView">
+            <summary>
+            Gets the SourceCollection as IPagedCollectionView
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Data.DataItemCollection.FilterDescriptors">
+            <summary>
+            Gets the filter descriptors used for filtering operations.
+            </summary>
+            <value>The filter descriptors.</value>
+        </member>
+        <member name="P:Telerik.Windows.Data.DataItemCollection.SortDescriptors">
+            <summary>
+            Gets the sort descriptors used for sorting operations.
+            </summary>
+            <value>The sort descriptors.</value>
+        </member>
+        <member name="P:Telerik.Windows.Data.DataItemCollection.GroupDescriptors">
+            <summary>
+            Gets the group descriptors used for grouping operations.
+            </summary>
+            <value>The group descriptors.</value>
+        </member>
+        <member name="P:Telerik.Windows.Data.DataItemCollection.CanAddNew">
+            <summary>
+            Gets a value that indicates whether a new item can be added to the collection.
+            </summary>
+            <returns>
+            true if <see cref="P:Telerik.Windows.Data.DataItemCollection.SourceCollection"/> is not <see cref="P:System.Collections.IList.IsFixedSize"/> and 
+            collection element has a default constructor; otherwise, false.
+            </returns>
+        </member>
+        <member name="P:Telerik.Windows.Data.DataItemCollection.CanAddNewItem">
+            <summary>
+            Gets a value that indicates whether a specified object can be added to the collection.
+            </summary>
+            <value>
+            	<c>true</c> if a specified object can be added to the collection; otherwise <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Telerik.Windows.Data.DataItemCollection.CanCancelEdit">
+            <summary>
+            Gets a value that indicates whether the editing of an item can be canceled.
+            </summary>
+            <returns>
+            true if <see cref="P:Telerik.Windows.Data.DataItemCollection.CurrentEditItem"/> implements <see cref="T:System.ComponentModel.IEditableObject"/>; 
+            otherwise, false.
+            </returns>
+        </member>
+        <member name="P:Telerik.Windows.Data.DataItemCollection.CanRemove">
+            <summary>
+            Gets a value that indicates whether an item can be removed from the collection.
+            </summary>
+            <returns>
+            true if an item can be removed from the collection; otherwise, false.
+            </returns>
+        </member>
+        <member name="P:Telerik.Windows.Data.DataItemCollection.CurrentAddItem">
+            <summary>
+            Gets the item that is being added during the current add transaction.
+            </summary>
+            <returns>
+            The item that is being added if <see cref="P:Telerik.Windows.Data.DataItemCollection.IsAddingNew"/> is true; otherwise, null.
+            </returns>
+        </member>
+        <member name="P:Telerik.Windows.Data.DataItemCollection.CurrentEditItem">
+            <summary>
+            Gets the item in the collection that is being edited.
+            </summary>
+            <returns>
+            The item in the collection that is being edited 
+            if <see cref="P:Telerik.Windows.Data.DataItemCollection.IsEditingItem"/> is true; otherwise, null.
+            </returns>
+        </member>
+        <member name="P:Telerik.Windows.Data.DataItemCollection.IsAddingNew">
+            <summary>
+            Gets a value that indicates whether an add transaction is in progress.
+            </summary>
+            <returns>
+            true if an add transaction is in progress; otherwise, false.
+            </returns>
+        </member>
+        <member name="P:Telerik.Windows.Data.DataItemCollection.IsEditingItem">
+            <summary>
+            Gets a value that indicates whether an edit transaction is in progress.
+            </summary>
+            <returns>
+            true if an edit transaction is in progress; otherwise, false.
+            </returns>
+        </member>
+        <member name="P:Telerik.Windows.Data.DataItemCollection.NewItemPlaceholderPosition">
+            <summary>
+            Gets or sets the position of the new item placeholder in the collection.
+            </summary>
+            <returns>
+            One of the enumeration values that specifies the position of the new item placeholder in the collection.
+            </returns>
+        </member>
+        <member name="E:Telerik.Windows.Data.DataItemCollection.PropertyChanged">
+            <summary>
+            Occurs when a property value changes.
+            </summary>
+        </member>
+        <member name="E:Telerik.Windows.Data.DataItemCollection.CurrentChanged">
+            <summary>
+            When implementing this interface, raise this event after the current item has been changed.
+            </summary>
+        </member>
+        <member name="E:Telerik.Windows.Data.DataItemCollection.CurrentChanging">
+            <summary>
+            When implementing this interface, raise this event before changing the current item. Event handler can cancel this event.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Data.DataItemCollection.CanFilter">
+            <summary>
+            Gets a value that indicates whether this view supports filtering via the <see cref="P:System.ComponentModel.ICollectionView.Filter"/> property.
+            </summary>
+            <value></value>
+            <returns>true if this view support filtering; otherwise, false.
+            </returns>
+        </member>
+        <member name="P:Telerik.Windows.Data.DataItemCollection.CanGroup">
+            <summary>
+            Gets a value that indicates whether this view supports grouping via the <see cref="P:System.ComponentModel.ICollectionView.GroupDescriptions"/> property.
+            </summary>
+            <value></value>
+            <returns>true if this view supports grouping; otherwise, false.
+            </returns>
+        </member>
+        <member name="P:Telerik.Windows.Data.DataItemCollection.CanSort">
+            <summary>
+            Gets a value that indicates whether this view supports sorting via the <see cref="P:System.ComponentModel.ICollectionView.SortDescriptions"/> property.
+            </summary>
+            <value></value>
+            <returns>true if this view supports sorting; otherwise, false.
+            </returns>
+        </member>
+        <member name="P:Telerik.Windows.Data.DataItemCollection.Culture">
+            <summary>
+            Gets or sets the cultural info for any operations of the view that may differ by culture, such as sorting.
+            </summary>
+            <value></value>
+            <returns>
+            The culture to use during sorting.
+            </returns>
+        </member>
+        <member name="P:Telerik.Windows.Data.DataItemCollection.CurrentItem">
+            <summary>
+            Gets the current item in the view.
+            </summary>
+            <value></value>
+            <returns>
+            The current item of the view or null if there is no current item.
+            </returns>
+        </member>
+        <member name="P:Telerik.Windows.Data.DataItemCollection.CurrentPosition">
+            <summary>
+            Gets the ordinal position of the <see cref="P:System.ComponentModel.ICollectionView.CurrentItem"/> within the view.
+            </summary>
+            <value></value>
+            <returns>
+            The ordinal position of the <see cref="P:System.ComponentModel.ICollectionView.CurrentItem"/> within the view.
+            </returns>
+        </member>
+        <member name="P:Telerik.Windows.Data.DataItemCollection.Filter">
+            <summary>
+            Gets or sets a callback used to determine if an item is suitable for inclusion in the view.
+            </summary>
+            <value></value>
+            <returns>
+            A method used to determine if an item is suitable for inclusion in the view.
+            </returns>
+        </member>
+        <member name="P:Telerik.Windows.Data.DataItemCollection.GroupDescriptions">
+            <summary>
+            Gets a collection of <see cref="T:System.ComponentModel.GroupDescription"/> objects that describe how the items in the collection are grouped in the view.
+            </summary>
+            <value></value>
+            <returns>
+            A collection of <see cref="T:System.ComponentModel.GroupDescription"/> objects that describe how the items in the collection are grouped in the view.
+            </returns>
+        </member>
+        <member name="P:Telerik.Windows.Data.DataItemCollection.Groups">
+            <summary>
+            Gets the top-level groups.
+            </summary>
+            <value></value>
+            <returns>
+            A read-only collection of the top-level groups or null if there are no groups.
+            </returns>
+        </member>
+        <member name="P:Telerik.Windows.Data.DataItemCollection.IsCurrentAfterLast">
+            <summary>
+            Gets a value that indicates whether the <see cref="P:System.ComponentModel.ICollectionView.CurrentItem"/> of the view is beyond the end of the collection.
+            </summary>
+            <value></value>
+            <returns>
+            Returns true if the <see cref="P:System.ComponentModel.ICollectionView.CurrentItem"/> of the view is beyond the end of the collection; otherwise, false.
+            </returns>
+        </member>
+        <member name="P:Telerik.Windows.Data.DataItemCollection.IsCurrentBeforeFirst">
+            <summary>
+            Gets a value that indicates whether the <see cref="P:System.ComponentModel.ICollectionView.CurrentItem"/> of the view is beyond the beginning of the collection.
+            </summary>
+            <value></value>
+            <returns>
+            Returns true if the <see cref="P:System.ComponentModel.ICollectionView.CurrentItem"/> of the view is beyond the beginning of the collection; otherwise, false.
+            </returns>
+        </member>
+        <member name="P:Telerik.Windows.Data.DataItemCollection.IsEmpty">
+            <summary>
+            Returns a value that indicates whether the resulting view is empty.
+            </summary>
+            <value></value>
+            <returns>true if the resulting view is empty; otherwise, false.
+            </returns>
+        </member>
+        <member name="P:Telerik.Windows.Data.DataItemCollection.SortDescriptions">
+            <summary>
+            Gets a collection of <see cref="T:System.ComponentModel.SortDescription"/> objects that describe how the items in the collection are sorted in the view.
+            </summary>
+            <value></value>
+            <returns>
+            A collection of <see cref="T:System.ComponentModel.SortDescription"/> objects that describe how the items in the collection are sorted in the view.
+            </returns>
+        </member>
+        <member name="P:Telerik.Windows.Data.DataItemCollection.SourceCollection">
+            <summary>
+            Returns the underlying collection.
+            </summary>
+            <value></value>
+            <returns>
+            An <see cref="T:System.Collections.IEnumerable"/> object that is the underlying collection.
+            </returns>
+        </member>
+        <member name="E:Telerik.Windows.Data.DataItemCollection.PageChanged">
+            <summary>Occurs when the <see cref="P:Telerik.Windows.Data.DataItemCollection.PageIndex"/> has changed.</summary>
+        </member>
+        <member name="E:Telerik.Windows.Data.DataItemCollection.PageChanging">
+            <summary>Occurs when the <see cref="P:Telerik.Windows.Data.DataItemCollection.PageIndex"/> is changing.</summary>
+        </member>
+        <member name="P:Telerik.Windows.Data.DataItemCollection.CanChangePage">
+            <summary>
+            Gets a value that indicates whether the <see cref="P:Telerik.Windows.Data.DataItemCollection.PageIndex"/> value can change.
+            </summary>
+            <returns>
+            true if the <see cref="P:Telerik.Windows.Data.DataItemCollection.PageIndex"/> value can change; otherwise, false.
+            </returns>
+        </member>
+        <member name="P:Telerik.Windows.Data.DataItemCollection.IsPageChanging">
+            <summary>Gets a value that indicates whether a page index change is in process.</summary>
+            <returns>true if the page index is changing; otherwise, false.</returns>
+        </member>
+        <member name="P:Telerik.Windows.Data.DataItemCollection.ItemCount">
+            <summary>
+            Gets the minimum number of items known to be in the source collection.
+            </summary>
+            <returns>
+            The minimum number of items known to be in the source collection.
+            </returns>
+        </member>
+        <member name="P:Telerik.Windows.Data.DataItemCollection.PageIndex">
+            <summary>Gets the zero-based index of the current page.</summary>
+            <returns>The zero-based index of the current page.</returns>
+        </member>
+        <member name="P:Telerik.Windows.Data.DataItemCollection.PageSize">
+            <summary>Gets or sets the number of items to display on a page.</summary>
+            <returns>The number of items to display on a page.</returns>
+        </member>
+        <member name="P:Telerik.Windows.Data.DataItemCollection.TotalItemCount">
+            <summary>
+            Gets the total number of items in the source collection, or -1 if the total number is unknown.
+            </summary>
+            <returns>
+            The total number of items in the source collection, or -1 if the total number is unknown.
+            </returns>
         </member>
         <member name="P:Telerik.Windows.Data.KeyedCollection.NullValue">
             <summary>
@@ -358,42 +1057,6 @@
             Represents a view for grouping, sorting, filtering and paging data collection 
             using LINQ based query operators.
             </summary>
-        </member>
-        <member name="T:Telerik.Windows.Data.IQueryableCollectionView">
-            <summary>
-            Represents a view for grouping, sorting and filtering a data collection.
-            </summary>
-        </member>
-        <member name="T:Telerik.Windows.Data.IItemProperties">
-            <summary>
-            Defines a property that provides information about an object's properties.
-            </summary>
-        </member>
-        <member name="P:Telerik.Windows.Data.IItemProperties.ItemProperties">
-            <summary>
-            Gets a collection that contains information about the properties that are available on the items in a collection.
-            </summary>
-            <returns>
-            A collection that contains information about the properties that are available on the items in a collection.
-            </returns>
-        </member>
-        <member name="P:Telerik.Windows.Data.IQueryableCollectionView.FilterDescriptors">
-            <summary>
-            Gets the filter descriptors used for filtering operations.
-            </summary>
-            <value>The filter descriptors.</value>
-        </member>
-        <member name="P:Telerik.Windows.Data.IQueryableCollectionView.GroupDescriptors">
-            <summary>
-            Gets the group descriptors used for grouping operations.
-            </summary>
-            <value>The group descriptors.</value>
-        </member>
-        <member name="P:Telerik.Windows.Data.IQueryableCollectionView.SortDescriptors">
-            <summary>
-            Gets the sort descriptors used for sorting operations.
-            </summary>
-            <value>The sort descriptors.</value>
         </member>
         <member name="M:Telerik.Windows.Data.QueryableCollectionView.MoveCurrentTo(System.Object)">
             <inheritdoc />
@@ -1363,664 +2026,6 @@
             exactly one element.
             </summary>
             <param name="enumerables">The enumerables to check.</param>
-        </member>
-        <member name="T:Telerik.Windows.Data.DataItemCollection">
-            <summary>
-            DataItemCollection
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Data.DataItemCollection.RaiseCollectionViewPropertyChanged">
-            <summary>
-            This is thrown in order to handle the incorrect behavior of the DomainDataSourceView
-            The DomainDataSourceView is reporting PageIndex of -1 even when its PageSize is 
-            greater than 0. This breaks all pagers that are listening for PropertyChanged events.
-            A pager cannot move to page -1 when its page size is greater than zero.
-            We have to trick the pagers!
-            
-            In other words, this is a simulation of the Source property of the 
-            pager changing. When the Source property of a pager changes, it knows to 
-            invalidate its PageIndex to -1 and everything is fine afterwards because
-            it is "restarted". Here the underlying source collection is actually 
-            changing, i.e. from InnerCollectionView to DomainDataSourceView,
-            but the pager does not know this beacuse its Source property is bound to us,
-            i.e. "this" and for the pager the Source property has not changed. Therefore 
-            we have to trick the pager to update its PageIndex to -1 as though its Source 
-            has changed.
-            
-            When this event is caught by RadDataPager, it will change its PageIndex to -1
-            without triggering the property changed callback.
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Data.DataItemCollection.EqualizeDescriptors">
-            <summary>
-            Copies all local descriptors to the CollectionView and then updates the 
-            local collection with all descriptors from the CollectionView. In fact
-            this syncronizes the two collections.
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Data.DataItemCollection.#ctor">
-            <summary>
-            Initializes a new instance of the <see cref="T:Telerik.Windows.Data.DataItemCollection"/> class.
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Data.DataItemCollection.Add(System.Object)">
-            <summary>
-            Adds an item to the <see cref="T:System.Collections.IList"/>.
-            </summary>
-            <param name="value">The <see cref="T:System.Object"/> to add to the <see cref="T:System.Collections.IList"/>.</param>
-            <returns>
-            The position into which the new element was inserted.
-            </returns>
-            <exception cref="T:System.NotSupportedException">
-            The <see cref="T:System.Collections.IList"/> is read-only.
-            -or-
-            The <see cref="T:System.Collections.IList"/> has a fixed size.
-            </exception>
-        </member>
-        <member name="M:Telerik.Windows.Data.DataItemCollection.Clear">
-            <summary>
-            Removes all items from the <see cref="T:System.Collections.IList"/>.
-            </summary>
-            <exception cref="T:System.NotSupportedException">
-            The <see cref="T:System.Collections.IList"/> is read-only.
-            </exception>
-        </member>
-        <member name="M:Telerik.Windows.Data.DataItemCollection.Contains(System.Object)">
-            <summary>
-            Determines whether the <see cref="T:System.Collections.IList"/> contains a specific value.
-            </summary>
-            <param name="value">The <see cref="T:System.Object"/> to locate in the <see cref="T:System.Collections.IList"/>.</param>
-            <returns>
-            true if the <see cref="T:System.Object"/> is found in the <see cref="T:System.Collections.IList"/>; otherwise, false.
-            </returns>
-        </member>
-        <member name="M:Telerik.Windows.Data.DataItemCollection.IndexOf(System.Object)">
-            <summary>
-            Determines the index of a specific item in the <see cref="T:System.Collections.IList"/>.
-            </summary>
-            <param name="value">The <see cref="T:System.Object"/> to locate in the <see cref="T:System.Collections.IList"/>.</param>
-            <returns>
-            The index of <paramref name="value"/> if found in the list; otherwise, -1.
-            </returns>
-        </member>
-        <member name="M:Telerik.Windows.Data.DataItemCollection.Insert(System.Int32,System.Object)">
-            <summary>
-            Inserts an item to the <see cref="T:System.Collections.IList"/> at the specified index.
-            </summary>
-            <param name="index">The zero-based index at which <paramref name="value"/> should be inserted.</param>
-            <param name="value">The <see cref="T:System.Object"/> to insert into the <see cref="T:System.Collections.IList"/>.</param>
-            <exception cref="T:System.ArgumentOutOfRangeException">
-            	<paramref name="index"/> is not a valid index in the <see cref="T:System.Collections.IList"/>.
-            </exception>
-            <exception cref="T:System.NotSupportedException">
-            The <see cref="T:System.Collections.IList"/> is read-only.
-            -or-
-            The <see cref="T:System.Collections.IList"/> has a fixed size.
-            </exception>
-            <exception cref="T:System.NullReferenceException">
-            	<paramref name="value"/> is null reference in the <see cref="T:System.Collections.IList"/>.
-            </exception>
-        </member>
-        <member name="M:Telerik.Windows.Data.DataItemCollection.CopyTo(System.Array,System.Int32)">
-            <summary>
-            Copies the elements of the <see cref="T:System.Collections.ICollection"/> to an <see cref="T:System.Array"/>, starting at a particular <see cref="T:System.Array"/> index.
-            </summary>
-            <param name="array">The one-dimensional <see cref="T:System.Array"/> that is the destination of the elements copied from <see cref="T:System.Collections.ICollection"/>. The <see cref="T:System.Array"/> must have zero-based indexing.</param>
-            <param name="index">The zero-based index in <paramref name="array"/> at which copying begins.</param>
-            <exception cref="T:System.ArgumentNullException">
-            	<paramref name="array"/> is null.
-            </exception>
-            <exception cref="T:System.ArgumentOutOfRangeException">
-            	<paramref name="index"/> is less than zero.
-            </exception>
-            <exception cref="T:System.ArgumentException">
-            	<paramref name="array"/> is multidimensional.
-            -or-
-            <paramref name="index"/> is equal to or greater than the length of <paramref name="array"/>.
-            -or-
-            The number of elements in the source <see cref="T:System.Collections.ICollection"/> is greater than the available space from <paramref name="index"/> to the end of the destination <paramref name="array"/>.
-            </exception>
-            <exception cref="T:System.ArgumentException">
-            The type of the source <see cref="T:System.Collections.ICollection"/> cannot be cast automatically to the type of the destination <paramref name="array"/>.
-            </exception>
-        </member>
-        <member name="M:Telerik.Windows.Data.DataItemCollection.GetEnumerator">
-            <summary>
-            Returns an enumerator that iterates through a collection.
-            </summary>
-            <returns>
-            An <see cref="T:System.Collections.IEnumerator"/> object that can be used to iterate through the collection.
-            </returns>
-        </member>
-        <member name="M:Telerik.Windows.Data.DataItemCollection.BindToInnerView">
-            <summary>
-            Binds our *Descriptor collections to our internal QCV's *Descriptor collections.
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Data.DataItemCollection.BindDescriptorsToDescriptions">
-            <summary>
-            Binds our own *Descriptor collections to our *Description collections.
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Data.DataItemCollection.BindCollections(System.Collections.Specialized.INotifyCollectionChanged,System.Collections.Specialized.INotifyCollectionChanged,System.Collections.IEqualityComparer,System.Boolean)">
-            <summary>
-            Binds two collections together using the ObservableCollectionManager and an equality comparer.
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Data.DataItemCollection.BindCollections(System.Collections.Specialized.INotifyCollectionChanged,System.Collections.Specialized.INotifyCollectionChanged,System.Collections.IEqualityComparer,System.Func{System.Collections.Specialized.NotifyCollectionChangedEventArgs,System.Boolean},System.Func{System.Collections.Specialized.NotifyCollectionChangedEventArgs,System.Boolean},System.Boolean)">
-            <summary>
-            Binds two collections together using the ObservableCollectionManager and an equality comparer.
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Data.DataItemCollection.GetDistinctValues(Telerik.Windows.Data.IDataFieldDescriptor,Telerik.Windows.Data.IFilterDescriptor,System.Boolean,System.Nullable{System.Int32})">
-            <summary>
-            Gets the distinct values.
-            </summary>
-            <param name="column">The column.</param>
-            <param name="existingColumnFilter">The existing column filter.</param>
-            <param name="filterDistinctValues">The filter distinct values.</param>
-            <param name="maximumValueCount">The maximum value count.</param>
-            <returns></returns>
-        </member>
-        <member name="M:Telerik.Windows.Data.DataItemCollection.AddNewItem(System.Object)">
-            <summary>
-            Adds the specified object to the collection.
-            </summary>
-            <param name="newItem">The object to add to the collection.</param>
-            <returns></returns>
-        </member>
-        <member name="M:Telerik.Windows.Data.DataItemCollection.AddNew">
-            <summary>
-            Adds a new item to the collection.
-            </summary>
-            <returns>
-            The new item that is added to the collection.
-            </returns>
-            <exception cref="T:System.InvalidOperationException"><see cref="P:Telerik.Windows.Data.DataItemCollection.CanAddNew"/> is false.</exception>
-        </member>
-        <member name="M:Telerik.Windows.Data.DataItemCollection.CancelEdit">
-            <summary>
-            Ends the edit transaction and discards any pending changes to the item.
-            </summary>
-            <exception cref="T:System.InvalidOperationException">
-            CancelEdit is not supported for the current edit item. 
-            Only items implementing <see cref="T:System.ComponentModel.IEditableObject"/> are supported.
-            </exception>
-        </member>
-        <member name="M:Telerik.Windows.Data.DataItemCollection.CancelNew">
-            <summary>
-            Ends the add transaction and discards the pending new item.
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Data.DataItemCollection.CommitEdit">
-            <summary>
-            Ends the edit transaction and saves the pending changes.
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Data.DataItemCollection.CommitNew">
-            <summary>
-            Ends the add transaction and saves the pending new item.
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Data.DataItemCollection.EditItem(System.Object)">
-            <summary>
-            Begins an edit transaction of the specified item.
-            </summary>
-            <param name="item">The item to edit.</param>
-        </member>
-        <member name="M:Telerik.Windows.Data.DataItemCollection.Remove(System.Object)">
-            <summary>
-            Removes the specified item from the collection.
-            </summary>
-            <param name="item">The item to remove.</param>
-        </member>
-        <member name="M:Telerik.Windows.Data.DataItemCollection.RemoveAt(System.Int32)">
-            <summary>
-            Removes the item at the specified position from the collection.
-            </summary>
-            <param name="index">The position of the item to remove.</param>
-        </member>
-        <member name="M:Telerik.Windows.Data.DataItemCollection.OnPropertyChanged(System.ComponentModel.PropertyChangedEventArgs)">
-            <summary>
-            Raises the <see cref="E:PropertyChanged"/> event.
-            </summary>
-            <param name="e">The <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance containing the event data.</param>
-        </member>
-        <member name="M:Telerik.Windows.Data.DataItemCollection.DeferRefresh">
-            <summary>
-            Enters a defer cycle that you can use to merge changes to the view and delay automatic refresh.
-            </summary>
-            <returns>
-            An <see cref="T:System.IDisposable"/> object that you can use to dispose of the calling object.
-            </returns>
-        </member>
-        <member name="M:Telerik.Windows.Data.DataItemCollection.EndDefer">
-            <summary>
-            Ends the defer.
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Data.DataItemCollection.MoveCurrentTo(System.Object)">
-            <summary>
-            Sets the specified item to be the <see cref="P:System.ComponentModel.ICollectionView.CurrentItem"/> in the view.
-            </summary>
-            <param name="item">The item to set as the <see cref="P:System.ComponentModel.ICollectionView.CurrentItem"/>.</param>
-            <returns>
-            true if the resulting <see cref="P:System.ComponentModel.ICollectionView.CurrentItem"/> is within the view; otherwise, false.
-            </returns>
-        </member>
-        <member name="M:Telerik.Windows.Data.DataItemCollection.MoveCurrentToFirst">
-            <summary>
-            Sets the first item in the view as the <see cref="P:System.ComponentModel.ICollectionView.CurrentItem"/>.
-            </summary>
-            <returns>
-            true if the resulting <see cref="P:System.ComponentModel.ICollectionView.CurrentItem"/> is an item within the view; otherwise, false.
-            </returns>
-        </member>
-        <member name="M:Telerik.Windows.Data.DataItemCollection.MoveCurrentToLast">
-            <summary>
-            Sets the last item in the view as the <see cref="P:System.ComponentModel.ICollectionView.CurrentItem"/>.
-            </summary>
-            <returns>
-            true if the resulting <see cref="P:System.ComponentModel.ICollectionView.CurrentItem"/> is an item within the view; otherwise, false.
-            </returns>
-        </member>
-        <member name="M:Telerik.Windows.Data.DataItemCollection.MoveCurrentToNext">
-            <summary>
-            Sets the item after the <see cref="P:System.ComponentModel.ICollectionView.CurrentItem"/> in the view as the <see cref="P:System.ComponentModel.ICollectionView.CurrentItem"/>.
-            </summary>
-            <returns>
-            true if the resulting <see cref="P:System.ComponentModel.ICollectionView.CurrentItem"/> is an item within the view; otherwise, false.
-            </returns>
-        </member>
-        <member name="M:Telerik.Windows.Data.DataItemCollection.MoveCurrentToPosition(System.Int32)">
-            <summary>
-            Sets the item at the specified index to be the <see cref="P:System.ComponentModel.ICollectionView.CurrentItem"/> in the view.
-            </summary>
-            <param name="position">The index to set the <see cref="P:System.ComponentModel.ICollectionView.CurrentItem"/> to.</param>
-            <returns>
-            true if the resulting <see cref="P:System.ComponentModel.ICollectionView.CurrentItem"/> is an item within the view; otherwise, false.
-            </returns>
-        </member>
-        <member name="M:Telerik.Windows.Data.DataItemCollection.MoveCurrentToPrevious">
-            <summary>
-            Sets the item before the <see cref="P:System.ComponentModel.ICollectionView.CurrentItem"/> in the view as the <see cref="P:System.ComponentModel.ICollectionView.CurrentItem"/>.
-            </summary>
-            <returns>
-            true if the resulting <see cref="P:System.ComponentModel.ICollectionView.CurrentItem"/> is an item within the view; otherwise, false.
-            </returns>
-        </member>
-        <member name="M:Telerik.Windows.Data.DataItemCollection.OnCollectionViewCurrentItemChanging(System.ComponentModel.CurrentChangingEventArgs)">
-            <summary>
-            Invokes the CurrentChanging event.
-            </summary>
-            <param name="e">Arguments that carry the information of the event.</param>
-        </member>
-        <member name="M:Telerik.Windows.Data.DataItemCollection.OnCollectionViewCurrentChanged(System.EventArgs)">
-            <summary>
-            Invokes CurrentChanged event.
-            </summary>
-            <param name="e">Arguments that carry data for the event.</param>
-        </member>
-        <member name="M:Telerik.Windows.Data.DataItemCollection.Refresh">
-            <summary>
-            Recreates the view.
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Data.DataItemCollection.MoveToFirstPage">
-            <summary>Sets the first page as the current page.</summary>
-            <returns>true if the operation was successful; otherwise, false.</returns>
-        </member>
-        <member name="M:Telerik.Windows.Data.DataItemCollection.MoveToLastPage">
-            <summary>Sets the last page as the current page.</summary>
-            <returns>true if the operation was successful; otherwise, false.</returns>
-        </member>
-        <member name="M:Telerik.Windows.Data.DataItemCollection.MoveToNextPage">
-            <summary>Moves to the page after the current page.</summary>
-            <returns>true if the operation was successful; otherwise, false.</returns>
-        </member>
-        <member name="M:Telerik.Windows.Data.DataItemCollection.MoveToPage(System.Int32)">
-            <summary>Requests a page move to the page at the specified index.</summary>
-            <returns>true if the move was successfully initiated; otherwise, false.</returns>
-            <param name="pageIndex">The index of the page to move to.</param>
-        </member>
-        <member name="M:Telerik.Windows.Data.DataItemCollection.MoveToPreviousPage">
-            <summary>Moves to the page before the current page.</summary>
-            <returns>true if the operation was successful; otherwise, false.</returns>
-        </member>
-        <member name="E:Telerik.Windows.Data.DataItemCollection.CollectionChanged">
-            <summary>
-            Occurs when the collection changes.
-            </summary>
-        </member>
-        <member name="P:Telerik.Windows.Data.DataItemCollection.IsGrouped">
-            <summary>
-            Gets a value indicating whether this instance is grouped.
-            </summary>
-            <value>
-            	<c>true</c> if this instance is grouped; otherwise, <c>false</c>.
-            </value>
-        </member>
-        <member name="P:Telerik.Windows.Data.DataItemCollection.System#Collections#IList#IsFixedSize">
-            <summary>
-            Gets a value indicating whether the <see cref="T:System.Collections.IList"/> has a fixed size.
-            </summary>
-            <value></value>
-            <returns>true if the <see cref="T:System.Collections.IList"/> has a fixed size; otherwise, false.
-            </returns>
-        </member>
-        <member name="P:Telerik.Windows.Data.DataItemCollection.System#Collections#IList#IsReadOnly">
-            <summary>
-            Gets a value indicating whether the <see cref="T:System.Collections.IList"/> is read-only.
-            </summary>
-            <value></value>
-            <returns>true if the <see cref="T:System.Collections.IList"/> is read-only; otherwise, false.
-            </returns>
-        </member>
-        <member name="P:Telerik.Windows.Data.DataItemCollection.Item(System.Int32)">
-            <summary>
-            Gets or sets the <see cref="T:System.Object"/> at the specified index.
-            </summary>
-            <value></value>
-        </member>
-        <member name="P:Telerik.Windows.Data.DataItemCollection.Count">
-            <summary>
-            Gets the number of elements contained in the <see cref="T:System.Collections.ICollection"/>.
-            </summary>
-            <value></value>
-            <returns>
-            The number of elements contained in the <see cref="T:System.Collections.ICollection"/>.
-            </returns>
-        </member>
-        <member name="P:Telerik.Windows.Data.DataItemCollection.ItemProperties">
-            <summary>
-            Gets a collection of objects that describes the properties of the items in the collection.
-            </summary>
-            <returns>
-            A collection of objects that describes the properties of the items in the collection.
-            </returns>
-        </member>
-        <member name="P:Telerik.Windows.Data.DataItemCollection.DescriptorsSynchronizationMode">
-            <summary>
-            Gets or sets a value that controls how this DataItemCollection synchronizes its FilterDescriptors, GroupDescriptor and SortDescriptors,
-            as well as GroupDescription and SortDescriptions (if appliccable), with its source.
-            </summary>
-        </member>
-        <member name="P:Telerik.Windows.Data.DataItemCollection.SourceCollectionView">
-            <summary>
-            Gets the SourceCollection as ICollectionView
-            </summary>
-        </member>
-        <member name="P:Telerik.Windows.Data.DataItemCollection.FilterDescriptors">
-            <summary>
-            Gets the filter descriptors used for filtering operations.
-            </summary>
-            <value>The filter descriptors.</value>
-        </member>
-        <member name="P:Telerik.Windows.Data.DataItemCollection.SortDescriptors">
-            <summary>
-            Gets the sort descriptors used for sorting operations.
-            </summary>
-            <value>The sort descriptors.</value>
-        </member>
-        <member name="P:Telerik.Windows.Data.DataItemCollection.GroupDescriptors">
-            <summary>
-            Gets the group descriptors used for grouping operations.
-            </summary>
-            <value>The group descriptors.</value>
-        </member>
-        <member name="P:Telerik.Windows.Data.DataItemCollection.CanAddNew">
-            <summary>
-            Gets a value that indicates whether a new item can be added to the collection.
-            </summary>
-            <returns>
-            true if <see cref="P:Telerik.Windows.Data.DataItemCollection.SourceCollection"/> is not <see cref="P:System.Collections.IList.IsFixedSize"/> and 
-            collection element has a default constructor; otherwise, false.
-            </returns>
-        </member>
-        <member name="P:Telerik.Windows.Data.DataItemCollection.CanAddNewItem">
-            <summary>
-            Gets a value that indicates whether a specified object can be added to the collection.
-            </summary>
-            <value>
-            	<c>true</c> if a specified object can be added to the collection; otherwise <c>false</c>.
-            </value>
-        </member>
-        <member name="P:Telerik.Windows.Data.DataItemCollection.CanCancelEdit">
-            <summary>
-            Gets a value that indicates whether the editing of an item can be canceled.
-            </summary>
-            <returns>
-            true if <see cref="P:Telerik.Windows.Data.DataItemCollection.CurrentEditItem"/> implements <see cref="T:System.ComponentModel.IEditableObject"/>; 
-            otherwise, false.
-            </returns>
-        </member>
-        <member name="P:Telerik.Windows.Data.DataItemCollection.CanRemove">
-            <summary>
-            Gets a value that indicates whether an item can be removed from the collection.
-            </summary>
-            <returns>
-            true if an item can be removed from the collection; otherwise, false.
-            </returns>
-        </member>
-        <member name="P:Telerik.Windows.Data.DataItemCollection.CurrentAddItem">
-            <summary>
-            Gets the item that is being added during the current add transaction.
-            </summary>
-            <returns>
-            The item that is being added if <see cref="P:Telerik.Windows.Data.DataItemCollection.IsAddingNew"/> is true; otherwise, null.
-            </returns>
-        </member>
-        <member name="P:Telerik.Windows.Data.DataItemCollection.CurrentEditItem">
-            <summary>
-            Gets the item in the collection that is being edited.
-            </summary>
-            <returns>
-            The item in the collection that is being edited 
-            if <see cref="P:Telerik.Windows.Data.DataItemCollection.IsEditingItem"/> is true; otherwise, null.
-            </returns>
-        </member>
-        <member name="P:Telerik.Windows.Data.DataItemCollection.IsAddingNew">
-            <summary>
-            Gets a value that indicates whether an add transaction is in progress.
-            </summary>
-            <returns>
-            true if an add transaction is in progress; otherwise, false.
-            </returns>
-        </member>
-        <member name="P:Telerik.Windows.Data.DataItemCollection.IsEditingItem">
-            <summary>
-            Gets a value that indicates whether an edit transaction is in progress.
-            </summary>
-            <returns>
-            true if an edit transaction is in progress; otherwise, false.
-            </returns>
-        </member>
-        <member name="P:Telerik.Windows.Data.DataItemCollection.NewItemPlaceholderPosition">
-            <summary>
-            Gets or sets the position of the new item placeholder in the collection.
-            </summary>
-            <returns>
-            One of the enumeration values that specifies the position of the new item placeholder in the collection.
-            </returns>
-        </member>
-        <member name="E:Telerik.Windows.Data.DataItemCollection.PropertyChanged">
-            <summary>
-            Occurs when a property value changes.
-            </summary>
-        </member>
-        <member name="E:Telerik.Windows.Data.DataItemCollection.CurrentChanged">
-            <summary>
-            When implementing this interface, raise this event after the current item has been changed.
-            </summary>
-        </member>
-        <member name="E:Telerik.Windows.Data.DataItemCollection.CurrentChanging">
-            <summary>
-            When implementing this interface, raise this event before changing the current item. Event handler can cancel this event.
-            </summary>
-        </member>
-        <member name="P:Telerik.Windows.Data.DataItemCollection.CanFilter">
-            <summary>
-            Gets a value that indicates whether this view supports filtering via the <see cref="P:System.ComponentModel.ICollectionView.Filter"/> property.
-            </summary>
-            <value></value>
-            <returns>true if this view support filtering; otherwise, false.
-            </returns>
-        </member>
-        <member name="P:Telerik.Windows.Data.DataItemCollection.CanGroup">
-            <summary>
-            Gets a value that indicates whether this view supports grouping via the <see cref="P:System.ComponentModel.ICollectionView.GroupDescriptions"/> property.
-            </summary>
-            <value></value>
-            <returns>true if this view supports grouping; otherwise, false.
-            </returns>
-        </member>
-        <member name="P:Telerik.Windows.Data.DataItemCollection.CanSort">
-            <summary>
-            Gets a value that indicates whether this view supports sorting via the <see cref="P:System.ComponentModel.ICollectionView.SortDescriptions"/> property.
-            </summary>
-            <value></value>
-            <returns>true if this view supports sorting; otherwise, false.
-            </returns>
-        </member>
-        <member name="P:Telerik.Windows.Data.DataItemCollection.Culture">
-            <summary>
-            Gets or sets the cultural info for any operations of the view that may differ by culture, such as sorting.
-            </summary>
-            <value></value>
-            <returns>
-            The culture to use during sorting.
-            </returns>
-        </member>
-        <member name="P:Telerik.Windows.Data.DataItemCollection.CurrentItem">
-            <summary>
-            Gets the current item in the view.
-            </summary>
-            <value></value>
-            <returns>
-            The current item of the view or null if there is no current item.
-            </returns>
-        </member>
-        <member name="P:Telerik.Windows.Data.DataItemCollection.CurrentPosition">
-            <summary>
-            Gets the ordinal position of the <see cref="P:System.ComponentModel.ICollectionView.CurrentItem"/> within the view.
-            </summary>
-            <value></value>
-            <returns>
-            The ordinal position of the <see cref="P:System.ComponentModel.ICollectionView.CurrentItem"/> within the view.
-            </returns>
-        </member>
-        <member name="P:Telerik.Windows.Data.DataItemCollection.Filter">
-            <summary>
-            Gets or sets a callback used to determine if an item is suitable for inclusion in the view.
-            </summary>
-            <value></value>
-            <returns>
-            A method used to determine if an item is suitable for inclusion in the view.
-            </returns>
-        </member>
-        <member name="P:Telerik.Windows.Data.DataItemCollection.GroupDescriptions">
-            <summary>
-            Gets a collection of <see cref="T:System.ComponentModel.GroupDescription"/> objects that describe how the items in the collection are grouped in the view.
-            </summary>
-            <value></value>
-            <returns>
-            A collection of <see cref="T:System.ComponentModel.GroupDescription"/> objects that describe how the items in the collection are grouped in the view.
-            </returns>
-        </member>
-        <member name="P:Telerik.Windows.Data.DataItemCollection.Groups">
-            <summary>
-            Gets the top-level groups.
-            </summary>
-            <value></value>
-            <returns>
-            A read-only collection of the top-level groups or null if there are no groups.
-            </returns>
-        </member>
-        <member name="P:Telerik.Windows.Data.DataItemCollection.IsCurrentAfterLast">
-            <summary>
-            Gets a value that indicates whether the <see cref="P:System.ComponentModel.ICollectionView.CurrentItem"/> of the view is beyond the end of the collection.
-            </summary>
-            <value></value>
-            <returns>
-            Returns true if the <see cref="P:System.ComponentModel.ICollectionView.CurrentItem"/> of the view is beyond the end of the collection; otherwise, false.
-            </returns>
-        </member>
-        <member name="P:Telerik.Windows.Data.DataItemCollection.IsCurrentBeforeFirst">
-            <summary>
-            Gets a value that indicates whether the <see cref="P:System.ComponentModel.ICollectionView.CurrentItem"/> of the view is beyond the beginning of the collection.
-            </summary>
-            <value></value>
-            <returns>
-            Returns true if the <see cref="P:System.ComponentModel.ICollectionView.CurrentItem"/> of the view is beyond the beginning of the collection; otherwise, false.
-            </returns>
-        </member>
-        <member name="P:Telerik.Windows.Data.DataItemCollection.IsEmpty">
-            <summary>
-            Returns a value that indicates whether the resulting view is empty.
-            </summary>
-            <value></value>
-            <returns>true if the resulting view is empty; otherwise, false.
-            </returns>
-        </member>
-        <member name="P:Telerik.Windows.Data.DataItemCollection.SortDescriptions">
-            <summary>
-            Gets a collection of <see cref="T:System.ComponentModel.SortDescription"/> objects that describe how the items in the collection are sorted in the view.
-            </summary>
-            <value></value>
-            <returns>
-            A collection of <see cref="T:System.ComponentModel.SortDescription"/> objects that describe how the items in the collection are sorted in the view.
-            </returns>
-        </member>
-        <member name="P:Telerik.Windows.Data.DataItemCollection.SourceCollection">
-            <summary>
-            Returns the underlying collection.
-            </summary>
-            <value></value>
-            <returns>
-            An <see cref="T:System.Collections.IEnumerable"/> object that is the underlying collection.
-            </returns>
-        </member>
-        <member name="E:Telerik.Windows.Data.DataItemCollection.PageChanged">
-            <summary>Occurs when the <see cref="P:Telerik.Windows.Data.DataItemCollection.PageIndex"/> has changed.</summary>
-        </member>
-        <member name="E:Telerik.Windows.Data.DataItemCollection.PageChanging">
-            <summary>Occurs when the <see cref="P:Telerik.Windows.Data.DataItemCollection.PageIndex"/> is changing.</summary>
-        </member>
-        <member name="P:Telerik.Windows.Data.DataItemCollection.CanChangePage">
-            <summary>
-            Gets a value that indicates whether the <see cref="P:Telerik.Windows.Data.DataItemCollection.PageIndex"/> value can change.
-            </summary>
-            <returns>
-            true if the <see cref="P:Telerik.Windows.Data.DataItemCollection.PageIndex"/> value can change; otherwise, false.
-            </returns>
-        </member>
-        <member name="P:Telerik.Windows.Data.DataItemCollection.IsPageChanging">
-            <summary>Gets a value that indicates whether a page index change is in process.</summary>
-            <returns>true if the page index is changing; otherwise, false.</returns>
-        </member>
-        <member name="P:Telerik.Windows.Data.DataItemCollection.ItemCount">
-            <summary>
-            Gets the minimum number of items known to be in the source collection.
-            </summary>
-            <returns>
-            The minimum number of items known to be in the source collection.
-            </returns>
-        </member>
-        <member name="P:Telerik.Windows.Data.DataItemCollection.PageIndex">
-            <summary>Gets the zero-based index of the current page.</summary>
-            <returns>The zero-based index of the current page.</returns>
-        </member>
-        <member name="P:Telerik.Windows.Data.DataItemCollection.PageSize">
-            <summary>Gets or sets the number of items to display on a page.</summary>
-            <returns>The number of items to display on a page.</returns>
-        </member>
-        <member name="P:Telerik.Windows.Data.DataItemCollection.TotalItemCount">
-            <summary>
-            Gets the total number of items in the source collection, or -1 if the total number is unknown.
-            </summary>
-            <returns>
-            The total number of items in the source collection, or -1 if the total number is unknown.
-            </returns>
         </member>
         <member name="T:Telerik.Windows.Data.EditableCollectionViewExtensions">
             <summary>
@@ -5930,22 +5935,27 @@
             <summary>
             Initializes a new instance of the <see cref="T:Telerik.Windows.Controls.SelectionChangingEventArgs"/> class.
             </summary>
+            <param name="addedItems">The items that were selected.</param>
+            <param name="removedItems">The items that were unselected.</param>
         </member>
         <member name="M:Telerik.Windows.Controls.SelectionChangingEventArgs.#ctor(System.Collections.Generic.IList{System.Object},System.Collections.Generic.IList{System.Object},System.Boolean)">
             <summary>
             Initializes a new instance of the <see cref="T:Telerik.Windows.Controls.SelectionChangingEventArgs"/> class.
             </summary>
+            <param name="addedItems">The items that were selected.</param>
+            <param name="removedItems">The items that were unselected.</param>
+            <param name="isCancelable">if set to <c>true</c> [is cancelable].</param>
         </member>
         <member name="P:Telerik.Windows.Controls.SelectionChangingEventArgs.RemovedItems">
             <summary>
-            Gets a list that contains the items that are being selected.
-            <value>Items that are being selected</value>
+            Gets a list that contains the items that are being unselected.
+            <value>Items that are being unselected</value>
             </summary>
         </member>
         <member name="P:Telerik.Windows.Controls.SelectionChangingEventArgs.AddedItems">
             <summary>
-            Gets a list that contains the items that are being unselected.
-            <value>Items that are being unselected</value>
+            Gets a list that contains the items that are being selected.
+            <value>Items that are being selected</value>
             </summary>
         </member>
         <member name="P:Telerik.Windows.Controls.SelectionChangingEventArgs.IsCancelable">

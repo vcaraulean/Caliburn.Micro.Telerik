@@ -1174,6 +1174,19 @@
             <param name="culture"></param>
             <returns></returns>
         </member>
+        <member name="T:Telerik.Windows.Controls.PackUriHelper">
+            <summary>
+            A helper class for resolving the full path to a resource.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.PackUriHelper.PackUri``1(System.String)">
+            <summary>
+            Creates an Uri for resource by its full path and using the assembly name of the class specified by the type parameter T.
+            </summary>
+            <typeparam name="T">The type that will be used to determine the assembly name.</typeparam>
+            <param name="relativeFile">The relative path to the resource file.</param>
+            <returns>An Uri that points the resource.</returns>
+        </member>
         <member name="T:Telerik.Windows.DragDrop.Behaviors.DataConverter">
             <summary>
             Provides the basic methods for converting the data in a IDataObject.
@@ -1698,7 +1711,7 @@
         </member>
         <member name="T:Telerik.Windows.DragDrop.Behaviors.DataObjectHelper">
             <summary>
-            Porivdes a trust settings independent way to retreive drag data.
+            Provides a trust settings independent way to retreive drag data.
             </summary>
         </member>
         <member name="M:Telerik.Windows.DragDrop.Behaviors.DataObjectHelper.GetFormats(System.Object,System.Boolean)">
@@ -2024,6 +2037,11 @@
         <member name="M:Telerik.Windows.DragDrop.DragDecorator.#ctor">
             <summary>
             Initializes a new instance of the DragDecorator.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.DragDrop.DragDecorator.OnApplyTemplate">
+            <summary>
+            Gets the presenter.
             </summary>
         </member>
         <member name="M:Telerik.Windows.DragDrop.DragDecorator.OnEffectsPropertyChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
@@ -3994,6 +4012,11 @@
             Identifies the Orientation dependency property.
             </summary>
         </member>
+        <member name="F:Telerik.Windows.Controls.VirtualizingWrapPanel.ScrollStepProperty">
+            <summary>
+            Identifies the ScrollStep dependency property.
+            </summary>
+        </member>
         <member name="M:Telerik.Windows.Controls.VirtualizingWrapPanel.LineDown">
             <summary>
             Scrolls down within content by one logical unit.
@@ -4116,6 +4139,11 @@
         <member name="P:Telerik.Windows.Controls.VirtualizingWrapPanel.CanVerticallyScroll">
             <summary>
             Gets or sets a value that indicates whether scrolling on the vertical axis is possible.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.VirtualizingWrapPanel.ScrollStep">
+            <summary>
+            Gets or sets a value for mouse wheel scroll step.
             </summary>
         </member>
         <member name="P:Telerik.Windows.Controls.VirtualizingWrapPanel.ExtentHeight">
@@ -5626,6 +5654,12 @@
             a public property with the specified name. This 
             method does not exist in a Release build.
             </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.ViewModelBase.InvokeOnUIThread(System.Action)">
+            <summary>
+            Invokes the specified action on the UI thread.
+            </summary>
+            <param name="action">An Action to be invoked on the UI thread.</param>
         </member>
         <member name="M:Telerik.Windows.Controls.ViewModelBase.OnPropertyChanged(System.String)">
             <summary>
@@ -16615,6 +16649,36 @@
         <member name="P:Telerik.Windows.Controls.Strings.ChartVerticalAxisTitle">
             <summary>
               Looks up a localized string similar to  .
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.ChartViewNoAngleAxis">
+            <summary>
+              Looks up a localized string similar to AngleAxis not set.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.ChartViewNoData">
+            <summary>
+              Looks up a localized string similar to No data to plot.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.ChartViewNoHorizontalAxis">
+            <summary>
+              Looks up a localized string similar to HorizontalAxis not set.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.ChartViewNoPolarAxis">
+            <summary>
+              Looks up a localized string similar to PolarAxis not set.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.ChartViewNoSeries">
+            <summary>
+              Looks up a localized string similar to No series added.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.ChartViewNoVerticalAxis">
+            <summary>
+              Looks up a localized string similar to VerticalAxis not set.
             </summary>
         </member>
         <member name="P:Telerik.Windows.Controls.Strings.Clear">
