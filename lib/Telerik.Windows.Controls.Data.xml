@@ -233,12 +233,6 @@
             <param name="itemPropertyDefinition">The item property definition.</param>
             <param name="availableOperators">The available operators.</param>
         </member>
-        <member name="P:Telerik.Windows.Controls.Data.DataFilter.FilterOperatorsLoadingEventArgs.ItemPropertyInfo">
-            <summary>
-            Gets the item property info.
-            </summary>
-            <value>The item property info.</value>
-        </member>
         <member name="P:Telerik.Windows.Controls.Data.DataFilter.FilterOperatorsLoadingEventArgs.ItemPropertyDefinition">
             <summary>
             Gets the item property definition.
@@ -709,11 +703,6 @@
             Identifies the <see cref="P:Telerik.Windows.Controls.RadDataFilter.FilteredSource"/> dependency property.
             </summary>
         </member>
-        <member name="F:Telerik.Windows.Controls.RadDataFilter.ItemPropertiesProperty">
-            <summary>
-            Identifies the <see cref="P:Telerik.Windows.Controls.RadDataFilter.ItemProperties"/> dependency property.
-            </summary>
-        </member>
         <member name="F:Telerik.Windows.Controls.RadDataFilter.FilterDescriptorsPropertyKey">
             <summary>
             Identifies the <see cref="P:Telerik.Windows.Controls.RadDataFilter.FilterDescriptors"/> dependency property.
@@ -828,17 +817,6 @@
             property will enable filtering for this control through RadDataFilter.
             </remarks>
             <value>The filtered source.</value>
-        </member>
-        <member name="P:Telerik.Windows.Controls.RadDataFilter.ItemProperties">
-            <summary>
-            Gets or sets the item properties used for creating filter conditions.
-            </summary>
-            <remarks>
-            This property can be used only when <see cref="T:Telerik.Windows.Controls.RadDataFilter"/> is in unbound mode,
-            i.e. when the <see cref="P:Telerik.Windows.Controls.RadDataFilter.Source"/> property is null. Assigning this property
-            while in bound mode will result in a <see cref="T:System.InvalidOperationException"/>.
-            </remarks>
-            <value>The item properties.</value>
         </member>
         <member name="P:Telerik.Windows.Controls.RadDataFilter.FilterDescriptors">
             <summary>
@@ -1443,11 +1421,6 @@
             The errors.
             </value>
         </member>
-        <member name="T:Telerik.Windows.Controls.Data.DataForm.DescriptionPresenter">
-            <summary>
-            Used to display the description of a property.
-            </summary>
-        </member>
         <member name="T:Telerik.Windows.Controls.Data.DataForm.DescriptionVisibilityConverter">
             <summary>
             Used to hide an UI element displaying text, when no text is present.
@@ -1552,7 +1525,7 @@
         </member>
         <member name="P:Telerik.Windows.Controls.Data.DataForm.FormViewModel.Items">
             <summary>
-            The colections of data items. 
+            The collections of data items. 
             </summary>
         </member>
         <member name="P:Telerik.Windows.Controls.Data.DataForm.FormViewModel.IsBoundToCollection">
@@ -2544,6 +2517,21 @@
             <param name="culture"></param>
             <returns></returns>
         </member>
+        <member name="T:Telerik.Windows.Controls.Data.PropertyGrid.InvertedVisibilityConverter">
+            <summary>
+            Determines PropertyGrid's mode.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Data.PropertyGrid.InvertedVisibilityConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Determines PropertyGrid's mode.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Data.PropertyGrid.InvertedVisibilityConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Not used.
+            </summary>
+        </member>
         <member name="T:Telerik.Windows.Controls.Data.PropertyGrid.ItemTemplateConverter">
             <summary>
             Provides logic for switching the view between flat and grouped (categorized) property fields. 
@@ -2579,35 +2567,34 @@
             A data template for grouped (categorized) view. 
             </summary>
         </member>
-        <member name="T:Telerik.Windows.Controls.Data.PropertyGrid.FlatModeConverter">
+        <member name="T:Telerik.Windows.Controls.Data.PropertyGrid.Converters.NumericTypeConverter">
             <summary>
-            Determines PropertyGrid's mode.
+            TODO: Update summary.
             </summary>
         </member>
-        <member name="M:Telerik.Windows.Controls.Data.PropertyGrid.FlatModeConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+        <member name="M:Telerik.Windows.Controls.Data.PropertyGrid.Converters.NumericTypeConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
             <summary>
-            Determines PropertyGrid's mode.
+            Converts a value.
             </summary>
+            <param name="value">The value produced by the binding source.</param>
+            <param name="targetType">The type of the binding target property.</param>
+            <param name="parameter">The converter parameter to use.</param>
+            <param name="culture">The culture to use in the converter.</param>
+            <returns>
+            A converted value. If the method returns null, the valid null value is used.
+            </returns>
         </member>
-        <member name="M:Telerik.Windows.Controls.Data.PropertyGrid.FlatModeConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+        <member name="M:Telerik.Windows.Controls.Data.PropertyGrid.Converters.NumericTypeConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
             <summary>
-            Not used.
+            Converts a value.
             </summary>
-        </member>
-        <member name="T:Telerik.Windows.Controls.Data.PropertyGrid.NestedModeConverter">
-            <summary>
-            Determines PropertyGrid's mode.
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.Data.PropertyGrid.NestedModeConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
-            <summary>
-            Determines PropertyGrid's mode.
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.Data.PropertyGrid.NestedModeConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
-            <summary>
-            Not used.
-            </summary>
+            <param name="value">The value that is produced by the binding target.</param>
+            <param name="targetType">The type to convert to.</param>
+            <param name="parameter">The converter parameter to use.</param>
+            <param name="culture">The culture to use in the converter.</param>
+            <returns>
+            A converted value. If the method returns null, the valid null value is used.
+            </returns>
         </member>
         <member name="T:Telerik.Windows.Controls.Data.PropertyGrid.SelectedItemConverter">
             <summary>
@@ -2642,6 +2629,30 @@
         <member name="M:Telerik.Windows.Controls.Data.PropertyGrid.FlatItemSourceConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
             <summary>
             Not used.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.Data.PropertyGrid.AutoBindBehavior">
+            <summary>
+            PropertyGridFieldBindingBehavior. 
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Data.PropertyGrid.AutoBindBehavior.GetUpdateBindingOnElementLoaded(System.Windows.FrameworkElement)">
+            <summary>
+            Gets the update binding on element loaded.
+            </summary>
+            <param name="frameworkElement">The framework element.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Data.PropertyGrid.AutoBindBehavior.SetUpdateBindingOnElementLoaded(System.Windows.FrameworkElement,System.String)">
+            <summary>
+            Sets the update binding on element loaded.
+            </summary>
+            <param name="frameworkElement">The framework element.</param>
+            <param name="value">The value.</param>
+        </member>
+        <member name="F:Telerik.Windows.Controls.Data.PropertyGrid.AutoBindBehavior.UpdateBindingOnElementLoadedProperty">
+            <summary>
+            Represent the UpdateBindingOnElementLoaded attached property.
             </summary>
         </member>
         <member name="T:Telerik.Windows.Controls.Data.PropertyGrid.PropertyGridIndentPresenter">
@@ -2713,6 +2724,11 @@
             </summary>
             <param name="propertyName">Name of the property.</param>
         </member>
+        <member name="P:Telerik.Windows.Controls.Data.PropertyGrid.PropertyDefinition.SourceProperty">
+            <summary>
+            Gets the property's ItemPropertyInfo.
+            </summary>
+        </member>
         <member name="P:Telerik.Windows.Controls.Data.PropertyGrid.PropertyDefinition.OrderIndex">
             <summary>
             Gets or sets the index of the order.
@@ -2772,6 +2788,22 @@
             Occurs when a property value changes.
             </summary>
         </member>
+        <member name="P:Telerik.Windows.Controls.Data.PropertyGrid.PropertyDefinition.IsReadOnly">
+            <summary>
+            Gets or sets a value indicating whether this instance is read only.
+            </summary>
+            <value>
+            	<c>true</c> if this instance is read only; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Data.PropertyGrid.PropertyDefinition.HasSearchedChildren">
+            <summary>
+            Gets a value indicating whether this instance has a child that fulfills the search condition.
+            </summary>
+            <value>
+            	<c>true</c> if this instance has A searched child; otherwise, <c>false</c>.
+            </value>
+        </member>
         <member name="F:Telerik.Windows.Controls.Data.PropertyGrid.LookupPropertyDefinition.ItemsSourceProperty">
             <summary>
             Represents the ItemsSource dependency property.
@@ -2824,6 +2856,11 @@
             Determines the indentation level of this PropertyGridField.
             </summary>
         </member>
+        <member name="F:Telerik.Windows.Controls.Data.PropertyGrid.PropertyGridField.IsReadOnlyProperty">
+            <summary>
+            Represents the IsReadOnly dependency property.
+            </summary>
+        </member>
         <member name="F:Telerik.Windows.Controls.Data.PropertyGrid.PropertyGridField.IsSelectedProperty">
             <summary>
             Represents the IsSelected dependency property.
@@ -2856,10 +2893,23 @@
             Resets the theme.
             </summary>
         </member>
+        <member name="P:Telerik.Windows.Controls.Data.PropertyGrid.PropertyGridField.ParentPropertyGrid">
+            <summary>
+            Gets the parent property grid.
+            </summary>
+        </member>
         <member name="P:Telerik.Windows.Controls.Data.PropertyGrid.PropertyGridField.IndentLevel">
             <summary>
             Gets field's indentation level.
             </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Data.PropertyGrid.PropertyGridField.IsReadOnly">
+            <summary>
+            Gets or sets a value indicating whether this instance is read only.
+            </summary>
+            <value>
+            	<c>true</c> if this instance is read only; otherwise, <c>false</c>.
+            </value>
         </member>
         <member name="P:Telerik.Windows.Controls.Data.PropertyGrid.PropertyGridField.IsSelected">
             <summary>
@@ -2951,7 +3001,12 @@
         </member>
         <member name="F:Telerik.Windows.Controls.Data.PropertyGrid.PropertyGridPresenter.PropertyDefinitionsProperty">
             <summary>
-            Represents a the PropertyDefinitions dependency property.
+            Represents the PropertyDefinitions dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.Data.PropertyGrid.PropertyGridPresenter.SearchInNestedPropertiesProperty">
+            <summary>
+            Represents the SearchInNestedProperties property.
             </summary>
         </member>
         <member name="P:Telerik.Windows.Controls.Data.PropertyGrid.PropertyGridPresenter.SelectedPropertyDefinition">
@@ -2974,6 +3029,14 @@
             A collection of property definitions to be displayed.
             </summary>
         </member>
+        <member name="P:Telerik.Windows.Controls.Data.PropertyGrid.PropertyGridPresenter.SearchInNestedProperties">
+            <summary>
+            Gets or sets a value indicating whether [search in nested properties].
+            </summary>
+            <value>
+            	<c>true</c> if [search in nested properties]; otherwise, <c>false</c>.
+            </value>
+        </member>
         <member name="T:Telerik.Windows.Controls.Data.PropertyGrid.PropertyGridColumnResizer">
             <summary>
             Provides column resizing for RadPropertyGrid.
@@ -2989,6 +3052,48 @@
             Invoked whenever application code or internal processes
             (such as a rebuilding layout pass) call.
             <see cref="M:System.Windows.Controls.Control.ApplyTemplate"/>.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.Data.PropertyGrid.PropertySetOperation">
+            <summary>
+            Describes differenct behaviors of property set construction.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.Data.PropertyGrid.PropertySetOperation.None">
+            <summary>
+            Does not construct a property set.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.Data.PropertyGrid.PropertySetOperation.Intersection">
+            <summary>
+            Constructs an intersection set of items' properties.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.Data.PropertyGrid.PropertySetOperation.Union">
+            <summary>
+            Constructs a union set of items' properties.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.Data.PropertyGrid.PropertySetViewModel">
+            <summary>
+            A view model type that manages and exposes a dynamic property set.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Data.PropertyGrid.PropertySetViewModel.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.Windows.Controls.Data.PropertyGrid.PropertySetViewModel"/> class.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Data.PropertyGrid.PropertySetViewModel.#ctor(System.Collections.Generic.IEnumerable{System.Object},Telerik.Windows.Controls.Data.PropertyGrid.PropertySetOperation)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.Windows.Controls.Data.PropertyGrid.PropertySetViewModel"/> class.
+            </summary>
+            <param name="items">The items.</param>
+            <param name="operation">The operation.</param>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Data.PropertyGrid.PropertySetViewModel.CurrentPropertySet">
+            <summary>
+            Gets the current property set.
             </summary>
         </member>
         <member name="T:Telerik.Windows.Controls.RadPropertyGrid">
@@ -3031,6 +3136,11 @@
             Represents the SortAndGroupButtonsVisibility dependency property.
             </summary>
         </member>
+        <member name="F:Telerik.Windows.Controls.RadPropertyGrid.IsReadOnlyProperty">
+            <summary>
+            Represents the IsReadOnly property.
+            </summary>
+        </member>
         <member name="F:Telerik.Windows.Controls.RadPropertyGrid.DescriptionPanelVisibilityProperty">
             <summary>
             Represents the DescriptionPanelVisibility dependency property.
@@ -3049,6 +3159,26 @@
         <member name="F:Telerik.Windows.Controls.RadPropertyGrid.AutoGeneratePropertyDefinitionsProperty">
             <summary>
             Represents the AutoGeneratePropertyDefinitions dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadPropertyGrid.SearchInNestedPropertiesProperty">
+            <summary>
+            Represents the SearchInNestedProperties dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadPropertyGrid.EditorTemplateSelectorProperty">
+            <summary>
+            Represents the EditorTemplateSelector dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadPropertyGrid.PropertySetModeProperty">
+            <summary>
+            Represents the PropertySetMode property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadPropertyGrid.PropertySetViewModelProperty">
+            <summary>
+            Represents the PropertySetViewModelProperty property.
             </summary>
         </member>
         <member name="E:Telerik.Windows.Controls.RadPropertyGrid.AutoGeneratingPropertyDefinition">
@@ -3081,6 +3211,14 @@
             Gets or sets the visibility of the sort and group buttons.
             </summary>
         </member>
+        <member name="P:Telerik.Windows.Controls.RadPropertyGrid.IsReadOnly">
+            <summary>
+            Gets or sets a value indicating whether this instance is read only.
+            </summary>
+            <value>
+            	<c>true</c> if this instance is read only; otherwise, <c>false</c>.
+            </value>
+        </member>
         <member name="P:Telerik.Windows.Controls.RadPropertyGrid.DescriptionPanelVisibility">
             <summary>
             Gets or sets the description panel visibility.
@@ -3106,6 +3244,106 @@
             <summary>
             Gets or sets a value indicating whether property definitions will be autogenerated. 
             </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadPropertyGrid.SearchInNestedProperties">
+            <summary>
+            Gets or sets a value indicating whether search should be execute over nested properties.
+            </summary>
+            <value>
+            	<c>true</c> if [search in nested properties]; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadPropertyGrid.EditorTemplateSelector">
+            <summary>
+            Gets or sets the editor template selector.
+            </summary>
+            <value>
+            The editor template selector.
+            </value>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadPropertyGrid.PropertySetMode">
+            <summary>
+            Gets or sets the property set mode.
+            </summary>
+            <value>
+            The property set mode.
+            </value>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadPropertyGrid.PropertySetViewModel">
+            <summary>
+            Gets the property set view model.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.Data.PropertyGrid.PropertySet">
+            <summary>
+            A dynamic type that describes a set of properties.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Data.PropertyGrid.PropertySet.TryGetMember(System.Dynamic.GetMemberBinder,System.Object@)">
+            <summary>
+            Provides the implementation for operations that get member values. Classes derived from the <see cref="T:System.Dynamic.DynamicObject"/> class can override this method to specify dynamic behavior for operations such as getting a value for a property.
+            </summary>
+            <param name="binder">Provides information about the object that called the dynamic operation. The binder.Name property provides the name of the member on which the dynamic operation is performed. For example, for the Console.WriteLine(sampleObject.SampleProperty) statement, where sampleObject is an instance of the class derived from the <see cref="T:System.Dynamic.DynamicObject"/> class, binder.Name returns "SampleProperty". The binder.IgnoreCase property specifies whether the member name is case-sensitive.</param>
+            <param name="result">The result of the get operation. For example, if the method is called for a property, you can assign the property value to <paramref name="result"/>.</param>
+            <returns>
+            true if the operation is successful; otherwise, false. If this method returns false, the run-time binder of the language determines the behavior. (In most cases, a run-time exception is thrown.).
+            </returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Data.PropertyGrid.PropertySet.TrySetMember(System.Dynamic.SetMemberBinder,System.Object)">
+            <summary>
+            Provides the implementation for operations that set member values. Classes derived from the <see cref="T:System.Dynamic.DynamicObject"/> class can override this method to specify dynamic behavior for operations such as setting a value for a property.
+            </summary>
+            <param name="binder">Provides information about the object that called the dynamic operation. The binder.Name property provides the name of the member to which the value is being assigned. For example, for the statement sampleObject.SampleProperty = "Test", where sampleObject is an instance of the class derived from the <see cref="T:System.Dynamic.DynamicObject"/> class, binder.Name returns "SampleProperty". The binder.IgnoreCase property specifies whether the member name is case-sensitive.</param>
+            <param name="value">The value to set to the member. For example, for sampleObject.SampleProperty = "Test", where sampleObject is an instance of the class derived from the <see cref="T:System.Dynamic.DynamicObject"/> class, the <paramref name="value"/> is "Test".</param>
+            <returns>
+            true if the operation is successful; otherwise, false. If this method returns false, the run-time binder of the language determines the behavior. (In most cases, a language-specific run-time exception is thrown.).
+            </returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Data.PropertyGrid.PropertySet.GetDynamicMemberNames">
+            <summary>
+            Returns the enumeration of all dynamic member names.
+            </summary>
+            <returns>
+            A sequence that contains dynamic member names.
+            </returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Data.PropertyGrid.PropertySet.OnPropertyChanged(System.String)">
+            <summary>
+            Called when [property changed].
+            </summary>
+            <param name="fileName">Name of the file.</param>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Data.PropertyGrid.PropertySet.Item(System.String)">
+            <summary>
+            Gets or sets the <see cref="T:System.Object"/> with the specified column name.
+            </summary>
+        </member>
+        <member name="E:Telerik.Windows.Controls.Data.PropertyGrid.PropertySet.PropertyChanged">
+            <summary>
+            Occurs when a property value changes.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.Data.PropertyGrid.PropertySetPropertyInfo">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Data.PropertyGrid.PropertySetPropertyInfo.Equals(System.Object)">
+            <summary>
+            Determines whether the specified <see cref="T:System.Object"/> is equal to this instance.
+            </summary>
+            <param name="obj">The <see cref="T:System.Object"/> to compare with this instance.</param>
+            <returns>
+              <c>true</c> if the specified <see cref="T:System.Object"/> is equal to this instance; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Data.PropertyGrid.PropertySetPropertyInfo.GetHashCode">
+            <summary>
+            Returns a hash code for this instance.
+            </summary>
+            <returns>
+            A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table. 
+            </returns>
         </member>
         <member name="T:Telerik.Windows.Controls.Data.TypeExtensions">
             <summary>

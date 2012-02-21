@@ -454,16 +454,6 @@
             Binds two collections together using the ObservableCollectionManager and an equality comparer.
             </summary>
         </member>
-        <member name="M:Telerik.Windows.Data.DataItemCollection.GetDistinctValues(Telerik.Windows.Data.IDataFieldDescriptor,Telerik.Windows.Data.IFilterDescriptor,System.Boolean,System.Nullable{System.Int32})">
-            <summary>
-            Gets the distinct values.
-            </summary>
-            <param name="column">The column.</param>
-            <param name="existingColumnFilter">The existing column filter.</param>
-            <param name="filterDistinctValues">The filter distinct values.</param>
-            <param name="maximumValueCount">The maximum value count.</param>
-            <returns></returns>
-        </member>
         <member name="M:Telerik.Windows.Data.DataItemCollection.AddNewItem(System.Object)">
             <summary>
             Adds the specified object to the collection.
@@ -672,6 +662,12 @@
             <returns>
             The number of elements contained in the <see cref="T:System.Collections.ICollection"/>.
             </returns>
+        </member>
+        <member name="P:Telerik.Windows.Data.DataItemCollection.ItemType">
+            <summary>
+            Gets or sets the type used for all internal data engine operations.
+            </summary>
+            <value>The type of the item.</value>
         </member>
         <member name="P:Telerik.Windows.Data.DataItemCollection.ItemProperties">
             <summary>
@@ -1232,7 +1228,14 @@
             <summary>
             Initializes a new instance of the <see cref="T:Telerik.Windows.Data.QueryableCollectionView"/> class.
             </summary>
+            <param name="source">The source collection.</param>
+        </member>
+        <member name="M:Telerik.Windows.Data.QueryableCollectionView.#ctor(System.Collections.IEnumerable,System.Type)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.Windows.Data.QueryableCollectionView"/> class.
+            </summary>
             <param name="sourceCollection">The source collection.</param>
+            <param name="itemType">Type which will be used for all operations.</param>
             <exception cref="T:System.ArgumentNullException"><c>sourceCollection</c> is null.</exception>
         </member>
         <member name="M:Telerik.Windows.Data.QueryableCollectionView.Contains(System.Object)">
@@ -1639,6 +1642,12 @@
             </summary>
             <value>The group descriptors.</value>
         </member>
+        <member name="P:Telerik.Windows.Data.QueryableCollectionView.ItemType">
+            <summary>
+            Gets or sets the type used for all internal data engine operations.
+            </summary>
+            <value>The type of the item.</value>
+        </member>
         <member name="P:Telerik.Windows.Data.QueryableCollectionView.InternalList">
             <summary>
             Gets the list created from resulting query 
@@ -1673,6 +1682,12 @@
             </summary>
         </member>
         <member name="M:Telerik.Windows.Data.VirtualQueryableCollectionView.#ctor(System.Collections.IEnumerable)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.Windows.Data.VirtualQueryableCollectionView"/> class.
+            </summary>
+            <param name="source">The source collection.</param>
+        </member>
+        <member name="M:Telerik.Windows.Data.VirtualQueryableCollectionView.#ctor(System.Collections.IEnumerable,System.Type)">
             <summary>
             Initializes a new instance of the VirtualQueryableCollectionView class.
             </summary>
@@ -2862,6 +2877,13 @@
             Represents collection of <see cref="T:Telerik.Windows.Data.IFilterDescriptor"/>.
             </summary>
         </member>
+        <member name="M:Telerik.Windows.Data.FilterDescriptorCollection.InsertItem(System.Int32,Telerik.Windows.Data.IFilterDescriptor)">
+            <summary>
+            Inserts the item.
+            </summary>
+            <param name="index">The index.</param>
+            <param name="item">The item.</param>
+        </member>
         <member name="M:Telerik.Windows.Data.CompositeFilterDescriptorCollection.CreateFilterExpression(System.Linq.Expressions.Expression)">
             <summary>
             Creates a predicate filter expression used for collection filtering.
@@ -2934,131 +2956,77 @@
             </summary>
             <value>The filter expression.</value>
         </member>
-        <member name="T:Telerik.Windows.Data.FilterDescriptor">
+        <member name="T:Telerik.Windows.Data.OperatorValueFilterDescriptorBase">
             <summary>
-            Represents declarative filtering.
-            </summary>
-            <summary>
-            Represents declarative filtering.
+            Represents the base class for all filter descriptors that have an operator and a value.
             </summary>
         </member>
-        <member name="M:Telerik.Windows.Data.FilterDescriptor.#ctor">
+        <member name="F:Telerik.Windows.Data.OperatorValueFilterDescriptorBase.OperatorProperty">
             <summary>
-            Initializes a new instance of the <see cref="T:Telerik.Windows.Data.FilterDescriptor"/> class.
+            Identifies the <see cref="P:Telerik.Windows.Data.OperatorValueFilterDescriptorBase.Operator"/> dependency property.
             </summary>
         </member>
-        <member name="M:Telerik.Windows.Data.FilterDescriptor.#ctor(System.String,Telerik.Windows.Data.FilterOperator,System.Object)">
+        <member name="F:Telerik.Windows.Data.OperatorValueFilterDescriptorBase.ValueProperty">
             <summary>
-            Initializes a new instance of the <see cref="T:Telerik.Windows.Data.FilterDescriptor"/> class.
-            </summary>
-            <param name="member">The member.</param>
-            <param name="filterOperator">The filter operator.</param>
-            <param name="filterValue">The filter value.</param>
-        </member>
-        <member name="M:Telerik.Windows.Data.FilterDescriptor.#ctor(System.String,Telerik.Windows.Data.FilterOperator,System.Object,System.Boolean)">
-            <summary>
-            Initializes a new instance of the <see cref="T:Telerik.Windows.Data.FilterDescriptor"/> class.
-            </summary>
-            <param name="member">The member.</param>
-            <param name="filterOperator">The filter operator.</param>
-            <param name="filterValue">The filter value.</param>
-            <param name="caseSensitive">If set to <c>true</c> indicates that this filter descriptor will be case sensitive.</param>
-        </member>
-        <member name="F:Telerik.Windows.Data.FilterDescriptor.MemberProperty">
-            <summary>
-            Identifies the <see cref="P:Telerik.Windows.Data.FilterDescriptor.Member"/> dependency property.
+            Identifies the <see cref="P:Telerik.Windows.Data.OperatorValueFilterDescriptorBase.Value"/> dependency property.
             </summary>
         </member>
-        <member name="F:Telerik.Windows.Data.FilterDescriptor.OperatorProperty">
+        <member name="F:Telerik.Windows.Data.OperatorValueFilterDescriptorBase.IsCaseSensitiveProperty">
             <summary>
-            Identifies the <see cref="P:Telerik.Windows.Data.FilterDescriptor.Operator"/> dependency property.
+            Identifies the <see cref="P:Telerik.Windows.Data.OperatorValueFilterDescriptorBase.IsCaseSensitive"/> dependency property.
             </summary>
         </member>
-        <member name="F:Telerik.Windows.Data.FilterDescriptor.ValueProperty">
-            <summary>
-            Identifies the <see cref="P:Telerik.Windows.Data.FilterDescriptor.Value"/> dependency property.
-            </summary>
-        </member>
-        <member name="F:Telerik.Windows.Data.FilterDescriptor.IsCaseSensitiveProperty">
-            <summary>
-            Identifies the <see cref="P:Telerik.Windows.Data.FilterDescriptor.IsCaseSensitive"/> dependency property.
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Data.FilterDescriptor.CreateFilterExpression(System.Linq.Expressions.ParameterExpression)">
-            <summary>
-            Creates a predicate filter expression.
-            </summary>
-            <param name="parameterExpression">The parameter expression, which will be used for filtering.</param>
-            <returns>A predicate filter expression.</returns>
-        </member>
-        <member name="M:Telerik.Windows.Data.FilterDescriptor.ToString">
-            <summary>
-            Returns a <see cref="T:System.String"/> that represents the current <see cref="T:Telerik.Windows.Data.FilterDescriptor"/>.
-            </summary>
-            <returns>
-            A <see cref="T:System.String"/> that represents the current <see cref="T:Telerik.Windows.Data.FilterDescriptor"/>.
-            </returns>
-        </member>
-        <member name="P:Telerik.Windows.Data.FilterDescriptor.UnsetValue">
-            <summary>
-            Specifies a static value that is used by the filtering system 
-            rather than null to indicate that a FilterDescriptor.Value is 
-            not set and thus the filter is inactive.
-            </summary>
-            <value>An unset value.</value>
-            <remarks>
-            Assign this value to a FilterDescriptor.Value if you want to 
-            mark it as inactive.
-            </remarks>
-        </member>
-        <member name="P:Telerik.Windows.Data.FilterDescriptor.Member">
-            <summary>
-            Gets or sets the member name which will be used for filtering.
-            </summary>
-            <value>The member that will be used for filtering.</value>
-        </member>
-        <member name="P:Telerik.Windows.Data.FilterDescriptor.MemberType">
-            <summary>
-            Gets or sets the type of the member that is used for filtering.
-            Set this property if the member type cannot be resolved automatically.
-            Such cases are: items with ICustomTypeDescriptor, XmlNode or DataRow.
-            Changing this property does not raise 
-            <see cref="E:System.ComponentModel.INotifyPropertyChanged.PropertyChanged"/> event.
-            </summary>
-            <value>The type of the member used for filtering.</value>
-        </member>
-        <member name="P:Telerik.Windows.Data.FilterDescriptor.Operator">
+        <member name="P:Telerik.Windows.Data.OperatorValueFilterDescriptorBase.Operator">
             <summary>
             Gets or sets the filter operator.
             </summary>
             <value>The filter operator.</value>
         </member>
-        <member name="P:Telerik.Windows.Data.FilterDescriptor.Value">
+        <member name="P:Telerik.Windows.Data.OperatorValueFilterDescriptorBase.Value">
             <summary>
             Gets or sets the target filter value.
             </summary>
             <value>The filter value.</value>
         </member>
-        <member name="P:Telerik.Windows.Data.FilterDescriptor.IsCaseSensitive">
+        <member name="P:Telerik.Windows.Data.OperatorValueFilterDescriptorBase.IsCaseSensitive">
             <summary>
             Gets or sets a value indicating whether this filter descriptor is case sensitvive.
             </summary>
             <value><strong>true</strong> if the filter descriptor is case sensitive; otherwise, 
             <strong>false</strong>. The default value is <strong>true</strong>.</value>
         </member>
-        <member name="T:Telerik.Windows.Data.FilterDescriptor.FilterDescriptorUnsetValue">
+        <member name="P:Telerik.Windows.Data.OperatorValueFilterDescriptorBase.IsActive">
+            <summary>
+            Gets a value indicating whether this filter is active. A filter is considered active if
+            its Value is different from OperatorValueFilterDescriptorBase.UnsetValue.
+            </summary>
+            <value>A value indicating whether this filter is active.</value>
+        </member>
+        <member name="P:Telerik.Windows.Data.OperatorValueFilterDescriptorBase.UnsetValue">
+            <summary>
+            Specifies a static value that is used by the filtering system 
+            rather than null to indicate that a OperatorValueFilterDescriptorBase.Value is 
+            not set and thus the filter is inactive.
+            </summary>
+            <value>An unset value.</value>
+            <remarks>
+            Assign this value to a OperatorValueFilterDescriptorBase.Value if you want to 
+            mark it as inactive.
+            </remarks>
+        </member>
+        <member name="T:Telerik.Windows.Data.OperatorValueFilterDescriptorBase.OperatorValueFilterDescriptorBaseUnsetValue">
             <summary>
             Thread-safe singleton implementation for specifying a 
             static value that is used by FilterDescriptors rather 
             than null to indicate that FilterDescriptor.Value is not set.
             </summary>
         </member>
-        <member name="M:Telerik.Windows.Data.FilterDescriptor.FilterDescriptorUnsetValue.#cctor">
+        <member name="M:Telerik.Windows.Data.OperatorValueFilterDescriptorBase.OperatorValueFilterDescriptorBaseUnsetValue.#cctor">
             <summary>
-            Initializes the <see cref="T:Telerik.Windows.Data.FilterDescriptor.FilterDescriptorUnsetValue"/> class.
+            Initializes the <see cref="T:Telerik.Windows.Data.OperatorValueFilterDescriptorBase.OperatorValueFilterDescriptorBaseUnsetValue"/> class.
             </summary>
         </member>
-        <member name="M:Telerik.Windows.Data.FilterDescriptor.FilterDescriptorUnsetValue.ToString">
+        <member name="M:Telerik.Windows.Data.OperatorValueFilterDescriptorBase.OperatorValueFilterDescriptorBaseUnsetValue.ToString">
             <summary>
             Returns a <see cref="T:System.String"/> that represents this instance.
             </summary>
@@ -3066,11 +3034,18 @@
             A <see cref="T:System.String"/> that represents this instance.
             </returns>
         </member>
-        <member name="P:Telerik.Windows.Data.FilterDescriptor.FilterDescriptorUnsetValue.Instance">
+        <member name="P:Telerik.Windows.Data.OperatorValueFilterDescriptorBase.OperatorValueFilterDescriptorBaseUnsetValue.Instance">
             <summary>
             Gets or sets the instance.
             </summary>
             <value>The instance.</value>
+        </member>
+        <member name="M:Telerik.Windows.Data.LambdaFilterDescriptor.CreateFilterExpression(System.Linq.Expressions.ParameterExpression)">
+            <summary>
+            Creates a predicate filter expression.
+            </summary>
+            <param name="parameterExpression">The parameter expression, which will be used for filtering.</param>
+            <returns>A predicate filter expression.</returns>
         </member>
         <member name="T:Telerik.Windows.Data.AggregatedGroupDescriptorBase">
             <summary>
@@ -3879,7 +3854,7 @@
             An <see cref="T:System.Linq.IQueryable"/> whose elements are sorted according to a <paramref name="sortDescriptors"/>.
             </returns>
         </member>
-        <member name="M:Telerik.Windows.Data.QueryableFactory.CreateQueryable(System.Collections.IEnumerable)">
+        <member name="M:Telerik.Windows.Data.QueryableFactory.CreateQueryable(System.Collections.IEnumerable,System.Type)">
             <exception cref="T:System.ArgumentNullException"><c>source</c> is null.</exception>
         </member>
         <member name="M:Telerik.Windows.Data.FakePropertyDescriptor.#ctor(System.Type)">
@@ -4049,6 +4024,85 @@
             <summary>
             Left operand must not be contained in the right one.
             </summary>
+        </member>
+        <member name="T:Telerik.Windows.Data.FilterDescriptor">
+            <summary>
+            Represents a filter descriptor of the form Member-Operator-Value.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Data.FilterDescriptor.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.Windows.Data.FilterDescriptor"/> class.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Data.FilterDescriptor.#ctor(System.String,Telerik.Windows.Data.FilterOperator,System.Object)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.Windows.Data.FilterDescriptor"/> class.
+            </summary>
+            <param name="member">The member.</param>
+            <param name="filterOperator">The filter operator.</param>
+            <param name="filterValue">The filter value.</param>
+        </member>
+        <member name="M:Telerik.Windows.Data.FilterDescriptor.#ctor(System.String,Telerik.Windows.Data.FilterOperator,System.Object,System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.Windows.Data.FilterDescriptor"/> class.
+            </summary>
+            <param name="member">The member.</param>
+            <param name="filterOperator">The filter operator.</param>
+            <param name="filterValue">The filter value.</param>
+            <param name="caseSensitive">If set to <c>true</c> indicates that this filter descriptor will be case sensitive.</param>
+        </member>
+        <member name="M:Telerik.Windows.Data.FilterDescriptor.#ctor(System.String,Telerik.Windows.Data.FilterOperator,System.Object,System.Boolean,System.Type)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.Windows.Data.FilterDescriptor"/> class.
+            </summary>
+            <param name="member">The member.</param>
+            <param name="filterOperator">The filter operator.</param>
+            <param name="filterValue">The filter value.</param>
+            <param name="caseSensitive">If set to <c>true</c> indicates that this filter descriptor will be case sensitive.</param>
+            <param name="memberType">The Type of the member.</param>
+        </member>
+        <member name="F:Telerik.Windows.Data.FilterDescriptor.MemberProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Data.FilterDescriptor.Member"/> dependency property.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Data.FilterDescriptor.CreateFilterExpression(System.Linq.Expressions.ParameterExpression)">
+            <summary>
+            Creates a predicate filter expression.
+            </summary>
+            <param name="parameterExpression">The parameter expression, which will be used for filtering.</param>
+            <returns>A predicate filter expression.</returns>
+        </member>
+        <member name="M:Telerik.Windows.Data.FilterDescriptor.ToString">
+            <summary>
+            Returns a <see cref="T:System.String"/> that represents the current <see cref="T:Telerik.Windows.Data.FilterDescriptor"/>.
+            </summary>
+            <returns>
+            A <see cref="T:System.String"/> that represents the current <see cref="T:Telerik.Windows.Data.FilterDescriptor"/>.
+            </returns>
+        </member>
+        <member name="P:Telerik.Windows.Data.FilterDescriptor.Member">
+            <summary>
+            Gets or sets the member name which will be used for filtering.
+            </summary>
+            <value>The member that will be used for filtering.</value>
+        </member>
+        <member name="P:Telerik.Windows.Data.FilterDescriptor.MemberType">
+            <summary>
+            Gets or sets the type of the member that is used for filtering.
+            Set this property if the member type cannot be resolved automatically.
+            Such cases are: items with ICustomTypeDescriptor, XmlNode or DataRow.
+            Changing this property does not raise PropertyChanged event.
+            </summary>
+            <value>The type of the member used for filtering.</value>
+        </member>
+        <member name="P:Telerik.Windows.Data.FilterDescriptor.IsActive">
+            <summary>
+            Gets a value indicating whether this filter is active. A filter is considered active if
+            its Value is different from OperatorValueFilterDescriptorBase.UnsetValue.
+            </summary>
+            <value>A value indicating whether this filter is active.</value>
         </member>
         <member name="T:Telerik.Windows.Data.GroupDescriptor">
             <summary>
@@ -4631,7 +4685,17 @@
         <member name="M:Telerik.Windows.Data.Expressions.FilterExpressionBuilder.CreateFilterExpression">
             <exception cref="T:System.ArgumentException"><c>ArgumentException</c>.</exception>
         </member>
-        <member name="M:Telerik.Windows.Data.Expressions.FilterDescriptorExpressionBuilder.CreateBodyExpression">
+        <member name="T:Telerik.Windows.Data.Expressions.FilterDescriptorExpressionBuilder">
+            <summary>
+             Builds filtering expression for the FilterDescriptor class.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Data.Expressions.OperatorValueFilterDescriptorExpressionBuilderBase">
+            <summary>
+            Base class for all builders that build expression based on an operator and a value.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Data.Expressions.OperatorValueFilterDescriptorExpressionBuilderBase.CreateBodyExpression">
             <exception cref="T:System.ArgumentException"><c>ArgumentException</c>.</exception>
         </member>
         <member name="M:Telerik.Windows.Data.Expressions.StringFilterOperatorExpressionBuilder.ShouldGenerateToLowerCall(System.Linq.Expressions.Expression,System.Linq.Expressions.Expression)">
@@ -4660,6 +4724,14 @@
             <exception cref="T:System.ArgumentException">
             Provided <paramref name="enumerableExpression"/>'s <see cref="P:System.Linq.Expressions.Expression.Type"/> is not <see cref="T:System.Collections.Generic.IEnumerable`1"/>
             </exception>
+        </member>
+        <member name="T:Telerik.Windows.Data.Expressions.CustomTypeProviderExtensions">
+            <exclude/>
+            <excludeToc/>
+        </member>
+        <member name="M:Telerik.Windows.Data.Expressions.CustomTypeProviderExtensions.GetValueFromItemByPropertyName(System.Object,System.String)">
+            <exclude/>
+            <excludeToc/>
         </member>
         <member name="M:Telerik.Windows.Data.Expressions.MemberAccessTokenExtensions.GetMemberInfoForType(Telerik.Windows.Data.Expressions.IMemberAccessToken,System.Type)">
             <exception cref="T:System.InvalidOperationException"><c>InvalidOperationException</c>.</exception>
@@ -5916,14 +5988,14 @@
         </member>
         <member name="P:Telerik.Windows.Controls.SelectionChangeEventArgs.RemovedItems">
             <summary>
-            Gets a list that contains the items that were selected.
-            <value>Items that were selected</value>
+            Gets a list that contains the items that were unselected.
+            <value>Items that were unselected.</value>
             </summary>
         </member>
         <member name="P:Telerik.Windows.Controls.SelectionChangeEventArgs.AddedItems">
             <summary>
-            Gets a list that contains the items that were unselected.
-            <value>Items that were unselected.</value>
+            Gets a list that contains the items that were selected.
+            <value>Items that were selected</value>
             </summary>
         </member>
         <member name="T:Telerik.Windows.Controls.SelectionChangingEventArgs">

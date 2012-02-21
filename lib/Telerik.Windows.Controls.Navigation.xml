@@ -1055,6 +1055,11 @@
             Identifies the OverflowButtonStyle dependency property.
             </summary>
         </member>
+        <member name="F:Telerik.Windows.Controls.RadBreadcrumb.StringComparisonProperty">
+            <summary>
+            Identifies the StringComparison dependency property.
+            </summary>
+        </member>
         <member name="F:Telerik.Windows.Controls.RadBreadcrumb.CurrentContainerProperty">
             <summary>
             Identifies the CurrentContainer dependency property.
@@ -1149,6 +1154,12 @@
             <summary>
             Gets or sets the IsHistoryEnabled property.
             </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadBreadcrumb.StringComparison">
+            <summary>
+            Gets or sets the type of the string comparison.
+            </summary>
+            <value>The type of the string comparison.</value>
         </member>
         <member name="P:Telerik.Windows.Controls.RadBreadcrumb.SelectedHistoryItem">
             <summary>
@@ -5812,6 +5823,11 @@
             Identifes the Opening routed event.
             </summary>
         </member>
+        <member name="F:Telerik.Windows.Controls.RadContextMenu.UIElementProperty">
+            <summary>
+            Identifies the UIElement readonly dependency property.
+            </summary>
+        </member>
         <member name="F:Telerik.Windows.Controls.RadContextMenu.InsideContextMenuProperty">
             <summary>
             Identifies the InsideContextMenu attached property.
@@ -5834,8 +5850,7 @@
         </member>
         <member name="M:Telerik.Windows.Controls.RadContextMenu.GetClickedElement``1">
             <summary>
-            Returns the top-most element of the given type 
-            at the MousePosition coordinates.
+            Returns the top-most element of the given type at the MousePosition coordinates.
             </summary>
             <typeparam name="T">The type of the element to be returned.</typeparam>
         </member>
@@ -6406,11 +6421,6 @@
             Identifies the RoleKey dependency property.
             </summary>
         </member>
-        <member name="F:Telerik.Windows.Controls.RadMenuItem.IsSubmenuOpenPropertyKey">
-            <summary>
-            Identifies the IsSubmenuOpen dependency property.
-            </summary>
-        </member>
         <member name="F:Telerik.Windows.Controls.RadMenuItem.IsHighlightedPropertyKey">
             <summary>
             Identifies the IsHighlighted dependency property.
@@ -6848,6 +6858,11 @@
             Identifies the ItemsMaxCount dependency property.
             </summary>
         </member>
+        <member name="F:Telerik.Windows.Controls.OutlookBar.OutlookBarPanel.ItemsCountProperty">
+            <summary>
+            Identifies the ItemsCount dependency property.
+            </summary>
+        </member>
         <member name="M:Telerik.Windows.Controls.OutlookBar.OutlookBarPanel.MeasureOverride(System.Windows.Size)">
             <summary>
             Provides the behavior for the Measure pass of Silverlight layout. Classes can override this method to define their own Measure pass behavior.
@@ -6889,6 +6904,11 @@
         <member name="P:Telerik.Windows.Controls.OutlookBar.OutlookBarPanel.ItemsMaxCount">
             <summary>
             Gets or sets the ItemsMaxCount property. This property identifies the maximum number of items that will be arranged in the panel.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.OutlookBar.OutlookBarPanel.ItemsCount">
+            <summary>
+            Gets or sets the ItemsMaxCount property. This property identifies the number of items that will be arranged in the panel.
             </summary>
         </member>
         <member name="T:Telerik.Windows.Controls.PositionChangedEventHandler">
@@ -6936,6 +6956,11 @@
         <member name="F:Telerik.Windows.Controls.RadOutlookBar.ActiveItemsMaxCountProperty">
             <summary>
             Identifies the <see cref="P:Telerik.Windows.Controls.RadOutlookBar.ActiveItemsMaxCount"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadOutlookBar.ActiveItemsCountProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.RadOutlookBar.ActiveItemsCount"/> dependency property.
             </summary>
         </member>
         <member name="F:Telerik.Windows.Controls.RadOutlookBar.HeaderVisibilityProperty">
@@ -7147,6 +7172,11 @@
             <remarks>
             By default, <b>ActiveItemsMaxCount</b> is Int32.MaxValue which means that <see cref="T:Telerik.Windows.Controls.RadOutlookBar"/> will put as many items as possible in the <see cref="F:Telerik.Windows.Controls.OutlookBarItemPosition.ActiveArea"/> depending on available space.
             </remarks>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadOutlookBar.ActiveItemsCount">
+            <summary>
+            Gets or sets the desired number of items in the <see cref="F:Telerik.Windows.Controls.OutlookBarItemPosition.ActiveArea"/> of the <see cref="T:Telerik.Windows.Controls.RadOutlookBar"/>. 
+            </summary>
         </member>
         <member name="P:Telerik.Windows.Controls.RadOutlookBar.HeaderVisibility">
             <summary>
@@ -8988,7 +9018,7 @@
         </member>
         <member name="P:Telerik.Windows.Controls.RadTreeView.SelectedItem">
             <summary>
-            Gets the item that is currently selected. This is a dependency property.
+            Gets or sets the item that is currently selected. This is a dependency property.
             </summary>
         </member>
         <member name="P:Telerik.Windows.Controls.RadTreeView.SelectedItems">
@@ -11264,6 +11294,12 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="M:Telerik.Windows.Controls.RadPanelBarItem.OnChildItemsTemplateChanged(Telerik.Windows.Controls.RadPanelBarItem)">
+            <summary>
+            Clears the template property.
+            </summary>
+            <param name="item">The item.</param>
+        </member>
         <member name="P:Telerik.Windows.Controls.RadPanelBarItem.ChildItemsTemplate">
             <summary>
             Gets or sets the template of the child elements.
@@ -12981,13 +13017,6 @@
             Updates the visual state of the control.
             </summary>
             <param name="useTransitions">Indicates whether transitions should be used.</param>
-        </member>
-        <member name="M:Telerik.Windows.Controls.TreeView.TreeViewDragCue.PrepareContainerForItemOverride(System.Windows.DependencyObject,System.Object)">
-            <summary>
-            Prepares the specified element to display the specified item.
-            </summary>
-            <param name="element">Element used to display the specified item.</param>
-            <param name="item">Specified item.</param>
         </member>
         <member name="P:Telerik.Windows.Controls.TreeView.TreeViewDragCue.DragPreviewVisibility">
             <summary>
