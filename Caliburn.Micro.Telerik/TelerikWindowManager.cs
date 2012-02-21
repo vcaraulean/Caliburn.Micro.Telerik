@@ -34,7 +34,7 @@ namespace Caliburn.Micro
 		/// <param name="rootModel">The root model.</param>
 		/// <param name="context">The context.</param>
 		/// <param name="settings">The optional RadWindow settings.</param>
-		public virtual void ShowDialog(object rootModel, object context, IDictionary<string, object> settings = null)
+		public virtual void ShowDialog(object rootModel, object context = null, IDictionary<string, object> settings = null)
 		{
 			var view = EnsureWindow(rootModel, ViewLocator.LocateForModel(rootModel, null, context));
 			ApplySettings(view, settings);
