@@ -14,7 +14,12 @@ namespace Caliburn.Micro.Telerik
 			                                                      "SelectionChanged")
 				.ApplyBinding = (viewModelType, path, property, element, convention) =>
 				{
-					if (!ConventionManager.SetBinding(viewModelType, path, property, element, convention))
+					if (!ConventionManager.SetBindingWithoutBindingOrValueOverwrite(viewModelType,
+					                                                                path,
+					                                                                property,
+					                                                                element,
+					                                                                convention,
+					                                                                RadTabControl.ItemsSourceProperty))
 						return false;
 
 					var tabControl = (RadTabControl) element;
@@ -34,6 +39,7 @@ namespace Caliburn.Micro.Telerik
 					if (string.IsNullOrEmpty(tabControl.DisplayMemberPath))
 						ConventionManager.ApplyHeaderTemplate(tabControl,
 						                                      RadTabControl.ItemTemplateProperty,
+						                                      RadTabControl.ItemTemplateSelectorProperty,
 						                                      viewModelType);
 					return true;
 				};
@@ -49,17 +55,27 @@ namespace Caliburn.Micro.Telerik
 			                                                          "SelectionChanged");
 
 			// Affects: RadGridView, RadTreeListView
-			ConventionManager.AddElementConvention<DataControl>(DataControl.ItemsSourceProperty, "SelectedItem", "SelectionChanged")
+			ConventionManager.AddElementConvention<DataControl>(DataControl.ItemsSourceProperty, "SelectedItem",
+			                                                    "SelectionChanged")
 				.ApplyBinding = (viewModelType, path, property, element, convention) =>
 				{
-					if (!ConventionManager.SetBinding(viewModelType, path, property, element, convention)) return false;
+					if (!ConventionManager.SetBindingWithoutBindingOrValueOverwrite(viewModelType,
+					                                                                path,
+					                                                                property,
+					                                                                element,
+					                                                                convention,
+					                                                                DataControl.ItemsSourceProperty))
+						return false;
+
 					if (ConventionManager.HasBinding(element, DataControl.SelectedItemProperty)) return true;
 					var index = path.LastIndexOf('.');
 					index = index == -1 ? 0 : index + 1;
 					var baseName = path.Substring(index);
 					foreach (var selectionPath in
 						from potentialName in ConventionManager.DerivePotentialSelectionNames(baseName)
-						where viewModelType.GetProperty(potentialName, BindingFlags.IgnoreCase | BindingFlags.Public | BindingFlags.Instance) != null
+						where
+							viewModelType.GetProperty(potentialName, BindingFlags.IgnoreCase | BindingFlags.Public | BindingFlags.Instance) !=
+							null
 						select path.Replace(baseName, potentialName))
 					{
 						var binding = new Binding(selectionPath) {Mode = BindingMode.TwoWay};

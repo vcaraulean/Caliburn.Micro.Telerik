@@ -17,19 +17,8 @@ namespace Caliburn.Micro
 	{
 		/// <summary>
 		/// Shows a modal dialog for the specified model.
-		/// </summary>
-		/// <param name="rootModel">The root model.</param>
-		/// <param name="context">The context.</param>
-		public virtual void ShowDialog(object rootModel, object context = null)
-		{
-			var settings = new Dictionary<string, object>();
-			settings["WindowStartupLocation"] = WindowStartupLocation.CenterScreen;
-
-			ShowDialog(rootModel, context, settings);
-		}
-
-		/// <summary>
-		/// Shows a modal dialog for the specified model.
+		/// 
+		/// By default RadWindow dialog is shown at the center of the screen
 		/// </summary>
 		/// <param name="rootModel">The root model.</param>
 		/// <param name="context">The context.</param>
@@ -37,7 +26,6 @@ namespace Caliburn.Micro
 		public virtual void ShowDialog(object rootModel, object context = null, IDictionary<string, object> settings = null)
 		{
 			var view = EnsureWindow(rootModel, ViewLocator.LocateForModel(rootModel, null, context));
-			ApplySettings(view, settings);
 			ViewModelBinder.Bind(rootModel, view, context);
 
 			var haveDisplayName = rootModel as IHaveDisplayName;
@@ -49,6 +37,8 @@ namespace Caliburn.Micro
 
 			new RadWindowConductor(rootModel, view);
 
+			ApplySettings(view, settings);
+
 			view.ShowDialog();
 		}
 
@@ -58,13 +48,16 @@ namespace Caliburn.Micro
 		/// <param name="rootModel">The root model.</param>
 		/// <param name="durationInMilliseconds">How long the notification should appear for.</param>
 		/// <param name="context">The context.</param>
-		public void ShowNotification(object rootModel, int durationInMilliseconds, object context)
+		/// <param name="settings">The optional RadWindow Settings</param>
+		public void ShowNotification(object rootModel, int durationInMilliseconds, object context = null, IDictionary<string, object> settings = null)
 		{
 			var window = new NotificationWindow();
 			var view = ViewLocator.LocateForModel(rootModel, window, context);
 
 			ViewModelBinder.Bind(rootModel, view, null);
 			window.Content = (FrameworkElement)view;
+
+			ApplySettings(window, settings);
 
 			var activator = rootModel as IActivate;
 			if (activator != null)
@@ -135,21 +128,25 @@ namespace Caliburn.Micro
 			return popup;
 		}
 
-		
-		private static void ApplySettings(RadWindow radWindow, IDictionary<string, object> settings)
+
+		bool ApplySettings(object target, IEnumerable<KeyValuePair<string, object>> settings)
 		{
-			if (settings == null)
-				return;
-
-			var type = radWindow.GetType();
-
-			foreach (var pair in settings)
+			if (settings != null)
 			{
-				var propertyInfo = type.GetProperty(pair.Key);
+				var type = target.GetType();
 
-				if (propertyInfo != null)
-					propertyInfo.SetValue(radWindow, pair.Value, null);
+				foreach (var pair in settings)
+				{
+					var propertyInfo = type.GetProperty(pair.Key);
+
+					if (propertyInfo != null)
+						propertyInfo.SetValue(target, pair.Value, null);
+				}
+
+				return true;
 			}
+
+			return false;
 		}
 
 		private static RadWindow EnsureWindow(object model, object view)
@@ -158,7 +155,11 @@ namespace Caliburn.Micro
 
 			if (window == null)
 			{
-				window = new RadWindow { Content = view };
+				window = new RadWindow
+				{
+					Content = view,
+					WindowStartupLocation = WindowStartupLocation.CenterScreen
+				};
 				window.SetValue(View.IsGeneratedProperty, true);
 			}
 
