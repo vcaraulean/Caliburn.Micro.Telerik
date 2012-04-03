@@ -10,8 +10,8 @@
     <Grid x:Name="LayoutRoot" Background="White">
 
 		<TextBlock Text="Dialog view"
-				   FontSize="26" 
-				   Margin="10"/>
+				   FontSize="26"
+				   Margin="10" />
 
 		<Button Content="Close"
 				x:Name="Close"

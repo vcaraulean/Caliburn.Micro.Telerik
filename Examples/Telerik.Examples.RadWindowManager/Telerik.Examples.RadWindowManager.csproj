@@ -113,6 +113,10 @@
       <DependentUpon>DialogView.xaml</DependentUpon>
     </Compile>
     <Compile Include="DialogViewModel.cs" />
+    <Compile Include="DialogWithResponceButtonsView.xaml.cs">
+      <DependentUpon>DialogWithResponceButtonsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DialogWithResponceButtonsViewModel.cs" />
     <Compile Include="IShell.cs" />
     <Compile Include="NotificationView.xaml.cs">
       <DependentUpon>NotificationView.xaml</DependentUpon>
@@ -131,6 +135,10 @@
       <Generator>MSBuild:Compile</Generator>
     </ApplicationDefinition>
     <Page Include="DialogView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DialogWithResponceButtonsView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
