@@ -1709,6 +1709,11 @@
             Loads new data in the view.
             </summary>
         </member>
+        <member name="M:Telerik.Windows.Data.VirtualQueryableCollectionView.ResetItems">
+            <summary>
+            Reset all items to default value (null) in the collection.
+            </summary>
+        </member>
         <member name="M:Telerik.Windows.Data.VirtualQueryableCollectionView.OnCollectionChanged(System.Collections.Specialized.NotifyCollectionChangedEventArgs)">
             <inheritdoc />
         </member>
@@ -2752,10 +2757,28 @@
             </summary>
             <param name="propertyName">Name of the property that is changed.</param>
         </member>
+        <member name="M:Telerik.Windows.Data.DescriptorBase.SuspendNotifications">
+            <summary>
+            Suspends the notifications.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Data.DescriptorBase.ResumeNotifications">
+            <summary>
+            Resumes the notifications.
+            </summary>
+        </member>
         <member name="E:Telerik.Windows.Data.DescriptorBase.PropertyChanged">
             <summary>
             Occurs when a property changes.
             </summary>
+        </member>
+        <member name="P:Telerik.Windows.Data.DescriptorBase.NotificationsSuspended">
+            <summary>
+            Gets or sets a value indicating whether change notifications are suspended.
+            </summary>
+            <value>
+            	<c>True</c> if notifications are suspended, otherwise, <c>false</c>.
+            </value>
         </member>
         <member name="T:Telerik.Windows.Data.DynamicClass">
             <exclude/>
@@ -4023,6 +4046,16 @@
         <member name="F:Telerik.Windows.Data.FilterOperator.IsNotContainedIn">
             <summary>
             Left operand must not be contained in the right one.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Data.FilterOperator.IsNull">
+            <summary>
+            Operand is null.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Data.FilterOperator.IsNotNull">
+            <summary>
+            Operand is not null.
             </summary>
         </member>
         <member name="T:Telerik.Windows.Data.FilterDescriptor">

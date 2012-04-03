@@ -4,6 +4,33 @@
         <name>Telerik.Windows.Controls.GridView</name>
     </assembly>
     <members>
+        <member name="T:Telerik.Windows.Controls.GridView.GridView.Automation.DetailsPresenterAutomationPeer">
+            <summary>
+            Exposes <see cref="T:Telerik.Windows.Controls.GridView.GridViewCellBase"/> types to UI Automation.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.GridView.GridView.Automation.DetailsPresenterAutomationPeer.#ctor(Telerik.Windows.Controls.GridView.DetailsPresenter)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.Windows.Controls.GridView.GridView.Automation.DetailsPresenterAutomationPeer"/> class.
+            </summary>
+            <param name="presenter">The presenter.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.GridView.GridView.Automation.DetailsPresenterAutomationPeer.GetAutomationControlTypeCore">
+            <summary>
+            Gets the control type for the <see cref="T:System.Windows.UIElement"/> that is associated with this <see cref="T:System.Windows.Automation.Peers.UIElementAutomationPeer"/>. This method is called by <see cref="M:System.Windows.Automation.Peers.AutomationPeer.GetAutomationControlType"/>.
+            </summary>
+            <returns>
+            The <see cref="F:System.Windows.Automation.Peers.AutomationControlType.Custom"/> enumeration value.
+            </returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.GridView.GridView.Automation.DetailsPresenterAutomationPeer.GetClassNameCore">
+            <summary>
+            Gets the name of the <see cref="T:System.Windows.UIElement"/> that is associated with this <see cref="T:System.Windows.Automation.Peers.UIElementAutomationPeer"/>. This method is called by <see cref="M:System.Windows.Automation.Peers.AutomationPeer.GetClassName"/>.
+            </summary>
+            <returns>
+            An <see cref="F:System.String.Empty"/> string.
+            </returns>
+        </member>
         <member name="T:Telerik.Windows.Controls.GridView.CellEventArgs">
             <summary>
             Provides basic data for the cell events.
@@ -3456,6 +3483,11 @@
                 The DependencyProperty that represents the MaxWidth property.
             </summary>
         </member>
+        <member name="F:Telerik.Windows.Controls.GridViewColumn.TabStopModeProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.GridViewColumn.TabStopMode"/> dependency property.
+            </summary>
+        </member>
         <member name="F:Telerik.Windows.Controls.GridViewColumn.FooterCellStyleProperty">
             <summary>
             Identifies the <see cref="P:Telerik.Windows.Controls.GridViewColumn.FooterCellStyle"/> dependency property.
@@ -3850,6 +3882,12 @@
             	<c>true</c> if this instance is auto generated; otherwise, <c>false</c>.
             </value>
         </member>
+        <member name="P:Telerik.Windows.Controls.GridViewColumn.TabStopMode">
+            <summary>
+            Gets or sets the tab stop mode which denotes if cell could gain focus via TAB key.
+            </summary>
+            <value>The tab stop mode.</value>
+        </member>
         <member name="P:Telerik.Windows.Controls.GridViewColumn.CellTemplateSelector">
             <summary>
             Gets or sets the data template selector for the cell in view mode.
@@ -4227,6 +4265,14 @@
             Identifies the <see cref="P:Telerik.Windows.Controls.GridViewBoundColumnBase.ValidatesOnDataErrors"/> dependency property.
             </summary>
         </member>
+        <member name="M:Telerik.Windows.Controls.GridViewBoundColumnBase.CanEdit(System.Object)">
+            <summary>
+            Determines whether the data represented by the column can be edited.
+            </summary>
+            <returns>
+            	<c>true</c> if the data represented by the column can be edited; otherwise, <c>false</c>.
+            </returns>
+        </member>
         <member name="F:Telerik.Windows.Controls.GridViewBoundColumnBase.DataTypeProperty">
             <summary>
             Identifies the DataType dependency property.
@@ -4582,6 +4628,12 @@
             </summary>
             <value>The expression that will be evaluated.</value>
         </member>
+        <member name="P:Telerik.Windows.Controls.GridViewExpressionColumn.LambdaExpression">
+            <summary>
+            Gets the lambda expression.
+            </summary>
+            <value>The lambda expression.</value>
+        </member>
         <member name="P:Telerik.Windows.Controls.GridViewExpressionColumn.DataFormatString">
             <summary>
             Gets or sets the data format string.
@@ -4589,6 +4641,31 @@
             This is a dependency property.
             </summary>
             <value>The data format string.</value>
+        </member>
+        <member name="T:Telerik.Windows.Controls.GridView.GridViewTabStop">
+            <summary>
+            Defines if cell should be focused via TAB key.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.GridView.GridViewTabStop.Skip">
+            <summary>
+            Denotes that cell will not receive focus on a TAB key press.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.GridView.GridViewTabStop.StopInViewMode">
+            <summary>
+            Denotes that cell will receive focus in view mode only on a TAB key press.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.GridView.GridViewTabStop.StopInEditMode">
+            <summary>
+            Denotes that cell will receive focus in edit mode only on a TAB key press.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.GridView.GridViewTabStop.Stop">
+            <summary>
+            Denotes that cell will receive focus (in all modes) on a TAB key press. (default value)
+            </summary>
         </member>
         <member name="T:Telerik.Windows.Controls.GridView.LookupElement">
             <summary>
@@ -6754,6 +6831,13 @@
             <param name="editingEventArgs">The <see cref="T:System.Windows.RoutedEventArgs"/> instance containing the event data.</param>
             <returns></returns>
         </member>
+        <member name="M:Telerik.Windows.Controls.GridViewComboBoxColumn.GetFilteringDisplayString(System.Object)">
+            <summary>
+            Gets the filtering display string for a distinct value.
+            </summary>
+            <param name="distinctValue">The distinctValue.</param>
+            <returns></returns>
+        </member>
         <member name="P:Telerik.Windows.Controls.GridViewComboBoxColumn.ItemsSourceBinding">
             <summary> 
             Gets or sets the Binding for the ComboBoxEdtor ItemsSource. This is a dependency property. 
@@ -6824,6 +6908,14 @@
             GridViewDynamicHyperlinkColumn provides an easy and fast way to display hyperlink. 
             The column dynamically creates hyperlink based on NavigateUrlMemberPaths and NavigateUrlFormatString properties.
             </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.GridViewDynamicHyperlinkColumn.CanEdit(System.Object)">
+            <summary>
+            Determines whether the data represented by the column can be edited.
+            </summary>
+            <returns>
+            	<c>true</c> if the data represented by the column can be edited; otherwise, <c>false</c>.
+            </returns>
         </member>
         <member name="M:Telerik.Windows.Controls.GridViewDynamicHyperlinkColumn.CopyPropertiesFrom(Telerik.Windows.Controls.GridViewColumn)">
              <summary>
@@ -7117,6 +7209,14 @@
             	<c>true</c> if <see cref="P:Telerik.Windows.Controls.GridViewColumn.SortMemberPath"/> is not null or empty; otherwise, <c>false</c>.
             </returns>
         </member>
+        <member name="M:Telerik.Windows.Controls.GridViewImageColumn.CanEdit(System.Object)">
+            <summary>
+            Determines whether the data represented by the column can be edited.
+            </summary>
+            <returns>
+            	<c>true</c> if the data represented by the column can be edited; otherwise, <c>false</c>.
+            </returns>
+        </member>
         <member name="M:Telerik.Windows.Controls.GridViewImageColumn.CopyPropertiesFrom(Telerik.Windows.Controls.GridViewColumn)">
              <summary>
             Copy properties from source column.
@@ -7230,6 +7330,14 @@
             Initializes a new instance of the <see cref="T:Telerik.Windows.Controls.GridViewSelectColumn"/> class.
             </summary>
         </member>
+        <member name="M:Telerik.Windows.Controls.GridViewSelectColumn.CanEdit(System.Object)">
+            <summary>
+            Determines whether the data represented by the column can be edited.
+            </summary>
+            <returns>
+            	<c>true</c> if the data represented by the column can be edited; otherwise, <c>false</c>.
+            </returns>
+        </member>
         <member name="M:Telerik.Windows.Controls.GridViewSelectColumn.CanFilter">
             <summary>
             Determines whether the data represented by the column can be filtered by the RadGridView control.
@@ -7301,6 +7409,14 @@
             </summary>
             <returns>
             	<c>true</c> if the data represented by the column can be grouped; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.GridViewToggleRowDetailsColumn.CanEdit(System.Object)">
+            <summary>
+            Determines whether the data represented by the column can be edited.
+            </summary>
+            <returns>
+            	<c>true</c> if the data represented by the column can be edited; otherwise, <c>false</c>.
             </returns>
         </member>
         <member name="M:Telerik.Windows.Controls.GridViewToggleRowDetailsColumn.#ctor">
@@ -8498,15 +8614,21 @@
             Identifies the <see cref="P:Telerik.Windows.Controls.GridView.FilteringControl.FilterButtonVisibility"/> dependency property.
             </summary>
         </member>
-        <member name="M:Telerik.Windows.Controls.GridView.FilteringControl.#ctor(Telerik.Windows.Controls.GridViewColumn)">
-            <summary>
-            Initializes a new instance of the <see cref="T:Telerik.Windows.Controls.GridView.FilteringControl"/> class.
-            </summary>
-        </member>
         <member name="M:Telerik.Windows.Controls.GridView.FilteringControl.OnApplyTemplate">
             <summary>
             When overridden in a derived class, is invoked whenever application code or internal 
             processes call <see cref="M:System.Windows.FrameworkElement.ApplyTemplate"/>.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.GridView.FilteringControl.#ctor(Telerik.Windows.Controls.GridViewColumn)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.Windows.Controls.GridView.FilteringControl"/> class.
+            </summary>
+            <param name="column">The column.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.GridView.FilteringControl.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.Windows.Controls.GridView.FilteringControl"/> class.
             </summary>
         </member>
         <member name="M:Telerik.Windows.Controls.GridView.FilteringControl.Prepare(Telerik.Windows.Controls.GridViewColumn)">
@@ -8755,6 +8877,59 @@
             </summary>
             <value>The default operator.</value>
         </member>
+        <member name="P:Telerik.Windows.Controls.GridView.FilterOperatorsLoadingEventArgs.DefaultOperator1">
+            <summary>
+            Gets or sets the first default operator.
+            </summary>
+            <value>The first default operator.</value>
+        </member>
+        <member name="P:Telerik.Windows.Controls.GridView.FilterOperatorsLoadingEventArgs.DefaultOperator2">
+            <summary>
+            Gets or sets the second default operator.
+            </summary>
+            <value>The second default operator.</value>
+        </member>
+        <member name="T:Telerik.Windows.Controls.GridView.FilterOperatorToFilterEditorIsEnabledConverter">
+            <summary>
+            FilterOperatorToFilterEditorIsEnabledConverter.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.GridView.FilterOperatorToFilterEditorIsEnabledConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Converts a value.
+            </summary>
+            <param name="value">The value produced by the binding source.</param>
+            <param name="targetType">The type of the binding target property.</param>
+            <param name="parameter">The converter parameter to use.</param>
+            <param name="culture">The culture to use in the converter.</param>
+            <returns>
+            A converted value. If the method returns null, the valid null value is used.
+            </returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.GridView.FilterOperatorToFilterEditorIsEnabledConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Converts a value.
+            </summary>
+            <param name="value">The value that is produced by the binding target.</param>
+            <param name="targetType">The type to convert to.</param>
+            <param name="parameter">The converter parameter to use.</param>
+            <param name="culture">The culture to use in the converter.</param>
+            <returns>
+            A converted value. If the method returns null, the valid null value is used.
+            </returns>
+        </member>
+        <member name="T:Telerik.Windows.Controls.GridView.ColumnFilterDescriptorExtensions">
+            <summary>
+            Extension methods for the IColumnFilterDescriptor interface.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.GridView.ColumnFilterDescriptorExtensions.CopyFrom(Telerik.Windows.Controls.GridView.IColumnFilterDescriptor,Telerik.Windows.Controls.GridView.IColumnFilterDescriptor)">
+            <summary>
+            Copies all filtering settings from the source IColumnFilterDescriptor.
+            </summary>
+            <param name="target">The target.</param>
+            <param name="source">The source.</param>
+        </member>
         <member name="T:Telerik.Windows.Controls.GridView.GridLinesVisibility">
             <summary>
             Determines the visibility of the gridlines
@@ -8886,6 +9061,16 @@
         <member name="M:Telerik.Windows.Controls.GridView.GridViewLoadingIndicator.#ctor">
             <summary>
             Initializes a new instance of the <see cref="T:Telerik.Windows.Controls.GridView.GridViewLoadingIndicator"/> class.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.GridView.GridViewLoadingIndicator.IsBusyProperty">
+            <summary>
+            Identifies the <see cref="F:Telerik.Windows.Controls.GridView.GridViewLoadingIndicator.IsBusyProperty"/> dependency property.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.GridView.GridViewLoadingIndicator.IsBusy">
+            <summary>
+            Gets a value indicating whether the indicator is currently busy. 
             </summary>
         </member>
         <member name="T:Telerik.Windows.Controls.GridView.GridViewRowItemEventArgs">
@@ -11131,6 +11316,20 @@
             <summary>
             When overridden in a derived class, is invoked whenever application code or internal processes call <see cref="M:System.Windows.FrameworkElement.ApplyTemplate"/>.
             </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.GridView.DetailsPresenter.SetAutomationID(Telerik.Windows.Controls.GridView.GridViewRow)">
+            <summary>
+            Sets the AutomationID property.
+            </summary>
+            <param name="row">The row.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.GridView.DetailsPresenter.OnCreateAutomationPeer">
+            <summary>
+            Returns class-specific <see cref="T:System.Windows.Automation.Peers.AutomationPeer"/> implementations for the Windows Presentation Foundation (WPF) infrastructure.
+            </summary>
+            <returns>
+            The type-specific <see cref="T:System.Windows.Automation.Peers.AutomationPeer"/> implementation.
+            </returns>
         </member>
         <member name="P:Telerik.Windows.Controls.GridView.DetailsPresenter.DetailsProvider">
             <summary>
@@ -14162,6 +14361,11 @@
             Identifies the HierarchyColumnIndex property.
             </summary>
         </member>
+        <member name="F:Telerik.Windows.Controls.RadTreeListView.HierarchyIndentProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.RadTreeListView.HierarchyIndent"/> dependency property.
+            </summary>
+        </member>
         <member name="F:Telerik.Windows.Controls.RadTreeListView.DropPositionProperty">
             <summary>
             Identifies the DropPostion dependency property.
@@ -14286,6 +14490,11 @@
         <member name="P:Telerik.Windows.Controls.RadTreeListView.HierarchyColumn">
             <summary>
             Computes the hierarchy column. Cache it locally where applicable.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadTreeListView.HierarchyIndent">
+            <summary>
+            Gets or sets the indent of the hierarchy expand button.
             </summary>
         </member>
         <member name="P:Telerik.Windows.Controls.RadTreeListView.IsDropPreviewLineEnabled">

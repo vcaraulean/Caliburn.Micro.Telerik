@@ -11141,6 +11141,43 @@
             <exception cref="T:System.ArgumentNullException">The <paramref name="destinationType"/> parameter is null. </exception>
             <exception cref="T:System.NotSupportedException">The conversion cannot be performed. </exception>
         </member>
+        <member name="M:Telerik.Windows.Controls.Vector.op_Equality(Telerik.Windows.Controls.Vector,Telerik.Windows.Controls.Vector)">
+            <summary>
+            Implements the operator ==.
+            </summary>
+            <param name="vector1">The vector1.</param>
+            <param name="vector2">The vector2.</param>
+            <returns>
+            The result of the operator.
+            </returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Vector.op_Inequality(Telerik.Windows.Controls.Vector,Telerik.Windows.Controls.Vector)">
+            <summary>
+            Implements the operator !=.
+            </summary>
+            <param name="vector1">The vector1.</param>
+            <param name="vector2">The vector2.</param>
+            <returns>
+            The result of the operator.
+            </returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Vector.Equals(System.Object)">
+            <summary>
+            Determines whether the specified <see cref="T:System.Object"/> is equal to this instance.
+            </summary>
+            <param name="obj">The <see cref="T:System.Object"/> to compare with this instance.</param>
+            <returns>
+              <c>True</c> if the specified <see cref="T:System.Object"/> is equal to this instance; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Vector.GetHashCode">
+            <summary>
+            Returns a hash code for this instance.
+            </summary>
+            <returns>
+            A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table. 
+            </returns>
+        </member>
         <member name="T:Telerik.Windows.Controls.QuickStart.ThemeAwareBackgroundBehavior">
             <summary>
             Telerik QuickStart Framework element background changer.
@@ -12194,144 +12231,6 @@
             The MiddleThumbClickMode actions will take effect only in there is no drag action of the middle thumb. 
             If the middle thumb is dragged, then no click mode action will be performed.s
             </remarks>
-        </member>
-        <member name="T:Telerik.Windows.Controls.RadExpanderDecorator">
-            <summary>
-             A ContentControl used to represent the Expand/Collapse decorator in the Expander's Header.
-            </summary>
-        </member>
-        <member name="F:Telerik.Windows.Controls.RadExpanderDecorator.IsExpandedProperty">
-            <summary>
-            Identifies the IsExpanded property.
-            </summary>
-        </member>
-        <member name="F:Telerik.Windows.Controls.RadExpanderDecorator.IsPressedProperty">
-            <summary>
-            Identifies the IsPressed property.
-            </summary>
-        </member>
-        <member name="F:Telerik.Windows.Controls.RadExpanderDecorator.IsHighlightedProperty">
-            <summary>
-            Identifies the IsHighlighted property.
-            </summary>
-        </member>
-        <member name="F:Telerik.Windows.Controls.RadExpanderDecorator.ExpandDirectionProperty">
-            <summary>
-            Identifies the ExpandDirection property.
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.RadExpanderDecorator.#ctor">
-            <summary>
-            Initializes a new instance of the RadExpanderDecorator class.
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.RadExpanderDecorator.OnApplyTemplate">
-            <summary>
-            Invoked whenever application code or internal processes
-            (such as a rebuilding layout pass) call 
-            <see cref="M:System.Windows.Controls.Control.ApplyTemplate"/>.
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.RadExpanderDecorator.ChangeVisualState(System.Boolean)">
-            <summary>
-            Updates the visual state of the control.
-            </summary>
-            <param name="useTransitions">Indicates whether transitions should be used.</param>
-        </member>
-        <member name="P:Telerik.Windows.Controls.RadExpanderDecorator.IsExpanded">
-            <summary>
-            Gets or sets whether the state is expanded. This is a dependency property.
-            </summary>
-        </member>
-        <member name="P:Telerik.Windows.Controls.RadExpanderDecorator.IsPressed">
-            <summary>
-            Gets or sets whether the state is pressed. This is a dependency property.
-            </summary>
-        </member>
-        <member name="P:Telerik.Windows.Controls.RadExpanderDecorator.IsHighlighted">
-            <summary>
-            Gets or sets whether the mouse is over. This is a dependency property.
-            </summary>
-        </member>
-        <member name="P:Telerik.Windows.Controls.RadExpanderDecorator.ExpandDirection">
-            <summary>
-            Gets or sets the direction in which the expander would expand. This is a dependency property.
-            </summary>
-        </member>
-        <member name="T:Telerik.Windows.Controls.RadExpanderHeader">
-            <summary>
-             A Toggle Button used to represent the Clickable Header of the Expander control.
-            </summary>
-        </member>
-        <member name="F:Telerik.Windows.Controls.RadExpanderHeader.IsExpandedProperty">
-            <summary>
-            Identifies the IsExpanded property.
-            </summary>
-        </member>
-        <member name="F:Telerik.Windows.Controls.RadExpanderHeader.DecoratorTemplateProperty">
-            <summary>
-            Identifies the DecoratorTemplate property.
-            </summary>
-        </member>
-        <member name="F:Telerik.Windows.Controls.RadExpanderHeader.ExpandDirectionProperty">
-            <summary>
-            Identifies the ExpandDirection property.
-            </summary>
-        </member>
-        <member name="F:Telerik.Windows.Controls.RadExpanderHeader.CornerRadiusProperty">
-            <summary>
-            Identifies the CornerRadius property.
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.RadExpanderHeader.#ctor">
-            <summary>
-            Initializes a new instance of the RadExpanderHeader class.
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.RadExpanderHeader.OnApplyTemplate">
-            <summary>
-            Invoked whenever application code or internal processes (such as a rebuilding layout pass) call.
-            <see cref="M:System.Windows.Controls.Control.ApplyTemplate"/>.
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.RadExpanderHeader.ChangeVisualState(System.Boolean)">
-            <summary>
-            Updates the visual state of the control.
-            </summary>
-            <param name="useTransitions">Indicates whether transitions should be used.</param>
-        </member>
-        <member name="P:Telerik.Windows.Controls.RadExpanderHeader.IsExpanded">
-            <summary>
-            Gets or sets whether the content is expanded. This is a dependency property.
-            </summary>
-        </member>
-        <member name="P:Telerik.Windows.Controls.RadExpanderHeader.DecoratorTemplate">
-            <summary>
-            Gets or sets a template for the Expander-decorator item. This is a dependency property.
-            </summary>
-            <remarks>
-            The Expander Decorator is a ContentControl that represents the Expander's state.
-            You can customize the Decorator item via this property.
-            </remarks>
-            <example>
-                <code lang="XAML">
-                    <![CDATA[
-                        <telerik:RadExpander
-                            x:Name="myExpander" 
-                            DecoratorTemplate="{StaticResource CustomDecoratorTemplate}"/>
-                    ]]>
-                </code>
-            </example>
-        </member>
-        <member name="P:Telerik.Windows.Controls.RadExpanderHeader.ExpandDirection">
-            <summary>
-            Gets or sets the direction in which the content would expand. This is a dependency property.
-            </summary>
-        </member>
-        <member name="P:Telerik.Windows.Controls.RadExpanderHeader.CornerRadius">
-            <summary>
-            Gets or sets a value that represents the degree (in pixels) to which the corners of a Border are rounded. This is a dependency property.
-            </summary>
         </member>
         <member name="T:Telerik.Windows.Controls.InvertedBooleanToOpacityConverter">
             <summary>
@@ -19299,6 +19198,11 @@
               Looks up a localized string similar to Appearance.
             </summary>
         </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Apply">
+            <summary>
+              Looks up a localized string similar to Apply.
+            </summary>
+        </member>
         <member name="P:Telerik.Windows.Controls.Strings.Appointment">
             <summary>
               Looks up a localized string similar to Appointment.
@@ -19352,6 +19256,11 @@
         <member name="P:Telerik.Windows.Controls.Strings.Body">
             <summary>
               Looks up a localized string similar to Description.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Bookmark">
+            <summary>
+              Looks up a localized string similar to Bookmark.
             </summary>
         </member>
         <member name="P:Telerik.Windows.Controls.Strings.BrushesCategory">
@@ -19829,6 +19738,11 @@
               Looks up a localized string similar to Toggle Fields Code.
             </summary>
         </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_Commands_ChangeCaptionDefinitionCommand_Name">
+            <summary>
+              Looks up a localized string similar to Change Caption Definition.
+            </summary>
+        </member>
         <member name="P:Telerik.Windows.Controls.Strings.Documents_Commands_ChangeFieldDisplayModeCommand_Name">
             <summary>
               Looks up a localized string similar to Toggle Field Code.
@@ -20014,9 +19928,19 @@
               Looks up a localized string similar to Insert Bookmark.
             </summary>
         </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_Commands_InsertCaptionCommand_Name">
+            <summary>
+              Looks up a localized string similar to Insert Caption.
+            </summary>
+        </member>
         <member name="P:Telerik.Windows.Controls.Strings.Documents_Commands_InsertCommentCommand_Name">
             <summary>
               Looks up a localized string similar to Insert Comment.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_Commands_InsertCrossReferenceCommand_Name">
+            <summary>
+              Looks up a localized string similar to Insert Cross Reference.
             </summary>
         </member>
         <member name="P:Telerik.Windows.Controls.Strings.Documents_Commands_InsertCustomAnnotationRangeCommand_Name">
@@ -20304,9 +20228,19 @@
               Looks up a localized string similar to Underline.
             </summary>
         </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_Commands_UpdateAllCaptionsCommand_Name">
+            <summary>
+              Looks up a localized string similar to Update All Captions.
+            </summary>
+        </member>
         <member name="P:Telerik.Windows.Controls.Strings.Documents_Commands_UpdateAllFieldsCommand_Name">
             <summary>
               Looks up a localized string similar to Update All Fields.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_Commands_UpdateCaptionCommand_Name">
+            <summary>
+              Looks up a localized string similar to Update Caption.
             </summary>
         </member>
         <member name="P:Telerik.Windows.Controls.Strings.Documents_Commands_UpdateFieldCommand_Name">
@@ -20417,6 +20351,11 @@
         <member name="P:Telerik.Windows.Controls.Strings.Documents_ContextMenu_Image_EditImage">
             <summary>
               Looks up a localized string similar to Edit Image.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_ContextMenu_Image_InsertCaption">
+            <summary>
+              Looks up a localized string similar to Insert Caption.
             </summary>
         </member>
         <member name="P:Telerik.Windows.Controls.Strings.Documents_ContextMenu_SpellChecker_AddingWordsNotAvailable">
@@ -21096,6 +21035,146 @@
               Looks up a localized string similar to Sharpen.
             </summary>
         </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_InsertCaptionDialog_Caption">
+            <summary>
+              Looks up a localized string similar to Caption:.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_InsertCaptionDialog_ChapterStartsWithStyle">
+            <summary>
+              Looks up a localized string similar to Chapter starts with style.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_InsertCaptionDialog_DeleteLabel">
+            <summary>
+              Looks up a localized string similar to Delete Label.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_InsertCaptionDialog_Examples">
+            <summary>
+              Looks up a localized string similar to Examples:.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_InsertCaptionDialog_ExcludeLabel">
+            <summary>
+              Looks up a localized string similar to Exclude label from caption.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_InsertCaptionDialog_Format">
+            <summary>
+              Looks up a localized string similar to Format:.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_InsertCaptionDialog_Header">
+            <summary>
+              Looks up a localized string similar to Caption.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_InsertCaptionDialog_IncludeChapterNumber">
+            <summary>
+              Looks up a localized string similar to Include chapter number.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_InsertCaptionDialog_InsertAboveSelection">
+            <summary>
+              Looks up a localized string similar to Above selected item.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_InsertCaptionDialog_InsertBelowSelection">
+            <summary>
+              Looks up a localized string similar to Below selected item.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_InsertCaptionDialog_Label">
+            <summary>
+              Looks up a localized string similar to Label:.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_InsertCaptionDialog_NewLabel">
+            <summary>
+              Looks up a localized string similar to New Label....
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_InsertCaptionDialog_Numbering">
+            <summary>
+              Looks up a localized string similar to Numbering.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_InsertCaptionDialog_Options">
+            <summary>
+              Looks up a localized string similar to Options.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_InsertCaptionDialog_Position">
+            <summary>
+              Looks up a localized string similar to Position:.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_InsertCaptionDialog_UseSeparator">
+            <summary>
+              Looks up a localized string similar to Use separator:.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_InsertCrossReferenceWindow_Header">
+            <summary>
+              Looks up a localized string similar to Cross-Reference.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_InsertCrossReferenceWindow_InsertAs_AboveBelow">
+            <summary>
+              Looks up a localized string similar to Above/below.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_InsertCrossReferenceWindow_InsertAs_BookmarkText">
+            <summary>
+              Looks up a localized string similar to Bookmark text.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_InsertCrossReferenceWindow_InsertAs_CaptionText">
+            <summary>
+              Looks up a localized string similar to Only caption text.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_InsertCrossReferenceWindow_InsertAs_EntireCaption">
+            <summary>
+              Looks up a localized string similar to Entire caption.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_InsertCrossReferenceWindow_InsertAs_HeadingText">
+            <summary>
+              Looks up a localized string similar to Heading text.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_InsertCrossReferenceWindow_InsertAs_LabelAndNumber">
+            <summary>
+              Looks up a localized string similar to Only label and number.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_InsertCrossReferenceWindow_InsertAs_PageNumber">
+            <summary>
+              Looks up a localized string similar to Page number.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_InsertCrossReferenceWindow_InsertAsHyperlink">
+            <summary>
+              Looks up a localized string similar to Insert as hyperlink.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_InsertCrossReferenceWindow_InsertReferenceTo">
+            <summary>
+              Looks up a localized string similar to Insert reference to:.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_InsertCrossReferenceWindow_ReferenceType">
+            <summary>
+              Looks up a localized string similar to Reference type:.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_InsertCrossReferenceWindow_SelectElement">
+            <summary>
+              Looks up a localized string similar to For which element:.
+            </summary>
+        </member>
         <member name="P:Telerik.Windows.Controls.Strings.Documents_InsertDateTimeDialog_AvailableFormats">
             <summary>
               Looks up a localized string similar to Available Formats:.
@@ -21406,6 +21485,11 @@
               Looks up a localized string similar to Bookmarks.
             </summary>
         </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_ManageBookmarksDialog_HiddenBookmarks">
+            <summary>
+              Looks up a localized string similar to Hidden bookmarks.
+            </summary>
+        </member>
         <member name="P:Telerik.Windows.Controls.Strings.Documents_ManageBookmarksDialog_SortBy">
             <summary>
               Looks up a localized string similar to Sort by:.
@@ -21464,6 +21548,11 @@
         <member name="P:Telerik.Windows.Controls.Strings.Documents_MultipleUndoControl_Undo">
             <summary>
               Looks up a localized string similar to Undo.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_NewCaptionLabelDialog_Header">
+            <summary>
+              Looks up a localized string similar to New Label.
             </summary>
         </member>
         <member name="P:Telerik.Windows.Controls.Strings.Documents_OpenDocumentCommand_TheFileCannotBeOpened">
@@ -21762,6 +21851,11 @@
               Looks up a localized string similar to Linked to:.
             </summary>
         </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_StyleDefinition_NextStyle">
+            <summary>
+              Looks up a localized string similar to Following style:.
+            </summary>
+        </member>
         <member name="P:Telerik.Windows.Controls.Strings.Documents_StyleDefinition_Paragraph">
             <summary>
               Looks up a localized string similar to Paragraph.
@@ -21910,6 +22004,11 @@
         <member name="P:Telerik.Windows.Controls.Strings.Documents_StyleFormattingPropertiesDialog_StyleBasedOn">
             <summary>
               Looks up a localized string similar to Style based on:.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_StyleFormattingPropertiesDialog_StyleForFollowingParagraph">
+            <summary>
+              Looks up a localized string similar to Style for following paragraph:.
             </summary>
         </member>
         <member name="P:Telerik.Windows.Controls.Strings.Documents_StyleFormattingPropertiesDialog_StyleName">
@@ -22277,6 +22376,76 @@
               Looks up a localized string similar to The password is incorrect..
             </summary>
         </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_WatermarkSettingsDialog_Buttons_InsertPicture">
+            <summary>
+              Looks up a localized string similar to Insert Picture....
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_WatermarkSettingsDialog_Header">
+            <summary>
+              Looks up a localized string similar to Custom Watermark Settings.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_WatermarkSettingsDialog_NoWatermark">
+            <summary>
+              Looks up a localized string similar to No watermark.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_WatermarkSettingsDialog_PictureWatermark">
+            <summary>
+              Looks up a localized string similar to Picture watermark.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_WatermarkSettingsDialog_TextSettings_Color">
+            <summary>
+              Looks up a localized string similar to Color:.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_WatermarkSettingsDialog_TextSettings_Font">
+            <summary>
+              Looks up a localized string similar to Font:.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_WatermarkSettingsDialog_TextSettings_Layout">
+            <summary>
+              Looks up a localized string similar to Layout:.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_WatermarkSettingsDialog_TextSettings_LayoutDiagonal">
+            <summary>
+              Looks up a localized string similar to Diagonal.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_WatermarkSettingsDialog_TextSettings_LayoutHorizontal">
+            <summary>
+              Looks up a localized string similar to Horizontal.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_WatermarkSettingsDialog_TextSettings_Semitransparent">
+            <summary>
+              Looks up a localized string similar to Semitransparent.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_WatermarkSettingsDialog_TextSettings_Size">
+            <summary>
+              Looks up a localized string similar to Size:.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_WatermarkSettingsDialog_TextSettings_Text">
+            <summary>
+              Looks up a localized string similar to Text:.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_WatermarkSettingsDialog_TextSettings_Transparency">
+            <summary>
+              Looks up a localized string similar to Transparency:.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_WatermarkSettingsDialog_TextWatermark">
+            <summary>
+              Looks up a localized string similar to Text watermark.
+            </summary>
+        </member>
         <member name="P:Telerik.Windows.Controls.Strings.Documents_WaveDecoration_WaveLine">
             <summary>
               Looks up a localized string similar to Wave line.
@@ -22582,6 +22751,16 @@
               Looks up a localized string similar to Is not equal to.
             </summary>
         </member>
+        <member name="P:Telerik.Windows.Controls.Strings.FilterIsNotNull">
+            <summary>
+              Looks up a localized string similar to Is not null.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.FilterIsNull">
+            <summary>
+              Looks up a localized string similar to Is null.
+            </summary>
+        </member>
         <member name="P:Telerik.Windows.Controls.Strings.FilterMatchCase">
             <summary>
               Looks up a localized string similar to Match case.
@@ -22702,6 +22881,16 @@
               Looks up a localized string similar to Is not equal to.
             </summary>
         </member>
+        <member name="P:Telerik.Windows.Controls.Strings.GridViewFilterIsNotNull">
+            <summary>
+              Looks up a localized string similar to Is not null.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.GridViewFilterIsNull">
+            <summary>
+              Looks up a localized string similar to Is null.
+            </summary>
+        </member>
         <member name="P:Telerik.Windows.Controls.Strings.GridViewFilterMatchCase">
             <summary>
               Looks up a localized string similar to Match case.
@@ -22760,6 +22949,11 @@
         <member name="P:Telerik.Windows.Controls.Strings.HeaderedItemsControlHeaderDescription">
             <summary>
               Looks up a localized string similar to Gets or sets the item that labels the control. This is a dependency property..
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Heading">
+            <summary>
+              Looks up a localized string similar to Heading.
             </summary>
         </member>
         <member name="P:Telerik.Windows.Controls.Strings.Hide">
@@ -23020,6 +23214,11 @@
         <member name="P:Telerik.Windows.Controls.Strings.ImageEditor_Width">
             <summary>
               Looks up a localized string similar to Width:.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Insert">
+            <summary>
+              Looks up a localized string similar to Insert.
             </summary>
         </member>
         <member name="P:Telerik.Windows.Controls.Strings.InvalidRecurrenceRuleMessage">
@@ -23580,6 +23779,11 @@
         <member name="P:Telerik.Windows.Controls.Strings.RibbonViewQATMinimize">
             <summary>
               Looks up a localized string similar to Minimize the Ribbon.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.RibbonViewQATRestore">
+            <summary>
+              Looks up a localized string similar to Restore the Ribbon.
             </summary>
         </member>
         <member name="P:Telerik.Windows.Controls.Strings.RibbonViewQATShowAbove">

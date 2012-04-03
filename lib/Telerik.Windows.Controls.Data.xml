@@ -648,35 +648,26 @@
             FilterCompositionLogicalOperator.And if the value is true, otherwise FilterCompositionLogicalOperator.Or.
             </returns>
         </member>
-        <member name="T:Telerik.Windows.Controls.Data.DataFilter.FilterOperatorToSelectedItemConverter">
-            <summary>
-            FilterOperatorToSelectedItemConverter.
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.Data.DataFilter.FilterOperatorToSelectedItemConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
-            <summary>
-            Converts the specified value.
-            </summary>
-            <param name="value">The value.</param>
-            <param name="targetType">Type of the target.</param>
-            <param name="parameter">The parameter.</param>
-            <param name="culture">The culture.</param>
-            <returns></returns>
-        </member>
-        <member name="M:Telerik.Windows.Controls.Data.DataFilter.FilterOperatorToSelectedItemConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
-            <summary>
-            Converts the back.
-            </summary>
-            <param name="value">The value.</param>
-            <param name="targetType">Type of the target.</param>
-            <param name="parameter">The parameter.</param>
-            <param name="culture">The culture.</param>
-            <returns></returns>
-        </member>
         <member name="T:Telerik.Windows.Controls.RadDataFilter">
             <summary>
             Provides a user interface for creating filtering expressions.
             </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadDataFilter.SourceProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.RadDataFilter.Source"/> dependency property.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadDataFilter.NeedsToRefreshItemPropertyDefinitions">
+            <summary>
+            Determines whether the ItemPropertyDefinitions that we have already generated are different
+            from the this.items.ItemProperties. If they are the same there is no need to dispose the view
+            model and create it again from scratch. This optimization was added because RadTreeListView
+            throws ItemProperties ProperyChanged for absolutely everything so to speak, for example when 
+            adding an inactive filter descriptor to it. So without this optimization RadDataFilter is 
+            disposing and recreating its view model all the time which leads to many exceptions.
+            </summary>
+            <returns></returns>
         </member>
         <member name="F:Telerik.Windows.Controls.RadDataFilter.AutoGenerateItemPropertyDefinitionsProperty">
             <summary>
@@ -686,31 +677,6 @@
         <member name="F:Telerik.Windows.Controls.RadDataFilter.CanUserCreateCompositeFiltersProperty">
             <summary>
             Identifies the <see cref="P:Telerik.Windows.Controls.RadDataFilter.CanUserCreateCompositeFilters"/> dependency property.
-            </summary>
-        </member>
-        <member name="F:Telerik.Windows.Controls.RadDataFilter.SourceProperty">
-            <summary>
-            Identifies the <see cref="P:Telerik.Windows.Controls.RadDataFilter.Source"/> dependency property.
-            </summary>
-        </member>
-        <member name="F:Telerik.Windows.Controls.RadDataFilter.FilteredSourcePropertyKey">
-            <summary>
-            Identifies the <see cref="P:Telerik.Windows.Controls.RadDataFilter.FilteredSource"/> dependency property.
-            </summary>
-        </member>
-        <member name="F:Telerik.Windows.Controls.RadDataFilter.FilteredSourceProperty">
-            <summary>
-            Identifies the <see cref="P:Telerik.Windows.Controls.RadDataFilter.FilteredSource"/> dependency property.
-            </summary>
-        </member>
-        <member name="F:Telerik.Windows.Controls.RadDataFilter.FilterDescriptorsPropertyKey">
-            <summary>
-            Identifies the <see cref="P:Telerik.Windows.Controls.RadDataFilter.FilterDescriptors"/> dependency property.
-            </summary>
-        </member>
-        <member name="F:Telerik.Windows.Controls.RadDataFilter.FilterDescriptorsProperty">
-            <summary>
-            Identifies the <see cref="P:Telerik.Windows.Controls.RadDataFilter.FilterDescriptors"/> dependency property.
             </summary>
         </member>
         <member name="F:Telerik.Windows.Controls.RadDataFilter.ViewModelPropertyKey">
@@ -774,6 +740,29 @@
             A <see cref="T:System.String"/> that represents this instance.
             </returns>
         </member>
+        <member name="P:Telerik.Windows.Controls.RadDataFilter.Source">
+            <summary>
+            Gets or sets the data collection that the <see cref="T:Telerik.Windows.Controls.RadDataFilter"/> filters.
+            </summary>
+            <value>The data collection associated with this filter control.</value>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadDataFilter.FilterDescriptors">
+            <summary>
+            Gets a collection of Telerik.Windows.Data.FilterDescriptor objects used to filter the 
+            items collection of this instance.
+            </summary>
+            <value>The filter descriptors.</value>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadDataFilter.FilteredSource">
+            <summary>
+            Gets the filtered source.
+            </summary>
+            <remarks>
+            Binding the ItemsSource property of an ItemsControl to the FilteredSource 
+            property will enable filtering for this control through RadDataFilter.
+            </remarks>
+            <value>The filtered source.</value>
+        </member>
         <member name="E:Telerik.Windows.Controls.RadDataFilter.FilterOperatorsLoading">
             <summary>
             Occurs before the filter operators are loaded. Use this event if you want to 
@@ -802,29 +791,6 @@
             </summary>
             <value><c>true</c> if filter composition is disabled; otherwise, <c>false</c>.</value>
         </member>
-        <member name="P:Telerik.Windows.Controls.RadDataFilter.Source">
-            <summary>
-            Gets or sets the data collection that the <see cref="T:Telerik.Windows.Controls.RadDataFilter"/> filters.
-            </summary>
-            <value>The data collection associated with this filter control.</value>
-        </member>
-        <member name="P:Telerik.Windows.Controls.RadDataFilter.FilteredSource">
-            <summary>
-            Gets the filtered source.
-            </summary>
-            <remarks>
-            Binding the ItemsSource property of an ItemsControl to the FilteredSource 
-            property will enable filtering for this control through RadDataFilter.
-            </remarks>
-            <value>The filtered source.</value>
-        </member>
-        <member name="P:Telerik.Windows.Controls.RadDataFilter.FilterDescriptors">
-            <summary>
-            Gets the filter descriptors. Use this collection to add or remove filter 
-            conditions to RadDataFilter.
-            </summary>
-            <value>The filter descriptors.</value>
-        </member>
         <member name="P:Telerik.Windows.Controls.RadDataFilter.ViewModel">
             <summary>
             Gets or sets the view model.
@@ -841,6 +807,31 @@
             Gets a collection of ItemPropertyDefinition's describing the properties displayed by RadDataFilter.
             </summary>
             <value>The collection of ItemPropertyDefinitions.</value>
+        </member>
+        <member name="T:Telerik.Windows.Controls.Data.DataFilter.FilterOperatorToSelectedItemConverter">
+            <summary>
+            FilterOperatorToSelectedItemConverter.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Data.DataFilter.FilterOperatorToSelectedItemConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Converts the specified value.
+            </summary>
+            <param name="value">The value.</param>
+            <param name="targetType">Type of the target.</param>
+            <param name="parameter">The parameter.</param>
+            <param name="culture">The culture.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Data.DataFilter.FilterOperatorToSelectedItemConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Converts the back.
+            </summary>
+            <param name="value">The value.</param>
+            <param name="targetType">Type of the target.</param>
+            <param name="parameter">The parameter.</param>
+            <param name="culture">The culture.</param>
+            <returns></returns>
         </member>
         <member name="T:Telerik.Windows.Controls.Data.DataFilter.RootFilterViewModel">
             <summary>
@@ -899,6 +890,14 @@
             </summary>
             <value>The operator.</value>
         </member>
+        <member name="P:Telerik.Windows.Controls.Data.DataFilter.SimpleFilterViewModel.IsFilterEditorEnabled">
+            <summary>
+            Gets a value indicating whether the filter editor is enabled.
+            </summary>
+            <value>
+            	<c>true</c> if this the filter editor is enabled; otherwise, <c>false</c>.
+            </value>
+        </member>
         <member name="P:Telerik.Windows.Controls.Data.DataFilter.SimpleFilterViewModel.AvailableOperators">
             <summary>
             Gets the available operators.
@@ -931,11 +930,6 @@
             </summary>
             <value>The underlying FilterDescriptor.</value>
             <remarks>This property is used by the filtering infrastructure and is not meant to be used directly from your code.</remarks>
-        </member>
-        <member name="T:Telerik.Windows.Controls.Data.DataFilter.UnboundQueryableCollectionView">
-            <summary>
-            Default implementation used for unbound mode.
-            </summary>
         </member>
         <member name="T:Telerik.Windows.Controls.Data.DataForm.AddedNewItemEventArgs">
             <summary>
@@ -1111,6 +1105,11 @@
             Resets the theme.
             </summary>
         </member>
+        <member name="F:Telerik.Windows.Controls.DataFormDataField.LabelTemplateProperty">
+            <summary>
+            Represent the LabelTemplate dependency property.
+            </summary>
+        </member>
         <member name="P:Telerik.Windows.Controls.DataFormDataField.Item">
             <summary>
             The business object bound to the field.
@@ -1151,6 +1150,14 @@
             <summary>
             Gets or sets the position of lebels in data fields in RadDataForm.
             </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.DataFormDataField.LabelTemplate">
+            <summary>
+            Gets or sets the label template.
+            </summary>
+            <value>
+            The label template.
+            </value>
         </member>
         <member name="M:Telerik.Windows.Controls.DataFormCheckBoxField.GetControl">
             <summary>
@@ -2482,6 +2489,16 @@
             This class is used as a source for RadDataPager, when in unbound mode.
             </summary>
         </member>
+        <member name="T:Telerik.Windows.Controls.Data.ErrorInfo">
+            <summary>
+            Provides error data for display purposes. 
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Data.ErrorInfo.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.Windows.Controls.Data.ErrorInfo"/> class.
+            </summary>
+        </member>
         <member name="T:Telerik.Windows.Controls.Data.PropertyGrid.AutoGeneratingPropertyDefinitionEventArgs">
             <summary>
             Porvides data for the AutoGeneratingPropertyDefinition event.
@@ -2724,6 +2741,16 @@
             </summary>
             <param name="propertyName">Name of the property.</param>
         </member>
+        <member name="F:Telerik.Windows.Controls.Data.PropertyGrid.PropertyDefinition.IsReadOnlyProperty">
+            <summary>
+            Represents the IsReadOnly dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.Data.PropertyGrid.PropertyDefinition.VisibilityProperty">
+            <summary>
+            Represents the Visibility dependency property.
+            </summary>
+        </member>
         <member name="P:Telerik.Windows.Controls.Data.PropertyGrid.PropertyDefinition.SourceProperty">
             <summary>
             Gets the property's ItemPropertyInfo.
@@ -2802,6 +2829,14 @@
             </summary>
             <value>
             	<c>true</c> if this instance has A searched child; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Data.PropertyGrid.PropertyDefinition.Visibility">
+            <summary>
+            Gets or sets the visibility.
+            </summary>
+            <value>
+            The visibility.
             </value>
         </member>
         <member name="F:Telerik.Windows.Controls.Data.PropertyGrid.LookupPropertyDefinition.ItemsSourceProperty">

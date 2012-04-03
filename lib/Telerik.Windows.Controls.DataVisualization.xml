@@ -2002,20 +2002,22 @@
             
             </summary>
         </member>
-        <member name="M:Telerik.Windows.Controls.BulletGraph.AutoRange.#ctor(System.Double,System.Double,System.Int32)">
+        <member name="M:Telerik.Windows.Controls.BulletGraph.AutoRange.#ctor(System.Double,System.Double,System.Int32,System.Boolean)">
             <summary>
             Initializes a new instance of the <see cref="T:Telerik.Windows.Controls.BulletGraph.AutoRange"/> class.
             </summary>
             <param name="dataMin">The data min.</param>
             <param name="dataMax">The data max.</param>
             <param name="intervalCount">The interval count.</param>
+            <param name="isZeroBased">Indicates whether the auto range should be zero based.</param>
         </member>
-        <member name="M:Telerik.Windows.Controls.BulletGraph.AutoRange.#ctor(System.Double,System.Double)">
+        <member name="M:Telerik.Windows.Controls.BulletGraph.AutoRange.#ctor(System.Double,System.Double,System.Boolean)">
             <summary>
             Initializes a new instance of the <see cref="T:Telerik.Windows.Controls.BulletGraph.AutoRange"/> class.
             </summary>
             <param name="dataMin">The data min.</param>
             <param name="dataMax">The data max.</param>
+            <param name="isZeroBased">Indicates whether the auto range should be zero based.</param>
         </member>
         <member name="M:Telerik.Windows.Controls.BulletGraph.AutoRange.op_Equality(Telerik.Windows.Controls.BulletGraph.AutoRange,Telerik.Windows.Controls.BulletGraph.AutoRange)">
             <summary>
@@ -2197,6 +2199,14 @@
             Gets or sets the user step.
             </summary>
             <value>The user step.</value>
+        </member>
+        <member name="P:Telerik.Windows.Controls.BulletGraph.AutoRange.IsZeroBased">
+            <summary>
+            Gets or sets a value indicating whether this instance is zero based.
+            </summary>
+            <value>
+            	<c>true</c> if this instance is zero based; otherwise, <c>false</c>.
+            </value>
         </member>
         <member name="P:Telerik.Windows.Controls.BulletGraph.AutoRange.Delta">
             <summary>
@@ -7848,6 +7858,11 @@
             Cell size can be scaled depends on the gauge type (semicircle, for example).
             </summary>
         </member>
+        <member name="P:Telerik.Windows.Controls.Gauge.ScaleBase.OriginalSize">
+            <summary>
+            Gets original size of the gauge control.
+            </summary>
+        </member>
         <member name="P:Telerik.Windows.Controls.Gauge.ScaleBase.ParentSize">
             <summary>
             Gets size of the parent object.
@@ -11631,6 +11646,26 @@
             Gets or sets shape's extended data.
             </summary>
         </member>
+        <member name="T:Telerik.Windows.Controls.Map.MouseWheelBehavior">
+            <summary>
+            This enumeration specifies behavior of mouse wheel.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.Map.MouseWheelBehavior.None">
+            <summary>
+            The empty action.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.Map.MouseWheelBehavior.ZoomToPoint">
+            <summary>
+            Mouse wheel zooms in to the point on the map.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.Map.MouseWheelBehavior.ZoomToCenter">
+            <summary>
+            Mouse wheel zooms in the map.
+            </summary>
+        </member>
         <member name="T:Telerik.Windows.Controls.Map.WmsTiledProvider">
             <summary>
             Tiled map provider for the WMS.
@@ -11851,9 +11886,9 @@
             Gets dictionary of the available map sources.
             </summary>
         </member>
-        <member name="F:Telerik.Windows.Controls.Map.WmsTiledProvider.baseUri">
+        <member name="F:Telerik.Windows.Controls.Map.WmsTiledProvider.BaseUriProperty">
             <summary>
-            Base URI of the WMS server.
+            Identifies the BaseUri dependency property.
             </summary>
         </member>
         <member name="M:Telerik.Windows.Controls.Map.WmsTiledProvider.#ctor">
@@ -12188,6 +12223,11 @@
         <member name="P:Telerik.Windows.Controls.Map.IconStyle.HotSpot">
             <summary>
             Gets or sets hot spot settings.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Map.IconStyle.Scale">
+            <summary>
+            Gets or sets icon's scale.
             </summary>
         </member>
         <member name="T:Telerik.Windows.Controls.Map.KmlStyle">
@@ -13250,6 +13290,11 @@
         <member name="P:Telerik.Windows.Controls.Map.ReadShapesCompletedEventArgs.Error">
             <summary>
             Gets the exeption.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Map.ReadShapesCompletedEventArgs.UserState">
+            <summary>
+            Gets the user-defined object which could be set for Read method.
             </summary>
         </member>
         <member name="M:Telerik.Windows.Controls.Map.PreviewReadShapesCompletedEventArgs.#ctor(System.Exception,System.Collections.Generic.List{System.Windows.FrameworkElement})">
@@ -14779,6 +14824,11 @@
             Point description.
             </summary>
         </member>
+        <member name="P:Telerik.Windows.Controls.Map.KmlPlacemarkProperties.IconScale">
+            <summary>
+            Gets or sets icon's scale.
+            </summary>
+        </member>
         <member name="P:Telerik.Windows.Controls.Map.KmlPlacemarkProperties.IconUrl">
             <summary>
             Icon URI.
@@ -14983,6 +15033,16 @@
             This class is mostly intended to support Point element in the KML files.
             </summary>
         </member>
+        <member name="F:Telerik.Windows.Controls.Map.MapPinPoint.ExtendedDataProperty">
+            <summary>
+            Identifies the ExtendedData dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.Map.MapPinPoint.ImageScaleProperty">
+            <summary>
+            Identifies the ImageScale dependency property.
+            </summary>
+        </member>
         <member name="F:Telerik.Windows.Controls.Map.MapPinPoint.ImageSourceProperty">
             <summary>
             Identifies the ImageSource dependency property.
@@ -14991,11 +15051,6 @@
         <member name="F:Telerik.Windows.Controls.Map.MapPinPoint.TextProperty">
             <summary>
             Identifies the Text dependency property.
-            </summary>
-        </member>
-        <member name="F:Telerik.Windows.Controls.Map.MapPinPoint.ExtendedDataProperty">
-            <summary>
-            Identifies the ExtendedData dependency property.
             </summary>
         </member>
         <member name="M:Telerik.Windows.Controls.Map.MapPinPoint.#ctor">
@@ -15007,6 +15062,13 @@
             <summary>
             When overridden in a derived class, is invoked whenever application code or internal processes (such as a rebuilding layout pass) call ApplyTemplate. 
             </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Map.MapPinPoint.ImageScaleChangedHandler(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            ImageScale property changed callback. 
+            </summary>
+            <param name="source">Source.</param>
+            <param name="eventArgs">Event Args.</param>
         </member>
         <member name="M:Telerik.Windows.Controls.Map.MapPinPoint.ImageSourceChangedHandler(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
             <summary>
@@ -15048,6 +15110,11 @@
         <member name="P:Telerik.Windows.Controls.Map.MapPinPoint.BalloonStyle">
             <summary>
             Gets or sets style of the balloon will be used as tooltip for this MapPinPoint.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Map.MapPinPoint.ImageScale">
+            <summary>
+            Get or sets image scale.
             </summary>
         </member>
         <member name="P:Telerik.Windows.Controls.Map.MapPinPoint.ImageSource">
@@ -16715,6 +16782,11 @@
             for Image control.
             </summary>
         </member>
+        <member name="P:Telerik.Windows.Controls.Map.ImageProvider.Image">
+            <summary>
+            Returns the Image object.
+            </summary>
+        </member>
         <member name="T:Telerik.Windows.Controls.Map.MapEllipse">
             <summary>
             Represents ellipse given in the geographical coordinates.
@@ -18058,6 +18130,11 @@
             Click or double click zooms in and centers the point on the map.
             </summary>
         </member>
+        <member name="F:Telerik.Windows.Controls.Map.MouseBehavior.ZoomToCenter">
+            <summary>
+            Click or double click zooms in the map.
+            </summary>
+        </member>
         <member name="T:Telerik.Windows.Controls.Map.MouseDragBehavior">
             <summary>
             The possible options when you click and drag your mouse over the map.
@@ -18748,9 +18825,24 @@
             with current map source.
             </summary>
         </member>
+        <member name="P:Telerik.Windows.Controls.Map.TilePresenter.MapImage">
+            <summary>
+            Returns the Image object.
+            </summary>
+        </member>
         <member name="T:Telerik.Windows.Controls.Map.BingMapProvider">
             <summary>
             Represents the Bing Map Provider class.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.Map.BingMapProvider.IsLabelVisibleProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.Map.BingMapProvider.IsLabelVisible"/> IsLabelVisible dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.Map.BingMapProvider.ModeProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.Map.BingMapProvider.Mode"/> Mode dependency property.
             </summary>
         </member>
         <member name="M:Telerik.Windows.Controls.Map.BingMapProvider.#ctor">
@@ -18823,14 +18915,14 @@
             Gets or sets Bing application ID.
             </summary>
         </member>
-        <member name="P:Telerik.Windows.Controls.Map.BingMapProvider.Mode">
-            <summary>
-            Gets or sets map mode.
-            </summary>
-        </member>
         <member name="P:Telerik.Windows.Controls.Map.BingMapProvider.IsLabelVisible">
             <summary>
             Gets or sets value which indicates whether labels should be visible on the map.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Map.BingMapProvider.Mode">
+            <summary>
+            Gets or sets map mode.
             </summary>
         </member>
         <member name="P:Telerik.Windows.Controls.Map.BingMapProvider.SpatialReference">
@@ -20534,6 +20626,11 @@
             Identifies the <see cref="P:Telerik.Windows.Controls.RadMap.IsMouseWheelZoomEnabled"/> IsMouseWheelZoomEnabled dependency property.
             </summary>
         </member>
+        <member name="F:Telerik.Windows.Controls.RadMap.MouseWheelModeProperty">
+            <summary>
+            Identifies the MouseWheelMode dependency property.
+            </summary>
+        </member>
         <member name="F:Telerik.Windows.Controls.RadMap.IsKeyboardNavigationEnabledProperty">
             <summary>
             Identifies the <see cref="P:Telerik.Windows.Controls.RadMap.IsKeyboardNavigationEnabled"/> dependency property.
@@ -20896,6 +20993,11 @@
         <member name="P:Telerik.Windows.Controls.RadMap.IsMouseWheelZoomEnabled">
             <summary>
             Gets or sets value which indicates whether mouse weel can be used to zoom map in-out.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadMap.MouseWheelMode">
+            <summary>
+            Gets or sets the mode of mouse wheel.
             </summary>
         </member>
         <member name="P:Telerik.Windows.Controls.RadMap.IsKeyboardNavigationEnabled">
@@ -21361,12 +21463,26 @@
             Reads shapes.
             </summary>
         </member>
+        <member name="M:Telerik.Windows.Controls.Map.SqlGeospatialDataReader.Read(System.Object)">
+            <summary>
+            Reads shapes.
+            </summary>
+            <param name="userState">A user-defined object that is passed to the method invoked when the asynchronous operation completes.</param>
+        </member>
         <member name="M:Telerik.Windows.Controls.Map.SqlGeospatialDataReader.Read(System.Collections.IEnumerable,System.String)">
             <summary>
             Reads shapes from the IEnumerable instance.
             </summary>
             <param name="itemsSource">The IEnumerable instance.</param>
             <param name="geospatialPropertyName">The Name of property which contains geospatial data.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Map.SqlGeospatialDataReader.Read(System.Collections.IEnumerable,System.String,System.Object)">
+            <summary>
+            Reads shapes from the IEnumerable instance.
+            </summary>
+            <param name="itemsSource">The IEnumerable instance.</param>
+            <param name="geospatialPropertyName">The Name of property which contains geospatial data.</param>
+            <param name="userState">A user-defined object that is passed to the method invoked when the asynchronous operation completes.</param>
         </member>
         <member name="P:Telerik.Windows.Controls.Map.SqlGeospatialDataReader.Source">
             <summary>
@@ -22076,6 +22192,78 @@
             that contains the event data.
             </param>
         </member>
+        <member name="T:Telerik.Windows.Controls.Timeline.RowSlot">
+            <summary>
+            ViewModel that represents a time interval.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.TimeBar.IPeriodSpan">
+            <summary>
+            Describes an interval in time.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.TimeBar.IPeriodSpan.EndDate">
+            <summary>
+            Gets the end date.
+            </summary>
+            <value>The end date.</value>
+        </member>
+        <member name="P:Telerik.Windows.Controls.TimeBar.IPeriodSpan.Interval">
+            <summary>
+            Gets the interval between <seealso cref="P:Telerik.Windows.Controls.TimeBar.IPeriodSpan.StartDate"/> and <seealso cref="P:Telerik.Windows.Controls.TimeBar.IPeriodSpan.EndDate"/>.
+            </summary>
+            <value>The interval.</value>
+        </member>
+        <member name="P:Telerik.Windows.Controls.TimeBar.IPeriodSpan.StartDate">
+            <summary>
+            Gets the start date.
+            </summary>
+            <value>The start date.</value>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Timeline.RowSlot.#ctor(System.DateTime,System.DateTime)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.Windows.Controls.Timeline.RowSlot"/> class.
+            </summary>
+            <param name="start">The start.</param>
+            <param name="end">The end.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Timeline.RowSlot.CompareTo(System.Object)">
+            <summary>
+            Compares the current instance with another object of the same type and returns
+            an integer that indicates whether the current instance precedes, follows, or
+            occurs in the same position in the sort order as the other object.
+            </summary>
+            <param name="obj">
+            An object to compare with this instance.
+            </param>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Timeline.RowSlot.CompareTo(System.DateTime)">
+            <summary>
+            Compares the current instance with another <see cref="T:System.DateTime"/> and returns
+            an integer that indicates whether the current instance precedes, follows, or
+            occurs in the same position in the sort order as the other object.
+            </summary>
+            <param name="other">
+            A DateTime object to compare with this instance. 
+            </param>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Timeline.RowSlot.StartDate">
+            <summary>
+            Gets the start date.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Timeline.RowSlot.EndDate">
+            <summary>
+            Gets the end date.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Timeline.RowSlot.Interval">
+            <summary>
+            Gets the span.
+            </summary>
+        </member>
         <member name="T:Telerik.Windows.Controls.Timeline.EdgeData">
             <summary>
             ViewModel that represents the start or end of a <see cref="T:Telerik.Windows.Controls.RadTimeline"/> item.
@@ -22202,6 +22390,14 @@
             </summary>
             <value>
             The timeline data points.
+            </value>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Timeline.RowData.FreeSlots">
+            <summary>
+            Gets or sets the free row slots, determined by the instant timeline items.
+            </summary>
+            <value>
+            The free row slots.
             </value>
         </member>
         <member name="T:Telerik.Windows.Controls.Timeline.TimelineDataItem">
@@ -25593,29 +25789,6 @@
             Provides implementation of <seealso cref="T:Telerik.Windows.Controls.TimeBar.IPeriodSpan"/> interface for a <seealso cref="T:System.Windows.Controls.Control"/> class.
             </summary>
         </member>
-        <member name="T:Telerik.Windows.Controls.TimeBar.IPeriodSpan">
-            <summary>
-            Describes an interval in time.
-            </summary>
-        </member>
-        <member name="P:Telerik.Windows.Controls.TimeBar.IPeriodSpan.EndDate">
-            <summary>
-            Gets the end date.
-            </summary>
-            <value>The end date.</value>
-        </member>
-        <member name="P:Telerik.Windows.Controls.TimeBar.IPeriodSpan.Interval">
-            <summary>
-            Gets the interval between <seealso cref="P:Telerik.Windows.Controls.TimeBar.IPeriodSpan.StartDate"/> and <seealso cref="P:Telerik.Windows.Controls.TimeBar.IPeriodSpan.EndDate"/>.
-            </summary>
-            <value>The interval.</value>
-        </member>
-        <member name="P:Telerik.Windows.Controls.TimeBar.IPeriodSpan.StartDate">
-            <summary>
-            Gets the start date.
-            </summary>
-            <value>The start date.</value>
-        </member>
         <member name="F:Telerik.Windows.Controls.TimeBar.PeriodSpanControlAdapter.EndDateProperty">
             <summary>
             Identifies the <see cref="P:Telerik.Windows.Controls.TimeBar.PeriodSpanControlAdapter.EndDate"/> dependency property.
@@ -27826,6 +27999,11 @@
             </summary>
             <param name="sender">The RadTreeMapBase object.</param>
             <param name="newValue">The new value.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.TreeMap.RadTreeMapBase.ClearSelection">
+            <summary>
+            Clears the <see cref="P:Telerik.Windows.Controls.TreeMap.RadTreeMapBase.SelectedItem"/> and <see cref="P:Telerik.Windows.Controls.TreeMap.RadTreeMapBase.SelectedValue"/>.
+            </summary>
         </member>
         <member name="E:Telerik.Windows.Controls.TreeMap.RadTreeMapBase.PreviewSelectionChanged">
             <summary>

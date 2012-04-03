@@ -108,7 +108,7 @@
     <Reference Include="Telerik.Windows.Controls.Navigation">
       <HintPath>..\..\lib\Telerik.Windows.Controls.Navigation.dll</HintPath>
     </Reference>
-    <Reference Include="Telerik.Windows.Data, Version=2012.1.215.1050, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.Windows.Data, Version=2012.1.326.1050, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">

@@ -894,6 +894,34 @@
             Applies the template for the RadBreadcrumb.
             </summary>
         </member>
+        <member name="M:Telerik.Windows.Controls.RadBreadcrumb.ShouldCloseOnKeyboardFocusWithinChanged(System.Windows.UIElement)">
+            <summary>
+            Shoulds the close on keyboard focus within changed.
+            </summary>
+            <param name="eventOriginalSource">The event original source.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadBreadcrumb.ShouldCloseOnMouseButtonDown(System.Windows.UIElement)">
+            <summary>
+            Shoulds the close on mouse button down.
+            </summary>
+            <param name="eventOriginalSource">The event original source.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadBreadcrumb.ShouldCloseOnMouseButtonUp(System.Windows.UIElement)">
+            <summary>
+            Shoulds the close on mouse button up.
+            </summary>
+            <param name="eventOriginalSource">The event original source.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadBreadcrumb.ShouldRecaptureMouse(System.Windows.DependencyObject)">
+            <summary>
+            Shoulds the recapture mouse.
+            </summary>
+            <param name="eventOriginalSource">The event original source.</param>
+            <returns></returns>
+        </member>
         <member name="M:Telerik.Windows.Controls.RadBreadcrumb.OnMouseLeftButtonDown(System.Windows.Input.MouseButtonEventArgs)">
             <summary>
             Invoked on MouseLeftButtonDown.
@@ -995,14 +1023,14 @@
             Identifies the Path dependency property.
             </summary>
         </member>
-        <member name="F:Telerik.Windows.Controls.RadBreadcrumb.AutoCompleteItemsProperty">
+        <member name="F:Telerik.Windows.Controls.RadBreadcrumb.AutocompleteItemsProperty">
             <summary>
-            Identifies the AutoCompleteItems dependency property.
+            Identifies the AutocompleteItems dependency property.
             </summary>
         </member>
-        <member name="F:Telerik.Windows.Controls.RadBreadcrumb.SelectedAutoCompleteItemProperty">
+        <member name="F:Telerik.Windows.Controls.RadBreadcrumb.SelectedAutocompleteItemProperty">
             <summary>
-            Identifies the SelectedAutoCompleteItem dependency property.
+            Identifies the SelectedAutocompleteItem dependency property.
             </summary>
         </member>
         <member name="F:Telerik.Windows.Controls.RadBreadcrumb.IsCurrentIconVisibleProperty">
@@ -1043,6 +1071,11 @@
         <member name="F:Telerik.Windows.Controls.RadBreadcrumb.IsHistoryEnabledProperty">
             <summary>
             Identifies the IsHistoryEnabled dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadBreadcrumb.IsHistoryOpenProperty">
+            <summary>
+            Identifies the IsHistoryOpen dependency property.
             </summary>
         </member>
         <member name="F:Telerik.Windows.Controls.RadBreadcrumb.SplitButtonStyleProperty">
@@ -1168,12 +1201,12 @@
         </member>
         <member name="P:Telerik.Windows.Controls.RadBreadcrumb.HistoryItems">
             <summary>
-            Gets or sets the IsLinearMode property.
+            Gets or sets the HistoryItems property.
             </summary>
         </member>
         <member name="P:Telerik.Windows.Controls.RadBreadcrumb.IsTextModeEnabled">
             <summary>
-            Gets or sets the IsLinearMode property.
+            Gets or sets the IsTextModeEnabled property.
             </summary>
         </member>
         <member name="P:Telerik.Windows.Controls.RadBreadcrumb.IsLinearMode">
@@ -1188,7 +1221,12 @@
         </member>
         <member name="P:Telerik.Windows.Controls.RadBreadcrumb.ImagePath">
             <summary>
-            Gets or sets the IconPath property.
+            Gets or sets the ImagePath property.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadBreadcrumb.IsHistoryOpen">
+            <summary>
+            Gets or sets the IsHistoryOpen property.
             </summary>
         </member>
         <member name="P:Telerik.Windows.Controls.RadBreadcrumb.IsCurrentIconVisible">
@@ -1201,14 +1239,14 @@
             Gets or sets the IsIconVisible property.
             </summary>
         </member>
-        <member name="P:Telerik.Windows.Controls.RadBreadcrumb.SelectedAutoCompleteItem">
+        <member name="P:Telerik.Windows.Controls.RadBreadcrumb.SelectedAutocompleteItem">
             <summary>
-            Gets or sets the SelectedAutoCompleteItem property.
+            Gets or sets the SelectedAutocompleteItem property.
             </summary>
         </member>
-        <member name="P:Telerik.Windows.Controls.RadBreadcrumb.AutoCompleteItems">
+        <member name="P:Telerik.Windows.Controls.RadBreadcrumb.AutocompleteItems">
             <summary>
-            Gets or sets the AutoCompleteItems property.
+            Gets or sets the AutocompleteItems property.
             </summary>
         </member>
         <member name="P:Telerik.Windows.Controls.RadBreadcrumb.TextModePath">
@@ -2737,19 +2775,6 @@
             </summary>
             <param name="newTemplate">The new template to apply.</param>
         </member>
-        <member name="M:Telerik.Windows.Controls.TabControl.RadTabControlBase.MeasureOverride(System.Windows.Size)">
-            <summary>
-            Provides the behavior for the Measure pass of Silverlight layout. Classes can override this
-            method to define their own Measure pass behavior.
-            </summary>
-            <param name="availableSize">The available size that this object can give to child objects.
-            Infinity can be specified as a value to indicate that the object will size to whatever content is
-            available.</param>
-            <returns>
-            The size that this object determines it needs during layout, based on its calculations of child
-            object allotted sizes.
-            </returns>
-        </member>
         <member name="M:Telerik.Windows.Controls.TabControl.RadTabControlBase.OnDropDownOpened(Telerik.Windows.Controls.DropDownEventArgs)">
             <summary>
             Called before the <see cref="E:Telerik.Windows.Controls.TabControl.RadTabControlBase.DropDownOpened"/> event is invoked. 
@@ -2843,6 +2868,11 @@
         <member name="M:Telerik.Windows.Controls.TabControl.RadTabControlBase.ClearContentForRemovedItems(System.Collections.IList)">
             <summary>
             Clears the ContentPresenter elements used to display the content of already removed items.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.TabControl.RadTabControlBase.BringSelectedItemIntoView">
+            <summary>
+            Brings the selected tab into view asynchronously.
             </summary>
         </member>
         <member name="F:Telerik.Windows.Controls.TabControl.RadTabControlBase.PreviewSelectionChangedEvent">
@@ -7347,7 +7377,7 @@
                     </para>
                     <code lang="CS">
                         RadOutlookBar outlookBar = new RadOutlookBar();
-                        outlookBar.ItemsSource = new string[] { "Item Header 1", "Item Header 2", "Item Hedaer 3" };
+                        outlookBar.ItemsSource = new string[] { "Item Header 1", "Item Header 2", "Item Header 3" };
                         outlookBar[1].IsSelected = true;
                     </code>
                 </example>
@@ -14643,6 +14673,12 @@
             </summary>
             <param name="e">The data for the event.</param>
         </member>
+        <member name="M:Telerik.Windows.Controls.RadWindow.OnKeyDown(System.Windows.Input.KeyEventArgs)">
+            <summary>
+            Called before the <see cref="E:System.Windows.UIElement.KeyDown"/> event occurs.
+            </summary>
+            <param name="e">The data for the event.</param>
+        </member>
         <member name="M:Telerik.Windows.Controls.RadWindow.OnClosing">
             <summary>
             
@@ -14925,12 +14961,6 @@
             Raises the <see cref="E:Ok"/> event.
             </summary>
             <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
-        </member>
-        <member name="M:Telerik.Windows.Controls.RadAlert.OnKeyDown(System.Windows.Input.KeyEventArgs)">
-            <summary>
-            Overrides the OnKeyDown event of the WindowsBase.
-            </summary>
-            <param name="e"></param>
         </member>
         <member name="E:Telerik.Windows.Controls.RadAlert.Ok">
             <summary>
