@@ -6,13 +6,13 @@ namespace Caliburn.Micro
 {
 	public static class IWindowManagerExtensions
 	{
-		public static void ShowDialog(this IWindowManager windowManager, object rootModel, object context = null, IDictionary<string, object> settings = null)
+		public static void Show(this IWindowManager windowManager, object rootModel, object context = null, IDictionary<string, object> settings = null)
 		{
 			var wm = windowManager as TelerikWindowManager;
 			if (wm == null)
-				throw new InvalidOperationException("Expected 'Caliburn.Micro.Telerik.RadWindowManager'.");
+				throw new InvalidOperationException("Expected 'Caliburn.Micro.TelerikWindowManager'.");
 
-			wm.ShowDialog(rootModel, context, settings);
+			wm.Show(rootModel, context, settings);
 		}
 
 		public static void Alert(this IWindowManager windowManager, string title, string message)

@@ -25,21 +25,42 @@ namespace Caliburn.Micro
 		/// <param name="settings">The optional RadWindow settings.</param>
 		public virtual void ShowDialog(object rootModel, object context = null, IDictionary<string, object> settings = null)
 		{
+			var view = PrepareRadWindow(rootModel, context, settings);
+
+			view.ShowDialog();
+		}
+
+		/// <summary>
+		/// Shows a normal, non-modal dialog for the specified model.
+		/// 
+		/// By default RadWindow dialog is shown at the center of the screen
+		/// </summary>
+		/// <param name="rootModel">The root model.</param>
+		/// <param name="context">The context.</param>
+		/// <param name="settings">The optional RadWindow settings.</param>
+		public virtual void Show(object rootModel, object context = null, IDictionary<string, object> settings = null)
+		{
+			var view = PrepareRadWindow(rootModel, context, settings);
+
+			view.Show();
+		}
+
+		private RadWindow PrepareRadWindow(object rootModel, object context, IDictionary<string, object> settings)
+		{
 			var view = EnsureWindow(rootModel, ViewLocator.LocateForModel(rootModel, null, context));
 			ViewModelBinder.Bind(rootModel, view, context);
 
 			var haveDisplayName = rootModel as IHaveDisplayName;
 			if (haveDisplayName != null && !ConventionManager.HasBinding(view, RadWindow.HeaderProperty))
 			{
-				var binding = new Binding("DisplayName") { Mode = BindingMode.TwoWay };
+				var binding = new Binding("DisplayName") {Mode = BindingMode.TwoWay};
 				view.SetBinding(RadWindow.HeaderProperty, binding);
 			}
 
 			new RadWindowConductor(rootModel, view);
 
 			ApplySettings(view, settings);
-
-			view.ShowDialog();
+			return view;
 		}
 
 		/// <summary>
