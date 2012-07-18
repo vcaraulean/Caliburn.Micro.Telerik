@@ -19,7 +19,7 @@
 
 			var batch = new CompositionBatch();
 
-			batch.AddExportedValue<IWindowManager>(new TelerikWindowManager2());
+			batch.AddExportedValue<IWindowManager>(new TelerikWindowManager());
 			batch.AddExportedValue<IEventAggregator>(new EventAggregator());
 			batch.AddExportedValue(container);
 

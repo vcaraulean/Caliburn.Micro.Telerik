@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Windows;
 using System.Windows.Data;
@@ -8,7 +9,7 @@ using Telerik.Windows.Controls;
 
 namespace Caliburn.Micro
 {
-	public class TelerikWindowManager2 : WindowManager
+	public class TelerikWindowManager : WindowManager
 	{
 		public override bool? ShowDialog(object rootModel, object context = null, IDictionary<string, object> settings = null)
 		{
@@ -161,6 +162,64 @@ namespace Caliburn.Micro
 			return active ?? Application.Current.MainWindow;
 		}
 
+		public static void Alert(string title, string message)
+		{
+			Alert(new DialogParameters { Header = title, Content = message });
+		}
+
+		public static void Alert(DialogParameters dialogParameters)
+		{
+			RadWindow.Alert(dialogParameters);
+		}
+
+		public static void Confirm(string title, string message, System.Action onOK, System.Action onCancel = null)
+		{
+			var dialogParameters = new DialogParameters
+			{
+				Header = title,
+				Content = message
+			};
+			dialogParameters.Closed += (sender, args) =>
+			{
+				var result = args.DialogResult;
+				if (result.HasValue && result.Value)
+				{
+					onOK();
+					return;
+				}
+
+				if (onCancel != null)
+					onCancel();
+			};
+			Confirm(dialogParameters);
+		}
+
+		public static void Confirm(DialogParameters dialogParameters)
+		{
+			RadWindow.Confirm(dialogParameters);
+		}
+
+		public static void Prompt(string title, string message, string defaultPromptResultValue, Action<string> onOK)
+		{
+			var dialogParameters = new DialogParameters
+			{
+				Header = title,
+				Content = message,
+				DefaultPromptResultValue = defaultPromptResultValue,
+			};
+			dialogParameters.Closed += (o, args) =>
+			{
+				if (args.DialogResult.HasValue && args.DialogResult.Value)
+					onOK(args.PromptResult);
+			};
+
+			Prompt(dialogParameters);
+		}
+
+		public static void Prompt(DialogParameters dialogParameters)
+		{
+			RadWindow.Prompt(dialogParameters);
+		}
 
 	}
 }

@@ -7,23 +7,6 @@ namespace Caliburn.Micro
 	public static class IWindowManagerExtensions
 	{
 		/// <summary>
-		/// Shows a normal, non-modal dialog for the specified model.
-		/// 
-		/// By default RadWindow dialog is shown at the center of the screen
-		/// </summary>
-		/// <param name="rootModel">The root model.</param>
-		/// <param name="context">The context.</param>
-		/// <param name="settings">The optional RadWindow settings.</param>
-		public static void Show(this IWindowManager windowManager, object rootModel, object context = null, IDictionary<string, object> settings = null)
-		{
-			var wm = windowManager as TelerikWindowManager;
-			if (wm == null)
-				throw new InvalidOperationException("Expected 'Caliburn.Micro.TelerikWindowManager'.");
-
-			wm.Show(rootModel, context, settings);
-		}
-
-		/// <summary>
 		/// Opens an Alert modal window
 		/// </summary>
 		public static void Alert(this IWindowManager windowManager, string title, string message)
