@@ -19,6 +19,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Examples", "Examples", "{4C
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Examples.RadWindowManager", "WPF\Examples.RadWindowManager\Examples.RadWindowManager.csproj", "{2608697E-6464-4B5B-99A3-3234A6706EE2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Examples.Conventions", "WPF\Examples.Conventions\Examples.Conventions.csproj", "{B71973C8-7ECF-4521-9357-6838E3D296B6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -79,6 +81,16 @@ Global
 		{2608697E-6464-4B5B-99A3-3234A6706EE2}.Release|Mixed Platforms.Build.0 = Release|x86
 		{2608697E-6464-4B5B-99A3-3234A6706EE2}.Release|x86.ActiveCfg = Release|x86
 		{2608697E-6464-4B5B-99A3-3234A6706EE2}.Release|x86.Build.0 = Release|x86
+		{B71973C8-7ECF-4521-9357-6838E3D296B6}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{B71973C8-7ECF-4521-9357-6838E3D296B6}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{B71973C8-7ECF-4521-9357-6838E3D296B6}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{B71973C8-7ECF-4521-9357-6838E3D296B6}.Debug|x86.ActiveCfg = Debug|x86
+		{B71973C8-7ECF-4521-9357-6838E3D296B6}.Debug|x86.Build.0 = Debug|x86
+		{B71973C8-7ECF-4521-9357-6838E3D296B6}.Release|Any CPU.ActiveCfg = Release|x86
+		{B71973C8-7ECF-4521-9357-6838E3D296B6}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{B71973C8-7ECF-4521-9357-6838E3D296B6}.Release|Mixed Platforms.Build.0 = Release|x86
+		{B71973C8-7ECF-4521-9357-6838E3D296B6}.Release|x86.ActiveCfg = Release|x86
+		{B71973C8-7ECF-4521-9357-6838E3D296B6}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -91,5 +103,6 @@ Global
 		{CB1E2DDF-F1E2-4A73-AF64-AC48BAE2AD87} = {CCCB4916-F055-4454-B433-11711048E9FE}
 		{4C9A3B14-A1C2-4A7C-AD77-03DD944A8868} = {CCCB4916-F055-4454-B433-11711048E9FE}
 		{2608697E-6464-4B5B-99A3-3234A6706EE2} = {4C9A3B14-A1C2-4A7C-AD77-03DD944A8868}
+		{B71973C8-7ECF-4521-9357-6838E3D296B6} = {4C9A3B14-A1C2-4A7C-AD77-03DD944A8868}
 	EndGlobalSection
 EndGlobal
