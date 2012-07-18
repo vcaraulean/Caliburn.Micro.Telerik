@@ -164,7 +164,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\Caliburn.Micro.Telerik\Caliburn.Micro.Telerik.csproj">
       <Project>{8D3D9933-BD77-424D-BD81-843B7AAC3C56}</Project>
-      <Name>Caliburn.Micro.Telerik</Name>
+      <Name>Caliburn.Micro.Telerik %28Silverlight\Caliburn.Micro.Telerik%29</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
