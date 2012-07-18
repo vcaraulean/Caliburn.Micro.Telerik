@@ -74,7 +74,6 @@
     <Compile Include="RadWindowConductor.cs" />
     <Compile Include="TelerikConventions.cs" />
     <Compile Include="TelerikWindowManager.cs" />
-    <Compile Include="TelerikWindowManager2.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

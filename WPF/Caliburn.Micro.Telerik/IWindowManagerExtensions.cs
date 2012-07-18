@@ -1,5 +1,4 @@
 using System;
-using System.Collections.Generic;
 using Telerik.Windows.Controls;
 
 namespace Caliburn.Micro

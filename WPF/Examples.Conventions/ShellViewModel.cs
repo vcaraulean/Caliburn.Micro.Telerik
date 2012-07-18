@@ -21,6 +21,5 @@ namespace Examples.Conventions
 				.OrderBy(s => s.DisplayName);
 			Items.AddRange(conventionSamples);
 		}
-
 	}
 }

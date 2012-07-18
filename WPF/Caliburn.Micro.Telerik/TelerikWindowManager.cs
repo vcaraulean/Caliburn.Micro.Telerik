@@ -1,345 +1,225 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Controls.Primitives;
 using System.Windows.Data;
 using System.Windows.Navigation;
 using Caliburn.Micro.Telerik;
 using Telerik.Windows.Controls;
-using PlacementMode = System.Windows.Controls.Primitives.PlacementMode;
 
 namespace Caliburn.Micro
 {
-	///// <summary>
-	///// A service that manages windows.
-	///// Implementation for <see cref="RadWindow"/>
-	///// </summary>
-	//public class TelerikWindowManager : IWindowManager
-	//{
-	//    /// <summary>
-	//    /// Shows a modal dialog for the specified model.
-	//    /// </summary>
-	//    /// <param name="rootModel">The root model.</param>
-	//    /// <param name="context">The context.</param>
-	//    /// <param name="settings">The dialog popup settings.</param>
-	//    /// <returns>The dialog result.</returns>
-	//    public virtual bool? ShowDialog(object rootModel, object context = null, IDictionary<string, object> settings = null)
-	//    {
-	//        var radWindow = CreateWindow(rootModel, true, context, settings);
-	//        radWindow.ShowDialog();
-	//        return radWindow.DialogResult;
-	//    }
+	public class TelerikWindowManager : WindowManager
+	{
+		public override bool? ShowDialog(object rootModel, object context = null, IDictionary<string, object> settings = null)
+		{
+			var viewType = ViewLocator.LocateTypeForModelType(rootModel.GetType(), null, null);
+			if (typeof(RadWindow).IsAssignableFrom(viewType))
+			{
+				var radWindow = CreateWindow(rootModel, true, context, settings);
+				radWindow.ShowDialog();
+				return radWindow.DialogResult;
+			}
 
-	//    /// <summary>
-	//    /// Shows a window for the specified model.
-	//    /// </summary>
-	//    /// <param name="rootModel">The root model.</param>
-	//    /// <param name="context">The context.</param>
-	//    /// <param name="settings">The optional window settings.</param>
-	//    public virtual void ShowWindow(object rootModel, object context = null, IDictionary<string, object> settings = null)
-	//    {
-	//        NavigationWindow navWindow = null;
+			return base.ShowDialog(rootModel, context, settings);
+		}
 
-	//        if (Application.Current != null && Application.Current.MainWindow != null)
-	//        {
-	//            navWindow = Application.Current.MainWindow as NavigationWindow;
-	//        }
+		public override void ShowWindow(object rootModel, object context = null, IDictionary<string, object> settings = null)
+		{
+			var viewType = ViewLocator.LocateTypeForModelType(rootModel.GetType(), null, null);
+			if (typeof(RadWindow).IsAssignableFrom(viewType))
+			{
+				NavigationWindow navWindow = null;
 
-	//        if (navWindow != null)
-	//        {
-	//            var window = CreatePage(rootModel, context, settings);
-	//            navWindow.Navigate(window);
-	//        }
-	//        else
-	//        {
-	//            CreateWindow(rootModel, false, context, settings).Show();
-	//        }
-	//    }
+				if (Application.Current != null && Application.Current.MainWindow != null)
+				{
+					navWindow = Application.Current.MainWindow as NavigationWindow;
+				}
 
-	//    /// <summary>
-	//    /// Shows a popup at the current mouse position.
-	//    /// </summary>
-	//    /// <param name="rootModel">The root model.</param>
-	//    /// <param name="context">The view context.</param>
-	//    /// <param name="settings">The optional popup settings.</param>
-	//    public virtual void ShowPopup(object rootModel, object context = null, IDictionary<string, object> settings = null)
-	//    {
-	//        var popup = CreatePopup(rootModel, settings);
-	//        var view = ViewLocator.LocateForModel(rootModel, popup, context);
+				if (navWindow != null)
+				{
+					var window = CreatePage(rootModel, context, settings);
+					navWindow.Navigate(window);
+				}
+				else
+				{
+					CreateRadWindow(rootModel, false, context, settings).Show();
+				}
+				return;
+			}
+			base.ShowWindow(rootModel, context, settings);
+		}
 
-	//        popup.Child = view;
-	//        popup.SetValue(View.IsGeneratedProperty, true);
 
-	//        ViewModelBinder.Bind(rootModel, popup, null);
-	//        Action.SetTargetWithoutContext(view, rootModel);
+		/// <summary>
+		/// Creates a window.
+		/// </summary>
+		/// <param name="rootModel">The view model.</param>
+		/// <param name="isDialog">Whethor or not the window is being shown as a dialog.</param>
+		/// <param name="context">The view context.</param>
+		/// <param name="settings">The optional popup settings.</param>
+		/// <returns>The window.</returns>
+		protected virtual RadWindow CreateRadWindow(object rootModel, bool isDialog, object context, IDictionary<string, object> settings)
+		{
+			var view = EnsureRadWindow(rootModel, ViewLocator.LocateForModel(rootModel, null, context), isDialog);
+			ViewModelBinder.Bind(rootModel, view, context);
 
-	//        var activatable = rootModel as IActivate;
-	//        if (activatable != null)
-	//        {
-	//            activatable.Activate();
-	//        }
+			var haveDisplayName = rootModel as IHaveDisplayName;
+			if (haveDisplayName != null && !ConventionManager.HasBinding(view, RadWindow.HeaderProperty))
+			{
+				var binding = new Binding("DisplayName") { Mode = BindingMode.TwoWay };
+				view.SetBinding(RadWindow.HeaderProperty, binding);
+			}
 
-	//        var deactivator = rootModel as IDeactivate;
-	//        if (deactivator != null)
-	//        {
-	//            popup.Closed += delegate { deactivator.Deactivate(true); };
-	//        }
+			ApplyRadWindowSettings(view, settings);
 
-	//        popup.IsOpen = true;
-	//        popup.CaptureMouse();
-	//    }
+			new RadWindowConductor(rootModel, view);
 
-	//    /// <summary>
-	//    /// Creates a popup for hosting a popup window.
-	//    /// </summary>
-	//    /// <param name="rootModel">The model.</param>
-	//    /// <param name="settings">The optional popup settings.</param>
-	//    /// <returns>The popup.</returns>
-	//    protected virtual Popup CreatePopup(object rootModel, IDictionary<string, object> settings)
-	//    {
-	//        var popup = new Popup();
+			return view;
+		}
+		
+		bool ApplyRadWindowSettings(object target, IEnumerable<KeyValuePair<string, object>> settings)
+		{
+			if (settings != null)
+			{
+				var type = target.GetType();
 
-	//        if (ApplySettings(popup, settings))
-	//        {
-	//            if (!settings.ContainsKey("PlacementTarget") && !settings.ContainsKey("Placement"))
-	//                popup.Placement = PlacementMode.MousePoint;
-	//            if (!settings.ContainsKey("AllowsTransparency"))
-	//                popup.AllowsTransparency = true;
-	//        }
-	//        else
-	//        {
-	//            popup.AllowsTransparency = true;
-	//            popup.Placement = PlacementMode.MousePoint;
-	//        }
+				foreach (var pair in settings)
+				{
+					var propertyInfo = type.GetProperty(pair.Key);
 
-	//        return popup;
-	//    }
+					if (propertyInfo != null)
+					{
+						propertyInfo.SetValue(target, pair.Value, null);
+					}
+				}
 
-	//    /// <summary>
-	//    /// Creates a window.
-	//    /// </summary>
-	//    /// <param name="rootModel">The view model.</param>
-	//    /// <param name="isDialog">Whethor or not the window is being shown as a dialog.</param>
-	//    /// <param name="context">The view context.</param>
-	//    /// <param name="settings">The optional popup settings.</param>
-	//    /// <returns>The window.</returns>
-	//    protected virtual RadWindow CreateWindow(object rootModel, bool isDialog, object context, IDictionary<string, object> settings)
-	//    {
-	//        var view = EnsureWindow(rootModel, ViewLocator.LocateForModel(rootModel, null, context), isDialog);
-	//        ViewModelBinder.Bind(rootModel, view, context);
+				return true;
+			}
 
-	//        var haveDisplayName = rootModel as IHaveDisplayName;
-	//        if (haveDisplayName != null && !ConventionManager.HasBinding(view, RadWindow.HeaderProperty))
-	//        {
-	//            var binding = new Binding("DisplayName") { Mode = BindingMode.TwoWay };
-	//            view.SetBinding(RadWindow.HeaderProperty, binding);
-	//        }
+			return false;
+		}
 
-	//        ApplySettings(view, settings);
+		/// <summary>
+		/// Makes sure the view is a window is is wrapped by one.
+		/// </summary>
+		/// <param name="model">The view model.</param>
+		/// <param name="view">The view.</param>
+		/// <param name="isDialog">Whethor or not the window is being shown as a dialog.</param>
+		/// <returns>The window.</returns>
+		protected virtual RadWindow EnsureRadWindow(object model, object view, bool isDialog)
+		{
+			var window = view as RadWindow;
 
-	//        new RadWindowConductor(rootModel, view);
+			if (window == null)
+			{
+				window = new RadWindow
+				{
+					Content = view,
+					SizeToContent = true,
+				};
 
-	//        return view;
-	//    }
+				window.SetValue(View.IsGeneratedProperty, true);
 
-	//    /// <summary>
-	//    /// Makes sure the view is a window is is wrapped by one.
-	//    /// </summary>
-	//    /// <param name="model">The view model.</param>
-	//    /// <param name="view">The view.</param>
-	//    /// <param name="isDialog">Whethor or not the window is being shown as a dialog.</param>
-	//    /// <returns>The window.</returns>
-	//    protected virtual RadWindow EnsureWindow(object model, object view, bool isDialog)
-	//    {
-	//        var window = view as RadWindow;
+				var owner = GetActiveWindow();
+				if (owner != null)
+				{
+					window.WindowStartupLocation = WindowStartupLocation.CenterOwner;
+					window.Owner = owner;
+				}
+				else
+				{
+					window.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+				}
+			}
+			else
+			{
+				var owner = GetActiveWindow();
+				if (owner != null && isDialog)
+				{
+					window.Owner = owner;
+				}
+			}
 
-	//        if (window == null)
-	//        {
-	//            window = new RadWindow
-	//            {
-	//                Content = view,
-	//                SizeToContent = true,
-	//            };
+			return window;
+		}
 
-	//            window.SetValue(View.IsGeneratedProperty, true);
+		/// <summary>
+		/// Infers the owner of the window.
+		/// </summary>
+		/// <returns>The owner.</returns>
+		protected virtual Window GetActiveWindow()
+		{
+			if (Application.Current == null)
+			{
+				return null;
+			}
 
-	//            var owner = GetActiveWindow();
-	//            if (owner != null)
-	//            {
-	//                window.WindowStartupLocation = WindowStartupLocation.CenterOwner;
-	//                window.Owner = owner;
-	//            }
-	//            else
-	//            {
-	//                window.WindowStartupLocation = WindowStartupLocation.CenterScreen;
-	//            }
-	//        }
-	//        else
-	//        {
-	//            var owner = GetActiveWindow();
-	//            if (owner != null && isDialog)
-	//            {
-	//                window.Owner = owner;
-	//            }
-	//        }
+			var active = Application.Current
+				.Windows.OfType<Window>()
+				.FirstOrDefault(x => x.IsActive);
 
-	//        return window;
-	//    }
+			return active ?? Application.Current.MainWindow;
+		}
 
-	//    /// <summary>
-	//    /// Infers the owner of the window.
-	//    /// </summary>
-	//    /// <returns>The owner.</returns>
-	//    protected virtual Window GetActiveWindow()
-	//    {
-	//        if (Application.Current == null)
-	//        {
-	//            return null;
-	//        }
+		public static void Alert(string title, string message)
+		{
+			Alert(new DialogParameters { Header = title, Content = message });
+		}
 
-	//        var active = Application.Current
-	//            .Windows.OfType<Window>()
-	//            .FirstOrDefault(x => x.IsActive);
+		public static void Alert(DialogParameters dialogParameters)
+		{
+			RadWindow.Alert(dialogParameters);
+		}
 
-	//        return active ?? Application.Current.MainWindow;
-	//    }
+		public static void Confirm(string title, string message, System.Action onOK, System.Action onCancel = null)
+		{
+			var dialogParameters = new DialogParameters
+			{
+				Header = title,
+				Content = message
+			};
+			dialogParameters.Closed += (sender, args) =>
+			{
+				var result = args.DialogResult;
+				if (result.HasValue && result.Value)
+				{
+					onOK();
+					return;
+				}
 
-	//    /// <summary>
-	//    /// Creates the page.
-	//    /// </summary>
-	//    /// <param name="rootModel">The root model.</param>
-	//    /// <param name="context">The context.</param>
-	//    /// <param name="settings">The optional popup settings.</param>
-	//    /// <returns>The page.</returns>
-	//    public virtual Page CreatePage(object rootModel, object context, IDictionary<string, object> settings)
-	//    {
-	//        var view = EnsurePage(rootModel, ViewLocator.LocateForModel(rootModel, null, context));
-	//        ViewModelBinder.Bind(rootModel, view, context);
+				if (onCancel != null)
+					onCancel();
+			};
+			Confirm(dialogParameters);
+		}
 
-	//        var haveDisplayName = rootModel as IHaveDisplayName;
-	//        if (haveDisplayName != null && !ConventionManager.HasBinding(view, Page.TitleProperty))
-	//        {
-	//            var binding = new Binding("DisplayName") { Mode = BindingMode.TwoWay };
-	//            view.SetBinding(Page.TitleProperty, binding);
-	//        }
+		public static void Confirm(DialogParameters dialogParameters)
+		{
+			RadWindow.Confirm(dialogParameters);
+		}
 
-	//        ApplySettings(view, settings);
+		public static void Prompt(string title, string message, string defaultPromptResultValue, Action<string> onOK)
+		{
+			var dialogParameters = new DialogParameters
+			{
+				Header = title,
+				Content = message,
+				DefaultPromptResultValue = defaultPromptResultValue,
+			};
+			dialogParameters.Closed += (o, args) =>
+			{
+				if (args.DialogResult.HasValue && args.DialogResult.Value)
+					onOK(args.PromptResult);
+			};
 
-	//        var activatable = rootModel as IActivate;
-	//        if (activatable != null)
-	//        {
-	//            activatable.Activate();
-	//        }
+			Prompt(dialogParameters);
+		}
 
-	//        var deactivatable = rootModel as IDeactivate;
-	//        if (deactivatable != null)
-	//        {
-	//            view.Unloaded += (s, e) => deactivatable.Deactivate(true);
-	//        }
+		public static void Prompt(DialogParameters dialogParameters)
+		{
+			RadWindow.Prompt(dialogParameters);
+		}
 
-	//        return view;
-	//    }
-
-	//    /// <summary>
-	//    /// Ensures the view is a page or provides one.
-	//    /// </summary>
-	//    /// <param name="model">The model.</param>
-	//    /// <param name="view">The view.</param>
-	//    /// <returns>The page.</returns>
-	//    protected virtual Page EnsurePage(object model, object view)
-	//    {
-	//        var page = view as Page;
-
-	//        if (page == null)
-	//        {
-	//            page = new Page { Content = view };
-	//            page.SetValue(View.IsGeneratedProperty, true);
-	//        }
-
-	//        return page;
-	//    }
-
-	//    bool ApplySettings(object target, IEnumerable<KeyValuePair<string, object>> settings)
-	//    {
-	//        if (settings != null)
-	//        {
-	//            var type = target.GetType();
-
-	//            foreach (var pair in settings)
-	//            {
-	//                var propertyInfo = type.GetProperty(pair.Key);
-
-	//                if (propertyInfo != null)
-	//                {
-	//                    propertyInfo.SetValue(target, pair.Value, null);
-	//                }
-	//            }
-
-	//            return true;
-	//        }
-
-	//        return false;
-	//    }
-
-	//    public static void Alert(string title, string message)
-	//    {
-	//        Alert(new DialogParameters { Header = title, Content = message });
-	//    }
-
-	//    public static void Alert(DialogParameters dialogParameters)
-	//    {
-	//        RadWindow.Alert(dialogParameters);
-	//    }
-
-	//    public static void Confirm(string title, string message, System.Action onOK, System.Action onCancel = null)
-	//    {
-	//        var dialogParameters = new DialogParameters
-	//        {
-	//            Header = title,
-	//            Content = message
-	//        };
-	//        dialogParameters.Closed += (sender, args) =>
-	//        {
-	//            var result = args.DialogResult;
-	//            if (result.HasValue && result.Value)
-	//            {
-	//                onOK();
-	//                return;
-	//            }
-				
-	//            if(onCancel != null)
-	//                onCancel();
-	//        };
-	//        Confirm(dialogParameters);
-	//    }
-
-	//    public static void Confirm(DialogParameters dialogParameters)
-	//    {
-	//        RadWindow.Confirm(dialogParameters);
-	//    }
-
-	//    public static void Prompt(string title, string message, string defaultPromptResultValue, Action<string> onOK)
-	//    {
-	//        var dialogParameters = new DialogParameters
-	//        {
-	//            Header = title,
-	//            Content = message,
-	//            DefaultPromptResultValue = defaultPromptResultValue,
-	//        };
-	//        dialogParameters.Closed += (o, args) =>
-	//        {
-	//            if (args.DialogResult.HasValue && args.DialogResult.Value)
-	//                onOK(args.PromptResult);
-	//        };
-			
-	//        Prompt(dialogParameters);
-	//    }
-
-	//    public static void Prompt(DialogParameters dialogParameters)
-	//    {
-	//        RadWindow.Prompt(dialogParameters);
-	//    }
-	//}
+	}
 }
