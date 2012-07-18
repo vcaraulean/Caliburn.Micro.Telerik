@@ -3,13 +3,13 @@ using Telerik.Windows.Controls;
 
 namespace Caliburn.Micro.Telerik
 {
-	class RadWindowConductor
+	internal class RadWindowConductor
 	{
-		bool deactivatingFromView;
-		bool deactivateFromViewModel;
-		bool actuallyClosing;
-		readonly RadWindow view;
-		readonly object model;
+		private bool deactivatingFromView;
+		private bool deactivateFromViewModel;
+		private bool actuallyClosing;
+		private readonly RadWindow view;
+		private readonly object model;
 
 		public RadWindowConductor(object model, RadWindow view)
 		{
@@ -18,7 +18,9 @@ namespace Caliburn.Micro.Telerik
 
 			var activatable = model as IActivate;
 			if (activatable != null)
+			{
 				activatable.Activate();
+			}
 
 			var deactivatable = model as IDeactivate;
 			if (deactivatable != null)
@@ -29,33 +31,41 @@ namespace Caliburn.Micro.Telerik
 
 			var guard = model as IGuardClose;
 			if (guard != null)
+			{
 				view.PreviewClosed += PreviewClosed;
+			}
 		}
 
-		void Closed(object sender, EventArgs e)
+		private void Closed(object sender, EventArgs e)
 		{
 			view.Closed -= Closed;
 			view.PreviewClosed -= PreviewClosed;
 
 			if (deactivateFromViewModel)
+			{
 				return;
+			}
 
-			var deactivatable = (IDeactivate)model;
+			var deactivatable = (IDeactivate) model;
 
 			deactivatingFromView = true;
 			deactivatable.Deactivate(true);
 			deactivatingFromView = false;
 		}
 
-		void Deactivated(object sender, DeactivationEventArgs e)
+		private void Deactivated(object sender, DeactivationEventArgs e)
 		{
 			if (!e.WasClosed)
+			{
 				return;
+			}
 
-			((IDeactivate)model).Deactivated -= Deactivated;
+			((IDeactivate) model).Deactivated -= Deactivated;
 
 			if (deactivatingFromView)
+			{
 				return;
+			}
 
 			deactivateFromViewModel = true;
 			actuallyClosing = true;
@@ -64,12 +74,14 @@ namespace Caliburn.Micro.Telerik
 			deactivateFromViewModel = false;
 		}
 
-		void PreviewClosed(object sender, WindowPreviewClosedEventArgs e)
+		private void PreviewClosed(object sender, WindowPreviewClosedEventArgs e)
 		{
-			if (e.Cancel.HasValue && e.Cancel.Value)
+			if (e.Cancel == true)
+			{
 				return;
+			}
 
-			var guard = (IGuardClose)model;
+			var guard = (IGuardClose) model;
 
 			if (actuallyClosing)
 			{
@@ -88,15 +100,20 @@ namespace Caliburn.Micro.Telerik
 						actuallyClosing = true;
 						view.Close();
 					}
-					else e.Cancel = !canClose;
+					else
+					{
+						e.Cancel = !canClose;
+					}
 
 					shouldEnd = true;
 				});
 			});
 
 			if (shouldEnd)
+			{
 				return;
-				
+			}
+
 			e.Cancel = true;
 			runningAsync = true;
 		}
