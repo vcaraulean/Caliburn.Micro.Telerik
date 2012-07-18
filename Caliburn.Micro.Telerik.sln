@@ -1,13 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Caliburn.Micro.Telerik", "Caliburn.Micro.Telerik\Caliburn.Micro.Telerik.csproj", "{8D3D9933-BD77-424D-BD81-843B7AAC3C56}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Silverlight", "Silverlight", "{331EDB1B-ABDE-4653-AAB9-E2D5ACEF21A6}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Examples", "Examples", "{DD5B07FB-1492-47DF-BD33-438D6F2703CA}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Examples", "Examples", "{C8E9D4D7-4473-4DF9-8754-F25AB3BA7848}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Telerik.Examples.RadWindowManager", "Examples\Telerik.Examples.RadWindowManager\Telerik.Examples.RadWindowManager.csproj", "{5B11C7E2-C0EA-42C2-9DE5-8C732DD5A0E4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Caliburn.Micro.Telerik", "Silverlight\Caliburn.Micro.Telerik\Caliburn.Micro.Telerik.csproj", "{8D3D9933-BD77-424D-BD81-843B7AAC3C56}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Telerik.Examples.Conventions", "Examples\Telerik.Examples.Conventions\Telerik.Examples.Conventions.csproj", "{C235CFFC-C85E-4068-BFC0-EBB40A8E95D5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Telerik.Examples.Conventions", "Silverlight\Examples\Telerik.Examples.Conventions\Telerik.Examples.Conventions.csproj", "{C235CFFC-C85E-4068-BFC0-EBB40A8E95D5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Telerik.Examples.RadWindowManager", "Silverlight\Examples\Telerik.Examples.RadWindowManager\Telerik.Examples.RadWindowManager.csproj", "{5B11C7E2-C0EA-42C2-9DE5-8C732DD5A0E4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,20 +21,22 @@ Global
 		{8D3D9933-BD77-424D-BD81-843B7AAC3C56}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8D3D9933-BD77-424D-BD81-843B7AAC3C56}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8D3D9933-BD77-424D-BD81-843B7AAC3C56}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5B11C7E2-C0EA-42C2-9DE5-8C732DD5A0E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5B11C7E2-C0EA-42C2-9DE5-8C732DD5A0E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5B11C7E2-C0EA-42C2-9DE5-8C732DD5A0E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5B11C7E2-C0EA-42C2-9DE5-8C732DD5A0E4}.Release|Any CPU.Build.0 = Release|Any CPU
 		{C235CFFC-C85E-4068-BFC0-EBB40A8E95D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{C235CFFC-C85E-4068-BFC0-EBB40A8E95D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C235CFFC-C85E-4068-BFC0-EBB40A8E95D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C235CFFC-C85E-4068-BFC0-EBB40A8E95D5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B11C7E2-C0EA-42C2-9DE5-8C732DD5A0E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B11C7E2-C0EA-42C2-9DE5-8C732DD5A0E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B11C7E2-C0EA-42C2-9DE5-8C732DD5A0E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B11C7E2-C0EA-42C2-9DE5-8C732DD5A0E4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{5B11C7E2-C0EA-42C2-9DE5-8C732DD5A0E4} = {DD5B07FB-1492-47DF-BD33-438D6F2703CA}
-		{C235CFFC-C85E-4068-BFC0-EBB40A8E95D5} = {DD5B07FB-1492-47DF-BD33-438D6F2703CA}
+		{C8E9D4D7-4473-4DF9-8754-F25AB3BA7848} = {331EDB1B-ABDE-4653-AAB9-E2D5ACEF21A6}
+		{8D3D9933-BD77-424D-BD81-843B7AAC3C56} = {331EDB1B-ABDE-4653-AAB9-E2D5ACEF21A6}
+		{C235CFFC-C85E-4068-BFC0-EBB40A8E95D5} = {C8E9D4D7-4473-4DF9-8754-F25AB3BA7848}
+		{5B11C7E2-C0EA-42C2-9DE5-8C732DD5A0E4} = {C8E9D4D7-4473-4DF9-8754-F25AB3BA7848}
 	EndGlobalSection
 EndGlobal
