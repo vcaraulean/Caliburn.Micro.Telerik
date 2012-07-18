@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Telerik.Examples.Convention
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Telerik.Examples.RadWindowManager", "Silverlight\Examples\Telerik.Examples.RadWindowManager\Telerik.Examples.RadWindowManager.csproj", "{5B11C7E2-C0EA-42C2-9DE5-8C732DD5A0E4}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WPF", "WPF", "{CCCB4916-F055-4454-B433-11711048E9FE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Caliburn.Micro.Telerik", "WPF\Caliburn.Micro.Telerik\Caliburn.Micro.Telerik.csproj", "{CB1E2DDF-F1E2-4A73-AF64-AC48BAE2AD87}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,6 +33,10 @@ Global
 		{5B11C7E2-C0EA-42C2-9DE5-8C732DD5A0E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5B11C7E2-C0EA-42C2-9DE5-8C732DD5A0E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5B11C7E2-C0EA-42C2-9DE5-8C732DD5A0E4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CB1E2DDF-F1E2-4A73-AF64-AC48BAE2AD87}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CB1E2DDF-F1E2-4A73-AF64-AC48BAE2AD87}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CB1E2DDF-F1E2-4A73-AF64-AC48BAE2AD87}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CB1E2DDF-F1E2-4A73-AF64-AC48BAE2AD87}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -38,5 +46,6 @@ Global
 		{8D3D9933-BD77-424D-BD81-843B7AAC3C56} = {331EDB1B-ABDE-4653-AAB9-E2D5ACEF21A6}
 		{C235CFFC-C85E-4068-BFC0-EBB40A8E95D5} = {C8E9D4D7-4473-4DF9-8754-F25AB3BA7848}
 		{5B11C7E2-C0EA-42C2-9DE5-8C732DD5A0E4} = {C8E9D4D7-4473-4DF9-8754-F25AB3BA7848}
+		{CB1E2DDF-F1E2-4A73-AF64-AC48BAE2AD87} = {CCCB4916-F055-4454-B433-11711048E9FE}
 	EndGlobalSection
 EndGlobal
