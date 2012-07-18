@@ -1,0 +1,38 @@
+﻿<UserControl x:Class="Examples.Conventions.Implementations.RadMaskedControlsView"
+			 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+			 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+			 xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+			 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+			 xmlns:telerik="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.Input"
+			 mc:Ignorable="d"
+			 d:DesignHeight="300"
+			 >
+
+    <Grid x:Name="LayoutRoot"
+		  Background="White" Margin="10">
+        <StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="RadMaskedTextBox, MaskType=None" VerticalAlignment="Center"/>
+                <telerik:RadMaskedTextBox x:Name="SomeString" 
+                                          MaskType="None"
+                                          Width="150" 
+                                          Margin="10"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="RadMaskedTextBox, MaskType=Standard" VerticalAlignment="Center"/>
+                <telerik:RadMaskedTextBox x:Name="PhoneNumber" 
+                                          MaskType="Standard"
+                                          Mask="(###) ### - ####"
+                                          Width="150" 
+                                          Margin="10"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="RadMaskedTextInput" VerticalAlignment="Center"/>
+                <telerik:RadMaskedTextInput x:Name="AnotherPhoneNumber"
+                                            Mask="(###) ### - ####"
+                                            Width="150" 
+                                            Margin="10"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</UserControl>

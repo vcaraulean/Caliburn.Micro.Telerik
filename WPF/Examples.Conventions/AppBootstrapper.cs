@@ -4,6 +4,7 @@ using System.ComponentModel.Composition;
 using System.ComponentModel.Composition.Hosting;
 using System.Linq;
 using Caliburn.Micro;
+using Caliburn.Micro.Telerik;
 
 namespace Examples.Conventions
 {
@@ -22,6 +23,9 @@ namespace Examples.Conventions
 			batch.AddExportedValue<IWindowManager>(new TelerikWindowManager());
 			batch.AddExportedValue<IEventAggregator>(new EventAggregator());
 			batch.AddExportedValue(container);
+
+			// This is essential to enable Telerik's conventions
+			TelerikConventions.Install();
 
 			container.Compose(batch);
 		}

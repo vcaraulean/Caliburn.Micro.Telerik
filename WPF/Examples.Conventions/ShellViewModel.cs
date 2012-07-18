@@ -2,6 +2,7 @@
 using System.ComponentModel.Composition;
 using System.Linq;
 using Caliburn.Micro;
+using Examples.Conventions.Implementations;
 
 namespace Examples.Conventions
 {
@@ -16,7 +17,7 @@ namespace Examples.Conventions
 			base.OnActivate();
 
 			var conventionSamples = ExportedScreens
-				.Where(s => s.GetType().Namespace.StartsWith(typeof(ShellViewModel).Namespace))
+				.Where(s => s.GetType().Namespace.StartsWith(typeof(RadBusyIndicatorViewModel).Namespace))
 				.OrderBy(s => s.DisplayName);
 			Items.AddRange(conventionSamples);
 		}
