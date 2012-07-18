@@ -12,8 +12,8 @@ namespace Caliburn.Micro
 	{
 		public override bool? ShowDialog(object rootModel, object context = null, IDictionary<string, object> settings = null)
 		{
-			var view = ViewLocator.LocateForModel(rootModel, null, context);
-			if (view is RadWindow)
+			var viewType = ViewLocator.LocateTypeForModelType(rootModel.GetType(), null, null);
+			if (typeof(RadWindow).IsAssignableFrom(viewType))
 			{
 				var radWindow = CreateWindow(rootModel, true, context, settings);
 				radWindow.ShowDialog();
@@ -25,8 +25,8 @@ namespace Caliburn.Micro
 
 		public override void ShowWindow(object rootModel, object context = null, IDictionary<string, object> settings = null)
 		{
-			var view = ViewLocator.LocateForModel(rootModel, null, context);
-			if (view is RadWindow)
+			var viewType = ViewLocator.LocateTypeForModelType(rootModel.GetType(), null, null);
+			if (typeof(RadWindow).IsAssignableFrom(viewType))
 			{
 				NavigationWindow navWindow = null;
 
