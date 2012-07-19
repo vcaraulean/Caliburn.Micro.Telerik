@@ -5,12 +5,12 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.50727</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{C235CFFC-C85E-4068-BFC0-EBB40A8E95D5}</ProjectGuid>
+    <ProjectGuid>{5B11C7E2-C0EA-42C2-9DE5-8C732DD5A0E4}</ProjectGuid>
     <ProjectTypeGuids>{A1591282-1198-4647-A2B1-27E5FF5F6F3B};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Examples.Conventions</RootNamespace>
-    <AssemblyName>Examples.Conventions</AssemblyName>
+    <RootNamespace>Examples.TelerikWindowManager</RootNamespace>
+    <AssemblyName>Examples.TelerikWindowManager</AssemblyName>
     <TargetFrameworkIdentifier>Silverlight</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v5.0</TargetFrameworkVersion>
     <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
@@ -19,13 +19,13 @@
     </SupportedCultures>
     <XapOutputs>true</XapOutputs>
     <GenerateSilverlightManifest>true</GenerateSilverlightManifest>
-    <XapFilename>Examples.Conventions.xap</XapFilename>
+    <XapFilename>Telerik.Examples.RadWindowManager.xap</XapFilename>
     <SilverlightManifestTemplate>Properties\AppManifest.xml</SilverlightManifestTemplate>
-    <SilverlightAppEntry>Examples.Conventions.App</SilverlightAppEntry>
-    <TestPageFileName>Telerik.Examples.ConventionsTestPage.html</TestPageFileName>
+    <SilverlightAppEntry>Examples.TelerikWindowManager.App</SilverlightAppEntry>
+    <TestPageFileName>Telerik.Examples.RadWindowManagerTestPage.html</TestPageFileName>
     <CreateTestPage>true</CreateTestPage>
     <ValidateXaml>true</ValidateXaml>
-    <EnableOutOfBrowser>false</EnableOutOfBrowser>
+    <EnableOutOfBrowser>true</EnableOutOfBrowser>
     <OutOfBrowserSettingsFile>Properties\OutOfBrowserSettings.xml</OutOfBrowserSettingsFile>
     <UsePlatformExtensions>false</UsePlatformExtensions>
     <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
@@ -81,10 +81,6 @@
     <Reference Include="System.Windows.Controls, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\..\..\packages\Caliburn.Micro.1.3.1\lib\sl5\System.Windows.Controls.dll</HintPath>
     </Reference>
-    <Reference Include="System.Windows.Data, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\Program Files (x86)\Microsoft SDKs\Silverlight\v5.0\Libraries\Client\System.Windows.Data.dll</HintPath>
-    </Reference>
     <Reference Include="System.Windows.Interactivity, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\..\..\packages\Caliburn.Micro.1.3.1\lib\sl5\System.Windows.Interactivity.dll</HintPath>
     </Reference>
@@ -93,15 +89,14 @@
     <Reference Include="Telerik.Windows.Controls">
       <HintPath>..\..\lib\Telerik.Windows.Controls.dll</HintPath>
     </Reference>
-    <Reference Include="Telerik.Windows.Controls.DataVisualization, Version=2011.1.419.1040, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
-      <HintPath>..\..\lib\Telerik.Windows.Controls.DataVisualization.dll</HintPath>
-      <SpecificVersion>False</SpecificVersion>
-    </Reference>
     <Reference Include="Telerik.Windows.Controls.GridView">
       <HintPath>..\..\lib\Telerik.Windows.Controls.GridView.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.Windows.Controls.Data">
       <HintPath>..\..\lib\Telerik.Windows.Controls.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.DataVisualization">
+      <HintPath>..\..\lib\Telerik.Windows.Controls.DataVisualization.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.Windows.Controls.Input">
       <HintPath>..\..\lib\Telerik.Windows.Controls.Input.dll</HintPath>
@@ -109,45 +104,29 @@
     <Reference Include="Telerik.Windows.Controls.Navigation">
       <HintPath>..\..\lib\Telerik.Windows.Controls.Navigation.dll</HintPath>
     </Reference>
-    <Reference Include="Telerik.Windows.Data, Version=2012.1.326.1050, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL" />
-    <Reference Include="Telerik.Windows.Themes.Windows7">
-      <HintPath>..\..\lib\Telerik.Windows.Themes.Windows7.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="AppBootstrapper.cs" />
-    <Compile Include="Implementations\RadBusyIndicatorView.xaml.cs">
-      <DependentUpon>RadBusyIndicatorView.xaml</DependentUpon>
+    <Compile Include="DialogView.xaml.cs">
+      <DependentUpon>DialogView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Implementations\RadBusyIndicatorViewModel.cs" />
-    <Compile Include="Implementations\RadDateTimePickerView.xaml.cs">
-      <DependentUpon>RadDateTimePickerView.xaml</DependentUpon>
+    <Compile Include="DialogViewModel.cs" />
+    <Compile Include="DialogWithResponceButtonsView.xaml.cs">
+      <DependentUpon>DialogWithResponceButtonsView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Implementations\RadDateTimePickerViewModel.cs" />
-    <Compile Include="Implementations\RadGridConventionsView.xaml.cs">
-      <DependentUpon>RadGridConventionsView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Implementations\RadGridConventionsViewModel.cs" />
-    <Compile Include="Implementations\RadMaskedControlsView.xaml.cs">
-      <DependentUpon>RadMaskedControlsView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Implementations\RadMaskedControlsViewModel.cs" />
-    <Compile Include="Implementations\TabControlConventions\FirstTabView.xaml.cs">
-      <DependentUpon>FirstTabView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Implementations\TabControlConventions\FirstTabViewModel.cs" />
-    <Compile Include="Implementations\TabControlConventions\SecondTabView.xaml.cs">
-      <DependentUpon>SecondTabView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Implementations\TabControlConventions\SecondTabViewModel.cs" />
-    <Compile Include="Implementations\TabControlConventions\TabControlOnView.xaml.cs">
-      <DependentUpon>TabControlOnView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Implementations\TabControlConventions\TabControlOnViewModel.cs" />
+    <Compile Include="DialogWithResponceButtonsViewModel.cs" />
     <Compile Include="IShell.cs" />
+    <Compile Include="NotificationView.xaml.cs">
+      <DependentUpon>NotificationView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="NotificationViewModel.cs" />
+    <Compile Include="PopupView.xaml.cs">
+      <DependentUpon>PopupView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PopupViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ShellViewModel.cs" />
   </ItemGroup>
@@ -156,31 +135,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </ApplicationDefinition>
-    <Page Include="Implementations\RadBusyIndicatorView.xaml">
+    <Page Include="DialogView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Implementations\RadDateTimePickerView.xaml">
+    <Page Include="DialogWithResponceButtonsView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Implementations\RadGridConventionsView.xaml">
+    <Page Include="NotificationView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Implementations\RadMaskedControlsView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Implementations\TabControlConventions\FirstTabView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Implementations\TabControlConventions\SecondTabView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Implementations\TabControlConventions\TabControlOnView.xaml">
+    <Page Include="PopupView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -195,10 +162,13 @@
     <None Include="Properties\AppManifest.xml" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Caliburn.Micro.Telerik\Caliburn.Micro.Telerik.csproj">
+    <ProjectReference Include="..\Caliburn.Micro.Telerik\Caliburn.Micro.Telerik.csproj">
       <Project>{8D3D9933-BD77-424D-BD81-843B7AAC3C56}</Project>
       <Name>Caliburn.Micro.Telerik %28Silverlight\Caliburn.Micro.Telerik%29</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\OutOfBrowserSettings.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -7,9 +7,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Examples", "Examples", "{C8
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Caliburn.Micro.Telerik", "Silverlight\Caliburn.Micro.Telerik\Caliburn.Micro.Telerik.csproj", "{8D3D9933-BD77-424D-BD81-843B7AAC3C56}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Examples.Conventions", "Silverlight\Examples\Telerik.Examples.Conventions\Examples.Conventions.csproj", "{C235CFFC-C85E-4068-BFC0-EBB40A8E95D5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Examples.Conventions", "Silverlight\Examples.Conventions\Examples.Conventions.csproj", "{C235CFFC-C85E-4068-BFC0-EBB40A8E95D5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Examples.TelerikWindowManager", "Silverlight\Examples\Telerik.Examples.RadWindowManager\Examples.TelerikWindowManager.csproj", "{5B11C7E2-C0EA-42C2-9DE5-8C732DD5A0E4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Examples.TelerikWindowManager", "Silverlight\Examples.RadWindowManager\Examples.TelerikWindowManager.csproj", "{5B11C7E2-C0EA-42C2-9DE5-8C732DD5A0E4}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WPF", "WPF", "{CCCB4916-F055-4454-B433-11711048E9FE}"
 EndProject
