@@ -1,9 +1,28 @@
-A set of Caliburn.Micro conventions for Telerik's visual controls for Silverlight and WPF.
+Caliburn.Micro.Telerik
+==============
 
-Also contains some other stuff, like implementation of IWindowManager for RadWindow, helpers & extensions for Telerik's Prompt Dialogs.
+A library containing Caliburn.Micro conventions for Telerik's visual controls. Also contains some other stuff, like implementation of IWindowManager for RadWindow, helpers & extensions for Telerik's Prompt Dialogs.
 
-Contains also an Examples folder with sample projects demostrating/testing conventions and the rest of the stuff.
+Target platforms: Silverlight and WPF.
 
-Nuget package available. See https://nuget.org/packages/Caliburn.Micro.Telerik
+Contains also an Examples folder with sample projects to demo and test conventions and the rest of the stuff.
 
-If you want to compile solution from sources, be sure to have Telerik's assemblies installed & check the references.
+Nuget package
+-------------
+Is the quickest way to use the library. Check out the [Caliburn.Micro.Telerik](https://nuget.org/packages/Caliburn.Micro.Telerik) package. Includes both versions for Silverlight & WPF.
+
+Compile the source code
+----------------------
+If you want to compile projects from sources, be sure to have Telerik's components installed & verify assembly references.
+
+How to use the code
+-------------------
+You can either copy required classes in your solution or install Caliburn.Micro.Telerik package using nuget.
+
+How to enable conventions
+-------------------------
+In your app's bootstrapper, in Configure override add next line:
+
+```
+    TelerikConventions.Install();
+```
