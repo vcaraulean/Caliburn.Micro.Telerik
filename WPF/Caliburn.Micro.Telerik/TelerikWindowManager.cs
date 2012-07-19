@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Navigation;
 using Caliburn.Micro.Telerik;
@@ -14,9 +15,10 @@ namespace Caliburn.Micro
 		public override bool? ShowDialog(object rootModel, object context = null, IDictionary<string, object> settings = null)
 		{
 			var viewType = ViewLocator.LocateTypeForModelType(rootModel.GetType(), null, null);
-			if (typeof(RadWindow).IsAssignableFrom(viewType))
+			if (typeof(RadWindow).IsAssignableFrom(viewType)
+				|| typeof(UserControl).IsAssignableFrom(viewType))
 			{
-				var radWindow = CreateWindow(rootModel, true, context, settings);
+				var radWindow = CreateRadWindow(rootModel, true, context, settings);
 				radWindow.ShowDialog();
 				return radWindow.DialogResult;
 			}
@@ -27,7 +29,8 @@ namespace Caliburn.Micro
 		public override void ShowWindow(object rootModel, object context = null, IDictionary<string, object> settings = null)
 		{
 			var viewType = ViewLocator.LocateTypeForModelType(rootModel.GetType(), null, null);
-			if (typeof(RadWindow).IsAssignableFrom(viewType))
+			if (typeof(RadWindow).IsAssignableFrom(viewType)
+				|| typeof(UserControl).IsAssignableFrom(viewType))
 			{
 				NavigationWindow navWindow = null;
 
