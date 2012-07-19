@@ -4,6 +4,7 @@ using System.ComponentModel.Composition;
 using System.ComponentModel.Composition.Hosting;
 using System.Linq;
 using Caliburn.Micro;
+using Telerik.Windows.Controls;
 
 namespace Examples.TelerikWindowManager
 {
@@ -22,6 +23,8 @@ namespace Examples.TelerikWindowManager
 			batch.AddExportedValue<IWindowManager>(new Caliburn.Micro.TelerikWindowManager());
 			batch.AddExportedValue<IEventAggregator>(new EventAggregator());
 			batch.AddExportedValue(container);
+
+			StyleManager.ApplicationTheme = ThemeManager.FromName("Metro");
 
 			container.Compose(batch);
 		}

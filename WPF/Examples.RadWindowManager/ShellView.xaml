@@ -1,9 +1,10 @@
 ﻿<Window x:Class="Examples.TelerikWindowManager.ShellView"
-             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation">
 
 	<Window.Resources>
-		<Style TargetType="Button">
+		<Style TargetType="telerik:RadButton">
 			<Setter Property="Width"
 					Value="120" />
 			<Setter Property="Height"
@@ -28,35 +29,35 @@
 			  VerticalAlignment="Top"
 			  HorizontalAlignment="Left">
 			<StackPanel>
-				<Button x:Name="Show"
-						Content="Show (non-modal)" />
+				<telerik:RadButton x:Name="Show"
+								   Content="Show (non-modal)" />
 
-				<Button x:Name="ShowDialog"
-						Content="Show dialog" />
+				<telerik:RadButton x:Name="ShowDialog"
+								   Content="Show dialog" />
 
-				<Button x:Name="ShowPopup"
-						Content="Show popup" />
+				<telerik:RadButton x:Name="ShowPopup"
+								   Content="Show popup" />
 
 				<StackPanel Margin="0 20">
 					<TextBlock Text="Predefined dialogs"
 							   FontSize="16"
 							   VerticalAlignment="Top" />
-					<Button x:Name="ShowAlert"
-							Content="Show alert window" />
-					<Button x:Name="ShowConfirmation"
-							Content="Show confirmation" />
-					<Button x:Name="ShowPrompt"
-							Content="Show prompt" />
+					<telerik:RadButton x:Name="ShowAlert"
+									   Content="Show alert window" />
+					<telerik:RadButton x:Name="ShowConfirmation"
+									   Content="Show confirmation" />
+					<telerik:RadButton x:Name="ShowPrompt"
+									   Content="Show prompt" />
 				</StackPanel>
 				<StackPanel Margin="0 20">
 					<TextBlock Text="Other things"
 							   FontSize="16"
 							   VerticalAlignment="Top" />
-					<Button x:Name="DialogWithResponceButtons"
-							Height="40">
+					<telerik:RadButton x:Name="DialogWithResponceButtons"
+									   Height="40">
 						<TextBlock Text="Dialog with responce buttons"
 								   TextWrapping="Wrap" />
-					</Button>
+					</telerik:RadButton>
 				</StackPanel>
 			</StackPanel>
 		</Grid>

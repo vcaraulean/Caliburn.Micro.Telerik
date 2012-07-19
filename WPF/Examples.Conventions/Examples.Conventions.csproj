@@ -75,6 +75,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\Program Files (x86)\Telerik\RadControls for WPF Q2 2012\Binaries\WPF40\Telerik.Windows.Data.dll</HintPath>
     </Reference>
+    <Reference Include="Telerik.Windows.Themes.Metro">
+      <HintPath>..\..\..\..\Program Files (x86)\Telerik\RadControls for WPF Q2 2012\Binaries.NoXaml\WPF40\Telerik.Windows.Themes.Metro.dll</HintPath>
+    </Reference>
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />

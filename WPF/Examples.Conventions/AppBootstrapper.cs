@@ -5,6 +5,7 @@ using System.ComponentModel.Composition.Hosting;
 using System.Linq;
 using Caliburn.Micro;
 using Caliburn.Micro.Telerik;
+using Telerik.Windows.Controls;
 
 namespace Examples.Conventions
 {
@@ -26,6 +27,8 @@ namespace Examples.Conventions
 
 			// This is essential to enable Telerik's conventions
 			TelerikConventions.Install();
+
+			StyleManager.ApplicationTheme = ThemeManager.FromName("Metro");
 
 			container.Compose(batch);
 		}
