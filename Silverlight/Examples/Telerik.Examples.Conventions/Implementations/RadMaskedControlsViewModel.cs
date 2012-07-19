@@ -1,7 +1,7 @@
 using System.ComponentModel.Composition;
 using Caliburn.Micro;
 
-namespace Telerik.Examples.Conventions.Implementations
+namespace Examples.Conventions.Implementations
 {
 	[Export(typeof(IScreen))]
 	public class RadMaskedControlsViewModel : Screen

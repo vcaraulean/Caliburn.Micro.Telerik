@@ -1,12 +1,12 @@
-﻿namespace Examples.RadWindowManager
-{
-	using System;
-	using System.Collections.Generic;
-	using System.ComponentModel.Composition;
-	using System.ComponentModel.Composition.Hosting;
-	using System.Linq;
-	using Caliburn.Micro;
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.Composition;
+using System.ComponentModel.Composition.Hosting;
+using System.Linq;
+using Caliburn.Micro;
 
+namespace Examples.TelerikWindowManager
+{
 	public class AppBootstrapper : Bootstrapper<IShell>
 	{
 		private CompositionContainer container;
@@ -19,7 +19,7 @@
 
 			var batch = new CompositionBatch();
 
-			batch.AddExportedValue<IWindowManager>(new TelerikWindowManager());
+			batch.AddExportedValue<IWindowManager>(new Caliburn.Micro.TelerikWindowManager());
 			batch.AddExportedValue<IEventAggregator>(new EventAggregator());
 			batch.AddExportedValue(container);
 

@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 
-namespace Telerik.Examples.Conventions
+namespace Examples.Conventions
 {
 	public partial class App : Application
 	{

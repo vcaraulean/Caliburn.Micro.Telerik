@@ -1,6 +1,6 @@
 using Caliburn.Micro;
 
-namespace Telerik.Examples.Conventions.Implementations.TabControlConventions
+namespace Examples.Conventions.Implementations.TabControlConventions
 {
 	public class FirstTabViewModel : Screen
 	{

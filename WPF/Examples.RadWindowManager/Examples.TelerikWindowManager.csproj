@@ -8,8 +8,8 @@
     <ProjectGuid>{2608697E-6464-4B5B-99A3-3234A6706EE2}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Examples.RadWindowManager</RootNamespace>
-    <AssemblyName>Examples.RadWindowManager</AssemblyName>
+    <RootNamespace>Examples.TelerikWindowManager</RootNamespace>
+    <AssemblyName>Examples.TelerikWindowManager</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>

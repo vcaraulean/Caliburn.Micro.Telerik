@@ -1,7 +1,7 @@
 ﻿using System.Windows;
 using Caliburn.Micro;
 
-namespace Telerik.Examples.RadWindowManager
+namespace Examples.TelerikWindowManager
 {
 	public class DialogWithResponceButtonsViewModel : Screen
 	{

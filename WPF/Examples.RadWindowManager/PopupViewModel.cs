@@ -1,6 +1,6 @@
 using Caliburn.Micro;
 
-namespace Telerik.Examples.RadWindowManager
+namespace Examples.TelerikWindowManager
 {
 	public class PopupViewModel : Screen
 	{

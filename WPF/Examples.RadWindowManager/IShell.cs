@@ -1,4 +1,4 @@
-﻿namespace Examples.RadWindowManager
+﻿namespace Examples.TelerikWindowManager
 {
     public interface IShell {}
 }

@@ -2,7 +2,7 @@
 using System.ComponentModel.Composition;
 using Caliburn.Micro;
 
-namespace Telerik.Examples.Conventions.Implementations
+namespace Examples.Conventions.Implementations
 {
 	public class DataItem : PropertyChangedBase
 	{

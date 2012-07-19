@@ -1,7 +1,7 @@
 using System.ComponentModel.Composition;
 using Caliburn.Micro;
 
-namespace Telerik.Examples.Conventions.Implementations.TabControlConventions
+namespace Examples.Conventions.Implementations.TabControlConventions
 {
 	[Export(typeof(IScreen))]
 	public class TabControlOnViewModel : Conductor<IScreen>.Collection.OneActive

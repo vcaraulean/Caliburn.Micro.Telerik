@@ -2,7 +2,7 @@ using System.ComponentModel.Composition;
 using System.Threading;
 using Caliburn.Micro;
 
-namespace Telerik.Examples.Conventions.Implementations
+namespace Examples.Conventions.Implementations
 {
 	[Export(typeof(IScreen))]
 	public class RadBusyIndicatorViewModel : Screen

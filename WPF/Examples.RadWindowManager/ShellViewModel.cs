@@ -1,8 +1,7 @@
 ﻿using System.ComponentModel.Composition;
 using Caliburn.Micro;
-using Telerik.Examples.RadWindowManager;
 
-namespace Examples.RadWindowManager
+namespace Examples.TelerikWindowManager
 {
 	[Export(typeof(IShell))]
 	public class ShellViewModel : IShell
