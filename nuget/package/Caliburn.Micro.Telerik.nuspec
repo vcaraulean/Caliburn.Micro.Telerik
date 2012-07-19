@@ -7,6 +7,7 @@
     <owners>Valeriu Caraulean</owners>
     <projectUrl>https://github.com/vcaraulean/Caliburn.Micro.Telerik</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <summary>Caliburn.Micro conventions for Telerik controls</summary>
     <description>
       Integration of Caliburn.Micro with Telerik's controls: conventions, IWindowManager implementation (TelerikWindowManager), extensions methods to IWindowManager: Alert, Confirm, Prompt. 
       Target frameworks: Silverlight 5.0, WPF 4.
