@@ -1,0 +1,37 @@
+﻿<UserControl x:Class="Examples.Conventions.Implementations.RadContextMenuView"
+			 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+			 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+			 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+			 xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+			 xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+			 xmlns:cal="http://www.caliburnproject.org"
+			 mc:Ignorable="d"
+			 d:DesignHeight="300"
+			 d:DesignWidth="300">
+	<Grid x:Name="root">
+		<StackPanel>
+			<TextBlock Text="{Binding DisplayName}"
+					   FontSize="24" />
+			<TextBlock Text="An example on how to bind a Caliburn Action to RadMenuItem click"
+					   FontSize="14" />
+			<telerik:RadButton Width="230"
+							   Height="30"
+							   Content="Right Click to open context menu"
+							   VerticalAlignment="Top"
+							   HorizontalAlignment="Left"
+							   Margin="0 24"
+							   Tag="{Binding DataContext, RelativeSource={RelativeSource Self}}">
+				<telerik:RadContextMenu.ContextMenu>
+					<telerik:RadContextMenu cal:Action.TargetWithoutContext="{Binding RelativeSource={RelativeSource Self}, Path=UIElement.Tag}">
+						<telerik:RadMenuItem Header="Action 1"
+											 cal:Message.Attach="ExecuteAction1" />
+						<telerik:RadMenuItem Header="Action 2"
+											 cal:Message.Attach="ExecuteAction2" />
+						<telerik:RadMenuItem Header="Action 3"
+											 cal:Message.Attach="ExecuteAction3" />
+					</telerik:RadContextMenu>
+				</telerik:RadContextMenu.ContextMenu>
+			</telerik:RadButton>
+		</StackPanel>
+	</Grid>
+</UserControl>
