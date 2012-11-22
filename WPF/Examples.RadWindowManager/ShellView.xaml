@@ -29,10 +29,10 @@
 			  VerticalAlignment="Top"
 			  HorizontalAlignment="Left">
 			<StackPanel>
-				<telerik:RadButton x:Name="Show"
+				<telerik:RadButton x:Name="ShowWindow"
 								   Content="Show (non-modal)" />
 
-				<telerik:RadButton x:Name="ShowDialog"
+				<telerik:RadButton x:Name="ShowNewDialog"
 								   Content="Show dialog" />
 
 				<telerik:RadButton x:Name="ShowPopup"

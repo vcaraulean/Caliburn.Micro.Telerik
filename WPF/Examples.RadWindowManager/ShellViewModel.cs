@@ -14,13 +14,13 @@ namespace Examples.TelerikWindowManager
 			this.windowManager = windowManager;
 		}
 
-		public void Show()
+		public void ShowWindow()
 		{
 			var dialog = new DialogViewModel();
 			windowManager.ShowWindow(dialog);
 		}
 
-		public void ShowDialog()
+		public void ShowNewDialog()
 		{
 			var dialog = new DialogViewModel();
 			windowManager.ShowDialog(dialog);
