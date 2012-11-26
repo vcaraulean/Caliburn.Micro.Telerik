@@ -116,11 +116,17 @@ namespace Caliburn.Micro
 
 			if (window == null)
 			{
+				var contentElement = view as FrameworkElement;
+				if (contentElement == null)
+					throw new ArgumentNullException("view");
+
 				window = new RadWindow
 				{
 					Content = view,
 					SizeToContent = true,
 				};
+
+				AdjustWindowAndContentSize(window, contentElement);
 
 				window.SetValue(View.IsGeneratedProperty, true);
 
@@ -145,6 +151,35 @@ namespace Caliburn.Micro
 			}
 
 			return window;
+		}
+
+		/// <summary>
+		/// Initializes Window size with values extracted by the view.
+		/// 
+		/// Note:
+		///	The real size of the content will be smaller than provided values.
+		///	The form has the header (title) and border so they will take place.
+		/// 
+		/// </summary>
+		/// <param name="window">The RadWindow</param>
+		/// <param name="view">The view</param>
+		private static void AdjustWindowAndContentSize(RadWindow window, FrameworkElement view)
+		{
+			window.MinWidth = view.MinWidth;
+			window.MaxWidth = view.MaxWidth;
+			window.Width = view.Width;
+			window.MinHeight = view.MinHeight;
+			window.MaxHeight = view.MaxHeight;
+			window.Height = view.Height;
+			
+			// Resetting view's settings
+			view.Width = view.Height = Double.NaN;
+			view.MinWidth = view.MinHeight = 0;
+			view.MaxWidth = view.MaxHeight = int.MaxValue;
+
+			// Stretching content to the Window
+			view.VerticalAlignment = VerticalAlignment.Stretch;
+			view.HorizontalAlignment = HorizontalAlignment.Stretch;
 		}
 
 		/// <summary>

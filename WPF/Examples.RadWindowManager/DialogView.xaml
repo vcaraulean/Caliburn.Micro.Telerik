@@ -7,8 +7,10 @@
 			 mc:Ignorable="d"
 			 d:DesignHeight="300"
 			 d:DesignWidth="400"
-			 Height="400"
-			 Width="600">
+			 MinHeight="200"
+			 Height="300"
+			 MinWidth="300"
+			 Width="400">
 
 	<Grid x:Name="LayoutRoot"
 		  Background="White">
