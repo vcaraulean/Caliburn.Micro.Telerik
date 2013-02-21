@@ -24,7 +24,7 @@ namespace Examples.TelerikWindowManager
 			batch.AddExportedValue<IEventAggregator>(new EventAggregator());
 			batch.AddExportedValue(container);
 
-			StyleManager.ApplicationTheme = ThemeManager.FromName("Metro");
+			StyleManager.ApplicationTheme = ThemeManager.FromName("Windows8");
 
 			container.Compose(batch);
 		}

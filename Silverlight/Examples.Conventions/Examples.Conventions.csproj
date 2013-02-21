@@ -118,9 +118,6 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\Program Files (x86)\Telerik\RadControls for Silverlight Q3 2012\Binaries\Silverlight\Telerik.Windows.Data.dll</HintPath>
     </Reference>
-    <Reference Include="Telerik.Windows.Themes.Metro">
-      <HintPath>..\..\..\..\Program Files (x86)\Telerik\RadControls for Silverlight Q3 2012\Binaries.NoXaml\Silverlight\Telerik.Windows.Themes.Metro.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">

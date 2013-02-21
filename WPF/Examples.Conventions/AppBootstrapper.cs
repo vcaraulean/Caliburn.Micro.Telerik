@@ -28,7 +28,7 @@ namespace Examples.Conventions
 			// This is essential to enable Telerik's conventions
 			TelerikConventions.Install();
 
-			StyleManager.ApplicationTheme = ThemeManager.FromName("Metro");
+			StyleManager.ApplicationTheme = ThemeManager.FromName("Windows8");
 
 			container.Compose(batch);
 		}
