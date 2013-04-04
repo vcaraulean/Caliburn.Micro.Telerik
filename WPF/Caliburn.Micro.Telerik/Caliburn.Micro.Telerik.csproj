@@ -51,22 +51,22 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
     <Reference Include="Telerik.Windows.Controls">
-      <HintPath>..\..\..\..\Program Files (x86)\Telerik\RadControls for WPF Q3 2012\Binaries\WPF40\Telerik.Windows.Controls.dll</HintPath>
+      <HintPath>..\..\..\..\Program Files (x86)\Telerik\RadControls for WPF Q1 2013\Binaries\WPF40\Telerik.Windows.Controls.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.Windows.Controls.Data">
-      <HintPath>..\..\..\..\Program Files (x86)\Telerik\RadControls for WPF Q3 2012\Binaries\WPF40\Telerik.Windows.Controls.Data.dll</HintPath>
+      <HintPath>..\..\..\..\Program Files (x86)\Telerik\RadControls for WPF Q1 2013\Binaries\WPF40\Telerik.Windows.Controls.Data.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.Windows.Controls.GridView">
-      <HintPath>..\..\..\..\Program Files (x86)\Telerik\RadControls for WPF Q3 2012\Binaries\WPF40\Telerik.Windows.Controls.GridView.dll</HintPath>
+      <HintPath>..\..\..\..\Program Files (x86)\Telerik\RadControls for WPF Q1 2013\Binaries\WPF40\Telerik.Windows.Controls.GridView.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.Windows.Controls.Input">
-      <HintPath>..\..\..\..\Program Files (x86)\Telerik\RadControls for WPF Q3 2012\Binaries\WPF40\Telerik.Windows.Controls.Input.dll</HintPath>
+      <HintPath>..\..\..\..\Program Files (x86)\Telerik\RadControls for WPF Q1 2013\Binaries\WPF40\Telerik.Windows.Controls.Input.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.Windows.Controls.Navigation">
-      <HintPath>..\..\..\..\Program Files (x86)\Telerik\RadControls for WPF Q3 2012\Binaries\WPF40\Telerik.Windows.Controls.Navigation.dll</HintPath>
+      <HintPath>..\..\..\..\Program Files (x86)\Telerik\RadControls for WPF Q1 2013\Binaries\WPF40\Telerik.Windows.Controls.Navigation.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.Windows.Data">
-      <HintPath>..\..\..\..\Program Files (x86)\Telerik\RadControls for WPF Q3 2012\Binaries\WPF40\Telerik.Windows.Data.dll</HintPath>
+      <HintPath>..\..\..\..\Program Files (x86)\Telerik\RadControls for WPF Q1 2013\Binaries\WPF40\Telerik.Windows.Data.dll</HintPath>
     </Reference>
     <Reference Include="WindowsBase" />
   </ItemGroup>
