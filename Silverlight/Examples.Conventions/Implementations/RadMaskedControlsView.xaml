@@ -8,31 +8,49 @@
 			 d:DesignHeight="300"
 			 >
 
-    <Grid x:Name="LayoutRoot"
-		  Background="White" Margin="10">
-        <StackPanel>
-            <StackPanel Orientation="Horizontal">
-                <TextBlock Text="RadMaskedTextBox, MaskType=None" VerticalAlignment="Center"/>
-                <telerik:RadMaskedTextBox x:Name="SomeString" 
-                                          MaskType="None"
-                                          Width="150" 
-                                          Margin="10"/>
-            </StackPanel>
-            <StackPanel Orientation="Horizontal">
-                <TextBlock Text="RadMaskedTextBox, MaskType=Standard" VerticalAlignment="Center"/>
-                <telerik:RadMaskedTextBox x:Name="PhoneNumber" 
-                                          MaskType="Standard"
-                                          Mask="(###) ### - ####"
-                                          Width="150" 
-                                          Margin="10"/>
-            </StackPanel>
-            <StackPanel Orientation="Horizontal">
-                <TextBlock Text="RadMaskedTextInput" VerticalAlignment="Center"/>
-                <telerik:RadMaskedTextInput x:Name="AnotherPhoneNumber"
-                                            Mask="(###) ### - ####"
-                                            Width="150" 
-                                            Margin="10"/>
-            </StackPanel>
-        </StackPanel>
-    </Grid>
+	<Grid x:Name="LayoutRoot"
+		  Background="White"
+		  Margin="10">
+		<StackPanel>
+			<StackPanel Orientation="Horizontal">
+				<TextBlock Text="RadMaskedTextInput, no mask"
+						   VerticalAlignment="Center" />
+				<telerik:RadMaskedTextInput x:Name="SomeString"
+											Width="150"
+											Margin="10" />
+			</StackPanel>
+			<StackPanel Orientation="Horizontal">
+				<TextBlock Text="RadMaskedTextInput, phone number mask"
+						   VerticalAlignment="Center" />
+				<telerik:RadMaskedTextInput x:Name="PhoneNumber"
+											Mask="(###) ### - ####"
+											Width="150"
+											Margin="10" />
+			</StackPanel>
+			<StackPanel Orientation="Horizontal">
+				<TextBlock Text="RadMaskedCurrencyInput"
+						   VerticalAlignment="Center" />
+				<telerik:RadMaskedCurrencyInput x:Name="CurrencyValue"
+												Mask="#9.2"
+												Width="150"
+												Margin="10" />
+			</StackPanel>
+			<StackPanel Orientation="Horizontal">
+				<TextBlock Text="RadMaskedDateTimeInput"
+						   VerticalAlignment="Center" />
+				<telerik:RadMaskedDateTimeInput x:Name="DateTimeValue"
+												Mask="dd-MM-yyyy"
+												Width="150"
+												Margin="10" />
+			</StackPanel>
+			<StackPanel Orientation="Horizontal">
+				<TextBlock Text="RadMaskedNumericInput"
+						   VerticalAlignment="Center" />
+				<telerik:RadMaskedNumericInput x:Name="NumericValue"
+											   Mask="#9.2"
+											   Width="150"
+											   Margin="10" />
+			</StackPanel>
+		</StackPanel>
+	</Grid>
 </UserControl>

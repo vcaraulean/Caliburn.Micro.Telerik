@@ -49,6 +49,9 @@ namespace Caliburn.Micro.Telerik
 			ConventionManager.AddElementConvention<RadMaskedTextBox>(RadMaskedTextBox.MaskedTextProperty, "MaskedText",
 			                                                         "ValueChanged");
 			ConventionManager.AddElementConvention<RadMaskedTextInput>(RadMaskedTextInput.ValueProperty, "Value", "ValueChanged");
+			ConventionManager.AddElementConvention<RadMaskedCurrencyInput>(RadMaskedCurrencyInput.ValueProperty, "Value", "ValueChanged");
+			ConventionManager.AddElementConvention<RadMaskedDateTimeInput>(RadMaskedDateTimeInput.ValueProperty, "Value", "ValueChanged");
+			ConventionManager.AddElementConvention<RadMaskedNumericInput>(RadMaskedNumericInput.ValueProperty, "Value", "ValueChanged");
 
 			// Affects: RadDateTimePicker, RadTimePicker, RadDatePicker
 			ConventionManager.AddElementConvention<RadDateTimePicker>(RadDateTimePicker.SelectedValueProperty, "SelectedValue",
