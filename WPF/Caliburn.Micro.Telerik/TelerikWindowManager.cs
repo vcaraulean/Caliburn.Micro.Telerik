@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.Composition;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
@@ -10,6 +11,7 @@ using Telerik.Windows.Controls;
 
 namespace Caliburn.Micro
 {
+    [Export(typeof(IWindowManager))]
 	public class TelerikWindowManager : WindowManager
 	{
 		public override bool? ShowDialog(object rootModel, object context = null, IDictionary<string, object> settings = null)
